@@ -19,6 +19,12 @@
     <meta property="twitter:description" content="Agent! is your AI-powered assistant for the entire Mac Desktop. Automate tasks, control apps, write code, and boost productivity.">
     <meta property="twitter:image" content="agent-og.png">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script>document.write('<script src="version.js?v='+Date.now()+'"><\/script>');</script>
     <style>
@@ -330,6 +336,13 @@
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
+            .release-table th.col-size,
+            .release-table td.col-size,
+            .release-table th.col-sha,
+            .release-table td.col-sha {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -350,6 +363,20 @@
                     <a href="https://github.com/macOS26/Agent/releases/download/1.0.8/Agent._1.0.8.dmg" class="cta-button">Download v1.0.8</a>
                     <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank">View on GitHub</a>
                     <a href="stats.html" class="cta-button secondary">Download Stats</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Agentic AI in Action</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    Agent! autonomously breaks down complex tasks, executes shell commands, manages files, and builds distributable apps — all from a single natural language prompt. No hand-holding required.
+                </p>
+                <div style="text-align: center;">
+                    <img src="agentdesktop.png" alt="Agent! performing autonomous tasks on macOS" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
                 </div>
             </div>
         </div>
@@ -436,22 +463,22 @@
                             <tr>
                                 <th>Version</th>
                                 <th>Release Date</th>
-                                <th>Size</th>
-                                <th>SHA256 Checksum</th>
+                                <th class="col-size">Size</th>
+                                <th class="col-sha">SHA256 Checksum</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><a href="https://github.com/macOS26/Agent/releases/download/1.0.8/Agent._1.0.8.dmg" class="version-badge">1.0.8</a></td>
                                 <td>March 15, 2026</td>
-                                <td>-</td>
-                                <td style="font-family: monospace; font-size: 0.75rem;">c43781e1fe5d5f118185e4d83d24e527bdc8e1b8b919e2eeceec1a43b91579c8</td>
+                                <td class="col-size">6.72 MB</td>
+                                <td class="col-sha" style="font-family: monospace; font-size: 0.75rem;">c43781e1fe5d5f118185e4d83d24e527bdc8e1b8b919e2eeceec1a43b91579c8</td>
                             </tr>
                             <tr>
                                 <td><a href="https://github.com/macOS26/Agent/releases/download/1.0.7/Agent_1.0.7.dmg" class="version-badge">1.0.7</a></td>
                                 <td>March 15, 2026</td>
-                                <td>-</td>
-                                <td style="font-family: monospace; font-size: 0.75rem;">a0e259cbf10c98d348e21dba99be744305dac033fc757ab258b87fa6ee2f4e41</td>
+                                <td class="col-size">6.73 MB</td>
+                                <td class="col-sha" style="font-family: monospace; font-size: 0.75rem;">a0e259cbf10c98d348e21dba99be744305dac033fc757ab258b87fa6ee2f4e41</td>
                             </tr>
                         </tbody>
                     </table>
