@@ -5,7 +5,9 @@
       "Bash(ls:*)",
       "Bash(python3:*)",
       "Bash(open:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "WebFetch(domain:www.apple.com)",
+      "Bash(xxd:*)"
     ]
   }
 }
