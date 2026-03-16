@@ -7,7 +7,9 @@
       "Bash(open:*)",
       "Bash(sed:*)",
       "WebFetch(domain:www.apple.com)",
-      "Bash(xxd:*)"
+      "Bash(xxd:*)",
+      "Bash(gh api:*)",
+      "Bash(curl:*)"
     ]
   }
 }
