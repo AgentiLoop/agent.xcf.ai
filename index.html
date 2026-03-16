@@ -332,7 +332,8 @@
                 gap: 20px;
             }
 
-            .release-columns {
+            .release-columns,
+            .setup-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -377,6 +378,68 @@
                 </p>
                 <div style="text-align: center;">
                     <img src="agentdesktop.png" alt="Agent! performing autonomous tasks on macOS" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Getting Started</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    <strong>Get Agent! up and running on your Mac in six simple steps.</strong>
+                </p>
+
+                <div class="setup-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 1.5rem;">
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">1. Prerequisites</div>
+                        <ul class="release-list">
+                            <li>macOS 26 (Tahoe) or later</li>
+                            <li>Xcode Command Line Tools — install via Terminal:<br><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85em;">xcode-select --install</code> <button onclick="navigator.clipboard.writeText('xcode-select --install')" style="background: #e0e0e0; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.75em; cursor: pointer; vertical-align: middle;">Copy</button></li>
+                            <li>An API key for Claude, Ollama Pro Cloud, or a local Ollama instance</li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">2. Build &amp; Run</div>
+                        <ul class="release-list">
+                            <li>Open <strong>Agent.xcodeproj</strong> in Xcode</li>
+                            <li>Build and run the <strong>Agent!</strong> target (⌘R)</li>
+                            <li>If prompted, install Xcode Command Line Tools</li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">3. Register Background Services</div>
+                        <ul class="release-list">
+                            <li>Click <strong>Register</strong> in the toolbar to install background services</li>
+                            <li><strong>User Agent</strong> — runs commands as your user account</li>
+                            <li><strong>Privileged Daemon</strong> — runs commands as root when needed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">4. Approve in System Settings</div>
+                        <ul class="release-list">
+                            <li>Go to <strong>System Settings → General → Login Items</strong></li>
+                            <li>Allow both <strong>Agent</strong> and <strong>AgentHelper</strong></li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">5. Configure Your Provider</div>
+                        <ul class="release-list">
+                            <li>Click the gear icon to open Settings</li>
+                            <li><strong>Claude</strong> — enter your Anthropic API key, select a model</li>
+                            <li><strong>Ollama Cloud</strong> — enter your Ollama Pro API key</li>
+                            <li><strong>Local Ollama</strong> — point to your local endpoint (32–128 GB RAM recommended)</li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: 0.75rem;">6. Connect &amp; Run</div>
+                        <ul class="release-list">
+                            <li>Click <strong>Connect</strong> to test the XPC services</li>
+                            <li>Type a task in natural language</li>
+                            <li>Press <strong>Run</strong> (or ⌘Enter) — Agent takes it from here</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank" style="font-size: 0.75rem;">Full Setup Guide on GitHub</a>
                 </div>
             </div>
         </div>
