@@ -9,7 +9,10 @@
       "WebFetch(domain:www.apple.com)",
       "Bash(xxd:*)",
       "Bash(gh api:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "mcp__xcf-server__open_doc",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
