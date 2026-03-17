@@ -356,7 +356,7 @@
             <div class="section-card">
                 <img src="icon.svg" alt="Agent! App Icon" style="width: 128px; height: 128px; margin-bottom: 1rem;">
                 <div class="test-drive-agent">SAY HELLO TO</div>
-                <h1 class="main-title">Agent! for macOS26<br><span style="font-size: 0.6em; color: #000; font-weight: 200; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;">Agentic AI for your  Mac Desktop</span></h1>
+                <h1 class="main-title">Agent! for macOS26<br><span style="font-size: 0.6em; color: #000; font-weight: 200; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;">Agent!c A! for your  Mac Desktop</span></h1>
                 <p class="subtitle">Your Agentic AI-powered assistant that sees, understands, and controls your entire Mac desktop. Automate tasks, manage files, write code, and streamline your workflow with ease.</p>
 
                 <p class="description">
@@ -364,7 +364,7 @@
                 </p>
 
                 <div class="cta-section">
-                    <a href="https://github.com/macOS26/Agent/releases/download/1.0.9/Agent._1.0.9.dmg" class="cta-button">Download v1.0.9</a>
+                    <a id="download-btn" href="https://github.com/macOS26/Agent/releases" class="cta-button">Download Latest</a>
                     <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank">View on GitHub</a>
                     <a href="stats.html" class="cta-button secondary">Download Stats</a>
                     <a href="https://www.linkedin.com/posts/principal-software-engineer-swift-objectivec-c-macos-ipados-ios-mac-ipad-ios-linux-android-toolchain_agent-agenticai-mac-activity-7439137365467672576-vGnU" class="cta-button secondary" target="_blank">LinkedIn</a>
@@ -419,7 +419,7 @@
 
                         <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">2. Install &amp; Run</div>
                         <ul class="release-list">
-                            <li><a href="https://github.com/macOS26/Agent/releases/download/1.0.9/Agent._1.0.9.dmg" style="color: #2563eb; text-decoration: none; font-weight: 500;">Download the DMG</a></li>
+                            <li><a id="setup-download-link" href="https://github.com/macOS26/Agent/releases" style="color: #2563eb; text-decoration: none; font-weight: 500;">Download the DMG</a></li>
                             <li>Open the DMG and drag <strong>Agent!</strong> to /Applications</li>
                             <li>Open <strong>Agent!</strong> from Applications</li>
                         </ul>
@@ -544,21 +544,12 @@
                                 <th>Version</th>
                                 <th>Release Date</th>
                                 <th class="col-size">Size</th>
-                                <th class="col-sha">SHA256 Checksum</th>
+                                <th class="col-sha">Downloads</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="release-history-body">
                             <tr>
-                                <td><a href="https://github.com/macOS26/Agent/releases/download/1.0.9/Agent._1.0.9.dmg" class="version-badge">1.0.9</a></td>
-                                <td>March 16, 2026</td>
-                                <td class="col-size">6.72 MB</td>
-                                <td class="col-sha" style="font-family: monospace; font-size: 0.75rem;">0178f649f6723a0c336c522ac30d8424cb755eb0017250636b44ea252e080ff8</td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://github.com/macOS26/Agent/releases/download/1.0.8/Agent._1.0.8.dmg" class="version-badge">1.0.8</a></td>
-                                <td>March 15, 2026</td>
-                                <td class="col-size">6.72 MB</td>
-                                <td class="col-sha" style="font-family: monospace; font-size: 0.75rem;">c43781e1fe5d5f118185e4d83d24e527bdc8e1b8b919e2eeceec1a43b91579c8</td>
+                                <td colspan="4" style="text-align: center; color: #999; padding: 20px;">Loading releases...</td>
                             </tr>
                         </tbody>
                     </table>
@@ -579,11 +570,101 @@
                     <a href="https://www.facebook.com/share/p/1CUsmK9uXA/" target="_blank">Facebook</a>
                 </div>
                 <div class="footer-tagline">
-                    © 2026 Agent! — Agentic AI for your  Mac Desktop
+                    © 2026 Agent! — Agent!c A! for your  Mac Desktop
                 </div>
             </div>
         </div>
     </footer>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script>
+        const GITHUB_API = 'https://api.github.com/repos/macOS26/Agent/releases';
+
+        function extractVersion(filename) {
+            if (!filename) return '';
+            const match = filename.match(/(\d+\.\d+\.\d+)/);
+            return match ? match[1] : '';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        async function autoDiscoverReleases() {
+            try {
+                const response = await fetch(GITHUB_API);
+                if (!response.ok) return;
+
+                const releases = await response.json();
+                if (!releases.length) return;
+
+                // Find the latest release with a DMG asset
+                let latestDmg = null;
+                for (const release of releases) {
+                    for (const asset of release.assets) {
+                        if (asset.name.endsWith('.dmg')) {
+                            if (!latestDmg) {
+                                latestDmg = {
+                                    url: asset.browser_download_url,
+                                    version: extractVersion(asset.name),
+                                    tag: release.tag_name
+                                };
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                // Update the download button and setup link
+                if (latestDmg) {
+                    const downloadBtn = document.getElementById('download-btn');
+                    if (downloadBtn) {
+                        downloadBtn.href = latestDmg.url;
+                        downloadBtn.textContent = 'Download v' + latestDmg.version;
+                    }
+                    const setupLink = document.getElementById('setup-download-link');
+                    if (setupLink) {
+                        setupLink.href = latestDmg.url;
+                    }
+                }
+
+                // Build the release history table
+                const tbody = document.getElementById('release-history-body');
+                if (!tbody) return;
+
+                let rows = '';
+                for (const release of releases) {
+                    for (const asset of release.assets) {
+                        if (!asset.name.endsWith('.dmg')) continue;
+                        const version = extractVersion(asset.name);
+                        const date = formatDate(new Date(release.published_at || release.created_at));
+                        const size = formatFileSize(asset.size);
+                        const url = asset.browser_download_url;
+
+                        rows += '<tr>'
+                            + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
+                            + '<td>' + date + '</td>'
+                            + '<td class="col-size">' + size + '</td>'
+                            + '<td class="col-sha">' + asset.download_count.toLocaleString() + '</td>'
+                            + '</tr>';
+                    }
+                }
+
+                tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">No releases found.</td></tr>';
+            } catch (e) {
+                // Silently fail — the page still works with fallback links
+            }
+        }
+
+        autoDiscoverReleases();
+    </script>
 </body>
 </html>
