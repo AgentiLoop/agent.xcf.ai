@@ -12,7 +12,10 @@
       "Bash(curl:*)",
       "mcp__xcf-server__open_doc",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebSearch",
+      "WebFetch(domain:mixkit.co)",
+      "WebFetch(domain:pixabay.com)"
     ]
   }
 }
