@@ -93,7 +93,7 @@
 
         .test-drive-agent {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.865rem;
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -477,7 +477,7 @@
                     </div>
                     <img src="agent_icon.png" alt="Agent! App Icon">
                 </div>
-                <div class="test-drive-agent">SAY HELLO TO</div>
+                <div class="test-drive-agent"><a href="javascript:void(0)" onclick="replayAnimation()" style="text-decoration: none; -webkit-text-fill-color: inherit; cursor: pointer;">&#9654;</a> SAY HELLO TO</div>
                 <h1 class="main-title">Agent! for macOS26<br><span style="font-size: 0.6em; color: #000; font-weight: 200; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;">AI for your  Mac Desktop</span></h1>
                 <p class="subtitle">Your Agentic AI-powered assistant that sees, understands, and controls your entire Mac desktop. Capture webcam photos, remote control your Mac from iPhone via Messages, and automate workflows.</p>
 
@@ -489,7 +489,7 @@
                     <a id="download-btn" href="https://github.com/macOS26/Agent/releases" class="cta-button">Download Latest</a>
                     <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank">View on GitHub</a>
                     <a href="stats.html" class="cta-button secondary">Download Stats</a>
-                    <a href="https://www.linkedin.com/posts/principal-software-engineer-swift-objectivec-c-macos-ipados-ios-mac-ipad-ios-linux-android-toolchain_agent-agenticai-mac-activity-7439137365467672576-vGnU" class="cta-button secondary" target="_blank">LinkedIn</a>
+                    <a href="javascript:void(0)" class="cta-button secondary" onclick="replayAnimation()">&#9654; Say Hello</a>
                     <a href="https://www.reddit.com/user/StarPlayrX/comments/1rv0532/agent_for_macos_26_agentic_ai_for_your_mac_desktop/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" class="cta-button secondary" target="_blank">Reddit</a>
                     <a href="https://www.facebook.com/share/p/1CUsmK9uXA/" class="cta-button secondary" target="_blank">Facebook</a>
                 </div>
@@ -794,8 +794,15 @@
             playNote(783.99, 0.56, 0.6);  // G5 held
         }
 
-        playWhoosh();
-        setTimeout(playReveal, 2100);
+        function replayAnimation() {
+            // Restart CSS animations
+            var wrap = document.querySelector('.icon-anim-wrap');
+            var clone = wrap.cloneNode(true);
+            wrap.parentNode.replaceChild(clone, wrap);
+            // Play sound in sync
+            playWhoosh();
+            setTimeout(playReveal, 2100);
+        }
 
         const GITHUB_API = 'https://api.github.com/repos/macOS26/Agent/releases';
 
