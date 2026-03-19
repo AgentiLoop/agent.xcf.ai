@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent! - AI Assistant for your entire  Mac Desktop</title>
+    <title>Agent! - Agentic AI for your  Mac Desktop</title>
+    <meta name="description" content="Agent! is a native macOS app. Control your entire Mac desktop with AI; run shell commands, build Xcode projects, automate workflows, and more.">
+    <link rel="canonical" href="https://xcf.ai/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xcf.ai">
-    <meta property="og:title" content="Agent! - AI Assistant for your Mac Desktop">
-    <meta property="og:description" content="Agent! is your AI-powered assistant for the entire Mac Desktop. Automate tasks, control apps, write code, and boost productivity.">
-    <meta property="og:image" content="https://xcf.ai/agent-og.png">
+    <meta property="og:url" content="https://xcf.ai/">
+    <meta property="og:title" content="Agent! - Agentic AI for your  Mac Desktop">
+    <meta property="og:description" content="Agent! is a native macOS app. Control your entire Mac desktop with AI; run shell commands, build Xcode projects, automate workflows, and more.">
+    <meta property="og:image" content="https://xcf.ai/agentdesktop-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@SuperBox64">
-    <meta name="twitter:title" content="Agent! - AI Assistant for your Mac Desktop">
-    <meta name="twitter:description" content="Agent! is your AI-powered assistant for the entire Mac Desktop. Automate tasks, control apps, write code, and boost productivity.">
-    <meta name="twitter:image" content="https://xcf.ai/agent-og.png">
+    <meta name="twitter:title" content="Agent! - Agentic AI for your  Mac Desktop">
+    <meta name="twitter:description" content="Agent! is a native macOS app. Control your entire Mac desktop with AI; run shell commands, build Xcode projects, automate workflows, and more.">
+    <meta name="twitter:image" content="https://xcf.ai/agentdesktop-twitter.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script>document.write('<script src="version.js?v='+Date.now()+'"><\/script>');</script>
     <style>
         * {
@@ -428,6 +432,26 @@
             animation: titleZoomIn 1.1s ease-out forwards 2.2s;
         }
 
+        @keyframes textFadeIn {
+            0%   { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .subtitle {
+            opacity: 0;
+            animation: textFadeIn 0.8s ease-out forwards 3.0s;
+        }
+
+        .description {
+            opacity: 0;
+            animation: textFadeIn 0.8s ease-out forwards 3.3s;
+        }
+
+        .cta-section {
+            opacity: 0;
+            animation: textFadeIn 0.8s ease-out forwards 3.6s;
+        }
+
         @keyframes iconFadeIn {
             0%   { opacity: 0; transform: scale(0.8); }
             100% { opacity: 1; transform: scale(1); }
@@ -810,11 +834,11 @@
             var wrap = document.querySelector('.icon-anim-wrap');
             var clone = wrap.cloneNode(true);
             wrap.parentNode.replaceChild(clone, wrap);
-            // Restart title zoom
-            var title = document.querySelector('.main-title');
-            title.style.animation = 'none';
-            title.offsetHeight;
-            title.style.animation = '';
+            // Restart all text animations
+            ['.main-title', '.subtitle', '.description', '.cta-section'].forEach(function(sel) {
+                var el = document.querySelector(sel);
+                if (el) { el.style.animation = 'none'; el.offsetHeight; el.style.animation = ''; }
+            });
             // Play sound in sync
             playWhoosh();
             setTimeout(playReveal, 2100);
