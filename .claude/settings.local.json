@@ -15,7 +15,9 @@
       "Bash(git commit:*)",
       "WebSearch",
       "WebFetch(domain:mixkit.co)",
-      "WebFetch(domain:pixabay.com)"
+      "WebFetch(domain:pixabay.com)",
+      "mcp__xcf-server__list_projects",
+      "mcp__xcf-server__build_project"
     ]
   }
 }
