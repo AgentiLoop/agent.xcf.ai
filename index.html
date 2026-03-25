@@ -205,6 +205,12 @@
             line-height: 1.4;
         }
 
+        /* LLM Providers Grid */
+        .llm-providers-grid .llm-provider-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
         /* Release Two-Column Layout */
         .release-columns {
             display: grid;
@@ -526,7 +532,7 @@
                     <a href="stats.html" class="cta-button secondary">Download Stats</a>
                     <a href="javascript:void(0)" class="cta-button secondary" onclick="replayAnimation()">&#9654; Hello Agent!</a>
                     <a href="https://www.reddit.com/user/StarPlayrX/comments/1rv0532/agent_for_macos_26_agentic_ai_for_your_mac_desktop/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button" class="cta-button secondary" target="_blank">Reddit</a>
-                    <a href="https://www.facebook.com/share/p/1CUsmK9uXA/" class="cta-button secondary" target="_blank">Facebook</a>
+                    <a href="https://www.linkedin.com/posts/principal-software-engineer-swift-objectivec-c-macos-ipados-ios-mac-ipad-ios-linux-android-toolchain_agent-agenticai-macos-activity-7442415963272155136-kMA0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAfxvVUBu25u30LgVPIWFI0yTOQndPzQTsI" class="cta-button secondary" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -563,17 +569,6 @@
                 </p>
                 <div style="text-align: center;">
                     <img src="agentdesktop.png" alt="Agent! performing autonomous tasks on macOS" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-card">
-                <div class="section-title">What People Are Saying</div>
-                <div style="display: flex; justify-content: center;">
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Agent! For MacOS26 <a href="https://t.co/beIQziPavF">https://t.co/beIQziPavF</a> Agentic AI Automation For your  Mac Desktop!</p>&mdash; SuperBox64.com (@SuperBox64) <a href="https://twitter.com/SuperBox64/status/2033391539116707969?ref_src=twsrc%5Etfw">March 16, 2026</a></blockquote>
                 </div>
             </div>
         </div>
@@ -677,6 +672,67 @@
                         <p class="feature-desc">Extend Agent! with Model Context Protocol servers. Connect to databases, APIs, and external tools for enhanced capabilities.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Supported LLM Providers</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    Agent! works with all major LLM providers. Choose from cloud-based APIs or run locally for complete privacy.
+                </p>
+                <div class="llm-providers-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1rem;">
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🟢</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">OpenAI</h4>
+                        <p style="font-size: 0.75rem; color: #666;">GPT-4, GPT-4o, GPT-3.5</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🟠</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Claude</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Claude 4, Claude 3.5, Claude 3</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🤗</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">HuggingFace</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Open source models via API</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🔵</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">DeepSeek</h4>
+                        <p style="font-size: 0.75rem; color: #666;">DeepSeek-V3, DeepSeek-Coder</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🦙</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Ollama Pro</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Cloud-hosted Ollama</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🧠</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Apple Intelligence</h4>
+                        <p style="font-size: 0.75rem; color: #666;">C3PO Mediator</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🏠</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Local</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Run models on your Mac</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">👁️</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">vLLM</h4>
+                        <p style="font-size: 0.75rem; color: #666;">High-performance serving</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🔬</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">LMStudio</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Local model playground</p>
+                    </div>
+                </div>
+                <p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 1.25rem; font-weight: 300;">
+                    <em>More providers added regularly. Check the documentation for the latest supported APIs.</em>
+                </p>
             </div>
         </div>
     </section>
