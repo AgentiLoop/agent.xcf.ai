@@ -210,7 +210,7 @@
             if (!filename) return 'N/A';
             // Extract version from filenames like "Agent_1.0.7.dmg"
             const match = filename.match(/(\d+\.\d+\.\d+)/);
-            return match ? `v${match[1]}` : filename.replace('.dmg', '').replace('.zip', '');
+            return match ? match[1] : filename.replace('.dmg', '').replace('.zip', '');
         }
 
         function formatFileSize(bytes) {
