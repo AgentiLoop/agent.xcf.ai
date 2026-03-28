@@ -61,6 +61,31 @@ body {
     padding: 30px 0 15px;
 }
 
+.hero-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.ghost-26 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 18px));
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 20rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.035);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-card > *:not(.ghost-26) {
+    position: relative;
+    z-index: 1;
+}
+
 .test-drive-agent {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
     font-size: 0.865rem;
@@ -284,149 +309,16 @@ body {
     font-weight: 300;
 }
 
-/* Dot Animation: 3 small dots at 120° apart + 1 large center, twirl to center, fade, icon appears */
-.icon-anim-wrap {
-    position: relative;
+/* Icon wrapper */
+.icon-wrap {
     width: 128px;
     height: 128px;
     margin: 0 auto 1rem;
 }
 
-.icon-anim-wrap img {
+.icon-wrap img {
     width: 128px;
     height: 128px;
-    opacity: 0;
-    animation: iconFadeIn 0.9s ease forwards 2.2s;
-}
-
-.dot {
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    box-shadow: 0 0 14px rgba(100,150,255,0.5);
-}
-
-/* Large center dot - stays put, fades out */
-.dot-center {
-    width: 36px; height: 36px;
-    margin-left: -18px;
-    margin-top: -18px;
-    background: rgba(120,160,220,0.95);
-    box-shadow: 0 0 30px rgba(80,140,255,0.8), 0 0 60px rgba(80,140,255,0.4), 0 0 90px rgba(80,140,255,0.2);
-    animation: centerFade 1.8s ease-in forwards;
-}
-
-/* Orbit wrapper - rotates the 3 small dots around center */
-.dot-orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    animation: orbitSpin 1.8s ease-in forwards;
-}
-
-/* Small dots at 120° intervals, each pulls toward center */
-.dot-top {
-    width: 18px; height: 18px;
-    background: #fff;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 14px rgba(100,150,255,0.5);
-    left: -9px;
-    animation: gravityTop 1.8s ease-in forwards;
-}
-.dot-bl {
-    width: 18px; height: 18px;
-    background: #fff;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 14px rgba(100,150,255,0.5);
-    animation: gravityBL 1.8s ease-in forwards;
-}
-.dot-br {
-    width: 18px; height: 18px;
-    background: #fff;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 14px rgba(100,150,255,0.5);
-    animation: gravityBR 1.8s ease-in forwards;
-}
-
-/* top dot: starts 50px up, pulls to center */
-@keyframes gravityTop {
-    0%   { top: -59px; }
-    50%  { top: -35px; }
-    80%  { top: -15px; }
-    100% { top: -9px; }
-}
-/* bottom-left: starts offset, pulls to center */
-@keyframes gravityBL {
-    0%   { top: 16px; left: -52px; }
-    50%  { top: 8px; left: -30px; }
-    80%  { top: 2px; left: -15px; }
-    100% { top: -9px; left: -9px; }
-}
-/* bottom-right: starts offset, pulls to center */
-@keyframes gravityBR {
-    0%   { top: 16px; left: 34px; }
-    50%  { top: 8px; left: 20px; }
-    80%  { top: 2px; left: 5px; }
-    100% { top: -9px; left: -9px; }
-}
-
-@keyframes orbitSpin {
-    0%   { transform: rotate(0deg) scale(1.6); }
-    70%  { transform: rotate(504deg) scale(0.8); }
-    100% { transform: rotate(720deg) scale(0); opacity: 0; }
-}
-
-@keyframes centerFade {
-    0%   { opacity: 1; transform: scale(1.6); }
-    70%  { opacity: 1; transform: scale(0.8); }
-    100% { opacity: 0; transform: scale(0); }
-}
-
-@keyframes dotFadeOut {
-    0%   { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-@keyframes titleZoomIn {
-    0%   { opacity: 0; transform: scale(0.3); }
-    65%  { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-.main-title {
-    opacity: 0;
-    animation: titleZoomIn 1.1s ease-out forwards 2.2s;
-}
-
-@keyframes textFadeIn {
-    0%   { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-.subtitle {
-    opacity: 0;
-    animation: textFadeIn 0.8s ease-out forwards 3.0s;
-}
-
-.description {
-    opacity: 0;
-    animation: textFadeIn 0.8s ease-out forwards 3.3s;
-}
-
-.cta-section {
-    opacity: 0;
-    animation: textFadeIn 0.8s ease-out forwards 3.6s;
-}
-
-@keyframes iconFadeIn {
-    0%   { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
 }
 
 /* Responsive Design */
