@@ -86,3 +86,56 @@ async function autoDiscoverReleases() {
 }
 
 autoDiscoverReleases();
+
+// Randomize wave rotation each cycle
+document.querySelectorAll('.wave').forEach(function(el) {
+    function randomize() {
+        el.style.setProperty('--wave-rot', Math.floor(Math.random() * 360) + 'deg');
+    }
+    randomize();
+    el.addEventListener('animationiteration', randomize);
+});
+
+// Contact form
+(function() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var btn = document.getElementById('contact-submit');
+        var status = document.getElementById('contact-status');
+        status.textContent = '';
+        status.className = 'contact-status';
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+            var res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    message: form.message.value.trim()
+                })
+            });
+
+            if (res.ok) {
+                status.textContent = 'Message sent. Thank you!';
+                status.className = 'contact-status success';
+                form.reset();
+            } else {
+                var data = await res.json().catch(function() { return {}; });
+                status.textContent = data.error || 'Failed to send. Please try again.';
+                status.className = 'contact-status error';
+            }
+        } catch (err) {
+            status.textContent = 'Network error. Please try again.';
+            status.className = 'contact-status error';
+        }
+
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+    });
+})();

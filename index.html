@@ -41,6 +41,8 @@
             <div class="section-card hero-card">
                 <div class="ghost-26">26</div>
                 <div class="icon-wrap">
+                    <div class="wave wave-1"></div>
+                    <div class="wave wave-2"></div>
                     <img src="agent_icon.png" alt="Agent! App Icon">
                 </div>
                 <h1 class="main-title">Agent! for macOS<br><span style="font-size: 0.6em; color: #000; font-weight: 200; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;">AI for your  Mac Desktop</span></h1>
@@ -146,7 +148,7 @@
                     Watch Agent! execute tasks on your Mac desktop in real time.
                 </p>
                 <div style="text-align: center;">
-                    <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+                    <video autoplay loop muted playsinline style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
                         <source src="AgentScriptDarkLight.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -301,6 +303,24 @@
                         </tbody>
                     </table>
                 </div> 
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Contact</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    Have a question or feedback? Send us a message.
+                </p>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                    <button type="submit" class="cta-button" id="contact-submit">Send Message</button>
+                    <div id="contact-status" class="contact-status"></div>
+                </form>
             </div>
         </div>
     </section>

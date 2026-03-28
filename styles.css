@@ -309,16 +309,115 @@ body {
     font-weight: 300;
 }
 
+/* Contact Form */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    color: #000;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2563eb;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form .cta-button {
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.contact-form .cta-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.contact-status {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 400;
+    min-height: 1.2em;
+}
+
+.contact-status.success {
+    color: #228B22;
+}
+
+.contact-status.error {
+    color: #cc0000;
+}
+
 /* Icon wrapper */
 .icon-wrap {
+    position: relative;
     width: 128px;
     height: 128px;
     margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 26%;
+}
+
+.wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    border-radius: 26%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.wave-1 {
+    background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+    animation: wave-in 6s ease-in-out infinite;
+}
+
+.wave-2 {
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    animation: wave-in 6s ease-in-out infinite 3s;
+}
+
+@keyframes wave-in {
+    0%   { transform: translate(-50%, -50%) rotate(var(--wave-rot, 0deg)) scale(1.1); opacity: 0; }
+    50%  { transform: translate(-50%, -50%) rotate(var(--wave-rot, 0deg)) scale(0.3); opacity: 0.3; }
+    100% { transform: translate(-50%, -50%) rotate(var(--wave-rot, 0deg)) scale(0.1); opacity: 0; }
 }
 
 .icon-wrap img {
+    position: relative;
     width: 128px;
     height: 128px;
+    animation: breathe 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    z-index: 1;
+}
+
+@keyframes breathe {
+    0%   { transform: scale(1);    filter: brightness(1); }
+    43%  { transform: scale(1.08); filter: brightness(1.12); }
+    50%  { transform: scale(1.08); filter: brightness(1.12); }
+    85%  { transform: scale(1);    filter: brightness(1); }
+    100% { transform: scale(1);    filter: brightness(1); }
 }
 
 /* Responsive Design */
