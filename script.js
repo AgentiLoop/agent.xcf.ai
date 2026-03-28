@@ -96,46 +96,21 @@ document.querySelectorAll('.wave').forEach(function(el) {
     el.addEventListener('animationiteration', randomize);
 });
 
-// Contact form
+// Contact form — opens mailto with pre-filled fields
 (function() {
     var form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
-        var btn = document.getElementById('contact-submit');
-        var status = document.getElementById('contact-status');
-        status.textContent = '';
-        status.className = 'contact-status';
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var message = form.message.value.trim();
 
-        try {
-            var res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: form.name.value.trim(),
-                    email: form.email.value.trim(),
-                    message: form.message.value.trim()
-                })
-            });
+        if (!name || !email || !message) return;
 
-            if (res.ok) {
-                status.textContent = 'Message sent. Thank you!';
-                status.className = 'contact-status success';
-                form.reset();
-            } else {
-                var data = await res.json().catch(function() { return {}; });
-                status.textContent = data.error || 'Failed to send. Please try again.';
-                status.className = 'contact-status error';
-            }
-        } catch (err) {
-            status.textContent = 'Network error. Please try again.';
-            status.className = 'contact-status error';
-        }
-
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
+        var subject = encodeURIComponent('Agent! Contact: ' + name);
+        var body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+        window.location.href = 'mailto:starplayr@icloud.com?subject=' + subject + '&body=' + body;
     });
 })();
