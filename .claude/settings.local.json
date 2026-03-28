@@ -17,7 +17,13 @@
       "WebFetch(domain:mixkit.co)",
       "WebFetch(domain:pixabay.com)",
       "mcp__xcf-server__list_projects",
-      "mcp__xcf-server__build_project"
+      "mcp__xcf-server__build_project",
+      "Read(//Users/toddbruss/Documents/**)",
+      "Bash(brew list:*)",
+      "Bash(/opt/homebrew/bin/ffmpeg -version)",
+      "Bash(/usr/local/bin/ffmpeg -version)",
+      "Bash(brew install:*)",
+      "Bash(/opt/homebrew/bin/ffmpeg -i /Users/toddbruss/Documents/AgentScriptDarkLight.mov -c:v libx264 -preset slow -crf 23 -c:a aac -b:a 128k -movflags +faststart -vf \"scale=trunc\\(iw/2\\)*2:trunc\\(ih/2\\)*2\" /Users/toddbruss/Documents/GitHub/agent.xcf.ai/AgentScriptDarkLight.mp4 2>&1)"
     ]
   }
 }
