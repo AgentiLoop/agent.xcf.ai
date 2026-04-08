@@ -147,9 +147,45 @@ Behind the glowing, glassy screen.
     <section class="section">
         <div class="container">
             <div class="section-card">
-                <div class="section-title">Apple Intelligence</div>
-                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto; font-weight: 300;">
-                    Harness on-device Apple Intelligence for faster, context-aware responses while keeping your data completely private. No cloud transmission required.
+                <div class="section-title">Apple Intelligence — what it actually does in Agent!</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 700px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    Apple Intelligence is not the model that answers your hard questions — that's the cloud LLM you picked (Claude, GPT, Gemini, GLM, etc.). Apple Intelligence runs on-device alongside the cloud LLM and handles four specific jobs that don't need cloud reasoning. Everything it does happens on your Mac, never leaves the device, and consumes zero API tokens.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 760px; margin: 0 auto; text-align: left;">
+
+                    <div style="border-left: 3px solid #5e8aff; padding: 4px 0 4px 16px;">
+                        <div style="font-size: 1rem; font-weight: 500; color: #1a1a1a; margin-bottom: 4px;">1. Accessibility intent agent</div>
+                        <p style="font-size: 0.9rem; color: #555; margin: 0; font-weight: 300;">
+                            When you say <em>"take a photo using Photo Booth"</em> or <em>"click the Save button in TextEdit,"</em> Apple Intelligence parses the intent locally and dispatches the macOS Accessibility tool itself — sometimes multiple times in sequence (open the app, then click the button). The cloud LLM never sees the request. Built on FoundationModels' real <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 3px; font-size: 0.85em;">Tool</code> protocol with <code style="background: #f0f0f0; padding: 1px 4px; border-radius: 3px; font-size: 0.85em;">@Generable</code> typed arguments. Falls through to the cloud LLM only on failure.
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid #5e8aff; padding: 4px 0 4px 16px;">
+                        <div style="font-size: 1rem; font-weight: 500; color: #1a1a1a; margin-bottom: 4px;">2. Token compression (context compaction)</div>
+                        <p style="font-size: 0.9rem; color: #555; margin: 0; font-weight: 300;">
+                            When a long task pushes your conversation past ~30,000 tokens, Apple Intelligence summarizes the older turns on-device with the instruction <em>"keep file paths, function names, errors, and key results."</em> The summary replaces the verbose history before the next call to the cloud LLM, slashing input tokens (and cost) for the rest of the task. Free, private, no API tokens consumed. If Apple Intelligence isn't available, Agent! falls back to aggressive pruning.
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid #5e8aff; padding: 4px 0 4px 16px;">
+                        <div style="font-size: 1rem; font-weight: 500; color: #1a1a1a; margin-bottom: 4px;">3. Triage of greetings, direct commands, and natural-language shortcuts</div>
+                        <p style="font-size: 0.9rem; color: #555; margin: 0; font-weight: 300;">
+                            Apple Intelligence handles small talk (<em>"hi"</em>, <em>"thanks"</em>, <em>"how are you"</em>) and direct commands like <em>"list agents,"</em> <em>"run agent FooBar,"</em> or <em>"google search Apple stock"</em> locally — no round-trip to the cloud LLM. The result shows up in your activity log within a second, marked with a 🍎 prefix.
+                        </p>
+                    </div>
+
+                    <div style="border-left: 3px solid #5e8aff; padding: 4px 0 4px 16px;">
+                        <div style="font-size: 1rem; font-weight: 500; color: #1a1a1a; margin-bottom: 4px;">4. Task summaries and error explanations</div>
+                        <p style="font-size: 0.9rem; color: #555; margin: 0; font-weight: 300;">
+                            After every completed task, Apple Intelligence writes a one-sentence summary of what just happened. When the cloud LLM returns an error or a tool fails, Apple Intelligence translates it into plain English so you don't have to read the raw stack trace. Both are user-facing only — toggleable in the brain icon popover.
+                        </p>
+                    </div>
+
+                </div>
+
+                <p style="text-align: center; font-size: 0.85rem; color: #777; max-width: 700px; margin: 1.75rem auto 0; font-weight: 300; font-style: italic;">
+                    Agent! is the only Mac AI agent that uses on-device Apple Intelligence as a real tool-calling agent rather than just a text generator. Toggle each feature independently in the brain icon (🧠) popover.
                 </p>
             </div>
         </div>
@@ -332,6 +368,21 @@ Behind the glowing, glassy screen.
                         <div style="font-size: 2rem; margin-bottom: 8px;">🔬</div>
                         <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">LMStudio</h4>
                         <p style="font-size: 0.75rem; color: #666;">Local model playground</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">🎯</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Z.ai</h4>
+                        <p style="font-size: 0.75rem; color: #666;">GLM-5.1 via API — recommended starting point</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">✨</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Google Gemini</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Gemini 2.0, long context, vision</p>
+                    </div>
+                    <div class="llm-provider-card" style="text-align: center; padding: 16px; background: #f9f9f9; border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                        <div style="font-size: 2rem; margin-bottom: 8px;">⚡</div>
+                        <h4 style="font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; color: #000;">Grok (xAI)</h4>
+                        <p style="font-size: 0.75rem; color: #666;">Real-time info, fast tool calling</p>
                     </div>
                 </div>
                 <p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 1.25rem; font-weight: 300;">
