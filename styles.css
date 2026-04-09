@@ -190,6 +190,55 @@ body {
     color: #fff;
 }
 
+/* Glass Buttons */
+.cta-glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.25s ease;
+}
+
+.cta-glass-green {
+    background: rgba(30, 185, 60, 0.92);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(10, 100, 25, 0.6);
+    border-color: rgba(30, 185, 60, 0.7);
+    box-shadow: 0 2px 12px rgba(30, 185, 60, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cta-glass-green:hover {
+    background: rgba(50, 210, 85, 0.98);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(50, 210, 85, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.cta-glass-orange {
+    background: rgba(255, 149, 0, 0.92);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(180, 90, 0, 0.6);
+    border-color: rgba(255, 149, 0, 0.7);
+    box-shadow: 0 2px 12px rgba(255, 149, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cta-glass-orange:hover {
+    background: rgba(255, 175, 50, 0.98);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(255, 175, 50, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.cta-glass-blue {
+    background: rgba(0, 122, 255, 0.85);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 50, 140, 0.6);
+    border-color: rgba(0, 122, 255, 0.6);
+    box-shadow: 0 2px 12px rgba(0, 122, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.cta-glass-blue:hover {
+    background: rgba(70, 170, 255, 0.98);
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(70, 170, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
 /* Features Grid */
 .features-grid {
     display: grid;
@@ -374,6 +423,18 @@ body {
 .contact-form .cta-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.contact-buttons > * {
+    flex: 1;
+    text-align: center;
 }
 
 .contact-status {
