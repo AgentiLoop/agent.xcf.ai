@@ -108,6 +108,28 @@ body {
     letter-spacing: -0.02em;
 }
 
+.thinking-shimmer {
+    display: inline;
+    color: #000;
+    background: linear-gradient(
+        90deg,
+        #000 0%, #000 40%,
+        #34c759 48%, #007AFF 52%,
+        #000 60%, #000 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer-think 8s ease-in-out infinite;
+}
+
+@keyframes shimmer-think {
+    0%, 70% { background-position: 100% 0; }
+    85% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+}
+
 .subtitle {
     font-size: 1.1rem;
     font-weight: 300;
