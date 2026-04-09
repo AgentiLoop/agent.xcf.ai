@@ -69,12 +69,13 @@
         </div>
     </section>
 
+    <!-- 1. VIDEO: Live demo hook -->
     <section class="section">
         <div class="container">
             <div class="section-card">
                 <div class="section-title">Watch Agent! Work Its Magic</div>
                 <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
-                    Watch Agent! snap a photo in real time using Photo Booth.
+                    Watch Agent! snap a photo in real time using Photo Booth with Agent!'s built-in voice recognition.
                 </p>
                 <div style="text-align: center;">
                     <video autoplay loop muted playsinline controls style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
@@ -85,20 +86,48 @@
         </div>
     </section>
 
+    <!-- 2. TEXT: Features overview -->
     <section class="section">
         <div class="container">
             <div class="section-card">
-                <div class="section-title">Agent! Asks Clarifying Questions</div>
-                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
-                    When a request is ambiguous or incomplete, Agent! pauses and asks. No guessing, no silently picking the wrong path: you stay in control with a quick prompt and a Send or Skip.
-                </p>
-                <div style="text-align: center;">
-                    <img src="agent-asks-questions.png" alt="Agent! showing an Agent Question dialog asking the user to clarify a DMG name after their message was cut off, with Skip and Send buttons" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+                <div class="section-title">Features</div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🖥️</div>
+                        <h3 class="feature-title">Desktop Control</h3>
+                        <p class="feature-desc">Control any app through natural language. Click, type, scroll, and navigate. Powered by Accessibility APIs and Swift automation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✏️</div>
+                        <h3 class="feature-title">Agentic Coding Tool</h3>
+                        <p class="feature-desc">Intelligent code editing with Coding Mode. Full Xcode integration for seamless development.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Automation</h3>
+                        <p class="feature-desc">Automate anything with Custom Agents, shell commands, AppleScript, and accessibility actions. No limits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="feature-title">Xcode Integration</h3>
+                        <p class="feature-desc">Build, run, and deploy apps with AI assistance. Fix errors, manage project files, version bumps. All inside Xcode.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3 class="feature-title">File Management</h3>
+                        <p class="feature-desc">Create, read, edit, and organize files across your codebase. Smart folder views and token-efficient compressed reads.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="feature-title">MCP Support</h3>
+                        <p class="feature-desc">Extend Agent! with Model Context Protocol servers for databases, APIs, and tools. Built-in XCF Xcode Lite integration.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 3. IMAGE+VIDEO: Build Apps proof -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -118,6 +147,7 @@
         </div>
     </section>
 
+    <!-- 4. TEXT: Apple Intelligence differentiator -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -165,69 +195,22 @@
         </div>
     </section>
 
+    <!-- 5. IMAGE: Clarifying Questions -->
     <section class="section">
         <div class="container">
             <div class="section-card">
-                <div class="section-title">Getting Started</div>
+                <div class="section-title">Agent! Asks Clarifying Questions</div>
                 <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
-                    <strong>Get Agent! up and running on your Mac in six simple steps.</strong>
+                    When a request is ambiguous or incomplete, Agent! pauses and asks. No guessing, no silently picking the wrong path: you stay in control with a quick prompt and a Send or Skip.
                 </p>
-
-                <div class="setup-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 1.5rem;">
-                    <div>
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">1. Prerequisites</div>
-                        <ul class="release-list">
-                            <li>macOS 26 (Tahoe) or later</li>
-                            <li><strong>Xcode Command Line Tools</strong>: install via Terminal:<br><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85em;">xcode-select --install</code> <button onclick="navigator.clipboard.writeText('xcode-select --install')" style="background: #e0e0e0; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.75em; cursor: pointer; vertical-align: middle;">Copy</button></li>
-                            <li>Enter your LLM API key, or set up a local LLM via LMStudio, vLLM or Ollama</li>
-                        </ul>
-
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">2. Install &amp; Run</div>
-                        <ul class="release-list">
-                            <li><a id="setup-download-link" href="https://github.com/macOS26/Agent/releases" style="color: #2563eb; text-decoration: none; font-weight: 500;">Download the DMG</a></li>
-                            <li>Open the DMG and drag <strong>Agent!</strong> to /Applications</li>
-                            <li>Open <strong>Agent!</strong> from Applications</li>
-                        </ul>
-
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">3. Register Background Services</div>
-                        <ul class="release-list">
-                            <li>Click <strong>Register</strong> in the toolbar to install background services</li>
-                            <li><strong>User Agent</strong> runs commands as your user account</li>
-                            <li><strong>Privileged Daemon</strong> escalates as admin when needed</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">4. Approve in System Settings</div>
-                        <ul class="release-list">
-                            <li>Go to <strong>System Settings → General → Login Items</strong></li>
-                            <li>Allow both <strong>Agent</strong> and <strong>AgentHelper</strong></li>
-                        </ul>
-
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">5. Configure Your Provider</div>
-                        <ul class="release-list">
-                            <li>Click the gear icon (⚙️) to open Settings</li>
-                            <li><strong>Claude</strong>: enter your Anthropic API key, select a model</li>
-                            <li><strong>Ollama Cloud</strong>: enter your Ollama Pro / Max API key</li>
-                            <li><strong>Local Ollama</strong>: point to your local endpoint<br><span style="margin-left: 1em;">(32–128 GB RAM recommended)</span></li>
-                        </ul>
-
-                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">6. Connect &amp; Run</div>
-                        <ul class="release-list">
-                            <li>Click <strong>Connect</strong> to test the XPC services</li>
-                            <li>Type a task in natural language</li>
-                            <li><strong>Press Run</strong> (or ⌘Enter). Agent takes it from here</li>
-                        </ul>
-                    </div>
-                </div>
-
                 <div style="text-align: center;">
-                    <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank" style="font-size: 0.75rem;">Full Setup Guide on GitHub</a>
-                    <a href="https://github.com/macOS26/Agent/fork" class="cta-button secondary" target="_blank" style="font-size: 0.75rem;">Fork on GitHub</a>
+                    <img src="agent-asks-questions.png" alt="Agent! showing an Agent Question dialog asking the user to clarify a DMG name after their message was cut off, with Skip and Send buttons" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 6. TEXT: Speech Recognition -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -239,57 +222,22 @@
         </div>
     </section>
 
+    <!-- 7. IMAGE: Claude Code Bug Fix credibility -->
     <section class="section">
         <div class="container">
             <div class="section-card">
-                <div class="section-title">Features</div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🖥️</div>
-                        <h3 class="feature-title">Desktop Control</h3>
-                        <p class="feature-desc">Control any app through natural language. Click, type, scroll, and navigate. Powered by Accessibility APIs and Swift automation.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✏️</div>
-                        <h3 class="feature-title">Agentic Coding Tool</h3>
-                        <p class="feature-desc">Intelligent code editing with Coding Mode. Full Xcode integration for seamless development.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3 class="feature-title">Automation</h3>
-                        <p class="feature-desc">Automate anything with Custom Agents, shell commands, AppleScript, and accessibility actions. No limits.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h3 class="feature-title">Xcode Integration</h3>
-                        <p class="feature-desc">Build, run, and deploy apps with AI assistance. Fix errors, manage project files, version bumps. All inside Xcode.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📁</div>
-                        <h3 class="feature-title">File Management</h3>
-                        <p class="feature-desc">Create, read, edit, and organize files across your codebase. Smart folder views and token-efficient compressed reads.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🧠</div>
-                        <h3 class="feature-title">MCP Support</h3>
-                        <p class="feature-desc">Extend Agent! with Model Context Protocol servers for databases, APIs, and tools. Built-in XCF Xcode Lite integration.</p>
-                    </div>
+                <div class="section-title">Claude Code Approves Agent!'s Bug Fix</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    Agent! independently found and fixed a routing bug in its own accessibility code that Claude Code missed across several code reviews. When Claude Code finally reviewed the fix, it confirmed the patch was correct and functionally sound, with only minor style notes.
+                </p>
+                <div style="text-align: center;">
+                    <img src="claude-code-approves-bugfix.png" alt="Claude Code approving Agent!'s bug fix in GitHub Desktop, showing code diff with the fix that Claude missed during multiple code reviews" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-card">
-                <div class="section-title">Built for macOS 26</div>
-                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto; font-weight: 300;">
-                    Agent! is built in pure Swift and SwiftUI with Custom Agents: small, focused automations powered by ScriptingBridge that control apps like Finder, Safari, Mail, and more. It runs natively on Apple Silicon with zero Electron overhead, delivering instant responsiveness and deep macOS 26 Tahoe integration.
-                </p>
-            </div>
-        </div>
-    </section>
-
+    <!-- 8. TEXT: LLM Providers -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -366,6 +314,98 @@
         </div>
     </section>
 
+    <!-- 9. IMAGE: WarGames personality -->
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Agent! Makes a WarGames Joke</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    When asked to play WarGames, Agent! replied: "Shall we play Global Thermonuclear War? Just kidding — I'm Agent!, not WOPR. Let me know if you need anything real done!"
+                </p>
+                <div style="text-align: center;">
+                    <img src="agent-wargames-joke.png" alt="Agent! making a WarGames joke while playing 20 Questions, referencing Global Thermonuclear War and WOPR" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. TEXT: Built for macOS 26 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Built for macOS 26</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto; font-weight: 300;">
+                    Agent! is built in pure Swift and SwiftUI with Custom Agents: small, focused automations powered by ScriptingBridge that control apps like Finder, Safari, Mail, and more. It runs natively on Apple Silicon with zero Electron overhead, delivering instant responsiveness and deep macOS 26 Tahoe integration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. TEXT: Getting Started -->
+    <section class="section">
+        <div class="container">
+            <div class="section-card">
+                <div class="section-title">Getting Started</div>
+                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
+                    <strong>Get Agent! up and running on your Mac in six simple steps.</strong>
+                </p>
+
+                <div class="setup-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 1.5rem;">
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">1. Prerequisites</div>
+                        <ul class="release-list">
+                            <li>macOS 26 (Tahoe) or later</li>
+                            <li><strong>Xcode Command Line Tools</strong>: install via Terminal:<br><code style="background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.85em;">xcode-select --install</code> <button onclick="navigator.clipboard.writeText('xcode-select --install')" style="background: #e0e0e0; border: none; border-radius: 4px; padding: 2px 8px; font-size: 0.75em; cursor: pointer; vertical-align: middle;">Copy</button></li>
+                            <li>Enter your LLM API key, or set up a local LLM via LMStudio, vLLM or Ollama</li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">2. Install &amp; Run</div>
+                        <ul class="release-list">
+                            <li><a id="setup-download-link" href="https://github.com/macOS26/Agent/releases" style="color: #2563eb; text-decoration: none; font-weight: 500;">Download the DMG</a></li>
+                            <li>Open the DMG and drag <strong>Agent!</strong> to /Applications</li>
+                            <li>Open <strong>Agent!</strong> from Applications</li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">3. Register Background Services</div>
+                        <ul class="release-list">
+                            <li>Click <strong>Register</strong> in the toolbar to install background services</li>
+                            <li><strong>User Agent</strong> runs commands as your user account</li>
+                            <li><strong>Privileged Daemon</strong> escalates as admin when needed</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">4. Approve in System Settings</div>
+                        <ul class="release-list">
+                            <li>Go to <strong>System Settings → General → Login Items</strong></li>
+                            <li>Allow both <strong>Agent</strong> and <strong>AgentHelper</strong></li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">5. Configure Your Provider</div>
+                        <ul class="release-list">
+                            <li>Click the gear icon (⚙️) to open Settings</li>
+                            <li><strong>Claude</strong>: enter your Anthropic API key, select a model</li>
+                            <li><strong>Ollama Cloud</strong>: enter your Ollama Pro / Max API key</li>
+                            <li><strong>Local Ollama</strong>: point to your local endpoint<br><span style="margin-left: 1em;">(32–128 GB RAM recommended)</span></li>
+                        </ul>
+
+                        <div style="font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: #999; margin-bottom: calc(0.75rem - 3px);">6. Connect &amp; Run</div>
+                        <ul class="release-list">
+                            <li>Click <strong>Connect</strong> to test the XPC services</li>
+                            <li>Type a task in natural language</li>
+                            <li><strong>Press Run</strong> (or ⌘Enter). Agent takes it from here</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="https://github.com/macOS26/Agent" class="cta-button secondary" target="_blank" style="font-size: 0.75rem;">Full Setup Guide on GitHub</a>
+                    <a href="https://github.com/macOS26/Agent/fork" class="cta-button secondary" target="_blank" style="font-size: 0.75rem;">Fork on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. TEXT: Latest Release -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -410,11 +450,12 @@
                             </tr>
                         </tbody>
                     </table>
-                </div> 
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- 13. TEXT: Product Hunt social proof -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -426,34 +467,7 @@
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-card">
-                <div class="section-title">Agent! Makes a WarGames Joke</div>
-                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
-                    When asked to play WarGames, Agent! replied: "Shall we play Global Thermonuclear War? Just kidding — I'm Agent!, not WOPR. Let me know if you need anything real done!"
-                </p>
-                <div style="text-align: center;">
-                    <img src="agent-wargames-joke.png" alt="Agent! making a WarGames joke while playing 20 Questions, referencing Global Thermonuclear War and WOPR" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-card">
-                <div class="section-title">Claude Code Approves Agent!'s Bug Fix</div>
-                <p style="text-align: center; font-size: 0.95rem; color: #444; max-width: 650px; margin: 0 auto 1.5rem; font-weight: 300;">
-                    Agent! independently found and fixed a routing bug in its own accessibility code that Claude Code missed across several code reviews. When Claude Code finally reviewed the fix, it confirmed the patch was correct and functionally sound, with only minor style notes.
-                </p>
-                <div style="text-align: center;">
-                    <img src="claude-code-approves-bugfix.png" alt="Claude Code approving Agent!'s bug fix in GitHub Desktop, showing code diff with the fix that Claude missed during multiple code reviews" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- 14. IMAGE: Poem - memorable closer -->
     <section class="section">
         <div class="container">
             <div class="section-card">
@@ -490,6 +504,7 @@ Behind the glowing, glassy screen.
         </div>
     </section>
 
+    <!-- 15. Contact -->
     <section class="section">
         <div class="container">
             <div class="section-card">
