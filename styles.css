@@ -121,13 +121,15 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer-think 6s linear infinite;
+    animation: shimmer-think 12s linear infinite;
 }
 
 @keyframes shimmer-think {
-    0%, 34% { background-position: 150% 0; }
-    60% { background-position: -150% 0; }
-    60.01%, 100% { background-position: -150% 0; }
+    0%, 17% { background-position: 150% 0; }
+    30% { background-position: -150% 0; }
+    30.01%, 67% { background-position: -150% 0; }
+    80% { background-position: 150% 0; }
+    80.01%, 100% { background-position: 150% 0; }
 }
 
 .subtitle {
