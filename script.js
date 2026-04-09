@@ -111,6 +111,6 @@ document.querySelectorAll('.wave').forEach(function(el) {
 
         var subject = encodeURIComponent('Agent! Contact: ' + name);
         var body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
-        window.location.href = 'mailto:agent@inkpen.io?subject=' + subject + '&body=' + body;
+        window.location.href = 'mailto:agent@macos26.app?subject=' + subject + '&body=' + body;
     });
 })();
