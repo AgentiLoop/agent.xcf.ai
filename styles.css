@@ -113,21 +113,21 @@ body {
     color: #000;
     background: linear-gradient(
         90deg,
-        #000 0%, #000 40%,
-        #34c759 48%, #007AFF 52%,
-        #000 60%, #000 100%
+        #000 0%, #000 35%,
+        #34c759 45%, #007AFF 55%,
+        #000 65%, #000 100%
     );
-    background-size: 300% 100%;
+    background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer-think 8s ease-in-out infinite;
+    animation: shimmer-think 8s linear infinite;
 }
 
 @keyframes shimmer-think {
-    0%, 70% { background-position: 100% 0; }
-    85% { background-position: -100% 0; }
-    100% { background-position: 100% 0; }
+    0%, 65% { background-position: 150% 0; }
+    90% { background-position: -150% 0; }
+    90.01%, 100% { background-position: 150% 0; }
 }
 
 .subtitle {
