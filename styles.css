@@ -485,4 +485,13 @@ body {
     .llm-providers-grid {
         grid-template-columns: 1fr !important;
     }
+
+    .contact-buttons {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+    }
+
+    .contact-buttons > * {
+        width: 100% !important;
+    }
 }
