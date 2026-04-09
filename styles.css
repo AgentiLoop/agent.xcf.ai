@@ -72,7 +72,7 @@ body {
     left: 50%;
     transform: translate(-50%, calc(-50% + 18px));
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-    font-size: 20rem;
+    font-size: 21rem;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.035);
     line-height: 1;
@@ -103,9 +103,31 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
     font-size: 3.5rem;
     font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: calc(1.2rem - 5px);
+    line-height: 1.0;
+    margin-bottom: calc(1.2rem - 15px);
     letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    display: block;
+    font-size: 0.6em;
+    color: #000;
+    font-weight: 200;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    margin-top: 19px;
+    letter-spacing: 0.005em;
+    margin-bottom: 4px;
+}
+
+.hero-tagline {
+    display: block;
+    font-size: 0.35em;
+    color: #000;
+    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    letter-spacing: 0.02em;
 }
 
 .thinking-shimmer {
@@ -339,18 +361,24 @@ body {
 
 .version-badge {
     display: inline-block;
-    background: #000;
+    background: rgba(0, 122, 255, 0.85);
     color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 50, 140, 0.6);
     padding: 0.3rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
     text-decoration: none;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 2px 12px rgba(0, 122, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.25s ease;
     transition: all 0.3s ease;
 }
 
 .version-badge:hover {
-    background: #667eea;
+    background: rgba(70, 170, 255, 0.98);
+    box-shadow: 0 4px 24px rgba(70, 170, 255, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 /* Footer */
