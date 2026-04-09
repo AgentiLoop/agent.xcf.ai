@@ -25,7 +25,19 @@
       "Bash(brew install:*)",
       "Bash(/opt/homebrew/bin/ffmpeg -i /Users/toddbruss/Documents/AgentScriptDarkLight.mov -c:v libx264 -preset slow -crf 23 -c:a aac -b:a 128k -movflags +faststart -vf \"scale=trunc\\(iw/2\\)*2:trunc\\(ih/2\\)*2\" /Users/toddbruss/Documents/GitHub/agent.xcf.ai/AgentScriptDarkLight.mp4 2>&1)",
       "Bash(git push:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(ffmpeg -y -i /Users/toddbruss/Desktop/AppleAIPhotobooth.mov -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -movflags +faststart -an /Users/toddbruss/Documents/GitHub/agent.xcf.ai/AppleAIPhotobooth.mp4)",
+      "Bash(ffmpeg -y -i /Users/toddbruss/Documents/whatisyourname_photobooth.mov -c:v libx264 -preset slow -crf 23 -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart /Users/toddbruss/Documents/GitHub/agent.xcf.ai/WhatIsYourNamePhotobooth.mp4)",
+      "Bash(ffmpeg:*)",
+      "WebFetch(domain:azamsharp.com)",
+      "WebFetch(domain:machinelearning.apple.com)",
+      "WebFetch(domain:wwdcnotes.com)",
+      "WebFetch(domain:www.adwaitx.com)",
+      "WebFetch(domain:www.macworld.com)",
+      "WebFetch(domain:www.infoq.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:zats.io)",
+      "WebFetch(domain:www.natashatherobot.com)"
     ]
   }
 }
