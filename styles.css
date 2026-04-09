@@ -125,8 +125,10 @@ body {
 }
 
 @keyframes shimmer-think {
-    0%, 65% { background-position: 150% 0; }
-    90% { background-position: -150% 0; }
+    0%, 30% { background-position: 150% 0; }
+    45% { background-position: -150% 0; }
+    45.01%, 75% { background-position: -150% 0; }
+    90% { background-position: 150% 0; }
     90.01%, 100% { background-position: 150% 0; }
 }
 
