@@ -79,12 +79,6 @@ body {
     pointer-events: none;
     z-index: 0;
     letter-spacing: -0.02em;
-    animation: breathe 4s ease-in-out infinite;
-}
-
-@keyframes breathe {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
 }
 
 .hero-card > *:not(.ghost-26) {
