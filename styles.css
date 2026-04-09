@@ -77,6 +77,12 @@ body {
     color: rgba(0, 0, 0, 0.035);
     line-height: 1;
     pointer-events: none;
+    animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: translate(-50%, calc(-50% + 18px)) scale(1); }
+    50% { transform: translate(-50%, calc(-50% + 18px)) scale(1.08); }
     z-index: 0;
     letter-spacing: -0.02em;
 }
