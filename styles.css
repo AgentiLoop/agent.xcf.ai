@@ -363,6 +363,7 @@ body {
 .date-short { display: none; }
 .label-full { display: inline; }
 .label-short { display: none; }
+.size-unit { display: inline; }
 
 .version-badge {
     display: inline-block;
@@ -601,6 +602,8 @@ body {
 
     .label-full { display: none; }
     .label-short { display: inline; white-space: nowrap; }
+
+    .size-unit { display: none; }
 
     .llm-providers-grid {
         grid-template-columns: 1fr !important;
