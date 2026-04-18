@@ -24,12 +24,37 @@
   const strikeEl = document.getElementById("strike");
   const strikeLine = document.getElementById("strikeLine");
 
+  // Persistence
+  const STORAGE_KEY = "tickytacky:v1";
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return {};
+      const s = JSON.parse(raw);
+      return (s && typeof s === "object") ? s : {};
+    } catch { return {}; }
+  }
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        scores, mode, difficulty,
+      }));
+    } catch {}
+  }
+  const saved = loadState();
+
   // State
   let board = Array(9).fill(null);
   let current = "X";
-  let scores = { X: 0, O: 0, T: 0 };
-  let mode = "pvc";            // 'pvc' or 'pvp'
-  let difficulty = "hard";     // 'easy' | 'medium' | 'hard'
+  let scores = (saved.scores && typeof saved.scores === "object" &&
+                typeof saved.scores.X === "number" &&
+                typeof saved.scores.O === "number" &&
+                typeof saved.scores.T === "number")
+               ? { X: saved.scores.X, O: saved.scores.O, T: saved.scores.T }
+               : { X: 0, O: 0, T: 0 };
+  let mode = (saved.mode === "pvp" || saved.mode === "pvc") ? saved.mode : "pvc";
+  let difficulty = ["easy","medium","hard"].includes(saved.difficulty)
+                   ? saved.difficulty : "hard";
   let gameOver = false;
   let botThinking = false;
 
@@ -133,6 +158,7 @@
       if (mode === "pvp" || w === "X") confettiBurst();
     }
     render();
+    saveState();
   }
 
   function makeMove(i, mark) {
@@ -325,6 +351,7 @@
       scoreTieEl.textContent = "0";
     }
     render();
+    saveState();
   }
 
   function setMode(next) {
@@ -336,12 +363,14 @@
     });
     diffWrap.classList.toggle("hidden", next !== "pvc");
     newRound(false);
+    saveState();
   }
 
   function setDifficulty(next) {
     difficulty = next;
     diffBtns.forEach(b => b.classList.toggle("active", b.dataset.diff === next));
     newRound(true);
+    saveState();
   }
 
   // ---------- Hover glow tracking ----------
@@ -378,6 +407,16 @@
   diffBtns.forEach(b => b.addEventListener("click", () => setDifficulty(b.dataset.diff)));
   window.addEventListener("keydown", onKey);
 
-  // Initial render
+  // Initial render — reflect persisted mode, difficulty, and scores
+  scoreXEl.textContent = String(scores.X);
+  scoreOEl.textContent = String(scores.O);
+  scoreTieEl.textContent = String(scores.T);
+  modeBtns.forEach(b => {
+    const active = b.dataset.mode === mode;
+    b.classList.toggle("active", active);
+    b.setAttribute("aria-selected", active ? "true" : "false");
+  });
+  diffBtns.forEach(b => b.classList.toggle("active", b.dataset.diff === difficulty));
+  diffWrap.classList.toggle("hidden", mode !== "pvc");
   render();
 })();
