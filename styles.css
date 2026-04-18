@@ -541,14 +541,14 @@ body {
 @media (max-width: 900px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+     :not(.star-fork-banner) {
+        display: none !important;
     }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
-    .top-banner {
-        display: none !important;
-    }
+@media (max-width: 768px) {
+    .top-banner:not(.star-fork-banner)-banner {
+        display: none !important
 }
 
 @media (max-width: 768px) {
