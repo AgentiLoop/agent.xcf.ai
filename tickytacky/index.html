@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TickyTacky — Tic Tac Toe</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <main class="app">
+    <header class="title-wrap">
+      <h1 class="title">
+        <span class="t t-1">T</span><span class="t t-2">i</span><span class="t t-3">c</span><span class="t t-4">k</span><span class="t t-5">y</span>
+        <span class="dot">·</span>
+        <span class="t t-6">T</span><span class="t t-7">a</span><span class="t t-8">c</span><span class="t t-9">k</span><span class="t t-10">y</span>
+      </h1>
+      <p class="subtitle">A neon tic-tac-toe. Beat the bot. Or don't.</p>
+    </header>
+
+    <section class="hud">
+      <div class="score score-x">
+        <div class="label">Player X</div>
+        <div class="value" id="scoreX">0</div>
+      </div>
+      <div class="score score-tie">
+        <div class="label">Ties</div>
+        <div class="value" id="scoreTie">0</div>
+      </div>
+      <div class="score score-o">
+        <div class="label">Player O</div>
+        <div class="value" id="scoreO">0</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="mode-toggle" role="tablist" aria-label="Game mode">
+        <button class="mode-btn active" data-mode="pvc" role="tab" aria-selected="true">vs Bot</button>
+        <button class="mode-btn" data-mode="pvp" role="tab" aria-selected="false">2 Player</button>
+      </div>
+
+      <div class="difficulty" id="difficultyWrap">
+        <button class="diff-btn" data-diff="easy">Easy</button>
+        <button class="diff-btn" data-diff="medium">Medium</button>
+        <button class="diff-btn active" data-diff="hard">Impossible</button>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div class="turn-indicator" id="turnIndicator">
+        <span class="turn-label">Turn:</span>
+        <span class="turn-mark turn-x" id="turnMark">X</span>
+      </div>
+
+      <div class="board" id="board" role="grid" aria-label="Tic Tac Toe board">
+        <button class="cell" data-i="0" aria-label="cell 1"></button>
+        <button class="cell" data-i="1" aria-label="cell 2"></button>
+        <button class="cell" data-i="2" aria-label="cell 3"></button>
+        <button class="cell" data-i="3" aria-label="cell 4"></button>
+        <button class="cell" data-i="4" aria-label="cell 5"></button>
+        <button class="cell" data-i="5" aria-label="cell 6"></button>
+        <button class="cell" data-i="6" aria-label="cell 7"></button>
+        <button class="cell" data-i="7" aria-label="cell 8"></button>
+        <button class="cell" data-i="8" aria-label="cell 9"></button>
+        <svg class="strike" id="strike" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true">
+          <line id="strikeLine" x1="0" y1="0" x2="0" y2="0" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="btn btn-primary" id="resetBtn">New Round</button>
+      <button class="btn btn-ghost" id="clearBtn">Reset Scores</button>
+    </section>
+
+    <div class="banner" id="banner" aria-live="polite"></div>
+
+    <footer class="foot">
+      <span>✦ TickyTacky</span>
+      <span class="sep">·</span>
+      <span>click a square to play</span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
