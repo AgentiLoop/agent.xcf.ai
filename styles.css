@@ -540,6 +540,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .top-banner {
+        display: none !important;
+    }
+
     .main-title {
         font-size: 2.5rem;
     }
