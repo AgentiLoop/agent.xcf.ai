@@ -201,22 +201,21 @@
 
     if (difficulty === "easy") {
       // Threat-aware: always take the win, always block the loss,
-      // 51% optimal otherwise. (Eased 15% from 60% → 51%.)
+      // 37.5% optimal otherwise.
       const win = findImmediate("O");
       if (win != null) return win;
       const block = findImmediate("X");
       if (block != null) return block;
-      if (Math.random() < 0.51) return minimaxMove("O");
+      if (Math.random() < 0.375) return minimaxMove("O");
       return moves[Math.floor(Math.random() * moves.length)];
     }
     if (difficulty === "medium") {
-      // Almost perfect: takes wins, blocks, 78.75% optimal.
-      // (Eased 12.5% from 90% → 78.75%.)
+      // 67.5% optimal otherwise.
       const win = findImmediate("O");
       if (win != null) return win;
       const block = findImmediate("X");
       if (block != null) return block;
-      if (Math.random() < 0.7875) return minimaxMove("O");
+      if (Math.random() < 0.675) return minimaxMove("O");
       return moves[Math.floor(Math.random() * moves.length)];
     }
     return minimaxMove("O");
