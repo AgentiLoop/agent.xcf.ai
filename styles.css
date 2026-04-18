@@ -541,19 +541,28 @@ body {
 @media (max-width: 900px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
-     :not(.star-fork-banner) {
+        gap: 20px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .top-banner:not(.star-fork-banner) {
         display: none !important;
     }
 }
 
 @media (max-width: 768px) {
-    .top-banner:not(.star-fork-banner)-banner {
-        display: none !important
-}
-
-@media (max-width: 768px) {
-    .top-banner {
+    .top-banner:not(.star-fork-banner) {
         display: none !important;
+    }
+
+    .star-fork-banner {
+        display: block !important;
+        padding: 10px 12px !important;
+    }
+
+    .star-fork-banner p {
+        font-size: 0.85rem !important;
     }
 
     .main-title {
