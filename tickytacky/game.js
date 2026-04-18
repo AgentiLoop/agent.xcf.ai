@@ -216,16 +216,16 @@
     if (!moves.length) return null;
 
     if (difficulty === "easy") {
-      // Easy: often MISSES threats like a casual player.
-      // Takes an immediate win only 50% of the time.
-      // Blocks an immediate loss only 30% of the time.
-      // Plays optimally 20% of the time when there's no immediate threat.
+      // Easy: often misses threats like a casual player — but not clueless.
+      // Takes an immediate win 65% of the time.
+      // Blocks an immediate loss 45% of the time.
+      // Plays optimally 30% of the time when there's no immediate threat.
       // Otherwise: toddler-random (center > corners > edges).
       const win = findImmediate("O");
-      if (win != null && Math.random() < 0.50) return win;
+      if (win != null && Math.random() < 0.65) return win;
       const block = findImmediate("X");
-      if (block != null && Math.random() < 0.30) return block;
-      if (Math.random() < 0.20) return minimaxMove("O");
+      if (block != null && Math.random() < 0.45) return block;
+      if (Math.random() < 0.30) return minimaxMove("O");
       return toddlerMove();
     }
     if (difficulty === "medium") {
