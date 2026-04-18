@@ -574,11 +574,21 @@ body {
         gap: 20px;
     }
 
+    .release-table {
+        font-size: 0.85rem;
+    }
+
+    .release-table th,
+    .release-table td {
+        padding: 10px 6px;
+    }
+
     .release-table th.col-size,
     .release-table td.col-size,
     .release-table th.col-sha,
     .release-table td.col-sha {
-        display: none;
+        font-size: 0.8rem;
+        white-space: nowrap;
     }
 
     .llm-providers-grid {
