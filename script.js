@@ -19,6 +19,13 @@ function formatDate(date) {
     return date.toLocaleDateString('en-US', options);
 }
 
+function formatDateShort(date) {
+    const m = date.getMonth() + 1;
+    const d = date.getDate();
+    const y = String(date.getFullYear()).slice(-2);
+    return m + '.' + d + '.' + y;
+}
+
 async function autoDiscoverReleases() {
     try {
         const response = await fetch(GITHUB_API);
@@ -66,13 +73,15 @@ async function autoDiscoverReleases() {
             for (const asset of release.assets) {
                 if (!asset.name.endsWith('.dmg')) continue;
                 const version = extractVersion(asset.name);
-                const date = formatDate(new Date(release.published_at || release.created_at));
+                const dateObj = new Date(release.published_at || release.created_at);
+                const date = formatDate(dateObj);
+                const dateShort = formatDateShort(dateObj);
                 const size = formatFileSize(asset.size);
                 const url = asset.browser_download_url;
 
                 rows += '<tr>'
                     + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
-                    + '<td>' + date + '</td>'
+                    + '<td><span class="date-full">' + date + '</span><span class="date-short">' + dateShort + '</span></td>'
                     + '<td class="col-size">' + size + '</td>'
                     + '<td class="col-sha">' + asset.download_count.toLocaleString() + '</td>'
                     + '</tr>';

@@ -359,6 +359,9 @@ body {
     border-bottom: 1px solid #f0f0f0;
 }
 
+.date-full { display: inline; }
+.date-short { display: none; }
+
 .version-badge {
     display: inline-block;
     background: rgba(0, 122, 255, 0.85);
@@ -590,6 +593,9 @@ body {
         font-size: 0.8rem;
         white-space: nowrap;
     }
+
+    .date-full { display: none; }
+    .date-short { display: inline; white-space: nowrap; }
 
     .llm-providers-grid {
         grid-template-columns: 1fr !important;
