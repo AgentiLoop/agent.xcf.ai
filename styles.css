@@ -582,11 +582,15 @@ body {
 
     .release-table {
         font-size: 0.85rem;
+        table-layout: fixed;
+        width: 100%;
     }
 
     .release-table th,
     .release-table td {
         padding: 10px 6px;
+        width: 25%;
+        text-align: center;
     }
 
     .release-table th.col-size,
