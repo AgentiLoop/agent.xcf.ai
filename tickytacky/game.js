@@ -195,28 +195,44 @@
     return null;
   }
 
+  // "Toddler random" — like a 3-year-old picking a square: drawn to the
+  // shiny center, then corners, then edges. Not uniform, not optimal,
+  // just plausibly distracted. Center weight 4, corner weight 2, edge weight 1.
+  function toddlerMove() {
+    const moves = availableMoves(board);
+    if (!moves.length) return null;
+    const corners = new Set([0, 2, 6, 8]);
+    const center = 4;
+    const weighted = [];
+    for (const m of moves) {
+      const w = m === center ? 4 : corners.has(m) ? 2 : 1;
+      for (let i = 0; i < w; i++) weighted.push(m);
+    }
+    return weighted[Math.floor(Math.random() * weighted.length)];
+  }
+
   function chooseBotMove() {
     const moves = availableMoves(board);
     if (!moves.length) return null;
 
     if (difficulty === "easy") {
       // Threat-aware: always take the win, always block the loss,
-      // 37.5% optimal otherwise.
+      // 37.5% optimal, otherwise toddler-random (center > corners > edges).
       const win = findImmediate("O");
       if (win != null) return win;
       const block = findImmediate("X");
       if (block != null) return block;
       if (Math.random() < 0.375) return minimaxMove("O");
-      return moves[Math.floor(Math.random() * moves.length)];
+      return toddlerMove();
     }
     if (difficulty === "medium") {
-      // 67.5% optimal otherwise.
+      // 67.5% optimal, otherwise toddler-random (center > corners > edges).
       const win = findImmediate("O");
       if (win != null) return win;
       const block = findImmediate("X");
       if (block != null) return block;
       if (Math.random() < 0.675) return minimaxMove("O");
-      return moves[Math.floor(Math.random() * moves.length)];
+      return toddlerMove();
     }
     return minimaxMove("O");
   }
