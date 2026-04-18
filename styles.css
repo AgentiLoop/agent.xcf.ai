@@ -551,6 +551,13 @@ body {
     }
 }
 
+/* Hide sponsor banner on mobile landscape (any phone-width landscape viewport) */
+@media (orientation: landscape) and (max-width: 932px) {
+    .top-banner:not(.star-fork-banner) {
+        display: none !important;
+    }
+}
+
 @media (max-width: 768px) {
     .top-banner:not(.star-fork-banner) {
         display: none !important;
