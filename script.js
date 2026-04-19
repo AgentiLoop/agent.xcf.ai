@@ -69,9 +69,13 @@ async function autoDiscoverReleases() {
         if (!tbody) return;
 
         let rows = '';
+        let dmgCount = 0;
         for (const release of releases) {
+            if (dmgCount >= 7) break;
             for (const asset of release.assets) {
                 if (!asset.name.endsWith('.dmg')) continue;
+                if (dmgCount >= 7) break;
+                dmgCount++;
                 const version = extractVersion(asset.name);
                 const dateObj = new Date(release.published_at || release.created_at);
                 const date = formatDate(dateObj);
