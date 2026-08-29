@@ -72,24 +72,30 @@ async function autoDiscoverReleases() {
         let dmgCount = 0;
         for (const release of releases) {
             if (dmgCount >= 7) break;
+            // Combine DMG + ZIP download counts into one entry per release
+            let dmgAsset = null;
+            let combinedDownloads = 0;
             for (const asset of release.assets) {
-                if (!asset.name.endsWith('.dmg')) continue;
-                if (dmgCount >= 7) break;
-                dmgCount++;
-                const version = extractVersion(asset.name);
-                const dateObj = new Date(release.published_at || release.created_at);
-                const date = formatDate(dateObj);
-                const dateShort = formatDateShort(dateObj);
-                const size = formatFileSize(asset.size);
-                const url = asset.browser_download_url;
-
-                rows += '<tr>'
-                    + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
-                    + '<td><span class="date-full">' + date + '</span><span class="date-short">' + dateShort + '</span></td>'
-                    + '<td class="col-size">' + size + '</td>'
-                    + '<td class="col-sha">' + asset.download_count.toLocaleString() + '</td>'
-                    + '</tr>';
+                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) {
+                    combinedDownloads += asset.download_count;
+                    if (!dmgAsset && asset.name.endsWith('.dmg')) dmgAsset = asset;
+                }
             }
+            if (!dmgAsset) continue;
+            dmgCount++;
+            const version = extractVersion(dmgAsset.name);
+            const dateObj = new Date(release.published_at || release.created_at);
+            const date = formatDate(dateObj);
+            const dateShort = formatDateShort(dateObj);
+            const size = formatFileSize(dmgAsset.size);
+            const url = dmgAsset.browser_download_url;
+
+            rows += '<tr>'
+                + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
+                + '<td><span class="date-full">' + date + '</span><span class="date-short">' + dateShort + '</span></td>'
+                + '<td class="col-size">' + size + '</td>'
+                + '<td class="col-sha">' + combinedDownloads.toLocaleString() + '</td>'
+                + '</tr>';
         }
 
         tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">No releases found.</td></tr>';

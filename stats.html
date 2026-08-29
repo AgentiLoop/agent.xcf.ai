@@ -84,25 +84,43 @@
 
         function displayStats(releases) {
             let totalDownloads = 0;
-            let totalBuilds = 0;
-            let allAssets = [];
             let latestRelease = null;
+
+            // Group DMG + ZIP assets by version, combining download counts
+            const grouped = new Map();
 
             releases.forEach(release => {
                 if (!latestRelease) latestRelease = release;
 
                 release.assets.forEach(asset => {
                     totalDownloads += asset.download_count;
-                    totalBuilds++;
-                    allAssets.push({
-                        name: asset.name,
-                        downloads: asset.download_count,
-                        size: asset.size,
-                        date: new Date(asset.updated_at),
-                        url: asset.browser_download_url
-                    });
+                    const version = extractVersion(asset.name);
+                    const date = new Date(asset.updated_at);
+                    const isDmg = asset.name.endsWith('.dmg');
+
+                    if (grouped.has(version)) {
+                        const entry = grouped.get(version);
+                        entry.downloads += asset.download_count;
+                        if (date > entry.date) entry.date = date;
+                        if (isDmg) {
+                            entry.name = asset.name;
+                            entry.size = asset.size;
+                            entry.url = asset.browser_download_url;
+                        }
+                    } else {
+                        grouped.set(version, {
+                            name: asset.name,
+                            downloads: asset.download_count,
+                            size: asset.size,
+                            date: date,
+                            url: asset.browser_download_url
+                        });
+                    }
                 });
             });
+
+            const allAssets = [...grouped.values()];
+            const totalBuilds = allAssets.length;
 
             // Sort by date (newest first)
             allAssets.sort((a, b) => b.date - a.date);
