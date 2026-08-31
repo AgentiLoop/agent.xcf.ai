@@ -3,61 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agent! - Download Statistics</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14FE9YDJ2D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-14FE9YDJ2D');
+    </script>
+
+    <title>AgentiLoop Agent! — Download Statistics</title>
+    <meta name="description" content="Real-time download statistics from GitHub releases for AgentiLoop Agent! — Agentic AI for your Mac Desktop.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/AgentiLoop/Agent">
-    <meta property="og:title" content="Agent! Download Stats">
-    <meta property="og:description" content="Real-time download statistics from GitHub releases for Agent! - AI Assistant for your Mac Desktop.">
-    <meta property="og:image" content="agent-og.png">
+    <meta property="og:url" content="https://xcf.ai/stats.html">
+    <meta property="og:title" content="AgentiLoop Agent! — Download Stats">
+    <meta property="og:description" content="Real-time download statistics from GitHub releases for AgentiLoop Agent! — Agentic AI for your Mac Desktop.">
+    <meta property="og:image" content="https://xcf.ai/agent-og.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://github.com/AgentiLoop/Agent">
-    <meta property="twitter:title" content="Agent! Download Stats">
-    <meta property="twitter:description" content="Real-time download statistics from GitHub releases for Agent! - AI Assistant for your Mac Desktop.">
-    <meta property="twitter:image" content="agent-og.png">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuperBox64">
+    <meta name="twitter:title" content="AgentiLoop Agent! — Download Stats">
+    <meta name="twitter:description" content="Real-time download statistics from GitHub releases for AgentiLoop Agent! — Agentic AI for your Mac Desktop.">
+    <meta name="twitter:image" content="https://xcf.ai/agent-og.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stats.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
     <script>document.write('<script src="version.js?v='+Date.now()+'"><\/script>');</script>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Agent! Download Stats</h1>
-            <p>Agent! release statistics from GitHub</p>
-        </div>
 
-        <div id="stats-content">
-            <div class="loading">
-                <div class="loading-spinner"></div>
-                <p>Loading release statistics...</p>
+    <!-- NAV -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">
+                <img src="agent_icon.png" alt="AgentiLoop Agent! icon">
+                <span>AgentiLoop <em>Agent!</em></span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#showcase">Showcase</a>
+                <a href="index.html#providers">Providers</a>
+                <a href="index.html#get-started">Get Started</a>
+                <a href="index.html#releases">Releases</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <a href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary btn-sm">Download</a>
+        </div>
+    </header>
+
+    <!-- STATS -->
+    <section class="section stats-page">
+        <div class="container">
+            <div class="section-head">
+                <h2>Download <span class="grad">Statistics</span></h2>
+                <p>Real-time release statistics from GitHub for AgentiLoop Agent!</p>
+            </div>
+
+            <div id="stats-content">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading release statistics…</p>
+                </div>
+            </div>
+
+            <div class="center-cta">
+                <a href="index.html" class="btn btn-ghost">← Back to Home</a>
             </div>
         </div>
+    </section>
 
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="index.html" class="back-link">← Back to Home</a>
-        </div>
-    </div>
-
-    <footer style="background-color: #000; padding: 2rem 0; text-align: center; margin-top: 40px;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 40px;">
-            <div style="color: #fff; font-size: 0.9rem; margin-bottom: 1rem;">
-                <a href="index.html" style="color: #fff; text-decoration: none; margin: 0 15px;">Home</a>
-                <a href="https://github.com/AgentiLoop/Agent" style="color: #fff; text-decoration: none; margin: 0 15px;">GitHub</a>
-                <a href="https://github.com/AgentiLoop/Agent/releases" style="color: #fff; text-decoration: none; margin: 0 15px;">Releases</a>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
+                <a href="index.html">Home</a>
+                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" target="_blank" rel="noopener">Donate</a>
+                <a href="https://inkpen.io" target="_blank" rel="noopener">InkPen</a>
+                <a href="legal.html">Legal</a>
             </div>
-            <div style="color: #666; font-size: 0.8rem;">
-                © 2026 Agent! - Agentic AI for your  Mac Desktop
-            </div>
+            <p class="footer-tagline">© 2026 AgentiLoop — Agent! · Agentic AI for your Mac Desktop</p>
         </div>
     </footer>
 
@@ -196,7 +235,7 @@
                         <tbody>
                             ${allAssets.map(asset => `
                                 <tr>
-                                    <td class="build-name"><a href="${asset.url}">${extractVersion(asset.name)}</a></td>
+                                    <td class="build-name"><a href="${asset.url}" class="version-badge">${extractVersion(asset.name)}</a></td>
                                     <td class="download-count">${asset.downloads}</td>
                                     <td class="file-size">${formatFileSize(asset.size)}</td>
                                     <td class="release-date">${formatDate(asset.date)}</td>
@@ -207,7 +246,7 @@
                 </div>
 
                 <div class="refresh-container">
-                    <button class="refresh-btn" onclick="refreshStats()">Refresh Stats</button>
+                    <button class="btn btn-primary" onclick="refreshStats()">Refresh Stats</button>
                     <div class="last-updated">Last updated: ${new Date().toLocaleString()}</div>
                 </div>
             `;
@@ -219,7 +258,7 @@
             document.getElementById('stats-content').innerHTML = `
                 <div class="error">
                     <p><strong>Error:</strong> ${message}</p>
-                    <button class="refresh-btn" onclick="refreshStats()">Try Again</button>
+                    <button class="btn btn-primary" onclick="refreshStats()">Try Again</button>
                 </div>
             `;
         }
@@ -254,7 +293,7 @@
             document.getElementById('stats-content').innerHTML = `
                 <div class="loading">
                     <div class="loading-spinner"></div>
-                    <p>Loading release statistics...</p>
+                    <p>Loading release statistics…</p>
                 </div>
             `;
             fetchStats();
