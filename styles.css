@@ -43,6 +43,7 @@ img { max-width: 100%; display: block; }
     font-weight: 600;
     text-decoration: none;
     border: 1px solid transparent;
+    background-clip: padding-box;
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     font-family: var(--font);
