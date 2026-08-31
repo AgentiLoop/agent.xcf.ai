@@ -1,4 +1,4 @@
-const GITHUB_API = 'https://api.github.com/repos/macOS26/Agent/releases';
+const GITHUB_API = 'https://api.github.com/repos/AgentiLoop/Agent/releases';
 
 function extractVersion(filename) {
     if (!filename) return '';
