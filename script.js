@@ -62,6 +62,11 @@ async function autoDiscoverReleases() {
             if (setupLink) {
                 setupLink.href = latestDmg.url;
             }
+            const navBtn = document.getElementById('nav-download');
+            if (navBtn) {
+                navBtn.href = latestDmg.url;
+                navBtn.textContent = 'Download v' + latestDmg.version;
+            }
         }
 
         // Build the release history table
@@ -115,7 +120,7 @@ document.querySelectorAll('.wave').forEach(function(el) {
     el.addEventListener('animationiteration', randomize);
 });
 
-// Contact form — opens mailto with pre-filled fields
+// Contact form — opens a pre-filled GitHub issue
 (function() {
     var form = document.getElementById('contact-form');
     if (!form) return;
@@ -128,8 +133,11 @@ document.querySelectorAll('.wave').forEach(function(el) {
 
         if (!name || !email || !message) return;
 
-        var subject = encodeURIComponent('Agent! Contact: ' + name);
+        var title = encodeURIComponent('Contact: ' + name);
         var body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
-        window.location.href = 'mailto:agent@macos26.app?subject=' + subject + '&body=' + body;
+        window.open('https://github.com/AgentiLoop/Agent/issues/new?title=' + title + '&body=' + body, '_blank');
+
+        var status = document.getElementById('contact-status');
+        if (status) status.textContent = 'Opening GitHub — submit the pre-filled issue to send your message.';
     });
 })();
