@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://xcf.ai/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://xcf.ai/stats.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xcf.ai/legal.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://xcf.ai/tickytacky/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <priority>0.4</priority>
   </url>
 </urlset>
