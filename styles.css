@@ -116,8 +116,13 @@ img { max-width: 100%; display: block; }
 .hero {
     position: relative;
     text-align: center;
-    padding: 90px 0 70px;
+    padding: 40px 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 55px);
+    min-height: calc(100svh - 55px);
 }
 .hero-glow {
     position: absolute;
@@ -480,6 +485,15 @@ img { max-width: 100%; display: block; }
 .footer-tagline { font-size: 0.82rem; color: var(--text-dim); font-weight: 300; }
 
 /* ---------- Responsive ---------- */
+@media (max-height: 760px) {
+    .hero-badge { margin-bottom: 20px; }
+    .icon-wrap, .icon-wrap img { width: 96px; height: 96px; }
+    .icon-wrap { margin-bottom: 18px; }
+    .hero-cta { margin-top: 24px; }
+    .hero-stats { margin-top: 30px; }
+    .hero-lede { margin-top: 14px; }
+}
+
 @media (max-width: 900px) {
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .providers-grid { grid-template-columns: repeat(4, 1fr); }
@@ -491,7 +505,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 600px) {
     .section { padding: 60px 0; }
-    .hero { padding: 60px 0 50px; }
+    .hero { padding: 30px 0; }
     .features-grid, .steps-grid, .ai-grid { grid-template-columns: 1fr; }
     .providers-grid { grid-template-columns: repeat(3, 1fr); }
     .hero-stats { gap: 28px; }
