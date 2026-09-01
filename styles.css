@@ -19,7 +19,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
 body {
     font-family: var(--font);
@@ -238,12 +238,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ---------- Sections ---------- */
-.section { padding: 88px 0; }
+.section { padding: 56px 0; }
 .section-alt { background: var(--bg-alt); }
 .section-head {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto 52px;
+    margin: 0 auto 40px;
 }
 .section-head h2 {
     font-size: clamp(1.7rem, 4vw, 2.4rem);
@@ -272,7 +272,7 @@ img { max-width: 100%; height: auto; display: block; }
 .feature-card p { font-size: 0.88rem; color: var(--text-dim); font-weight: 300; }
 
 /* ---------- Showcase ---------- */
-.showcase { display: flex; flex-direction: column; gap: 72px; }
+.showcase { display: flex; flex-direction: column; gap: 56px; }
 .showcase-item {
     display: grid;
     grid-template-columns: 340px 1fr;
@@ -504,7 +504,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 600px) {
-    .section { padding: 60px 0; }
+    .section { padding: 44px 0; }
     .hero { padding: 30px 0; }
     .features-grid, .steps-grid, .ai-grid { grid-template-columns: 1fr; }
     .providers-grid { grid-template-columns: repeat(3, 1fr); }
