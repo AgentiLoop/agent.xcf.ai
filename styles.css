@@ -29,7 +29,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .container-narrow { max-width: 680px; }
