@@ -163,13 +163,16 @@ img { max-width: 100%; display: block; }
     inset: -14px;
     border-radius: 36px;
     border: 2px solid rgba(59, 130, 246, 0.4);
-    animation: wave-pulse 3.2s ease-out infinite;
+    opacity: 0;
+    animation: wave-pulse 3.6s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
     transform: rotate(var(--wave-rot, 0deg));
     z-index: 1;
+    will-change: transform, opacity;
 }
-.wave-2 { animation-delay: 1.6s; border-color: rgba(34, 211, 238, 0.35); }
+.wave-2 { animation-delay: 1.8s; border-color: rgba(34, 211, 238, 0.35); }
 @keyframes wave-pulse {
-    0%   { opacity: 0.8; transform: scale(0.9) rotate(var(--wave-rot, 0deg)); }
+    0%   { opacity: 0;   transform: scale(0.9)  rotate(var(--wave-rot, 0deg)); }
+    12%  { opacity: 0.53; transform: scale(0.96) rotate(var(--wave-rot, 0deg)); }
     100% { opacity: 0;   transform: scale(1.45) rotate(var(--wave-rot, 0deg)); }
 }
 
