@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xcf.ai/sitemap.xml
+Sitemap: https://agentiloop.ai/sitemap.xml
