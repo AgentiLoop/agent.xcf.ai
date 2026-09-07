@@ -1,4 +1,5 @@
-const GITHUB_API = 'https://api.github.com/repos/AgentiLoop/Agent/releases';
+const GITHUB_REPO_API = 'https://api.github.com/repos/AgentiLoop/Agent';
+const GITHUB_API = GITHUB_REPO_API + '/releases';
 
 function extractVersion(filename) {
     if (!filename) return '';
@@ -110,6 +111,24 @@ async function autoDiscoverReleases() {
 }
 
 autoDiscoverReleases();
+
+// Live GitHub stars / forks (refreshes every 60s, stays under the 60 req/hr unauthenticated limit)
+async function updateRepoStats() {
+    try {
+        const response = await fetch(GITHUB_REPO_API);
+        if (!response.ok) return;
+        const repo = await response.json();
+        const stars = document.getElementById('gh-stars');
+        const forks = document.getElementById('gh-forks');
+        if (stars && typeof repo.stargazers_count === 'number') stars.textContent = repo.stargazers_count.toLocaleString();
+        if (forks && typeof repo.forks_count === 'number') forks.textContent = repo.forks_count.toLocaleString();
+    } catch (e) {
+        // Silently fail — placeholders remain
+    }
+}
+
+updateRepoStats();
+setInterval(updateRepoStats, 60000);
 
 // Randomize wave rotation each cycle
 document.querySelectorAll('.wave').forEach(function(el) {
