@@ -38,22 +38,32 @@ async function autoDiscoverReleases() {
         // Find the latest release with a DMG asset
         let latestDmg = null;
         for (const release of releases) {
+            let hasDmg = false;
+            let releaseDownloads = 0;
             for (const asset of release.assets) {
-                if (asset.name.endsWith('.dmg')) {
-                    if (!latestDmg) {
-                        latestDmg = {
-                            url: asset.browser_download_url,
-                            version: extractVersion(asset.name),
-                            tag: release.tag_name
-                        };
-                    }
-                    break;
+                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) releaseDownloads += asset.download_count;
+                if (asset.name.endsWith('.dmg') && !hasDmg) {
+                    hasDmg = true;
+                    latestDmg = {
+                        url: asset.browser_download_url,
+                        version: extractVersion(asset.name),
+                        tag: release.tag_name,
+                        downloads: 0
+                    };
                 }
+            }
+            if (hasDmg) {
+                latestDmg.downloads = releaseDownloads;
+                break;
             }
         }
 
         // Update the download button and setup link
         if (latestDmg) {
+            const latestNum = document.getElementById('gh-latest-downloads');
+            if (latestNum) latestNum.textContent = latestDmg.downloads.toLocaleString();
+            const latestLabel = document.getElementById('gh-latest-label');
+            if (latestLabel) latestLabel.textContent = latestDmg.version + ' Downloads';
             const downloadBtn = document.getElementById('download-btn');
             if (downloadBtn) {
                 downloadBtn.href = latestDmg.url;
