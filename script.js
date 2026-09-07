@@ -70,6 +70,18 @@ async function autoDiscoverReleases() {
             }
         }
 
+        // Total downloads across all releases (DMG + ZIP)
+        let totalDownloads = 0;
+        for (const release of releases) {
+            for (const asset of release.assets) {
+                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) {
+                    totalDownloads += asset.download_count;
+                }
+            }
+        }
+        const totalEl = document.getElementById('gh-downloads');
+        if (totalEl) totalEl.textContent = totalDownloads.toLocaleString();
+
         // Build the release history table
         const tbody = document.getElementById('release-history-body');
         if (!tbody) return;
