@@ -51,6 +51,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
 .btn-primary {
     background: var(--grad);
+    background-clip: border-box;
     color: #04101f;
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
 }
