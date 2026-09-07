@@ -213,6 +213,10 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 14px;
     margin-top: 34px;
 }
+.hero-cta .btn {
+    min-width: 200px;
+    text-align: center;
+}
 .hero-stats {
     display: flex;
     flex-wrap: wrap;
