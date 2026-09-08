@@ -10,7 +10,8 @@ What it does, in order:
   3. Renders the 1920x1080 "screenshots" promo banner into press/kit/promo.
   4. Regenerates the screenshot and banner figures inside press/index.html
      between the marker comments, and fixes the screenshot count in the hero.
-  5. Writes press/kit/README.txt and rebuilds press/agentiloop-agent-press-kit.zip.
+  5. Fixes the screenshot count in press/kit/README.txt (the plain-text fact
+     sheet) and rebuilds press/agentiloop-agent-press-kit.zip.
 
 Cloudflare Workers static assets refuse files over 25 MiB, so the ZIP size is
 checked at the end and the script fails loudly if it is too large.
@@ -36,7 +37,7 @@ PROMO_DIR = KIT_DIR / "promo"
 BRAND_DIR = KIT_DIR / "brand"
 PREVIEW_DIR = PRESS_DIR / "img" / "screenshots"
 INDEX_HTML = PRESS_DIR / "index.html"
-FACT_SHEET = KIT_DIR / "agentiloop-agent-fact-sheet.txt"
+README = KIT_DIR / "README.txt"
 ZIP_PATH = PRESS_DIR / "agentiloop-agent-press-kit.zip"
 ZIP_TOP_FOLDER = "AgentiLoop Agent Press Kit"
 ZIP_LIMIT_BYTES = 25 * 1024 * 1024
@@ -250,37 +251,18 @@ def update_index_html(count: int) -> None:
     print(f"  index.html: {count} screenshot figures, banner figure, hero note updated")
 
 
-def update_fact_sheet(count: int) -> None:
-    text = FACT_SHEET.read_text()
+def update_readme(count: int) -> None:
+    """README.txt is the plain-text fact sheet; only its screenshot count is generated."""
+    text = README.read_text()
     word = NUMBER_WORDS[count]
-    text, n = re.subn(r"^Screenshots: .*$", f"Screenshots: {word} full-resolution, unframed PNG captures of AgentiLoop Agent! on macOS 26, showing real tasks.", text, flags=re.M)
+    text, n = re.subn(r"^Screenshots contains \w+ full-resolution", f"Screenshots contains {word} full-resolution", text, flags=re.M)
     if n != 1:
-        sys.exit("Screenshots line not found in fact sheet")
-    FACT_SHEET.write_text(text)
+        sys.exit("Screenshots line not found in README.txt")
+    README.write_text(text)
 
 
-def write_readme(count: int) -> Path:
-    """README.txt mirrors the fact sheet's header block, then lists the folders."""
-    readme = KIT_DIR / "README.txt"
-    fact_sheet = FACT_SHEET.read_text()
-    header = fact_sheet.split("\nONE SENTENCE\n", 1)[0].rstrip() + "\n\n"
-    readme.write_text(
-        header
-        + "CONTENTS\n"
-        f"Screenshots/  {NUMBER_WORDS[count].capitalize()} full-resolution, unframed PNG captures of AgentiLoop Agent! on macOS 26.\n"
-        "Promo/        Two 1920x1080 PNG banners for hero images and social cards.\n"
-        "Brand/        The app icon at 1024, 512, and 256 pixels as transparent PNGs, rendered as macOS 26 draws it.\n"
-        "              Please use it unmodified: no recoloring, cropping, or added effects.\n"
-        f"{FACT_SHEET.name}\n"
-        "              Plain-text fact sheet, descriptions, key features, developer quote, and bio.\n\n"
-        "AgentiLoop Agent! is free and open source (MIT License): https://github.com/AgentiLoop/Agent\n"
-        "(c) 2026 Logos InkPen LLC. The AgentiLoop Agent! name and logo are trademarks of Logos InkPen LLC.\n"
-    )
-    return readme
-
-
-def build_zip(readme: Path) -> None:
-    entries: list[tuple[Path, str]] = [(readme, readme.name), (FACT_SHEET, FACT_SHEET.name)]
+def build_zip() -> None:
+    entries: list[tuple[Path, str]] = [(README, README.name)]
     for folder, label in ((SCREENSHOT_DIR, "Screenshots"), (PROMO_DIR, "Promo"), (BRAND_DIR, "Brand")):
         for path in sorted(folder.iterdir()):
             if path.suffix.lower() == ".png":
@@ -311,10 +293,9 @@ def main() -> None:
     render_screenshot_banner()
     print("Updating page and text")
     update_index_html(len(SCREENSHOTS))
-    update_fact_sheet(len(SCREENSHOTS))
-    readme = write_readme(len(SCREENSHOTS))
+    update_readme(len(SCREENSHOTS))
     print("Building ZIP")
-    build_zip(readme)
+    build_zip()
 
 
 if __name__ == "__main__":
