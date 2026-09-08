@@ -712,6 +712,70 @@ body.press-page .proof-grid span {
 	line-height: 1.5;
 }
 
+/* ---------- Coverage and community ---------- */
+body.press-page .coverage-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+body.press-page .coverage-card,
+body.press-page .review-card {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: clamp(1.4rem, 3vw, 2rem);
+	border: 1px solid var(--press-line);
+	border-radius: var(--press-radius);
+	background: var(--press-bg-soft);
+}
+
+body.press-page .coverage-card h3 {
+	margin: 0;
+	font-size: 1.15rem;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+body.press-page .coverage-card h3 a,
+body.press-page .review-card figcaption a,
+body.press-page .community-copy a {
+	color: var(--press-accent-2);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+body.press-page .coverage-card p {
+	margin: 0.8rem 0 0;
+	color: var(--press-muted);
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+body.press-page .coverage-card blockquote,
+body.press-page .review-card blockquote {
+	margin: 0;
+	font-size: 1.12rem;
+	line-height: 1.55;
+}
+
+body.press-page .coverage-card blockquote {
+	margin-top: auto;
+	padding-top: 1rem;
+	color: var(--press-text);
+}
+
+body.press-page .review-card figcaption {
+	margin-top: auto;
+	padding-top: 1.25rem;
+	color: var(--press-muted);
+	font-size: 0.92rem;
+}
+
+body.press-page .community-copy {
+	margin-top: 2rem;
+}
+
 /* ---------- Contact ---------- */
 body.press-page .press-contact-section {
 	padding-top: 0;
@@ -819,7 +883,8 @@ body.press-page .screenshot-image:focus-visible {
 	body.press-page .feature-list,
 	body.press-page .screenshot-grid,
 	body.press-page .brand-grid,
-	body.press-page .proof-grid {
+	body.press-page .proof-grid,
+	body.press-page .coverage-grid {
 		grid-template-columns: 1fr;
 	}
 

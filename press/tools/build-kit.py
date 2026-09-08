@@ -57,6 +57,7 @@ class Screenshot:
     file: str
     title: str
     alt: str
+    source: str
 
 
 # Order here is the order on the page.
@@ -65,31 +66,37 @@ SCREENSHOTS = [
         "agentiloop-agent-github-release.png",
         "Publishing a GitHub release",
         "AgentiLoop Agent! main window: the LLM Output panel reports that GitHub release v1.1.9.205 was created with the gh command line tool, above the Steps list and the activity log showing the shell commands it ran",
+        "from the 1.1.9 release notes",
     ),
     Screenshot(
         "agentiloop-agent-test-verification.png",
         "Verifying a fix with the test suite",
         "AgentiLoop Agent! running the ResponseCompletionTests suite with xcodebuild to verify a fix, with the test output and a green TEST SUCCEEDED line in the activity log",
+        "from the 1.1.8 release notes",
     ),
     Screenshot(
         "agentiloop-agent-release-notes.png",
         "Drafting release notes from git history",
         "AgentiLoop Agent! rewriting release notes to match earlier releases, with the Find in log search bar open and the git log it read in the activity log",
+        "from the 1.1.4 release notes",
     ),
     Screenshot(
         "agentiloop-agent-markdown-release-notes.png",
         "Markdown rendering in the activity log",
         "AgentiLoop Agent! creating a GitHub release for another project, with emoji section headers and bullet lists rendered in the activity log and the next task typed into the input field",
+        "from the 1.0.61 release notes",
     ),
     Screenshot(
         "agentiloop-agent-dmg-attach.png",
         "Building a disk image and attaching it to a release",
         "AgentiLoop Agent! attaching a freshly built DMG to a GitHub release, with the hdiutil output in the activity log",
+        "from the 1.0.69 release notes",
     ),
     Screenshot(
         "agentiloop-agent-chess.png",
         "A game of chess in the output panel",
         "AgentiLoop Agent! playing chess: the LLM Output panel shows an ASCII chess board after White's second move and asks for the next move",
+        "from the 1.0.93 release notes",
     ),
 ]
 
@@ -203,7 +210,7 @@ def figure_html(shot: Screenshot) -> str:
         f"\t\t\t\t\t\t\t\t<img src=\"{preview}\" width=\"{width}\" height=\"{height}\" alt=\"{alt}\" loading=\"lazy\">\n"
         "\t\t\t\t\t\t\t</a>\n"
         "\t\t\t\t\t\t\t<figcaption>\n"
-        f"\t\t\t\t\t\t\t\t<span>{title}<small>{width}×{height} PNG</small></span>\n"
+        f"\t\t\t\t\t\t\t\t<span>{title}<small>{width}×{height} PNG · {html.escape(shot.source)}</small></span>\n"
         f"\t\t\t\t\t\t\t\t<a href=\"{png}\" download>Download PNG</a>\n"
         "\t\t\t\t\t\t\t</figcaption>\n"
         "\t\t\t\t\t\t</figure>\n"
@@ -253,12 +260,13 @@ def update_fact_sheet(count: int) -> None:
 
 
 def write_readme(count: int) -> Path:
+    """README.txt mirrors the fact sheet's header block, then lists the folders."""
     readme = KIT_DIR / "README.txt"
+    fact_sheet = FACT_SHEET.read_text()
+    header = fact_sheet.split("\nONE SENTENCE\n", 1)[0].rstrip() + "\n\n"
     readme.write_text(
-        "AGENTILOOP AGENT! PRESS KIT\n"
-        "https://agentiloop.ai/press/\n\n"
-        "Press contact: Todd Bruss, agent@agentiloop.ai\n\n"
-        "CONTENTS\n"
+        header
+        + "CONTENTS\n"
         f"Screenshots/  {NUMBER_WORDS[count].capitalize()} full-resolution, unframed PNG captures of AgentiLoop Agent! on macOS 26.\n"
         "Promo/        Two 1920x1080 PNG banners for hero images and social cards.\n"
         "Brand/        The app icon at 1024, 512, and 256 pixels as transparent PNGs, rendered as macOS 26 draws it.\n"

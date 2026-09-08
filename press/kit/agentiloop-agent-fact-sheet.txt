@@ -21,7 +21,7 @@ Source: https://github.com/AgentiLoop/Agent
 Press kit: https://agentiloop.ai/press/
 
 ONE SENTENCE
-AgentiLoop Agent! is a free, open-source macOS app that turns any of 21 LLM providers into an autonomous agent for the Mac: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.
+AgentiLoop Agent! is a free, open-source macOS app that runs an autonomous agent on the Mac with any of 21 LLM providers behind it: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.
 
 ONE PARAGRAPH
 AgentiLoop Agent! is a native macOS app that turns any large language model into an autonomous agent for the whole Mac, not just a code editor. Written entirely in Swift 6.2 and SwiftUI with no Electron, no Node.js packages, and no telemetry, it runs a self-verifying loop: plan, call a tool, observe the real result, correct course, and repeat until the task's goal criteria are met with evidence. It builds Xcode projects, drives other apps through the Accessibility API, AppleScript, JavaScript for Automation, and 51 ScriptingBridge bridges, runs shell commands as the user or as root through helpers the user approves once, and extends through MCP servers, Swift scripts compiled at runtime, sub-agents, voice, and iMessage. It works with 21 providers, from Claude, OpenAI, and Gemini to local Ollama, vLLM, and LM Studio, plus on-device Apple Intelligence. It is free and open source under the MIT License; users bring their own API key.
@@ -44,7 +44,7 @@ KEY FEATURES
 - Tabs, memory, plans, and skills, with context compaction sized to each model's real context window.
 
 DEVELOPER
-Todd Bruss is a software engineer in Charlotte, North Carolina, and the founder of Logos InkPen LLC. He has shipped software for Apple platforms for more than fifteen years: his StarPlayr software-defined radio player was trademarked in 2009, and his later work includes StarPlayrX, a SiriusXM player for macOS built for visually impaired listeners; Logos InkPen, a vector drawing app for macOS; the XCF Xcode MCP server; and SuperBox64, a line of handmade arcade controllers and Raspberry Pi retro consoles. He works on the Identity team at Iru. AgentiLoop Agent! grew out of three years of building agentic AI apps, and every Swift package the app depends on is his own work.
+Todd Bruss is a software engineer in Charlotte, North Carolina, and the founder of Logos InkPen LLC. He has shipped software for Apple platforms for more than fifteen years: his StarPlayr software-defined radio player was trademarked in 2009, and his later work includes StarPlayrX, a SiriusXM player for macOS built for visually impaired listeners; Logos InkPen, a vector drawing app for macOS; the XCF Xcode MCP server; and SuperBox64, a line of handmade arcade controllers and Raspberry Pi retro consoles. He works on the Identity team at Iru. AgentiLoop Agent! grew out of three years of building agentic AI apps, and the ten Agent-prefixed Swift packages it is built on are his own work.
 X: https://x.com/SuperBox64
 LinkedIn: https://www.linkedin.com/in/agentiloop-agent/
 GitHub: https://github.com/AgentiLoop

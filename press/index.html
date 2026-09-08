@@ -56,7 +56,7 @@
 	      "name": "AgentiLoop Agent!",
 	      "operatingSystem": "macOS 26.4 or later",
 	      "applicationCategory": "DeveloperApplication",
-	      "description": "AgentiLoop Agent! is a free, open-source macOS app that turns any of 21 LLM providers into an autonomous agent for the Mac: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.",
+	      "description": "AgentiLoop Agent! is a free, open-source macOS app that runs an autonomous agent on the Mac with any of 21 LLM providers behind it: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.",
 	      "url": "https://agentiloop.ai/",
 	      "image": "https://agentiloop.ai/press/kit/brand/agentiloop-agent-app-icon-1024.png",
 	      "downloadUrl": "https://github.com/AgentiLoop/Agent/releases/latest",
@@ -118,7 +118,7 @@
 						<div class="press-hero-copy">
 							<div class="press-kicker">Press kit</div>
 							<h1 id="press-title">AgentiLoop <em>Agent!</em></h1>
-							<p class="press-deck">A free, open-source macOS app that turns any of 21 LLM providers into an autonomous agent for the Mac: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.</p>
+							<p class="press-deck">A free, open-source macOS app that runs an autonomous agent on the Mac with any of 21 LLM providers behind it: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.</p>
 							<p class="press-contact">
 								<strong>Press contact:</strong>
 								Todd Bruss –
@@ -179,13 +179,13 @@
 						<h2 id="about-title">About AgentiLoop Agent!</h2>
 					</header>
 					<div class="press-copy-block press-copy-short">
-						<p>AgentiLoop Agent! is a native macOS app that turns any large language model into an autonomous agent for the whole Mac, not just a code editor: it builds Xcode projects, drives other apps, runs scripts and shell commands, and finishes tasks from a plain-English request.</p>
+						<p>AgentiLoop Agent! is a native macOS app that turns a large language model into an autonomous agent for the whole Mac, not just a code editor. It is built for developers and Mac power users who want an AI to build Xcode projects, drive other apps, run scripts and shell commands, and finish tasks from a plain-English request. It is written entirely in Swift with no Electron or Node.js, works with 21 providers including fully local models, and is free and open source under the MIT License; users bring their own API key.</p>
 					</div>
 					<div class="press-copy-block press-story">
-						<p>Most AI coding tools live in a terminal, a text editor, or an Electron window, and their reach ends at the file system. The rest of the Mac, its applications, windows, menus, scripts, and build tools, stays out of bounds.</p>
+						<p>Many AI coding tools live in a terminal, a text editor, or an Electron window, and their reach ends at the file system. The rest of the Mac, its applications, windows, menus, scripts, and build tools, stays out of bounds.</p>
 						<p>AgentiLoop Agent! is written entirely in Swift 6.2 and SwiftUI, with no Electron, no Node.js packages, and no telemetry. It runs an autonomous loop: plan the task, call a tool, observe the real result, correct course, and repeat. A task cannot declare itself finished until its goal criteria are marked complete with evidence, and an optional critic pass reviews the diff first.</p>
 						<p>The agent reaches every layer of the Mac. It drives any application through the Accessibility API, AppleScript, JavaScript for Automation, and 51 ScriptingBridge app bridges. It builds, runs, and analyzes Xcode projects natively, with clickable build errors. It runs shell commands as the user through a Launch Agent, or as root through a Launch Daemon the user approves once. It can be extended with Model Context Protocol servers, Swift scripts compiled at runtime, and parallel sub-agents, and it answers to a spoken “Agent!” or to an iMessage from the user’s iPhone.</p>
-						<p>Any AI can sit behind the loop: 21 providers, from Claude, OpenAI, and Gemini to DeepSeek, Qwen, OpenRouter, and fully local Ollama, vLLM, and LM Studio, with on-device Apple Intelligence handling triage, summaries, and context compression at no token cost. Users bring their own key. Files and screen contents never leave the Mac except as the prompt text sent to the chosen cloud provider, and every action is logged.</p>
+						<p>Any AI can sit behind the loop: 21 providers, from Claude, OpenAI, and Gemini to DeepSeek, Qwen, OpenRouter, and fully local Ollama, vLLM, and LM Studio, with on-device Apple Intelligence handling triage, summaries, and context compression at no token cost. Users bring their own key. Nothing leaves the Mac except what is sent to the chosen provider as part of the prompt, local providers keep everything on the machine, and every action is logged.</p>
 					</div>
 					<figure class="press-copy-block press-story">
 						<blockquote>
@@ -211,7 +211,7 @@
 						<li><strong>Agentic coding with native Xcode integration.</strong> It reads codebases, edits with string-replace diffs, builds and runs Xcode projects with clickable errors, manages git, bumps versions, and indexes repositories into a portable JSONL repo map.</li>
 						<li><strong>Desktop automation through the Accessibility API.</strong> It clicks, types, scrolls, reads, and navigates any Mac app by element, with fuzzy auto-retry, plus AppleScript, JavaScript for Automation, and 51 ScriptingBridge app bridges, all in-process.</li>
 						<li><strong>AgentScript: Swift scripts compiled at runtime.</strong> The agent writes plain Swift files, compiles them to dynamic libraries with Swift Package Manager, and loads them in-process with the app’s own permissions. About 35 examples ship with the app; deleted scripts go to a restorable Trash.</li>
-						<li><strong>Every edit can be undone.</strong> Each file edit is snapshotted before it happens, with one-click rollback in the UI, an undo action, or a whole-task rewind.</li>
+						<li><strong>Every edit can be rolled back.</strong> Each file edit is snapshotted before it happens and kept for a week, with one-click rollback in the UI, an undo action, or a whole-task rewind.</li>
 						<li><strong>21 LLM providers and a fallback chain.</strong> Claude, Codex, OpenAI, Google Gemini, Grok, Mistral, Codestral, Mistral Vibe, DeepSeek, Hugging Face, MiniMax, Z.ai, BigModel, Qwen, OpenRouter, Requesty, Ollama cloud, local Ollama, vLLM, LM Studio, and on-device Apple Intelligence. If a provider fails or rate-limits, the agent switches to the next one configured.</li>
 						<li><strong>Apple Intelligence as an on-device agent.</strong> Apple’s Foundation Models triage simple requests locally, summarize completed tasks, translate tool errors into plain English, suggest the next step, and compress long conversations, all without leaving the Mac or spending API tokens.</li>
 						<li><strong>Privileged execution the user approves once.</strong> Shell commands run as the user through a Launch Agent or as root through a Launch Daemon, registered with SMAppService and connected over XPC. The Launch Daemon is optional.</li>
@@ -231,7 +231,7 @@
 							<div class="press-kicker">Product media</div>
 							<h2 id="images-title">Full-resolution screenshots</h2>
 						</div>
-						<p>Retina PNG captures of AgentiLoop Agent! running on macOS 26, with no marketing frames, captions, or watermarks. All show real tasks on a demo project.</p>
+						<p>Retina PNG captures of AgentiLoop Agent! on macOS 26, with no marketing frames, captions, or watermarks. All show real tasks from the developer’s own projects; captures from earlier versions show the project’s previous GitHub organization name, macOS26.</p>
 					</header>
 					<div class="screenshot-grid">
 						<!-- screenshots:start (generated by press/tools/build-kit.py) -->
@@ -240,7 +240,7 @@
 								<img src="img/screenshots/agentiloop-agent-github-release.webp" width="2434" height="2238" alt="AgentiLoop Agent! main window: the LLM Output panel reports that GitHub release v1.1.9.205 was created with the gh command line tool, above the Steps list and the activity log showing the shell commands it ran" loading="lazy">
 							</a>
 							<figcaption>
-								<span>Publishing a GitHub release<small>2434×2238 PNG</small></span>
+								<span>Publishing a GitHub release<small>2434×2238 PNG · from the 1.1.9 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-github-release.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -249,7 +249,7 @@
 								<img src="img/screenshots/agentiloop-agent-test-verification.webp" width="2368" height="2162" alt="AgentiLoop Agent! running the ResponseCompletionTests suite with xcodebuild to verify a fix, with the test output and a green TEST SUCCEEDED line in the activity log" loading="lazy">
 							</a>
 							<figcaption>
-								<span>Verifying a fix with the test suite<small>2368×2162 PNG</small></span>
+								<span>Verifying a fix with the test suite<small>2368×2162 PNG · from the 1.1.8 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-test-verification.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -258,7 +258,7 @@
 								<img src="img/screenshots/agentiloop-agent-release-notes.webp" width="2288" height="2162" alt="AgentiLoop Agent! rewriting release notes to match earlier releases, with the Find in log search bar open and the git log it read in the activity log" loading="lazy">
 							</a>
 							<figcaption>
-								<span>Drafting release notes from git history<small>2288×2162 PNG</small></span>
+								<span>Drafting release notes from git history<small>2288×2162 PNG · from the 1.1.4 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-release-notes.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -267,7 +267,7 @@
 								<img src="img/screenshots/agentiloop-agent-markdown-release-notes.webp" width="2658" height="2844" alt="AgentiLoop Agent! creating a GitHub release for another project, with emoji section headers and bullet lists rendered in the activity log and the next task typed into the input field" loading="lazy">
 							</a>
 							<figcaption>
-								<span>Markdown rendering in the activity log<small>2658×2844 PNG</small></span>
+								<span>Markdown rendering in the activity log<small>2658×2844 PNG · from the 1.0.61 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-markdown-release-notes.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -276,7 +276,7 @@
 								<img src="img/screenshots/agentiloop-agent-dmg-attach.webp" width="2524" height="2572" alt="AgentiLoop Agent! attaching a freshly built DMG to a GitHub release, with the hdiutil output in the activity log" loading="lazy">
 							</a>
 							<figcaption>
-								<span>Building a disk image and attaching it to a release<small>2524×2572 PNG</small></span>
+								<span>Building a disk image and attaching it to a release<small>2524×2572 PNG · from the 1.0.69 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-dmg-attach.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -285,7 +285,7 @@
 								<img src="img/screenshots/agentiloop-agent-chess.webp" width="2352" height="1448" alt="AgentiLoop Agent! playing chess: the LLM Output panel shows an ASCII chess board after White&#x27;s second move and asks for the next move" loading="lazy">
 							</a>
 							<figcaption>
-								<span>A game of chess in the output panel<small>2352×1448 PNG</small></span>
+								<span>A game of chess in the output panel<small>2352×1448 PNG · from the 1.0.93 release notes</small></span>
 								<a href="kit/screenshots/agentiloop-agent-chess.png" download>Download PNG</a>
 							</figcaption>
 						</figure>
@@ -417,18 +417,50 @@
 					</header>
 					<div class="developer-copy">
 						<p>Todd Bruss is a software engineer in Charlotte, North Carolina, and the founder of <a href="https://inkpen.io" target="_blank" rel="noopener">Logos InkPen LLC</a>. He has shipped software for Apple platforms for more than fifteen years: his StarPlayr software-defined radio player was trademarked in 2009, and his later work includes StarPlayrX, a SiriusXM player for macOS built for visually impaired listeners; Logos InkPen, a vector drawing app for macOS; the XCF Xcode MCP server; and SuperBox64, a line of handmade arcade controllers and Raspberry Pi retro consoles. He works on the Identity team at Iru.</p>
-						<p>AgentiLoop Agent! grew out of three years of building agentic AI apps, including ANIE, Game Changer, BattleScript, and XCF. Every Swift package the app depends on is his own work, and the app has since written a video game, built apps, and produced its own release disk images.</p>
+						<p>AgentiLoop Agent! grew out of three years of building agentic AI apps, including ANIE, Game Changer, BattleScript, and XCF. The ten Agent-prefixed Swift packages it is built on, from the LLM layer to the accessibility engine, are his own work, and the app has since written a video game, built apps, and produced its own release disk images.</p>
 					</div>
 					<div class="proof-grid" aria-label="GitHub statistics">
-						<div><strong>594</strong><span>GitHub stars as of September 6, 2026</span></div>
-						<div><strong>65</strong><span>Forks on GitHub</span></div>
-						<div><strong>10</strong><span>Public releases since April 12, 2026</span></div>
+						<div id="proof-stars"><strong>597</strong><span>GitHub stars as of September 8, 2026</span></div>
+						<div id="proof-forks"><strong>66</strong><span>Forks on GitHub as of September 8, 2026</span></div>
+						<div id="proof-releases"><strong>10</strong><span>Public releases since April 12, 2026</span></div>
 					</div>
 					<div class="asset-links">
 						<a href="https://x.com/SuperBox64" target="_blank" rel="noopener">X</a>
 						<a href="https://www.linkedin.com/in/agentiloop-agent/" target="_blank" rel="noopener">LinkedIn</a>
 						<a href="https://github.com/AgentiLoop" target="_blank" rel="noopener">GitHub</a>
 						<a href="mailto:agent@agentiloop.ai">agent@agentiloop.ai</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- COVERAGE AND COMMUNITY -->
+			<section class="press-section" id="coverage" aria-labelledby="coverage-title">
+				<div class="container">
+					<header class="press-section-heading press-section-heading-wide">
+						<div>
+							<div class="press-kicker">Coverage and community</div>
+							<h2 id="coverage-title">What others have said</h2>
+						</div>
+						<p>Independent coverage, and comments left by users on the public GitHub repository, quoted as written.</p>
+					</header>
+					<div class="coverage-grid">
+						<article class="coverage-card">
+							<div class="press-kicker">Article</div>
+							<h3><a href="https://blog.ish.chat/r/agentiloop-agent-1-1-1-recoverable-context-compaction" target="_blank" rel="noopener">Agent! 1.1.1 makes context compaction leave a way back</a></h3>
+							<p>BLOGish, September 1, 2026. A technical write-up of how versions 1.0.99 and 1.1.1 changed context compaction so that cleared tool results can be recovered instead of re-read, prompted by a user’s bug report.</p>
+							<blockquote>“Shortening context should not destroy the route back to evidence.”</blockquote>
+						</article>
+						<figure class="review-card">
+							<blockquote>“Thank you, not only for above-and-beyond tech support, but also thanks to you all for the project itself. It works very well for me.”</blockquote>
+							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/37#issuecomment-5472885446" target="_blank" rel="noopener">heurihermilab</a>, GitHub issue 37, August 31, 2026</figcaption>
+						</figure>
+						<figure class="review-card">
+							<blockquote>“Confirmed fixed in the latest build! DeepSeek v4-flash tool calling is working correctly now. Thank you for the quick follow-up.”</blockquote>
+							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/22" target="_blank" rel="noopener">nobody-buaa</a>, GitHub issue 22, June 3, 2026</figcaption>
+						</figure>
+					</div>
+					<div class="developer-copy community-copy">
+						<p>The project accepts outside contributions: as of September 8, 2026, eleven pull requests from seven contributors have been merged, including the Requesty and MiniMax providers, the Exa web-search tool, a Parallel Search preset for MCP, README translations, and test suites. A user’s suggestion in <a href="https://github.com/AgentiLoop/Agent/discussions/42" target="_blank" rel="noopener">Discussions</a> on August 30, 2026, that agents be allowed to write a status document on their final iteration, shipped in version 1.1.8 two days later.</p>
 					</div>
 				</div>
 			</section>
@@ -462,5 +494,6 @@
 			</div>
 		</footer>
 	</div>
+	<script src="press.js"></script>
 </body>
 </html>
