@@ -1,0 +1,19 @@
+# Files kept in the repository but not published by Cloudflare Workers.
+# Same syntax as .gitignore; Wrangler skips anything matching a line here.
+
+# This file itself
+.assetsignore
+
+# Press kit rebuild tooling and its inputs. The finished assets under
+# press/kit/{screenshots,promo,brand} and the ZIP are published; these are the
+# scripts and the uncropped source captures used to regenerate them.
+press/tools/
+press/kit/screenshots-full/
+
+# Python build artifacts
+__pycache__/
+*.pyc
+
+# Local agent and editor state, not for publication
+.agent/
+.claude/

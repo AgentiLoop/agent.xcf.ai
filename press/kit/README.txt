@@ -7,7 +7,7 @@ agent@agentiloop.ai
 
 FACT SHEET
 App: AgentiLoop Agent! (shown as "Agent!" in the menu bar and in Finder)
-What it is: AgentiLoop Agent! is the Mac app that puts an AI to work on the desktop: type what should happen, pick a provider, and the agent reads, writes, builds, clicks, and scripts until the job is finished. Open source under the MIT License.
+What it is: AgentiLoop Agent! is the Mac app that puts an AI to work on the desktop: type what should happen, pick one of 21 AI providers, and the agent reads, writes, builds, clicks, and scripts until the job is finished. Open source under the MIT License.
 Price: Free. Users bring their own API key for cloud providers or run local models at no cost. A PayPal donation is requested.
 Platform: Mac with Apple Silicon; macOS 26.4 or later. English.
 Distribution: Direct download from GitHub Releases as a DMG or ZIP, signed with an Apple Developer ID and notarized by Apple. Not on the Mac App Store.

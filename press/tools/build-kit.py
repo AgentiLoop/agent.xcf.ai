@@ -44,6 +44,10 @@ README = KIT_DIR / "README.txt"
 ZIP_PATH = PRESS_DIR / "agentiloop-agent-press-kit.zip"
 ZIP_TOP_FOLDER = "AgentiLoop Agent Press Kit"
 ZIP_LIMIT_BYTES = 25 * 1024 * 1024
+# Fixed timestamp for every archive entry. Without it the ZIP is byte-different
+# on every build even when nothing changed, which re-commits megabytes for
+# nothing and makes it impossible to tell a real asset change from a rebuild.
+ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
 PREVIEW_MAX_WIDTH = 1400
 
 # Site palette (mirrors ../styles.css).
@@ -299,7 +303,10 @@ def build_zip() -> None:
                 entries.append((path, f"{label}/{path.name}"))
     with zipfile.ZipFile(ZIP_PATH, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
         for path, arcname in entries:
-            archive.write(path, f"{ZIP_TOP_FOLDER}/{arcname}")
+            info = zipfile.ZipInfo(f"{ZIP_TOP_FOLDER}/{arcname}", date_time=ZIP_TIMESTAMP)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            archive.writestr(info, path.read_bytes())
     size = ZIP_PATH.stat().st_size
     print(f"  {ZIP_PATH.name}: {len(entries)} files, {size / 1024 / 1024:.1f} MiB")
     if size > ZIP_LIMIT_BYTES:

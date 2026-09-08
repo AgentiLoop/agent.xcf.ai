@@ -4,3 +4,7 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Python build artifacts from press/tools
+__pycache__/
+*.pyc
