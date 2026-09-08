@@ -10,7 +10,9 @@ What it does, in order:
   3. Renders the 1920x1080 "screenshots" promo banner into press/kit/promo.
   4. Regenerates the screenshot and banner figures inside press/index.html
      between the marker comments, and fixes the screenshot count in the hero.
-  5. Fixes the screenshot count in press/kit/README.txt (the plain-text fact
+  5. Stamps press.css and press.js with a content hash in index.html so a
+     stale stylesheet can never be served from a browser cache.
+  6. Fixes the screenshot count in press/kit/README.txt (the plain-text fact
      sheet) and rebuilds press/agentiloop-agent-press-kit.zip.
 
 Cloudflare Workers static assets refuse files over 25 MiB, so the ZIP size is
@@ -21,6 +23,7 @@ Requires Pillow (python3 -m pip install pillow).
 
 from __future__ import annotations
 
+import hashlib
 import html
 import re
 import sys
@@ -262,6 +265,22 @@ def update_index_html(count: int) -> None:
     print(f"  index.html: {count} screenshot figures, banner figure, hero note updated")
 
 
+def stamp_assets() -> None:
+    """Add ?v=<content hash> to the stylesheet and script links.
+
+    Without this a browser that cached an older press.css keeps using it after a
+    redeploy, silently rendering the page with missing rules.
+    """
+    text = INDEX_HTML.read_text()
+    for name in ("press.css", "press.js"):
+        digest = hashlib.sha256((PRESS_DIR / name).read_bytes()).hexdigest()[:8]
+        text, n = re.subn(rf'{re.escape(name)}(\?v=[0-9a-f]+)?"', f'{name}?v={digest}"', text)
+        if n != 1:
+            sys.exit(f"expected exactly one reference to {name} in index.html, found {n}")
+        print(f"  {name}?v={digest}")
+    INDEX_HTML.write_text(text)
+
+
 def update_readme(count: int) -> None:
     """README.txt is the plain-text fact sheet; only its screenshot count is generated."""
     text = README.read_text()
@@ -304,6 +323,7 @@ def main() -> None:
     render_screenshot_banner()
     print("Updating page and text")
     update_index_html(len(SCREENSHOTS))
+    stamp_assets()
     update_readme(len(SCREENSHOTS))
     print("Building ZIP")
     build_zip()
