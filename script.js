@@ -1,4 +1,5 @@
-const GITHUB_API = 'https://api.github.com/repos/AgentiLoop/Agent/releases';
+const GITHUB_REPO_API = 'https://api.github.com/repos/AgentiLoop/Agent';
+const GITHUB_API = GITHUB_REPO_API + '/releases';
 
 function extractVersion(filename) {
     if (!filename) return '';
@@ -37,22 +38,34 @@ async function autoDiscoverReleases() {
         // Find the latest release with a DMG asset
         let latestDmg = null;
         for (const release of releases) {
+            let hasDmg = false;
+            let releaseDownloads = 0;
             for (const asset of release.assets) {
-                if (asset.name.endsWith('.dmg')) {
-                    if (!latestDmg) {
-                        latestDmg = {
-                            url: asset.browser_download_url,
-                            version: extractVersion(asset.name),
-                            tag: release.tag_name
-                        };
-                    }
-                    break;
+                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) releaseDownloads += asset.download_count;
+                if (asset.name.endsWith('.dmg') && !hasDmg) {
+                    hasDmg = true;
+                    latestDmg = {
+                        url: asset.browser_download_url,
+                        version: extractVersion(asset.name),
+                        tag: release.tag_name,
+                        downloads: 0
+                    };
                 }
+            }
+            if (hasDmg) {
+                latestDmg.downloads = releaseDownloads;
+                break;
             }
         }
 
         // Update the download button and setup link
         if (latestDmg) {
+            const latestNum = document.getElementById('gh-latest-downloads');
+            if (latestNum) latestNum.textContent = latestDmg.downloads.toLocaleString();
+            const latestLabel = document.getElementById('gh-latest-label');
+            if (latestLabel) latestLabel.textContent = latestDmg.version + ' Downloads';
+            const latestLink = document.getElementById('gh-latest-link');
+            if (latestLink) latestLink.href = 'https://github.com/AgentiLoop/Agent/releases/tag/' + latestDmg.tag;
             const downloadBtn = document.getElementById('download-btn');
             if (downloadBtn) {
                 downloadBtn.href = latestDmg.url;
@@ -68,6 +81,18 @@ async function autoDiscoverReleases() {
                 navBtn.textContent = 'Download v' + latestDmg.version;
             }
         }
+
+        // Total downloads across all releases (DMG + ZIP)
+        let totalDownloads = 0;
+        for (const release of releases) {
+            for (const asset of release.assets) {
+                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) {
+                    totalDownloads += asset.download_count;
+                }
+            }
+        }
+        const totalEl = document.getElementById('gh-downloads');
+        if (totalEl) totalEl.textContent = totalDownloads.toLocaleString();
 
         // Build the release history table
         const tbody = document.getElementById('release-history-body');
@@ -110,6 +135,24 @@ async function autoDiscoverReleases() {
 }
 
 autoDiscoverReleases();
+
+// Live GitHub stars / forks (refreshes every 60s, stays under the 60 req/hr unauthenticated limit)
+async function updateRepoStats() {
+    try {
+        const response = await fetch(GITHUB_REPO_API);
+        if (!response.ok) return;
+        const repo = await response.json();
+        const stars = document.getElementById('gh-stars');
+        const forks = document.getElementById('gh-forks');
+        if (stars && typeof repo.stargazers_count === 'number') stars.textContent = repo.stargazers_count.toLocaleString();
+        if (forks && typeof repo.forks_count === 'number') forks.textContent = repo.forks_count.toLocaleString();
+    } catch (e) {
+        // Silently fail — placeholders remain
+    }
+}
+
+updateRepoStats();
+setInterval(updateRepoStats, 60000);
 
 // Randomize wave rotation each cycle
 document.querySelectorAll('.wave').forEach(function(el) {

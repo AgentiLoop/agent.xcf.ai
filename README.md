@@ -1,4 +1,3 @@
 # agentiloop.ai
-Agent! OpenAI Assistance
-
+Agent! 
 Apple AI + Accessibility — on-device automation.
