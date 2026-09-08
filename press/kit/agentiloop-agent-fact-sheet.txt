@@ -1,5 +1,5 @@
 AGENTILOOP AGENT! PRESS KIT
-Updated September 6, 2026
+Updated September 8, 2026
 
 PRESS CONTACT
 Todd Bruss
@@ -14,6 +14,7 @@ Distribution: Direct download from GitHub Releases as a DMG or ZIP, signed with 
 Public launch: April 12, 2026
 Latest release: 1.1.9 (build 205), September 2, 2026
 Developer: Todd Bruss, Logos InkPen LLC - Charlotte, North Carolina, USA
+Developer contact: agent@agentiloop.ai | X: https://x.com/SuperBox64 | LinkedIn: https://www.linkedin.com/in/agentiloop-agent/
 Download: https://github.com/AgentiLoop/Agent/releases/latest
 Website: https://agentiloop.ai
 Source: https://github.com/AgentiLoop/Agent
@@ -49,6 +50,6 @@ LinkedIn: https://www.linkedin.com/in/agentiloop-agent/
 GitHub: https://github.com/AgentiLoop
 
 CONTENTS OF THIS KIT
-Screenshots: full-resolution, unframed PNG captures of AgentiLoop Agent! on macOS 26, showing real tasks on a demo project.
+Screenshots: six full-resolution, unframed PNG captures of AgentiLoop Agent! on macOS 26, showing real tasks.
 Promo: two 1920x1080 PNG banners for hero images and social cards.
 Brand: the app icon at 1024, 512, and 256 pixels as transparent PNGs, rendered exactly as macOS 26 draws it. Please use it unmodified: no recoloring, cropping, or added effects.
