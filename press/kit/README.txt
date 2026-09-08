@@ -21,7 +21,7 @@ Source: https://github.com/AgentiLoop/Agent
 Press kit: https://agentiloop.ai/press/
 
 ONE SENTENCE
-AgentiLoop Agent! is a free, open-source macOS app that runs an autonomous agent on the Mac with any of 21 LLM providers behind it: it writes and builds code, drives any app through the Accessibility API and AppleScript, runs shell commands, and automates workflows from plain-English requests.
+A free, open-source macOS autonomous agent powered by 21 LLMs that writes code, controls apps, runs shell commands, and automates workflows from plain English.
 
 ONE PARAGRAPH
 AgentiLoop Agent! is a native macOS app that turns any large language model into an autonomous agent for the whole Mac, not just a code editor. Written entirely in Swift 6.2 and SwiftUI with no Electron, no Node.js packages, and no telemetry, it runs a self-verifying loop: plan, call a tool, observe the real result, correct course, and repeat until the task's goal criteria are met with evidence. It builds Xcode projects, drives other apps through the Accessibility API, AppleScript, JavaScript for Automation, and 51 ScriptingBridge bridges, runs shell commands as the user or as root through helpers the user approves once, and extends through MCP servers, Swift scripts compiled at runtime, sub-agents, voice, and iMessage. It works with 21 providers, from Claude, OpenAI, and Gemini to local Ollama, vLLM, and LM Studio, plus on-device Apple Intelligence. It is free and open source under the MIT License; users bring their own API key.
