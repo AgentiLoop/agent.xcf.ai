@@ -226,6 +226,8 @@ img { max-width: 100%; height: auto; display: block; }
     margin-top: 56px;
 }
 .stat { text-align: center; }
+a.stat { text-decoration: none; display: block; }
+a.stat:hover .stat-label { color: var(--text); }
 .stat-num {
     display: block;
     font-size: 2rem;
