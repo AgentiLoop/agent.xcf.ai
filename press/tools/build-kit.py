@@ -28,7 +28,7 @@ import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 PRESS_DIR = Path(__file__).resolve().parent.parent
 KIT_DIR = PRESS_DIR / "kit"
@@ -121,7 +121,11 @@ def optimize_png(path: Path) -> None:
 
 
 def write_preview(source: Path, destination: Path) -> None:
-    image = Image.open(source).convert("RGB")
+    """WebP preview at page width. Alpha is kept so the window's rounded corners
+    stay transparent; flattening them would paint in the wallpaper color that
+    still sits under the cropped-away corners."""
+    image = Image.open(source)
+    image = image.convert("RGBA") if image.mode == "RGBA" else image.convert("RGB")
     if image.width > PREVIEW_MAX_WIDTH:
         ratio = PREVIEW_MAX_WIDTH / image.width
         image = image.resize((PREVIEW_MAX_WIDTH, round(image.height * ratio)), Image.LANCZOS)
@@ -155,12 +159,19 @@ def radial_glow(size: tuple[int, int], center: tuple[int, int], radius: int, col
 
 
 def rounded_shot(source: Path, width: int, corner: int) -> Image.Image:
+    """Scale a screenshot for the banner and round its corners.
+
+    The source captures are already cropped to the window and carry transparent
+    corners over leftover wallpaper pixels. The new mask is multiplied into the
+    existing alpha rather than replacing it, so a corner that is already
+    transparent can never be turned back on and reveal that wallpaper.
+    """
     image = Image.open(source).convert("RGBA")
     ratio = width / image.width
     image = image.resize((width, round(image.height * ratio)), Image.LANCZOS)
     mask = Image.new("L", image.size, 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, image.width - 1, image.height - 1], radius=corner, fill=255)
-    image.putalpha(mask)
+    image.putalpha(ImageChops.multiply(image.getchannel("A"), mask))
     return image
 
 
