@@ -64,6 +64,8 @@ async function autoDiscoverReleases() {
             if (latestNum) latestNum.textContent = latestDmg.downloads.toLocaleString();
             const latestLabel = document.getElementById('gh-latest-label');
             if (latestLabel) latestLabel.textContent = latestDmg.version + ' Downloads';
+            const latestLink = document.getElementById('gh-latest-link');
+            if (latestLink) latestLink.href = 'https://github.com/AgentiLoop/Agent/releases/tag/' + latestDmg.tag;
             const downloadBtn = document.getElementById('download-btn');
             if (downloadBtn) {
                 downloadBtn.href = latestDmg.url;
