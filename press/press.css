@@ -482,6 +482,11 @@ body.press-page .feature-list strong {
 	font-weight: 600;
 }
 
+body.press-page .feature-list .feature-note {
+	display: block;
+	margin-top: 0.6rem;
+}
+
 body.press-page .feature-list li::before {
 	position: absolute;
 	top: 1.9rem;
