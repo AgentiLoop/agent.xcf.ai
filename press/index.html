@@ -179,7 +179,7 @@
 						<h2 id="about-title">About AgentiLoop Agent!</h2>
 					</header>
 					<div class="press-copy-block press-copy-short">
-						<p>AgentiLoop Agent! is a native macOS app that turns a large language model into an autonomous agent for the whole Mac, not just a code editor. It is built for developers and Mac power users who want an AI to build Xcode projects, drive other apps, run scripts and shell commands, and finish tasks from a plain-English request. It is written entirely in Swift with no Electron or Node.js, works with 21 providers including fully local models, and is free and open source under the MIT License; users bring their own API key.</p>
+						<p>AgentiLoop Agent! is the Mac app that puts an AI in charge of the whole computer, not just a code editor: it builds Xcode projects, drives other apps, runs scripts, and finishes tasks from a plain-English request.</p>
 					</div>
 					<div class="press-copy-block press-story">
 						<p>Many AI coding tools live in a terminal, a text editor, or an Electron window, and their reach ends at the file system. The rest of the Mac, its applications, windows, menus, scripts, and build tools, stays out of bounds.</p>
@@ -199,9 +199,12 @@
 			<!-- KEY FEATURES -->
 			<section class="press-section" id="features" aria-labelledby="features-title">
 				<div class="container">
-					<header class="press-section-heading">
-						<div class="press-kicker">Key features</div>
-						<h2 id="features-title">What AgentiLoop Agent! does</h2>
+					<header class="press-section-heading press-section-heading-wide">
+						<div>
+							<div class="press-kicker">Key features</div>
+							<h2 id="features-title">What AgentiLoop Agent! does</h2>
+						</div>
+						<p>One idea runs through the whole app: an AI should be able to do anything a person can do on a Mac, and show its work.</p>
 					</header>
 					<ul class="feature-list">
 						<li><strong>Self-verifying task loop.</strong> The agent reasons, executes a tool, observes the real output, and corrects itself. A task cannot be marked complete until its goal criteria are verified with evidence, and an opt-in critic reviews the diff before completion.</li>
@@ -433,31 +436,26 @@
 			<!-- COVERAGE AND COMMUNITY -->
 			<section class="press-section" id="coverage" aria-labelledby="coverage-title">
 				<div class="container">
-					<header class="press-section-heading press-section-heading-wide">
-						<div>
-							<div class="press-kicker">Coverage and community</div>
-							<h2 id="coverage-title">What others have said</h2>
-						</div>
-						<p>Independent coverage, and comments left by users on the public GitHub repository, quoted as written.</p>
+					<header class="press-section-heading">
+						<div class="press-kicker">Coverage and community</div>
+						<h2 id="coverage-title">What others say</h2>
 					</header>
-					<div class="coverage-grid">
-						<article class="coverage-card">
-							<div class="press-kicker">Article</div>
-							<h3><a href="https://blog.ish.chat/r/agentiloop-agent-1-1-1-recoverable-context-compaction" target="_blank" rel="noopener">Agent! 1.1.1 makes context compaction leave a way back</a></h3>
-							<p>BLOGish, September 1, 2026. A technical write-up of how versions 1.0.99 and 1.1.1 changed context compaction so that cleared tool results can be recovered instead of re-read, prompted by a user’s bug report.</p>
+					<div class="review-grid">
+						<figure class="review-card">
+							<div class="review-source">Independent article</div>
 							<blockquote>“Shortening context should not destroy the route back to evidence.”</blockquote>
-						</article>
+							<figcaption><a href="https://blog.ish.chat/r/agentiloop-agent-1-1-1-recoverable-context-compaction" target="_blank" rel="noopener">BLOGish</a>, September 1, 2026, on the 1.0.99 and 1.1.1 compaction changes</figcaption>
+						</figure>
 						<figure class="review-card">
+							<div class="review-source">GitHub issue</div>
 							<blockquote>“Thank you, not only for above-and-beyond tech support, but also thanks to you all for the project itself. It works very well for me.”</blockquote>
-							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/37#issuecomment-5472885446" target="_blank" rel="noopener">heurihermilab</a>, GitHub issue 37, August 31, 2026</figcaption>
+							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/37#issuecomment-5472885446" target="_blank" rel="noopener">heurihermilab</a>, August 31, 2026</figcaption>
 						</figure>
 						<figure class="review-card">
+							<div class="review-source">GitHub issue</div>
 							<blockquote>“Confirmed fixed in the latest build! DeepSeek v4-flash tool calling is working correctly now. Thank you for the quick follow-up.”</blockquote>
-							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/22" target="_blank" rel="noopener">nobody-buaa</a>, GitHub issue 22, June 3, 2026</figcaption>
+							<figcaption><a href="https://github.com/AgentiLoop/Agent/issues/22" target="_blank" rel="noopener">nobody-buaa</a>, June 3, 2026</figcaption>
 						</figure>
-					</div>
-					<div class="developer-copy community-copy">
-						<p>The project accepts outside contributions: as of September 8, 2026, eleven pull requests from seven contributors have been merged, including the Requesty and MiniMax providers, the Exa web-search tool, a Parallel Search preset for MCP, README translations, and test suites. A user’s suggestion in <a href="https://github.com/AgentiLoop/Agent/discussions/42" target="_blank" rel="noopener">Discussions</a> on August 30, 2026, that agents be allowed to write a status document on their final iteration, shipped in version 1.1.8 two days later.</p>
 					</div>
 				</div>
 			</section>
