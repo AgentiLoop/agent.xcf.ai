@@ -23,7 +23,7 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://agentiloop.ai/">
     <meta property="og:title" content="AgentiLoop Agent! — Agentic AI for your Mac Desktop">
-    <meta property="og:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, zero Electron, 18 LLM providers, no subscription, no telemetry.">
+    <meta property="og:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, 18 LLM providers, no subscription, no telemetry.">
     <meta property="og:image" content="https://agentiloop.ai/agent-og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@SuperBox64">
     <meta name="twitter:title" content="AgentiLoop Agent! — Agentic AI for your Mac Desktop">
-    <meta name="twitter:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, zero Electron, 18 LLM providers, no subscription, no telemetry.">
+    <meta name="twitter:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, 18 LLM providers, no subscription, no telemetry.">
     <meta name="twitter:image" content="https://agentiloop.ai/agent-og.png">
     <meta name="twitter:image:alt" content="AgentiLoop Agent! app icon and headline: Agentic AI for your Mac Desktop.">
 
@@ -104,7 +104,7 @@
     <section class="hero">
         <div class="hero-glow"></div>
         <div class="container">
-            <div class="hero-badge">macOS26.app is now <strong>AgentiLoop.ai</strong></div>
+            <div class="hero-badge">Welcome to <strong>AgentiLoop.ai</strong> for Mac</div>
             <div class="icon-wrap">
                 <div class="wave wave-1"></div>
                 <div class="wave wave-2"></div>
@@ -112,17 +112,19 @@
             </div>
             <h1>AgentiLoop <span class="grad">Agent!</span></h1>
             <p class="hero-sub">Agentic AI for your Mac Desktop</p>
-            <p class="hero-lede">One app. Any AI. Total command over your Mac. Build apps, write code, manage files, drive any application, and automate workflows — all through natural language. 100% native Swift. Zero Electron. Built for macOS 26.4.1 Tahoe.</p>
+            <p class="hero-lede">One app. Any AI. Total command over your Mac. Build apps, write code, manage files, drive any application, and automate workflows — all through natural language. 100% native Swift. Compatible with macOS 26.4.1 and later.</p>
             <div class="hero-cta">
                 <a id="download-btn" href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary">Download Latest</a>
                 <a href="https://github.com/AgentiLoop/Agent" class="btn btn-ghost" target="_blank" rel="noopener">Star on GitHub</a>
+                <a href="https://github.com/AgentiLoop/Agent/fork" class="btn btn-ghost" target="_blank" rel="noopener">Fork on GitHub</a>
                 <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" class="btn btn-ghost" target="_blank" rel="noopener">Donate</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><span class="stat-num">18</span><span class="stat-label">LLM Providers</span></div>
-                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Native Swift</span></div>
-                <div class="stat"><span class="stat-num">0</span><span class="stat-label">Electron / NPM</span></div>
-                <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Subscription</span></div>
+                <a href="#providers" class="stat"><span class="stat-num">18</span><span class="stat-label">LLM Providers</span></a>
+                <a href="https://github.com/AgentiLoop/Agent/releases/latest" class="stat" id="gh-latest-link" target="_blank" rel="noopener"><span class="stat-num" id="gh-latest-downloads">–</span><span class="stat-label" id="gh-latest-label">Latest Downloads</span></a>
+                <a href="stats.html" class="stat"><span class="stat-num" id="gh-downloads">–</span><span class="stat-label">Total Downloads</span></a>
+                <a href="https://github.com/AgentiLoop/Agent/stargazers" class="stat" target="_blank" rel="noopener"><span class="stat-num" id="gh-stars">–</span><span class="stat-label">GitHub Stars</span></a>
+                <a href="https://github.com/AgentiLoop/Agent/forks" class="stat" target="_blank" rel="noopener"><span class="stat-num" id="gh-forks">–</span><span class="stat-label">Forks</span></a>
             </div>
         </div>
     </section>
@@ -255,7 +257,7 @@
         <div class="container">
             <div class="section-head">
                 <h2>Bring your own AI — 18 providers</h2>
-                <p>Cloud APIs, local models, or free on-device Apple Intelligence. Your keys, your machine, your data. No subscription. No telemetry. No vendor lock-in.</p>
+                <p>Cloud APIs or local models. Your keys, your machine, your data. No vendor lock-in.</p>
             </div>
             <div class="providers-grid">
                 <div class="provider"><span>🟠</span>Claude</div>
@@ -275,7 +277,7 @@
                 <div class="provider"><span>🔬</span>LM Studio</div>
                 <div class="provider"><span>💻</span>Codestral</div>
                 <div class="provider"><span>🎵</span>Mistral Vibe</div>
-                <div class="provider"><span>🍎</span>Apple Intelligence</div>
+                <div class="provider"><span>🔴</span>MiniMax</div>
             </div>
         </div>
     </section>
@@ -337,7 +339,7 @@
         <div class="container">
             <div class="section-head">
                 <h2>Releases</h2>
-                <p>Recommended pairings — Commercial: <strong>Claude Fable 5.1</strong> · Open Source: <strong>GLM 5.3</strong> or <strong>Qwen 3.8</strong></p>
+                <p>Recommended pairings — Commercial: <strong>Claude Fable 5.1</strong> · Cloud: <strong>GLM 5.3</strong> · Local: <strong>Qwen 3.8</strong></p>
             </div>
             <table class="release-table">
                 <thead>

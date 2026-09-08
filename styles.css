@@ -51,6 +51,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-sm { padding: 8px 20px; font-size: 0.85rem; }
 .btn-primary {
     background: var(--grad);
+    border: 0;
     color: #04101f;
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
 }
@@ -213,6 +214,10 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 14px;
     margin-top: 34px;
 }
+.hero-cta .btn {
+    min-width: 170px;
+    text-align: center;
+}
 .hero-stats {
     display: flex;
     flex-wrap: wrap;
@@ -221,6 +226,8 @@ img { max-width: 100%; height: auto; display: block; }
     margin-top: 56px;
 }
 .stat { text-align: center; }
+a.stat { text-decoration: none; display: block; }
+a.stat:hover .stat-label { color: var(--text); }
 .stat-num {
     display: block;
     font-size: 2rem;
