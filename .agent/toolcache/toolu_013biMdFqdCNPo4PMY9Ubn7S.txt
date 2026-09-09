@@ -1,0 +1,404 @@
+Replaced 1 occurrence in /Users/toddbruss/Documents/GitHub/Agent.xcf.ai/index.html [verified: true]
+
+📎<!DOCTYPE html>
+📎<html lang="en">
+📎<head>
+📎    <meta charset="UTF-8">
+📎    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+📎
+📎    <!-- Google tag (gtag.js) -->
+📎    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14FE9YDJ2D"></script>
+📎    <script>
+📎      window.dataLayer = window.dataLayer || [];
+📎      function gtag(){dataLayer.push(arguments);}
+📎      gtag('js', new Date());
+📎      gtag('config', 'G-14FE9YDJ2D');
+📎    </script>
+📎
+📎    <title>AgentiLoop Agent! — Agentic AI for your Mac Desktop</title>
+📎    <meta name="description" content="AgentiLoop Agent! is a 100% native macOS agentic AI. One app, 18 LLM providers, total command over your Mac. Build apps, automate workflows, control any app — through natural language.">
+📎    <link rel="canonical" href="https://agentiloop.ai/">
+📎
+📎    <!-- Open Graph / Facebook -->
+📎    <meta property="og:type" content="website">
+📎    <meta property="og:site_name" content="AgentiLoop">
+📎    <meta property="og:locale" content="en_US">
+📎    <meta property="og:url" content="https://agentiloop.ai/">
+📎    <meta property="og:title" content="AgentiLoop Agent! — Agentic AI for your Mac Desktop">
+📎    <meta property="og:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, zero Electron, 18 LLM providers, no subscription, no telemetry.">
+📎    <meta property="og:image" content="https://agentiloop.ai/agent-og.png">
+📎    <meta property="og:image:width" content="1200">
+📎    <meta property="og:image:height" content="630">
+📎    <meta property="og:image:alt" content="AgentiLoop Agent! app icon — a blue rounded square with a neural network constellation of interconnected white dots and lines — next to the headline AgentiLoop Agent!, Agentic AI for your Mac Desktop.">
+📎    <meta name="theme-color" content="#3b82f6">
+📎
+📎    <!-- Twitter / X -->
+📎    <meta name="twitter:card" content="summary_large_image">
+📎    <meta name="twitter:site" content="@SuperBox64">
+📎    <meta name="twitter:title" content="AgentiLoop Agent! — Agentic AI for your Mac Desktop">
+📎    <meta name="twitter:description" content="One app. Any AI. Total command over your Mac. 100% native Swift, zero Electron, 18 LLM providers, no subscription, no telemetry.">
+📎    <meta name="twitter:image" content="https://agentiloop.ai/agent-og.png">
+📎    <meta name="twitter:image:alt" content="AgentiLoop Agent! app icon and headline: Agentic AI for your Mac Desktop.">
+📎
+📎    <!-- Donation -->
+📎    <link rel="payment" href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S">
+📎    <meta name="funding" content="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S">
+📎
+📎    <!-- Favicon -->
+📎    <link rel="icon" type="image/x-icon" href="favicon.ico">
+📎    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+📎    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+📎    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+📎    <link rel="manifest" href="site.webmanifest">
+📎
+📎    <!-- Stylesheet -->
+📎    <link rel="stylesheet" href="styles.css">
+📎
+📎    <script>document.write('<script src="version.js?v='+Date.now()+'"><\/script>');</script>
+📎
+📎    <!-- Structured Data -->
+📎    <script type="application/ld+json">
+📎    {
+📎      "@context": "https://schema.org",
+📎      "@type": "SoftwareApplication",
+📎      "name": "AgentiLoop Agent!",
+📎      "operatingSystem": "macOS",
+📎      "applicationCategory": "DeveloperApplication",
+📎      "description": "AgentiLoop Agent! is a 100% native macOS agentic AI. One app, 18 LLM providers, total command over your Mac. Build apps, automate workflows, control any app — through natural language.",
+📎      "url": "https://agentiloop.ai/",
+📎      "image": "https://agentiloop.ai/agent-og.png",
+📎      "downloadUrl": "https://github.com/AgentiLoop/Agent/releases",
+📎      "offers": {
+📎        "@type": "Offer",
+📎        "price": "0",
+📎        "priceCurrency": "USD"
+📎      },
+📎      "author": {
+📎        "@type": "Organization",
+📎        "name": "AgentiLoop",
+📎        "url": "https://agentiloop.ai/"
+📎      }
+📎    }
+📎    </script>
+📎</head>
+📎<body>
+📎
+📎    <!-- NAV -->
+📎    <header class="nav">
+📎        <div class="nav-inner">
+📎            <a href="#" class="nav-brand">
+📎                <img src="agent_icon.png" alt="AgentiLoop Agent! icon">
+📎                <span>AgentiLoop <em>Agent!</em></span>
+📎            </a>
+📎            <nav class="nav-links">
+📎                <a href="#features">Features</a>
+📎                <a href="#showcase">Showcase</a>
+📎                <a href="#providers">Providers</a>
+📎                <a href="#get-started">Get Started</a>
+📎                <a href="#releases">Releases</a>
+📎                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+📎            </nav>
+📎            <a id="nav-download" href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary btn-sm">Download</a>
+📎        </div>
+📎    </header>
+📎
+📎    <!-- HERO -->
+📎    <section class="hero">
+📎        <div class="hero-glow"></div>
+📎        <div class="container">
+📎            <div class="hero-badge">Welcome to <strong>AgentiLoop.ai</strong> for Mac</div>
+📎            <div class="icon-wrap">
+📎                <div class="wave wave-1"></div>
+📎                <div class="wave wave-2"></div>
+📎                <img src="agent_icon.png" alt="AgentiLoop Agent! App Icon">
+📎            </div>
+📎            <h1>AgentiLoop <span class="grad">Agent!</span></h1>
+📎            <p class="hero-sub">Agentic AI for your Mac Desktop</p>
+📎            <p class="hero-lede">One app. Any AI. Total command over your Mac. Build apps, write code, manage files, drive any application, and automate workflows — all through natural language. 100% native Swift. 
+❌Zero Electron. Built for macOS 26.4.1 Tahoe
+✅Compatible with macOS 26.4.1 and later
+📎.</p>
+📎            <div class="hero-cta">
+📎                <a id="download-btn" href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary">Download Latest</a>
+📎                <a href="https://github.com/AgentiLoop/Agent" class="btn btn-ghost" target="_blank" rel="noopener">Star on GitHub</a>
+📎                <a href="https://github.com/AgentiLoop/Agent/fork" class="btn btn-ghost" target="_blank" rel="noopener">Fork on GitHub</a>
+📎                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" class="btn btn-ghost" target="_blank" rel="noopener">Donate</a>
+📎            </div>
+📎            <div class="hero-stats">
+📎                <div class="stat"><span class="stat-num">18</span><span class="stat-label">LLM Providers</span></div>
+📎                <div class="stat"><span class="stat-num" id="gh-latest-downloads">–</span><span class="stat-label" id="gh-latest-label">Latest Downloads</span></div>
+📎                <div class="stat"><span class="stat-num" id="gh-downloads">–</span><span class="stat-label">Total Downloads</span></div>
+📎                <div class="stat"><span class="stat-num" id="gh-stars">–</span><span class="stat-label">GitHub Stars</span></div>
+📎                <div class="stat"><span class="stat-num" id="gh-forks">–</span><span class="stat-label">Forks</span></div>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- FEATURES -->
+📎    <section class="section" id="features">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Everything an agent should do. Natively.</h2>
+📎                <p>An open-source replacement for Claude Code, Cursor, and OpenClaw — built from original IP, not 65 NPM packages.</p>
+📎            </div>
+📎            <div class="features-grid">
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">🖥️</div>
+📎                    <h3>Desktop Control</h3>
+📎                    <p>Drive any Mac app through natural language. Click, type, scroll, and navigate — powered by the Accessibility API. No AppleScript required.</p>
+📎                </div>
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">✏️</div>
+📎                    <h3>Agentic Coding</h3>
+📎                    <p>Surgical string-replace edits, one-click Time-Machine-style rollback, portable JSONL repo-maps, and self-verifying tasks with evidence-backed completion.</p>
+📎                </div>
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">🛠️</div>
+📎                    <h3>Xcode Integration</h3>
+📎                    <p>Build, run, analyze, and ship. Fix errors, manage project files, bump versions, and commit — all from a single request.</p>
+📎                </div>
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">🔄</div>
+📎                    <h3>Automation</h3>
+📎                    <p>Custom Agents in Swift, shell as user or root, AppleScript, JXA, ScriptingBridge, Safari automation, and event hooks. No limits.</p>
+📎                </div>
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">🧠</div>
+📎                    <h3>Apple Intelligence</h3>
+📎                    <p>On-device tool-calling agent — not just a text generator. Intent parsing, context compaction, triage, and task summaries. Private, free, zero API tokens.</p>
+📎                </div>
+📎                <div class="feature-card">
+📎                    <div class="feature-icon">🔌</div>
+📎                    <h3>MCP Support</h3>
+📎                    <p>Extend Agent! with Model Context Protocol servers for databases, APIs, and tools. Sub-agents fan out work in parallel — up to 6 researchers.</p>
+📎                </div>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- SHOWCASE -->
+📎    <section class="section section-alt" id="showcase">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Proof, not promises</h2>
+📎                <p>Real sessions, real output — captured straight from Agent! at work.</p>
+📎            </div>
+📎
+📎            <div class="showcase">
+📎                <div class="showcase-item">
+📎                    <div class="showcase-text">
+📎                        <h3>Builds apps while you make coffee</h3>
+📎                        <p>Paired with any compatible LLM, Agent! reads your codebase, fixes the bug, builds the Xcode project, and commits the diff. Here it codes a Tic-Tac-Toe game in Swift, end to end.</p>
+📎                    </div>
+📎                    <img src="tictactoe-agent.png" width="2920" height="2062" alt="Agent! coding a Tic-Tac-Toe game in Swift, demonstrating real-time code generation and app building on macOS" loading="lazy">
+📎                </div>
+📎
+📎                <div class="showcase-item">
+📎                    <div class="showcase-text">
+📎                        <h3>One-command Xcode version bumps</h3>
+📎                        <p>Say "bump version" and Agent! reads the current version, updates project settings, builds to verify, and commits the change. No manual plist editing, no missed build numbers.</p>
+📎                    </div>
+📎                    <img src="agent-version-bump.png" width="2000" height="1327" alt="Agent! performing an Xcode version bump, building to verify, and auto-committing the change" loading="lazy">
+📎                </div>
+📎
+📎                <div class="showcase-item">
+📎                    <div class="showcase-text">
+📎                        <h3>Asks before it guesses</h3>
+📎                        <p>When a request is ambiguous, Agent! pauses and asks. No silently picking the wrong path — you stay in control with a quick prompt and a Send or Skip.</p>
+📎                    </div>
+📎                    <img src="agent-asks-questions.png" width="3054" height="2878" alt="Agent! showing an Agent Question dialog asking the user to clarify a DMG name, with Skip and Send buttons" loading="lazy">
+📎                </div>
+📎
+📎                <div class="showcase-item">
+📎                    <div class="showcase-text">
+📎                        <h3>Reviewed and approved by Claude Code</h3>
+📎                        <p>Agent! independently found and fixed a routing bug in its own accessibility code that Claude Code missed across several reviews. When Claude Code reviewed the fix, it confirmed the patch was correct.</p>
+📎                    </div>
+📎                    <img src="claude-code-approves-bugfix.png" width="3410" height="2850" alt="Claude Code approving Agent!'s bug fix in GitHub Desktop, showing the code diff" loading="lazy">
+📎                </div>
+📎
+📎                <div class="showcase-item">
+📎                    <div class="showcase-text">
+📎                        <h3>Ships playable games in one session</h3>
+📎                        <p>Ticky Tacky is a neon tic-tac-toe with vs Bot and 2 Player modes, three difficulty levels, persistent scores, and zero dependencies — pure HTML, CSS, and JavaScript. Built by Agent! in a single session.</p>
+📎                        <a href="tickytacky/index.html" class="btn btn-ghost btn-sm">Play Ticky Tacky</a>
+📎                    </div>
+📎                    <a href="tickytacky/index.html"><img src="tickytacky/screenshot.png" width="1902" height="2126" alt="Ticky Tacky neon tic-tac-toe game by Agent! with glowing neon pink X and cyan O marks on a dark purple board" loading="lazy"></a>
+📎                </div>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- APPLE INTELLIGENCE -->
+📎    <section class="section" id="apple-intelligence">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Apple Intelligence — as a real agent</h2>
+📎                <p>Agent! is the only Mac AI agent that uses on-device Apple Intelligence as a tool-calling agent rather than just a text generator. Everything below runs on your Mac, never leaves the device, and consumes zero API tokens.</p>
+📎            </div>
+📎            <div class="ai-grid">
+📎                <div class="ai-card">
+📎                    <h3><span>1</span>Next-step suggestions</h3>
+📎                    <p>After a task wraps up, Apple Intelligence reads the outcome on-device and suggests the logical next move in one sentence — <em>"commit and push"</em>, <em>"run the tests"</em>, or nothing at all if there's no obvious follow-up. No cloud round-trip, no tokens spent.</p>
+📎                </div>
+📎                <div class="ai-card">
+📎                    <h3><span>2</span>Token compression</h3>
+📎                    <p>Long tasks past ~30,000 tokens get their older turns summarized on-device — keeping file paths, function names, errors, and key results — slashing input tokens and cost for the rest of the task.</p>
+📎                </div>
+📎                <div class="ai-card">
+📎                    <h3><span>3</span>Local triage</h3>
+📎                    <p>Small talk and direct commands like <em>"list agents"</em> or <em>"run agent FooBar"</em> are handled locally with no round-trip to the cloud LLM — results land in your activity log within a second, marked 🍎.</p>
+📎                </div>
+📎                <div class="ai-card">
+📎                    <h3><span>4</span>Summaries &amp; plain-English errors</h3>
+📎                    <p>After every completed task, Apple Intelligence writes a one-sentence summary. When a tool fails, it translates the error into plain English so you never read a raw stack trace.</p>
+📎                </div>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- PROVIDERS -->
+📎    <section class="section section-alt" id="providers">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Bring your own AI — 18 providers</h2>
+📎                <p>Cloud APIs, local models, or free on-device Apple Intelligence. Your keys, your machine, your data. No subscription. No telemetry. No vendor lock-in.</p>
+📎            </div>
+📎            <div class="providers-grid">
+📎                <div class="provider"><span>🟠</span>Claude</div>
+📎                <div class="provider"><span>🟢</span>OpenAI GPT</div>
+📎                <div class="provider"><span>✨</span>Google Gemini</div>
+📎                <div class="provider"><span>⚡</span>Grok (xAI)</div>
+📎                <div class="provider"><span>🌀</span>Mistral</div>
+📎                <div class="provider"><span>🔵</span>DeepSeek</div>
+📎                <div class="provider"><span>🐉</span>Qwen</div>
+📎                <div class="provider"><span>🎯</span>Z.ai</div>
+📎                <div class="provider"><span>🟪</span>BigModel</div>
+📎                <div class="provider"><span>🤗</span>Hugging Face</div>
+📎                <div class="provider"><span>🔀</span>OpenRouter</div>
+📎                <div class="provider"><span>🦙</span>Ollama Cloud</div>
+📎                <div class="provider"><span>🏠</span>Ollama Local</div>
+📎                <div class="provider"><span>👁️</span>vLLM</div>
+📎                <div class="provider"><span>🔬</span>LM Studio</div>
+📎                <div class="provider"><span>💻</span>Codestral</div>
+📎                <div class="provider"><span>🎵</span>Mistral Vibe</div>
+📎                <div class="provider"><span>🍎</span>Apple Intelligence</div>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- GET STARTED -->
+📎    <section class="section" id="get-started">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Up and running in minutes</h2>
+📎                <p>Download, drag, pick your AI. Agent! sets up everything else automatically.</p>
+📎            </div>
+📎            <div class="steps-grid">
+📎                <div class="step">
+📎                    <div class="step-num">1</div>
+📎                    <h3>Prerequisites</h3>
+📎                    <ul>
+📎                        <li>macOS 26.4 (Tahoe) or later, Apple Silicon recommended</li>
+📎                        <li>Xcode Command Line Tools: <code>xcode-select --install</code></li>
+📎                        <li>An LLM API key — or a local model via Ollama, vLLM, or LM Studio</li>
+📎                    </ul>
+📎                </div>
+📎                <div class="step">
+📎                    <div class="step-num">2</div>
+📎                    <h3>Install &amp; Run</h3>
+📎                    <ul>
+📎                        <li><a id="setup-download-link" href="https://github.com/AgentiLoop/Agent/releases">Download the DMG</a></li>
+📎                        <li>Drag <strong>Agent!</strong> to /Applications and open it</li>
+📎                        <li>Click <strong>Register</strong> to install the background services</li>
+📎                    </ul>
+📎                </div>
+📎                <div class="step">
+📎                    <div class="step-num">3</div>
+📎                    <h3>Approve &amp; Configure</h3>
+📎                    <ul>
+📎                        <li>Allow <strong>Agent</strong> and <strong>AgentHelper</strong> in System Settings → Login Items</li>
+📎                        <li>Open Settings (⚙️), pick a provider, enter your API key</li>
+📎                        <li>Click <strong>Connect</strong> to test the XPC services</li>
+📎                    </ul>
+📎                </div>
+📎                <div class="step">
+📎                    <div class="step-num">4</div>
+📎                    <h3>Go</h3>
+📎                    <ul>
+📎                        <li>Type a task in natural language</li>
+📎                        <li>Press <strong>Run</strong> (or ⌘Enter)</li>
+📎                        <li>Agent! takes it from here — voice, iMessage, and hands-free control included</li>
+📎                    </ul>
+📎                </div>
+📎            </div>
+📎            <div class="center-cta">
+📎                <a href="https://github.com/AgentiLoop/Agent" class="btn btn-primary" target="_blank" rel="noopener">Full Setup Guide on GitHub</a>
+📎                <a href="https://github.com/AgentiLoop/Agent/fork" class="btn btn-ghost" target="_blank" rel="noopener">Fork on GitHub</a>
+📎            </div>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- RELEASES -->
+📎    <section class="section section-alt" id="releases">
+📎        <div class="container">
+📎            <div class="section-head">
+📎                <h2>Releases</h2>
+📎                <p>Recommended pairings — Commercial: <strong>Claude Fable 5.1</strong> · Cloud: <strong>GLM 5.3</strong> · Local: <strong>Qwen 3.8</strong></p>
+📎            </div>
+📎            <table class="release-table">
+📎                <thead>
+📎                    <tr>
+📎                        <th>Version</th>
+📎                        <th><span class="label-full">Release Date</span><span class="label-short">Date</span></th>
+📎                        <th class="col-size"><span class="label-full">Size</span><span class="label-short">MB</span></th>
+📎                        <th class="col-sha"><span class="label-full">Downloads</span><span class="label-short">Clicks</span></th>
+📎                    </tr>
+📎                </thead>
+📎                <tbody id="release-history-body">
+📎                    <tr>
+📎                        <td colspan="4" class="release-loading">Loading releases…</td>
+📎                    </tr>
+📎                </tbody>
+📎            </table>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- CONTACT -->
+📎    <section class="section" id="contact">
+📎        <div class="container container-narrow">
+📎            <div class="section-head">
+📎                <h2>Contact</h2>
+📎                <p>Have questions or feedback? We'd love to hear from you.</p>
+📎            </div>
+📎            <form id="contact-form" class="contact-form">
+📎                <input type="text" name="name" placeholder="Name" required>
+📎                <input type="email" name="email" placeholder="Email" required>
+📎                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+📎                <div class="center-cta">
+📎                    <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+📎                    <a href="https://github.com/AgentiLoop/Agent/issues" class="btn btn-ghost" target="_blank" rel="noopener">Open a GitHub Issue</a>
+📎                </div>
+📎                <div id="contact-status" class="contact-status"></div>
+📎            </form>
+📎        </div>
+📎    </section>
+📎
+📎    <!-- FOOTER -->
+📎    <footer class="footer">
+📎        <div class="container">
+📎            <div class="footer-links">
+📎                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+📎                <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
+📎                <a href="stats.html">Stats</a>
+📎                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" target="_blank" rel="noopener">Donate</a>
+📎                <a href="https://inkpen.io" target="_blank" rel="noopener">InkPen</a>
+📎                <a href="legal.html">Legal</a>
+📎            </div>
+📎            <p class="footer-tagline">© 2026 AgentiLoop — Agent! · Agentic AI for your Mac Desktop</p>
+📎        </div>
+📎    </footer>
+📎
+📎    <script src="script.js"></script>
+📎</body>
+📎</html> of 399 lines

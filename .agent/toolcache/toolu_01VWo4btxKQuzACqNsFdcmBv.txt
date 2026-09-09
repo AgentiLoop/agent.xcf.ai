@@ -1,0 +1,6 @@
+Applied diff to /Users/toddbruss/Documents/GitHub/Agent.xcf.ai/index.html (lines 124-126) [verified: true] — file now has 399 lines. Re-read the file before making more edits. diff_id: 451E5D16-FF57-4B4F-8847-3FFD875A88F9
+
+❌                <div class="stat"><span class="stat-num">0</span><span class="stat-label">Electron / NPM</span></div>
+❌                <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Subscription</span></div>
+✅                <div class="stat"><span class="stat-num" id="gh-downloads">–</span><span class="stat-label">Total Downloads</span></div>
+📎                <div class="stat"><span class="stat-num" id="gh-stars">–</span><span class="stat-label">GitHub Stars</span></div>

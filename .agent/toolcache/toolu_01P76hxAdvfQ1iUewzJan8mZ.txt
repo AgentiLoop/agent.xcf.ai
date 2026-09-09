@@ -1,0 +1,7 @@
+124	                <div class="stat"><span class="stat-num">0</span><span class="stat-label">Electron / NPM</span></div>
+125	                <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Subscription</span></div>
+126	            </div>
+127	        </div>
+128	    </section>
+129	
+... (269 more lines)

@@ -1,0 +1,52 @@
+● Read both files (2 tasks)
+[1] read_file: 121	            <div class="hero-stats">
+122	                <div class="stat"><span class="stat-num">18</span><span class="stat-label">LLM Providers</span></div>
+123	                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Native Swift</span></div>
+124	                <div class="stat"><span class="stat-num">0</span><span class="stat-label">Electron / NPM</span></div>
+125	                <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Subscription</span></div>
+126	                <div class="stat"><span class="stat-num" id="gh-stars">–</span><span class="stat-label">GitHub Stars</span></div>
+127	                <div class="stat"><span class="stat-num" id="gh-forks">–</span><span class="stat-label">Forks</span></div>
+128	            </div>
+... (272 more lines)
+[2] read_file: 73 	        // Build the release history table
+74 	        const tbody = document.getElementById('release-history-body');
+75 	        if (!tbody) return;
+76 	
+77 	        let rows = '';
+78 	        let dmgCount = 0;
+79 	        for (const release of releases) {
+80 	            if (dmgCount >= 7) break;
+81 	            // Combine DMG + ZIP download counts into one entry per release
+82 	            let dmgAsset = null;
+83 	            let combinedDownloads = 0;
+84 	            for (const asset of release.assets) {
+85 	                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) {
+86 	                    combinedDownloads += asset.download_count;
+87 	                    if (!dmgAsset && asset.name.endsWith('.dmg')) dmgAsset = asset;
+88 	                }
+89 	            }
+90 	            if (!dmgAsset) continue;
+91 	            dmgCount++;
+92 	            const version = extractVersion(dmgAsset.name);
+93 	            const dateObj = new Date(release.published_at || release.created_at);
+94 	            const date = formatDate(dateObj);
+95 	            const dateShort = formatDateShort(dateObj);
+96 	            const size = formatFileSize(dmgAsset.size);
+97 	            const url = dmgAsset.browser_download_url;
+98 	
+99 	            rows += '<tr>'
+100	                + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
+101	                + '<td><span class="date-full">' + date + '</span><span class="date-short">' + dateShort + '</span></td>'
+102	                + '<td class="col-size">' + size + '</td>'
+103	                + '<td class="col-sha">' + combinedDownloads.toLocaleString() + '</td>'
+104	                + '</tr>';
+105	        }
+106	
+107	        tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">No releases found.</td></tr>';
+108	    } catch (e) {
+109	        // Silently fail — the page still works with fallback links
+110	    }
+111	}
+112	
+... (50 more lines)
+● 2/2 tasks completed

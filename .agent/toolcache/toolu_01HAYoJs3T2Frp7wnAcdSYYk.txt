@@ -1,0 +1,146 @@
+Error: diff_and_apply refused — this file had not been read this task. It has now been read FOR YOU and is marked as read. Do NOT call file(action:"read") on it. Your very next call must be the same diff_and_apply, with old_string/source/line numbers copied verbatim from the content below.
+
+/Users/toddbruss/Documents/GitHub/Agent.xcf.ai/script.js:
+1  	const GITHUB_API = 'https://api.github.com/repos/AgentiLoop/Agent/releases';
+2  	
+3  	function extractVersion(filename) {
+4  	    if (!filename) return '';
+5  	    const match = filename.match(/(\d+\.\d+\.\d+)/);
+6  	    return match ? match[1] : '';
+7  	}
+8  	
+9  	function formatFileSize(bytes) {
+10 	    if (bytes === 0) return '0 <span class="size-unit">Bytes</span>';
+11 	    const k = 1024;
+12 	    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+13 	    const i = Math.floor(Math.log(bytes) / Math.log(k));
+14 	    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' <span class="size-unit">' + sizes[i] + '</span>';
+15 	}
+16 	
+17 	function formatDate(date) {
+18 	    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+19 	    return date.toLocaleDateString('en-US', options);
+20 	}
+21 	
+22 	function formatDateShort(date) {
+23 	    const m = date.getMonth() + 1;
+24 	    const d = date.getDate();
+25 	    const y = String(date.getFullYear()).slice(-2);
+26 	    return m + '.' + d + '.' + y;
+27 	}
+28 	
+29 	async function autoDiscoverReleases() {
+30 	    try {
+31 	        const response = await fetch(GITHUB_API);
+32 	        if (!response.ok) return;
+33 	
+34 	        const releases = await response.json();
+35 	        if (!releases.length) return;
+36 	
+37 	        // Find the latest release with a DMG asset
+38 	        let latestDmg = null;
+39 	        for (const release of releases) {
+40 	            for (const asset of release.assets) {
+41 	                if (asset.name.endsWith('.dmg')) {
+42 	                    if (!latestDmg) {
+43 	                        latestDmg = {
+44 	                            url: asset.browser_download_url,
+45 	                            version: extractVersion(asset.name),
+46 	                            tag: release.tag_name
+47 	                        };
+48 	                    }
+49 	                    break;
+50 	                }
+51 	            }
+52 	        }
+53 	
+54 	        // Update the download button and setup link
+55 	        if (latestDmg) {
+56 	            const downloadBtn = document.getElementById('download-btn');
+57 	            if (downloadBtn) {
+58 	                downloadBtn.href = latestDmg.url;
+59 	                downloadBtn.textContent = 'Download v' + latestDmg.version;
+60 	            }
+61 	            const setupLink = document.getElementById('setup-download-link');
+62 	            if (setupLink) {
+63 	                setupLink.href = latestDmg.url;
+64 	            }
+65 	            const navBtn = document.getElementById('nav-download');
+66 	            if (navBtn) {
+67 	                navBtn.href = latestDmg.url;
+68 	                navBtn.textContent = 'Download v' + latestDmg.version;
+69 	            }
+70 	        }
+71 	
+72 	        // Build the release history table
+73 	        const tbody = document.getElementById('release-history-body');
+74 	        if (!tbody) return;
+75 	
+76 	        let rows = '';
+77 	        let dmgCount = 0;
+78 	        for (const release of releases) {
+79 	            if (dmgCount >= 7) break;
+80 	            // Combine DMG + ZIP download counts into one entry per release
+81 	            let dmgAsset = null;
+82 	            let combinedDownloads = 0;
+83 	            for (const asset of release.assets) {
+84 	                if (asset.name.endsWith('.dmg') || asset.name.endsWith('.zip')) {
+85 	                    combinedDownloads += asset.download_count;
+86 	                    if (!dmgAsset && asset.name.endsWith('.dmg')) dmgAsset = asset;
+87 	                }
+88 	            }
+89 	            if (!dmgAsset) continue;
+90 	            dmgCount++;
+91 	            const version = extractVersion(dmgAsset.name);
+92 	            const dateObj = new Date(release.published_at || release.created_at);
+93 	            const date = formatDate(dateObj);
+94 	            const dateShort = formatDateShort(dateObj);
+95 	            const size = formatFileSize(dmgAsset.size);
+96 	            const url = dmgAsset.browser_download_url;
+97 	
+98 	            rows += '<tr>'
+99 	                + '<td><a href="' + url + '" class="version-badge">' + version + '</a></td>'
+100	                + '<td><span class="date-full">' + date + '</span><span class="date-short">' + dateShort + '</span></td>'
+101	                + '<td class="col-size">' + size + '</td>'
+102	                + '<td class="col-sha">' + combinedDownloads.toLocaleString() + '</td>'
+103	                + '</tr>';
+104	        }
+105	
+106	        tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">No releases found.</td></tr>';
+107	    } catch (e) {
+108	        // Silently fail — the page still works with fallback links
+109	    }
+110	}
+111	
+112	autoDiscoverReleases();
+113	
+114	// Randomize wave rotation each cycle
+115	document.querySelectorAll('.wave').forEach(function(el) {
+116	    function randomize() {
+117	        el.style.setProperty('--wave-rot', Math.floor(Math.random() * 360) + 'deg');
+118	    }
+119	    randomize();
+120	    el.addEventListener('animationiteration', randomize);
+121	});
+122	
+123	// Contact form — opens a pre-filled GitHub issue
+124	(function() {
+125	    var form = document.getElementById('contact-form');
+126	    if (!form) return;
+127	
+128	    form.addEventListener('submit', function(e) {
+129	        e.preventDefault();
+130	        var name = form.name.value.trim();
+131	        var email = form.email.value.trim();
+132	        var message = form.message.value.trim();
+133	
+134	        if (!name || !email || !message) return;
+135	
+136	        var title = encodeURIComponent('Contact: ' + name);
+137	        var body = encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message);
+138	        window.open('https://github.com/AgentiLoop/Agent/issues/new?title=' + title + '&body=' + body, '_blank');
+139	
+140	        var status = document.getElementById('contact-status');
+141	        if (status) status.textContent = 'Opening GitHub — submit the pre-filled issue to send your message.';
+142	    });
+143	})();
