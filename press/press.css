@@ -397,7 +397,7 @@ body.press-page .press-copy-container {
 }
 
 body.press-page .press-copy-block {
-	margin-top: 1rem;
+	margin: 1rem 0 0;
 	padding: clamp(1.5rem, 3vw, 2.25rem);
 	border: 1px solid var(--press-line);
 	border-radius: var(--press-radius);
