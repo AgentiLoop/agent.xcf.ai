@@ -307,8 +307,9 @@
             fetchStats();
         }
 
-        // Initialize
+        // Initialize, then silently refresh every 20 minutes
         fetchStats();
+        setInterval(fetchStats, 20 * 60 * 1000);
     </script>
 </body>
 </html>

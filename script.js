@@ -135,6 +135,7 @@ async function autoDiscoverReleases() {
 }
 
 autoDiscoverReleases();
+setInterval(autoDiscoverReleases, 20 * 60 * 1000);
 
 // Live GitHub stars / forks (refreshes every 60s, stays under the 60 req/hr unauthenticated limit)
 async function updateRepoStats() {

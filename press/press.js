@@ -24,13 +24,18 @@
         });
     }
 
-    Promise.all([fetchJSON(REPO_API), fetchJSON(RELEASES_API)]).then(function (results) {
-        var repo = results[0];
-        var releases = results[1].filter(function (release) { return !release.draft && !release.prerelease; });
-        setCount('proof-stars', repo.stargazers_count, 'GitHub stars');
-        setCount('proof-forks', repo.forks_count, 'Forks on GitHub');
-        setCount('proof-releases', releases.length, 'Public releases since April 12, 2026');
-    }).catch(function (error) {
-        console.warn('Live GitHub counts unavailable; showing the dated figures.', error);
-    });
+    function updateCounts() {
+        Promise.all([fetchJSON(REPO_API), fetchJSON(RELEASES_API)]).then(function (results) {
+            var repo = results[0];
+            var releases = results[1].filter(function (release) { return !release.draft && !release.prerelease; });
+            setCount('proof-stars', repo.stargazers_count, 'GitHub stars');
+            setCount('proof-forks', repo.forks_count, 'Forks on GitHub');
+            setCount('proof-releases', releases.length, 'Public releases since April 12, 2026');
+        }).catch(function (error) {
+            console.warn('Live GitHub counts unavailable; showing the dated figures.', error);
+        });
+    }
+
+    updateCounts();
+    setInterval(updateCounts, 20 * 60 * 1000);
 })();
