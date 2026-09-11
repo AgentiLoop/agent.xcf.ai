@@ -208,6 +208,7 @@ body.press-page .press-deck {
 	font-size: clamp(1.15rem, 2.2vw, 1.4rem);
 	font-weight: 300;
 	line-height: 1.55;
+	text-align: justify;
 }
 
 body.press-page .press-contact {
