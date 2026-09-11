@@ -17,3 +17,8 @@ __pycache__/
 # Local agent and editor state, not for publication
 .agent/
 .claude/
+
+# Git metadata (Workers Builds clones the repo; the pack file exceeds the 25 MiB asset limit)
+.git/
+.gitignore
+.gitattributes
