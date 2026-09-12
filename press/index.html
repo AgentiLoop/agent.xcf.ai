@@ -156,7 +156,7 @@
 						<dt>Distribution</dt>
 						<dd>Direct download from GitHub Releases as a DMG or ZIP, signed with an Apple Developer ID and notarized by Apple. Not on the Mac App Store.</dd>
 						<dt>Public launch</dt>
-						<dd>April 12, 2026 <small>Latest release: 1.1.9 (build 205), September 2, 2026.</small></dd>
+						<dd>April 12, 2026 <small>Latest release: 1.1.33 (build 233), September 12, 2026.</small></dd>
 						<dt>Developer</dt>
 						<dd>Todd Bruss, Logos InkPen LLC — Charlotte, North Carolina, USA <small><a href="mailto:agent@agentiloop.ai">agent@agentiloop.ai</a> · <a href="https://x.com/SuperBox64" target="_blank" rel="noopener">@SuperBox64 on X</a> · <a href="https://www.linkedin.com/in/agentiloop-agent/" target="_blank" rel="noopener">LinkedIn</a></small></dd>
 						<dt>Links</dt>
@@ -384,6 +384,8 @@
 						<p>Every public release on <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">GitHub Releases</a>, newest first. Dates are the GitHub publication dates.</p>
 					</header>
 					<dl class="fact-sheet release-sheet">
+						<dt>1.1.33</dt>
+						<dd>September 12, 2026 — The 600-stars release. Context compaction rebuilt around the provider’s real token counts, with a provider-side nine-section summary replacing on-device summaries, and the open goal, plan, and edited files re-attached afterward. A read-before-edit gate refuses edits to files the model has not read or that changed on disk, and auto-reads them so the next call can be the edit. Shell-safety rules now enforced inside both helper daemons, XPC clients must share the app’s team, and ten process-pipe deadlocks fixed. Streams surface mid-stream errors, rate-limit retries are deduplicated with jittered backoff, and read-only tools start while Claude is still streaming. Completion gates verify the build actually succeeded before a task can finish. Activity log renders large tabs off-main with progress, a resizable auto-scrolling Steps list, and per-tab layout persistence. Test suite at 273 passing. <em>Build 233.</em></dd>
 						<dt>1.1.9</dt>
 						<dd>September 2, 2026 — Rebrand to AgentiLoop Agent!: all links, READMEs, and translations moved to agentiloop.ai. Updated accessibility engine (AgentAccess 2.10.12, AXorcist 0.1.9) so deep SwiftUI element trees are read correctly. <em>Build 205.</em></dd>
 						<dt>1.1.8</dt>
