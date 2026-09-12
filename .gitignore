@@ -8,3 +8,6 @@
 # Python build artifacts from press/tools
 __pycache__/
 *.pyc
+
+# Agent! project state
+.agent/
