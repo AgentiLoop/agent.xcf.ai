@@ -406,6 +406,10 @@ a.stat:hover .stat-label { color: var(--text); }
     gap: 14px;
     margin-top: 44px;
 }
+.setup-cta .btn {
+    width: 190px;
+    text-align: center;
+}
 
 /* ---------- Releases ---------- */
 .release-table {
@@ -434,6 +438,8 @@ a.stat:hover .stat-label { color: var(--text); }
 .release-loading { text-align: center; color: var(--text-dim); padding: 24px; }
 .version-badge {
     display: inline-block;
+    min-width: 88px;
+    text-align: center;
     padding: 4px 14px;
     border-radius: 999px;
     background: var(--grad);

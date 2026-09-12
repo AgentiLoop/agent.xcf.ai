@@ -80,6 +80,11 @@ async function autoDiscoverReleases() {
                 navBtn.href = latestDmg.url;
                 navBtn.textContent = 'Download v' + latestDmg.version;
             }
+            const setupBtn = document.getElementById('setup-download-btn');
+            if (setupBtn) {
+                setupBtn.href = latestDmg.url;
+                setupBtn.textContent = 'Download v' + latestDmg.version;
+            }
         }
 
         // Total downloads across all releases (DMG + ZIP)
