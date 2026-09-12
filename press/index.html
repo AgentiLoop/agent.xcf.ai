@@ -148,7 +148,7 @@
 						<dt>App</dt>
 						<dd>AgentiLoop Agent! <small>Shown as “Agent!” in the menu bar and in Finder.</small></dd>
 						<dt>What it is</dt>
-						<dd>AgentiLoop Agent! is the Mac app that puts an AI to work on the desktop: type what should happen, pick one of 18 AI providers, and the agent reads, writes, builds, clicks, and scripts until the job is finished. Open source under the MIT License.</dd>
+						<dd>AgentiLoop Agent! is the Mac app that puts an AI to work on the desktop: type what should happen, pick one of 18+ AI providers, and the agent reads, writes, builds, clicks, and scripts until the job is finished. Open source under the MIT License.</dd>
 						<dt>Price</dt>
 						<dd>Free. Users bring their own API key for cloud providers or run local models at no cost. A PayPal donation is requested.</dd>
 						<dt>Platform</dt>
@@ -185,7 +185,7 @@
 						<p>Most AI coding tools live in a terminal, an editor, or an Electron window, and their reach ends at the file system. The rest of the Mac — apps, windows, menus, scripts, build tools — stays out of bounds.</p>
 						<p>AgentiLoop Agent! is pure Swift 6.2 and SwiftUI: no Electron, no Node, no telemetry. It runs an autonomous loop — plan, call a tool, observe the real result, correct course, repeat — and no task can declare itself finished until its goal criteria are marked complete with evidence, with an optional critic pass reviewing the diff first.</p>
 						<p>It reaches every layer of the Mac: any app through the Accessibility API, AppleScript, JavaScript for Automation, and 51 ScriptingBridge app bridges; native Xcode builds with clickable errors; shell commands as the user, or as root through a daemon approved once. Extend it with Model Context Protocol servers, Swift scripts compiled at runtime, and parallel sub-agents. It answers to a spoken “Agent!” or an iMessage from your iPhone.</p>
-						<p>Any model drives it: 18 providers — Claude, OpenAI, Gemini, DeepSeek, Qwen, OpenRouter, and local Ollama, vLLM, LM Studio — plus on-device Apple Intelligence for triage, summaries, and context compression at zero token cost. Bring your own key. Nothing leaves the Mac except what goes to your chosen provider in the prompt; every action is logged.</p>
+						<p>Any model drives it: 18+ providers — Claude, OpenAI, Gemini, DeepSeek, Qwen, OpenRouter, and local Ollama, vLLM, LM Studio — plus on-device Apple Intelligence for triage, summaries, and context compression at zero token cost. Bring your own key. Nothing leaves the Mac except what goes to your chosen provider in the prompt; every action is logged.</p>
 					</div>
 					<figure class="press-copy-block press-story">
 						<blockquote>
@@ -212,7 +212,7 @@
 						<li><strong>Desktop automation through the Accessibility API.</strong> It clicks, types, scrolls, reads, and navigates any Mac app by element, with fuzzy auto-retry, plus AppleScript, JavaScript for Automation, and 51 ScriptingBridge app bridges, all in-process.</li>
 						<li><strong>AgentScript: Swift scripts compiled at runtime.</strong> The agent writes plain Swift files, compiles them to dynamic libraries with Swift Package Manager, and loads them in-process with the app’s own permissions. About 35 examples ship with the app; deleted scripts go to a restorable Trash.</li>
 						<li><strong>Every edit can be rolled back.</strong> Each file edit is snapshotted before it happens and kept for a week, with one-click rollback in the UI, an undo action, or a whole-task rewind.</li>
-						<li><strong>18 LLM providers and a fallback chain.</strong> Claude, Codex, OpenAI, Google Gemini, Grok, Mistral, Mistral Vibe, DeepSeek, Hugging Face, Z.ai, BigModel, Qwen, MiniMax, OpenRouter, Ollama, local Ollama, vLLM, and LM Studio — plus on-device Apple Intelligence. If a provider fails or rate-limits, the agent switches to the next one configured.</li>
+						<li><strong>18+ LLM providers and a fallback chain.</strong> Claude, Codex, OpenAI, Google Gemini, Grok, Mistral, Mistral Vibe, DeepSeek, Hugging Face, Z.ai, BigModel, Qwen, MiniMax, OpenRouter, Ollama, local Ollama, vLLM, and LM Studio — plus on-device Apple Intelligence. If a provider fails or rate-limits, the agent switches to the next one configured.</li>
 						<li><strong>Apple Intelligence as an on-device agent.</strong> Apple’s Foundation Models triage simple requests locally, summarize completed tasks, translate tool errors into plain English, suggest the next step, and compress long conversations, all without leaving the Mac or spending API tokens.</li>
 						<li><strong>Privileged execution the user approves once.</strong> Shell commands run as the user through a Launch Agent or as root through a Launch Daemon, registered with SMAppService and connected over XPC. The Launch Daemon is optional.</li>
 						<li><strong>Defense in depth.</strong> A shell safety service blocks catastrophic commands on both the client and daemon side; both XPC listeners require same-team code signing derived from the app’s own signature; edits to files the model has not read, or that changed on disk, are refused; and every tool call and helper command is written to an audit log.<span class="feature-note">Details: <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SECURITY.md" target="_blank" rel="noopener">docs/SECURITY.md</a></span></li>
