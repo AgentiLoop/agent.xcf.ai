@@ -48,6 +48,12 @@ async function autoDiscoverReleases() {
                 link.textContent = 'Download Pre-Release ' + preVersion;
                 heroBadge.replaceWith(link);
             }
+            const releasesBtn = document.getElementById('releases-btn');
+            if (releasesBtn) {
+                releasesBtn.textContent = 'Pre-Release';
+                releasesBtn.classList.add('btn-prerelease');
+                releasesBtn.href = preDmg ? preDmg.browser_download_url : newest.html_url;
+            }
         }
 
         // Only genuine published releases — skip drafts and pre-releases
