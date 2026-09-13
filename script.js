@@ -52,7 +52,7 @@ async function autoDiscoverReleases() {
             if (releasesBtn) {
                 releasesBtn.textContent = 'Pre-Release';
                 releasesBtn.classList.add('btn-prerelease');
-                releasesBtn.href = preDmg ? preDmg.browser_download_url : newest.html_url;
+                releasesBtn.href = newest.html_url;
             }
         }
 
