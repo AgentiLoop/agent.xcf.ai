@@ -62,8 +62,8 @@ img { max-width: 100%; height: auto; display: block; }
     border-color: rgba(255, 255, 255, 0.15);
 }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
-.btn-prerelease { background: #f97316; border-color: #f97316; color: #04101f; }
-.btn-prerelease:hover { background: #fb923c; }
+.btn-prerelease { background: #fb923c; border-color: #fb923c; color: #04101f; }
+.btn-prerelease:hover { background: #fdba74; }
 
 /* ---------- Nav ---------- */
 .nav {
