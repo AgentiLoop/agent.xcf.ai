@@ -63,7 +63,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
 .btn-prerelease { background: #000; border-color: #fb923c; color: #fb923c; }
-.btn-prerelease:hover { background: #000; border-color: #f97316; color: #f97316; }
+.btn-prerelease:hover { background: #000; border-color: #fa812d; color: #fa812d; }
 
 /* ---------- Nav ---------- */
 .nav {
@@ -152,7 +152,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero-badge strong { color: var(--text); font-weight: 700; }
 a.hero-badge { text-decoration: none; font-weight: 700; font-size: 0.92rem; padding: 7px 21px; margin-bottom: 52px; background: #000; color: #fb923c; border-color: #fb923c; transition: background 0.2s, border-color 0.2s; }
-a.hero-badge:hover { background: #000; border-color: #f97316; color: #f97316; }
+a.hero-badge:hover { background: #000; border-color: #fa812d; color: #fa812d; }
 
 .icon-wrap {
     position: relative;
