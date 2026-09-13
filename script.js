@@ -32,8 +32,26 @@ async function autoDiscoverReleases() {
         const response = await fetch(GITHUB_API);
         if (!response.ok) return;
 
+        const allReleases = (await response.json()).filter(r => !r.draft);
+
+        // Hero badge: if the newest release is a pre-release, offer it for download
+        const heroBadge = document.getElementById('hero-badge');
+        const newest = allReleases[0];
+        if (heroBadge && newest && newest.prerelease) {
+            const preDmg = newest.assets.find(a => a.name.endsWith('.dmg'));
+            if (preDmg) {
+                const preVersion = extractVersion(preDmg.name) || newest.tag_name;
+                const link = document.createElement('a');
+                link.id = 'hero-badge';
+                link.className = 'hero-badge';
+                link.href = preDmg.browser_download_url;
+                link.textContent = 'Download Pre-Release ' + preVersion;
+                heroBadge.replaceWith(link);
+            }
+        }
+
         // Only genuine published releases — skip drafts and pre-releases
-        const releases = (await response.json()).filter(r => !r.draft && !r.prerelease);
+        const releases = allReleases.filter(r => !r.prerelease);
         if (!releases.length) return;
 
         // Find the latest release with a DMG asset

@@ -149,6 +149,8 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 34px;
 }
 .hero-badge strong { color: var(--text); font-weight: 700; }
+a.hero-badge { text-decoration: none; font-weight: 700; color: var(--text); transition: background 0.2s, border-color 0.2s; }
+a.hero-badge:hover { background: rgba(34, 211, 238, 0.18); border-color: rgba(34, 211, 238, 0.7); }
 
 .icon-wrap {
     position: relative;
