@@ -32,7 +32,8 @@ async function autoDiscoverReleases() {
         const response = await fetch(GITHUB_API);
         if (!response.ok) return;
 
-        const releases = await response.json();
+        // Only genuine published releases — skip drafts and pre-releases
+        const releases = (await response.json()).filter(r => !r.draft && !r.prerelease);
         if (!releases.length) return;
 
         // Find the latest release with a DMG asset
