@@ -151,8 +151,8 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 34px;
 }
 .hero-badge strong { color: var(--text); font-weight: 700; }
-a.hero-badge { text-decoration: none; font-weight: 700; color: var(--text); border-color: #f97316; transition: background 0.2s, border-color 0.2s; }
-a.hero-badge:hover { background: rgba(249, 115, 22, 0.18); border-color: #fb923c; }
+a.hero-badge { text-decoration: none; font-weight: 700; background: #000; color: #fb923c; border-color: #fb923c; transition: background 0.2s, border-color 0.2s; }
+a.hero-badge:hover { background: #000; border-color: #fdba74; color: #fdba74; }
 
 .icon-wrap {
     position: relative;
