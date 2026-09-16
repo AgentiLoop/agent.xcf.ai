@@ -337,6 +337,46 @@ a.stat:hover .stat-label { color: var(--text); }
 .ai-card p { font-size: 0.88rem; color: var(--text-dim); font-weight: 300; }
 .ai-card em { color: var(--text); font-style: italic; }
 
+/* ---------- Reviews ---------- */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+.review-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+}
+.review-source {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+.review-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+.review-card h3 a { color: var(--text); text-decoration: none; }
+.review-card h3 a:hover { color: var(--accent); }
+.review-card blockquote {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 0 18px;
+    padding-left: 16px;
+    border-left: 2px solid var(--card-border);
+}
+
 /* ---------- Providers ---------- */
 .providers-grid {
     display: grid;
@@ -344,6 +384,8 @@ a.stat:hover .stat-label { color: var(--text); }
     gap: 12px;
 }
 .provider {
+    color: var(--text);
+    text-decoration: none;
     background: var(--card);
     border: 1px solid var(--card-border);
     border-radius: 12px;
