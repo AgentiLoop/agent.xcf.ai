@@ -12,7 +12,7 @@ Price: Free. Users bring their own API key for cloud providers or run local mode
 Platform: Mac with Apple Silicon; macOS 26.4 or later. English.
 Distribution: Direct download from GitHub Releases as a DMG or ZIP, signed with an Apple Developer ID and notarized by Apple. Not on the Mac App Store.
 Public launch: April 12, 2026. Latest release: 1.1.9 (build 205), September 2, 2026.
-Developer: Todd Bruss, Logos InkPen LLC - Charlotte, North Carolina, USA
+Developer: Todd Bruss, AgentiLoop.ai, a Logos InkPen LLC company - Charlotte, North Carolina, USA
 Developer contact: agent@agentiloop.ai | X: https://x.com/SuperBox64 | LinkedIn: https://www.linkedin.com/in/agentiloop-agent/
 Download: https://github.com/AgentiLoop/Agent/releases/latest
 Website: https://agentiloop.ai
@@ -26,3 +26,5 @@ Brand contains the app icon at 1024, 512, and 256 pixels as transparent PNGs, re
 Descriptions, key features, the developer quote and bio, version history, and press contact are all at https://agentiloop.ai/press/
 
 The AgentiLoop Agent! name and logo are trademarks of Logos InkPen LLC. The MIT license covers the source code, not the marks.
+
+(c) 2026 AgentiLoop.ai, a Logos InkPen LLC company. All rights reserved.

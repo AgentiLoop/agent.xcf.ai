@@ -542,6 +542,8 @@ a.stat:hover .stat-label { color: var(--text); }
 }
 .footer-links a:hover { color: var(--text); }
 .footer-tagline { font-size: 0.82rem; color: var(--text-dim); font-weight: 300; }
+.footer-tagline a { color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--card-border); transition: color 0.15s ease; }
+.footer-tagline a:hover { color: var(--text); }
 
 /* ---------- Responsive ---------- */
 @media (max-height: 760px) {
