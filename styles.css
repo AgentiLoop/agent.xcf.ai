@@ -601,4 +601,5 @@ a.stat:hover .stat-label { color: var(--text); }
     .release-table th, .release-table td { padding: 10px 10px; font-size: 0.8rem; }
     .label-full, .date-full { display: none; }
     .label-short, .date-short { display: inline; }
+    .review-card { min-height: 370px; }
 }
