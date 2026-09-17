@@ -21,7 +21,7 @@ Source: https://github.com/AgentiLoop/Agent
 CONTENTS
 Screenshots contains six full-resolution PNG captures of the AgentiLoop Agent! window on macOS 26, cropped to the window with transparent rounded corners, showing real tasks from the developer's own projects. Captures from earlier versions show the project's previous GitHub organization name, macOS26.
 Promo contains two 1920x1080 PNG banners for hero images and social cards, plus a 2400x1260 Open Graph social card (1200x630 at 2x).
-Brand contains the app icon at 1024, 512, and 256 pixels as transparent PNGs, rendered exactly as macOS 26 draws it, plus the logo icon artwork (without the macOS icon shape) at the same three sizes. Please use them unmodified - no recoloring, cropping, or added effects.
+Brand contains the app icon at 1024, 512, and 256 pixels as transparent PNGs, rendered exactly as macOS 26 draws it. Please use it unmodified - no recoloring, cropping, or added effects.
 
 Descriptions, key features, the developer quote and bio, version history, and press contact are all at https://agentiloop.ai/press/
 
