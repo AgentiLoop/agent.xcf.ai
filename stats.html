@@ -171,8 +171,9 @@
             const allAssets = [...grouped.values()];
             const totalBuilds = allAssets.length;
 
-            // Sort by date (newest first)
-            allAssets.sort((a, b) => b.date - a.date);
+            // Sort by version number (highest first) — asset dates are unreliable
+            // when an older release gets re-uploaded
+            allAssets.sort((a, b) => compareVersions(extractVersion(b.name), extractVersion(a.name)));
 
             // Find max downloads for chart scaling
             const maxDownloads = Math.max(...allAssets.map(a => a.downloads), 1);
@@ -278,6 +279,16 @@
             // Extract version from filenames like "Agent_1.0.7.dmg"
             const match = filename.match(/(\d+\.\d+\.\d+)/);
             return match ? match[1] : filename.replace('.dmg', '').replace('.zip', '');
+        }
+
+        function compareVersions(a, b) {
+            const pa = a.split('.').map(Number);
+            const pb = b.split('.').map(Number);
+            for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+                const diff = (pa[i] || 0) - (pb[i] || 0);
+                if (diff !== 0) return diff;
+            }
+            return 0;
         }
 
         function formatFileSize(bytes) {
