@@ -215,3 +215,28 @@ document.querySelectorAll('.wave').forEach(function(el) {
         if (status) status.textContent = 'Opening GitHub — submit the pre-filled issue to send your message.';
     });
 })();
+
+(function() {
+    var cards = document.querySelectorAll('.reviews-grid .review-card');
+    var prev = document.getElementById('reviews-prev');
+    var next = document.getElementById('reviews-next');
+    var info = document.getElementById('reviews-page-info');
+    if (!cards.length || !prev || !next || !info) return;
+
+    var perPage = 2;
+    var pages = Math.ceil(cards.length / perPage);
+    var page = 0;
+
+    function render() {
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].classList.toggle('is-hidden', Math.floor(i / perPage) !== page);
+        }
+        info.textContent = 'Page ' + (page + 1) + ' of ' + pages;
+        prev.disabled = page === 0;
+        next.disabled = page === pages - 1;
+    }
+
+    prev.addEventListener('click', function() { if (page > 0) { page--; render(); } });
+    next.addEventListener('click', function() { if (page < pages - 1) { page++; render(); } });
+    render();
+})();
