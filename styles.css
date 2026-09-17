@@ -351,7 +351,7 @@ a.stat:hover .stat-label { color: var(--text); }
     border-left: 3px solid var(--accent);
     border-radius: var(--radius);
     padding: 26px 24px;
-    min-height: 270px;
+    min-height: 295px;
     display: flex;
     flex-direction: column;
 }
