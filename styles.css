@@ -376,6 +376,13 @@ a.stat:hover .stat-label { color: var(--text); }
     padding-left: 16px;
     border-left: 2px solid var(--card-border);
 }
+.review-card p {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
 
 /* ---------- Providers ---------- */
 .providers-grid {
