@@ -44,7 +44,8 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 
-	<link rel="stylesheet" href="press.css?v=2fbdc1ca">
+	<link rel="stylesheet" href="press.css?v=aceb7ba3">
+	<link rel="stylesheet" href="../nav.css">
 	<link rel="stylesheet" href="../footer.css">
 
 	<!-- Structured Data -->
@@ -93,24 +94,30 @@
 	<div class="page-shell">
 		<a class="skip-link" href="#main-content">Skip to content</a>
 
-		<header class="topbar">
-			<div class="container">
-				<div class="topbar-inner">
-					<a class="brand" href="https://agentiloop.ai/">
-						<img src="img/app-icon-512.webp" width="30" height="30" alt="">
-						<span>AgentiLoop <em>Agent!</em></span>
-					</a>
-					<nav class="topbar-nav" aria-label="Primary">
-						<a href="https://agentiloop.ai/">Website</a>
-						<a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
-						<a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
-						<a href="mailto:agent@agentiloop.ai">Contact</a>
-                <a href="https://agentiloop.ai/legal.html">Legal</a>
-					</nav>
-					<a class="topbar-cta" href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">Download AgentiLoop Agent!</a>
-				</div>
-			</div>
-		</header>
+    <!-- NAV (shared — keep identical on every page; styles in nav.css, burger in nav.js) -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="https://agentiloop.ai/" class="nav-brand">
+                <img src="https://agentiloop.ai/agent_icon.png" alt="AgentiLoop Agent! icon">
+                <span>AgentiLoop <em>Agent!</em></span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="https://agentiloop.ai/#features">Features</a>
+                <a href="https://agentiloop.ai/#showcase">Showcase</a>
+                <a href="https://agentiloop.ai/#reviews">Reviews</a>
+                <a href="https://agentiloop.ai/#providers">Providers</a>
+                <a href="https://agentiloop.ai/setup.html">Setup</a>
+                <a href="https://agentiloop.ai/#releases">Releases</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <a id="nav-download" href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary btn-sm">Download</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
 
 		<main id="main-content">
 
@@ -511,5 +518,6 @@
     </footer>
 	</div>
 	<script src="press.js?v=324c2291"></script>
+    <script src="../nav.js"></script>
 </body>
 </html>

@@ -75,93 +75,7 @@ body.press-page .skip-link:focus {
 	transform: translateY(0);
 }
 
-/* ---------- Top bar (mirrors the main site nav) ---------- */
-body.press-page .topbar {
-	position: sticky;
-	top: 0;
-	z-index: 10;
-	border-bottom: 1px solid var(--press-line);
-	background: rgba(7, 11, 22, 0.82);
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-}
-
-body.press-page .topbar-inner {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1.5rem;
-	padding-block: 0.75rem;
-}
-
-body.press-page .brand {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	font-weight: 700;
-	font-size: 1rem;
-	white-space: nowrap;
-}
-
-body.press-page .brand img {
-	width: 30px;
-	height: 30px;
-}
-
-body.press-page .brand em {
-	font-style: normal;
-	background: var(--press-grad);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-body.press-page .topbar-nav {
-	display: flex;
-	align-items: center;
-	gap: 1.4rem;
-	margin-left: auto;
-}
-
-body.press-page .topbar-nav a {
-	color: var(--press-muted);
-	font-size: 0.88rem;
-	font-weight: 500;
-	transition: color 0.15s ease;
-}
-
-body.press-page .topbar-nav a:hover,
-body.press-page .topbar-nav a:focus-visible,
-body.press-page .fact-sheet a:hover,
-body.press-page .fact-sheet a:focus-visible,
-body.press-page .developer-copy a:hover,
-body.press-page .developer-copy a:focus-visible,
-body.press-page .press-copy-block a:hover,
-body.press-page .press-copy-block a:focus-visible {
-	color: #ffffff;
-}
-
-body.press-page .topbar-cta {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 8px 20px;
-	border: 0;
-	border-radius: 999px;
-	background: var(--press-grad);
-	color: #04101f;
-	font-size: 0.85rem;
-	font-weight: 600;
-	box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
-	white-space: nowrap;
-	transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-body.press-page .topbar-cta:hover,
-body.press-page .topbar-cta:focus-visible {
-	transform: translateY(-2px);
-	box-shadow: 0 8px 28px rgba(59, 130, 246, 0.5);
-}
+/* ---------- Top bar: see ../nav.css (shared by every page) ---------- */
 
 /* ---------- Hero ---------- */
 body.press-page .press-hero {
@@ -794,19 +708,6 @@ body.press-page .screenshot-image:focus-visible {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 991px) {
-	body.press-page .topbar-inner {
-		flex-wrap: wrap;
-	}
-
-	body.press-page .topbar-nav {
-		flex: 1 1 100%;
-		order: 3;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		gap: 0.5rem 1.2rem;
-		margin-left: 0;
-	}
-
 	body.press-page .press-hero-grid {
 		grid-template-columns: 1fr;
 	}
@@ -822,11 +723,6 @@ body.press-page .screenshot-image:focus-visible {
 }
 
 @media (max-width: 767px) {
-	body.press-page .topbar-cta {
-		padding: 0.6rem 0.9rem;
-		font-size: 0.8rem;
-	}
-
 	body.press-page .press-hero {
 		padding-top: 3rem;
 	}

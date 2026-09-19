@@ -1,0 +1,130 @@
+/* ============================================================
+   AgentiLoop Agent! — shared site nav (menu header)
+   Linked by every page AFTER its main stylesheet, paired with nav.js.
+   Self-contained: defines its own colors/fonts so it renders identically
+   on every page regardless of the base stylesheet.
+   ============================================================ */
+
+.nav {
+    --nav-bg: rgba(7, 11, 22, 0.82);
+    --nav-menu-bg: rgba(7, 11, 22, 0.97);
+    --nav-line: rgba(255, 255, 255, 0.07);
+    --nav-text: #e8ecf4;
+    --nav-dim: #9aa5bd;
+    --nav-grad: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+    --nav-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--nav-line);
+    font-family: var(--nav-font);
+    line-height: 1.6;
+}
+.nav .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--nav-text);
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+.nav .nav-brand img { width: 30px; height: 30px; border-radius: 7px; display: block; }
+.nav .nav-brand em {
+    font-style: normal;
+    background: var(--nav-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav .nav-links {
+    display: flex;
+    gap: 22px;
+    margin-left: auto;
+}
+.nav .nav-links a {
+    color: var(--nav-dim);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+.nav .nav-links a:hover { color: var(--nav-text); }
+.nav .btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--nav-font);
+    text-decoration: none;
+    background: var(--nav-grad);
+    color: #04101f;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.nav .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59, 130, 246, 0.5); }
+.nav .nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--nav-line);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+.nav .nav-toggle-bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--nav-text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+    .nav .nav-inner { position: relative; gap: 12px; }
+    .nav #nav-download { margin-left: auto; }
+    .nav .nav-toggle { display: flex; }
+    .nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 8px 0;
+        background: var(--nav-menu-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--nav-line);
+    }
+    .nav .nav-links.is-open { display: flex; }
+    .nav .nav-links a { padding: 14px 24px; font-size: 1rem; border-top: 1px solid var(--nav-line); }
+}

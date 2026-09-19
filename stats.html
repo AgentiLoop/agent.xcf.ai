@@ -47,28 +47,35 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stats.css">
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="footer.css">
 
     <script>document.write('<script src="version.js?v='+Date.now()+'"><\/script>');</script>
 </head>
 <body>
 
-    <!-- NAV -->
+    <!-- NAV (shared — keep identical on every page; styles in nav.css, burger in nav.js) -->
     <header class="nav">
         <div class="nav-inner">
-            <a href="index.html" class="nav-brand">
-                <img src="agent_icon.png" alt="AgentiLoop Agent! icon">
+            <a href="https://agentiloop.ai/" class="nav-brand">
+                <img src="https://agentiloop.ai/agent_icon.png" alt="AgentiLoop Agent! icon">
                 <span>AgentiLoop <em>Agent!</em></span>
             </a>
-            <nav class="nav-links">
-                <a href="index.html#features">Features</a>
-                <a href="index.html#showcase">Showcase</a>
-                <a href="index.html#providers">Providers</a>
-                <a href="index.html#get-started">Get Started</a>
-                <a href="index.html#releases">Releases</a>
+            <nav class="nav-links" id="nav-links">
+                <a href="https://agentiloop.ai/#features">Features</a>
+                <a href="https://agentiloop.ai/#showcase">Showcase</a>
+                <a href="https://agentiloop.ai/#reviews">Reviews</a>
+                <a href="https://agentiloop.ai/#providers">Providers</a>
+                <a href="https://agentiloop.ai/setup.html">Setup</a>
+                <a href="https://agentiloop.ai/#releases">Releases</a>
                 <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
             </nav>
-            <a href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary btn-sm">Download</a>
+            <a id="nav-download" href="https://github.com/AgentiLoop/Agent/releases" class="btn btn-primary btn-sm">Download</a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
         </div>
     </header>
 
@@ -329,5 +336,6 @@
         fetchStats();
         setInterval(fetchStats, 20 * 60 * 1000);
     </script>
+    <script src="nav.js"></script>
 </body>
 </html>
