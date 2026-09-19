@@ -103,7 +103,6 @@ async function autoDiscoverReleases() {
             const navBtn = document.getElementById('nav-download');
             if (navBtn) {
                 navBtn.href = latestDmg.url;
-                navBtn.textContent = 'Download v' + latestDmg.version;
             }
             const setupBtn = document.getElementById('setup-download-btn');
             if (setupBtn) {
