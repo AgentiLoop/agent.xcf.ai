@@ -574,30 +574,7 @@ a.stat:hover .stat-label { color: var(--text); }
 .contact-form .center-cta { margin-top: 8px; }
 .contact-status { text-align: center; font-size: 0.85rem; color: var(--accent-2); min-height: 1.2em; }
 
-/* ---------- Footer ---------- */
-.footer {
-    border-top: 1px solid var(--card-border);
-    padding: 44px 0;
-    text-align: center;
-    background: var(--bg-alt);
-}
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 26px;
-    margin-bottom: 18px;
-}
-.footer-links a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: color 0.15s ease;
-}
-.footer-links a:hover { color: var(--text); }
-.footer-tagline { font-size: 0.82rem; color: var(--text-dim); font-weight: 300; }
-.footer-tagline a { color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--card-border); transition: color 0.15s ease; }
-.footer-tagline a:hover { color: var(--text); }
+/* ---------- Footer: see footer.css (shared by every page) ---------- */
 
 /* ---------- Midnight Poem ---------- */
 .midnight-grid {

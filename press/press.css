@@ -146,10 +146,9 @@ body.press-page .topbar-cta {
 	align-items: center;
 	justify-content: center;
 	padding: 8px 20px;
-	border: 1px solid transparent;
+	border: 0;
 	border-radius: 999px;
 	background: var(--press-grad);
-	background-clip: padding-box;
 	color: #04101f;
 	font-size: 0.85rem;
 	font-weight: 600;
@@ -259,6 +258,7 @@ body.press-page .press-button:focus-visible {
 
 body.press-page .press-button-primary {
 	background: var(--press-grad);
+	border: 0;
 	color: #04101f;
 	box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
 }
@@ -781,39 +781,7 @@ body.press-page .contact-panel h2 {
 	font-weight: 700;
 }
 
-/* ---------- Footer (mirrors the main site footer) ---------- */
-body.press-page .site-footer {
-	border-top: 1px solid var(--press-line);
-	padding: 44px 0;
-	text-align: center;
-	background: var(--press-bg-alt);
-}
-
-body.press-page .site-footer-links {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 26px;
-	margin-bottom: 18px;
-}
-
-body.press-page .site-footer a {
-	color: var(--press-muted);
-	font-size: 0.88rem;
-	transition: color 0.15s ease;
-}
-
-body.press-page .site-footer a:hover,
-body.press-page .site-footer a:focus-visible {
-	color: #ffffff;
-}
-
-body.press-page .site-footer p {
-	margin: 0.4rem 0 0;
-	color: var(--press-muted);
-	font-size: 0.82rem;
-	font-weight: 300;
-}
+/* ---------- Footer: see ../footer.css (shared by every page) ---------- */
 
 body.press-page :focus-visible {
 	outline: 3px solid var(--press-accent-2);
