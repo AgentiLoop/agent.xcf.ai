@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" width="480" height="400" role="img" aria-labelledby="t d">
+  <title id="t">A bored little Mac agent at midnight</title>
+  <desc id="d">A cute Mac with a sleepy face sits on a desk under a crescent moon and stars, a coffee mug beside it, thinking "zzz".</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1120"/>
+      <stop offset="1" stop-color="#101830"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ecf4"/>
+      <stop offset="1" stop-color="#c3cad8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="480" height="400" rx="24" fill="url(#sky)"/>
+
+  <!-- stars -->
+  <g fill="#e8ecf4">
+    <circle cx="48" cy="52" r="2"/>
+    <circle cx="120" cy="30" r="1.5"/>
+    <circle cx="200" cy="70" r="1.2"/>
+    <circle cx="300" cy="40" r="2"/>
+    <circle cx="420" cy="90" r="1.5"/>
+    <circle cx="440" cy="40" r="1.2"/>
+    <circle cx="80" cy="120" r="1.2"/>
+    <circle cx="360" cy="130" r="1.5"/>
+  </g>
+  <g fill="#22d3ee" opacity="0.9">
+    <path d="M150 110 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/>
+    <path d="M400 160 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/>
+  </g>
+
+  <!-- moon -->
+  <circle cx="390" cy="70" r="44" fill="url(#glow)" transform="scale(1.6) translate(-146 -26)"/>
+  <path d="M410 40 a34 34 0 1 0 0 68 a26 26 0 1 1 0 -68z" fill="#fde68a"/>
+
+  <!-- desk -->
+  <rect x="0" y="318" width="480" height="82" rx="0" fill="#0e1528"/>
+  <rect x="0" y="318" width="480" height="4" fill="#1b2540"/>
+
+  <!-- coffee mug -->
+  <g>
+    <rect x="348" y="262" width="52" height="56" rx="8" fill="#22d3ee"/>
+    <rect x="348" y="262" width="52" height="10" rx="5" fill="#67e8f9"/>
+    <path d="M400 276 h14 a14 14 0 0 1 0 28 h-14" fill="none" stroke="#22d3ee" stroke-width="8"/>
+    <path d="M362 250 c-4 -8 4 -12 0 -20 M374 250 c-4 -8 4 -12 0 -20 M386 250 c-4 -8 4 -12 0 -20"
+          fill="none" stroke="#9aa5bd" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- mac stand -->
+  <rect x="200" y="290" width="80" height="14" rx="4" fill="#c3cad8"/>
+  <rect x="160" y="302" width="160" height="16" rx="8" fill="#e8ecf4"/>
+
+  <!-- mac body -->
+  <rect x="100" y="90" width="280" height="200" rx="22" fill="url(#body)"/>
+  <rect x="116" y="106" width="248" height="150" rx="12" fill="url(#screen)"/>
+
+  <!-- face -->
+  <g stroke="#e8ecf4" stroke-width="7" stroke-linecap="round" fill="none">
+    <!-- sleepy half-closed eyes -->
+    <path d="M170 172 q18 14 36 0"/>
+    <path d="M274 172 q18 14 36 0"/>
+    <!-- little bored mouth -->
+    <path d="M226 212 h28"/>
+  </g>
+  <!-- blush -->
+  <ellipse cx="164" cy="204" rx="14" ry="7" fill="#f472b6" opacity="0.55"/>
+  <ellipse cx="316" cy="204" rx="14" ry="7" fill="#f472b6" opacity="0.55"/>
+
+  <!-- chin logo dot -->
+  <circle cx="240" cy="273" r="5" fill="#9aa5bd"/>
+
+  <!-- zzz -->
+  <g fill="#22d3ee" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="340" y="96" font-size="22">z</text>
+    <text x="360" y="72" font-size="30">z</text>
+    <text x="386" y="42" font-size="38">z</text>
+  </g>
+
+  <!-- tiny cursor blinking on desk -->
+  <rect x="60" y="268" width="26" height="36" rx="4" fill="#101830" stroke="#22d3ee" stroke-width="2"/>
+  <rect x="68" y="280" width="4" height="14" fill="#22d3ee"/>
+</svg>

@@ -573,6 +573,50 @@ a.stat:hover .stat-label { color: var(--text); }
 .footer-tagline a { color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--card-border); transition: color 0.15s ease; }
 .footer-tagline a:hover { color: var(--text); }
 
+/* ---------- Midnight Poem ---------- */
+.midnight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+}
+.midnight-art { margin: 0; }
+.midnight-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+.midnight-poem {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-left: 3px solid var(--accent-2);
+    border-radius: var(--radius);
+    padding: 28px 30px;
+}
+.midnight-poem p {
+    font-size: 0.98rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.8;
+    margin: 0 0 18px;
+}
+.midnight-poem p:last-child { margin-bottom: 0; }
+.midnight-poem code {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 0.88em;
+    color: var(--accent-2);
+}
+.midnight-poem .midnight-sig {
+    color: var(--text);
+    font-style: italic;
+    text-align: right;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-height: 760px) {
     .hero-badge { margin-bottom: 20px; }
@@ -589,6 +633,8 @@ a.stat:hover .stat-label { color: var(--text); }
     .showcase-item,
     .showcase-item:nth-child(even) { grid-template-columns: 1fr; }
     .showcase-item:nth-child(even) .showcase-text { order: 0; }
+    .midnight-grid { grid-template-columns: 1fr; }
+    .midnight-art { max-width: 380px; margin: 0 auto; }
     .nav-links { display: none; }
 }
 
