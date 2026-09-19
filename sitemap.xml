@@ -21,6 +21,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://agentiloop.ai/auto.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://agentiloop.ai/tickytacky/</loc>
     <lastmod>2026-09-01</lastmod>
     <priority>0.4</priority>
