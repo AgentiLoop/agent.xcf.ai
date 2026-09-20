@@ -303,7 +303,7 @@ a.stat:hover .stat-label { color: var(--text); }
     border-left: 3px solid var(--accent);
     border-radius: var(--radius);
     padding: 26px 24px;
-    min-height: 295px;
+    min-height: 310px;
     display: flex;
     flex-direction: column;
 }
@@ -575,5 +575,5 @@ a.stat:hover .stat-label { color: var(--text); }
     .release-table th, .release-table td { padding: 10px 10px; font-size: 0.8rem; }
     .label-full, .date-full { display: none; }
     .label-short, .date-short { display: inline; }
-    .review-card { min-height: 370px; }
+    .review-card { min-height: 385px; }
 }

@@ -222,11 +222,15 @@ document.querySelectorAll('.wave').forEach(function(el) {
     var info = document.getElementById('reviews-page-info');
     if (!cards.length || !prev || !next || !info) return;
 
-    var perPage = 2;
+    var mobile = window.matchMedia('(max-width: 600px)');
+    var perPage = mobile.matches ? 1 : 2;
     var pages = Math.ceil(cards.length / perPage);
     var page = 0;
 
     function render() {
+        perPage = mobile.matches ? 1 : 2;
+        pages = Math.ceil(cards.length / perPage);
+        if (page > pages - 1) page = pages - 1;
         for (var i = 0; i < cards.length; i++) {
             cards[i].classList.toggle('is-hidden', Math.floor(i / perPage) !== page);
         }
@@ -237,6 +241,7 @@ document.querySelectorAll('.wave').forEach(function(el) {
 
     prev.addEventListener('click', function() { if (page > 0) { page--; render(); } });
     next.addEventListener('click', function() { if (page < pages - 1) { page++; render(); } });
+    mobile.addEventListener('change', function() { page = 0; render(); });
     render();
 })();
 
