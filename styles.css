@@ -353,7 +353,7 @@ a.stat:hover .stat-label { color: var(--text); }
 .reviews-page-info {
     font-size: 0.9rem;
     color: var(--text-dim);
-    min-width: 90px;
+    min-width: 95px;
     text-align: center;
 }
 
