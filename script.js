@@ -143,7 +143,7 @@ async function autoDiscoverReleases() {
             if (!dmgAsset) continue;
             dmgCount++;
             const version = extractVersion(dmgAsset.name);
-            const dateObj = new Date(release.published_at || release.created_at);
+            const dateObj = new Date(release.created_at || release.published_at);
             const date = formatDate(dateObj);
             const dateShort = formatDateShort(dateObj);
             const size = formatFileSize(dmgAsset.size);
