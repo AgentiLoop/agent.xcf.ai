@@ -584,3 +584,58 @@ a.stat:hover .stat-label { color: var(--text); }
     .label-short, .date-short { display: inline; }
     .review-card { min-height: 430px; }
 }
+
+/* ---------- AgentiLoop CLI ad (white card) ---------- */
+.cli-ad-wrap { padding: 8px 0 56px; }
+.cli-ad {
+    position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
+    background: #fff; color: #0f172a; text-decoration: none;
+    border-radius: 22px; padding: 36px 40px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.cli-ad::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+    background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6, #3b82f6, #22d3ee);
+}
+.cli-ad:hover { transform: translateY(-3px); box-shadow: 0 26px 70px rgba(139, 92, 246, 0.3); }
+.cli-ad-tag {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: #c2410c;
+    background: #fff7ed; border: 1px solid #fed7aa; padding: 5px 12px; border-radius: 999px;
+}
+.cli-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #f97316; animation: cliPulse 1.6s infinite; }
+@keyframes cliPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,.6); } 50% { box-shadow: 0 0 0 6px rgba(249,115,22,0); } }
+.cli-ad h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.1; margin: 14px 0 8px; letter-spacing: -.02em; color: #0f172a; }
+.cli-ad-grad { background: linear-gradient(135deg, #f97316, #ec4899 50%, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cli-ad-sub { font-size: 17px; color: #475569; margin-bottom: 16px; }
+.cli-ad-sub strong { color: #ea580c; }
+.cli-ad-os { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.cli-ad-os span { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 8px; }
+.os-mac { background: #eff6ff; color: #1d4ed8; }
+.os-win { background: #ecfeff; color: #0e7490; }
+.os-linux { background: #f5f3ff; color: #6d28d9; }
+.cli-ad-points { list-style: none; margin-bottom: 20px; }
+.cli-ad-points li { position: relative; padding-left: 24px; font-size: 15px; color: #334155; margin: 6px 0; }
+.cli-ad-points li::before { content: "▸"; position: absolute; left: 4px; color: #ec4899; font-weight: 700; }
+.cli-ad-cta {
+    display: inline-block; font-weight: 700; color: #fff; padding: 11px 22px; border-radius: 10px;
+    background: linear-gradient(135deg, #f97316, #ec4899 55%, #8b5cf6);
+}
+.cli-ad-term {
+    background: #0f172a; color: #e2e8f0; border-radius: 14px; padding: 44px 20px 20px; position: relative;
+    font: 13.5px/1.9 'SF Mono', ui-monospace, Menlo, monospace; white-space: pre; overflow-x: auto;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .25);
+}
+.t-dots { position: absolute; top: 14px; left: 16px; display: flex; gap: 6px; }
+.t-dots i { width: 11px; height: 11px; border-radius: 50%; background: #ef4444; }
+.t-dots i:nth-child(2) { background: #f59e0b; }
+.t-dots i:nth-child(3) { background: #22c55e; }
+.t-p { color: #f472b6; }
+.t-k { color: #a78bfa; }
+.t-ok { color: #22d3ee; }
+.t-g { color: #4ade80; font-weight: 600; }
+@media (max-width: 900px) {
+    .cli-ad { grid-template-columns: 1fr; padding: 30px 24px; }
+    .cli-ad-term { font-size: 12px; }
+}
