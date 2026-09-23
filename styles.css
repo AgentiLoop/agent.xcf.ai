@@ -181,6 +181,13 @@ a.hero-badge:hover { background: #000; border-color: #fa812d; color: #fa812d; }
     gap: 48px;
     margin-top: 56px;
 }
+.hero-trendshift {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+}
 .stat { text-align: center; }
 a.stat { text-decoration: none; display: block; }
 a.stat:hover .stat-label { color: var(--text); }
