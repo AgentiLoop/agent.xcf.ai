@@ -1,5 +1,17 @@
 // Shared site nav — mobile burger / X menu (paired with nav.css)
 (function() {
+    // Language picker: close on outside click or Esc
+    var picker = document.querySelector('.lang-picker');
+    if (picker) {
+        document.addEventListener('click', function(e) {
+            if (!picker.contains(e.target)) picker.open = false;
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') picker.open = false;
+        });
+    }
+})();
+(function() {
     var toggle = document.getElementById('nav-toggle');
     var links = document.getElementById('nav-links');
     if (!toggle || !links) return;

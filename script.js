@@ -1,6 +1,14 @@
 const GITHUB_REPO_API = 'https://api.github.com/repos/AgentiLoop/Agent';
 const GITHUB_API = GITHUB_REPO_API + '/releases';
 
+// Runtime strings; translated pages (/<lang>/index.html) set window.I18N before this script loads.
+const I18N = window.I18N || {};
+function t(s, vars) {
+    let out = I18N[s] || s;
+    for (const k in vars || {}) out = out.replace('{' + k + '}', vars[k]);
+    return out;
+}
+
 function extractVersion(filename) {
     if (!filename) return '';
     const match = filename.match(/(\d+\.\d+\.\d+)/);
@@ -17,7 +25,7 @@ function formatFileSize(bytes) {
 
 function formatDate(date) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString(I18N.locale || 'en-US', options);
 }
 
 function formatDateShort(date) {
@@ -45,12 +53,12 @@ async function autoDiscoverReleases() {
                 link.id = 'hero-badge';
                 link.className = 'hero-badge';
                 link.href = preDmg.browser_download_url;
-                link.textContent = 'Download Pre-Release ' + preVersion;
+                link.textContent = t('Download Pre-Release {v}', { v: preVersion });
                 heroBadge.replaceWith(link);
             }
             const releasesBtn = document.getElementById('releases-btn');
             if (releasesBtn) {
-                releasesBtn.textContent = 'Pre-Release';
+                releasesBtn.textContent = t('Pre-Release');
                 releasesBtn.classList.add('btn-prerelease');
                 releasesBtn.href = newest.html_url;
             }
@@ -88,13 +96,13 @@ async function autoDiscoverReleases() {
             const latestNum = document.getElementById('gh-latest-downloads');
             if (latestNum) latestNum.textContent = latestDmg.downloads.toLocaleString();
             const latestLabel = document.getElementById('gh-latest-label');
-            if (latestLabel) latestLabel.textContent = latestDmg.version + ' Downloads';
+            if (latestLabel) latestLabel.textContent = t('{v} Downloads', { v: latestDmg.version });
             const latestLink = document.getElementById('gh-latest-link');
             if (latestLink) latestLink.href = 'https://github.com/AgentiLoop/Agent/releases/tag/' + latestDmg.tag;
             const downloadBtn = document.getElementById('download-btn');
             if (downloadBtn) {
                 downloadBtn.href = latestDmg.url;
-                downloadBtn.textContent = 'Download v' + latestDmg.version;
+                downloadBtn.textContent = t('Download v{v}', { v: latestDmg.version });
             }
             const setupLink = document.getElementById('setup-download-link');
             if (setupLink) {
@@ -107,7 +115,7 @@ async function autoDiscoverReleases() {
             const setupBtn = document.getElementById('setup-download-btn');
             if (setupBtn) {
                 setupBtn.href = latestDmg.url;
-                setupBtn.textContent = 'Download v' + latestDmg.version;
+                setupBtn.textContent = t('Download v{v}', { v: latestDmg.version });
             }
         }
 
@@ -157,7 +165,7 @@ async function autoDiscoverReleases() {
                 + '</tr>';
         }
 
-        tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">No releases found.</td></tr>';
+        tbody.innerHTML = rows || '<tr><td colspan="4" style="text-align: center; color: #999;">' + t('No releases found.') + '</td></tr>';
     } catch (e) {
         // Silently fail — the page still works with fallback links
     }
@@ -211,7 +219,7 @@ document.querySelectorAll('.wave').forEach(function(el) {
         window.open('https://github.com/AgentiLoop/Agent/issues/new?title=' + title + '&body=' + body, '_blank');
 
         var status = document.getElementById('contact-status');
-        if (status) status.textContent = 'Opening GitHub — submit the pre-filled issue to send your message.';
+        if (status) status.textContent = t('Opening GitHub — submit the pre-filled issue to send your message.');
     });
 })();
 
@@ -234,7 +242,7 @@ document.querySelectorAll('.wave').forEach(function(el) {
         for (var i = 0; i < cards.length; i++) {
             cards[i].classList.toggle('is-hidden', Math.floor(i / perPage) !== page);
         }
-        info.textContent = 'Page ' + (page + 1) + ' of ' + pages;
+        info.textContent = t('Page {p} of {n}', { p: page + 1, n: pages });
         prev.disabled = page === 0;
         next.disabled = page === pages - 1;
     }

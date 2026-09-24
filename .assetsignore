@@ -22,3 +22,6 @@ __pycache__/
 .git/
 .gitignore
 .gitattributes
+
+# Translation tooling and sources (the generated /<lang>/index.html pages are published)
+i18n/
