@@ -726,6 +726,8 @@ a.stat:hover .stat-label { color: var(--text); }
 .sp-promo code { font-family: 'SF Mono', ui-monospace, Menlo, monospace; font-weight: 700; color: #0f172a; background: #f1f5f9; border: 1px dashed #cbd5e1; border-radius: 6px; padding: 2px 7px; }
 .sp-promo a { color: #0a6cf0; text-decoration: none; font-weight: 600; }
 .sp-promo a:hover { text-decoration: underline; }
+.sp-promo a.sp-code:hover { text-decoration: none; }
+.sp-promo a.sp-code:hover code { background: #e0edff; border-color: #0a6cf0; color: #0a6cf0; }
 @keyframes sp-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes sp-pop { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
 @media (max-width: 520px) {
