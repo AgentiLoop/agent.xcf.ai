@@ -707,7 +707,7 @@ a.stat:hover .stat-label { color: var(--text); }
 .sp-dot { width: 7px; height: 7px; border-radius: 50%; background: #0a6cf0; }
 .sp-badge { height: 32px; width: auto; }
 .sp-logo { display: block; width: 260px; max-width: 70%; height: auto; margin-bottom: 16px; }
-.sp-modal h2 { font-size: 24px; line-height: 1.25; font-weight: 800; letter-spacing: -.02em; color: #0a1a3f; margin-bottom: 8px; }
+.sp-modal h2 { font-size: 24px; line-height: 1.25; font-weight: 800; letter-spacing: -.02em; color: #0a1a3f; margin-bottom: 16px; }
 .sp-desc { font-size: 15.5px; line-height: 1.55; color: #475569; margin-bottom: 18px; }
 .sp-offer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
 .sp-offer > a {
