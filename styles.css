@@ -610,6 +610,7 @@ a.stat:hover .stat-label { color: var(--text); }
 .cli-ad-grad { background: linear-gradient(135deg, #f97316, #ec4899 50%, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .cli-ad-sub { font-size: 17px; color: #475569; margin-bottom: 16px; }
 .cli-ad-sub strong { color: #ea580c; }
+.cli-ad-sub strong.go { color: #0891b2; }
 .cli-ad-os { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .cli-ad-os span { font-size: 13px; font-weight: 600; padding: 5px 12px; border-radius: 8px; }
 .os-mac { background: #eff6ff; color: #1d4ed8; }
@@ -618,10 +619,15 @@ a.stat:hover .stat-label { color: var(--text); }
 .cli-ad-points { list-style: none; margin-bottom: 20px; }
 .cli-ad-points li { position: relative; padding-left: 24px; font-size: 15px; color: #334155; margin: 6px 0; }
 .cli-ad-points li::before { content: "▸"; position: absolute; left: 4px; color: #ec4899; font-weight: 700; }
+.cli-ad-release { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+.cli-ad-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 .cli-ad-cta {
-    display: inline-block; font-weight: 700; color: #fff; padding: 11px 22px; border-radius: 10px;
+    display: inline-block; font-weight: 700; color: #fff; padding: 11px 22px; border-radius: 10px; text-decoration: none;
     background: linear-gradient(135deg, #f97316, #ec4899 55%, #8b5cf6);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
+.cli-ad-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(139, 92, 246, 0.3); }
+.cli-ad-cta-go { background: linear-gradient(135deg, #00add8, #3b82f6 55%, #8b5cf6); }
 .cli-ad-term {
     background: #0f172a; color: #e2e8f0; border-radius: 14px; padding: 44px 20px 20px; position: relative;
     font: 13.5px/1.9 'SF Mono', ui-monospace, Menlo, monospace; white-space: pre; overflow-x: auto;
