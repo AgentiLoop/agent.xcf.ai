@@ -694,9 +694,10 @@ a.stat:hover .stat-label { color: var(--text); }
 .sp-close {
     position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%;
     border: 1px solid #e2e8f0; background: #f8fafc; color: #334155;
-    font-size: 24px; line-height: 1; cursor: pointer; transition: background .15s, transform .15s;
+    display: flex; align-items: center; justify-content: center; padding: 0;
+    font-size: 24px; line-height: 1; cursor: pointer; transition: background .15s;
 }
-.sp-close:hover { background: #e2e8f0; transform: rotate(90deg); }
+.sp-close:hover { background: #e2e8f0; }
 .sp-close:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
 .sp-top { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding-right: 40px; flex-wrap: wrap; }
 .sp-tag {
