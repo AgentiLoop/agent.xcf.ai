@@ -236,7 +236,7 @@ def inject_shared(src, lang):
     src = re.sub(r'\s*<!-- i18n:alternates.*?<!-- /i18n:alternates -->', '', src, flags=re.S)
     src = src.replace('    <link rel="canonical"', alternates() + '\n    <link rel="canonical"', 1)
     src = re.sub(r'<!-- i18n:picker -->.*?<!-- /i18n:picker -->', '', src, flags=re.S)
-    src = src.replace('<a id="nav-download"', picker(lang) + '\n            <a id="nav-download"', 1)
+    src = src.replace('<button type="button" class="nav-toggle"', picker(lang) + '\n            <button type="button" class="nav-toggle"', 1)
     return src
 
 

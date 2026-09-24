@@ -108,10 +108,6 @@ async function autoDiscoverReleases() {
             if (setupLink) {
                 setupLink.href = latestDmg.url;
             }
-            const navBtn = document.getElementById('nav-download');
-            if (navBtn) {
-                navBtn.href = latestDmg.url;
-            }
             const setupBtn = document.getElementById('setup-download-btn');
             if (setupBtn) {
                 setupBtn.href = latestDmg.url;

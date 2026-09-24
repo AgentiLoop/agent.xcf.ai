@@ -149,10 +149,9 @@
 
 @media (max-width: 900px) {
     .nav .nav-inner { position: relative; gap: 12px; }
-    .nav #nav-download { margin-left: auto; }
     .nav .lang-picker { margin-left: auto; }
-    .nav .lang-picker + #nav-download { margin-left: 0; }
-    .nav .nav-toggle { display: flex; }
+    .nav .nav-toggle { display: flex; margin-left: auto; }
+    .nav .lang-picker + .nav-toggle { margin-left: 0; }
     .nav .nav-links {
         display: none;
         position: absolute;
