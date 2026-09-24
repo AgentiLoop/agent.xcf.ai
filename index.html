@@ -731,6 +731,49 @@
         </div>
     </footer>
 
+    <!-- SPONSOR POPUP (Silver: Fluxion AI). Shown once per browser session; closes only with the X (or Esc). -->
+    <div class="sp-overlay" id="sponsor-popup" hidden>
+        <div class="sp-modal" role="dialog" aria-modal="true" aria-labelledby="sp-title">
+            <button type="button" class="sp-close" id="sponsor-popup-close" aria-label="Close sponsor message">&times;</button>
+            <div class="sp-top">
+                <span class="sp-tag"><span class="sp-dot"></span>Sponsored</span>
+                <img class="sp-badge" src="sponsors/sponsor-silver.svg" width="216" height="44" alt="Silver Sponsor">
+            </div>
+            <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><img class="sp-logo" src="sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI"></a>
+            <h2 id="sp-title">One API for GPT, Claude &amp; every leading model</h2>
+            <p class="sp-desc">Fluxion AI provides reliable, cost-efficient access to GPT, Claude, and other leading AI models through one unified API.</p>
+            <div class="sp-offer">
+                <div><span>Save up to</span><b>70%</b><span>compared with official API pricing</span></div>
+                <div><span>Sign up bonus</span><b>$3</b><span>in API credits through this link</span></div>
+            </div>
+            <a class="sp-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener">Get $3 in API credits &rarr;</a>
+            <p class="sp-promo">Promo code <code>AIAGENT</code> · <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SPONSORSHIP.md" target="_blank" rel="noopener">Become a sponsor</a></p>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var KEY = 'sponsorPopupClosed:fluxion-ai';
+        var el = document.getElementById('sponsor-popup');
+        if (!el) return;
+        try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+        var closeBtn = document.getElementById('sponsor-popup-close');
+        function close() {
+            el.hidden = true;
+            document.documentElement.classList.remove('sp-lock');
+            document.removeEventListener('keydown', onKey);
+            try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+        }
+        function onKey(e) { if (e.key === 'Escape') close(); }
+        closeBtn.addEventListener('click', close);
+        setTimeout(function () {
+            el.hidden = false;
+            document.documentElement.classList.add('sp-lock');
+            document.addEventListener('keydown', onKey);
+            closeBtn.focus();
+        }, 1200);
+    })();
+    </script>
+
     <script src="script.js"></script>
     <script src="nav.js"></script>
 </body>
