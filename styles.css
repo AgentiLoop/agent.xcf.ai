@@ -734,3 +734,37 @@ a.stat:hover .stat-label { color: var(--text); }
 }
 @media (prefers-reduced-motion: reduce) { .sp-overlay, .sp-modal { animation: none; } }
 
+
+/* ---------- Tier badges in the sponsor ad ---------- */
+.sponsor-tier .tier-badge { height: 26px; width: auto; align-self: center; }
+.tier-small-name { display: inline-flex; align-items: center; gap: 6px; }
+.tier-small-name .tier-badge { height: 22px; }
+
+/* ---------- Sponsors section: banner + right-to-left marquee ---------- */
+.sponsors-section { padding-top: 40px; overflow: hidden; }
+.sponsors-head { margin-bottom: 28px; }
+.sponsors-banner { display: block; max-width: 900px; margin: 0 auto 36px; border-radius: 22px; overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35); transition: transform .2s ease; }
+.sponsors-banner:hover { transform: translateY(-3px); }
+.sponsors-banner img { display: block; width: 100%; height: auto; }
+.sponsor-marquee { position: relative; overflow: hidden; padding: 6px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.sm-track { display: flex; width: max-content; animation: sm-scroll 40s linear infinite; }
+.sponsor-marquee:hover .sm-track, .sponsor-marquee:focus-within .sm-track { animation-play-state: paused; }
+.sm-group { display: flex; gap: 20px; padding-right: 20px; }
+.sm-item { flex: 0 0 auto; width: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    padding: 20px 18px; border-radius: 16px; text-decoration: none; text-align: center;
+    background: #fff; border: 1px solid #e2e8f0; transition: transform .2s ease, box-shadow .2s ease; }
+.sm-item:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(59, 130, 246, .25); }
+.sm-logo { width: 190px; height: auto; }
+.sm-badge { height: 26px; width: auto; }
+.sm-tag { font-size: 13.5px; color: #475569; line-height: 1.35; }
+.sm-open { background: rgba(255, 255, 255, .04); border: 1.5px dashed rgba(255, 255, 255, .22); }
+.sm-open-title { font-size: 20px; font-weight: 800; color: var(--text); letter-spacing: -.01em; }
+.sm-open .sm-tag { color: var(--text-dim); }
+@keyframes sm-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+    .sm-track { animation: none; }
+    .sponsor-marquee { overflow-x: auto; }
+}
