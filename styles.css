@@ -710,10 +710,13 @@ a.stat:hover .stat-label { color: var(--text); }
 .sp-modal h2 { font-size: 24px; line-height: 1.25; font-weight: 800; letter-spacing: -.02em; color: #0a1a3f; margin-bottom: 8px; }
 .sp-desc { font-size: 15.5px; line-height: 1.55; color: #475569; margin-bottom: 18px; }
 .sp-offer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-.sp-offer > div {
+.sp-offer > a {
     display: flex; flex-direction: column; align-items: center; text-align: center; padding: 14px 10px; border-radius: 14px;
     color: #fff; background: linear-gradient(135deg, #0047e0, #0a84f0 60%, #00c8f0);
 }
+.sp-offer > a { text-decoration: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.sp-offer > a:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0, 80, 240, 0.35); filter: brightness(1.08); }
+.sp-offer > a:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
 .sp-offer span { font-size: 12.5px; color: #e0f2fe; }
 .sp-offer b { font-size: 38px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
 .sp-cta {
