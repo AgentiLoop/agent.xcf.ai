@@ -645,3 +645,30 @@ a.stat:hover .stat-label { color: var(--text); }
     .cli-ad { grid-template-columns: 1fr; padding: 30px 24px; }
     .cli-ad-term { font-size: 12px; }
 }
+
+/* ---------- Sponsor ad (reuses .cli-ad card) ---------- */
+.sponsor-ad-wrap { padding-top: 0; }
+.sponsor-ad-tag { color: #be185d; background: #fdf2f8; border-color: #fbcfe8; }
+.sponsor-ad-dot { background: #ec4899; }
+.sponsor-ad .cli-ad-copy a:not(.cli-ad-cta) { color: #db2777; font-weight: 600; text-decoration: none; }
+.sponsor-ad .cli-ad-copy a:not(.cli-ad-cta):hover { text-decoration: underline; }
+.sponsor-tiers { display: grid; gap: 12px; }
+.sponsor-tier {
+    display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 12px;
+    padding: 16px 20px; border-radius: 14px; text-decoration: none; color: #0f172a;
+    border: 1px solid #e2e8f0; background: #f8fafc;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.sponsor-tier:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(236, 72, 153, 0.18); }
+.sponsor-tier span { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.sponsor-tier b { font-size: 22px; font-weight: 800; text-align: right; }
+.sponsor-tier small { font-size: 13px; font-weight: 600; color: #64748b; }
+.sponsor-tier em { grid-column: 1 / -1; font-style: normal; font-size: 14px; color: #475569; }
+.tier-platinum { background: linear-gradient(135deg, #f8fafc, #e0e7ff); border-color: #c7d2fe; }
+.tier-platinum span { color: #4338ca; }
+.tier-gold { background: linear-gradient(135deg, #fffbeb, #fef3c7); border-color: #fde68a; }
+.tier-gold span { color: #b45309; }
+.tier-silver { background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-color: #cbd5e1; }
+.tier-silver span { color: #475569; }
+.tier-small span { color: #db2777; }
+.tier-small b { font-size: 17px; }
