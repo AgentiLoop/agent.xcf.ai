@@ -367,7 +367,7 @@ a.stat:hover .stat-label { color: var(--text); }
 /* ---------- Providers ---------- */
 .providers-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 12px;
 }
 .provider {
@@ -384,6 +384,11 @@ a.stat:hover .stat-label { color: var(--text); }
 }
 .provider:hover { transform: translateY(-3px); border-color: rgba(34, 211, 238, 0.45); }
 .provider span { display: block; font-size: 1.5rem; margin-bottom: 6px; }
+.provider-sponsor { grid-column: span 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background: #fff; border-color: #e2e8f0; padding: 12px 10px; }
+.provider-sponsor:hover { border-color: #c7ccd4; box-shadow: 0 12px 28px rgba(59, 130, 246, .25); }
+.provider-logo { width: 80%; max-width: 190px; height: auto; }
+.provider-badge { height: 22px; width: auto; }
 
 /* ---------- Steps ---------- */
 .steps-grid {
