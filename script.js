@@ -18,6 +18,11 @@ function t(s, vars) {
     sponsors.replaceWith(mark);
     cli.replaceWith(sponsors);
     mark.replaceWith(cli);
+    // Sponsors now comes before Features — mirror that in the top menu.
+    var nav = document.getElementById('nav-links');
+    var navFeatures = nav && nav.querySelector('a[href$="#features"]');
+    var navSponsors = nav && nav.querySelector('a[href$="#sponsors"]');
+    if (navFeatures && navSponsors) navFeatures.before(navSponsors);
 })();
 
 function extractVersion(filename) {
