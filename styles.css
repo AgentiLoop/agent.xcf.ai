@@ -787,7 +787,9 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad-credits { margin-top: 18px; font-size: 17px; font-weight: 700; background: rgba(255,255,255,.16); border-radius: 999px; padding: 6px 16px; }
 @media (max-width: 760px) {
     .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
-    .fx-ad-ctas { margin-top: 0; }
+    .fx-ad-copy { align-items: center; text-align: center; }
+    .fx-ad-top { justify-content: center; }
+    .fx-ad-ctas { margin-top: 0; justify-content: center; }
     .fx-ad-panel { padding: 22px 16px; }
 }
 .sponsor-marquee { position: relative; overflow: hidden; padding: 6px 0;
