@@ -231,8 +231,30 @@ document.querySelectorAll('.wave').forEach(function(el) {
     var pages = Math.ceil(cards.length / perPage);
     var page = 0;
 
+    var grid = cards[0].parentNode;
+
+    // Size every card to the tallest one (translations vary in length) and
+    // reserve a full page of height so the pager never jumps between pages.
+    function equalize() {
+        var i, max = 0;
+        grid.style.minHeight = '';
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.minHeight = '';
+            cards[i].classList.remove('is-hidden');
+        }
+        for (i = 0; i < cards.length; i++) {
+            max = Math.max(max, cards[i].getBoundingClientRect().height);
+        }
+        for (i = 0; i < cards.length; i++) {
+            cards[i].style.minHeight = Math.ceil(max) + 'px';
+        }
+        var gap = parseFloat(getComputedStyle(grid).rowGap) || 0;
+        grid.style.minHeight = Math.ceil(max * perPage + gap * (perPage - 1)) + 'px';
+    }
+
     function render() {
         perPage = mobile.matches ? 1 : 2;
+        equalize();
         pages = Math.ceil(cards.length / perPage);
         if (page > pages - 1) page = pages - 1;
         for (var i = 0; i < cards.length; i++) {
@@ -246,6 +268,14 @@ document.querySelectorAll('.wave').forEach(function(el) {
     prev.addEventListener('click', function() { if (page > 0) { page--; render(); } });
     next.addEventListener('click', function() { if (page < pages - 1) { page++; render(); } });
     mobile.addEventListener('change', function() { page = 0; render(); });
+    var resizeTimer, lastWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+        if (window.innerWidth === lastWidth) return; // ignore mobile toolbar height changes
+        lastWidth = window.innerWidth;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(render, 150);
+    });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
     render();
 })();
 

@@ -301,6 +301,7 @@ a.stat:hover .stat-label { color: var(--text); }
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    align-content: start;
     max-width: 820px;
     margin: 0 auto;
 }
