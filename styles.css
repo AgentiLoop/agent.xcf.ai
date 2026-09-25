@@ -768,7 +768,7 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em;
     text-transform: uppercase; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 999px; line-height: 18px; }
 .fx-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #0a6cf0; }
-.fx-ad-logo { width: 280px; max-width: 80%; height: auto; margin: 22px 0 18px; }
+.fx-ad-logo { width: 360px; max-width: 100%; height: auto; margin: 22px 0 18px; }
 .fx-ad-h { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; color: #0a1a3f; }
 .fx-ad-sub { font-size: 16px; color: #475569; margin: 10px 0 20px; }
 .fx-ad-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
