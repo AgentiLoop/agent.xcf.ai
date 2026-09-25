@@ -41,6 +41,7 @@
     font-size: 1rem;
     white-space: nowrap;
 }
+.nav .nav-brand-mobile { display: none; }
 .nav .nav-brand img { width: 30px; height: 30px; border-radius: 7px; display: block; }
 .nav .nav-brand em {
     font-style: normal;
@@ -149,6 +150,7 @@
 
 @media (max-width: 900px) {
     .nav .nav-inner { position: relative; gap: 12px; }
+    .nav .nav-brand-mobile { display: flex; }
     .nav .lang-picker { margin-left: auto; }
     .nav .nav-toggle { display: flex; margin-left: auto; }
     .nav .lang-picker + .nav-toggle { margin-left: 0; }
