@@ -18,11 +18,16 @@ function t(s, vars) {
     sponsors.replaceWith(mark);
     cli.replaceWith(sponsors);
     mark.replaceWith(cli);
-    // Sponsors now comes before Features — mirror that in the top menu.
+    // Mirror the swap in the top menu (CLI ↔ Sponsors).
     var nav = document.getElementById('nav-links');
-    var navFeatures = nav && nav.querySelector('a[href$="#features"]');
+    var navCli = nav && nav.querySelector('a[href$="#cli"]');
     var navSponsors = nav && nav.querySelector('a[href$="#sponsors"]');
-    if (navFeatures && navSponsors) navFeatures.before(navSponsors);
+    if (navCli && navSponsors) {
+        var navMark = document.createComment('');
+        navSponsors.replaceWith(navMark);
+        navCli.replaceWith(navSponsors);
+        navMark.replaceWith(navCli);
+    }
 })();
 
 function extractVersion(filename) {
