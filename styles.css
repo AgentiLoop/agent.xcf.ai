@@ -758,7 +758,38 @@ a.stat:hover .stat-label { color: var(--text); }
 .sponsors-banner { display: block; max-width: 900px; margin: 0 auto 36px; border-radius: 22px; overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, .35); transition: transform .2s ease; }
 .sponsors-banner:hover { transform: translateY(-3px); }
-.sponsors-banner img { display: block; width: 100%; height: auto; }
+/* Fluxion AI ad in HTML (responsive, mirrors the old SVG banner) */
+.fx-ad { position: relative; display: grid; grid-template-columns: 1.45fr 1fr; gap: 28px; align-items: stretch;
+    background: #fff; color: #0f172a; text-decoration: none; padding: 34px 28px 30px 36px; }
+.fx-ad::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: linear-gradient(90deg, #0050f0, #00c8f0); }
+.fx-ad-copy { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.fx-ad-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fx-ad-top img { height: 26px; width: auto; }
+.fx-ad-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 999px; }
+.fx-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #0a6cf0; }
+.fx-ad-logo { width: 280px; max-width: 80%; height: auto; margin: 22px 0 18px; }
+.fx-ad-h { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; color: #0a1a3f; }
+.fx-ad-sub { font-size: 16px; color: #475569; margin: 10px 0 20px; }
+.fx-ad-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
+.fx-ad-cta { font-weight: 700; color: #fff; padding: 12px 22px; border-radius: 10px; background: linear-gradient(135deg, #0050f0, #00b4f0);
+    transition: box-shadow .2s ease; }
+.fx-ad:hover .fx-ad-cta { box-shadow: 0 10px 24px rgba(0, 110, 240, .35); }
+.fx-ad-promo { font-size: 13px; color: #64748b; }
+.fx-ad-promo code { font: 700 13px 'SF Mono', ui-monospace, Menlo, Consolas, monospace; color: #0f172a;
+    background: #f1f5f9; border: 1px dashed #94a3b8; border-radius: 6px; padding: 4px 8px; margin-left: 4px; }
+.fx-ad-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    border-radius: 18px; padding: 28px 20px; color: #fff; overflow: hidden;
+    background: radial-gradient(circle at 85% 10%, rgba(255,255,255,.28), rgba(255,255,255,0) 60%), linear-gradient(135deg, #0047e0, #0a84f0 60%, #00c8f0); }
+.fx-ad-save { font-size: 20px; font-weight: 600; color: #e0f2fe; }
+.fx-ad-pct { font-size: clamp(64px, 9vw, 104px); font-weight: 800; line-height: 1; letter-spacing: -.03em; margin: 6px 0 8px; }
+.fx-ad-cmp { font-size: 15px; color: #e0f2fe; }
+.fx-ad-credits { margin-top: 18px; font-size: 17px; font-weight: 700; background: rgba(255,255,255,.16); border-radius: 999px; padding: 6px 16px; }
+@media (max-width: 760px) {
+    .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
+    .fx-ad-ctas { margin-top: 0; }
+    .fx-ad-panel { padding: 22px 16px; }
+}
 .sponsor-marquee { position: relative; overflow: hidden; padding: 6px 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
