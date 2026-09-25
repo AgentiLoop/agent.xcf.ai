@@ -159,6 +159,82 @@
         </div>
     </section>
 
+    <!-- CLI AD -->
+    <section class="cli-ad-wrap" id="cli">
+        <div class="container">
+            <div class="cli-ad">
+                <div class="cli-ad-copy">
+                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>Новый релиз · v0.0.2</span>
+                    <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
+                    <p class="cli-ad-sub">Агентный цикл программирования для вашего терминала в двух версиях: <strong>Rust</strong> и <strong class="go">Go</strong>. Абсолютно одинаковые возможности, команды и конфигурация. Выбирайте любимую.</p>
+                    <div class="cli-ad-os">
+                        <span class="os-mac">macOS</span>
+                        <span class="os-win">Windows</span>
+                        <span class="os-linux">Linux</span>
+                    </div>
+                    <ul class="cli-ad-points">
+                        <li>Claude, OpenAI, Ollama, oMLX &amp; любая OpenAI-совместимая модель</li>
+                        <li>Полноэкранный TUI, стриминг, сессии &amp; автосжатие</li>
+                        <li>Diff-ы -/+ в стиле Claude Code &amp; живая панель изменённых файлов</li>
+                        <li>MCP-серверы — та же конфигурация, что и в Agent!</li>
+                    </ul>
+                    <p class="cli-ad-release">Версия 0.0.2 вышла! Скачайте её сегодня.</p>
+                    <div class="cli-ad-ctas">
+                        <a class="cli-ad-cta" href="https://github.com/AgentiLoop/AgentiLoopCLI/releases/tag/v0.0.2" target="_blank" rel="noopener">Rust 0.0.2 на GitHub &rarr;</a>
+                        <a class="cli-ad-cta cli-ad-cta-go" href="https://github.com/AgentiLoop/AgentiLoopGo/releases/tag/v0.0.2" target="_blank" rel="noopener">Go 0.0.2 на GitHub &rarr;</a>
+                    </div>
+                </div>
+                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --tui
+<span class="t-ok">●</span> provider <span class="t-k">anthropic</span> · model <span class="t-k">claude-sonnet-5</span>
+<span class="t-p">›</span> fix the failing test
+<span class="t-ok">✓</span> read_file  <span class="t-ok">✓</span> edit_file  <span class="t-ok">✓</span> bash
+<span class="t-g">All tests passed. Done!</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-head">
+                <h2>Всё, что должен делать агент. Нативно.</h2>
+                <p>Open-source замена Claude Code, Cursor и OpenClaw — создана на собственной интеллектуальной собственности, а не из 65 NPM-пакетов.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Управление рабочим столом</h3>
+                    <p>Управляйте любым приложением Mac на естественном языке. Клики, ввод, прокрутка и навигация — на базе API универсального доступа. AppleScript не нужен.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Агентное программирование</h3>
+                    <p>Точечные правки заменой строк, откат в стиле Time Machine в один клик, переносимые JSONL-карты репозитория и самопроверяющиеся задачи с завершением, подтверждённым доказательствами.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Интеграция с Xcode</h3>
+                    <p>Собирайте, запускайте, анализируйте и выпускайте. Исправляйте ошибки, управляйте файлами проекта, повышайте версии и коммитьте — всё одним запросом.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Автоматизация</h3>
+                    <p>Собственные агенты на Swift, shell от пользователя или root, AppleScript, JXA, ScriptingBridge, автоматизация Safari и хуки событий. Без ограничений.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Apple Intelligence</h3>
+                    <p>Агент с вызовом инструментов прямо на устройстве — а не просто генератор текста. Разбор намерений, сжатие контекста, сортировка запросов и итоги задач. Приватно, бесплатно, ноль API-токенов.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>Поддержка MCP</h3>
+                    <p>Расширяйте Agent! серверами Model Context Protocol для баз данных, API и инструментов. Суб-агенты распределяют работу параллельно — до 6 исследователей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SPONSORS (marquee, scrolls right to left; the group is duplicated for a seamless loop) -->
     <section class="section sponsors-section" id="sponsors">
         <div class="container">
@@ -234,82 +310,6 @@
                             <span class="sm-tag">Стать серебряным спонсором &rarr;</span>
                         </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section" id="features">
-        <div class="container">
-            <div class="section-head">
-                <h2>Всё, что должен делать агент. Нативно.</h2>
-                <p>Open-source замена Claude Code, Cursor и OpenClaw — создана на собственной интеллектуальной собственности, а не из 65 NPM-пакетов.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🖥️</div>
-                    <h3>Управление рабочим столом</h3>
-                    <p>Управляйте любым приложением Mac на естественном языке. Клики, ввод, прокрутка и навигация — на базе API универсального доступа. AppleScript не нужен.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✏️</div>
-                    <h3>Агентное программирование</h3>
-                    <p>Точечные правки заменой строк, откат в стиле Time Machine в один клик, переносимые JSONL-карты репозитория и самопроверяющиеся задачи с завершением, подтверждённым доказательствами.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Интеграция с Xcode</h3>
-                    <p>Собирайте, запускайте, анализируйте и выпускайте. Исправляйте ошибки, управляйте файлами проекта, повышайте версии и коммитьте — всё одним запросом.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Автоматизация</h3>
-                    <p>Собственные агенты на Swift, shell от пользователя или root, AppleScript, JXA, ScriptingBridge, автоматизация Safari и хуки событий. Без ограничений.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Apple Intelligence</h3>
-                    <p>Агент с вызовом инструментов прямо на устройстве — а не просто генератор текста. Разбор намерений, сжатие контекста, сортировка запросов и итоги задач. Приватно, бесплатно, ноль API-токенов.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔌</div>
-                    <h3>Поддержка MCP</h3>
-                    <p>Расширяйте Agent! серверами Model Context Protocol для баз данных, API и инструментов. Суб-агенты распределяют работу параллельно — до 6 исследователей.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLI AD -->
-    <section class="cli-ad-wrap" id="cli">
-        <div class="container">
-            <div class="cli-ad">
-                <div class="cli-ad-copy">
-                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>Новый релиз · v0.0.2</span>
-                    <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
-                    <p class="cli-ad-sub">Агентный цикл программирования для вашего терминала в двух версиях: <strong>Rust</strong> и <strong class="go">Go</strong>. Абсолютно одинаковые возможности, команды и конфигурация. Выбирайте любимую.</p>
-                    <div class="cli-ad-os">
-                        <span class="os-mac">macOS</span>
-                        <span class="os-win">Windows</span>
-                        <span class="os-linux">Linux</span>
-                    </div>
-                    <ul class="cli-ad-points">
-                        <li>Claude, OpenAI, Ollama, oMLX &amp; любая OpenAI-совместимая модель</li>
-                        <li>Полноэкранный TUI, стриминг, сессии &amp; автосжатие</li>
-                        <li>Diff-ы -/+ в стиле Claude Code &amp; живая панель изменённых файлов</li>
-                        <li>MCP-серверы — та же конфигурация, что и в Agent!</li>
-                    </ul>
-                    <p class="cli-ad-release">Версия 0.0.2 вышла! Скачайте её сегодня.</p>
-                    <div class="cli-ad-ctas">
-                        <a class="cli-ad-cta" href="https://github.com/AgentiLoop/AgentiLoopCLI/releases/tag/v0.0.2" target="_blank" rel="noopener">Rust 0.0.2 на GitHub &rarr;</a>
-                        <a class="cli-ad-cta cli-ad-cta-go" href="https://github.com/AgentiLoop/AgentiLoopGo/releases/tag/v0.0.2" target="_blank" rel="noopener">Go 0.0.2 на GitHub &rarr;</a>
-                    </div>
-                </div>
-                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --tui
-<span class="t-ok">●</span> provider <span class="t-k">anthropic</span> · model <span class="t-k">claude-sonnet-5</span>
-<span class="t-p">›</span> fix the failing test
-<span class="t-ok">✓</span> read_file  <span class="t-ok">✓</span> edit_file  <span class="t-ok">✓</span> bash
-<span class="t-g">All tests passed. Done!</span></pre>
             </div>
         </div>
     </section>
