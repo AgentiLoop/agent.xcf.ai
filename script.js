@@ -9,6 +9,17 @@ function t(s, vars) {
     return out;
 }
 
+// Randomly swap the CLI (2nd) and Sponsors (4th) sections on each load.
+(function () {
+    var cli = document.getElementById('cli');
+    var sponsors = document.getElementById('sponsors');
+    if (!cli || !sponsors || Math.random() < 0.5) return;
+    var mark = document.createComment('');
+    sponsors.replaceWith(mark);
+    cli.replaceWith(sponsors);
+    mark.replaceWith(cli);
+})();
+
 function extractVersion(filename) {
     if (!filename) return '';
     const match = filename.match(/(\d+\.\d+\.\d+)/);
