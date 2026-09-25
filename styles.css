@@ -764,9 +764,9 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: linear-gradient(90deg, #0050f0, #00c8f0); }
 .fx-ad-copy { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
 .fx-ad-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.fx-ad-top img { height: 26px; width: auto; }
+.fx-ad-top img { height: 30px; width: auto; }
 .fx-ad-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em;
-    text-transform: uppercase; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 999px; }
+    text-transform: uppercase; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 999px; line-height: 18px; }
 .fx-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #0a6cf0; }
 .fx-ad-logo { width: 280px; max-width: 80%; height: auto; margin: 22px 0 18px; }
 .fx-ad-h { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; color: #0a1a3f; }
