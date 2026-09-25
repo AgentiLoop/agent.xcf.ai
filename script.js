@@ -1,5 +1,5 @@
 const GITHUB_REPO_API = 'https://api.github.com/repos/AgentiLoop/Agent';
-const GITHUB_API = GITHUB_REPO_API + '/releases';
+const GITHUB_API = GITHUB_REPO_API + '/releases?per_page=100';
 
 // Runtime strings; translated pages (/<lang>/index.html) set window.I18N before this script loads.
 const I18N = window.I18N || {};
