@@ -7,13 +7,16 @@
 (function () {
     var REPO_API = 'https://api.github.com/repos/AgentiLoop/Agent';
     var RELEASES_API = REPO_API + '/releases?per_page=100';
+    // Runtime strings; translated pages (/<lang>/press/) set window.I18N before this script loads.
+    var I18N = window.I18N || {};
+    function t(s) { return I18N[s] || s; }
 
     function setCount(id, value, label) {
         var card = document.getElementById(id);
         if (!card) return;
         var number = card.querySelector('strong');
         var text = card.querySelector('span');
-        if (number) number.textContent = value.toLocaleString('en-US');
+        if (number) number.textContent = value.toLocaleString(I18N.locale || 'en-US');
         if (text) text.textContent = label;
     }
 
@@ -28,9 +31,9 @@
         Promise.all([fetchJSON(REPO_API), fetchJSON(RELEASES_API)]).then(function (results) {
             var repo = results[0];
             var releases = results[1].filter(function (release) { return !release.draft && !release.prerelease; });
-            setCount('proof-stars', repo.stargazers_count, 'GitHub stars');
-            setCount('proof-forks', repo.forks_count, 'Forks on GitHub');
-            setCount('proof-releases', releases.length, 'Public releases since April 12, 2026');
+            setCount('proof-stars', repo.stargazers_count, t('GitHub stars'));
+            setCount('proof-forks', repo.forks_count, t('Forks on GitHub'));
+            setCount('proof-releases', releases.length, t('Public releases since April 12, 2026'));
         }).catch(function (error) {
             console.warn('Live GitHub counts unavailable; showing the dated figures.', error);
         });

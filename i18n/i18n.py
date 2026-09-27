@@ -1,24 +1,36 @@
 #!/usr/bin/env python3
-"""Static translations of the homepage (index.html -> /<lang>/index.html).
+"""Static translations of the site pages (index.html, legal.html, stats.html, press/index.html -> /<lang>/...).
 
     python3 i18n/i18n.py extract   # writes i18n/strings.json (English segments to translate)
-    python3 i18n/i18n.py build     # writes /<lang>/index.html from i18n/<lang>.json
+    python3 i18n/i18n.py build     # writes /<lang>/<page> from i18n/<lang>.json
 
-index.html stays the single source of truth. Every translated page is regenerated
-from it, so edit English first, run `extract`, translate the new/changed strings
+The English pages stay the single source of truth. Every translated page is regenerated
+from them, so edit English first, run `extract`, translate the new/changed strings
 in i18n/<lang>.json, then run `build`. Missing translations fall back to English.
 """
 import html
 import json
 import os
+import posixpath
 import re
 import sys
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERE = os.path.join(ROOT, 'i18n')
-SRC = os.path.join(ROOT, 'index.html')
 SITE = 'https://agentiloop.ai'
+
+# source file (relative to ROOT): public path of the English page (relative to the site root).
+# Translated copies live at /<lang>/<public path>.
+PAGES = {
+    'index.html': '',
+    'legal.html': 'legal.html',
+    'stats.html': 'stats.html',
+    'press/index.html': 'press/',
+}
+# Runtime script per page that reads window.I18N (translated pages set it before the script loads).
+RUNTIME_SCRIPT = {'index.html': '<script src="/script.js"></script>', 'press/index.html': '<script src="/press/press.js',
+                  'stats.html': '<script>\n        const GITHUB_API'}
 
 LANGS = {  # code: (native name, og:locale, Intl locale)
     'en': ('English', 'en_US', 'en-US'),
@@ -163,12 +175,13 @@ def collect(src):
 
 
 def extract():
-    src = open(SRC, encoding='utf-8').read()
     keys = []
-    for _, _, kind, key, _ in collect(src):
-        if key not in keys:
-            keys.append(key)
-    for k in script_strings():
+    for page in PAGES:
+        src = open(os.path.join(ROOT, page), encoding='utf-8').read()
+        for _, _, kind, key, _ in collect(src):
+            if key not in keys:
+                keys.append(key)
+    for k in script_strings() + press_strings() + stats_strings():
         if k not in keys:
             keys.append(k)
     with open(os.path.join(HERE, 'strings.json'), 'w', encoding='utf-8') as f:
@@ -183,8 +196,27 @@ def script_strings():
             'Page {p} of {n}']
 
 
-def relink(tag, lang):
-    """Rewrite root-relative asset/page links inside one start tag for /<lang>/."""
+# Strings that press/press.js writes at runtime.
+def press_strings():
+    return ['GitHub stars', 'Forks on GitHub', 'Public releases since April 12, 2026']
+
+
+# Strings that the inline script in stats.html writes at runtime; {s}, {d} are placeholders.
+def stats_strings():
+    return ['API rate limit exceeded. Please try again later.', 'Failed to fetch data ({s})',
+            'Total Downloads', 'Total Builds', 'Latest Version', 'Avg Per Build', '10 Most Recent', 'Top 10 Downloads',
+            'All Releases', 'Version', 'Downloads', 'Size', 'Released', 'Refresh Stats', 'Last updated: {d}',
+            'Error:', 'Try Again', 'Loading release statistics…']
+
+
+def runtime_strings(src_name):
+    return {'index.html': script_strings(), 'press/index.html': press_strings(), 'stats.html': stats_strings()}.get(src_name, [])
+
+
+def relink(tag, lang, base):
+    """Rewrite asset/page links inside one start tag for /<lang>/<page>. base = English page's directory ('/' or '/press/')."""
+    translated = {'/' + p for p in PAGES.values() if p}  # e.g. /legal.html, /press/
+
     def fix(m):
         attr, q, url = m.group(1), m.group(2), m.group(3)
         if re.match(r'^(https?:|//|mailto:|data:|javascript:|#)', url):
@@ -193,12 +225,17 @@ def relink(tag, lang):
             url = '/%s/' % lang
         elif url.startswith('/#'):
             url = '/%s/%s' % (lang, url[1:])
+        elif url in translated:
+            url = '/%s%s' % (lang, url)
         elif url.startswith('/'):
             pass
         else:
             if url == 'sponsors/fluxion-ai-silver-ad.svg':
                 url = 'sponsors/fluxion-ai-silver-ad_%s.svg' % lang
-            url = '/' + url
+            if url == 'index.html' and base == '/':
+                url = '/%s/' % lang
+            else:
+                url = posixpath.normpath(posixpath.join(base, url))
         return '%s=%s%s%s' % (attr, q, url, q)
     return re.sub(r'\b(src|href)=(["\'])(.*?)\2', fix, tag)
 
@@ -208,20 +245,23 @@ def set_attr(tag, attr, value):
     return re.sub(r'(\s%s=)(["\']).*?\2' % re.escape(attr), lambda m: '%s"%s"' % (m.group(1), esc), tag, count=1)
 
 
-def alternates():
+def page_url(code, page):
+    return SITE + ('/' if code == 'en' else '/%s/' % code) + page
+
+
+def alternates(page):
     lines = ['    <!-- i18n:alternates (generated by i18n/i18n.py) -->']
     for code in LANGS:
-        url = SITE + ('/' if code == 'en' else '/%s/' % code)
-        lines.append('    <link rel="alternate" hreflang="%s" href="%s">' % (HREFLANG.get(code, code), url))
-    lines.append('    <link rel="alternate" hreflang="x-default" href="%s/">' % SITE)
+        lines.append('    <link rel="alternate" hreflang="%s" href="%s">' % (HREFLANG.get(code, code), page_url(code, page)))
+    lines.append('    <link rel="alternate" hreflang="x-default" href="%s">' % page_url('en', page))
     lines.append('    <!-- /i18n:alternates -->')
     return '\n'.join(lines)
 
 
-def picker(current):
+def picker(current, page):
     items = []
     for code, (name, _, _) in LANGS.items():
-        url = '/' if code == 'en' else '/%s/' % code
+        url = ('/' if code == 'en' else '/%s/' % code) + page
         cur = ' aria-current="true"' if code == current else ''
         items.append('<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (url, HREFLANG.get(code, code), code, cur, name))
     return ('<!-- i18n:picker --><details class="lang-picker" translate="no"><summary aria-label="Language">'
@@ -231,19 +271,26 @@ def picker(current):
             % (current.upper(), ''.join(items)))
 
 
-def inject_shared(src, lang):
+def inject_shared(src, lang, page):
     """Hreflang block + language picker (idempotent; used for English too)."""
     src = re.sub(r'\s*<!-- i18n:alternates.*?<!-- /i18n:alternates -->', '', src, flags=re.S)
-    src = src.replace('    <link rel="canonical"', alternates() + '\n    <link rel="canonical"', 1)
-    src = re.sub(r'<!-- i18n:picker -->.*?<!-- /i18n:picker -->', '', src, flags=re.S)
-    src = src.replace('<button type="button" class="nav-toggle"', picker(lang) + '\n            <button type="button" class="nav-toggle"', 1)
+    src = re.sub(r'\n([ \t]*)<link rel="canonical"', lambda m: '\n' + alternates(page) + '\n' + m.group(0)[1:], src, count=1)
+    src = re.sub(r'\n[ \t]*<!-- i18n:picker -->.*?<!-- /i18n:picker -->', '', src, flags=re.S)
+    src = re.sub(r'\n([ \t]*)<button type="button" class="nav-toggle"', lambda m: '\n' + m.group(1) + picker(lang, page) + m.group(0), src, count=1)
     return src
 
 
 def build():
-    src = open(SRC, encoding='utf-8').read()
-    src = inject_shared(src, 'en')
-    with open(SRC, 'w', encoding='utf-8') as f:
+    for src_name, page in PAGES.items():
+        build_page(src_name, page)
+
+
+def build_page(src_name, page):
+    src_path = os.path.join(ROOT, src_name)
+    base = '/' + posixpath.dirname(src_name) + ('/' if posixpath.dirname(src_name) else '')
+    src = open(src_path, encoding='utf-8').read()
+    src = inject_shared(src, 'en', page)
+    with open(src_path, 'w', encoding='utf-8') as f:
         f.write(src)
 
     segs = collect(src)
@@ -276,28 +323,34 @@ def build():
             out = out[:s] + rep + out[e:]
             last = s
         # Point relative links at the site root (relink is idempotent)
-        out = re.sub(r'<[a-zA-Z][^>]*\b(?:src|href)=["\'][^"\']*["\'][^>]*>', lambda m: relink(m.group(0), lang), out)
+        out = re.sub(r'<[a-zA-Z][^>]*\b(?:src|href)=["\'][^"\']*["\'][^>]*>', lambda m: relink(m.group(0), lang, base), out)
 
+        en_url, lang_url = page_url('en', page), page_url(lang, page)
         out = out.replace('<html lang="en">', '<html lang="%s">' % lang, 1)
-        out = out.replace('<link rel="canonical" href="%s/">' % SITE, '<link rel="canonical" href="%s/%s/">' % (SITE, lang), 1)
-        out = out.replace('content="%s/"' % SITE, 'content="%s/%s/"' % (SITE, lang), 1)  # og:url
+        out = out.replace('<link rel="canonical" href="%s">' % en_url, '<link rel="canonical" href="%s">' % lang_url, 1)
+        out = out.replace('<meta property="og:url" content="%s">' % en_url, '<meta property="og:url" content="%s">' % lang_url, 1)
         out = out.replace('<meta property="og:locale" content="en_US">', '<meta property="og:locale" content="%s">' % locale, 1)
         out = out.replace("'<script src=\"version.js", "'<script src=\"/version.js", 1)
         desc = tr.get(next((k for _, _, kind, k, a in segs if a == 'content'), ''), '')
         if desc:
             out = re.sub(r'("description": )"[^"]*"', lambda m: m.group(1) + json.dumps(desc, ensure_ascii=False), out, count=1)
             out = out.replace('"url": "%s/",\n      "image"' % SITE, '"url": "%s/%s/",\n      "inLanguage": "%s",\n      "image"' % (SITE, lang, lang), 1)
-        out = inject_shared(out, lang)
-        runtime = {k: tr.get(k, k) for k in script_strings()}
+        if page:  # JSON-LD WebPage entry
+            out = out.replace('"url": "%s",' % en_url, '"url": "%s",' % lang_url)
+        out = inject_shared(out, lang, page)
+        runtime = {k: tr.get(k, k) for k in runtime_strings(src_name)}
         runtime['locale'] = intl
-        out = out.replace('<script src="/script.js"></script>',
-                          '<script>window.I18N = %s;</script>\n    <script src="/script.js"></script>'
-                          % json.dumps(runtime, ensure_ascii=False), 1)
+        marker = RUNTIME_SCRIPT.get(src_name)
+        if marker:
+            out = re.sub(r'\n([ \t]*)' + re.escape(marker),
+                         lambda m: '\n%s<script>window.I18N = %s;</script>%s' % (m.group(1), json.dumps(runtime, ensure_ascii=False), m.group(0)),
+                         out, count=1)
 
-        os.makedirs(os.path.join(ROOT, lang), exist_ok=True)
-        with open(os.path.join(ROOT, lang, 'index.html'), 'w', encoding='utf-8') as f:
+        out_path = os.path.join(ROOT, lang, src_name)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, 'w', encoding='utf-8') as f:
             f.write(out)
-        print('%s/index.html  (%d untranslated)' % (lang, missing))
+        print('%s/%s  (%d untranslated)' % (lang, src_name, missing))
 
 
 def shape(s):
