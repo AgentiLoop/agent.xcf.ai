@@ -148,6 +148,11 @@
 .nav .lang-menu a:hover { color: var(--nav-text); background: rgba(255, 255, 255, 0.05); }
 .nav .lang-menu a[aria-current] { color: var(--nav-text); font-weight: 700; }
 
+/* Russian labels are wider: drop the logo/brand on desktop so the menu fits on one line (mobile keeps it) */
+@media (min-width: 901px) {
+    html[lang="ru"] .nav .nav-brand { display: none; }
+}
+
 @media (max-width: 900px) {
     .nav .nav-inner { position: relative; gap: 12px; }
     .nav .nav-brand-mobile { display: flex; }
