@@ -300,3 +300,27 @@ document.querySelectorAll('.wave').forEach(function(el) {
     render();
 })();
 
+
+// CLI card screenshot: click → full-window zoom (⌘/Ctrl-click still opens the README link)
+(function () {
+    var shot = document.getElementById('cli-shot');
+    if (!shot) return;
+    var img = shot.querySelector('img');
+    shot.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        var overlay = document.createElement('div');
+        overlay.className = 'cli-zoom';
+        var big = document.createElement('img');
+        big.src = img.src; big.alt = img.alt;
+        overlay.appendChild(big);
+        function close() {
+            overlay.remove();
+            document.removeEventListener('keydown', onKey);
+        }
+        function onKey(ev) { if (ev.key === 'Escape') close(); }
+        overlay.addEventListener('click', close);
+        document.addEventListener('keydown', onKey);
+        document.body.appendChild(overlay);
+    });
+})();

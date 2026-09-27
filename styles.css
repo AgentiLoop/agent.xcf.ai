@@ -653,9 +653,40 @@ a.stat:hover .stat-label { color: var(--text); }
 .cli-ad-shot { display: block; border-radius: 14px; overflow: hidden; background: #0f172a; box-shadow: 0 12px 30px rgba(15, 23, 42, .25); transition: transform .25s ease; }
 .cli-ad-shot:hover { transform: scale(1.02); }
 .cli-ad-shot img { display: block; width: 100%; height: auto; }
+
+/* Stacked variant: copy in two columns on top, screenshot full-width below */
+.cli-ad-stack { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+.cli-ad-stack .cli-ad-copy { display: grid; grid-template-columns: 1.05fr 1fr; column-gap: 40px; align-items: start; }
+.cli-ad-stack .cli-ad-copy > * { grid-column: 1; }
+.cli-ad-stack .cli-ad-points { grid-column: 2; grid-row: 1 / span 6; align-self: center; margin: 0; }
+.cli-ad-stack .cli-ad-release { margin-top: 6px; }
+/* The trick: the screenshot levitates in 3D and lands flat when you hover */
+.cli-ad-stack .cli-ad-shot {
+    cursor: zoom-in; perspective: 1400px; box-shadow: none; overflow: visible; background: none; border-radius: 0;
+    transform: none; transition: none;
+}
+.cli-ad-stack .cli-ad-shot img {
+    border-radius: 14px; background: #0f172a;
+    transform: rotateX(9deg) scale(.985); transform-origin: 50% 100%;
+    box-shadow: 0 30px 60px -20px rgba(139, 92, 246, .45), 0 18px 40px rgba(15, 23, 42, .25);
+    transition: transform .55s cubic-bezier(.2, .8, .2, 1), box-shadow .55s ease;
+}
+.cli-ad-stack .cli-ad-shot:hover img { transform: rotateX(0) scale(1.01); box-shadow: 0 40px 80px -20px rgba(59, 130, 246, .5), 0 24px 50px rgba(15, 23, 42, .3); }
+/* Click → full-window zoom */
+.cli-zoom {
+    position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center;
+    padding: 24px; background: rgba(2, 6, 23, .92); backdrop-filter: blur(10px); cursor: zoom-out;
+    animation: cliZoomIn .25s ease;
+}
+.cli-zoom img { max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 12px; box-shadow: 0 40px 100px rgba(0, 0, 0, .6); animation: cliZoomPop .35s cubic-bezier(.2, .8, .2, 1); }
+@keyframes cliZoomIn { from { opacity: 0; } }
+@keyframes cliZoomPop { from { transform: scale(.85); opacity: 0; } }
 @media (max-width: 900px) {
     .cli-ad { grid-template-columns: 1fr; padding: 30px 24px; }
     .cli-ad-term { font-size: 12px; }
+    .cli-ad-stack .cli-ad-copy { grid-template-columns: 1fr; }
+    .cli-ad-stack .cli-ad-copy > *, .cli-ad-stack .cli-ad-points { grid-column: 1; grid-row: auto; }
+    .cli-ad-stack .cli-ad-points { margin-bottom: 20px; }
 }
 
 /* ---------- Sponsor ad (reuses .cli-ad card) ---------- */
