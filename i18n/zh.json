@@ -470,5 +470,12 @@
  "Refresh Stats": "刷新统计",
  "Last updated: {d}": "最后更新：{d}",
  "Error:": "错误：",
- "Try Again": "重试"
+ "Try Again": "重试",
+ "An open-source replacement for Claude Code, Cursor, and OpenClaw. Built from original IP, not 65 NPM packages.": "Claude Code、Cursor 和 OpenClaw 的开源替代品。基于原创知识产权构建，而不是 65 个 NPM 软件包。",
+ "Tell Agent! what you want done in any Mac app and it does it. It finds buttons, fields, and menus by name using the Accessibility API, then clicks, types, and scrolls for you. No coordinates, no AppleScript.": "告诉 Agent! 你想在任意 Mac 应用里做什么，它就会替你完成。它通过辅助功能 API 按名称找到按钮、输入框和菜单，然后替你点击、输入和滚动。不需要坐标，也不需要 AppleScript。",
+ "Surgical string-replace edits, not whole-file rewrites. One-click rollback on every change. A portable JSONL repo-map any model can navigate. Every task must prove it finished before reporting done.": "精准的字符串替换编辑，而不是整文件重写。每次更改都可一键回滚。可移植的 JSONL 仓库地图，任何模型都能浏览。每个任务在报告完成前都必须证明自己已经完成。",
+ "Ask for a feature and get a green build. Agent! edits, builds, reads the compiler errors, fixes them, adds files to the project, bumps the version, and commits. One request, start to finish.": "提出一个功能需求，得到一次绿色构建。Agent! 会编辑、构建、读取编译器错误、修复它们、把文件加入项目、递增版本号并提交。一次请求，从头到尾。",
+ "Write your own agents in Swift with full system access. Run shell commands as user or root, script apps with AppleScript, JXA, or ScriptingBridge, drive Safari, and trigger on events. If your Mac can do it, Agent! can automate it.": "用 Swift 编写你自己的代理，拥有完整的系统访问权限。以用户或 root 身份运行 shell 命令，用 AppleScript、JXA 或 ScriptingBridge 编写应用脚本，驱动 Safari，并按事件触发。只要你的 Mac 做得到，Agent! 就能自动化。",
+ "The on-device model is a real tool-calling agent, not a chat box. It parses intent, compacts context, triages requests, and writes task summaries entirely on your Mac. Private, free, and no API tokens spent.": "设备端模型是真正会调用工具的代理，而不是一个聊天框。它解析意图、压缩上下文、分流请求并撰写任务摘要，全部在你的 Mac 上完成。私密、免费，不消耗任何 API 令牌。",
+ "Plug in Model Context Protocol servers to reach databases, APIs, and custom tools. Spin up as many as 6 sub-agents to research in parallel while the main agent keeps your context clean.": "接入 Model Context Protocol 服务器，即可访问数据库、API 和自定义工具。最多可启动 6 个子代理并行研究，同时主代理保持你的上下文干净。"
 }
