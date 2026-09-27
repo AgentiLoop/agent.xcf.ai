@@ -63,6 +63,15 @@ async function autoDiscoverReleases() {
 
         const allReleases = (await response.json()).filter(r => !r.draft);
 
+        // Promo banner Mac CTA: newest release overall (pre-release included) with a DMG
+        const promoMac = document.getElementById('promo-mac-dl');
+        if (promoMac) {
+            for (const r of allReleases) {
+                const dmg = r.assets.find(a => a.name.endsWith('.dmg'));
+                if (dmg) { promoMac.href = dmg.browser_download_url; promoMac.removeAttribute('target'); break; }
+            }
+        }
+
         // Hero badge: if the newest release is a pre-release, offer it for download
         const heroBadge = document.getElementById('hero-badge');
         const newest = allReleases[0];
