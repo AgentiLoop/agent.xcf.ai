@@ -177,19 +177,21 @@
                         <span class="os-linux">Linux</span>
                     </div>
                     <ul class="cli-ad-points">
-                        <li>Claude, OpenAI, Ollama, Codex &amp; любая OpenAI-совместимая модель</li>
-                        <li>Полноэкранный TUI, стриминг, сессии &amp; автосжатие</li>
-                        <li>Diff-ы -/+ в стиле Claude Code &amp; живая панель изменённых файлов</li>
-                        <li>MCP-серверы — та же конфигурация, что и в Agent!</li>
+                        <li><strong>Новое:</strong> мастер настройки — выберите провайдера, вставьте ключ, он проверит соединение &amp; сохранит его. Около минуты, без файлов конфигурации</li>
+                        <li><strong>Новое:</strong> провайдер Codex — войдите через подписку ChatGPT Plus/Pro, API-ключ не нужен</li>
+                        <li>Claude, OpenAI, Codex, Ollama, LM Studio, oMLX &amp; любая OpenAI-совместимая модель</li>
+                        <li>Полноэкранный TUI с копированием выделения мышью, стриминг, сессии &amp; умный бюджет контекста для небольших локальных моделей</li>
+                        <li>Диффы -/+ в стиле Claude Code, живая панель изменённых файлов &amp; MCP-серверы (та же конфигурация, что у Agent!)</li>
                     </ul>
-                    <p class="cli-ad-release">Версия 0.0.3 вышла! Скачайте её сегодня.</p>
+                    <p class="cli-ad-release">Вышла версия 0.0.3: мастер настройки, Codex, подписанные &amp; нотаризованные бинарники для Mac. Скачайте сегодня.</p>
                     <div class="cli-ad-ctas">
                         <a class="cli-ad-cta" href="https://github.com/AgentiLoop/AgentiLoopCLI/releases/tag/v0.0.3" target="_blank" rel="noopener">Rust 0.0.3 на GitHub &rarr;</a>
                         <a class="cli-ad-cta cli-ad-cta-go" href="https://github.com/AgentiLoop/AgentiLoopGo/releases/tag/v0.0.3" target="_blank" rel="noopener">Go 0.0.3 на GitHub &rarr;</a>
                     </div>
                 </div>
-                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --tui
-<span class="t-ok">●</span> provider <span class="t-k">anthropic</span> · model <span class="t-k">claude-sonnet-5</span>
+                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --setup --tui
+<span class="t-ok">●</span> provider <span class="t-k">codex</span> · signed in with ChatGPT · model <span class="t-k">gpt-6-astra</span>
+<span class="t-ok">✓</span> connection ok · saved to Keychain · <span class="t-g">All set</span>
 <span class="t-p">›</span> fix the failing test
 <span class="t-ok">✓</span> read_file  <span class="t-ok">✓</span> edit_file  <span class="t-ok">✓</span> bash
 <span class="t-g">All tests passed. Done!</span></pre>

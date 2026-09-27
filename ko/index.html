@@ -177,19 +177,21 @@
                         <span class="os-linux">Linux</span>
                     </div>
                     <ul class="cli-ad-points">
-                        <li>Claude, OpenAI, Ollama, Codex &amp; 모든 OpenAI 호환 모델</li>
-                        <li>전체 화면 TUI, 스트리밍, 세션 &amp; 자동 압축</li>
-                        <li>Claude Code 스타일 -/+ diff &amp; 실시간 변경 파일 패널</li>
-                        <li>MCP 서버 — Agent!와 동일한 설정</li>
+                        <li><strong>신규:</strong> 설정 마법사 — 제공자를 선택하고 키를 붙여 넣으면 연결을 확인하고 저장합니다. 약 1분, 설정 파일 없음</li>
+                        <li><strong>신규:</strong> Codex 제공자 — ChatGPT Plus/Pro 요금제로 로그인, API 키 불필요</li>
+                        <li>Claude, OpenAI, Codex, Ollama, LM Studio, oMLX &amp; 모든 OpenAI 호환 모델</li>
+                        <li>드래그로 복사하는 전체 화면 TUI, 스트리밍, 세션 &amp; 소형 로컬 모델을 위한 스마트 컨텍스트 예산</li>
+                        <li>Claude Code 스타일 -/+ diff, 실시간 변경 파일 패널 &amp; MCP 서버 (Agent!와 동일한 설정)</li>
                     </ul>
-                    <p class="cli-ad-release">버전 0.0.3 출시! 지금 다운로드하세요.</p>
+                    <p class="cli-ad-release">버전 0.0.3 출시: 설정 마법사, Codex, 서명 &amp; 공증된 Mac 바이너리. 지금 다운로드하세요.</p>
                     <div class="cli-ad-ctas">
                         <a class="cli-ad-cta" href="https://github.com/AgentiLoop/AgentiLoopCLI/releases/tag/v0.0.3" target="_blank" rel="noopener">GitHub에서 Rust 0.0.3 &rarr;</a>
                         <a class="cli-ad-cta cli-ad-cta-go" href="https://github.com/AgentiLoop/AgentiLoopGo/releases/tag/v0.0.3" target="_blank" rel="noopener">GitHub에서 Go 0.0.3 &rarr;</a>
                     </div>
                 </div>
-                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --tui
-<span class="t-ok">●</span> provider <span class="t-k">anthropic</span> · model <span class="t-k">claude-sonnet-5</span>
+                <pre class="cli-ad-term" aria-hidden="true"><span class="t-dots"><i></i><i></i><i></i></span><span class="t-p">$</span> agentiloop --setup --tui
+<span class="t-ok">●</span> provider <span class="t-k">codex</span> · signed in with ChatGPT · model <span class="t-k">gpt-6-astra</span>
+<span class="t-ok">✓</span> connection ok · saved to Keychain · <span class="t-g">All set</span>
 <span class="t-p">›</span> fix the failing test
 <span class="t-ok">✓</span> read_file  <span class="t-ok">✓</span> edit_file  <span class="t-ok">✓</span> bash
 <span class="t-g">All tests passed. Done!</span></pre>
