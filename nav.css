@@ -148,12 +148,14 @@
 .nav .lang-menu a:hover { color: var(--nav-text); background: rgba(255, 255, 255, 0.05); }
 .nav .lang-menu a[aria-current] { color: var(--nav-text); font-weight: 700; }
 
-/* Russian labels are wider: drop the logo/brand on desktop so the menu fits on one line (mobile keeps it) */
-@media (min-width: 901px) {
-    html[lang="ru"] .nav .nav-brand { display: none; }
+/* Russian labels are wider: on desktop show only the icon (fixed size, links home) so the menu fits on one line; mobile keeps icon + name */
+@media (min-width: 951px) {
+    html[lang="ru"] .nav .nav-brand { flex: 0 0 auto; }
+    html[lang="ru"] .nav .nav-brand img { width: 30px; height: 30px; flex-shrink: 0; }
+    html[lang="ru"] .nav .nav-brand span { display: none; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
     .nav .nav-inner { position: relative; gap: 12px; }
     .nav .nav-brand-mobile { display: flex; }
     .nav .lang-picker { margin-left: auto; }
