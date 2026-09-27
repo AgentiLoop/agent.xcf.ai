@@ -166,7 +166,10 @@
         <div class="container">
             <div class="cli-ad">
                 <div class="cli-ad-copy">
-                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>新リリース · v0.0.2</span>
+                    <div class="cli-ad-top">
+                        <span class="cli-ad-tag"><span class="cli-ad-dot"></span>新リリース · v0.0.2</span>
+                        <a class="cli-ad-become" href="#sponsor">スポンサーになる</a>
+                    </div>
                     <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
                     <p class="cli-ad-sub">ターミナルのためのエージェント型コーディングループ。<strong>Rust</strong> 版と <strong class="go">Go</strong> 版の 2 バージョン。機能、コマンド、設定はまったく同じ。お好きな方をどうぞ。</p>
                     <div class="cli-ad-os">
@@ -246,7 +249,7 @@
             </div>
             <a class="sponsors-banner fx-ad" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" aria-label="Fluxion AI（シルバースポンサー）：GPT、Claude などの主要 AI モデルをひとつの統合 API で。公式 API 価格と比べて最大 70% お得、さらに $3 分の API クレジット。">
                 <span class="fx-ad-copy">
-                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>スポンサー</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"></span>
+                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>スポンサー</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"><span class="fx-ad-become" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();location.hash='sponsor'" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();location.hash='sponsor'}">スポンサーになる</span></span>
                     <img class="fx-ad-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI" loading="lazy">
                     <span class="fx-ad-h">GPT、Claude など主要モデルをひとつの API で</span>
                     <span class="fx-ad-sub">GPT、Claude をはじめとする主要な AI モデルに、ひとつの統合 API で信頼性高く低コストにアクセス。</span>
@@ -514,18 +517,6 @@
                     <h3><a href="https://www.everydev.ai/tools/agent-for-macos" target="_blank" rel="noopener">Agent! for macOS — EveryDev.ai ツール紹介</a></h3>
                     <blockquote>「Agent! は macOS 26.4+ Tahoe 向けの 100% ネイティブ Swift AI デスクトップアシスタントで、Claude Code、Cursor、Cline、OpenClaw のオープンソース代替として設計されています。自然言語で自律的に動作し、アプリの構築、コードの記述、ファイル管理、ワークフロー自動化をこなします — Electron のオーバーヘッドはゼロ、アクセシビリティ API による深い macOS 統合を備えています。」</blockquote>
                     <a href="https://www.everydev.ai/tools/agent-for-macos" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">紹介全文を読む</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SourcePulse · オープンソース AI プロジェクト紹介</div>
-                    <h3><a href="https://www.sourcepulse.org/projects/28131078" target="_blank" rel="noopener">AgentiLoop の Agent — エージェント型 AI が Mac を指揮</a></h3>
-                    <blockquote>「このプロジェクトは macOS 向けのエージェント型 AI フレームワークを提供し、ローカルおよびクラウドの LLM と深く統合してタスクの自動化、アプリの操作、コードベースの管理を可能にします。既存の AI 開発ツールに代わる、強力でサブスクリプション不要の選択肢を求める技術に明るいユーザーを対象に、包括的な Mac 操作と AI 主導のワークフローを提供します。」</blockquote>
-                    <a href="https://www.sourcepulse.org/projects/28131078" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">紹介全文を読む</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SaaS Browser · AI エージェントビルダー掲載</div>
-                    <h3><a href="https://saasbrowser.com/en/saas/1673056/agentiloop" target="_blank" rel="noopener">AgentiLoop — AI エージェントビルダー · SaaS Browser</a></h3>
-                    <blockquote>「AgentiLoop Agent は、自然言語コマンドで Mac デスクトップを幅広く制御・自動化するために設計された、高度なオープンソースの AI アプリケーションです。ネイティブ Swift 統合を備え … サブエージェントによる多層的なタスク実行、コンテキストを考慮した処理、オンデバイスインテリジェンスに対応しています。」… 主な機能：<em>自動化 · オンデバイス AI · ネイティブ Mac 操作 · アプリのビルドと管理 · 本物のセッションと出力 · Model Context Protocol による拡張</em>。</blockquote>
-                    <a href="https://saasbrowser.com/en/saas/1673056/agentiloop" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">掲載ページを読む</a>
                 </article>
             </div>
             <nav class="reviews-pager" aria-label="レビューのページ送り">
@@ -855,6 +846,7 @@
             <div class="sp-top">
                 <span class="sp-tag"><span class="sp-dot"></span>スポンサー</span>
                 <img class="sp-badge" src="/sponsors/sponsor-silver.svg" width="120" height="44" alt="シルバー">
+                <a class="sp-top-become" href="#sponsor" id="sponsor-popup-become">スポンサーになる</a>
             </div>
             <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><img class="sp-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI"></a>
             <h2 id="sp-title">GPT、Claude &amp; すべての主要モデルをひとつの API で</h2>
@@ -864,7 +856,7 @@
                 <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><span>登録ボーナス</span><b>$3</b><span>分の API クレジット（このリンク経由）</span></a>
             </div>
             <a class="sp-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener">$3 分の API クレジットを受け取る &rarr;</a>
-            <p class="sp-promo">プロモコード <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a> · <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SPONSORSHIP.md" target="_blank" rel="noopener">スポンサーになる</a></p>
+            <p class="sp-promo">プロモコード <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a></p>
         </div>
     </div>
     <script>
@@ -882,6 +874,8 @@
         }
         function onKey(e) { if (e.key === 'Escape') close(); }
         closeBtn.addEventListener('click', close);
+        var becomeLink = document.getElementById('sponsor-popup-become');
+        if (becomeLink) becomeLink.addEventListener('click', close);
         setTimeout(function () {
             el.hidden = false;
             document.documentElement.classList.add('sp-lock');

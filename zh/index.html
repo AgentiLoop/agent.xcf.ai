@@ -166,7 +166,10 @@
         <div class="container">
             <div class="cli-ad">
                 <div class="cli-ad-copy">
-                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>新版本发布 · v0.0.2</span>
+                    <div class="cli-ad-top">
+                        <span class="cli-ad-tag"><span class="cli-ad-dot"></span>新版本发布 · v0.0.2</span>
+                        <a class="cli-ad-become" href="#sponsor">成为赞助商</a>
+                    </div>
                     <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
                     <p class="cli-ad-sub">终端里的智能体编程循环，提供两个版本：<strong>Rust</strong> 和 <strong class="go">Go</strong>。功能、命令和配置完全相同。选你喜欢的。</p>
                     <div class="cli-ad-os">
@@ -246,7 +249,7 @@
             </div>
             <a class="sponsors-banner fx-ad" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" aria-label="Fluxion AI，银牌赞助商：一个统一的 API 访问 GPT、Claude 及其他领先的 AI 模型。相比官方 API 价格最高节省 70%，并获得 $3 API 额度。">
                 <span class="fx-ad-copy">
-                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>赞助</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"></span>
+                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>赞助</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"><span class="fx-ad-become" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();location.hash='sponsor'" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();location.hash='sponsor'}">成为赞助商</span></span>
                     <img class="fx-ad-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI" loading="lazy">
                     <span class="fx-ad-h">一个 API，畅用 GPT、Claude 及所有领先模型</span>
                     <span class="fx-ad-sub">通过一个统一的 API，稳定且经济地访问 GPT、Claude及其他领先的 AI 模型。</span>
@@ -514,18 +517,6 @@
                     <h3><a href="https://www.everydev.ai/tools/agent-for-macos" target="_blank" rel="noopener">Agent! for macOS——EveryDev.ai 工具简介</a></h3>
                     <blockquote>“Agent! 是一款面向 macOS 26.4+ Tahoe 的 100% 原生 Swift AI 桌面助手，定位为 Claude Code、Cursor、Cline 和 OpenClaw 的开源替代品。它通过自然语言自主构建应用、编写代码、管理文件和自动化工作流——完全没有 Electron 开销，并通过辅助功能 API 与 macOS 深度集成。”</blockquote>
                     <a href="https://www.everydev.ai/tools/agent-for-macos" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">阅读完整简介</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SourcePulse · 开源 AI 项目简介</div>
-                    <h3><a href="https://www.sourcepulse.org/projects/28131078" target="_blank" rel="noopener">AgentiLoop 出品的 Agent——智能体 AI 统筹你的 Mac</a></h3>
-                    <blockquote>“该项目为 macOS 提供智能体 AI 框架，与本地和云端 LLM 深度集成，用于自动化任务、控制应用和管理代码库。它面向精通技术的用户，为现有 AI 开发工具提供强大且无需订阅的替代方案，带来全面的 Mac 控制和 AI 驱动的工作流。”</blockquote>
-                    <a href="https://www.sourcepulse.org/projects/28131078" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">阅读完整简介</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SaaS Browser · AI 智能体构建工具目录</div>
-                    <h3><a href="https://saasbrowser.com/en/saas/1673056/agentiloop" target="_blank" rel="noopener">AgentiLoop——AI 智能体构建工具 · SaaS Browser</a></h3>
-                    <blockquote>“AgentiLoop Agent 是一款先进的开源 AI 应用，旨在通过自然语言命令全面控制和自动化 Mac 桌面。它具备原生 Swift 集成……并支持借助子代理、上下文感知处理和设备端智能进行多层任务执行。”……主要功能：<em>自动化 · 设备端 AI · 原生 Mac 控制 · 构建和管理应用 · 真实会话与输出 · 通过 Model Context Protocol 扩展</em>。</blockquote>
-                    <a href="https://saasbrowser.com/en/saas/1673056/agentiloop" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">查看完整条目</a>
                 </article>
             </div>
             <nav class="reviews-pager" aria-label="评测分页">
@@ -855,6 +846,7 @@
             <div class="sp-top">
                 <span class="sp-tag"><span class="sp-dot"></span>赞助</span>
                 <img class="sp-badge" src="/sponsors/sponsor-silver.svg" width="120" height="44" alt="银牌">
+                <a class="sp-top-become" href="#sponsor" id="sponsor-popup-become">成为赞助商</a>
             </div>
             <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><img class="sp-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI"></a>
             <h2 id="sp-title">一个 API 访问 GPT、Claude &amp; 所有领先模型</h2>
@@ -864,7 +856,7 @@
                 <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><span>注册奖励</span><b>$3</b><span>API 额度（通过此链接）</span></a>
             </div>
             <a class="sp-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener">获取 $3 API 额度 &rarr;</a>
-            <p class="sp-promo">优惠码 <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a> · <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SPONSORSHIP.md" target="_blank" rel="noopener">成为赞助商</a></p>
+            <p class="sp-promo">优惠码 <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a></p>
         </div>
     </div>
     <script>
@@ -882,6 +874,8 @@
         }
         function onKey(e) { if (e.key === 'Escape') close(); }
         closeBtn.addEventListener('click', close);
+        var becomeLink = document.getElementById('sponsor-popup-become');
+        if (becomeLink) becomeLink.addEventListener('click', close);
         setTimeout(function () {
             el.hidden = false;
             document.documentElement.classList.add('sp-lock');

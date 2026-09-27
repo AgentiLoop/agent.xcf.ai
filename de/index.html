@@ -166,7 +166,10 @@
         <div class="container">
             <div class="cli-ad">
                 <div class="cli-ad-copy">
-                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>Neues Release · v0.0.2</span>
+                    <div class="cli-ad-top">
+                        <span class="cli-ad-tag"><span class="cli-ad-dot"></span>Neues Release · v0.0.2</span>
+                        <a class="cli-ad-become" href="#sponsor">Sponsor werden</a>
+                    </div>
                     <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
                     <p class="cli-ad-sub">Die agentische Coding-Schleife für dein Terminal, in zwei Versionen: <strong>Rust</strong> und <strong class="go">Go</strong>. Exakt dieselben Fähigkeiten, Befehle und Konfiguration. Wähle deinen Favoriten.</p>
                     <div class="cli-ad-os">
@@ -246,7 +249,7 @@
             </div>
             <a class="sponsors-banner fx-ad" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" aria-label="Fluxion AI, Silber-Sponsor: eine einheitliche API für GPT, Claude und andere führende KI-Modelle. Spare bis zu 70 % gegenüber den offiziellen API-Preisen und erhalte $3 API-Guthaben.">
                 <span class="fx-ad-copy">
-                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>GESPONSERT</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"></span>
+                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>GESPONSERT</span><img src="/sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"><span class="fx-ad-become" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();location.hash='sponsor'" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();location.hash='sponsor'}">Sponsor werden</span></span>
                     <img class="fx-ad-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI" loading="lazy">
                     <span class="fx-ad-h">Eine API für GPT, Claude &amp; alle führenden Modelle</span>
                     <span class="fx-ad-sub">Zuverlässiger, kostengünstiger Zugang zu GPT, Claude und anderen führenden KI-Modellen über eine einheitliche API.</span>
@@ -514,18 +517,6 @@
                     <h3><a href="https://www.everydev.ai/tools/agent-for-macos" target="_blank" rel="noopener">Agent! für macOS — EveryDev.ai-Toolprofil</a></h3>
                     <blockquote>„Agent! ist ein zu 100 % nativer Swift-KI-Desktop-Assistent für macOS 26.4+ Tahoe, konzipiert als Open-Source-Alternative zu Claude Code, Cursor, Cline und OpenClaw. Er arbeitet autonom in natürlicher Sprache, um Apps zu bauen, Code zu schreiben, Dateien zu verwalten und Workflows zu automatisieren — ganz ohne Electron-Overhead und mit tiefer macOS-Integration über die Accessibility-APIs.“</blockquote>
                     <a href="https://www.everydev.ai/tools/agent-for-macos" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Vollständiges Profil lesen</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SourcePulse · Open-Source-KI-Projektprofil</div>
-                    <h3><a href="https://www.sourcepulse.org/projects/28131078" target="_blank" rel="noopener">Agent von AgentiLoop — Agentische KI orchestriert deinen Mac</a></h3>
-                    <blockquote>„Dieses Projekt bietet ein agentisches KI-Framework für macOS, das tiefe Integration mit lokalen und Cloud-LLMs ermöglicht, um Aufgaben zu automatisieren, Anwendungen zu steuern und Codebasen zu verwalten. Es richtet sich an technisch versierte Nutzer, die eine leistungsstarke, abofreie Alternative zu bestehenden KI-Entwicklungstools suchen, und bietet umfassende Mac-Steuerung und KI-gestützte Workflows.“</blockquote>
-                    <a href="https://www.sourcepulse.org/projects/28131078" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Vollständiges Profil lesen</a>
-                </article>
-                <article class="review-card">
-                    <div class="review-source">SaaS Browser · Eintrag KI-Agent-Builder</div>
-                    <h3><a href="https://saasbrowser.com/en/saas/1673056/agentiloop" target="_blank" rel="noopener">AgentiLoop — KI-Agent-Builder · SaaS Browser</a></h3>
-                    <blockquote>„AgentiLoop Agent ist eine fortschrittliche, quelloffene KI-gestützte Anwendung, die umfassende Kontrolle und Automatisierung von Mac-Desktops über Befehle in natürlicher Sprache ermöglicht. Sie bietet native Swift-Integration … und unterstützt mehrschichtige Aufgabenausführung mit Sub-Agenten, kontextbewusster Verarbeitung und geräteinterner Intelligenz.“ … Hauptfunktionen: <em>Automatisierung · Geräteinterne KI · Native Mac-Steuerung · Apps bauen und verwalten · Echte Sitzungen und Ergebnisse · Erweiterung mit dem Model Context Protocol</em>.</blockquote>
-                    <a href="https://saasbrowser.com/en/saas/1673056/agentiloop" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Vollständigen Eintrag lesen</a>
                 </article>
             </div>
             <nav class="reviews-pager" aria-label="Seitennavigation der Rezensionen">
@@ -855,6 +846,7 @@
             <div class="sp-top">
                 <span class="sp-tag"><span class="sp-dot"></span>Gesponsert</span>
                 <img class="sp-badge" src="/sponsors/sponsor-silver.svg" width="120" height="44" alt="Silber">
+                <a class="sp-top-become" href="#sponsor" id="sponsor-popup-become">Sponsor werden</a>
             </div>
             <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><img class="sp-logo" src="/sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI"></a>
             <h2 id="sp-title">Eine API für GPT, Claude &amp; alle führenden Modelle</h2>
@@ -864,7 +856,7 @@
                 <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><span>Anmeldebonus</span><b>$3</b><span>API-Guthaben über diesen Link</span></a>
             </div>
             <a class="sp-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener">Hol dir $3 API-Guthaben &rarr;</a>
-            <p class="sp-promo">Promo-Code <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a> · <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SPONSORSHIP.md" target="_blank" rel="noopener">Sponsor werden</a></p>
+            <p class="sp-promo">Promo-Code <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a></p>
         </div>
     </div>
     <script>
@@ -882,6 +874,8 @@
         }
         function onKey(e) { if (e.key === 'Escape') close(); }
         closeBtn.addEventListener('click', close);
+        var becomeLink = document.getElementById('sponsor-popup-become');
+        if (becomeLink) becomeLink.addEventListener('click', close);
         setTimeout(function () {
             el.hidden = false;
             document.documentElement.classList.add('sp-lock');
