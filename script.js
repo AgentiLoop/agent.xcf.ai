@@ -332,6 +332,9 @@ document.querySelectorAll('.wave').forEach(function(el) {
     var slides = promo.querySelectorAll('.promo-slide');
     var dots = promo.querySelectorAll('.promo-dot');
     var ms = 7000, cur = 0, timer = null, left = ms, started = 0;
+    function syncHeight() { document.documentElement.style.setProperty('--promo-h', promo.offsetHeight + 'px'); }
+    syncHeight();
+    if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(promo); else window.addEventListener('resize', syncHeight);
     function show(i) {
         cur = (i + slides.length) % slides.length;
         slides.forEach(function (s, n) {

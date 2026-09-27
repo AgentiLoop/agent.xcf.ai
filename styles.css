@@ -79,6 +79,11 @@ img { max-width: 100%; height: auto; display: block; }
     min-height: calc(100vh - 55px);
     min-height: calc(100svh - 55px);
 }
+.promo + .hero { /* promo banner eats into the first screen, so the hero shrinks by its height */
+    min-height: calc(100vh - 55px - var(--promo-h, 60px));
+    min-height: calc(100svh - 55px - var(--promo-h, 60px));
+    padding-top: 16px;
+}
 .hero-glow {
     position: absolute;
     top: -220px;
