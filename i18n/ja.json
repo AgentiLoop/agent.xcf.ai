@@ -30,7 +30,7 @@
  "Latest Downloads": "最新版ダウンロード数",
  "Total Downloads": "総ダウンロード数",
  "AgentiLoop%2FAgent | Trendshift": "AgentiLoop%2FAgent | Trendshift",
- "<span class=\"cli-ad-dot\"></span>New Release · v0.0.3": "<span class=\"cli-ad-dot\"></span>新リリース · v0.0.3",
+ "<span class=\"cli-ad-dot\"></span>New Release · <span class=\"cli-ad-ver\">v0.0.3</span>": "<span class=\"cli-ad-dot\"></span>新リリース · <span class=\"cli-ad-ver\">v0.0.3</span>",
  "Become a Sponsor": "スポンサーになる",
  "AgentiLoop <span class=\"cli-ad-grad\">CLI</span>": "AgentiLoop <span class=\"cli-ad-grad\">CLI</span>",
  "The agentic coding loop for your terminal, in two versions: <strong>Rust</strong> and <strong class=\"go\">Go</strong>. The exact same capabilities, commands and config. Pick your favorite.": "ターミナルのためのエージェント型コーディングループ。<strong>Rust</strong> 版と <strong class=\"go\">Go</strong> 版の 2 バージョン。機能、コマンド、設定はまったく同じ。お好きな方をどうぞ。",
