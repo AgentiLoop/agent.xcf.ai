@@ -20,7 +20,7 @@
  "AgentiLoop Agent! for Mac, plus a CLI written in Rust and Go for Mac, Windows, and Linux",
  "AgentiLoop <span class=\"grad\">Agent!</span>",
  "Agentic AI for your Mac Desktop",
- "One app. Any AI. Your Mac, working for you. AgentiLoop Agent! answers emails, automates Safari, builds apps, writes code, organizes files, and controls your favorite Mac apps — just tell it what you need. Turn everyday tasks into hands-free workflows, all through natural language. 100% native Swift. Runs on macOS 14.6 or later.",
+ "One app. Any AI. Your Mac, working for you. Tell AgentiLoop Agent! what you need in plain English and it gets to work — answering your email, driving Safari, building Xcode apps, writing and fixing code, organizing your files, and running your favorite Mac apps for you. Pick from 23 LLM providers or stay on-device with Apple Intelligence. Everyday chores become hands-free workflows. 100% native Swift. No subscription, no telemetry. Runs on macOS 14.6 or later — and AgentiLoop CLI, in Rust or Go, brings the same agentic loop to your terminal on Mac, Windows, and Linux.",
  "Download Latest",
  "Star on GitHub",
  "Fork on GitHub",
