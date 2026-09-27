@@ -650,6 +650,9 @@ a.stat:hover .stat-label { color: var(--text); }
 .t-k { color: #a78bfa; }
 .t-ok { color: #22d3ee; }
 .t-g { color: #4ade80; font-weight: 600; }
+.cli-ad-shot { display: block; border-radius: 14px; overflow: hidden; background: #0f172a; box-shadow: 0 12px 30px rgba(15, 23, 42, .25); transition: transform .25s ease; }
+.cli-ad-shot:hover { transform: scale(1.02); }
+.cli-ad-shot img { display: block; width: 100%; height: auto; }
 @media (max-width: 900px) {
     .cli-ad { grid-template-columns: 1fr; padding: 30px 24px; }
     .cli-ad-term { font-size: 12px; }

@@ -39,6 +39,7 @@
  "Linux": "Linux",
  "<strong>New:</strong> setup wizard — pick a provider, paste a key, it checks the connection &amp; saves it. About a minute, no config files": "<strong>신규:</strong> 설정 마법사 — 제공자를 선택하고 키를 붙여 넣으면 연결을 확인하고 저장합니다. 약 1분, 설정 파일 없음",
  "<strong>New:</strong> Codex provider — sign in with your ChatGPT Plus/Pro plan, no API key needed": "<strong>신규:</strong> Codex 제공자 — ChatGPT Plus/Pro 요금제로 로그인, API 키 불필요",
+ "AgentiLoop CLI setup wizard inside the full-screen TUI: provider picked, API key hidden, connection checked, model list, key saved to Keychain, then the first prompt": "전체 화면 TUI 안의 AgentiLoop CLI 설정 마법사: 제공자 선택, API 키 숨김, 연결 확인, 모델 목록, 키체인에 키 저장, 그리고 첫 프롬프트",
  "Claude, OpenAI, Codex, Ollama, LM Studio, oMLX &amp; any OpenAI-compatible model": "Claude, OpenAI, Codex, Ollama, LM Studio, oMLX &amp; 모든 OpenAI 호환 모델",
  "Full-screen TUI with drag-to-copy, streaming, sessions &amp; smart context budgeting for small local models": "드래그로 복사하는 전체 화면 TUI, 스트리밍, 세션 &amp; 소형 로컬 모델을 위한 스마트 컨텍스트 예산",
  "Claude Code-style -/+ diffs, live files-changed pane &amp; MCP servers (same config as Agent!)": "Claude Code 스타일 -/+ diff, 실시간 변경 파일 패널 &amp; MCP 서버 (Agent!와 동일한 설정)",

@@ -39,6 +39,7 @@
  "Linux": "Linux",
  "<strong>New:</strong> setup wizard — pick a provider, paste a key, it checks the connection &amp; saves it. About a minute, no config files": "<strong>新增：</strong>安装向导 — 选择提供商、粘贴密钥，自动检查连接并保存。约一分钟，无需配置文件",
  "<strong>New:</strong> Codex provider — sign in with your ChatGPT Plus/Pro plan, no API key needed": "<strong>新增：</strong>Codex 提供商 — 使用你的 ChatGPT Plus/Pro 订阅登录，无需 API 密钥",
+ "AgentiLoop CLI setup wizard inside the full-screen TUI: provider picked, API key hidden, connection checked, model list, key saved to Keychain, then the first prompt": "AgentiLoop CLI 全屏 TUI 中的设置向导：已选择提供商、API 密钥已隐藏、连接已检查、模型列表、密钥已保存到钥匙串，然后是第一个提示词",
  "Claude, OpenAI, Codex, Ollama, LM Studio, oMLX &amp; any OpenAI-compatible model": "Claude、OpenAI、Codex、Ollama、LM Studio、oMLX 及任何兼容 OpenAI 的模型",
  "Full-screen TUI with drag-to-copy, streaming, sessions &amp; smart context budgeting for small local models": "全屏 TUI 支持拖选复制、流式输出、会话，并为小型本地模型智能分配上下文预算",
  "Claude Code-style -/+ diffs, live files-changed pane &amp; MCP servers (same config as Agent!)": "Claude Code 风格的 -/+ 差异、实时文件变更面板及 MCP 服务器（与 Agent! 使用相同配置）",
