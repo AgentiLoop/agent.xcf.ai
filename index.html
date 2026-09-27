@@ -164,7 +164,10 @@
         <div class="container">
             <div class="cli-ad">
                 <div class="cli-ad-copy">
-                    <span class="cli-ad-tag"><span class="cli-ad-dot"></span>New Release · v0.0.2</span>
+                    <div class="cli-ad-top">
+                        <span class="cli-ad-tag"><span class="cli-ad-dot"></span>New Release · v0.0.2</span>
+                        <a class="cli-ad-become" href="#sponsor">Become a Sponsor</a>
+                    </div>
                     <h2>AgentiLoop <span class="cli-ad-grad">CLI</span></h2>
                     <p class="cli-ad-sub">The agentic coding loop for your terminal, in two versions: <strong>Rust</strong> and <strong class="go">Go</strong>. The exact same capabilities, commands and config. Pick your favorite.</p>
                     <div class="cli-ad-os">
@@ -244,7 +247,7 @@
             </div>
             <a class="sponsors-banner fx-ad" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" aria-label="Fluxion AI, Silver sponsor: one unified API for GPT, Claude and other leading AI models. Save up to 70% compared with official API pricing and get $3 in API credits.">
                 <span class="fx-ad-copy">
-                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>SPONSORED</span><img src="sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"></span>
+                    <span class="fx-ad-top"><span class="fx-ad-tag"><span class="fx-ad-dot"></span>SPONSORED</span><img src="sponsors/sponsor-silver.svg" width="71" height="26" alt="Silver"><span class="fx-ad-become" role="link" tabindex="0" onclick="event.preventDefault();event.stopPropagation();location.hash='sponsor'" onkeydown="if(event.key==='Enter'){event.preventDefault();event.stopPropagation();location.hash='sponsor'}">Become a Sponsor</span></span>
                     <img class="fx-ad-logo" src="sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI" loading="lazy">
                     <span class="fx-ad-h">One API for GPT, Claude &amp; every leading model</span>
                     <span class="fx-ad-sub">Reliable, cost-efficient access to GPT, Claude and other leading AI models through one unified API.</span>
@@ -868,6 +871,7 @@
             <div class="sp-top">
                 <span class="sp-tag"><span class="sp-dot"></span>Sponsored</span>
                 <img class="sp-badge" src="sponsors/sponsor-silver.svg" width="120" height="44" alt="Silver">
+                <a class="sp-top-become" href="#sponsor" id="sponsor-popup-become">Become a Sponsor</a>
             </div>
             <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><img class="sp-logo" src="sponsors/fluxion-ai-logo.png" width="720" height="146" alt="Fluxion AI"></a>
             <h2 id="sp-title">One API for GPT, Claude &amp; every leading model</h2>
@@ -877,7 +881,7 @@
                 <a href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener"><span>Sign up bonus</span><b>$3</b><span>in API credits through this link</span></a>
             </div>
             <a class="sp-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener">Get $3 in API credits &rarr;</a>
-            <p class="sp-promo">Promo code <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a> · <a href="https://github.com/AgentiLoop/Agent/blob/main/docs/SPONSORSHIP.md" target="_blank" rel="noopener">Become a sponsor</a></p>
+            <p class="sp-promo">Promo code <a class="sp-code" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" title="Sign up with promo code AIAGENT"><code>AIAGENT</code></a></p>
         </div>
     </div>
     <script>
@@ -895,6 +899,8 @@
         }
         function onKey(e) { if (e.key === 'Escape') close(); }
         closeBtn.addEventListener('click', close);
+        var becomeLink = document.getElementById('sponsor-popup-become');
+        if (becomeLink) becomeLink.addEventListener('click', close);
         setTimeout(function () {
             el.hidden = false;
             document.documentElement.classList.add('sp-lock');

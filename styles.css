@@ -611,6 +611,9 @@ a.stat:hover .stat-label { color: var(--text); }
     background: #fff7ed; border: 1px solid #fed7aa; padding: 5px 12px; border-radius: 999px;
 }
 .cli-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #f97316; animation: cliPulse 1.6s infinite; }
+.cli-ad-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cli-ad-become { font-size: 12.5px; font-weight: 600; color: #94a3b8; text-decoration: none; white-space: nowrap; }
+.cli-ad-become:hover { color: #db2777; text-decoration: underline; }
 @keyframes cliPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,.6); } 50% { box-shadow: 0 0 0 6px rgba(249,115,22,0); } }
 .cli-ad h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.1; margin: 14px 0 8px; letter-spacing: -.02em; color: #0f172a; }
 .cli-ad-grad { background: linear-gradient(135deg, #f97316, #ec4899 50%, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -712,6 +715,8 @@ a.stat:hover .stat-label { color: var(--text); }
 }
 .sp-dot { width: 7px; height: 7px; border-radius: 50%; background: #0a6cf0; }
 .sp-badge { height: 32px; width: auto; }
+.sp-top-become { font-size: 12.5px; font-weight: 600; color: #94a3b8; text-decoration: none; white-space: nowrap; }
+.sp-top-become:hover { color: #0a6cf0; text-decoration: underline; }
 .sp-logo { display: block; width: 260px; max-width: 70%; height: auto; margin-bottom: 16px; }
 .sp-modal h2 { font-size: 24px; line-height: 1.25; font-weight: 800; letter-spacing: -.02em; color: #0a1a3f; margin-bottom: 16px; }
 .sp-desc { font-size: 15.5px; line-height: 1.55; color: #475569; margin-bottom: 18px; }
@@ -785,6 +790,8 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad-pct { font-size: clamp(64px, 9vw, 104px); font-weight: 800; line-height: 1; letter-spacing: -.03em; margin: 6px 0 8px; }
 .fx-ad-cmp { font-size: 15px; color: #e0f2fe; }
 .fx-ad-credits { margin-top: 18px; font-size: 17px; font-weight: 700; background: rgba(255,255,255,.16); border-radius: 999px; padding: 6px 16px; }
+.fx-ad-become { font-size: 12.5px; font-weight: 600; color: #94a3b8; white-space: nowrap; cursor: pointer; }
+.fx-ad-become:hover { color: #0a6cf0; text-decoration: underline; }
 @media (max-width: 760px) {
     .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
     .fx-ad-copy { align-items: center; text-align: center; }
