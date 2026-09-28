@@ -843,8 +843,10 @@ a.stat:hover .stat-label { color: var(--text); }
 @keyframes fx-shine { 0% { left: -60%; } 20%, 100% { left: 130%; } }
 .fx-ad-logo { animation: fx-throb 6s ease-in-out infinite; transform-origin: center; }
 @keyframes fx-throb { 0%, 10%, 90%, 100% { transform: scale(1); } 43%, 57% { transform: scale(1.08); } }
+.fx-ad-panel { background-size: 100% 100%, 220% 220%; animation: fx-drift 14s ease-in-out infinite alternate; }
+@keyframes fx-drift { 0% { background-position: 0 0, 0% 0%; } 100% { background-position: 0 0, 100% 100%; } }
 @media (prefers-reduced-motion: reduce) {
-    .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo { animation: none; }
+    .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo, .fx-ad-panel { animation: none; }
 }
 @media (max-width: 760px) {
     .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
