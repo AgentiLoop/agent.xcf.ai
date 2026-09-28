@@ -841,8 +841,8 @@ a.stat:hover .stat-label { color: var(--text); }
 @keyframes fx-flow { to { background-position: 200% 0; } }
 @keyframes fx-ping { 0% { box-shadow: 0 0 0 0 rgba(10,108,240,.4); } 60%, 100% { box-shadow: 0 0 0 6px rgba(10,108,240,0); } }
 @keyframes fx-shine { 0% { left: -60%; } 20%, 100% { left: 130%; } }
-.fx-ad-logo { animation: fx-throb 2s ease-in-out infinite; transform-origin: center; }
-@keyframes fx-throb { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.fx-ad-logo { animation: fx-throb 4s ease-in-out infinite; transform-origin: center; }
+@keyframes fx-throb { 0%, 15%, 85%, 100% { transform: scale(1); } 40%, 60% { transform: scale(1.08); } }
 @media (prefers-reduced-motion: reduce) {
     .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo { animation: none; }
 }
