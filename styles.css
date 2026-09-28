@@ -813,7 +813,8 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em;
     text-transform: uppercase; color: #1d4ed8; background: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 12px; border-radius: 999px; line-height: 18px; }
 .fx-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #0a6cf0; }
-.fx-ad-logo { width: 360px; max-width: 100%; height: auto; margin: 22px 0 18px; }
+.fx-ad-logo { position: relative; display: block; width: 360px; max-width: 100%; margin: 22px 0 18px; }
+.fx-ad-logo img { display: block; width: 100%; height: auto; }
 .fx-ad-h { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; color: #0a1a3f; }
 .fx-ad-sub { font-size: 16px; color: #475569; margin: 10px 0 20px; }
 .fx-ad-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; }
@@ -842,12 +843,17 @@ a.stat:hover .stat-label { color: var(--text); }
 @keyframes fx-ping { 0% { box-shadow: 0 0 0 0 rgba(10,108,240,.4); } 60%, 100% { box-shadow: 0 0 0 6px rgba(10,108,240,0); } }
 @keyframes fx-shine { 0% { left: -60%; } 20%, 100% { left: 130%; } }
 .fx-ad-logo { animation: fx-throb 6s ease-in-out infinite; transform-origin: center; }
+.fx-ad-logo::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.7) 50%, transparent 60%) 100% 0 / 300% 100% no-repeat;
+    -webkit-mask: url(sponsors/fluxion-ai-logo.png) center / 100% 100% no-repeat; mask: url(sponsors/fluxion-ai-logo.png) center / 100% 100% no-repeat;
+    animation: fx-logo-shine 8s ease-in-out infinite; }
+@keyframes fx-logo-shine { 0% { background-position: 100% 0; } 20%, 100% { background-position: 0 0; } }
 @keyframes fx-throb { 0%, 10%, 90%, 100% { transform: scale(1); } 43%, 57% { transform: scale(1.08); } }
 .fx-ad-panel { position: relative; }
 .fx-ad-panel::after { content: ""; position: absolute; top: -20%; bottom: -20%; left: -60%; width: 35%; pointer-events: none;
     background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent); transform: skewX(-20deg); animation: fx-shine 8s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-    .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo, .fx-ad-panel::after { animation: none; }
+    .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo, .fx-ad-logo::after, .fx-ad-panel::after { animation: none; }
 }
 @media (max-width: 760px) {
     .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
