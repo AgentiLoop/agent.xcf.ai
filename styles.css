@@ -890,7 +890,7 @@ a.stat:hover .stat-label { color: var(--text); }
     animation: ink-badge 4s ease-in-out infinite; }
 .ink-ad-badge::before { content: ""; position: absolute; inset: 0; z-index: -2; clip-path: polygon(50.0% 0.0%, 56.7% 7.5%, 65.5% 2.4%, 69.5% 11.7%, 79.4% 9.5%, 80.4% 19.6%, 90.5% 20.6%, 88.3% 30.5%, 97.6% 34.5%, 92.5% 43.3%, 100.0% 50.0%, 92.5% 56.7%, 97.6% 65.5%, 88.3% 69.5%, 90.5% 79.4%, 80.4% 80.4%, 79.4% 90.5%, 69.5% 88.3%, 65.5% 97.6%, 56.7% 92.5%, 50.0% 100.0%, 43.3% 92.5%, 34.5% 97.6%, 30.5% 88.3%, 20.6% 90.5%, 19.6% 80.4%, 9.5% 79.4%, 11.7% 69.5%, 2.4% 65.5%, 7.5% 56.7%, 0.0% 50.0%, 7.5% 43.3%, 2.4% 34.5%, 11.7% 30.5%, 9.5% 20.6%, 19.6% 19.6%, 20.6% 9.5%, 30.5% 11.7%, 34.5% 2.4%, 43.3% 7.5%);
     background: conic-gradient(from 0deg, #fde047, #f59e0b, #fde047, #fb923c, #fde047); animation: ink-spin 24s linear infinite; }
-.ink-ad-badge::after { content: ""; position: absolute; inset: 15px; z-index: -1; border-radius: 50%; border: 2px dashed rgba(30, 27, 75, .45);
+.ink-ad-badge::after { content: ""; position: absolute; inset: 15px; z-index: -1; border-radius: 50%;
     background: radial-gradient(circle at 32% 26%, #fffbeb, #fde047 45%, #facc15 75%, #f59e0b); box-shadow: inset 0 -4px 8px rgba(180, 83, 9, .35), inset 0 3px 6px rgba(255,255,255,.7); }
 .ink-ad-badge small { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; padding: 2px 6px; border-radius: 99px;
     color: #fde047; background: #1e1b4b; text-shadow: none; }
