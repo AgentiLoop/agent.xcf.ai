@@ -845,7 +845,7 @@ a.stat:hover .stat-label { color: var(--text); }
 @keyframes fx-throb { 0%, 10%, 90%, 100% { transform: scale(1); } 43%, 57% { transform: scale(1.08); } }
 .fx-ad-panel { position: relative; }
 .fx-ad-panel::after { content: ""; position: absolute; top: -20%; bottom: -20%; left: -60%; width: 35%; pointer-events: none;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent); transform: skewX(-20deg); animation: fx-shine 7s ease-in-out infinite; }
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent); transform: skewX(-20deg); animation: fx-shine 8s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
     .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after, .fx-ad-logo, .fx-ad-panel::after { animation: none; }
 }
