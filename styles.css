@@ -839,6 +839,71 @@ a.stat:hover .stat-label { color: var(--text); }
     .fx-ad-ctas { margin-top: 0; justify-content: center; }
     .fx-ad-panel { padding: 22px 16px; }
 }
+/* Logos InkPen.io house ad (below the sponsor banner) */
+.ink-ad { position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: center;
+    max-width: 900px; margin: 0 auto 36px; padding: 34px 28px 30px 36px; border-radius: 22px; overflow: hidden; isolation: isolate;
+    color: #f8fafc; text-decoration: none; background: #0b0a1f; box-shadow: 0 20px 60px rgba(76, 29, 149, .45);
+    transition: transform .2s ease, box-shadow .2s ease; }
+.ink-ad::before { content: ""; position: absolute; inset: -40%; z-index: -1;
+    background: conic-gradient(from 0deg, #ff3d9a, #8b5cf6, #22d3ee, #34d399, #ff3d9a); filter: blur(70px); opacity: .35;
+    animation: ink-spin 14s linear infinite; }
+.ink-ad::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 2px;
+    background: linear-gradient(120deg, #ff3d9a, #8b5cf6, #22d3ee);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.ink-ad:hover { transform: translateY(-3px); box-shadow: 0 26px 70px rgba(139, 92, 246, .6); }
+.ink-ad-copy { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.ink-ad-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ink-ad-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    color: #e9d5ff; background: rgba(139, 92, 246, .18); border: 1px solid rgba(196, 181, 253, .35); padding: 5px 12px; border-radius: 999px; line-height: 18px; }
+.ink-ad-dot { width: 8px; height: 8px; border-radius: 50%; background: #ff3d9a; box-shadow: 0 0 10px #ff3d9a; animation: ink-pulse 1.6s ease-in-out infinite; }
+.ink-ad-free { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #052e16;
+    background: linear-gradient(135deg, #4ade80, #22d3ee); padding: 5px 12px; border-radius: 999px; line-height: 18px; }
+.ink-ad-brand { margin: 20px 0 8px; font-size: clamp(34px, 5vw, 50px); font-weight: 800; letter-spacing: -.03em; line-height: 1.05; color: #fff; }
+.ink-ad-brand b { background: linear-gradient(90deg, #ff3d9a, #a78bfa, #22d3ee, #ff3d9a); background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent; animation: ink-shine 5s linear infinite; }
+.ink-ad-brand i { font-style: normal; color: #94a3b8; font-weight: 700; }
+.ink-ad-h { font-size: clamp(20px, 2.6vw, 26px); font-weight: 800; line-height: 1.2; letter-spacing: -.01em; }
+.ink-ad-sub { font-size: 16px; color: #cbd5e1; margin: 10px 0 16px; }
+.ink-ad-files { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.ink-ad-file { font: 700 13px 'SF Mono', ui-monospace, Menlo, Consolas, monospace; padding: 5px 10px; border-radius: 8px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
+.ink-ad-file.f-svg { color: #f9a8d4; } .ink-ad-file.f-pdf { color: #c4b5fd; } .ink-ad-file.f-fh { color: #67e8f9; }
+.ink-ad-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.ink-ad-cta { font-weight: 800; color: #fff; padding: 13px 24px; border-radius: 12px;
+    background: linear-gradient(135deg, #ff3d9a, #8b5cf6 55%, #22d3ee); box-shadow: 0 10px 28px rgba(255, 61, 154, .35); transition: box-shadow .2s ease, transform .2s ease; }
+.ink-ad:hover .ink-ad-cta { box-shadow: 0 14px 34px rgba(139, 92, 246, .6); transform: scale(1.03); }
+.ink-ad-req { font-size: 13px; font-weight: 600; color: #a5b4fc; }
+.ink-ad-art { position: relative; align-self: stretch; display: flex; align-items: center; justify-content: center; min-height: 240px;
+    border-radius: 18px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); }
+.ink-ad-art svg { width: 100%; height: auto; max-height: 280px; }
+.ink-grid { stroke: rgba(255,255,255,.07); stroke-width: 1; fill: none; }
+.ink-shape { fill: none; stroke: url(#inkG); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, .8)); animation: ink-draw 6s ease-in-out infinite; }
+.ink-handles path { stroke: #94a3b8; stroke-width: 1.2; stroke-dasharray: 3 3; fill: none; }
+.ink-handles circle { fill: #0b0a1f; stroke: #22d3ee; stroke-width: 1.5; }
+.ink-handles, .ink-anchors { animation: ink-fade 6s ease-in-out infinite; }
+.ink-anchors rect { fill: #fff; stroke: #8b5cf6; stroke-width: 2; }
+.ink-nib { filter: drop-shadow(0 4px 8px rgba(0,0,0,.5)); animation: ink-bob 3s ease-in-out infinite; transform-box: fill-box; }
+.ink-ad-badge { position: absolute; top: 14px; right: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 84px; height: 84px; border-radius: 50%; transform: rotate(12deg); font-size: 22px; font-weight: 900; letter-spacing: .02em; text-transform: uppercase;
+    color: #1e1b4b; background: radial-gradient(circle at 30% 25%, #fef08a, #facc15 60%, #f59e0b); box-shadow: 0 8px 20px rgba(250, 204, 21, .45); }
+.ink-ad-badge small { font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: none; margin-top: 1px; }
+@keyframes ink-spin { to { transform: rotate(360deg); } }
+@keyframes ink-shine { to { background-position: 200% center; } }
+@keyframes ink-pulse { 50% { opacity: .35; } }
+@keyframes ink-draw { 0% { stroke-dashoffset: 1; } 55%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -1; } }
+@keyframes ink-fade { 0%, 15% { opacity: 0; } 45%, 85% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes ink-bob { 50% { transform: translate(-4px, -6px) rotate(-6deg); } }
+@media (prefers-reduced-motion: reduce) {
+    .ink-ad::before, .ink-ad-dot, .ink-ad-brand b, .ink-handles, .ink-anchors, .ink-nib { animation: none; }
+    .ink-shape { animation: none; stroke-dashoffset: 0; }
+}
+@media (max-width: 760px) {
+    .ink-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
+    .ink-ad-copy { align-items: center; text-align: center; }
+    .ink-ad-top, .ink-ad-files, .ink-ad-ctas { justify-content: center; }
+    .ink-ad-art { min-height: 200px; }
+}
 .sponsor-marquee { position: relative; overflow: hidden; padding: 6px 0;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
