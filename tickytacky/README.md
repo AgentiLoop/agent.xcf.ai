@@ -30,3 +30,9 @@ Or serve the folder with any static server — it's three files and no build ste
 - `index.html` — markup
 - `style.css`  — all the glow
 - `game.js`    — game state, minimax AI, rendering
+
+---
+
+**AgentiLoop:** [agentiloop.ai](https://agentiloop.ai/)
+
+Copyright © 2026 AgentiLoop.ai, a Logos InkPen LLC company. All rights reserved.

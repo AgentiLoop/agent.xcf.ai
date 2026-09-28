@@ -106,3 +106,7 @@ Found a typo, a broken link or a bad translation? Issues and pull requests are w
 ## License
 
 Website source: [MIT](LICENSE). "AgentiLoop Agent!" and the Agent! logo are trademarks of AgentiLoop.ai, a Logos InkPen LLC company. See [legal.html](https://agentiloop.ai/legal.html).
+
+---
+
+Copyright © 2026 AgentiLoop.ai, a Logos InkPen LLC company. All rights reserved.
