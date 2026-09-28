@@ -884,18 +884,25 @@ a.stat:hover .stat-label { color: var(--text); }
 .ink-handles, .ink-anchors { animation: ink-fade 6s ease-in-out infinite; }
 .ink-anchors rect { fill: #fff; stroke: #8b5cf6; stroke-width: 2; }
 .ink-nib { filter: drop-shadow(0 4px 8px rgba(0,0,0,.5)); animation: ink-bob 3s ease-in-out infinite; transform-box: fill-box; }
-.ink-ad-badge { position: absolute; top: 14px; right: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 84px; height: 84px; border-radius: 50%; transform: rotate(12deg); font-size: 22px; font-weight: 900; letter-spacing: .02em; text-transform: uppercase;
-    color: #1e1b4b; background: radial-gradient(circle at 30% 25%, #fef08a, #facc15 60%, #f59e0b); box-shadow: 0 8px 20px rgba(250, 204, 21, .45); }
-.ink-ad-badge small { font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: none; margin-top: 1px; }
+.ink-ad-badge { position: absolute; top: 10px; right: 10px; z-index: 2; isolation: isolate; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 104px; height: 104px; transform: rotate(12deg); font-size: 27px; font-weight: 900; line-height: 1; letter-spacing: .04em; text-transform: uppercase;
+    color: #1e1b4b; text-shadow: 0 1px 0 rgba(255,255,255,.55); filter: drop-shadow(0 10px 18px rgba(245, 158, 11, .55)) drop-shadow(0 0 22px rgba(250, 204, 21, .35));
+    animation: ink-badge 4s ease-in-out infinite; }
+.ink-ad-badge::before { content: ""; position: absolute; inset: 0; z-index: -2; clip-path: polygon(50.0% 0.0%, 56.7% 7.5%, 65.5% 2.4%, 69.5% 11.7%, 79.4% 9.5%, 80.4% 19.6%, 90.5% 20.6%, 88.3% 30.5%, 97.6% 34.5%, 92.5% 43.3%, 100.0% 50.0%, 92.5% 56.7%, 97.6% 65.5%, 88.3% 69.5%, 90.5% 79.4%, 80.4% 80.4%, 79.4% 90.5%, 69.5% 88.3%, 65.5% 97.6%, 56.7% 92.5%, 50.0% 100.0%, 43.3% 92.5%, 34.5% 97.6%, 30.5% 88.3%, 20.6% 90.5%, 19.6% 80.4%, 9.5% 79.4%, 11.7% 69.5%, 2.4% 65.5%, 7.5% 56.7%, 0.0% 50.0%, 7.5% 43.3%, 2.4% 34.5%, 11.7% 30.5%, 9.5% 20.6%, 19.6% 19.6%, 20.6% 9.5%, 30.5% 11.7%, 34.5% 2.4%, 43.3% 7.5%);
+    background: conic-gradient(from 0deg, #fde047, #f59e0b, #fde047, #fb923c, #fde047); animation: ink-spin 24s linear infinite; }
+.ink-ad-badge::after { content: ""; position: absolute; inset: 15px; z-index: -1; border-radius: 50%; border: 2px dashed rgba(30, 27, 75, .45);
+    background: radial-gradient(circle at 32% 26%, #fffbeb, #fde047 45%, #facc15 75%, #f59e0b); box-shadow: inset 0 -4px 8px rgba(180, 83, 9, .35), inset 0 3px 6px rgba(255,255,255,.7); }
+.ink-ad-badge small { font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-top: 4px; padding: 2px 6px; border-radius: 99px;
+    color: #fde047; background: #1e1b4b; text-shadow: none; }
 @keyframes ink-spin { to { transform: rotate(360deg); } }
 @keyframes ink-shine { to { background-position: 200% center; } }
 @keyframes ink-pulse { 50% { opacity: .35; } }
 @keyframes ink-draw { 0% { stroke-dashoffset: 1; } 55%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -1; } }
 @keyframes ink-fade { 0%, 15% { opacity: 0; } 45%, 85% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes ink-badge { 0%, 100% { transform: rotate(12deg) scale(1); } 50% { transform: rotate(6deg) scale(1.07); } }
 @keyframes ink-bob { 50% { transform: translate(-4px, -6px) rotate(-6deg); } }
 @media (prefers-reduced-motion: reduce) {
-    .ink-ad::before, .ink-ad-dot, .ink-ad-brand b, .ink-handles, .ink-anchors, .ink-nib { animation: none; }
+    .ink-ad::before, .ink-ad-dot, .ink-ad-brand b, .ink-handles, .ink-anchors, .ink-nib, .ink-ad-badge, .ink-ad-badge::before { animation: none; }
     .ink-shape { animation: none; stroke-dashoffset: 0; }
 }
 @media (max-width: 760px) {
