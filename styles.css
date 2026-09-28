@@ -832,29 +832,17 @@ a.stat:hover .stat-label { color: var(--text); }
 .fx-ad-credits { margin-top: 18px; font-size: 17px; font-weight: 700; background: rgba(255,255,255,.16); border-radius: 999px; padding: 6px 16px; }
 .fx-ad-become { font-size: 12.5px; font-weight: 600; color: #94a3b8; white-space: nowrap; cursor: pointer; }
 .fx-ad-become:hover { color: #0a6cf0; text-decoration: underline; }
-/* Fluxion ad animation */
-.fx-ad::before { background: linear-gradient(90deg, #0050f0, #00c8f0, #7c3aed, #0050f0); background-size: 300% 100%; animation: fx-flow 6s linear infinite; }
-.fx-ad-dot { animation: fx-ping 1.8s ease-out infinite; }
-.fx-ad-logo { animation: fx-float 5s ease-in-out infinite; }
-.fx-ad-cta { position: relative; overflow: hidden; transition: box-shadow .2s ease, transform .2s ease; }
-.fx-ad-cta::after, .fx-ad-panel::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; pointer-events: none;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-20deg); animation: fx-shine 4s ease-in-out infinite; }
-.fx-ad-panel::after { animation-delay: 2s; width: 30%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.22), transparent); }
-.fx-ad:hover .fx-ad-cta { transform: translateY(-2px); }
-.fx-ad-panel { position: relative; background-size: 100% 100%, 200% 200%; animation: fx-pan 8s ease-in-out infinite; }
-.fx-ad-pct { display: inline-block; animation: fx-beat 3s ease-in-out infinite; text-shadow: 0 0 24px rgba(255,255,255,.35); }
-.fx-ad-credits { animation: fx-glow 2.4s ease-in-out infinite; }
-.fx-ad-promo code { animation: fx-dash 2.4s ease-in-out infinite; }
-@keyframes fx-flow { to { background-position: 300% 0; } }
-@keyframes fx-ping { 0% { box-shadow: 0 0 0 0 rgba(10,108,240,.6); } 100% { box-shadow: 0 0 0 10px rgba(10,108,240,0); } }
-@keyframes fx-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-@keyframes fx-shine { 0% { left: -60%; } 45%, 100% { left: 130%; } }
-@keyframes fx-pan { 0%, 100% { background-position: 0 0, 0% 50%; } 50% { background-position: 0 0, 100% 50%; } }
-@keyframes fx-beat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-@keyframes fx-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,.45); } 50% { box-shadow: 0 0 0 8px rgba(255,255,255,0); } }
-@keyframes fx-dash { 0%, 100% { border-color: #94a3b8; } 50% { border-color: #0a6cf0; } }
+/* Fluxion ad animation (subtle) */
+.fx-ad::before { background: linear-gradient(90deg, #0050f0, #00c8f0, #0050f0); background-size: 200% 100%; animation: fx-flow 12s linear infinite; }
+.fx-ad-dot { animation: fx-ping 3s ease-out infinite; }
+.fx-ad-cta { position: relative; overflow: hidden; }
+.fx-ad-cta::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 30%; pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.25), transparent); transform: skewX(-20deg); animation: fx-shine 8s ease-in-out infinite; }
+@keyframes fx-flow { to { background-position: 200% 0; } }
+@keyframes fx-ping { 0% { box-shadow: 0 0 0 0 rgba(10,108,240,.4); } 60%, 100% { box-shadow: 0 0 0 6px rgba(10,108,240,0); } }
+@keyframes fx-shine { 0% { left: -60%; } 20%, 100% { left: 130%; } }
 @media (prefers-reduced-motion: reduce) {
-    .fx-ad::before, .fx-ad-dot, .fx-ad-logo, .fx-ad-cta::after, .fx-ad-panel, .fx-ad-panel::after, .fx-ad-pct, .fx-ad-credits, .fx-ad-promo code { animation: none; }
+    .fx-ad::before, .fx-ad-dot, .fx-ad-cta::after { animation: none; }
 }
 @media (max-width: 760px) {
     .fx-ad { grid-template-columns: 1fr; padding: 30px 22px 22px; gap: 22px; }
