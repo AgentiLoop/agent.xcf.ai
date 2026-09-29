@@ -153,6 +153,7 @@
 @keyframes promo-progress { to { height: 100%; } }
 
 @media (max-width: 640px) {
+    .promo { display: none; }
     .promo-slide { padding: 12px 36px 12px 16px; font-size: 0.9rem; gap: 8px 10px; }
     .promo-icon, .promo-sponsored { display: none; }
     .promo-dots { right: 10px; }
