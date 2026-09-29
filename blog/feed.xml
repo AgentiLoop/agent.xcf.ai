@@ -6,20 +6,6 @@
     <description>Deep dives into AgentiLoop Agent!, the native macOS AI agent.</description>
     <language>en</language>
     <item>
-      <title>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac</title>
-      <link>https://agentiloop.ai/blog/welcome-to-the-agent-blog/</link>
-      <guid>https://agentiloop.ai/blog/welcome-to-the-agent-blog/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.</description>
-    </item>
-    <item>
-      <title>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails</title>
-      <link>https://agentiloop.ai/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/blog/inside-agent-shell-guardrails/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.</description>
-    </item>
-    <item>
       <title>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</title>
       <link>https://agentiloop.ai/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/blog/context-compaction-half-the-window/</guid>
@@ -27,11 +13,25 @@
       <description>How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.</description>
     </item>
     <item>
+      <title>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails</title>
+      <link>https://agentiloop.ai/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <description>How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.</description>
+    </item>
+    <item>
       <title>Agent! Now Runs on macOS 14.6 and Intel Macs: How We Got Off macOS 26</title>
       <link>https://agentiloop.ai/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
       <description>Agent! was built around Apple Intelligence on macOS 26. Here&#x27;s how one day of #available gates and package bumps brought it to macOS 14.6 on Apple Silicon and Intel.</description>
+    </item>
+    <item>
+      <title>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac</title>
+      <link>https://agentiloop.ai/blog/welcome-to-the-agent-blog/</link>
+      <guid>https://agentiloop.ai/blog/welcome-to-the-agent-blog/</guid>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
+      <description>What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.</description>
     </item>
     <item>
       <title>Meet Jev: A Second Opinion That Answers in Types, Not Prose</title>

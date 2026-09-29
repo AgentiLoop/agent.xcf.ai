@@ -6,20 +6,6 @@
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
     <item>
-      <title>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</title>
-      <link>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</link>
-      <guid>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</description>
-    </item>
-    <item>
-      <title>在模型开口之前：深入解析 Agent! 的 Shell 安全护栏</title>
-      <link>https://agentiloop.ai/zh/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/zh/blog/inside-agent-shell-guardrails/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>ShellSafetyService、守护进程侧的二次检查以及 Jev 第二意见如何阻止 AI 智能体清空你的 Mac——带你逐行走读真实的 Swift 代码。</description>
-    </item>
-    <item>
       <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
       <link>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</guid>
@@ -27,11 +13,25 @@
       <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
     </item>
     <item>
+      <title>在模型开口之前：深入解析 Agent! 的 Shell 安全护栏</title>
+      <link>https://agentiloop.ai/zh/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/zh/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ShellSafetyService、守护进程侧的二次检查以及 Jev 第二意见如何阻止 AI 智能体清空你的 Mac——带你逐行走读真实的 Swift 代码。</description>
+    </item>
+    <item>
       <title>Agent! 现已支持 macOS 14.6 和 Intel Mac：我们如何摆脱对 macOS 26 的依赖</title>
       <link>https://agentiloop.ai/zh/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/zh/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
       <description>Agent! 原本围绕 macOS 26 上的 Apple Intelligence 构建。本文介绍我们如何通过一天的 #available 条件判断和包版本升级，让它能够在 Apple Silicon 和 Intel 的 macOS 14.6 上运行。</description>
+    </item>
+    <item>
+      <title>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</title>
+      <link>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</link>
+      <guid>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</guid>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
+      <description>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</description>
     </item>
     <item>
       <title>认识 Jev：以类型而非文字作答的第二意见</title>
