@@ -177,7 +177,8 @@ def load_posts(today):
         if not m:
             sys.exit('Bad post filename (want YYYY-MM-DD-slug.md): %s' % path.name)
         date = datetime.date.fromisoformat(m.group(1))
-        if date > today:
+        # Future-dated posts wait for their day, unless they're already live (never unpublish a post).
+        if date > today and not (BLOG / m.group(2) / 'index.html').exists():
             print('queued (not yet published): %s' % path.name)
             continue
         meta, body = parse(path)

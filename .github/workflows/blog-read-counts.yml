@@ -1,0 +1,41 @@
+# Refreshes the blog's read counts (Cloudflare Web Analytics) every hour, and publishes any
+# queued post whose date has arrived. Rebuilds the blog and commits only if something changed;
+# the push then redeploys the site through Cloudflare Workers Builds.
+# Needs the repo secret CF_API_TOKEN: a read-only Cloudflare token (Account Analytics: Read).
+name: Blog read counts
+
+on:
+  schedule:
+    - cron: '17 * * * *'   # hourly, at :17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-read-counts
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild the blog with fresh read counts
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python3 blog/tools/build.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git add -A blog sitemap.xml es fr de zh ru ko ja
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name  "AgentiLoop Agent"
+          git config user.email "agent@agentiloop.ai"
+          git commit -m "Blog: refresh read counts"
+          git pull --rebase origin main
+          git push origin HEAD:main

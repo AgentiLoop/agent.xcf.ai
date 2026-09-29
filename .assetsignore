@@ -29,3 +29,6 @@ i18n/
 # Blog Markdown sources and build script (the generated /blog/ pages, feed.xml and blog.css are published)
 blog/src/
 blog/tools/
+
+# GitHub Actions workflows (blog read-count refresh)
+.github/
