@@ -6,13 +6,6 @@
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
     <item>
-      <title>每月 1 日发布，中间穿插预发布</title>
-      <link>https://agentiloop.ai/zh/blog/a-release-on-the-first-of-every-month/</link>
-      <guid>https://agentiloop.ai/zh/blog/a-release-on-the-first-of-every-month/</guid>
-      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! 现在于每月 1 日发布稳定版。每日预发布(之后改为每周)用来试验新功能和修复，候选版本则在发布日之前把一切定下来。</description>
-    </item>
-    <item>
       <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
       <link>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</guid>

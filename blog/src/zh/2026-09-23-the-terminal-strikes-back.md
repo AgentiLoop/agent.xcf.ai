@@ -70,8 +70,8 @@ Mac 应用的超能力，比如通过辅助功能操控 Photo Booth，或用 Scr
 
 从第一天起，它就支持 Claude（API 密钥或 Claude Code OAuth 令牌均可放在同一个凭据中，认证方式会自动识别）、OpenAI 及任何兼容 OpenAI 的服务器、通过 Ollama 或 LM Studio 运行的本地模型，以及 Apple Silicon 上的 **oMLX**。它会自动从 `~/.omlx/settings.json` 读取 oMLX 的地址和密钥。
 
-## 试用预发布版
+## 试用正式版
 
-今天我们发布了 **v0.0.1**，作为预发布版本。它还处于早期阶段，迭代很快，我们希望现在就听到你的反馈，趁改动成本还低。你可以从 [Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases) 下载二进制文件，或者从[源码](https://github.com/AgentiLoop/AgentiLoopGo)构建 Go 版本。
+今天我们发布了 **v0.0.4** 正式版。它还处于早期阶段，迭代很快，我们希望现在就听到你的反馈，趁改动成本还低。你可以从 [Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases) 下载二进制文件，或者从[源码](https://github.com/AgentiLoop/AgentiLoopGo)构建 Go 版本。
 
 Mac 应用不会消失。如果你用的是 Mac，Agent! 依然能做到任何终端都做不到的事。但如果你曾希望在 Linux 服务器、Windows 笔记本和 Raspberry Pi 上使用同一个智能体，它现在来了。

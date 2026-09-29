@@ -70,8 +70,8 @@ Et quand une clé d'API est manquante ou incorrecte, elle le dit en termes simpl
 
 Dès le premier jour, elle fonctionne avec Claude (clé d'API ou jeton OAuth Claude Code dans le même identifiant, avec détection automatique du schéma d'authentification), OpenAI et tout serveur compatible OpenAI, les modèles locaux via Ollama ou LM Studio, et **oMLX** sur Apple Silicon. Elle lit automatiquement l'adresse et la clé d'oMLX dans `~/.omlx/settings.json`.
 
-## Essayez la pré-version
+## Essayez la version
 
-Aujourd'hui, nous publions la **v0.0.1** en tant que pré-version. C'est encore jeune et ça évolue vite, et nous voulons vos retours maintenant, tant que les changements coûtent peu. Récupérez un binaire dans les [releases Rust](https://github.com/AgentiLoop/AgentiLoopCLI/releases), ou compilez l'édition Go depuis les [sources](https://github.com/AgentiLoop/AgentiLoopGo).
+Aujourd'hui, nous publions la **v0.0.4**, une version stable. C'est encore jeune et ça évolue vite, et nous voulons vos retours maintenant, tant que les changements coûtent peu. Récupérez un binaire dans les [releases Rust](https://github.com/AgentiLoop/AgentiLoopCLI/releases), ou compilez l'édition Go depuis les [sources](https://github.com/AgentiLoop/AgentiLoopGo).
 
 L'app Mac ne va nulle part. Si vous êtes sur Mac, Agent! fait toujours des choses qu'aucun terminal ne peut faire. Mais si vous avez déjà rêvé du même agent sur le serveur Linux, le portable Windows et le Raspberry Pi, le voici.

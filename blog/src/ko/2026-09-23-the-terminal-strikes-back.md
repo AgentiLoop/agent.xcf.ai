@@ -70,8 +70,8 @@ Accessibility로 Photo Booth를 조작하거나 ScriptingBridge로 Mail을 스�
 
 첫날부터 Claude(API 키 또는 Claude Code OAuth 토큰을 같은 자격 증명 항목에 넣으면 인증 방식을 자동 감지), OpenAI 및 모든 OpenAI 호환 서버, Ollama 또는 LM Studio를 통한 로컬 모델, 그리고 Apple Silicon의 **oMLX** 와 함께 동작합니다. oMLX의 주소와 키는 `~/.omlx/settings.json`에서 자동으로 읽어옵니다.
 
-## 프리릴리스를 사용해 보세요
+## 정식 릴리스를 사용해 보세요
 
-오늘 우리는 **v0.0.1** 을 프리릴리스로 공개했습니다. 아직 초기 단계이고 빠르게 변하고 있으며, 변경 비용이 적은 지금 여러분의 피드백을 받고 싶습니다. [Rust 릴리스](https://github.com/AgentiLoop/AgentiLoopCLI/releases)에서 바이너리를 받거나, [소스](https://github.com/AgentiLoop/AgentiLoopGo)에서 Go 에디션을 빌드하세요.
+오늘 우리는 **v0.0.4** 정식 릴리스를 공개했습니다. 아직 초기 단계이고 빠르게 변하고 있으며, 변경 비용이 적은 지금 여러분의 피드백을 받고 싶습니다. [Rust 릴리스](https://github.com/AgentiLoop/AgentiLoopCLI/releases)에서 바이너리를 받거나, [소스](https://github.com/AgentiLoop/AgentiLoopGo)에서 Go 에디션을 빌드하세요.
 
 Mac 앱은 어디로도 가지 않습니다. Mac을 사용 중이라면 Agent! 는 여전히 어떤 터미널도 할 수 없는 일들을 해냅니다. 하지만 Linux 서버, Windows 노트북, Raspberry Pi에서도 같은 에이전트를 쓰고 싶었던 적이 있다면, 이제 여기 있습니다.

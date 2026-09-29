@@ -70,8 +70,8 @@ And when an API key is missing or wrong, it says so in plain words and names the
 
 On day one it works with Claude (API key or Claude Code OAuth token in the same credential, with the auth scheme auto-detected), OpenAI and any OpenAI-compatible server, local models through Ollama or LM Studio, and **oMLX** on Apple Silicon. It reads oMLX's address and key from `~/.omlx/settings.json` automatically.
 
-## Try the pre-release
+## Try the release
 
-Today we cut **v0.0.1**, published as a pre-release. It's early and moving fast, and we want your feedback now, while it's cheap to change. Grab a binary from the [Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases), or build the Go edition from [source](https://github.com/AgentiLoop/AgentiLoopGo).
+Today we cut **v0.0.4**, a full release. It's early and moving fast, and we want your feedback now, while it's cheap to change. Grab a binary from the [Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases), or build the Go edition from [source](https://github.com/AgentiLoop/AgentiLoopGo).
 
 The Mac app isn't going anywhere. If you're on a Mac, Agent! still does things no terminal can. But if you've ever wanted the same agent on the Linux server, the Windows laptop and the Raspberry Pi, it's here.

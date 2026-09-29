@@ -70,8 +70,8 @@ AI コーディングツールの第一波は、エディタやチャットウ�
 
 初日から、Claude（API キーまたは Claude Code の OAuth トークンを同じ認証情報に入れられ、認証方式は自動判別）、OpenAI および OpenAI 互換の任意のサーバー、Ollama や LM Studio 経由のローカルモデル、そして Apple Silicon 上の **oMLX** に対応しています。oMLX のアドレスとキーは `~/.omlx/settings.json` から自動的に読み込みます。
 
-## プレリリースを試す
+## リリースを試す
 
-本日、**v0.0.1** をプレリリースとして公開しました。まだ初期段階で動きも速いので、変更のコストが低い今のうちにフィードバックをいただきたいと考えています。[Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases) からバイナリを入手するか、[ソース](https://github.com/AgentiLoop/AgentiLoopGo)から Go 版をビルドしてください。
+本日、**v0.0.4** を正式リリースとして公開しました。まだ初期段階で動きも速いので、変更のコストが低い今のうちにフィードバックをいただきたいと考えています。[Rust releases](https://github.com/AgentiLoop/AgentiLoopCLI/releases) からバイナリを入手するか、[ソース](https://github.com/AgentiLoop/AgentiLoopGo)から Go 版をビルドしてください。
 
 Mac アプリがなくなることはありません。Mac をお使いなら、Agent! はどんなターミナルにもできないことを今もやってのけます。しかし、Linux サーバーでも、Windows ノートでも、Raspberry Pi でも同じエージェントを使いたいと思ったことがあるなら、それがここにあります。
