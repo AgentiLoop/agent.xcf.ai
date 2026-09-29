@@ -13,18 +13,18 @@
       <description>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</description>
     </item>
     <item>
-      <title>Прежде чем модель получит право голоса: как устроены защитные механизмы shell в Agent!</title>
-      <link>https://agentiloop.ai/ru/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/ru/blog/inside-agent-shell-guardrails/</guid>
-      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Как ShellSafetyService, повторная проверка на стороне демона и второе мнение Jev не дают ИИ-агенту стереть ваш Mac — разбор на реальном коде Swift.</description>
-    </item>
-    <item>
       <title>Agent! теперь работает на macOS 14.6 и Mac с Intel: как мы отвязались от macOS 26</title>
       <link>https://agentiloop.ai/ru/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/ru/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
       <description>Agent! создавался вокруг Apple Intelligence на macOS 26. Рассказываем, как за один день проверок #available и обновлений пакетов мы перенесли его на macOS 14.6 для Apple Silicon и Intel.</description>
+    </item>
+    <item>
+      <title>Прежде чем модель получит право голоса: как устроены защитные механизмы shell в Agent!</title>
+      <link>https://agentiloop.ai/ru/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/ru/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Как ShellSafetyService, повторная проверка на стороне демона и второе мнение Jev не дают ИИ-агенту стереть ваш Mac — разбор на реальном коде Swift.</description>
     </item>
     <item>
       <title>Добро пожаловать в блог Agent!: одно приложение, любой ИИ, полный контроль над вашим Mac</title>

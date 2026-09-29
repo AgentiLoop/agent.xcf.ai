@@ -13,18 +13,18 @@
       <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
     </item>
     <item>
-      <title>モデルに判断を委ねる前に：Agent! のシェル・ガードレールの内側</title>
-      <link>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</guid>
-      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
-      <description>ShellSafetyService、デーモン側での再チェック、そして Jev のセカンドオピニオンが、AI エージェントによる Mac の全消去をどう防ぐのかを、実際の Swift コードとともに解説します。</description>
-    </item>
-    <item>
       <title>Agent! が macOS 14.6 と Intel Mac で動作するように：macOS 26 依存からの脱却</title>
       <link>https://agentiloop.ai/ja/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/ja/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
       <description>Agent! は macOS 26 の Apple Intelligence を前提に構築されていました。1日がかりの #available ゲートとパッケージの更新で、Apple Silicon と Intel の macOS 14.6 に対応させた方法を紹介します。</description>
+    </item>
+    <item>
+      <title>モデルに判断を委ねる前に：Agent! のシェル・ガードレールの内側</title>
+      <link>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ShellSafetyService、デーモン側での再チェック、そして Jev のセカンドオピニオンが、AI エージェントによる Mac の全消去をどう防ぐのかを、実際の Swift コードとともに解説します。</description>
     </item>
     <item>
       <title>Agent! ブログへようこそ：ひとつのアプリで、あらゆる AI を使い、Mac を完全に操る</title>
