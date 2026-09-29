@@ -6,6 +6,13 @@
     <description>Plongées dans AgentiLoop Agent!, l&#x27;agent IA natif pour macOS.</description>
     <language>fr</language>
     <item>
+      <title>Une version le 1er de chaque mois, et des préversions entre les deux</title>
+      <link>https://agentiloop.ai/fr/blog/a-release-on-the-first-of-every-month/</link>
+      <guid>https://agentiloop.ai/fr/blog/a-release-on-the-first-of-every-month/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! publie désormais une version stable le 1er de chaque mois. Les préversions quotidiennes (bientôt hebdomadaires) servent à essayer les nouveautés et les correctifs, et les release candidates verrouillent le tout avant le grand jour.</description>
+    </item>
+    <item>
       <title>Pourquoi Agent! compacte à la moitié de la fenêtre, et les trois bugs qui l&#x27;ont réduite à 16K</title>
       <link>https://agentiloop.ai/fr/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/fr/blog/context-compaction-half-the-window/</guid>

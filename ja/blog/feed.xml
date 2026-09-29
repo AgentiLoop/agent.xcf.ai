@@ -6,6 +6,13 @@
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
     <item>
+      <title>毎月 1 日にリリース、その間はプレリリース</title>
+      <link>https://agentiloop.ai/ja/blog/a-release-on-the-first-of-every-month/</link>
+      <guid>https://agentiloop.ai/ja/blog/a-release-on-the-first-of-every-month/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! は毎月 1 日に安定版をリリースするようになりました。毎日のプレリリース(いずれ毎週に移行)で新機能や修正を試し、リリース候補で本番前に仕上げます。</description>
+    </item>
+    <item>
       <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
       <link>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</guid>

@@ -6,6 +6,13 @@
     <description>Deep Dives in AgentiLoop Agent!, den nativen KI-Agenten für macOS.</description>
     <language>de</language>
     <item>
+      <title>Ein Release am Ersten jedes Monats, dazwischen Pre-Releases</title>
+      <link>https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</link>
+      <guid>https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! erscheint jetzt am 1. jedes Monats als stabiles Release. In täglichen Pre-Releases (bald wöchentlich) werden neue Features und Fixes erprobt, und Release Candidates machen vor dem großen Tag alles fest.</description>
+    </item>
+    <item>
       <title>Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen</title>
       <link>https://agentiloop.ai/de/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/de/blog/context-compaction-half-the-window/</guid>

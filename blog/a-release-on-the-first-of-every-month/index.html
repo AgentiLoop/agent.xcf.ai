@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"A Release on the First of Every Month, and Pre-Releases in Between","description":"Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.","datePublished":"2026-09-28","inLanguage":"en","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/a-release-on-the-first-of-every-month/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"A Release on the First of Every Month, and Pre-Releases in Between","description":"Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.","datePublished":"2026-09-29","inLanguage":"en","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/a-release-on-the-first-of-every-month/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Release Notes</span><span class="post-tag">Behind the Scenes</span></div>
                     <h1>A Release on the First of Every Month, and Pre-Releases in Between</h1>
                     <p class="post-dek">Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.</p>
-                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-28">September 28, 2026</time> · 5 min read</p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-29">September 29, 2026</time> · 5 min read</p>
                 </header>
                 <div class="post-body">
 <p>Agent! has a new rhythm. Starting <strong>October 1, 2026</strong>, there's a stable release on the <strong>1st of every month</strong>. In between, there are pre-releases: right now about one a day, and we plan to slow that to one a week. Somewhere in the last stretch of each month the pre-releases become <strong>release candidates</strong>, and the best candidate becomes the release on the 1st.</p>
@@ -137,7 +137,7 @@
 <h2 id="the-road-to-october-1">The road to October 1</h2>
 <p>The new cycle has already had its dress rehearsal. After 1.1.33 shipped, <code>main</code> kept moving. From v1.1.37.237 on September 13 to v1.1.77.277 on September 28, every tag was a pre-release build, and on most days there was at least one.</p>
 <figure class="chart"><div class="chart-title">Tags per day, September 13–28</div><div class="cols"><div style="height:10.6%"><span>1</span></div><div style="height:10.6%"><span>1</span></div><div style="height:10.6%"><span>1</span></div><div style="height:42.5%"><span>4</span></div><div style="height:0.0%"><span></span></div><div style="height:53.1%"><span>5</span></div><div style="height:10.6%"><span>1</span></div><div style="height:10.6%"><span>1</span></div><div style="height:31.9%"><span>3</span></div><div style="height:21.2%"><span>2</span></div><div style="height:10.6%"><span>1</span></div><div style="height:21.2%"><span>2</span></div><div style="height:85.0%"><span>8</span></div><div class="rc" style="height:42.5%"><span>4</span></div><div class="rc" style="height:42.5%"><span>4</span></div><div class="rc" style="height:10.6%"><span>1</span></div></div><div class="cols-x"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span></div><div class="legend"><span><i></i>pre-release builds</span><span><i class="rc"></i>RC season (RC1 on the 26th → RC6 on the 28th)</span></div><figcaption>39 tags in 16 days. September 25 alone shipped eight builds, v1.1.61 through v1.1.68.</figcaption></figure>
-<p>On September 26 the builds changed their name. <strong>v1.1.72.272 became Release Candidate 1</strong>, with a new headline in its release notes: <em>Formal Release Date Oct. 1, 2026.</em> RC2 through RC5 followed on September 27, and RC6 (v1.1.77.277) went up today. Each RC's notes ask testers to report regressions against the v1.1.33.233 stable release, so everyone compares against the same baseline.</p>
+<p>On September 26 the builds changed their name. <strong>v1.1.72.272 became Release Candidate 1</strong>, with a new headline in its release notes: <em>Formal Release Date Oct. 1, 2026.</em> RC2 through RC5 followed on September 27, and RC6 (v1.1.77.277) went up on September 28. Each RC's notes ask testers to report regressions against the v1.1.33.233 stable release, so everyone compares against the same baseline.</p>
 <p>The RCs weren't just a relabel. They carried real fixes:</p>
 <ul><li><strong>RC1</strong> pinned every <code>Agent*</code> package in <code>Package.resolved</code> to its latest tag, so fixes like AgentTools 2.53.18 actually make it into the build.</li><li><strong>RC6</strong> got critic review working again with newer Claude models, fixed context-overflow and max_tokens detection across providers, and made the compaction threshold follow the model you're actually using. (That last one has <a href="/blog/context-compaction-half-the-window/">its own blog post</a>.)</li></ul>
 <p>Every pre-release goes through the same Release workflow as a stable release: it builds, notarizes and staples the <code>.zip</code> and <code>.dmg</code>. A pre-release isn't a rough cut. It's a finished build with less mileage.</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Older</span>Agent! Now Runs on macOS 14.6 and Intel Macs: How We Got Off macOS 26</a><a class="post-nav-newer" href="/blog/context-compaction-half-the-window/"><span>Newer →</span>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/blog/context-compaction-half-the-window/"><span>← Older</span>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/" class="btn btn-ghost" data-back-home>← Back to Home</a>
             </div>

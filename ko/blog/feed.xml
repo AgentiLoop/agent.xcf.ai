@@ -6,6 +6,13 @@
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
     <item>
+      <title>매달 1일에 릴리스, 그 사이에는 프리릴리스</title>
+      <link>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</link>
+      <guid>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent!는 이제 매달 1일에 안정 버전을 출시합니다. 매일 나오는 프리릴리스(곧 매주로 전환)에서 새 기능과 수정 사항을 시험하고, 릴리스 후보로 출시일 전에 모든 것을 확정합니다.</description>
+    </item>
+    <item>
       <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
       <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>

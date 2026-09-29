@@ -6,6 +6,13 @@
     <description>Подробный разбор AgentiLoop Agent!, нативного ИИ-агента для macOS.</description>
     <language>ru</language>
     <item>
+      <title>Релиз первого числа каждого месяца, а между ними — предрелизы</title>
+      <link>https://agentiloop.ai/ru/blog/a-release-on-the-first-of-every-month/</link>
+      <guid>https://agentiloop.ai/ru/blog/a-release-on-the-first-of-every-month/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! теперь выходит стабильным релизом первого числа каждого месяца. В ежедневных предрелизах (скоро еженедельных) обкатываются новые функции и исправления, а релиз-кандидаты доводят всё до готовности перед важным днём.</description>
+    </item>
+    <item>
       <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>
       <link>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</link>
       <guid>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</guid>

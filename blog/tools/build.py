@@ -20,7 +20,7 @@ by re-running this script (e.g. from a daily job) and committing the output.
 Writes:  blog/...  and  <lang>/blog/...   (<slug>/index.html, index.html, feed.xml)
 Updates: the <!-- blog:start --> ... <!-- blog:end --> block in sitemap.xml
 
-Usage:   python3 blog/tools/build.py
+Usage:   python3 blog/tools/build.py [YYYY-MM-DD]   (optional date publishes as of that day)
 """
 import datetime
 import html
@@ -518,7 +518,8 @@ def update_sitemap(posts):
 
 
 def main():
-    today = datetime.date.today()
+    # Optional: `build.py YYYY-MM-DD` publishes as of that date (e.g. to release tomorrow's post early).
+    today = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date.today()
     posts = load_posts(today)
     for lang in LANGS:
         out_dir = BLOG if lang == 'en' else ROOT / lang / 'blog'
