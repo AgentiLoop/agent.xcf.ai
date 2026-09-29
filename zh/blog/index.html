@@ -121,7 +121,19 @@
                 <p class="blog-rss"><a href="/zh/blog/feed.xml">RSS 订阅</a></p>
             </div>
             <div class="post-list">
-                <a class="post-card post-card-featured" href="/zh/blog/the-terminal-strikes-back/">
+                <a class="post-card post-card-featured" href="/zh/blog/context-compaction-half-the-window/">
+                    <div class="post-tags"><span class="post-tag">内部机制</span><span class="post-tag">发布说明</span></div>
+                    <h2>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</h2>
+                    <p>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</p>
+                    <p class="post-meta"><time datetime="2026-09-30">2026年9月30日</time> · 阅读约 5 分钟</p>
+                </a>
+                <a class="post-card" href="/zh/blog/a-release-on-the-first-of-every-month/">
+                    <div class="post-tags"><span class="post-tag">发布说明</span><span class="post-tag">幕后</span></div>
+                    <h2>每月 1 日发布，中间穿插预发布</h2>
+                    <p>Agent! 现在于每月 1 日发布稳定版。每日预发布(之后改为每周)用来试验新功能和修复，候选版本则在发布日之前把一切定下来。</p>
+                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 阅读约 5 分钟</p>
+                </a>
+                <a class="post-card" href="/zh/blog/the-terminal-strikes-back/">
                     <div class="post-tags"><span class="post-tag">公告</span><span class="post-tag">跨平台</span><span class="post-tag">工程</span></div>
                     <h2>终端反击：用 Rust 和 Go 将智能体循环带向跨平台</h2>
                     <p>Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。</p>

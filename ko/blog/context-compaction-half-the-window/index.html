@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그","description":"Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.","datePublished":"2026-09-28","inLanguage":"ko","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ko/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그","description":"Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.","datePublished":"2026-09-30","inLanguage":"ko","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ko/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">내부 구조</span><span class="post-tag">릴리스 노트</span></div>
                     <h1>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</h1>
                     <p class="post-dek">Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</p>
-                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-28">2026년 9월 28일</time> · 5분 분량</p>
+                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-30">2026년 9월 30일</time> · 5분 분량</p>
                 </header>
                 <div class="post-body">
 <p>긴 에이전트 작업에는 일종의 물리적인 한계가 있습니다. 파일 읽기, 빌드 로그, diff처럼 도구를 호출할 때마다 그 출력이 대화 기록에 쌓입니다. 결국 대화 기록은 모델의 컨텍스트 창에 들어가지 않게 되고, 제공업체는 요청을 거부합니다. 밤새 실행되는 에이전트라면 반드시 <strong>압축</strong> 을 해야 합니다. 중요한 내용은 유지하면서 대화를 줄이는 것입니다.</p>
@@ -177,7 +177,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/ko/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← 이전 글</span>Agent!, 이제 macOS 14.6과 Intel Mac에서 실행: macOS 26에서 벗어난 방법</a><span></span></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/ko/blog/a-release-on-the-first-of-every-month/"><span>← 이전 글</span>매달 1일에 릴리스, 그 사이에는 프리릴리스</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/ko/" class="btn btn-ghost" data-back-home>← 홈으로 돌아가기</a>
             </div>

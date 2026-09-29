@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K","description":"Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.","datePublished":"2026-09-28","inLanguage":"ru","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ru/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K","description":"Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.","datePublished":"2026-09-30","inLanguage":"ru","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ru/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Внутреннее устройство</span><span class="post-tag">Заметки о выпуске</span></div>
                     <h1>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</h1>
                     <p class="post-dek">Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-28">28 сентября 2026 г.</time> · 5 мин чтения</p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-30">30 сентября 2026 г.</time> · 5 мин чтения</p>
                 </header>
                 <div class="post-body">
 <p>У длинных задач агента есть «физическая» проблема. Каждый вызов инструмента добавляет свой вывод в стенограмму: чтение файла, лог сборки, дифф. Рано или поздно стенограмма перестаёт помещаться в контекстное окно модели, и провайдер отклоняет запрос. Агент, работающий всю ночь, должен <strong>сжимать контекст</strong>. Он уменьшает диалог, сохраняя всё важное.</p>
@@ -177,7 +177,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/ru/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Раньше</span>Agent! теперь работает на macOS 14.6 и Mac с Intel: как мы отвязались от macOS 26</a><span></span></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/ru/blog/a-release-on-the-first-of-every-month/"><span>← Раньше</span>Релиз первого числа каждого месяца, а между ними — предрелизы</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/ru/" class="btn btn-ghost" data-back-home>← На главную</a>
             </div>

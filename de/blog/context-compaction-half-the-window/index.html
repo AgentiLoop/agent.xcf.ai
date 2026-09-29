@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen","description":"Wie die Kontextkomprimierung von Agent! entscheidet, wann eine lange Aufgabe zusammengefasst wird, und die Fixes vom 28. September für Fallback-Modelle, Ollama und ein 272K-Fenster bei Codex.","datePublished":"2026-09-28","inLanguage":"de","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/de/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen","description":"Wie die Kontextkomprimierung von Agent! entscheidet, wann eine lange Aufgabe zusammengefasst wird, und die Fixes vom 28. September für Fallback-Modelle, Ollama und ein 272K-Fenster bei Codex.","datePublished":"2026-09-30","inLanguage":"de","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/de/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Interna</span><span class="post-tag">Release Notes</span></div>
                     <h1>Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen</h1>
                     <p class="post-dek">Wie die Kontextkomprimierung von Agent! entscheidet, wann eine lange Aufgabe zusammengefasst wird, und die Fixes vom 28. September für Fallback-Modelle, Ollama und ein 272K-Fenster bei Codex.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-28">28. September 2026</time> · 5 Min. Lesezeit</p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-30">30. September 2026</time> · 5 Min. Lesezeit</p>
                 </header>
                 <div class="post-body">
 <p>Lange Agent-Aufgaben haben ein physikalisches Problem. Jeder Tool-Aufruf hängt seine Ausgabe an das Transkript an: eine gelesene Datei, ein Build-Log, ein Diff. Irgendwann passt das Transkript nicht mehr ins Kontextfenster des Modells, und der Anbieter lehnt die Anfrage ab. Ein Agent, der die ganze Nacht durchläuft, muss deshalb <strong>komprimieren</strong>: Er verkleinert die Unterhaltung und behält dabei das, worauf es ankommt.</p>
@@ -177,7 +177,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/de/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Älter</span>Agent! läuft jetzt unter macOS 14.6 und auf Intel-Macs: Wie wir uns von macOS 26 gelöst haben</a><span></span></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/de/blog/a-release-on-the-first-of-every-month/"><span>← Älter</span>Ein Release am Ersten jedes Monats, dazwischen Pre-Releases</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/de/" class="btn btn-ghost" data-back-home>← Zurück zur Startseite</a>
             </div>
