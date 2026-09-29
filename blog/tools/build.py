@@ -387,6 +387,16 @@ def cta(lang):
                                dl=html.escape(u['cta_dl']), src=html.escape(u['cta_src']))
 
 
+def back_home(lang):
+    """Bottom-of-page button back to the home page. nav.js points it at the exact page and scroll
+    position the reader left when they opened the blog."""
+    label = '← Back to Home' if lang == 'en' else SITE_TR[lang].get('← Back to Home', '← Back to Home')
+    return '''
+            <div class="center-cta blog-home">
+                <a href="%s/" class="btn btn-ghost" data-back-home>%s</a>
+            </div>''' % (prefix(lang), html.escape(label))
+
+
 def render_post(p, newer, older, lang):
     u, t = UI[lang], p['lang'][lang]
     page = 'blog/%s/' % p['slug']
@@ -420,13 +430,13 @@ def render_post(p, newer, older, lang):
                 </div>
 {cta}
             </article>
-            {nav}
+            {nav}{home}
         </div>
     </main>
 '''.format(base=base, all=u['all_posts'], tags=tags_html(t['tags']), title=html.escape(t['title']),
            desc=html.escape(t['description']), by=u['by'].format(author=AUTHOR), iso=p['date'].isoformat(),
            date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']), note=note,
-           body_lang=body_lang, body=t['html'], cta=cta(lang), nav=nav)
+           body_lang=body_lang, body=t['html'], cta=cta(lang), nav=nav, home=back_home(lang))
     title = '%s – %s' % (t['title'], u['post_suffix'])
     return localize_chrome(head(lang, page, title, t['description'], 'article', ld) + body + FOOT, lang)
 
@@ -456,10 +466,10 @@ def render_index(posts, lang):
                 <p class="blog-rss"><a href="{base}feed.xml">{rss}</a></p>
             </div>
             <div class="post-list">{cards}
-            </div>
+            </div>{home}
         </div>
     </main>
-'''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards))
+'''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards), home=back_home(lang))
     return localize_chrome(head(lang, 'blog/', u['index_title'], u['index_desc']) + body + FOOT, lang)
 
 

@@ -13,11 +13,11 @@
       <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
     </item>
     <item>
-      <title>A Release on the First of Every Month, and Pre-Releases in Between</title>
+      <title>Una versión el día 1 de cada mes, y versiones preliminares entre medias</title>
       <link>https://agentiloop.ai/es/blog/a-release-on-the-first-of-every-month/</link>
       <guid>https://agentiloop.ai/es/blog/a-release-on-the-first-of-every-month/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.</description>
+      <description>Agent! publica ahora una versión estable el día 1 de cada mes. Las versiones preliminares diarias (pronto semanales) son donde se prueban las novedades y correcciones, y las release candidates lo dejan todo atado antes del gran día.</description>
     </item>
     <item>
       <title>Agent! ya funciona en macOS 14.6 y en Macs con Intel: cómo nos liberamos de macOS 26</title>
