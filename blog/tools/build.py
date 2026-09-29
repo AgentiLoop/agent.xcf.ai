@@ -380,7 +380,8 @@ def localize_chrome(page, lang):
         if url.startswith('/#') or url in TRANSLATED_PATHS:
             url = prefix(lang) + url
         return 'href="%s"' % url
-    return re.sub(r'href="(/(?:#[^"]*|stats\.html|press/|legal\.html|blog/)?)"', href, page)
+    # Skip the language picker's links (they carry hreflang and already point at the right language).
+    return re.sub(r'href="(/(?:#[^"]*|stats\.html|press/|legal\.html|blog/)?)"(?! hreflang=)', href, page)
 
 
 def promo(lang):
