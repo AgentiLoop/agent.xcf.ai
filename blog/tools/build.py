@@ -28,7 +28,9 @@ import importlib.util
 import json
 import pathlib
 import re
+import os
 import sys
+import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 BLOG = ROOT / 'blog'
@@ -444,7 +446,7 @@ def render_post(p, newer, older, lang):
     </main>
 '''.format(base=base, all=u['all_posts'], tags=tags_html(t['tags']), title=html.escape(t['title']),
            desc=html.escape(t['description']), by=u['by'].format(author=AUTHOR), iso=p['date'].isoformat(),
-           date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']), note=note,
+           date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']) + reads_html(p, lang), note=note,
            body_lang=body_lang, body=t['html'], cta=cta(lang), nav=nav, home=back_home(lang))
     title = '%s – %s' % (t['title'], u['post_suffix'])
     return localize_chrome(head(lang, page, title, t['description'], 'article', ld) + body + sponsors(lang) + FOOT, lang)
@@ -465,7 +467,7 @@ def render_index(posts, lang):
                 </a>'''.format(feat=' post-card-featured' if n == 0 else '', base=base, slug=p['slug'],
                                tags=tags_html(t['tags']), title=html.escape(t['title']),
                                desc=html.escape(t['description']), iso=p['date'].isoformat(),
-                               date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes'])))
+                               date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']) + reads_html(p, lang)))
     body = '''
     <main class="section blog">
         <div class="container">
@@ -526,10 +528,89 @@ def update_sitemap(posts):
     path.write_text(xml, encoding='utf-8')
 
 
+# ------------------------------------------------------------ Read counts ---
+# Page views per post from Cloudflare Web Analytics (the agentiloop.ai site, automatic setup), summed
+# over every language copy of the post. Fetched at build time with a read-only API token
+# (Account > Account Analytics > Read). The token comes from $CF_API_TOKEN or ~/.agentiloop/cloudflare-token
+# and never goes in the repo. Without a token the last fetched counts in blog/tools/views.json are reused.
+CF_ACCOUNT = 'de8aa8c61fee13dabcdd934006b20d89'
+CF_SITE_TAG = 'fd6923fc90594742bd0a6d8a534e4b0f'   # Web Analytics site: agentiloop.ai
+VIEWS_CACHE = BLOG / 'tools' / 'views.json'
+VIEWS_QUERY = """query($account: String!, $site: String!, $start: Time!, $end: Time!) {
+  viewer { accounts(filter: {accountTag: $account}) {
+    rumPageloadEventsAdaptiveGroups(limit: 5000, filter: {siteTag: $site, bot: 0,
+        datetime_geq: $start, datetime_lt: $end, requestPath_like: "%/blog/%"}) {
+      count
+      dimensions { requestPath }
+    } } } }"""
+
+
+def cf_token():
+    tok = os.environ.get('CF_API_TOKEN', '').strip()
+    f = pathlib.Path.home() / '.agentiloop' / 'cloudflare-token'
+    return tok or (f.read_text().strip() if f.exists() else '')
+
+
+def fetch_views(posts, today):
+    """{slug: page views}. Queries in 30-day windows (the dataset caps the range per query)."""
+    cached = json.loads(VIEWS_CACHE.read_text()) if VIEWS_CACHE.exists() else {}
+    token = cf_token()
+    if not token or not posts:
+        if not token:
+            print('read counts: no Cloudflare token (CF_API_TOKEN or ~/.agentiloop/cloudflare-token); using views.json')
+        return cached
+    slug_re = re.compile(r'^(?:/[a-z]{2})?/blog/([^/]+)/?$')
+    slugs = {p['slug'] for p in posts}
+    counts = {}
+    start = datetime.datetime.combine(min(p['date'] for p in posts), datetime.time())
+    end = datetime.datetime.combine(today + datetime.timedelta(days=1), datetime.time())
+    while start < end:
+        stop = min(start + datetime.timedelta(days=30), end)
+        body = json.dumps({'query': VIEWS_QUERY, 'variables': {
+            'account': CF_ACCOUNT, 'site': CF_SITE_TAG,
+            'start': start.isoformat() + 'Z', 'end': stop.isoformat() + 'Z'}}).encode()
+        req = urllib.request.Request('https://api.cloudflare.com/client/v4/graphql', data=body, headers={
+            'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'})
+        try:
+            data = json.load(urllib.request.urlopen(req, timeout=30))
+        except Exception as e:  # network or auth problem: keep the old numbers rather than fail the build
+            print('read counts: Cloudflare request failed (%s); using views.json' % e)
+            return cached
+        if data.get('errors'):
+            msg = data['errors'][0].get('message', '')
+            if 'retention' in msg.lower() or 'too far' in msg.lower():  # window older than the data kept
+                start = stop
+                continue
+            print('read counts: Cloudflare error (%s); using views.json' % msg)
+            return cached
+        for acct in data['data']['viewer']['accounts']:
+            for g in acct['rumPageloadEventsAdaptiveGroups']:
+                m = slug_re.match(g['dimensions']['requestPath'])
+                if m and m.group(1) in slugs:
+                    counts[m.group(1)] = counts.get(m.group(1), 0) + g['count']
+        start = stop
+    # Never let a count go down (older windows fall out of Cloudflare's retention over time).
+    merged = {s: max(counts.get(s, 0), cached.get(s, 0)) for s in slugs | set(cached)}
+    VIEWS_CACHE.write_text(json.dumps(merged, indent=1, sort_keys=True) + '\n')
+    print('read counts: %d views across %d posts' % (sum(counts.values()), len(counts)))
+    return merged
+
+
+def reads_html(p, lang):
+    n = p.get('views', 0)
+    if not n:
+        return ''
+    num = '{:,}'.format(n).replace(',', UI[lang].get('thousands', ','))
+    return ' · <span class="post-reads">%s</span>' % UI[lang]['reads'].format(n=num)
+
+
 def main():
     # Optional: `build.py YYYY-MM-DD` publishes as of that date (e.g. to release tomorrow's post early).
     today = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date.today()
     posts = load_posts(today)
+    views = fetch_views(posts, today)
+    for p in posts:
+        p['views'] = views.get(p['slug'], 0)
     for lang in LANGS:
         out_dir = BLOG if lang == 'en' else ROOT / lang / 'blog'
         out_dir.mkdir(parents=True, exist_ok=True)

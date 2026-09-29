@@ -108,6 +108,8 @@ Posts dated after today are skipped, so you can queue a week of posts and publis
 
 The blog is localized like the rest of the site. Translations use the same filename under `blog/src/<lang>/` (es, fr, de, zh, ru, ko, ja) and are built to `/<lang>/blog/`, with the same language picker as the main page. Blog UI strings live in `blog/tools/i18n.json`, and nav and footer labels come from `i18n/<lang>.json`. A post without a translation falls back to English with a short note.
 
+**Read counts.** Cards and posts show page views from Cloudflare Web Analytics, summed across every language copy of a post. The build fetches them with a read-only API token (Account → Account Analytics → Read) from `$CF_API_TOKEN` or `~/.agentiloop/cloudflare-token`, and never from the repo. The last numbers are cached in `blog/tools/views.json`, so builds without a token keep them. Posts with no data show no count.
+
 ## Deploying
 
 Cloudflare Workers serves the repo root as static assets (see `wrangler.jsonc`). Anything listed in `.assetsignore` stays in the repo but isn't published. That includes the i18n tooling, press-kit build tools, `.git` and local agent state.
