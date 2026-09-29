@@ -355,6 +355,15 @@ def promo(lang):
     return m.group(0) if m else ''
 
 
+def sponsors(lang):
+    """The bottom sponsor marquee, copied from the matching home page (just above its footer)."""
+    home = ROOT / ('index.html' if lang == 'en' else '%s/index.html' % lang)
+    m = re.search(r'    <!-- SPONSORS \(repeat of the marquee above.*?</section>\n', home.read_text(encoding='utf-8'), re.S)
+    if not m:
+        return ''
+    return '\n' + re.sub(r'(src|href)="(?!https?:|/|#|mailto:)', r'\1="/', m.group(0))
+
+
 def alternates(page):
     """hreflang block for a blog path like 'blog/' or 'blog/<slug>/'."""
     return site_i18n.alternates(page)
@@ -438,7 +447,7 @@ def render_post(p, newer, older, lang):
            date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']), note=note,
            body_lang=body_lang, body=t['html'], cta=cta(lang), nav=nav, home=back_home(lang))
     title = '%s – %s' % (t['title'], u['post_suffix'])
-    return localize_chrome(head(lang, page, title, t['description'], 'article', ld) + body + FOOT, lang)
+    return localize_chrome(head(lang, page, title, t['description'], 'article', ld) + body + sponsors(lang) + FOOT, lang)
 
 
 def render_index(posts, lang):
@@ -470,7 +479,7 @@ def render_index(posts, lang):
         </div>
     </main>
 '''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards), home=back_home(lang))
-    return localize_chrome(head(lang, 'blog/', u['index_title'], u['index_desc']) + body + FOOT, lang)
+    return localize_chrome(head(lang, 'blog/', u['index_title'], u['index_desc']) + body + sponsors(lang) + FOOT, lang)
 
 
 def render_feed(posts, lang):
