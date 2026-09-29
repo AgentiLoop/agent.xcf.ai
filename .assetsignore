@@ -25,3 +25,7 @@ __pycache__/
 
 # Translation tooling and sources (the generated /<lang>/index.html pages are published)
 i18n/
+
+# Blog Markdown sources and build script (the generated /blog/ pages, feed.xml and blog.css are published)
+blog/src/
+blog/tools/

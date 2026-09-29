@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14FE9YDJ2D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-14FE9YDJ2D');
+    </script>
+
+    <title>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K – AgentiLoop Agent! Blog</title>
+    <meta name="description" content="How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.">
+    <link rel="canonical" href="https://agentiloop.ai/blog/context-compaction-half-the-window/">
+    <link rel="alternate" type="application/rss+xml" title="AgentiLoop Agent! Blog" href="https://agentiloop.ai/blog/feed.xml">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://agentiloop.ai/blog/context-compaction-half-the-window/">
+    <meta property="og:title" content="Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K – AgentiLoop Agent! Blog">
+    <meta property="og:description" content="How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.">
+    <meta property="og:image" content="https://agentiloop.ai/agent-og.png">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuperBox64">
+    <meta name="twitter:title" content="Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K – AgentiLoop Agent! Blog">
+    <meta name="twitter:description" content="How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.">
+    <meta name="twitter:image" content="https://agentiloop.ai/agent-og.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K","description":"How Agent!'s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.","datePublished":"2026-09-28","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/context-compaction-half-the-window/","image":"https://agentiloop.ai/agent-og.png"}</script>
+</head>
+<body>
+
+    <!-- NAV (shared — keep identical on every page; styles in nav.css, burger in nav.js) -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/agent_icon.png" alt="AgentiLoop Agent! icon">
+                <span>AgentiLoop</span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#showcase">Showcase</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#providers">Providers</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#releases">Releases</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="section blog">
+        <div class="container">
+            <article class="post">
+                <p class="post-back"><a href="/blog/">← All posts</a></p>
+                <header class="post-header">
+                    <div class="post-tags"><span class="post-tag">Internals</span><span class="post-tag">Release Notes</span></div>
+                    <h1>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</h1>
+                    <p class="post-dek">How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.</p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-28">September 28, 2026</time> · 5 min read</p>
+                </header>
+                <div class="post-body">
+<p>Long agent tasks have a physics problem. Every tool call adds its output to the transcript: a file read, a build log, a diff. Eventually the transcript won't fit in the model's context window, and the provider rejects the request. An agent that runs overnight has to <strong>compact</strong>. It shrinks the conversation while keeping what matters.</p>
+<p>Compaction lives in <code>Agent/AgentViewModel/Messages/Compression.swift</code>. On September 28, it got three fixes in one evening, all for the same symptom: tasks compacting at 16K tokens on models with far bigger windows. Here's how the system works, and what went wrong.</p>
+<h2 id="when-to-compact-half-the-window-capped">When to compact: half the window, capped</h2>
+<p>The trigger is a struct called <code>CompactionState</code>. Its core is a single function:</p>
+<pre><code class="language-swift">static func threshold(for contextWindow: Int, maxTokens: Int = 0) -&gt; Int {
+    let byFraction = Int(Double(min(contextWindow, compactionWindowCap)) * compactionFraction)
+    let reservedOutput = maxTokens &gt; 0 ? min(maxTokens, contextWindow / 2) : 8_192
+    return max(2_000, min(byFraction, contextWindow - reservedOutput))
+}</code></pre>
+<p>With <code>compactionFraction = 0.5</code> and <code>compactionWindowCap = 256_000</code>, that reads:</p>
+<ul><li><strong>Compact at 50% of the window.</strong> It's a percentage rather than a fixed token count. The other half is the output budget, so input plus output always fit.</li><li><strong>Never above 128K.</strong> Windows advertised above 256K (Claude 1M, MiniMax 1M, Gemini and Grok 2M) all compact at 128K. A 200K window compacts at 100K.</li><li><strong>Always leave room for the reply.</strong> The threshold can't be so late that the reserved output no longer fits.</li><li><strong>Never below 2K</strong>, as a floor for tiny local models.</li></ul>
+<p>Why cap a 2M window at 128K? The comment is blunt. On huge advertised windows, an uncapped percentage delays compaction so long that any provider-side discrepancy turns into a hard context overflow instead of a compaction. Examples include a router serving a shorter window than it reports, or a system prompt counted wrong. Compacting early costs a summary. Compacting too late costs the task.</p>
+<h2 id="measuring-trust-the-provider-then-estimate">Measuring: trust the provider, then estimate</h2>
+<p>To compare against the threshold, you need a token count. Guessing from characters is noisy, so <code>measuredTokens</code> prefers the truth: the <code>input_tokens</code> the provider reported for the last request. That number counts the system prompt and tool schemas, which a local estimate can't see. Only messages appended <em>since</em> that report get estimated.</p>
+<p>Without a report, it falls back to the classic characters ÷ 4 estimate, inflated by 25%, because dense code runs closer to 3.3 characters per token. Before paying for a compaction on an estimate alone, the loop confirms with an on-device counter.</p>
+<h2 id="how-it-compacts-tiers">How it compacts: tiers</h2>
+<p>When the threshold trips, <code>tieredCompact</code> works through escalating steps:</p>
+<ol><li><strong>Tier 0: a structured summary</strong> of the <em>full</em> transcript by the active model. It runs first so the summarizer still sees the tool output it's summarizing.</li><li><strong>Microcompact:</strong> old tool results become short, recoverable stubs. The <code>restore_tool_result</code> tool can bring any of them back.</li><li><strong>Image strip:</strong> screenshots are huge and don't summarize well.</li><li><strong>Tier 1: Apple Intelligence summarization,</strong> fast and on-device.</li><li><strong>Tier 2: aggressive prune,</strong> folding middle messages into a summary.</li></ol>
+<p>One comment captures the philosophy: structural compaction "is a safety mechanism, not a feature." It runs even if you turn Token Compression off. Only the Apple Intelligence tier respects that toggle.</p>
+<p>After compaction, the model gets back what it would miss most. That includes open goal criteria, the active plan checklist, and the current contents of up to five files it edited during the task (about 10K tokens in total). The read-dedup cache is reset too, so re-reading a file is allowed again.</p>
+<p>Finally, there's a <strong>circuit breaker</strong>. After three compactions in a row that fail to shrink the transcript, the loop stops trying. But it doesn't give up for good: once the transcript grows another 25% past the last failed attempt, it tries again.</p>
+<h2 id="the-bugs-three-roads-to-16k">The bugs: three roads to 16K</h2>
+<p>Every fix on September 28 ended in the same number. A 32K fallback window gives <code>min(16K, 32K − 8K) = 16K</code>. For a 200K+ model, compacting at 16K means summarizing almost constantly and forgetting files the model just read.</p>
+<h3 id="1-the-fallback-model-borrowed-the-wrong-window">1. The fallback model borrowed the wrong window</h3>
+<p>Agent! supports a fallback chain. If a provider returns a 429, times out or drops off the network, the task continues on the next configured provider. Tabs can also override the model. But <code>contextWindow(for:)</code> looked up the window for the provider's <em>globally selected</em> model, not the one actually running. For a fallback model with no entry, it dropped to the 32K static size.</p>
+<p>The fix adds the model to the lookup:</p>
+<pre><code class="language-swift">func contextWindow(for provider: APIProvider, model: String? = nil) -&gt; Int</code></pre>
+<p>Every call site now passes the model in use: the main loop, tab tasks, the fallback path and sub-agents.</p>
+<h3 id="2-ollama-forgot-what-it-had-learned">2. Ollama forgot what it had learned</h3>
+<p>Local servers report their real per-model window asynchronously: Ollama through <code>/api/show</code>, LM Studio through <code>/api/v0/models</code>, and vLLM through <code>/v1/models</code>. That's why the loop calls <code>refreshThreshold</code> on every iteration after the first. A fetch that lands after the task starts still takes effect.</p>
+<p>On Ollama, though, the fetched windows weren't persisted, so compaction kept defaulting to 16K. The fix persists fetched context windows and fetches at task start when the window is unknown. It shipped with a new <code>OllamaContextWindowTests.swift</code> suite.</p>
+<h3 id="3-a-generous-output-budget-ate-the-input-budget">3. A generous output budget ate the input budget</h3>
+<p>This one is subtle. Codex reports a 272K window for its GPT-6 Astra model. A user sets <strong>Max Output Tokens</strong> to 256K. The old code reserved the full output budget:</p>
+<pre><code class="language-text">272K − 256K = 16K   →   threshold = min(128K, 16K) = 16K</code></pre>
+<p>The new code reserves at most half the window for output:</p>
+<pre><code class="language-swift">let reservedOutput = maxTokens &gt; 0 ? min(maxTokens, contextWindow / 2) : 8_192</code></pre>
+<p>The same case now gives <code>min(128K, 272K − 136K) = 128K</code>. The percentage cap still uses the capped window, but the output-fit check uses the <em>true</em> window. Otherwise Claude's default 500K output budget on a 1M window would turn <code>window − maxTokens</code> negative and floor the threshold at 2K.</p>
+<h2 id="why-this-matters-to-you">Why this matters to you</h2>
+<p>If you run long tasks, especially overnight coding runs, on fallback providers or local models, those tasks should now keep much more working context. That means fewer "I need to re-read that file" loops, fewer lost details, and fewer tokens spent summarizing. These fixes shipped on September 28 alongside Version 1.1.77 (build 277), release candidate 6, together with cross-provider detection of context-overflow and <code>max_tokens</code> errors.</p>
+<p>The lesson for agent builders is general: <strong>size your memory from the model that's actually running</strong>, trust the provider's token counts over your own estimates, and cap every budget so no single setting can starve the others.</p>
+                </div>
+
+            <aside class="post-cta">
+                <h2>Try Agent! on your Mac</h2>
+                <p>Free for personal use. macOS 14.6 or later, Apple Silicon or Intel. Bring any of 23 LLM providers, or run local.</p>
+                <pre><code>brew update &amp;&amp; brew install --cask agentiloop-agent</code></pre>
+                <div class="post-cta-buttons">
+                    <a class="btn btn-primary" href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">Download the latest release</a>
+                    <a class="btn btn-ghost" href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">Read the source</a>
+                </div>
+            </aside>
+            </article>
+            <nav class="post-nav"><span></span><a class="post-nav-newer" href="/blog/inside-agent-shell-guardrails/"><span>Newer →</span>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails</a></nav>
+        </div>
+    </main>
+
+    <!-- FOOTER (shared — keep identical on every page; styles in footer.css) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#midnight">Bored</a>
+                <a href="/stats.html">Stats</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
+                <a href="https://x.com/AgentiLoopAgent/" target="_blank" rel="noopener">X</a>
+                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" target="_blank" rel="noopener">Donate</a>
+                <a href="mailto:agent@agentiloop.ai">Email</a>
+                <a href="/press/">Press</a>
+                <a href="/legal.html">Legal</a>
+            </div>
+            <p class="footer-tagline">© 2026 AgentiLoop.ai, a <a href="https://inkpen.io" target="_blank" rel="noopener">Logos InkPen LLC</a> company. All rights reserved. · Agentic AI for your entire Mac and More!</p>
+        </div>
+    </footer>
+
+    <script src="/nav.js"></script>
+</body>
+</html>

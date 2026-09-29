@@ -42,6 +42,7 @@ Or grab the signed and notarized `.dmg` from [Releases](https://github.com/Agent
 | Setup guide | [`/setup.html`](https://agentiloop.ai/setup.html) | First-run setup walkthrough |
 | Download stats | [`/stats.html`](https://agentiloop.ai/stats.html) | Live release download counts from the GitHub API |
 | Press kit | [`/press/`](https://agentiloop.ai/press/) | Fact sheet, screenshots, promo banners, icon and a ZIP of everything |
+| Blog | [`/blog/`](https://agentiloop.ai/blog/) | Daily posts on Agent! internals, releases and security, with an [RSS feed](https://agentiloop.ai/blog/feed.xml) |
 | Legal | [`/legal.html`](https://agentiloop.ai/legal.html) | Trademark notice, licenses and warranty disclaimer |
 | Fully Automated | [`/auto.html`](https://agentiloop.ai/auto.html) | A poem |
 | TickyTacky | [`/tickytacky/`](https://agentiloop.ai/tickytacky/) | Neon tic-tac-toe, just for fun |
@@ -55,6 +56,7 @@ index.html  setup.html  stats.html  legal.html  auto.html   pages
 styles.css  nav.css  footer.css  promo.css  stats.css       styles
 script.js  nav.js  promo.js  version.js                     scripts (version.js = current app version)
 press/                                                      press kit page + downloadable assets
+blog/                                                       blog: src/*.md posts -> tools/build.py -> generated pages + feed.xml
 sponsors/                                                   sponsor logos, ads and tier badges
 tickytacky/                                                 the tic-tac-toe game
 i18n/                                                       translation tooling + <lang>.json strings (not published)
@@ -82,6 +84,27 @@ python3 i18n/i18n.py build     # regenerates /<lang>/... pages
 ```
 
 Missing translations fall back to English. Edit the English page first, then extract and build. Don't edit the generated pages directly.
+
+## Blog
+
+Posts are Markdown files in `blog/src/`, named `YYYY-MM-DD-slug.md`, with a front-matter block:
+
+```md
+---
+title: Post title
+description: One-sentence summary (meta tags, index card and RSS)
+tags: Internals, Security
+---
+Post body in Markdown…
+```
+
+Then run:
+
+```sh
+python3 blog/tools/build.py   # writes blog/<slug>/index.html, blog/index.html, blog/feed.xml and the blog block in sitemap.xml
+```
+
+Posts dated after today are skipped, so you can queue a week of posts and publish one a day just by rebuilding. Don't edit the generated pages by hand.
 
 ## Deploying
 

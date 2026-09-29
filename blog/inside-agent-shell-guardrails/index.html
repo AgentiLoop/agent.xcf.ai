@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14FE9YDJ2D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-14FE9YDJ2D');
+    </script>
+
+    <title>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails – AgentiLoop Agent! Blog</title>
+    <meta name="description" content="How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.">
+    <link rel="canonical" href="https://agentiloop.ai/blog/inside-agent-shell-guardrails/">
+    <link rel="alternate" type="application/rss+xml" title="AgentiLoop Agent! Blog" href="https://agentiloop.ai/blog/feed.xml">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://agentiloop.ai/blog/inside-agent-shell-guardrails/">
+    <meta property="og:title" content="Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails – AgentiLoop Agent! Blog">
+    <meta property="og:description" content="How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.">
+    <meta property="og:image" content="https://agentiloop.ai/agent-og.png">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuperBox64">
+    <meta name="twitter:title" content="Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails – AgentiLoop Agent! Blog">
+    <meta name="twitter:description" content="How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.">
+    <meta name="twitter:image" content="https://agentiloop.ai/agent-og.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Before the Model Gets a Vote: Inside Agent!'s Shell Guardrails","description":"How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.","datePublished":"2026-09-28","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/inside-agent-shell-guardrails/","image":"https://agentiloop.ai/agent-og.png"}</script>
+</head>
+<body>
+
+    <!-- NAV (shared — keep identical on every page; styles in nav.css, burger in nav.js) -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/agent_icon.png" alt="AgentiLoop Agent! icon">
+                <span>AgentiLoop</span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#showcase">Showcase</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#providers">Providers</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#releases">Releases</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="section blog">
+        <div class="container">
+            <article class="post">
+                <p class="post-back"><a href="/blog/">← All posts</a></p>
+                <header class="post-header">
+                    <div class="post-tags"><span class="post-tag">Security</span><span class="post-tag">Internals</span></div>
+                    <h1>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails</h1>
+                    <p class="post-dek">How ShellSafetyService, the daemon-side re-check and the Jev second opinion stop an AI agent from wiping your Mac, walked through the actual Swift code.</p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-28">September 28, 2026</time> · 5 min read</p>
+                </header>
+                <div class="post-body">
+<p>This week, TechRadar reported that a coding agent deleted roughly 48,000 files in a short burst and then apologized. The apology changed nothing. The files were gone.</p>
+<p>Agent! can run shell commands as you through a Launch Agent, and as <strong>root</strong> through a Launch Daemon. That's what makes it useful, since it can flash an SD card, fix permissions or clean a build folder. It also means "the model will probably be careful" is not a security model. So Agent! doesn't ask the model to be careful. It checks every command in code, before anything runs, in three layers.</p>
+<h2 id="layer-1-a-hard-coded-guardrail-the-model-can-t-talk-its-way-past">Layer 1: a hard-coded guardrail the model can't talk its way past</h2>
+<p><code>ShellSafetyService</code> is a plain Swift <code>enum</code> in <code>Agent/Services/ShellSafetyService.swift</code>. The doc comment at the top sets the tone: it runs <em>before every execution surface</em> and rejects catastrophic commands <em>without dispatching them</em>. System prompts are called what they are: backstops, not the enforcement layer.</p>
+<p>The entry point takes the command, the context it will run in, and the tab's project folder:</p>
+<pre><code class="language-swift">static func check(_ command: String,
+                  context: Context = .userAgent,
+                  projectFolder: String = &quot;&quot;) -&gt; Verdict</code></pre>
+<p>A <code>Verdict</code> is <code>allowed</code>, a human-readable <code>reason</code>, and a short <code>rule</code> id for the audit log. The reason is written for the model: it goes back as the tool result, so the LLM understands <em>why</em> it was refused and doesn't just retry.</p>
+<h3 id="it-reads-compound-commands-the-way-a-shell-does">It reads compound commands the way a shell does</h3>
+<p>A naive filter checks the start of the string. Attackers and confused models don't cooperate with that. <code>check</code> splits the command on <code>;</code>, <code>&amp;&amp;</code>, <code>||</code>, <code>|</code> and newlines, then checks <strong>each segment</strong>. So <code>ls; rm -rf /</code> is blocked, even though the first half is harmless.</p>
+<p>There's one deliberate exception to the ordering. The classic fork bomb, <code>:(){ :|:&amp; };:</code>, <em>depends</em> on <code>;</code> and <code>|</code>, exactly the characters the splitter tears apart. So the fork-bomb check runs on the whole command before splitting.</p>
+<h3 id="it-strips-the-disguises">It strips the disguises</h3>
+<p>Before matching <code>rm</code>, a helper called <code>stripPrefixWrappers</code> peels off wrappers that don't change what a command does: <code>sudo</code>, <code>exec</code>, <code>command</code>, <code>builtin</code>, <code>eval</code> and <code>doas</code>. It also strips leading environment assignments like <code>FOO=bar</code>. That means <code>sudo rm -rf ~</code> and <code>FOO=1 exec rm -rf ~</code> hit the same rule as the bare command.</p>
+<p>Flags are parsed rather than pattern-matched, too. <code>-rf</code>, <code>-fr</code>, <code>-Rf</code>, <code>-r -f</code>, <code>--recursive --force</code> all count, because the parser looks for an <code>r</code> and an <code>f</code> in any short-flag cluster, plus the long forms.</p>
+<h3 id="what-it-refuses">What it refuses</h3>
+<p>These are the rule ids that appear in the source:</p>
+<div class="table-wrap"><table><thead><tr><th>Rule</th><th>What it stops</th></tr></thead><tbody><tr><td><code>rm.catastrophic</code></td><td><code>rm -rf</code> on <code>/</code>, a bare glob like <code>*</code> or <code>./*</code>, or your home directory in any spelling (<code>~</code>, <code>~/*</code>, <code>$HOME</code>, <code>${HOME}/*</code>, or the literal home path)</td></tr><tr><td><code>rm.no-preserve-root</code></td><td><code>--no-preserve-root</code>, the explicit bypass for <code>/</code> protection</td></tr><tr><td><code>rm.project-folder</code></td><td>Recursively deleting the project folder the agent is working in, or globbing everything inside it. Deleting a named subfolder stays allowed.</td></tr><tr><td><code>rm.dangerous-target</code></td><td>Other dangerous <code>rm</code> targets on the user-level path</td></tr><tr><td><code>fork-bomb</code></td><td>Self-replicating process bombs</td></tr><tr><td><code>mv.to-devnull</code></td><td>"Deleting" files by moving them to <code>/dev/null</code></td></tr><tr><td><code>find.delete-broad-root</code></td><td><code>find … -delete</code> from a broad root</td></tr><tr><td><code>perms.recursive-on-root</code></td><td>Recursive permission changes on root-level paths</td></tr></tbody></table></div>
+<p>The project-folder rule deserves a moment. It's the one that maps most directly to the incident above: an agent should never wipe the very project it was asked to work on, no matter how the request is phrased.</p>
+<h3 id="root-is-treated-differently-on-purpose">Root is treated differently, on purpose</h3>
+<p>You might expect the root daemon to get the <em>strictest</em> rules. It gets the narrowest. The comment explains why: the daemon exists to do system-level work, like disk cloning or <code>mkfs</code>, and it "shouldn't fight us." So in <code>.rootDaemon</code> context, <code>check</code> skips straight to <code>checkCatastrophicRm</code>, which blocks only the three unrecoverable patterns (<code>/</code>, bare globs and home) plus <code>--no-preserve-root</code> and a project-folder wipe. Everything else is the operator's call.</p>
+<p>That's a design choice worth copying. A guardrail that blocks legitimate admin work gets turned off. A guardrail that blocks only unrecoverable mistakes stays on.</p>
+<h2 id="layer-2-the-daemon-checks-again">Layer 2: the daemon checks again</h2>
+<p>The app runs <code>ShellSafetyService.check</code> before it dispatches anything. The helpers don't take that on trust. In <code>Shared/DaemonCore.swift</code>, right after writing the audit-log entry, the daemon runs the <strong>same check</strong> on its own side:</p>
+<pre><code class="language-swift">// Defense-in-depth: the app already runs this same check before
+// dispatching, but any same-team-signed client can reach the mach
+// service directly.
+let verdict = ShellSafetyService.check(
+    script,
+    context: auditCategory == .launchDaemon ? .rootDaemon : .userAgent,
+    projectFolder: workingDirectory
+)</code></pre>
+<p>A blocked command is logged as denied with its rule id and gets exit status 126. It never reaches <code>/bin/zsh</code>. This matters because the XPC listeners accept any client signed by the same team. If something else signed by that team connects to the mach service directly, it still hits the guardrail.</p>
+<h2 id="layer-3-jev-a-second-opinion-for-what-patterns-miss">Layer 3: Jev, a second opinion for what patterns miss</h2>
+<p>Pattern rules are precise, but they only know the patterns you wrote down. Plenty of destructive commands don't look like <code>rm -rf /</code>: a <code>truncate</code> on the wrong file, a SQL <code>DROP</code> piped into a CLI, a <code>dd</code> in the wrong direction.</p>
+<p>That's the job of <strong>Jev</strong>, an optional advisory layer in <code>JevAdvisor.swift</code>. Every command that already <em>passed</em> <code>ShellSafetyService</code> goes to Jev, which rates how likely it is to irreversibly destroy data. Above your threshold, Agent! refuses with a clear message:</p>
+<pre><code class="language-text">Refused: Jev rated this command 85% likely to irreversibly destroy data.
+Command: …
+Narrow the target or run it yourself if this is intentional.</code></pre>
+<p>A few details show how carefully this was scoped:</p>
+<ul><li><strong>It supplements, never replaces.</strong> The code comment is explicit: <code>ShellSafetyService</code> is the enforcement layer, and Jev only catches what the pattern rules miss. That's why the threshold is deliberately high. It defaults to <strong>70%</strong>, and you can tune it from 0 to 100% in 10% steps in Settings.</li><li><strong>It fails open, but loudly.</strong> No key, the toggle off, or a network outage means "no opinion", so a flaky service can never stall your task. The failure is still logged (<code>⚠️ Jev check failed, command allowed</code>), so an expired key is never mistaken for "Jev says safe."</li><li><strong>Cancel means cancel.</strong> If you stop a task while Jev is thinking, the command doesn't run.</li><li><strong>Every verdict is visible.</strong> Each check logs the risk percentage, allowed or refused, the model that answered, and token counts.</li></ul>
+<h2 id="tested-not-assumed">Tested, not assumed</h2>
+<p><code>AgentTests/ShellSafetyServiceTests.swift</code> holds 30 tests for the guardrail. And because every helper command is written to the audit log before it runs, you can always reconstruct what the agent tried to do, including what it wasn't allowed to do.</p>
+<h2 id="the-takeaway-for-anyone-building-agents">The takeaway for anyone building agents</h2>
+<ol><li><strong>Enforce in code, not in the prompt.</strong> Prompts are suggestions. A Swift <code>enum</code> isn't.</li><li><strong>Parse like the shell parses.</strong> Split compound commands, strip wrappers, and normalize flags.</li><li><strong>Check again at the privileged boundary.</strong> Don't trust your own client to be the only caller.</li><li><strong>Block the unrecoverable, not the unusual.</strong> Narrow rules survive; noisy ones get disabled.</li><li><strong>Add judgment on top, and make it fail visibly.</strong> A second opinion is valuable only if you can tell when it didn't answer.</li></ol>
+<p>All of this is in the open on <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>. Read it, poke holes in it, and open an issue if you find a command that should have been stopped.</p>
+                </div>
+
+            <aside class="post-cta">
+                <h2>Try Agent! on your Mac</h2>
+                <p>Free for personal use. macOS 14.6 or later, Apple Silicon or Intel. Bring any of 23 LLM providers, or run local.</p>
+                <pre><code>brew update &amp;&amp; brew install --cask agentiloop-agent</code></pre>
+                <div class="post-cta-buttons">
+                    <a class="btn btn-primary" href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">Download the latest release</a>
+                    <a class="btn btn-ghost" href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">Read the source</a>
+                </div>
+            </aside>
+            </article>
+            <nav class="post-nav"><a class="post-nav-older" href="/blog/context-compaction-half-the-window/"><span>← Older</span>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</a><a class="post-nav-newer" href="/blog/welcome-to-the-agent-blog/"><span>Newer →</span>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac</a></nav>
+        </div>
+    </main>
+
+    <!-- FOOTER (shared — keep identical on every page; styles in footer.css) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#midnight">Bored</a>
+                <a href="/stats.html">Stats</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
+                <a href="https://x.com/AgentiLoopAgent/" target="_blank" rel="noopener">X</a>
+                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" target="_blank" rel="noopener">Donate</a>
+                <a href="mailto:agent@agentiloop.ai">Email</a>
+                <a href="/press/">Press</a>
+                <a href="/legal.html">Legal</a>
+            </div>
+            <p class="footer-tagline">© 2026 AgentiLoop.ai, a <a href="https://inkpen.io" target="_blank" rel="noopener">Logos InkPen LLC</a> company. All rights reserved. · Agentic AI for your entire Mac and More!</p>
+        </div>
+    </footer>
+
+    <script src="/nav.js"></script>
+</body>
+</html>

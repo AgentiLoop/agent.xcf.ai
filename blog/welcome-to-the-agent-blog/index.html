@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14FE9YDJ2D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-14FE9YDJ2D');
+    </script>
+
+    <title>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac – AgentiLoop Agent! Blog</title>
+    <meta name="description" content="What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.">
+    <link rel="canonical" href="https://agentiloop.ai/blog/welcome-to-the-agent-blog/">
+    <link rel="alternate" type="application/rss+xml" title="AgentiLoop Agent! Blog" href="https://agentiloop.ai/blog/feed.xml">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://agentiloop.ai/blog/welcome-to-the-agent-blog/">
+    <meta property="og:title" content="Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac – AgentiLoop Agent! Blog">
+    <meta property="og:description" content="What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.">
+    <meta property="og:image" content="https://agentiloop.ai/agent-og.png">
+    <meta name="theme-color" content="#3b82f6">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SuperBox64">
+    <meta name="twitter:title" content="Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac – AgentiLoop Agent! Blog">
+    <meta name="twitter:description" content="What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.">
+    <meta name="twitter:image" content="https://agentiloop.ai/agent-og.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac","description":"What AgentiLoop Agent! is, how it's built, and what this daily blog will cover, straight from the source code.","datePublished":"2026-09-28","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/welcome-to-the-agent-blog/","image":"https://agentiloop.ai/agent-og.png"}</script>
+</head>
+<body>
+
+    <!-- NAV (shared — keep identical on every page; styles in nav.css, burger in nav.js) -->
+    <header class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="/agent_icon.png" alt="AgentiLoop Agent! icon">
+                <span>AgentiLoop</span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#showcase">Showcase</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#providers">Providers</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#releases">Releases</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="section blog">
+        <div class="container">
+            <article class="post">
+                <p class="post-back"><a href="/blog/">← All posts</a></p>
+                <header class="post-header">
+                    <div class="post-tags"><span class="post-tag">Announcement</span><span class="post-tag">Architecture</span></div>
+                    <h1>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac</h1>
+                    <p class="post-dek">What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.</p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-28">September 28, 2026</time> · 4 min read</p>
+                </header>
+                <div class="post-body">
+<p>This is the official blog for <strong>AgentiLoop Agent!</strong>, the native macOS AI agent. The plan is simple: one post a day, written mostly from the thing we know best, the codebase itself. Expect deep dives into how the agent loop works, why a guardrail is shaped the way it is, what changed in the latest release candidate, and the occasional look at the wider world of AI agents.</p>
+<p>If you are new here, this first post is the map.</p>
+<h2 id="what-agent-is">What Agent! is</h2>
+<p>Agent! is a 100% native Swift / SwiftUI app. You type (or say) what you want, and it does the work on your Mac instead of just describing it:</p>
+<ul><li><strong>It codes for real.</strong> It reads your project, edits files with string-replace diffs, builds in Xcode, reads the errors, fixes them, and commits with git.</li><li><strong>It drives any Mac app</strong> through the Accessibility API, plus AppleScript, JXA and 51 ScriptingBridge app bridges.</li><li><strong>It runs shell commands as you or as root</strong>, through a Launch Agent and a Launch Daemon registered with SMAppService and reached over XPC.</li><li><strong>It talks to 23 LLM providers</strong> plus on-device Apple Intelligence: Claude, Codex, OpenAI, Gemini, Grok, Mistral, DeepSeek, Qwen, Z.ai, OpenRouter, Ollama, vLLM, LM Studio and more.</li><li><strong>It listens.</strong> Say <em>"Agent!"</em> followed by a task, or text it from your iPhone over iMessage (approved senders only).</li></ul>
+<p>The README puts it in one line: <em>Siri answers. Agent! acts.</em></p>
+<h2 id="no-npm-no-electron">No NPM, no Electron</h2>
+<p>The part that surprises people most is what Agent! <em>doesn't</em> ship. There's no Electron shell, no Node runtime and no <code>node_modules</code>. Every Swift package it depends on was written by the same author, and each one lives in its own repo under the <a href="https://github.com/AgentiLoop" target="_blank" rel="noopener">AgentiLoop</a> org:</p>
+<div class="table-wrap"><table><thead><tr><th>Package</th><th>Job</th></tr></thead><tbody><tr><td>AgentTools</td><td>Tool schemas, system prompts and provider management</td></tr><tr><td>AgentLLM</td><td>LLM provider protocols, types and registry</td></tr><tr><td>AgentMCP</td><td>MCP client (stdio and HTTP)</td></tr><tr><td>AgentAccess</td><td>Accessibility automation</td></tr><tr><td>AgentEventBridges</td><td>ScriptingBridge protocols for 50+ Mac apps</td></tr><tr><td>AgentD1F</td><td>Multi-line diff engine</td></tr><tr><td>AgentSwift</td><td>SwiftSyntax code analysis</td></tr><tr><td>AgentColorSyntax · AgentTerminalNeo</td><td>Syntax highlighting · retro terminal markdown</td></tr><tr><td>AgentAudit</td><td><code>os.log</code> audit logging</td></tr></tbody></table></div>
+<p>The result is an app that uses very little RAM and gets Xcode automation, Swift syntax analysis, Accessibility, AppleScript, Safari automation and MCP out of the box.</p>
+<h2 id="the-loop-at-the-center">The loop at the center</h2>
+<p>Everything hangs off one idea: a <strong>self-verifying task loop</strong>. The model reasons, calls a tool, sees the real result, and corrects itself. A few rules make that loop trustworthy:</p>
+<ul><li><strong>Tools can't be faked.</strong> Every call flows through a single dispatcher and returns real output. If the model claims <em>"I clicked it"</em> without a tool call, Agent! injects a correction.</li><li><strong>"Done" needs evidence.</strong> A task can't declare itself finished until its <code>goal_state</code> criteria are marked done with proof, such as a green build or a passing test.</li><li><strong>You read before you edit.</strong> Edits to a file the model hasn't read, or one that changed on disk since it was read (checked with SHA-256), are refused. The refusal reads the file for the model so the next attempt uses fresh lines.</li><li><strong>Everything is reversible.</strong> Every edit is snapshotted for a week. You can roll back one file, or rewind a whole task with <code>rewind_task</code>.</li></ul>
+<p>We'll take each of these apart in future posts.</p>
+<h2 id="agentscript-swift-with-full-permissions">AgentScript: Swift with full permissions</h2>
+<p>One of the most distinctive pieces is <strong>AgentScript</strong>. Scripts are plain Swift files. Agent! compiles each one to a <code>.dylib</code> with SwiftPM and loads it in-process with <code>dlopen</code>, so the script inherits Agent!'s own macOS permissions: Accessibility, Automation, Calendar, Contacts, Mail, Photos and so on. Writing one takes a single entry point:</p>
+<pre><code class="language-swift">import Foundation
+import CalendarBridge   // any `import XBridge` auto-wires, no Package.swift edits
+
+@_cdecl(&quot;script_main&quot;)
+public func scriptMain() -&gt; Int32 {
+    print(&quot;Hello from AgentScript! 👋&quot;)
+    return 0
+}</code></pre>
+<p>Whatever the script prints goes back to the model, and the return value is the exit status. About 35 examples ship with the app, including <code>TodayEvents</code>, <code>NowPlaying</code>, <code>CheckMail</code> and <code>CreateDmg</code>.</p>
+<h2 id="safety-you-can-read">Safety you can read</h2>
+<p>Agent! can run as root, so safety isn't a slide in a deck. It's code you can open on GitHub. A hard-coded <code>ShellSafetyService</code> refuses catastrophic commands before they're dispatched, and the privileged daemon runs the same check again on its side. An optional second opinion called <strong>Jev</strong> rates how likely a command is to destroy data. Our <a href="/blog/inside-agent-shell-guardrails/">first deep dive</a> covers exactly how that works.</p>
+<h2 id="the-family-keeps-growing">The family keeps growing</h2>
+<p>The same agent loop now also runs in the terminal on macOS, Windows and Linux, as two CLIs with the same capabilities: <a href="https://github.com/AgentiLoop/AgentiLoopCLI" target="_blank" rel="noopener">AgentiLoopCLI</a> in Rust and <a href="https://github.com/AgentiLoop/AgentiLoopGo" target="_blank" rel="noopener">AgentiLoopGo</a> in Go. Fun fact from the README: Agent! for Mac wrote its own little siblings.</p>
+<h2 id="what-to-expect-here">What to expect here</h2>
+<ul><li><strong>Internals:</strong> the agent loop, context compaction, tool dispatch, sub-agents, memory and plans.</li><li><strong>Security:</strong> guardrails, the XPC trust model, and what recent agent incidents teach builders.</li><li><strong>Release notes with the why:</strong> what changed in each build, and the bug that caused it.</li><li><strong>How-tos:</strong> AgentScript recipes, picking a provider on a budget, running fully local.</li><li><strong>The wider agent world:</strong> news and reviews, always tied back to what it means for your Mac.</li></ul>
+<p>Agent! runs on macOS 14.6 or later, on Apple Silicon and Intel, and it's free for personal use. Grab it below, then come back tomorrow.</p>
+                </div>
+
+            <aside class="post-cta">
+                <h2>Try Agent! on your Mac</h2>
+                <p>Free for personal use. macOS 14.6 or later, Apple Silicon or Intel. Bring any of 23 LLM providers, or run local.</p>
+                <pre><code>brew update &amp;&amp; brew install --cask agentiloop-agent</code></pre>
+                <div class="post-cta-buttons">
+                    <a class="btn btn-primary" href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">Download the latest release</a>
+                    <a class="btn btn-ghost" href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">Read the source</a>
+                </div>
+            </aside>
+            </article>
+            <nav class="post-nav"><a class="post-nav-older" href="/blog/inside-agent-shell-guardrails/"><span>← Older</span>Before the Model Gets a Vote: Inside Agent!&#x27;s Shell Guardrails</a><span></span></nav>
+        </div>
+    </main>
+
+    <!-- FOOTER (shared — keep identical on every page; styles in footer.css) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/setup.html">Setup</a>
+                <a href="/#reviews">Reviews</a>
+                <a href="/#sponsors">Sponsors</a>
+                <a href="/#midnight">Bored</a>
+                <a href="/stats.html">Stats</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://github.com/AgentiLoop/Agent" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Releases</a>
+                <a href="https://x.com/AgentiLoopAgent/" target="_blank" rel="noopener">X</a>
+                <a href="https://www.paypal.com/ncp/payment/9C6RY2UAE5M3S" target="_blank" rel="noopener">Donate</a>
+                <a href="mailto:agent@agentiloop.ai">Email</a>
+                <a href="/press/">Press</a>
+                <a href="/legal.html">Legal</a>
+            </div>
+            <p class="footer-tagline">© 2026 AgentiLoop.ai, a <a href="https://inkpen.io" target="_blank" rel="noopener">Logos InkPen LLC</a> company. All rights reserved. · Agentic AI for your entire Mac and More!</p>
+        </div>
+    </footer>
+
+    <script src="/nav.js"></script>
+</body>
+</html>
