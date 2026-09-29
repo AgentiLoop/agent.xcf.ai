@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Ankündigung</span><span class="post-tag">Architektur</span></div>
                     <h1>Willkommen im Agent!-Blog: Eine App, jede KI, volle Kontrolle über deinen Mac</h1>
                     <p class="post-dek">Was AgentiLoop Agent! ist, wie es aufgebaut ist und worum es in diesem täglichen Blog gehen wird – direkt aus dem Quellcode.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-25">25. September 2026</time> · 4 Min. Lesezeit · <span class="post-reads">2 Aufrufe</span></p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-25">25. September 2026</time> · 4 Min. Lesezeit<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} Aufrufe" data-sep="."> · <span class="post-reads">2 Aufrufe</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Dies ist der offizielle Blog von <strong>AgentiLoop Agent!</strong>, dem nativen KI-Agenten für macOS. Der Plan ist einfach: ein Beitrag pro Tag, geschrieben vor allem auf Basis dessen, was wir am besten kennen – der Codebasis selbst. Freu dich auf tiefe Einblicke in die Funktionsweise der Agent-Schleife, darauf, warum eine Schutzmaßnahme genau so gestaltet ist, was sich im neuesten Release Candidate geändert hat, und gelegentlich auf einen Blick in die größere Welt der KI-Agenten.</p>
@@ -293,5 +293,16 @@ public func scriptMain() -&gt; Int32 {
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

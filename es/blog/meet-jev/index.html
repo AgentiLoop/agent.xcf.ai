@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Seguridad</span><span class="post-tag">Anuncio</span></div>
                     <h1>Te presentamos a Jev: una segunda opinión que responde con tipos, no con prosa</h1>
                     <p class="post-dek">Agent! ahora pregunta a Jev (TypeSafe System One) qué tan destructivo es un comando de shell antes de ejecutarlo. Te explicamos por qué Jev es un asesor y no otro proveedor de LLM.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-17">17 de septiembre de 2026</time> · 3 min de lectura · <span class="post-reads">4 lecturas</span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-17">17 de septiembre de 2026</time> · 3 min de lectura<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">4 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Hoy Agent! incorpora una nueva capa de seguridad: <strong>Jev</strong>, abreviatura de TypeSafe System One. Antes de ejecutar un comando de shell, Agent! puede hacerle a Jev una sola pregunta: <em>¿qué probabilidad hay de que este comando destruya datos de forma irreversible?</em> Si supera tu umbral, el comando se rechaza.</p>
@@ -283,5 +283,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

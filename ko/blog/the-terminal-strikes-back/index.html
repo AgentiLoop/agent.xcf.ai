@@ -144,7 +144,7 @@
                     <div class="post-tags"><span class="post-tag">공지</span><span class="post-tag">크로스 플랫폼</span><span class="post-tag">엔지니어링</span></div>
                     <h1>터미널의 역습: Rust와 Go로 에이전트 루프를 크로스 플랫폼으로</h1>
                     <p class="post-dek">Agent! 는 Mac 앱이지만, 코딩 에이전트는 개발자가 일하는 모든 곳에 있어야 합니다. 에이전트 루프가 어떻게 Rust와 Go로 된 두 개의 CLI가 되었고, macOS, Windows, Linux에서 전체 화면 TUI를 갖추게 되었는지 소개합니다.</p>
-                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-28">2026년 9월 28일</time> · 5분 분량 · <span class="post-reads">조회 3회</span></p>
+                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-28">2026년 9월 28일</time> · 5분 분량<span class="post-reads-live" data-slug="the-terminal-strikes-back" data-n="3" data-fmt="조회 {n}회" data-sep=","> · <span class="post-reads">조회 3회</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Agent! 는 지금까지 대부분의 시간 동안 자랑스러운 Mac 앱이었습니다. 네이티브 Swift와 SwiftUI, AppleScript 및 Accessibility와의 깊은 연동, 그리고 root 권한을 위한 Launch Daemon까지 갖추고 있죠. 이것은 여전히 플래그십입니다. 하지만 지난 며칠 사이 코딩 에이전트에 대한 우리의 생각에 변화가 생겼고, 오늘 그 결과를 출시합니다.</p>
@@ -290,5 +290,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

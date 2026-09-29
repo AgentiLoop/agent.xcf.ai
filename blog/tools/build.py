@@ -330,6 +330,17 @@ FOOT = '''
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>
 '''
@@ -670,11 +681,12 @@ def fetch_views(posts, today):
 
 
 def reads_html(p, lang):
+    # Baked-in count; the footer script replaces it with the live count from the blog-cron-trigger Worker.
     n = p.get('views', 0)
-    if not n:
-        return ''
-    num = '{:,}'.format(n).replace(',', UI[lang].get('thousands', ','))
-    return ' · <span class="post-reads">%s</span>' % UI[lang]['reads'].format(n=num)
+    sep = UI[lang].get('thousands', ',')
+    num = '{:,}'.format(n).replace(',', sep)
+    return '<span class="post-reads-live" data-slug="%s" data-n="%d" data-fmt="%s" data-sep="%s"%s> · <span class="post-reads">%s</span></span>' % (
+        p['slug'], n, html.escape(UI[lang]['reads']), sep, '' if n else ' hidden', UI[lang]['reads'].format(n=num))
 
 
 def main():

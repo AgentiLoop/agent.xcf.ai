@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Безопасность</span><span class="post-tag">Внутреннее устройство</span></div>
                     <h1>Прежде чем модель получит право голоса: как устроены защитные механизмы shell в Agent!</h1>
                     <p class="post-dek">Как ShellSafetyService, повторная проверка на стороне демона и второе мнение Jev не дают ИИ-агенту стереть ваш Mac — разбор на реальном коде Swift.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-26">26 сентября 2026 г.</time> · 5 мин чтения · <span class="post-reads">3 просмотров</span></p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-26">26 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">3 просмотров</span></span></p>
                 </header>
                 <div class="post-body">
 <p>На этой неделе TechRadar сообщил, что ИИ-агент для программирования за короткое время удалил около 48,000 файлов, а затем извинился. Извинения ничего не изменили. Файлы пропали.</p>
@@ -307,5 +307,16 @@ Narrow the target or run it yourself if this is intentional.</code></pre>
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

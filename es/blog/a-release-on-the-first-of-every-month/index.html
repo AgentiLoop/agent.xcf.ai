@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Notas de versión</span><span class="post-tag">Entre bastidores</span></div>
                     <h1>Una versión el día 1 de cada mes, y versiones preliminares entre medias</h1>
                     <p class="post-dek">Agent! publica ahora una versión estable el día 1 de cada mes. Las versiones preliminares diarias (pronto semanales) son donde se prueban las novedades y correcciones, y las release candidates lo dejan todo atado antes del gran día.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-29">29 de septiembre de 2026</time> · 5 min de lectura · <span class="post-reads">6 lecturas</span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-29">29 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="7" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">7 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Agent! tiene un nuevo ritmo. A partir del <strong>1 de octubre de 2026</strong> habrá una versión estable el <strong>día 1 de cada mes</strong>. Entre medias habrá versiones preliminares (pre-releases): ahora mismo, más o menos una al día, y tenemos previsto bajar a una por semana. En algún momento del último tramo de cada mes, las versiones preliminares pasan a ser <strong>release candidates</strong>, y la mejor candidata se convierte en la versión del día 1.</p>
@@ -289,5 +289,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

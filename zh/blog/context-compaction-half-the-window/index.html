@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">内部机制</span><span class="post-tag">发布说明</span></div>
                     <h1>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</h1>
                     <p class="post-dek">Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-30">2026年9月30日</time> · 阅读约 5 分钟 · <span class="post-reads">8 次阅读</span></p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-30">2026年9月30日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">8 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
 <p>长时间运行的智能体任务面临一个"物理问题"。每次工具调用都会把输出追加到对话记录中：一次文件读取、一份构建日志、一个 diff。迟早，对话记录会塞不进模型的上下文窗口，提供商就会拒绝请求。一个要通宵运行的智能体必须学会 <strong>压缩</strong> ：在保留关键信息的同时缩减对话。</p>
@@ -301,5 +301,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">セキュリティ</span><span class="post-tag">お知らせ</span></div>
                     <h1>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</h1>
                     <p class="post-dek">Agent! は、シェルコマンドを実行する前に、そのコマンドがどれほど破壊的かを Jev（TypeSafe System One）に問い合わせるようになりました。Jev が新たな LLM プロバイダーではなくアドバイザーである理由を解説します。</p>
-                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-17">2026年9月17日</time> · 約 3 分で読めます · <span class="post-reads">4 回閲覧</span></p>
+                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-17">2026年9月17日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">4 回閲覧</span></span></p>
                 </header>
                 <div class="post-body">
 <p>本日、Agent! に新しい安全レイヤーが加わりました。TypeSafe System One の略称である <strong>Jev</strong> です。シェルコマンドを実行する前に、Agent! は Jev に1つの質問を投げかけられるようになりました。<em>このコマンドがデータを不可逆的に破壊する可能性はどの程度か</em>？ その値が設定したしきい値を超えると、コマンドは拒否されます。</p>
@@ -283,5 +283,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

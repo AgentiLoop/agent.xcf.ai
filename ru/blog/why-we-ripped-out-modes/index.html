@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Архитектура</span><span class="post-tag">Дизайн</span></div>
                     <h1>Почему мы выбросили режим кодирования: пусть модель сама выбирает инструменты</h1>
                     <p class="post-dek">Раньше Agent! пытался угадать, чего вы хотите — программирования или автоматизации, — и скрывал инструменты под эту догадку. Одна сломанная задача с Photo Booth показала, почему обвязке пора перестать додумывать за модель.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-04-07">7 апреля 2026 г.</time> · 3 мин чтения · <span class="post-reads">7 просмотров</span></p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-04-07">7 апреля 2026 г.</time> · 3 мин чтения<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">7 просмотров</span></span></p>
                 </header>
                 <div class="post-body">
 <p>В ранних версиях Agent! были <strong>режимы</strong>: кодирование, автоматизация и стандартный. Идея казалась разумной. Задаче по программированию не нужен инструмент Accessibility, а задаче «нажми эту кнопку» не нужен Xcode. Спрячьте всё лишнее — и модель увидит более короткий список инструментов, потратит меньше токенов и реже будет ошибаться с выбором.</p>
@@ -283,5 +283,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

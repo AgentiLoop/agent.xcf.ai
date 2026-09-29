@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">アーキテクチャ</span><span class="post-tag">設計</span></div>
                     <h1>コーディングモードを廃止した理由：ツール選びはモデル自身に任せる</h1>
                     <p class="post-dek">かつての Agent! は、ユーザーがコーディングと自動化のどちらを求めているかを推測し、それに合わせてツールを隠していました。ある Photo Booth タスクの失敗が、ハーネスはモデルの判断を先回りして疑うべきではないことを示しました。</p>
-                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-04-07">2026年4月7日</time> · 約 3 分で読めます · <span class="post-reads">7 回閲覧</span></p>
+                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-04-07">2026年4月7日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">7 回閲覧</span></span></p>
                 </header>
                 <div class="post-body">
 <p>初期の Agent! には、コーディング、自動化、標準という3つの<strong>モード</strong>がありました。考え方自体は妥当に思えました。コーディングのタスクに Accessibility ツールは不要ですし、「このボタンをクリックして」というタスクに Xcode は不要です。関係のないものを隠せば、モデルが目にするツール一覧は短くなり、消費するトークンも減り、誤った選択も少なくなるはずでした。</p>
@@ -283,5 +283,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

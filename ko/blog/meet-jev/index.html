@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">보안</span><span class="post-tag">공지</span></div>
                     <h1>Jev를 소개합니다: 산문이 아닌 타입으로 답하는 두 번째 의견</h1>
                     <p class="post-dek">이제 Agent!는 셸 명령을 실행하기 전에 그 명령이 얼마나 파괴적인지 Jev(TypeSafe System One)에게 묻습니다. Jev가 또 하나의 LLM 제공자가 아니라 조언자인 이유를 설명합니다.</p>
-                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-17">2026년 9월 17일</time> · 3분 분량 · <span class="post-reads">조회 4회</span></p>
+                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-17">2026년 9월 17일</time> · 3분 분량<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="조회 {n}회" data-sep=","> · <span class="post-reads">조회 4회</span></span></p>
                 </header>
                 <div class="post-body">
 <p>오늘 Agent!에 새로운 안전 계층이 추가됩니다. TypeSafe System One의 줄임말인 <strong>Jev</strong> 입니다. 이제 Agent!는 셸 명령을 실행하기 전에 Jev에게 한 가지 질문을 할 수 있습니다. <em>이 명령이 데이터를 되돌릴 수 없게 파괴할 가능성은 얼마나 되는가?</em> 그 값이 설정한 임계값을 넘으면 명령은 거부됩니다.</p>
@@ -283,5 +283,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">公告</span><span class="post-tag">架构</span></div>
                     <h1>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</h1>
                     <p class="post-dek">AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-25">2026年9月25日</time> · 阅读约 4 分钟 · <span class="post-reads">2 次阅读</span></p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-25">2026年9月25日</time> · 阅读约 4 分钟<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">2 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
 <p>这里是 <strong>AgentiLoop Agent!</strong> 的官方博客。Agent! 是一款原生 macOS AI 智能体。我们的计划很简单：每天一篇文章，内容主要来自我们最熟悉的东西——代码库本身。你将看到对智能体循环工作原理的深度剖析、某条安全护栏为何如此设计、最新候选版本有哪些变化，偶尔也会放眼更广阔的 AI 智能体世界。</p>
@@ -293,5 +293,16 @@ public func scriptMain() -&gt; Int32 {
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

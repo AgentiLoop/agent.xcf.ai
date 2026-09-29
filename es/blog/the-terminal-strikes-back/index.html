@@ -144,7 +144,7 @@
                     <div class="post-tags"><span class="post-tag">Anuncio</span><span class="post-tag">Multiplataforma</span><span class="post-tag">Ingeniería</span></div>
                     <h1>La terminal contraataca: el bucle del agente se vuelve multiplataforma en Rust y Go</h1>
                     <p class="post-dek">Agent! es una app para Mac, pero un agente de programación debe estar allí donde trabajan los desarrolladores. Así es como el bucle del agente se convirtió en dos CLI, una en Rust y otra en Go, con una TUI a pantalla completa en macOS, Windows y Linux.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-28">28 de septiembre de 2026</time> · 5 min de lectura · <span class="post-reads">3 lecturas</span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-28">28 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="the-terminal-strikes-back" data-n="3" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">3 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Durante la mayor parte de su vida, Agent! ha sido una orgullosa app para Mac: Swift y SwiftUI nativos, integración profunda con AppleScript y Accesibilidad, y un Launch Daemon para root. Sigue siendo el producto estrella. Pero en los últimos días algo ha cambiado en nuestra forma de pensar sobre los agentes de programación, y hoy ve la luz.</p>
@@ -290,5 +290,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

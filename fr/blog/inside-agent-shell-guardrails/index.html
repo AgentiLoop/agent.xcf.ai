@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Sécurité</span><span class="post-tag">Fonctionnement interne</span></div>
                     <h1>Avant que le modèle n&#x27;ait voix au chapitre : dans les coulisses des garde-fous shell d&#x27;Agent!</h1>
                     <p class="post-dek">Comment ShellSafetyService, la seconde vérification côté daemon et le second avis de Jev empêchent un agent d&#x27;IA d&#x27;effacer votre Mac, en parcourant le vrai code Swift.</p>
-                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-26">26 septembre 2026</time> · 5 min de lecture · <span class="post-reads">3 lectures</span></p>
+                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-26">26 septembre 2026</time> · 5 min de lecture<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} lectures" data-sep=" "> · <span class="post-reads">3 lectures</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Cette semaine, TechRadar a rapporté qu'un agent de programmation avait supprimé environ 48,000 fichiers en un rien de temps, avant de présenter ses excuses. Les excuses n'ont rien changé. Les fichiers avaient disparu.</p>
@@ -307,5 +307,16 @@ Narrow the target or run it yourself if this is intentional.</code></pre>
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

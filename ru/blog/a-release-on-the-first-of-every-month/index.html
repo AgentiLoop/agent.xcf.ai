@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Заметки о выпуске</span><span class="post-tag">За кулисами</span></div>
                     <h1>Релиз первого числа каждого месяца, а между ними — предрелизы</h1>
                     <p class="post-dek">Agent! теперь выходит стабильным релизом первого числа каждого месяца. В ежедневных предрелизах (скоро еженедельных) обкатываются новые функции и исправления, а релиз-кандидаты доводят всё до готовности перед важным днём.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-29">29 сентября 2026 г.</time> · 5 мин чтения · <span class="post-reads">6 просмотров</span></p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-29">29 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="7" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">7 просмотров</span></span></p>
                 </header>
                 <div class="post-body">
 <p>У Agent! новый ритм. Начиная с <strong>1 октября 2026 года</strong> стабильный релиз будет выходить <strong>1-го числа каждого месяца</strong>. Между ними будут предрелизы: сейчас примерно по одному в день, а потом мы планируем замедлиться до одного в неделю. Где-то на финишной прямой каждого месяца предрелизы становятся <strong>релиз-кандидатами</strong>, и лучший из кандидатов становится релизом 1-го числа.</p>
@@ -289,5 +289,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

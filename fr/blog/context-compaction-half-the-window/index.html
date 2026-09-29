@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Fonctionnement interne</span><span class="post-tag">Notes de version</span></div>
                     <h1>Pourquoi Agent! compacte à la moitié de la fenêtre, et les trois bugs qui l&#x27;ont réduite à 16K</h1>
                     <p class="post-dek">Comment la compaction de contexte d&#x27;Agent! décide quand résumer une longue tâche, et les correctifs du 28 septembre pour les modèles de repli, Ollama et une fenêtre Codex de 272K.</p>
-                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-30">30 septembre 2026</time> · 5 min de lecture · <span class="post-reads">8 lectures</span></p>
+                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-30">30 septembre 2026</time> · 5 min de lecture<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} lectures" data-sep=" "> · <span class="post-reads">8 lectures</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Les longues tâches d'agent se heurtent à un problème de physique. Chaque appel d'outil ajoute sa sortie à la transcription : une lecture de fichier, un log de build, un diff. Tôt ou tard, la transcription ne tient plus dans la fenêtre de contexte du modèle et le fournisseur rejette la requête. Un agent qui tourne toute la nuit doit donc <strong>compacter</strong> : réduire la conversation tout en conservant l'essentiel.</p>
@@ -301,5 +301,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

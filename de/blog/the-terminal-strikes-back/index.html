@@ -144,7 +144,7 @@
                     <div class="post-tags"><span class="post-tag">Ankündigung</span><span class="post-tag">Plattformübergreifend</span><span class="post-tag">Engineering</span></div>
                     <h1>Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go</h1>
                     <p class="post-dek">Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-28">28. September 2026</time> · 5 Min. Lesezeit · <span class="post-reads">3 Aufrufe</span></p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-28">28. September 2026</time> · 5 Min. Lesezeit<span class="post-reads-live" data-slug="the-terminal-strikes-back" data-n="3" data-fmt="{n} Aufrufe" data-sep="."> · <span class="post-reads">3 Aufrufe</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Die meiste Zeit seines Bestehens war Agent! eine stolze Mac-App: natives Swift und SwiftUI, tiefe Anbindung an AppleScript und Bedienungshilfen und ein Launch Daemon für root. Das ist nach wie vor das Flaggschiff. Doch in den letzten Tagen hat sich etwas daran geändert, wie wir über Coding-Agents denken, und heute erscheint es.</p>
@@ -290,5 +290,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

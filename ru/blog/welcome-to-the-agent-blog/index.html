@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Анонс</span><span class="post-tag">Архитектура</span></div>
                     <h1>Добро пожаловать в блог Agent!: одно приложение, любой ИИ, полный контроль над вашим Mac</h1>
                     <p class="post-dek">Что такое AgentiLoop Agent!, как он устроен и о чём будет этот ежедневный блог — прямо из исходного кода.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-25">25 сентября 2026 г.</time> · 4 мин чтения · <span class="post-reads">2 просмотров</span></p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-25">25 сентября 2026 г.</time> · 4 мин чтения<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">2 просмотров</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Это официальный блог <strong>AgentiLoop Agent!</strong> — нативного ИИ-агента для macOS. План простой: одна публикация в день, и пишем мы в основном о том, что знаем лучше всего, — о самой кодовой базе. Вас ждут подробные разборы того, как работает цикл агента, почему защитный механизм устроен именно так, что изменилось в последнем релиз-кандидате, а иногда и взгляд на более широкий мир ИИ-агентов.</p>
@@ -293,5 +293,16 @@ public func scriptMain() -&gt; Int32 {
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>

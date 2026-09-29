@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Versionshinweise</span><span class="post-tag">Hinter den Kulissen</span></div>
                     <h1>Ein Release am Ersten jedes Monats, dazwischen Pre-Releases</h1>
                     <p class="post-dek">Agent! erscheint jetzt am 1. jedes Monats als stabiles Release. In täglichen Pre-Releases (bald wöchentlich) werden neue Features und Fixes erprobt, und Release Candidates machen vor dem großen Tag alles fest.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-29">29. September 2026</time> · 5 Min. Lesezeit · <span class="post-reads">6 Aufrufe</span></p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-29">29. September 2026</time> · 5 Min. Lesezeit<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="7" data-fmt="{n} Aufrufe" data-sep="."> · <span class="post-reads">7 Aufrufe</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Agent! hat einen neuen Rhythmus. Ab dem <strong>1. Oktober 2026</strong> gibt es am <strong>1. jedes Monats</strong> ein stabiles Release. Dazwischen gibt es Pre-Releases: derzeit etwa eines pro Tag, und wir wollen das auf eines pro Woche verlangsamen. Irgendwann im letzten Abschnitt jedes Monats werden die Pre-Releases zu <strong>Release Candidates</strong>, und der beste Kandidat wird zum Release am 1.</p>
@@ -289,5 +289,16 @@
 
     <script src="/nav.js"></script>
     <script src="/promo.js"></script>
+    <script>
+    // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).
+    fetch('https://blog-cron-trigger.todd-de8.workers.dev/views.json').then(function (r) { return r.json(); }).then(function (v) {
+        document.querySelectorAll('.post-reads-live').forEach(function (el) {
+            var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
+            if (!n) return;
+            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.hidden = false;
+        });
+    }).catch(function () {});
+    </script>
 </body>
 </html>
