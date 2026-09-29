@@ -865,6 +865,7 @@ a.stat:hover .stat-label { color: var(--text); }
 /* Logos InkPen.io house ad (its own section between Midnight and Releases) */
 .ink-ad-section { padding: 10px 0 30px; }
 .ink-ad-section .ink-ad { margin-bottom: 0; }
+@media (max-width: 760px) { .ink-ad-section { display: none; } }
 .ink-ad { position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: center;
     max-width: 900px; margin: 0 auto 36px; padding: 34px 28px 30px 36px; border-radius: 22px; overflow: hidden; isolation: isolate;
     color: #f8fafc; text-decoration: none; background: #0b0a1f; box-shadow: 0 20px 60px rgba(76, 29, 149, .45);
