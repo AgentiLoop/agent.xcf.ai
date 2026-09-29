@@ -23,6 +23,16 @@
       <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
     </item>
     <item>
+      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <link>https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Explainers</category>
+      <category>Agent Loops</category>
+      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+    </item>
+    <item>
       <title>每月 1 日发布，中间穿插预发布</title>
       <link>https://agentiloop.ai/zh/blog/a-release-on-the-first-of-every-month/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/a-release-on-the-first-of-every-month/</guid>

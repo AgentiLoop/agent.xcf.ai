@@ -23,6 +23,16 @@
       <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
     </item>
     <item>
+      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <link>https://agentiloop.ai/es/blog/what-is-an-agent-loop/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/es/blog/what-is-an-agent-loop/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Explainers</category>
+      <category>Agent Loops</category>
+      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+    </item>
+    <item>
       <title>Una versión el día 1 de cada mes, y versiones preliminares entre medias</title>
       <link>https://agentiloop.ai/es/blog/a-release-on-the-first-of-every-month/</link>
       <guid isPermaLink="true">https://agentiloop.ai/es/blog/a-release-on-the-first-of-every-month/</guid>

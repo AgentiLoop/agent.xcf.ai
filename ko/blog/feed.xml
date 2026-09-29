@@ -23,6 +23,16 @@
       <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
     </item>
     <item>
+      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <link>https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Explainers</category>
+      <category>Agent Loops</category>
+      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+    </item>
+    <item>
       <title>매달 1일에 릴리스, 그 사이에는 프리릴리스</title>
       <link>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</guid>
