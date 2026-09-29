@@ -137,17 +137,29 @@
                 <p class="blog-rss"><a href="/ja/blog/feed.xml">RSS フィード</a></p>
             </div>
             <div class="post-list">
-                <a class="post-card post-card-featured" href="/ja/blog/context-compaction-half-the-window/">
+                <a class="post-card post-card-featured" href="/ja/blog/a-release-on-the-first-of-every-month/">
+                    <div class="post-tags"><span class="post-tag">リリースノート</span><span class="post-tag">舞台裏</span></div>
+                    <h2>毎月 1 日にリリース、その間はプレリリース</h2>
+                    <p>Agent! は毎月 1 日に安定版をリリースするようになりました。毎日のプレリリース(いずれ毎週に移行)で新機能や修正を試し、リリース候補で本番前に仕上げます。</p>
+                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 約 5 分で読めます<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="9" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">9 回閲覧</span></span></p>
+                </a>
+                <a class="post-card" href="/ja/blog/context-compaction-half-the-window/">
                     <div class="post-tags"><span class="post-tag">内部構造</span><span class="post-tag">リリースノート</span></div>
                     <h2>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</h2>
                     <p>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</p>
                     <p class="post-meta"><time datetime="2026-09-30">2026年9月30日</time> · 約 5 分で読めます<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">8 回閲覧</span></span></p>
                 </a>
-                <a class="post-card" href="/ja/blog/a-release-on-the-first-of-every-month/">
-                    <div class="post-tags"><span class="post-tag">リリースノート</span><span class="post-tag">舞台裏</span></div>
-                    <h2>毎月 1 日にリリース、その間はプレリリース</h2>
-                    <p>Agent! は毎月 1 日に安定版をリリースするようになりました。毎日のプレリリース(いずれ毎週に移行)で新機能や修正を試し、リリース候補で本番前に仕上げます。</p>
-                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 約 5 分で読めます<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="7" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">7 回閲覧</span></span></p>
+                <a class="post-card" href="/ja/blog/why-we-ripped-out-modes/">
+                    <div class="post-tags"><span class="post-tag">アーキテクチャ</span><span class="post-tag">設計</span></div>
+                    <h2>コーディングモードを廃止した理由：ツール選びはモデル自身に任せる</h2>
+                    <p>かつての Agent! は、ユーザーがコーディングと自動化のどちらを求めているかを推測し、それに合わせてツールを隠していました。ある Photo Booth タスクの失敗が、ハーネスはモデルの判断を先回りして疑うべきではないことを示しました。</p>
+                    <p class="post-meta"><time datetime="2026-04-07">2026年4月7日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">7 回閲覧</span></span></p>
+                </a>
+                <a class="post-card" href="/ja/blog/meet-jev/">
+                    <div class="post-tags"><span class="post-tag">セキュリティ</span><span class="post-tag">お知らせ</span></div>
+                    <h2>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</h2>
+                    <p>Agent! は、シェルコマンドを実行する前に、そのコマンドがどれほど破壊的かを Jev（TypeSafe System One）に問い合わせるようになりました。Jev が新たな LLM プロバイダーではなくアドバイザーである理由を解説します。</p>
+                    <p class="post-meta"><time datetime="2026-09-17">2026年9月17日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">4 回閲覧</span></span></p>
                 </a>
                 <a class="post-card" href="/ja/blog/the-terminal-strikes-back/">
                     <div class="post-tags"><span class="post-tag">お知らせ</span><span class="post-tag">クロスプラットフォーム</span><span class="post-tag">エンジニアリング</span></div>
@@ -172,18 +184,6 @@
                     <h2>Agent! ブログへようこそ：ひとつのアプリで、あらゆる AI を使い、Mac を完全に操る</h2>
                     <p>AgentiLoop Agent! とは何か、どのように作られているのか、そしてこの毎日更新のブログで何を取り上げていくのかを、ソースコードから直接お伝えします。</p>
                     <p class="post-meta"><time datetime="2026-09-25">2026年9月25日</time> · 約 4 分で読めます<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">2 回閲覧</span></span></p>
-                </a>
-                <a class="post-card" href="/ja/blog/meet-jev/">
-                    <div class="post-tags"><span class="post-tag">セキュリティ</span><span class="post-tag">お知らせ</span></div>
-                    <h2>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</h2>
-                    <p>Agent! は、シェルコマンドを実行する前に、そのコマンドがどれほど破壊的かを Jev（TypeSafe System One）に問い合わせるようになりました。Jev が新たな LLM プロバイダーではなくアドバイザーである理由を解説します。</p>
-                    <p class="post-meta"><time datetime="2026-09-17">2026年9月17日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">4 回閲覧</span></span></p>
-                </a>
-                <a class="post-card" href="/ja/blog/why-we-ripped-out-modes/">
-                    <div class="post-tags"><span class="post-tag">アーキテクチャ</span><span class="post-tag">設計</span></div>
-                    <h2>コーディングモードを廃止した理由：ツール選びはモデル自身に任せる</h2>
-                    <p>かつての Agent! は、ユーザーがコーディングと自動化のどちらを求めているかを推測し、それに合わせてツールを隠していました。ある Photo Booth タスクの失敗が、ハーネスはモデルの判断を先回りして疑うべきではないことを示しました。</p>
-                    <p class="post-meta"><time datetime="2026-04-07">2026年4月7日</time> · 約 3 分で読めます<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">7 回閲覧</span></span></p>
                 </a>
             </div>
             <div class="center-cta blog-home">
@@ -297,6 +297,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
+        // Blog index: most reads first, then newest.
+        var list = document.querySelector('.post-list');
+        if (!list) return;
+        var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
+        var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
+        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+            return reads(b) - reads(a) || date(b).localeCompare(date(a));
+        }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>
 </body>

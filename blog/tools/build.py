@@ -339,6 +339,14 @@ FOOT = '''
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, el.dataset.sep));
             el.hidden = false;
         });
+        // Blog index: most reads first, then newest.
+        var list = document.querySelector('.post-list');
+        if (!list) return;
+        var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
+        var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
+        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+            return reads(b) - reads(a) || date(b).localeCompare(date(a));
+        }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>
 </body>
@@ -516,7 +524,9 @@ def render_index(posts, lang):
     u = UI[lang]
     base = prefix(lang) + '/blog/'
     cards = []
-    for n, p in enumerate(posts):
+    # Most reads first, then newest (the footer script re-sorts with live counts).
+    ranked = sorted(posts, key=lambda p: (p.get('views', 0), p['date'], p['slug']), reverse=True)
+    for n, p in enumerate(ranked):
         t = p['lang'][lang]
         cards.append('''
                 <a class="post-card{feat}" href="{base}{slug}/">

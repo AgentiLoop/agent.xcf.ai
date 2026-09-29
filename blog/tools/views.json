@@ -1,5 +1,5 @@
 {
- "a-release-on-the-first-of-every-month": 7,
+ "a-release-on-the-first-of-every-month": 9,
  "agent-now-runs-on-macos-14-6-and-intel": 3,
  "context-compaction-half-the-window": 8,
  "inside-agent-shell-guardrails": 3,

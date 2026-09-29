@@ -137,17 +137,29 @@
                 <p class="blog-rss"><a href="/ru/blog/feed.xml">RSS-лента</a></p>
             </div>
             <div class="post-list">
-                <a class="post-card post-card-featured" href="/ru/blog/context-compaction-half-the-window/">
+                <a class="post-card post-card-featured" href="/ru/blog/a-release-on-the-first-of-every-month/">
+                    <div class="post-tags"><span class="post-tag">Заметки о выпуске</span><span class="post-tag">За кулисами</span></div>
+                    <h2>Релиз первого числа каждого месяца, а между ними — предрелизы</h2>
+                    <p>Agent! теперь выходит стабильным релизом первого числа каждого месяца. В ежедневных предрелизах (скоро еженедельных) обкатываются новые функции и исправления, а релиз-кандидаты доводят всё до готовности перед важным днём.</p>
+                    <p class="post-meta"><time datetime="2026-09-29">29 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="9" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">9 просмотров</span></span></p>
+                </a>
+                <a class="post-card" href="/ru/blog/context-compaction-half-the-window/">
                     <div class="post-tags"><span class="post-tag">Внутреннее устройство</span><span class="post-tag">Заметки о выпуске</span></div>
                     <h2>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</h2>
                     <p>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</p>
                     <p class="post-meta"><time datetime="2026-09-30">30 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">8 просмотров</span></span></p>
                 </a>
-                <a class="post-card" href="/ru/blog/a-release-on-the-first-of-every-month/">
-                    <div class="post-tags"><span class="post-tag">Заметки о выпуске</span><span class="post-tag">За кулисами</span></div>
-                    <h2>Релиз первого числа каждого месяца, а между ними — предрелизы</h2>
-                    <p>Agent! теперь выходит стабильным релизом первого числа каждого месяца. В ежедневных предрелизах (скоро еженедельных) обкатываются новые функции и исправления, а релиз-кандидаты доводят всё до готовности перед важным днём.</p>
-                    <p class="post-meta"><time datetime="2026-09-29">29 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="a-release-on-the-first-of-every-month" data-n="7" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">7 просмотров</span></span></p>
+                <a class="post-card" href="/ru/blog/why-we-ripped-out-modes/">
+                    <div class="post-tags"><span class="post-tag">Архитектура</span><span class="post-tag">Дизайн</span></div>
+                    <h2>Почему мы выбросили режим кодирования: пусть модель сама выбирает инструменты</h2>
+                    <p>Раньше Agent! пытался угадать, чего вы хотите — программирования или автоматизации, — и скрывал инструменты под эту догадку. Одна сломанная задача с Photo Booth показала, почему обвязке пора перестать додумывать за модель.</p>
+                    <p class="post-meta"><time datetime="2026-04-07">7 апреля 2026 г.</time> · 3 мин чтения<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">7 просмотров</span></span></p>
+                </a>
+                <a class="post-card" href="/ru/blog/meet-jev/">
+                    <div class="post-tags"><span class="post-tag">Безопасность</span><span class="post-tag">Анонс</span></div>
+                    <h2>Знакомьтесь, Jev: второе мнение, которое отвечает типами, а не прозой</h2>
+                    <p>Теперь Agent! спрашивает Jev (TypeSafe System One), насколько разрушительна команда шелла, прежде чем её выполнить. Рассказываем, почему Jev — советник, а не ещё один LLM-провайдер.</p>
+                    <p class="post-meta"><time datetime="2026-09-17">17 сентября 2026 г.</time> · 3 мин чтения<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">4 просмотров</span></span></p>
                 </a>
                 <a class="post-card" href="/ru/blog/the-terminal-strikes-back/">
                     <div class="post-tags"><span class="post-tag">Анонс</span><span class="post-tag">Кроссплатформенность</span><span class="post-tag">Разработка</span></div>
@@ -172,18 +184,6 @@
                     <h2>Добро пожаловать в блог Agent!: одно приложение, любой ИИ, полный контроль над вашим Mac</h2>
                     <p>Что такое AgentiLoop Agent!, как он устроен и о чём будет этот ежедневный блог — прямо из исходного кода.</p>
                     <p class="post-meta"><time datetime="2026-09-25">25 сентября 2026 г.</time> · 4 мин чтения<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">2 просмотров</span></span></p>
-                </a>
-                <a class="post-card" href="/ru/blog/meet-jev/">
-                    <div class="post-tags"><span class="post-tag">Безопасность</span><span class="post-tag">Анонс</span></div>
-                    <h2>Знакомьтесь, Jev: второе мнение, которое отвечает типами, а не прозой</h2>
-                    <p>Теперь Agent! спрашивает Jev (TypeSafe System One), насколько разрушительна команда шелла, прежде чем её выполнить. Рассказываем, почему Jev — советник, а не ещё один LLM-провайдер.</p>
-                    <p class="post-meta"><time datetime="2026-09-17">17 сентября 2026 г.</time> · 3 мин чтения<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">4 просмотров</span></span></p>
-                </a>
-                <a class="post-card" href="/ru/blog/why-we-ripped-out-modes/">
-                    <div class="post-tags"><span class="post-tag">Архитектура</span><span class="post-tag">Дизайн</span></div>
-                    <h2>Почему мы выбросили режим кодирования: пусть модель сама выбирает инструменты</h2>
-                    <p>Раньше Agent! пытался угадать, чего вы хотите — программирования или автоматизации, — и скрывал инструменты под эту догадку. Одна сломанная задача с Photo Booth показала, почему обвязке пора перестать додумывать за модель.</p>
-                    <p class="post-meta"><time datetime="2026-04-07">7 апреля 2026 г.</time> · 3 мин чтения<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="7" data-fmt="{n} просмотров" data-sep=" "> · <span class="post-reads">7 просмотров</span></span></p>
                 </a>
             </div>
             <div class="center-cta blog-home">
@@ -297,6 +297,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
+        // Blog index: most reads first, then newest.
+        var list = document.querySelector('.post-list');
+        if (!list) return;
+        var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
+        var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
+        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+            return reads(b) - reads(a) || date(b).localeCompare(date(a));
+        }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>
 </body>
