@@ -47,7 +47,7 @@ Or grab the signed and notarized `.dmg` from [Releases](https://github.com/Agent
 | Fully Automated | [`/auto.html`](https://agentiloop.ai/auto.html) | A poem |
 | TickyTacky | [`/tickytacky/`](https://agentiloop.ai/tickytacky/) | Neon tic-tac-toe, just for fun |
 
-The home, legal, stats and press pages are translated into 🇪🇸 Español, 🇫🇷 Français, 🇩🇪 Deutsch, 🇨🇳 中文, 🇷🇺 Русский, 🇰🇷 한국어 and 🇯🇵 日本語, under `/<lang>/`.
+The home, legal, stats, press and blog pages are translated into 🇪🇸 Español, 🇫🇷 Français, 🇩🇪 Deutsch, 🇨🇳 中文, 🇷🇺 Русский, 🇰🇷 한국어 and 🇯🇵 日本語, under `/<lang>/`.
 
 ## Repo layout
 
@@ -105,6 +105,8 @@ python3 blog/tools/build.py   # writes blog/<slug>/index.html, blog/index.html, 
 ```
 
 Posts dated after today are skipped, so you can queue a week of posts and publish one a day just by rebuilding. Don't edit the generated pages by hand.
+
+The blog is localized like the rest of the site. Translations use the same filename under `blog/src/<lang>/` (es, fr, de, zh, ru, ko, ja) and are built to `/<lang>/blog/`, with the same language picker as the main page. Blog UI strings live in `blog/tools/i18n.json`, and nav and footer labels come from `i18n/<lang>.json`. A post without a translation falls back to English with a short note.
 
 ## Deploying
 

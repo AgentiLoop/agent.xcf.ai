@@ -215,7 +215,7 @@ def runtime_strings(src_name):
 
 def relink(tag, lang, base):
     """Rewrite asset/page links inside one start tag for /<lang>/<page>. base = English page's directory ('/' or '/press/')."""
-    translated = {'/' + p for p in PAGES.values() if p}  # e.g. /legal.html, /press/
+    translated = {'/' + p for p in PAGES.values() if p} | {'/blog/'}  # e.g. /legal.html, /press/ (+ the blog, built by blog/tools/build.py)
 
     def fix(m):
         attr, q, url = m.group(1), m.group(2), m.group(3)

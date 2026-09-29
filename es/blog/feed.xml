@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog de AgentiLoop Agent!</title>
+    <link>https://agentiloop.ai/es/blog/</link>
+    <description>Análisis a fondo de AgentiLoop Agent!, el agente de IA nativo para macOS.</description>
+    <language>es</language>
+    <item>
+      <title>Bienvenido al blog de Agent!: una app, cualquier IA, control total de tu Mac</title>
+      <link>https://agentiloop.ai/es/blog/welcome-to-the-agent-blog/</link>
+      <guid>https://agentiloop.ai/es/blog/welcome-to-the-agent-blog/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Qué es AgentiLoop Agent!, cómo está construido y de qué hablará este blog diario, contado directamente desde el código fuente.</description>
+    </item>
+    <item>
+      <title>Antes de que el modelo tenga voto: así funcionan las salvaguardas de shell de Agent!</title>
+      <link>https://agentiloop.ai/es/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/es/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Cómo ShellSafetyService, la segunda comprobación en el daemon y la segunda opinión de Jev impiden que un agente de IA borre tu Mac, recorriendo el código Swift real.</description>
+    </item>
+    <item>
+      <title>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</title>
+      <link>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</link>
+      <guid>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
+    </item>
+  </channel>
+</rss>

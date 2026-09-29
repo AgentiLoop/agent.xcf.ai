@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AgentiLoop Agent! ブログ</title>
+    <link>https://agentiloop.ai/ja/blog/</link>
+    <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
+    <language>ja</language>
+    <item>
+      <title>Agent! ブログへようこそ：ひとつのアプリで、あらゆる AI を使い、Mac を完全に操る</title>
+      <link>https://agentiloop.ai/ja/blog/welcome-to-the-agent-blog/</link>
+      <guid>https://agentiloop.ai/ja/blog/welcome-to-the-agent-blog/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>AgentiLoop Agent! とは何か、どのように作られているのか、そしてこの毎日更新のブログで何を取り上げていくのかを、ソースコードから直接お伝えします。</description>
+    </item>
+    <item>
+      <title>モデルに判断を委ねる前に：Agent! のシェル・ガードレールの内側</title>
+      <link>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ShellSafetyService、デーモン側での再チェック、そして Jev のセカンドオピニオンが、AI エージェントによる Mac の全消去をどう防ぐのかを、実際の Swift コードとともに解説します。</description>
+    </item>
+    <item>
+      <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
+      <link>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</link>
+      <guid>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
+    </item>
+  </channel>
+</rss>

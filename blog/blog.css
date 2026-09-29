@@ -1,6 +1,7 @@
 /* Blog — index + post pages (built by blog/tools/build.py). Uses the site vars from styles.css. */
 
 .blog { padding-top: 40px; }
+.blog .section-head { max-width: none; }
 .blog-rss a { color: var(--accent-2); text-decoration: none; font-size: 0.9rem; }
 .blog-rss a:hover { text-decoration: underline; }
 
@@ -133,4 +134,13 @@
     .post-card-featured h2 { font-size: 1.4rem; }
     .post-nav { grid-template-columns: 1fr; }
     .post-nav-newer { text-align: left; }
+}
+
+.post-fallback {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    border: 1px dashed var(--card-border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 24px;
 }

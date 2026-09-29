@@ -149,9 +149,79 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://agentiloop.ai/es/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://agentiloop.ai/blog/welcome-to-the-agent-blog/</loc>
     <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/blog/welcome-to-the-agent-blog/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://agentiloop.ai/blog/inside-agent-shell-guardrails/</loc>
@@ -159,9 +229,79 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://agentiloop.ai/es/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/blog/inside-agent-shell-guardrails/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://agentiloop.ai/blog/context-compaction-half-the-window/</loc>
     <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
   </url>
   <!-- blog:end -->
 </urlset>

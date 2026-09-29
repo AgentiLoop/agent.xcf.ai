@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AgentiLoop Agent! 블로그</title>
+    <link>https://agentiloop.ai/ko/blog/</link>
+    <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
+    <language>ko</language>
+    <item>
+      <title>Agent! 블로그에 오신 것을 환영합니다: 하나의 앱, 어떤 AI든, Mac을 완벽하게 제어</title>
+      <link>https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</link>
+      <guid>https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>AgentiLoop Agent!가 무엇인지, 어떻게 만들어졌는지, 그리고 이 데일리 블로그에서 무엇을 다룰지 소스 코드를 바탕으로 직접 소개합니다.</description>
+    </item>
+    <item>
+      <title>모델이 판단하기 전에: Agent! 셸 가드레일 내부 들여다보기</title>
+      <link>https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</link>
+      <guid>https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>ShellSafetyService, 데몬 측 재검사, 그리고 Jev의 두 번째 의견이 AI 에이전트가 Mac을 지워 버리는 일을 어떻게 막는지 실제 Swift 코드를 따라가며 살펴봅니다.</description>
+    </item>
+    <item>
+      <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
+      <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
+      <guid>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
+    </item>
+  </channel>
+</rss>
