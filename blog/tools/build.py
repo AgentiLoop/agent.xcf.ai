@@ -246,6 +246,7 @@ HEAD = '''<!DOCTYPE html>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/promo.css">
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
@@ -278,7 +279,7 @@ HEAD = '''<!DOCTYPE html>
             </button>
         </div>
     </header>
-'''
+{promo}'''
 
 FOOT = '''
     <!-- FOOTER (shared — keep identical on every page; styles in footer.css) -->
@@ -305,6 +306,7 @@ FOOT = '''
     </footer>
 
     <script src="/nav.js"></script>
+    <script src="/promo.js"></script>
 </body>
 </html>
 '''
@@ -338,6 +340,13 @@ def localize_chrome(page, lang):
     return re.sub(r'href="(/(?:#[^"]*|stats\.html|press/|legal\.html|blog/)?)"', href, page)
 
 
+def promo(lang):
+    """The rotating promo banner, copied from the matching home page (index.html or <lang>/index.html)."""
+    home = ROOT / ('index.html' if lang == 'en' else '%s/index.html' % lang)
+    m = re.search(r'    <!-- PROMO BANNER.*?</aside>\n', home.read_text(encoding='utf-8'), re.S)
+    return m.group(0) if m else ''
+
+
 def alternates(page):
     """hreflang block for a blog path like 'blog/' or 'blog/<slug>/'."""
     return site_i18n.alternates(page)
@@ -348,7 +357,7 @@ def head(lang, page, title, description, og_type='website', jsonld=''):
     return HEAD.format(lang=lang, title=html.escape(title), description=html.escape(description), url=url,
                        site=SITE, prefix=prefix(lang), og_type=og_type, jsonld=jsonld,
                        locale=LANGS[lang][1], feed_title=html.escape(UI[lang]['post_suffix']),
-                       alternates=alternates(page), picker=site_i18n.picker(lang, page))
+                       alternates=alternates(page), picker=site_i18n.picker(lang, page), promo=promo(lang))
 
 
 def tags_html(tags):

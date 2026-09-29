@@ -54,6 +54,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/promo.css">
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
@@ -87,6 +88,31 @@
             </button>
         </div>
     </header>
+    <!-- PROMO BANNER (3 rotating slides; promo.js + promo.css) -->
+    <aside class="promo" id="promo" aria-label="Объявления">
+        <div class="promo-stage">
+            <div class="promo-slide promo-mac is-active" data-slide="0">
+                <span class="promo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.6-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-4zM14 5.4c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg></span>
+                <p class="promo-text"><strong class="promo-grad">Agent! для Mac</strong> теперь поддерживает <strong>macOS 14.6</strong> и новее на <span class="promo-chip chip-as">Apple Silicon</span> и <span class="promo-chip chip-intel">Intel</span></p>
+                <a class="promo-cta" id="promo-mac-dl" href="https://github.com/AgentiLoop/Agent/releases" target="_blank" rel="noopener">Скачать здесь <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="promo-slide promo-cli" data-slide="1" aria-hidden="true">
+                <span class="promo-icon promo-prompt" aria-hidden="true">&gt;_</span>
+                <p class="promo-text"><span class="promo-new">Новинка</span> от AgentiLoop: <strong class="promo-grad">AgentiLoopCLI</strong>, написанный на <a class="promo-lang lang-rust" href="https://github.com/AgentiLoop/AgentiLoopCLI" target="_blank" rel="noopener" tabindex="-1">Rust</a> и <a class="promo-lang lang-go" href="https://github.com/AgentiLoop/AgentiLoopGo" target="_blank" rel="noopener" tabindex="-1">Go</a><span class="promo-caret" aria-hidden="true"></span></p>
+                <a class="promo-cta" href="https://github.com/AgentiLoop/AgentiLoopCLI" target="_blank" rel="noopener" tabindex="-1">Посмотреть здесь <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="promo-slide promo-fx" data-slide="2" aria-hidden="true">
+                <span class="promo-sponsored">Спонсор</span>
+                <p class="promo-text"><strong class="promo-grad">Fluxion AI</strong>: один API для GPT, Claude и всех ведущих моделей. <span class="promo-save">Экономия до <b>70%</b></span> + <strong>$3 бесплатных кредитов</strong> с кодом <code>AIAGENT</code></p>
+                <a class="promo-cta" href="https://fluxionai.world/register?source=github&amp;campaign=aiagent&amp;promo=AIAGENT" target="_blank" rel="sponsored noopener" tabindex="-1">Получить $3 кредитов <span aria-hidden="true">&rarr;</span></a>
+            </div>
+        </div>
+        <div class="promo-dots" role="tablist" aria-label="Выбрать объявление">
+            <button type="button" class="promo-dot is-active" data-go="0" aria-label="Agent! для Mac"><span></span></button>
+            <button type="button" class="promo-dot" data-go="1" aria-label="AgentiLoopCLI"><span></span></button>
+            <button type="button" class="promo-dot" data-go="2" aria-label="Спонсор: Fluxion AI"><span></span></button>
+        </div>
+    </aside>
 
     <main class="section blog">
         <div class="container">
@@ -161,5 +187,6 @@
     </footer>
 
     <script src="/nav.js"></script>
+    <script src="/promo.js"></script>
 </body>
 </html>
