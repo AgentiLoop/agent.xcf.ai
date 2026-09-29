@@ -26,5 +26,26 @@
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
       <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
     </item>
+    <item>
+      <title>Agent!, 이제 macOS 14.6과 Intel Mac에서 실행: macOS 26에서 벗어난 방법</title>
+      <link>https://agentiloop.ai/ko/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
+      <guid>https://agentiloop.ai/ko/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent!는 macOS 26의 Apple Intelligence를 중심으로 만들어졌습니다. 하루 동안의 #available 게이트와 패키지 버전 업으로 Apple Silicon과 Intel의 macOS 14.6까지 지원하게 된 과정을 소개합니다.</description>
+    </item>
+    <item>
+      <title>Jev를 소개합니다: 산문이 아닌 타입으로 답하는 두 번째 의견</title>
+      <link>https://agentiloop.ai/ko/blog/meet-jev/</link>
+      <guid>https://agentiloop.ai/ko/blog/meet-jev/</guid>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
+      <description>이제 Agent!는 셸 명령을 실행하기 전에 그 명령이 얼마나 파괴적인지 Jev(TypeSafe System One)에게 묻습니다. Jev가 또 하나의 LLM 제공자가 아니라 조언자인 이유를 설명합니다.</description>
+    </item>
+    <item>
+      <title>코딩 모드를 걷어낸 이유: 도구는 모델이 직접 고르게 하라</title>
+      <link>https://agentiloop.ai/ko/blog/why-we-ripped-out-modes/</link>
+      <guid>https://agentiloop.ai/ko/blog/why-we-ripped-out-modes/</guid>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0000</pubDate>
+      <description>예전의 Agent!는 사용자가 코딩을 원하는지 자동화를 원하는지 추측해 그에 맞춰 도구를 숨겼습니다. 망가진 Photo Booth 작업 하나가 왜 하네스가 모델의 판단을 넘겨짚지 말아야 하는지 보여주었습니다.</description>
+    </item>
   </channel>
 </rss>

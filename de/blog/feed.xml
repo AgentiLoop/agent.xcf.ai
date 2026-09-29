@@ -26,5 +26,26 @@
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
       <description>Wie die Kontextkomprimierung von Agent! entscheidet, wann eine lange Aufgabe zusammengefasst wird, und die Fixes vom 28. September für Fallback-Modelle, Ollama und ein 272K-Fenster bei Codex.</description>
     </item>
+    <item>
+      <title>Agent! läuft jetzt unter macOS 14.6 und auf Intel-Macs: Wie wir uns von macOS 26 gelöst haben</title>
+      <link>https://agentiloop.ai/de/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
+      <guid>https://agentiloop.ai/de/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! wurde rund um Apple Intelligence unter macOS 26 entwickelt. So hat ein Tag voller #available-Prüfungen und Paket-Updates es auf macOS 14.6 gebracht, auf Apple Silicon und Intel.</description>
+    </item>
+    <item>
+      <title>Darf ich vorstellen: Jev – eine zweite Meinung, die in Typen antwortet, nicht in Prosa</title>
+      <link>https://agentiloop.ai/de/blog/meet-jev/</link>
+      <guid>https://agentiloop.ai/de/blog/meet-jev/</guid>
+      <pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Agent! fragt jetzt Jev (TypeSafe System One), wie destruktiv ein Shell-Befehl ist, bevor er ausgeführt wird. Hier erfährst du, warum Jev ein Berater ist und kein weiterer LLM-Anbieter.</description>
+    </item>
+    <item>
+      <title>Warum wir den Coding-Modus rausgeworfen haben: Das Modell soll seine Werkzeuge selbst wählen</title>
+      <link>https://agentiloop.ai/de/blog/why-we-ripped-out-modes/</link>
+      <guid>https://agentiloop.ai/de/blog/why-we-ripped-out-modes/</guid>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0000</pubDate>
+      <description>Agent! hat früher geraten, ob du programmieren oder automatisieren willst, und passend dazu Werkzeuge ausgeblendet. Eine gescheiterte Photo-Booth-Aufgabe hat gezeigt, warum das Harness aufhören sollte, das Modell zu bevormunden.</description>
+    </item>
   </channel>
 </rss>
