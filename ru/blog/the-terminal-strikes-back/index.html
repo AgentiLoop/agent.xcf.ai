@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Терминал наносит ответный удар: переносим агентный цикл на все платформы с помощью Rust и Go","description":"Agent! — это приложение для Mac, но агенту для программирования место там, где работают разработчики. Рассказываем, как агентный цикл превратился в два CLI, один на Rust и один на Go, с полноэкранным TUI для macOS, Windows и Linux.","datePublished":"2026-09-23","inLanguage":"ru","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ru/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Терминал наносит ответный удар: переносим агентный цикл на все платформы с помощью Rust и Go","description":"Agent! — это приложение для Mac, но агенту для программирования место там, где работают разработчики. Рассказываем, как агентный цикл превратился в два CLI, один на Rust и один на Go, с полноэкранным TUI для macOS, Windows и Linux.","datePublished":"2026-09-28","inLanguage":"ru","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ru/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Анонс</span><span class="post-tag">Кроссплатформенность</span><span class="post-tag">Разработка</span></div>
                     <h1>Терминал наносит ответный удар: переносим агентный цикл на все платформы с помощью Rust и Go</h1>
                     <p class="post-dek">Agent! — это приложение для Mac, но агенту для программирования место там, где работают разработчики. Рассказываем, как агентный цикл превратился в два CLI, один на Rust и один на Go, с полноэкранным TUI для macOS, Windows и Linux.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-23">23 сентября 2026 г.</time> · 5 мин чтения</p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-28">28 сентября 2026 г.</time> · 5 мин чтения</p>
                 </header>
                 <div class="post-body">
 <p>Большую часть своей жизни Agent! был гордым приложением для Mac: нативный Swift и SwiftUI, глубокая интеграция с AppleScript и Accessibility, а также Launch Daemon для root-доступа. Он по-прежнему остаётся флагманом. Но за последние несколько дней что-то изменилось в нашем представлении об агентах для программирования, и сегодня это выходит в релиз.</p>
@@ -134,7 +134,7 @@
 <h2 id="почему-два-языка">Почему два языка?</h2>
 <p>Можно было выбрать один. Вместо этого мы намеренно портировали одну и ту же архитектуру дважды.</p>
 <p><strong>Rust (AgentiLoopCLI)</strong> был первым. Каркас рабочего пространства был создан 20 сентября: базовый цикл, провайдер Anthropic, встроенные инструменты и CLI. Проект разделён на пять крейтов: <code>agentiloop-core</code> (цикл, сообщения, сессии и разрешения), <code>agentiloop-provider</code>, <code>agentiloop-tools</code>, <code>agentiloop-mcp</code> и <code>agentiloop-cli</code>. Он работает на <code>tokio</code>, использует <code>reqwest</code> с <code>rustls</code>, так что на Windows не нужно возиться с OpenSSL, а TUI отрисовывает с помощью <code>ratatui</code>. Markdown обрабатывается через <code>pulldown-cmark</code>, а подсветку синтаксиса кода обеспечивает <code>syntect</code>.</p>
-<p><strong>Go (AgentiLoopGo)</strong> появился сегодня в потоке коммитов: ядро (сообщения, агентный цикл, сжатие контекста, сессии и разрешения) с тестами, затем провайдеры, затем MCP-клиент, затем CLI с REPL, TUI, Markdown, подсветкой синтаксиса, сессиями и слэш-командами. TUI отрисовывается с помощью <code>tcell</code>, Markdown рендерится через <code>goldmark</code>, подсветка — через <code>chroma</code>, а редактирование строки обеспечивает <code>liner</code>. Его процесс релиза нацелен на те же пять платформ, что и у редакции на Rust.</p>
+<p><strong>Go (AgentiLoopGo)</strong> появился 23 сентября в потоке коммитов: ядро (сообщения, агентный цикл, сжатие контекста, сессии и разрешения) с тестами, затем провайдеры, затем MCP-клиент, затем CLI с REPL, TUI, Markdown, подсветкой синтаксиса, сессиями и слэш-командами. TUI отрисовывается с помощью <code>tcell</code>, Markdown рендерится через <code>goldmark</code>, подсветка — через <code>chroma</code>, а редактирование строки обеспечивает <code>liner</code>. Его процесс релиза нацелен на те же пять платформ, что и у редакции на Rust.</p>
 <p>Сделать всё дважды — лучшее ревью архитектуры, какое только бывает. Всё, что на самом деле было особенностью Rust или особенностью Go, сразу становится заметным, а то, что остаётся, и есть настоящая архитектура. Есть и практическая польза: выберите тот тулчейн, которому ваша команда уже доверяет. А потом расскажите нам, какой справляется лучше. 🦀 vs 🐹</p>
 <h2 id="тот-же-цикл-меньшая-поверхность">Тот же цикл, меньшая поверхность</h2>
 <p>Оба CLI намеренно начинают с небольшого, но точного набора инструментов:</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/ru/blog/meet-jev/"><span>← Раньше</span>Знакомьтесь, Jev: второе мнение, которое отвечает типами, а не прозой</a><a class="post-nav-newer" href="/ru/blog/welcome-to-the-agent-blog/"><span>Позже →</span>Добро пожаловать в блог Agent!: одно приложение, любой ИИ, полный контроль над вашим Mac</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/ru/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Раньше</span>Agent! теперь работает на macOS 14.6 и Mac с Intel: как мы отвязались от macOS 26</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/ru/" class="btn btn-ghost" data-back-home>← На главную</a>
             </div>

@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ターミナルの逆襲：Rust と Go でエージェントループをクロスプラットフォームへ","description":"Agent! は Mac アプリですが、コーディングエージェントは開発者が働くあらゆる場所にあるべきです。エージェントループが Rust 版と Go 版の 2 つの CLI となり、macOS・Windows・Linux でフルスクリーン TUI を備えるまでの道のりを紹介します。","datePublished":"2026-09-23","inLanguage":"ja","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ja/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ターミナルの逆襲：Rust と Go でエージェントループをクロスプラットフォームへ","description":"Agent! は Mac アプリですが、コーディングエージェントは開発者が働くあらゆる場所にあるべきです。エージェントループが Rust 版と Go 版の 2 つの CLI となり、macOS・Windows・Linux でフルスクリーン TUI を備えるまでの道のりを紹介します。","datePublished":"2026-09-28","inLanguage":"ja","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/ja/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">お知らせ</span><span class="post-tag">クロスプラットフォーム</span><span class="post-tag">エンジニアリング</span></div>
                     <h1>ターミナルの逆襲：Rust と Go でエージェントループをクロスプラットフォームへ</h1>
                     <p class="post-dek">Agent! は Mac アプリですが、コーディングエージェントは開発者が働くあらゆる場所にあるべきです。エージェントループが Rust 版と Go 版の 2 つの CLI となり、macOS・Windows・Linux でフルスクリーン TUI を備えるまでの道のりを紹介します。</p>
-                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-23">2026年9月23日</time> · 約 5 分で読めます</p>
+                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-28">2026年9月28日</time> · 約 5 分で読めます</p>
                 </header>
                 <div class="post-body">
 <p>これまでの大半の期間、Agent! は誇り高き Mac アプリでした。ネイティブの Swift と SwiftUI、AppleScript やアクセシビリティ（Accessibility）との深い連携、そして root 権限のための Launch Daemon。それは今も変わらずフラッグシップです。しかしここ数日で、コーディングエージェントに対する私たちの考え方に変化が起き、今日それをリリースします。</p>
@@ -134,7 +134,7 @@
 <h2 id="なぜ-2-つの言語なのか">なぜ 2 つの言語なのか？</h2>
 <p>1 つに絞ることもできました。しかし私たちは、あえて同じ設計を 2 回移植しました。</p>
 <p><strong>Rust (AgentiLoopCLI)</strong> が先でした。ワークスペースは 9 月 20 日に、コアループ、Anthropic プロバイダ、組み込みツール、CLI とともに立ち上げられました。5 つの crate に分かれています。<code>agentiloop-core</code>（ループ、メッセージ、セッション、権限）、<code>agentiloop-provider</code>、<code>agentiloop-tools</code>、<code>agentiloop-mcp</code>、<code>agentiloop-cli</code> です。<code>tokio</code> 上で動作し、<code>rustls</code> を使った <code>reqwest</code> を採用しているため Windows で OpenSSL と格闘する必要がなく、TUI は <code>ratatui</code> で描画します。Markdown は <code>pulldown-cmark</code> で処理し、コードのシンタックスハイライトは <code>syntect</code> が担います。</p>
-<p><strong>Go (AgentiLoopGo)</strong> は今日、怒涛のコミットで登場しました。まずテスト付きのコア（メッセージ、エージェントループ、コンパクション、セッション、権限）、次にプロバイダ、続いて MCP クライアント、そして REPL、TUI、Markdown、シンタックスハイライト、セッション、スラッシュコマンドを備えた CLI です。TUI は <code>tcell</code> で描画し、Markdown は <code>goldmark</code> でレンダリングし、ハイライトは <code>chroma</code>、行編集は <code>liner</code> で処理します。リリースワークフローは Rust 版と同じ 5 つのプラットフォームを対象としています。</p>
+<p><strong>Go (AgentiLoopGo)</strong> は 9 月 23 日、怒涛のコミットで登場しました。まずテスト付きのコア（メッセージ、エージェントループ、コンパクション、セッション、権限）、次にプロバイダ、続いて MCP クライアント、そして REPL、TUI、Markdown、シンタックスハイライト、セッション、スラッシュコマンドを備えた CLI です。TUI は <code>tcell</code> で描画し、Markdown は <code>goldmark</code> でレンダリングし、ハイライトは <code>chroma</code>、行編集は <code>liner</code> で処理します。リリースワークフローは Rust 版と同じ 5 つのプラットフォームを対象としています。</p>
 <p>2 回実装することは、最高の設計レビューです。本当は Rust 特有、あるいは Go 特有だったものはすぐに浮かび上がり、残ったものこそが本当のアーキテクチャです。実用的なメリットもあります。チームがすでに信頼しているツールチェーンを選べばいいのです。そして、どちらが優れているか教えてください。🦀 vs 🐹</p>
 <h2 id="同じループ-より小さな表面">同じループ、より小さな表面</h2>
 <p>どちらの CLI も、意図的に小さく鋭いツールセットから始めています。</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/ja/blog/meet-jev/"><span>← 前の記事</span>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</a><a class="post-nav-newer" href="/ja/blog/welcome-to-the-agent-blog/"><span>次の記事 →</span>Agent! ブログへようこそ：ひとつのアプリで、あらゆる AI を使い、Mac を完全に操る</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/ja/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← 前の記事</span>Agent! が macOS 14.6 と Intel Mac で動作するように：macOS 26 依存からの脱却</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/ja/" class="btn btn-ghost" data-back-home>← ホームに戻る</a>
             </div>

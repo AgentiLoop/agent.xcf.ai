@@ -6,11 +6,11 @@
     <description>Подробный разбор AgentiLoop Agent!, нативного ИИ-агента для macOS.</description>
     <language>ru</language>
     <item>
-      <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>
-      <link>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</guid>
+      <title>Терминал наносит ответный удар: переносим агентный цикл на все платформы с помощью Rust и Go</title>
+      <link>https://agentiloop.ai/ru/blog/the-terminal-strikes-back/</link>
+      <guid>https://agentiloop.ai/ru/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</description>
+      <description>Agent! — это приложение для Mac, но агенту для программирования место там, где работают разработчики. Рассказываем, как агентный цикл превратился в два CLI, один на Rust и один на Go, с полноэкранным TUI для macOS, Windows и Linux.</description>
     </item>
     <item>
       <title>Agent! теперь работает на macOS 14.6 и Mac с Intel: как мы отвязались от macOS 26</title>
@@ -32,13 +32,6 @@
       <guid>https://agentiloop.ai/ru/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
       <description>Что такое AgentiLoop Agent!, как он устроен и о чём будет этот ежедневный блог — прямо из исходного кода.</description>
-    </item>
-    <item>
-      <title>Терминал наносит ответный удар: переносим агентный цикл на все платформы с помощью Rust и Go</title>
-      <link>https://agentiloop.ai/ru/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/ru/blog/the-terminal-strikes-back/</guid>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! — это приложение для Mac, но агенту для программирования место там, где работают разработчики. Рассказываем, как агентный цикл превратился в два CLI, один на Rust и один на Go, с полноэкранным TUI для macOS, Windows и Linux.</description>
     </item>
     <item>
       <title>Знакомьтесь, Jev: второе мнение, которое отвечает типами, а не прозой</title>

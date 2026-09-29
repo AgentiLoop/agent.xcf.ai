@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"终端反击：用 Rust 和 Go 将智能体循环带向跨平台","description":"Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。","datePublished":"2026-09-23","inLanguage":"zh-Hans","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/zh/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"终端反击：用 Rust 和 Go 将智能体循环带向跨平台","description":"Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。","datePublished":"2026-09-28","inLanguage":"zh-Hans","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/zh/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">公告</span><span class="post-tag">跨平台</span><span class="post-tag">工程</span></div>
                     <h1>终端反击：用 Rust 和 Go 将智能体循环带向跨平台</h1>
                     <p class="post-dek">Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-23">2026年9月23日</time> · 阅读约 5 分钟</p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-28">2026年9月28日</time> · 阅读约 5 分钟</p>
                 </header>
                 <div class="post-body">
 <p>在过去的大部分时间里，Agent! 一直是一款引以为傲的 Mac 应用：原生 Swift 和 SwiftUI，深度集成 AppleScript 与辅助功能（Accessibility），并通过 Launch Daemon 获得 root 权限。它依然是我们的旗舰产品。但在过去几天里，我们对编程智能体的看法发生了变化，而今天，这一变化正式发布。</p>
@@ -134,7 +134,7 @@
 <h2 id="为什么用两种语言">为什么用两种语言？</h2>
 <p>我们本可以只选一种。但我们刻意将同一套设计移植了两次。</p>
 <p><strong>Rust (AgentiLoopCLI)</strong> 最先完成。工作区于 9 月 20 日搭建完成，包含核心循环、Anthropic 提供商、内置工具和 CLI。它被拆分为五个 crate：<code>agentiloop-core</code>（循环、消息、会话和权限）、<code>agentiloop-provider</code>、<code>agentiloop-tools</code>、<code>agentiloop-mcp</code> 和 <code>agentiloop-cli</code>。它运行在 <code>tokio</code> 上，使用搭配 <code>rustls</code> 的 <code>reqwest</code>，因此在 Windows 上无需折腾 OpenSSL，并使用 <code>ratatui</code> 绘制 TUI。Markdown 由 <code>pulldown-cmark</code> 处理，代码的语法高亮则来自 <code>syntect</code>。</p>
-<p><strong>Go (AgentiLoopGo)</strong> 在今天通过一连串提交落地：先是带测试的核心（消息、智能体循环、压缩、会话和权限），然后是提供商，接着是 MCP 客户端，最后是 CLI，包括 REPL、TUI、Markdown、语法高亮、会话和斜杠命令。它用 <code>tcell</code> 绘制 TUI，用 <code>goldmark</code> 渲染 Markdown，用 <code>chroma</code> 进行高亮，并用 <code>liner</code> 处理行编辑。它的发布工作流与 Rust 版本面向相同的五个平台。</p>
+<p><strong>Go (AgentiLoopGo)</strong> 在 9 月 23 日通过一连串提交落地：先是带测试的核心（消息、智能体循环、压缩、会话和权限），然后是提供商，接着是 MCP 客户端，最后是 CLI，包括 REPL、TUI、Markdown、语法高亮、会话和斜杠命令。它用 <code>tcell</code> 绘制 TUI，用 <code>goldmark</code> 渲染 Markdown，用 <code>chroma</code> 进行高亮，并用 <code>liner</code> 处理行编辑。它的发布工作流与 Rust 版本面向相同的五个平台。</p>
 <p>实现两遍就是最好的设计评审。任何真正属于 Rust 特有或 Go 特有的写法都会立刻暴露出来，剩下的才是真正的架构。这还有一个实际的好处：选择你的团队已经信任的工具链就好。然后告诉我们哪个做得更好。🦀 vs 🐹</p>
 <h2 id="同样的循环-更小的表面">同样的循环，更小的表面</h2>
 <p>两个 CLI 都刻意从一套小而精的工具集起步：</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/zh/blog/meet-jev/"><span>← 上一篇</span>认识 Jev：以类型而非文字作答的第二意见</a><a class="post-nav-newer" href="/zh/blog/welcome-to-the-agent-blog/"><span>下一篇 →</span>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/zh/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← 上一篇</span>Agent! 现已支持 macOS 14.6 和 Intel Mac：我们如何摆脱对 macOS 26 的依赖</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/zh/" class="btn btn-ghost" data-back-home>← 返回首页</a>
             </div>

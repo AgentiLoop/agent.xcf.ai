@@ -6,11 +6,11 @@
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
     <item>
-      <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
-      <link>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</guid>
+      <title>ターミナルの逆襲：Rust と Go でエージェントループをクロスプラットフォームへ</title>
+      <link>https://agentiloop.ai/ja/blog/the-terminal-strikes-back/</link>
+      <guid>https://agentiloop.ai/ja/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
+      <description>Agent! は Mac アプリですが、コーディングエージェントは開発者が働くあらゆる場所にあるべきです。エージェントループが Rust 版と Go 版の 2 つの CLI となり、macOS・Windows・Linux でフルスクリーン TUI を備えるまでの道のりを紹介します。</description>
     </item>
     <item>
       <title>Agent! が macOS 14.6 と Intel Mac で動作するように：macOS 26 依存からの脱却</title>
@@ -32,13 +32,6 @@
       <guid>https://agentiloop.ai/ja/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
       <description>AgentiLoop Agent! とは何か、どのように作られているのか、そしてこの毎日更新のブログで何を取り上げていくのかを、ソースコードから直接お伝えします。</description>
-    </item>
-    <item>
-      <title>ターミナルの逆襲：Rust と Go でエージェントループをクロスプラットフォームへ</title>
-      <link>https://agentiloop.ai/ja/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/ja/blog/the-terminal-strikes-back/</guid>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! は Mac アプリですが、コーディングエージェントは開発者が働くあらゆる場所にあるべきです。エージェントループが Rust 版と Go 版の 2 つの CLI となり、macOS・Windows・Linux でフルスクリーン TUI を備えるまでの道のりを紹介します。</description>
     </item>
     <item>
       <title>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</title>

@@ -6,11 +6,11 @@
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
     <item>
-      <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
-      <link>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</guid>
+      <title>终端反击：用 Rust 和 Go 将智能体循环带向跨平台</title>
+      <link>https://agentiloop.ai/zh/blog/the-terminal-strikes-back/</link>
+      <guid>https://agentiloop.ai/zh/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
+      <description>Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。</description>
     </item>
     <item>
       <title>Agent! 现已支持 macOS 14.6 和 Intel Mac：我们如何摆脱对 macOS 26 的依赖</title>
@@ -32,13 +32,6 @@
       <guid>https://agentiloop.ai/zh/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
       <description>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</description>
-    </item>
-    <item>
-      <title>终端反击：用 Rust 和 Go 将智能体循环带向跨平台</title>
-      <link>https://agentiloop.ai/zh/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/zh/blog/the-terminal-strikes-back/</guid>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! 是一款 Mac 应用，但编程智能体应该出现在开发者工作的任何地方。本文介绍智能体循环如何变成两个 CLI（一个用 Rust，一个用 Go），并在 macOS、Windows 和 Linux 上提供全屏 TUI。</description>
     </item>
     <item>
       <title>认识 Jev：以类型而非文字作答的第二意见</title>

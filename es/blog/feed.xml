@@ -6,11 +6,11 @@
     <description>Análisis a fondo de AgentiLoop Agent!, el agente de IA nativo para macOS.</description>
     <language>es</language>
     <item>
-      <title>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</title>
-      <link>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</guid>
+      <title>La terminal contraataca: el bucle del agente se vuelve multiplataforma en Rust y Go</title>
+      <link>https://agentiloop.ai/es/blog/the-terminal-strikes-back/</link>
+      <guid>https://agentiloop.ai/es/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
+      <description>Agent! es una app para Mac, pero un agente de programación debe estar allí donde trabajan los desarrolladores. Así es como el bucle del agente se convirtió en dos CLI, una en Rust y otra en Go, con una TUI a pantalla completa en macOS, Windows y Linux.</description>
     </item>
     <item>
       <title>Agent! ya funciona en macOS 14.6 y en Macs con Intel: cómo nos liberamos de macOS 26</title>
@@ -32,13 +32,6 @@
       <guid>https://agentiloop.ai/es/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
       <description>Qué es AgentiLoop Agent!, cómo está construido y de qué hablará este blog diario, contado directamente desde el código fuente.</description>
-    </item>
-    <item>
-      <title>La terminal contraataca: el bucle del agente se vuelve multiplataforma en Rust y Go</title>
-      <link>https://agentiloop.ai/es/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/es/blog/the-terminal-strikes-back/</guid>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! es una app para Mac, pero un agente de programación debe estar allí donde trabajan los desarrolladores. Así es como el bucle del agente se convirtió en dos CLI, una en Rust y otra en Go, con una TUI a pantalla completa en macOS, Windows y Linux.</description>
     </item>
     <item>
       <title>Te presentamos a Jev: una segunda opinión que responde con tipos, no con prosa</title>

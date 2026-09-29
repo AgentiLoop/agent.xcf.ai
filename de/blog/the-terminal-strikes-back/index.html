@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go","description":"Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.","datePublished":"2026-09-23","inLanguage":"de","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/de/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go","description":"Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.","datePublished":"2026-09-28","inLanguage":"de","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/de/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Ankündigung</span><span class="post-tag">Plattformübergreifend</span><span class="post-tag">Engineering</span></div>
                     <h1>Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go</h1>
                     <p class="post-dek">Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-23">23. September 2026</time> · 5 Min. Lesezeit</p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-28">28. September 2026</time> · 5 Min. Lesezeit</p>
                 </header>
                 <div class="post-body">
 <p>Die meiste Zeit seines Bestehens war Agent! eine stolze Mac-App: natives Swift und SwiftUI, tiefe Anbindung an AppleScript und Bedienungshilfen und ein Launch Daemon für root. Das ist nach wie vor das Flaggschiff. Doch in den letzten Tagen hat sich etwas daran geändert, wie wir über Coding-Agents denken, und heute erscheint es.</p>
@@ -134,7 +134,7 @@
 <h2 id="warum-zwei-sprachen">Warum zwei Sprachen?</h2>
 <p>Wir hätten uns für eine entscheiden können. Stattdessen haben wir dasselbe Design zweimal portiert, und zwar mit Absicht.</p>
 <p><strong>Rust (AgentiLoopCLI)</strong> kam zuerst. Der Workspace wurde am 20. September mit einem Kern-Loop, dem Anthropic-Provider, eingebauten Tools und der CLI aufgesetzt. Er ist in fünf Crates aufgeteilt: <code>agentiloop-core</code> (der Loop, Nachrichten, Sitzungen und Berechtigungen), <code>agentiloop-provider</code>, <code>agentiloop-tools</code>, <code>agentiloop-mcp</code> und <code>agentiloop-cli</code>. Er läuft auf <code>tokio</code>, nutzt <code>reqwest</code> mit <code>rustls</code>, sodass man sich unter Windows nicht mit OpenSSL herumschlagen muss, und zeichnet seine TUI mit <code>ratatui</code>. Markdown läuft durch <code>pulldown-cmark</code>, und Code bekommt Syntaxhervorhebung von <code>syntect</code>.</p>
-<p><strong>Go (AgentiLoopGo)</strong> ist heute in einer Reihe von Commits gelandet: der Kern (Nachrichten, Agent-Loop, Kompaktierung, Sitzungen und Berechtigungen) mit Tests, dann die Provider, dann der MCP-Client, dann die CLI mit REPL, TUI, Markdown, Syntaxhervorhebung, Sitzungen und Slash-Befehlen. Sie zeichnet die TUI mit <code>tcell</code>, rendert Markdown mit <code>goldmark</code>, hebt Syntax mit <code>chroma</code> hervor und übernimmt die Zeilenbearbeitung mit <code>liner</code>. Ihr Release-Workflow zielt auf dieselben fünf Plattformen wie die Rust-Edition.</p>
+<p><strong>Go (AgentiLoopGo)</strong> ist am 23. September in einer Reihe von Commits gelandet: der Kern (Nachrichten, Agent-Loop, Kompaktierung, Sitzungen und Berechtigungen) mit Tests, dann die Provider, dann der MCP-Client, dann die CLI mit REPL, TUI, Markdown, Syntaxhervorhebung, Sitzungen und Slash-Befehlen. Sie zeichnet die TUI mit <code>tcell</code>, rendert Markdown mit <code>goldmark</code>, hebt Syntax mit <code>chroma</code> hervor und übernimmt die Zeilenbearbeitung mit <code>liner</code>. Ihr Release-Workflow zielt auf dieselben fünf Plattformen wie die Rust-Edition.</p>
 <p>Es zweimal zu machen, ist das beste Design-Review, das es gibt. Alles, was eigentlich ein Rust-Ismus oder ein Go-Ismus war, fällt sofort auf, und was übrig bleibt, ist die eigentliche Architektur. Es gibt auch einen praktischen Vorteil: Wähl die Toolchain, der dein Team bereits vertraut. Und dann sag uns, welche es besser macht. 🦀 vs 🐹</p>
 <h2 id="derselbe-loop-weniger-angriffsfläche">Derselbe Loop, weniger Angriffsfläche</h2>
 <p>Beide CLIs starten bewusst mit einem kleinen, scharfen Werkzeugsatz:</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/de/blog/meet-jev/"><span>← Älter</span>Darf ich vorstellen: Jev – eine zweite Meinung, die in Typen antwortet, nicht in Prosa</a><a class="post-nav-newer" href="/de/blog/welcome-to-the-agent-blog/"><span>Neuer →</span>Willkommen im Agent!-Blog: Eine App, jede KI, volle Kontrolle über deinen Mac</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/de/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Älter</span>Agent! läuft jetzt unter macOS 14.6 und auf Intel-Macs: Wie wir uns von macOS 26 gelöst haben</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/de/" class="btn btn-ghost" data-back-home>← Zurück zur Startseite</a>
             </div>

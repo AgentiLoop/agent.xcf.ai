@@ -24,7 +24,7 @@ Accessibility로 Photo Booth를 조작하거나 ScriptingBridge로 Mail을 스�
 
 **Rust (AgentiLoopCLI)** 가 먼저였습니다. 워크스페이스는 9월 20일에 핵심 루프, Anthropic 프로바이더, 내장 도구, CLI와 함께 뼈대가 만들어졌습니다. 다섯 개의 크레이트로 나뉘어 있습니다. `agentiloop-core`(루프, 메시지, 세션, 권한), `agentiloop-provider`, `agentiloop-tools`, `agentiloop-mcp`, `agentiloop-cli`입니다. `tokio` 위에서 동작하고, `reqwest`를 `rustls`와 함께 사용해 Windows에서 OpenSSL과 씨름할 필요가 없으며, TUI는 `ratatui`로 그립니다. Markdown은 `pulldown-cmark`로 처리하고, 코드 구문 강조는 `syntect`가 담당합니다.
 
-**Go (AgentiLoopGo)** 는 오늘 연이은 커밋과 함께 등장했습니다. 테스트를 갖춘 코어(메시지, 에이전트 루프, 컨텍스트 압축, 세션, 권한), 이어서 프로바이더, 그다음 MCP 클라이언트, 그리고 REPL, TUI, Markdown, 구문 강조, 세션, 슬래시 명령을 갖춘 CLI 순이었습니다. TUI는 `tcell`로 그리고, Markdown은 `goldmark`로 렌더링하며, 강조는 `chroma`로, 줄 편집은 `liner`로 처리합니다. 릴리스 워크플로는 Rust 에디션과 같은 다섯 개 플랫폼을 대상으로 합니다.
+**Go (AgentiLoopGo)** 는 9월 23일 연이은 커밋과 함께 등장했습니다. 테스트를 갖춘 코어(메시지, 에이전트 루프, 컨텍스트 압축, 세션, 권한), 이어서 프로바이더, 그다음 MCP 클라이언트, 그리고 REPL, TUI, Markdown, 구문 강조, 세션, 슬래시 명령을 갖춘 CLI 순이었습니다. TUI는 `tcell`로 그리고, Markdown은 `goldmark`로 렌더링하며, 강조는 `chroma`로, 줄 편집은 `liner`로 처리합니다. 릴리스 워크플로는 Rust 에디션과 같은 다섯 개 플랫폼을 대상으로 합니다.
 
 두 번 만드는 것은 최고의 설계 리뷰입니다. 사실은 Rust만의 방식이거나 Go만의 방식이었던 것들이 즉시 드러나고, 남는 것이 진짜 아키텍처입니다. 실용적인 이점도 있습니다. 여러분의 팀이 이미 신뢰하는 툴체인을 고르면 됩니다. 그리고 어느 쪽이 더 잘하는지 알려주세요. 🦀 vs 🐹
 

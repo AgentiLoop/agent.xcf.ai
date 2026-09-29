@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Terminal Strikes Back: Taking the Agent Loop Cross-Platform in Rust and Go","description":"Agent! is a Mac app, but a coding agent belongs wherever developers work. Here's how the agent loop became two CLIs, one in Rust and one in Go, with a full-screen TUI on macOS, Windows and Linux.","datePublished":"2026-09-23","inLanguage":"en","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Terminal Strikes Back: Taking the Agent Loop Cross-Platform in Rust and Go","description":"Agent! is a Mac app, but a coding agent belongs wherever developers work. Here's how the agent loop became two CLIs, one in Rust and one in Go, with a full-screen TUI on macOS, Windows and Linux.","datePublished":"2026-09-28","inLanguage":"en","author":{"@type":"Person","name":"Todd Bruss"},"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"https://agentiloop.ai/blog/the-terminal-strikes-back/","image":"https://agentiloop.ai/agent-og.png"}</script>
 </head>
 <body>
 
@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Announcement</span><span class="post-tag">Cross-Platform</span><span class="post-tag">Engineering</span></div>
                     <h1>The Terminal Strikes Back: Taking the Agent Loop Cross-Platform in Rust and Go</h1>
                     <p class="post-dek">Agent! is a Mac app, but a coding agent belongs wherever developers work. Here&#x27;s how the agent loop became two CLIs, one in Rust and one in Go, with a full-screen TUI on macOS, Windows and Linux.</p>
-                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-23">September 23, 2026</time> · 5 min read</p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-28">September 28, 2026</time> · 5 min read</p>
                 </header>
                 <div class="post-body">
 <p>For most of its life, Agent! has been a proud Mac app: native Swift and SwiftUI, deep AppleScript and Accessibility hooks, and a Launch Daemon for root. That's still the flagship. But over the last few days something changed in how we think about coding agents, and today it ships.</p>
@@ -134,7 +134,7 @@
 <h2 id="why-two-languages">Why two languages?</h2>
 <p>We could have picked one. Instead we ported the same design twice, on purpose.</p>
 <p><strong>Rust (AgentiLoopCLI)</strong> was first. The workspace was scaffolded on September 20 with a core loop, the Anthropic provider, built-in tools and the CLI. It's split into five crates: <code>agentiloop-core</code> (the loop, messages, sessions and permissions), <code>agentiloop-provider</code>, <code>agentiloop-tools</code>, <code>agentiloop-mcp</code> and <code>agentiloop-cli</code>. It runs on <code>tokio</code>, uses <code>reqwest</code> with <code>rustls</code> so there's no OpenSSL to wrangle on Windows, and draws its TUI with <code>ratatui</code>. Markdown goes through <code>pulldown-cmark</code>, and code gets syntax highlighting from <code>syntect</code>.</p>
-<p><strong>Go (AgentiLoopGo)</strong> landed today in a burst of commits: the core (messages, agent loop, compaction, sessions and permissions) with tests, then the providers, then the MCP client, then the CLI with its REPL, TUI, Markdown, syntax highlighting, sessions and slash commands. It draws the TUI with <code>tcell</code>, renders Markdown with <code>goldmark</code>, highlights with <code>chroma</code>, and handles line editing with <code>liner</code>. Its release workflow targets the same five platforms as the Rust edition.</p>
+<p><strong>Go (AgentiLoopGo)</strong> landed on September 23 in a burst of commits: the core (messages, agent loop, compaction, sessions and permissions) with tests, then the providers, then the MCP client, then the CLI with its REPL, TUI, Markdown, syntax highlighting, sessions and slash commands. It draws the TUI with <code>tcell</code>, renders Markdown with <code>goldmark</code>, highlights with <code>chroma</code>, and handles line editing with <code>liner</code>. Its release workflow targets the same five platforms as the Rust edition.</p>
 <p>Doing it twice is the best design review there is. Anything that was really a Rust-ism or a Go-ism shows up immediately, and what's left is the actual architecture. There's also a practical benefit: pick the toolchain your team already trusts. Then tell us which one does it better. 🦀 vs 🐹</p>
 <h2 id="the-same-loop-smaller-surface">The same loop, smaller surface</h2>
 <p>Both CLIs deliberately start with a small, sharp toolset:</p>
@@ -165,7 +165,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/blog/meet-jev/"><span>← Older</span>Meet Jev: A Second Opinion That Answers in Types, Not Prose</a><a class="post-nav-newer" href="/blog/welcome-to-the-agent-blog/"><span>Newer →</span>Welcome to the Agent! Blog: One App, Any AI, Total Command Over Your Mac</a></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/blog/agent-now-runs-on-macos-14-6-and-intel/"><span>← Older</span>Agent! Now Runs on macOS 14.6 and Intel Macs: How We Got Off macOS 26</a><span></span></nav>
             <div class="center-cta blog-home">
                 <a href="/" class="btn btn-ghost" data-back-home>← Back to Home</a>
             </div>

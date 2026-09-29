@@ -24,7 +24,7 @@ Mac 应用的超能力，比如通过辅助功能操控 Photo Booth，或用 Scr
 
 **Rust (AgentiLoopCLI)** 最先完成。工作区于 9 月 20 日搭建完成，包含核心循环、Anthropic 提供商、内置工具和 CLI。它被拆分为五个 crate：`agentiloop-core`（循环、消息、会话和权限）、`agentiloop-provider`、`agentiloop-tools`、`agentiloop-mcp` 和 `agentiloop-cli`。它运行在 `tokio` 上，使用搭配 `rustls` 的 `reqwest`，因此在 Windows 上无需折腾 OpenSSL，并使用 `ratatui` 绘制 TUI。Markdown 由 `pulldown-cmark` 处理，代码的语法高亮则来自 `syntect`。
 
-**Go (AgentiLoopGo)** 在今天通过一连串提交落地：先是带测试的核心（消息、智能体循环、压缩、会话和权限），然后是提供商，接着是 MCP 客户端，最后是 CLI，包括 REPL、TUI、Markdown、语法高亮、会话和斜杠命令。它用 `tcell` 绘制 TUI，用 `goldmark` 渲染 Markdown，用 `chroma` 进行高亮，并用 `liner` 处理行编辑。它的发布工作流与 Rust 版本面向相同的五个平台。
+**Go (AgentiLoopGo)** 在 9 月 23 日通过一连串提交落地：先是带测试的核心（消息、智能体循环、压缩、会话和权限），然后是提供商，接着是 MCP 客户端，最后是 CLI，包括 REPL、TUI、Markdown、语法高亮、会话和斜杠命令。它用 `tcell` 绘制 TUI，用 `goldmark` 渲染 Markdown，用 `chroma` 进行高亮，并用 `liner` 处理行编辑。它的发布工作流与 Rust 版本面向相同的五个平台。
 
 实现两遍就是最好的设计评审。任何真正属于 Rust 特有或 Go 特有的写法都会立刻暴露出来，剩下的才是真正的架构。这还有一个实际的好处：选择你的团队已经信任的工具链就好。然后告诉我们哪个做得更好。🦀 vs 🐹
 
