@@ -119,18 +119,339 @@
   </url>
   <url>
     <loc>https://agentiloop.ai/stats.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/stats.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/stats.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/stats.html"/>
   </url>
   <url>
     <loc>https://agentiloop.ai/press/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/press/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/press/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/press/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/press/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/press/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/press/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/press/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/press/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/press/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/press/"/>
   </url>
   <url>
     <loc>https://agentiloop.ai/legal.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/legal.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agentiloop.ai/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agentiloop.ai/es/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agentiloop.ai/fr/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agentiloop.ai/de/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://agentiloop.ai/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://agentiloop.ai/ru/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://agentiloop.ai/ko/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://agentiloop.ai/ja/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/legal.html"/>
   </url>
   <url>
     <loc>https://agentiloop.ai/auto.html</loc>
