@@ -901,7 +901,7 @@
         </div>
     </footer>
 
-    <!-- SPONSOR POPUP (Silver: Fluxion AI). Shown once per browser session; closes only with the X (or Esc). -->
+    <!-- SPONSOR POPUP (Silver: Fluxion AI). Shown once per browser (remembered after X); closes only with the X (or Esc). -->
     <div class="sp-overlay" id="sponsor-popup" hidden>
         <div class="sp-modal" role="dialog" aria-modal="true" aria-labelledby="sp-title">
             <button type="button" class="sp-close" id="sponsor-popup-close" aria-label="Fermer le message du sponsor"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
@@ -926,13 +926,13 @@
         var KEY = 'sponsorPopupClosed:fluxion-ai';
         var el = document.getElementById('sponsor-popup');
         if (!el) return;
-        try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+        try { if (localStorage.getItem(KEY)) return; } catch (e) {}
         var closeBtn = document.getElementById('sponsor-popup-close');
         function close() {
             el.hidden = true;
             document.documentElement.classList.remove('sp-lock');
             document.removeEventListener('keydown', onKey);
-            try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+            try { localStorage.setItem(KEY, '1'); } catch (e) {}
         }
         function onKey(e) { if (e.key === 'Escape') close(); }
         closeBtn.addEventListener('click', close);
