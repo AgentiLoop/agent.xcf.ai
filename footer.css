@@ -42,9 +42,20 @@
 .footer .footer-tagline a { color: var(--footer-dim); text-decoration: none; border-bottom: 1px solid var(--footer-line); transition: color 0.15s ease; }
 .footer .footer-tagline a:hover { color: var(--footer-text); }
 
-/* Old-school hit counter (counter.js) */
-.footer .hit-counter { margin: 18px 0 0; font-size: 0.78rem; color: var(--footer-dim); }
-.footer .hit-counter-digits {
+/* Old-school hit counter (counter.js) — sits just above the footer.
+   counter.js inserts it immediately with placeholder digits, so its height
+   is reserved up front; it stays invisible until the count arrives. */
+.hit-counter {
+    margin: 0;
+    padding: 20px 24px;
+    min-height: 1.6rem;
+    text-align: center;
+    font: 0.78rem/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    color: #9aa5bd;
+    visibility: hidden;
+}
+.hit-counter.loaded { visibility: visible; }
+.hit-counter-digits {
     display: inline-flex;
     gap: 2px;
     padding: 3px;
@@ -52,7 +63,7 @@
     background: #000;
     border: 2px outset #6b7280;
 }
-.footer .hit-counter-digits span {
+.hit-counter-digits span {
     display: inline-block;
     width: 1.1em;
     padding: 1px 0;
