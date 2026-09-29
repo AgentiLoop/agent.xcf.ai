@@ -7,6 +7,7 @@ English posts live in blog/src/YYYY-MM-DD-slug.md with a small front-matter bloc
     title: Post title
     description: One-sentence summary (used for meta tags, the index and RSS)
     tags: Security, Internals
+    updated: 2026-10-02   (optional: last significant edit, for dateModified and the sitemap)
     ---
 
 Translations use the same filename under blog/src/<lang>/ (es fr de zh ru ko ja). A post with
@@ -182,8 +183,11 @@ def load_posts(today):
             print('queued (not yet published): %s' % path.name)
             continue
         meta, body = parse(path)
-        post = {'slug': m.group(2), 'date': date,
-                'minutes': max(1, round(len(re.findall(r'\w+', re.sub(r'<[^>]+>', ' ', body))) / 230)), 'lang': {}}
+        words = len(re.findall(r'\w+', re.sub(r'<[^>]+>', ' ', body)))
+        # Optional `updated: YYYY-MM-DD` in the front matter sets dateModified / sitemap lastmod.
+        updated = datetime.date.fromisoformat(meta['updated']) if meta.get('updated') else date
+        post = {'slug': m.group(2), 'date': date, 'updated': max(updated, date), 'words': words,
+                'minutes': max(1, round(words / 230)), 'lang': {}}
         for lang in LANGS:
             src = path if lang == 'en' else SRC / lang / path.name
             translated = lang == 'en' or src.exists()
@@ -229,25 +233,33 @@ HEAD = '''<!DOCTYPE html>
 
     <title>{title}</title>
     <meta name="description" content="{description}">
+    <meta name="author" content="{author}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {alternates}
     <link rel="canonical" href="{url}">
     <link rel="alternate" type="application/rss+xml" title="{feed_title}" href="{site}{prefix}/blog/feed.xml">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{og_type}">
+    <meta property="og:site_name" content="AgentiLoop">
     <meta property="og:url" content="{url}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
     <meta property="og:locale" content="{locale}">
-    <meta property="og:image" content="{site}/agent-og.png">
-    <meta name="theme-color" content="#3b82f6">
+{og_alt_locales}    <meta property="og:image" content="{site}/agent-og.png">
+    <meta property="og:image:width" content="2400">
+    <meta property="og:image:height" content="1260">
+    <meta property="og:image:alt" content="{image_alt}">
+{article_meta}    <meta name="theme-color" content="#3b82f6">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@SuperBox64">
+    <meta name="twitter:creator" content="@SuperBox64">
     <meta name="twitter:title" content="{title}">
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{site}/agent-og.png">
+    <meta name="twitter:image:alt" content="{image_alt}">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -372,10 +384,37 @@ def alternates(page):
     return site_i18n.alternates(page)
 
 
-def head(lang, page, title, description, og_type='website', jsonld=''):
+IMAGE_ALT = 'AgentiLoop Agent! app icon next to the headline AgentiLoop Agent!, Agentic AI for your entire Mac and More!'
+LOGO = {'@type': 'ImageObject', 'url': SITE + '/agent_icon.png', 'width': 1024, 'height': 1024}
+PUBLISHER = {'@type': 'Organization', 'name': 'AgentiLoop.ai', 'url': SITE + '/', 'logo': LOGO}
+OG_IMAGE = {'@type': 'ImageObject', 'url': SITE + '/agent-og.png', 'width': 2400, 'height': 1260}
+
+
+def ld_script(data):
+    """A JSON-LD <script> block for the <head>."""
+    return '    <script type="application/ld+json">%s</script>\n' % json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
+
+
+def breadcrumbs(lang, items):
+    """BreadcrumbList from [(name, url), ...]."""
+    return {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': n + 1, 'name': name, 'item': url} for n, (name, url) in enumerate(items)]}
+
+
+def home_label(lang):
+    return 'Home' if lang == 'en' else SITE_TR[lang].get('Home', 'Home')
+
+
+def blog_label(lang):
+    return 'Blog' if lang == 'en' else SITE_TR[lang].get('Blog', 'Blog')
+
+
+def head(lang, page, title, description, og_type='website', jsonld='', article_meta=''):
     url = SITE + prefix(lang) + '/' + page
+    og_alt = ''.join('    <meta property="og:locale:alternate" content="%s">\n' % LANGS[l][1] for l in LANGS if l != lang)
     return HEAD.format(lang=lang, title=html.escape(title), description=html.escape(description), url=url,
-                       site=SITE, prefix=prefix(lang), og_type=og_type, jsonld=jsonld,
+                       site=SITE, prefix=prefix(lang), og_type=og_type, jsonld=jsonld, author=AUTHOR,
+                       og_alt_locales=og_alt, image_alt=html.escape(IMAGE_ALT), article_meta=article_meta,
                        locale=LANGS[lang][1], feed_title=html.escape(UI[lang]['post_suffix']),
                        alternates=alternates(page), picker=site_i18n.picker(lang, page), promo=promo(lang))
 
@@ -413,12 +452,21 @@ def render_post(p, newer, older, lang):
     u, t = UI[lang], p['lang'][lang]
     page = 'blog/%s/' % p['slug']
     url = SITE + prefix(lang) + '/' + page
-    ld = ('    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting",'
-          '"headline":%s,"description":%s,"datePublished":"%s","inLanguage":"%s","author":{"@type":"Person","name":"%s"},'
-          '"publisher":{"@type":"Organization","name":"AgentiLoop.ai"},"mainEntityOfPage":"%s",'
-          '"image":"%s/agent-og.png"}</script>\n') % (
-        json.dumps(t['title'], ensure_ascii=False), json.dumps(t['description'], ensure_ascii=False),
-        p['date'].isoformat(), HREFLANG.get(lang, lang), AUTHOR, url, SITE)
+    blog_url = SITE + prefix(lang) + '/blog/'
+    published, modified = p['date'].isoformat(), p['updated'].isoformat()
+    ld = ld_script({'@context': 'https://schema.org', '@graph': [
+        {'@type': 'BlogPosting', '@id': url + '#article', 'headline': t['title'], 'description': t['description'],
+         'url': url, 'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+         'datePublished': published, 'dateModified': modified, 'inLanguage': HREFLANG.get(lang, lang) if t['translated'] else 'en',
+         'author': {'@type': 'Person', 'name': AUTHOR},
+         'publisher': PUBLISHER, 'image': OG_IMAGE, 'keywords': ', '.join(t['tags']),
+         'articleSection': t['tags'][0] if t['tags'] else 'Blog', 'wordCount': p['words'],
+         'isPartOf': {'@type': 'Blog', '@id': blog_url + '#blog', 'name': u['post_suffix'], 'url': blog_url}},
+        breadcrumbs(lang, [(home_label(lang), SITE + prefix(lang) + '/'), (blog_label(lang), blog_url), (t['title'], url)]),
+    ]})
+    article_meta = ''.join('    <meta property="%s" content="%s">\n' % (k, html.escape(v)) for k, v in (
+        [('article:published_time', published), ('article:modified_time', modified), ('article:author', AUTHOR),
+         ('article:section', t['tags'][0] if t['tags'] else 'Blog')] + [('article:tag', tag) for tag in t['tags']]))
     base = prefix(lang) + '/blog/'
     nav = '<nav class="post-nav">'
     nav += ('<a class="post-nav-older" href="%s%s/"><span>%s</span>%s</a>' % (base, older['slug'], u['older'], html.escape(older['lang'][lang]['title']))) if older else '<span></span>'
@@ -450,7 +498,7 @@ def render_post(p, newer, older, lang):
            date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']) + reads_html(p, lang), note=note,
            body_lang=body_lang, body=t['html'], cta=cta(lang), nav=nav, home=back_home(lang))
     title = '%s – %s' % (t['title'], u['post_suffix'])
-    return localize_chrome(head(lang, page, title, t['description'], 'article', ld) + body + sponsors(lang) + FOOT, lang)
+    return localize_chrome(head(lang, page, title, t['description'], 'article', ld, article_meta) + body + sponsors(lang) + FOOT, lang)
 
 
 def render_index(posts, lang):
@@ -482,7 +530,17 @@ def render_index(posts, lang):
         </div>
     </main>
 '''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards), home=back_home(lang))
-    return localize_chrome(head(lang, 'blog/', u['index_title'], u['index_desc']) + body + sponsors(lang) + FOOT, lang)
+    blog_url = SITE + base
+    ld = ld_script({'@context': 'https://schema.org', '@graph': [
+        {'@type': 'Blog', '@id': blog_url + '#blog', 'name': u['post_suffix'], 'description': u['index_desc'],
+         'url': blog_url, 'inLanguage': HREFLANG.get(lang, lang), 'publisher': PUBLISHER, 'image': OG_IMAGE,
+         'blogPost': [{'@type': 'BlogPosting', 'headline': p['lang'][lang]['title'],
+                       'description': p['lang'][lang]['description'], 'url': blog_url + p['slug'] + '/',
+                       'datePublished': p['date'].isoformat(), 'dateModified': p['updated'].isoformat(),
+                       'author': {'@type': 'Person', 'name': AUTHOR}, 'image': OG_IMAGE['url']} for p in posts]},
+        breadcrumbs(lang, [(home_label(lang), SITE + prefix(lang) + '/'), (blog_label(lang), blog_url)]),
+    ]})
+    return localize_chrome(head(lang, 'blog/', u['index_title'], u['index_desc'], jsonld=ld) + body + sponsors(lang) + FOOT, lang)
 
 
 def render_feed(posts, lang):
@@ -492,35 +550,47 @@ def render_feed(posts, lang):
     <item>
       <title>{t}</title>
       <link>{b}{slug}/</link>
-      <guid>{b}{slug}/</guid>
+      <guid isPermaLink="true">{b}{slug}/</guid>
       <pubDate>{d}</pubDate>
+      <dc:creator>{author}</dc:creator>{cats}
       <description>{desc}</description>
-    </item>'''.format(t=html.escape(p['lang'][lang]['title']), b=link_base, slug=p['slug'],
+    </item>'''.format(t=html.escape(p['lang'][lang]['title']), b=link_base, slug=p['slug'], author=AUTHOR,
+                      cats=''.join('\n      <category>%s</category>' % html.escape(c) for c in p['lang'][lang]['tags']),
                       desc=html.escape(p['lang'][lang]['description']),
                       d=p['date'].strftime('%a, %d %b %Y 12:00:00 +0000')) for p in posts)
+    built = max(p['updated'] for p in posts) if posts else datetime.date.today()
     return '''<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>{title}</title>
     <link>{b}</link>
+    <atom:link href="{b}feed.xml" rel="self" type="application/rss+xml"/>
     <description>{desc}</description>
-    <language>{lang}</language>{items}
+    <language>{lang}</language>
+    <lastBuildDate>{built}</lastBuildDate>
+    <image>
+      <url>{site}/agent_icon.png</url>
+      <title>{title}</title>
+      <link>{b}</link>
+    </image>{items}
   </channel>
 </rss>
-'''.format(title=html.escape(u['post_suffix']), b=link_base, desc=html.escape(u['feed_desc']),
-           lang=HREFLANG.get(lang, lang), items=items)
+'''.format(title=html.escape(u['post_suffix']), b=link_base, desc=html.escape(u['feed_desc']), site=SITE,
+           lang=HREFLANG.get(lang, lang), built=built.strftime('%a, %d %b %Y 12:00:00 +0000'), items=items)
 
 
 def update_sitemap(posts):
     path = ROOT / 'sitemap.xml'
     xml = path.read_text(encoding='utf-8')
-    latest = posts[0]['date'].isoformat() if posts else datetime.date.today().isoformat()
-    pages = [('blog/', latest, '0.7')] + [('blog/%s/' % p['slug'], p['date'].isoformat(), '0.6') for p in posts]
+    latest = max(p['updated'] for p in posts).isoformat() if posts else datetime.date.today().isoformat()
+    pages = [('blog/', latest, '0.7')] + [('blog/%s/' % p['slug'], p['updated'].isoformat(), '0.6') for p in posts]
     entries = []
     for page, lastmod, prio in pages:
+        links = ''.join('\n    <xhtml:link rel="alternate" hreflang="%s" href="%s%s/%s"/>' % (HREFLANG.get(l, l), SITE, prefix(l), page)
+                        for l in LANGS) + '\n    <xhtml:link rel="alternate" hreflang="x-default" href="%s/%s"/>' % (SITE, page)
         for lang in LANGS:
-            entries.append('  <url>\n    <loc>%s%s/%s</loc>\n    <lastmod>%s</lastmod>\n    <priority>%s</priority>\n  </url>'
-                           % (SITE, prefix(lang), page, lastmod, prio if lang == 'en' else '0.5'))
+            entries.append('  <url>\n    <loc>%s%s/%s</loc>\n    <lastmod>%s</lastmod>\n    <priority>%s</priority>%s\n  </url>'
+                           % (SITE, prefix(lang), page, lastmod, prio if lang == 'en' else '0.5', links))
     block = '  <!-- blog:start (generated by blog/tools/build.py) -->\n' + '\n'.join(entries) + '\n  <!-- blog:end -->\n'
     if '<!-- blog:start' in xml:
         xml = re.sub(r'  <!-- blog:start.*?<!-- blog:end -->\n', lambda m: block, xml, flags=re.S)

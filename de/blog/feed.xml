@@ -1,64 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>AgentiLoop Agent! Blog</title>
     <link>https://agentiloop.ai/de/blog/</link>
+    <atom:link href="https://agentiloop.ai/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Deep Dives in AgentiLoop Agent!, den nativen KI-Agenten für macOS.</description>
     <language>de</language>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://agentiloop.ai/agent_icon.png</url>
+      <title>AgentiLoop Agent! Blog</title>
+      <link>https://agentiloop.ai/de/blog/</link>
+    </image>
     <item>
       <title>Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen</title>
       <link>https://agentiloop.ai/de/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/de/blog/context-compaction-half-the-window/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/context-compaction-half-the-window/</guid>
       <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Interna</category>
+      <category>Release Notes</category>
       <description>Wie die Kontextkomprimierung von Agent! entscheidet, wann eine lange Aufgabe zusammengefasst wird, und die Fixes vom 28. September für Fallback-Modelle, Ollama und ein 272K-Fenster bei Codex.</description>
     </item>
     <item>
       <title>Ein Release am Ersten jedes Monats, dazwischen Pre-Releases</title>
       <link>https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</link>
-      <guid>https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Versionshinweise</category>
+      <category>Hinter den Kulissen</category>
       <description>Agent! erscheint jetzt am 1. jedes Monats als stabiles Release. In täglichen Pre-Releases (bald wöchentlich) werden neue Features und Fixes erprobt, und Release Candidates machen vor dem großen Tag alles fest.</description>
     </item>
     <item>
       <title>Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go</title>
       <link>https://agentiloop.ai/de/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/de/blog/the-terminal-strikes-back/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Ankündigung</category>
+      <category>Plattformübergreifend</category>
+      <category>Engineering</category>
       <description>Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.</description>
     </item>
     <item>
       <title>Agent! läuft jetzt unter macOS 14.6 und auf Intel-Macs: Wie wir uns von macOS 26 gelöst haben</title>
       <link>https://agentiloop.ai/de/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
-      <guid>https://agentiloop.ai/de/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Versionshinweise</category>
+      <category>Engineering</category>
       <description>Agent! wurde rund um Apple Intelligence unter macOS 26 entwickelt. So hat ein Tag voller #available-Prüfungen und Paket-Updates es auf macOS 14.6 gebracht, auf Apple Silicon und Intel.</description>
     </item>
     <item>
       <title>Bevor das Modell mitreden darf: So funktionieren die Shell-Schutzmechanismen von Agent!</title>
       <link>https://agentiloop.ai/de/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/de/blog/inside-agent-shell-guardrails/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/inside-agent-shell-guardrails/</guid>
       <pubDate>Sat, 26 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Sicherheit</category>
+      <category>Interna</category>
       <description>Wie ShellSafetyService, die zweite Prüfung im Daemon und die Zweitmeinung von Jev verhindern, dass ein KI-Agent deinen Mac löscht – erklärt anhand des echten Swift-Codes.</description>
     </item>
     <item>
       <title>Willkommen im Agent!-Blog: Eine App, jede KI, volle Kontrolle über deinen Mac</title>
       <link>https://agentiloop.ai/de/blog/welcome-to-the-agent-blog/</link>
-      <guid>https://agentiloop.ai/de/blog/welcome-to-the-agent-blog/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Ankündigung</category>
+      <category>Architektur</category>
       <description>Was AgentiLoop Agent! ist, wie es aufgebaut ist und worum es in diesem täglichen Blog gehen wird – direkt aus dem Quellcode.</description>
     </item>
     <item>
       <title>Darf ich vorstellen: Jev – eine zweite Meinung, die in Typen antwortet, nicht in Prosa</title>
       <link>https://agentiloop.ai/de/blog/meet-jev/</link>
-      <guid>https://agentiloop.ai/de/blog/meet-jev/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/meet-jev/</guid>
       <pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Sicherheit</category>
+      <category>Ankündigung</category>
       <description>Agent! fragt jetzt Jev (TypeSafe System One), wie destruktiv ein Shell-Befehl ist, bevor er ausgeführt wird. Hier erfährst du, warum Jev ein Berater ist und kein weiterer LLM-Anbieter.</description>
     </item>
     <item>
       <title>Warum wir den Coding-Modus rausgeworfen haben: Das Modell soll seine Werkzeuge selbst wählen</title>
       <link>https://agentiloop.ai/de/blog/why-we-ripped-out-modes/</link>
-      <guid>https://agentiloop.ai/de/blog/why-we-ripped-out-modes/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/why-we-ripped-out-modes/</guid>
       <pubDate>Tue, 07 Apr 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Architektur</category>
+      <category>Design</category>
       <description>Agent! hat früher geraten, ob du programmieren oder automatisieren willst, und passend dazu Werkzeuge ausgeblendet. Eine gescheiterte Photo-Booth-Aufgabe hat gezeigt, warum das Harness aufhören sollte, das Modell zu bevormunden.</description>
     </item>
   </channel>

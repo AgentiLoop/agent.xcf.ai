@@ -1,64 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>AgentiLoop Agent! 블로그</title>
     <link>https://agentiloop.ai/ko/blog/</link>
+    <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://agentiloop.ai/agent_icon.png</url>
+      <title>AgentiLoop Agent! 블로그</title>
+      <link>https://agentiloop.ai/ko/blog/</link>
+    </image>
     <item>
       <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
       <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
-      <guid>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>
       <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>내부 구조</category>
+      <category>릴리스 노트</category>
       <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
     </item>
     <item>
       <title>매달 1일에 릴리스, 그 사이에는 프리릴리스</title>
       <link>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</link>
-      <guid>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>릴리스 노트</category>
+      <category>비하인드</category>
       <description>Agent!는 이제 매달 1일에 안정 버전을 출시합니다. 매일 나오는 프리릴리스(곧 매주로 전환)에서 새 기능과 수정 사항을 시험하고, 릴리스 후보로 출시일 전에 모든 것을 확정합니다.</description>
     </item>
     <item>
       <title>터미널의 역습: Rust와 Go로 에이전트 루프를 크로스 플랫폼으로</title>
       <link>https://agentiloop.ai/ko/blog/the-terminal-strikes-back/</link>
-      <guid>https://agentiloop.ai/ko/blog/the-terminal-strikes-back/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/the-terminal-strikes-back/</guid>
       <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>공지</category>
+      <category>크로스 플랫폼</category>
+      <category>엔지니어링</category>
       <description>Agent! 는 Mac 앱이지만, 코딩 에이전트는 개발자가 일하는 모든 곳에 있어야 합니다. 에이전트 루프가 어떻게 Rust와 Go로 된 두 개의 CLI가 되었고, macOS, Windows, Linux에서 전체 화면 TUI를 갖추게 되었는지 소개합니다.</description>
     </item>
     <item>
       <title>Agent!, 이제 macOS 14.6과 Intel Mac에서 실행: macOS 26에서 벗어난 방법</title>
       <link>https://agentiloop.ai/ko/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
-      <guid>https://agentiloop.ai/ko/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>릴리스 노트</category>
+      <category>엔지니어링</category>
       <description>Agent!는 macOS 26의 Apple Intelligence를 중심으로 만들어졌습니다. 하루 동안의 #available 게이트와 패키지 버전 업으로 Apple Silicon과 Intel의 macOS 14.6까지 지원하게 된 과정을 소개합니다.</description>
     </item>
     <item>
       <title>모델이 판단하기 전에: Agent! 셸 가드레일 내부 들여다보기</title>
       <link>https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</link>
-      <guid>https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/inside-agent-shell-guardrails/</guid>
       <pubDate>Sat, 26 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>보안</category>
+      <category>내부 구조</category>
       <description>ShellSafetyService, 데몬 측 재검사, 그리고 Jev의 두 번째 의견이 AI 에이전트가 Mac을 지워 버리는 일을 어떻게 막는지 실제 Swift 코드를 따라가며 살펴봅니다.</description>
     </item>
     <item>
       <title>Agent! 블로그에 오신 것을 환영합니다: 하나의 앱, 어떤 AI든, Mac을 완벽하게 제어</title>
       <link>https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</link>
-      <guid>https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/welcome-to-the-agent-blog/</guid>
       <pubDate>Fri, 25 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>공지</category>
+      <category>아키텍처</category>
       <description>AgentiLoop Agent!가 무엇인지, 어떻게 만들어졌는지, 그리고 이 데일리 블로그에서 무엇을 다룰지 소스 코드를 바탕으로 직접 소개합니다.</description>
     </item>
     <item>
       <title>Jev를 소개합니다: 산문이 아닌 타입으로 답하는 두 번째 의견</title>
       <link>https://agentiloop.ai/ko/blog/meet-jev/</link>
-      <guid>https://agentiloop.ai/ko/blog/meet-jev/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/meet-jev/</guid>
       <pubDate>Thu, 17 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>보안</category>
+      <category>공지</category>
       <description>이제 Agent!는 셸 명령을 실행하기 전에 그 명령이 얼마나 파괴적인지 Jev(TypeSafe System One)에게 묻습니다. Jev가 또 하나의 LLM 제공자가 아니라 조언자인 이유를 설명합니다.</description>
     </item>
     <item>
       <title>코딩 모드를 걷어낸 이유: 도구는 모델이 직접 고르게 하라</title>
       <link>https://agentiloop.ai/ko/blog/why-we-ripped-out-modes/</link>
-      <guid>https://agentiloop.ai/ko/blog/why-we-ripped-out-modes/</guid>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/why-we-ripped-out-modes/</guid>
       <pubDate>Tue, 07 Apr 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>아키텍처</category>
+      <category>디자인</category>
       <description>예전의 Agent!는 사용자가 코딩을 원하는지 자동화를 원하는지 추측해 그에 맞춰 도구를 숨겼습니다. 망가진 Photo Booth 작업 하나가 왜 하네스가 모델의 판단을 넘겨짚지 말아야 하는지 보여주었습니다.</description>
     </item>
   </channel>
