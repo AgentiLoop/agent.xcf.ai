@@ -96,6 +96,15 @@ def markdown(md):
             cls = ' class="language-%s"' % lang if lang else ''
             out.append('<pre><code%s>%s</code></pre>' % (cls, html.escape('\n'.join(code))))
             continue
+        if line.startswith('<figure'):  # raw HTML chart block, passed through as-is
+            block = []
+            while i < len(lines):
+                block.append(lines[i])
+                i += 1
+                if '</figure>' in block[-1]:
+                    break
+            out.append('\n'.join(block))
+            continue
         m = re.match(r'(#{2,4}) (.+)', line)
         if m:
             n = len(m.group(1))
@@ -139,7 +148,7 @@ def markdown(md):
             i += 1
             continue
         para = []
-        while i < len(lines) and lines[i].strip() and not re.match(r'(```|#{2,4} |> |\||- |\d+\. |---$)', lines[i]):
+        while i < len(lines) and lines[i].strip() and not re.match(r'(```|#{2,4} |> |\||- |\d+\. |---$|<figure)', lines[i]):
             para.append(lines[i].strip())
             i += 1
         out.append('<p>%s</p>' % inline(' '.join(para)))
@@ -171,7 +180,7 @@ def load_posts(today):
             continue
         meta, body = parse(path)
         post = {'slug': m.group(2), 'date': date,
-                'minutes': max(1, round(len(re.findall(r'\w+', body)) / 230)), 'lang': {}}
+                'minutes': max(1, round(len(re.findall(r'\w+', re.sub(r'<[^>]+>', ' ', body))) / 230)), 'lang': {}}
         for lang in LANGS:
             src = path if lang == 'en' else SRC / lang / path.name
             translated = lang == 'en' or src.exists()

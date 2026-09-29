@@ -224,6 +224,46 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://agentiloop.ai/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/es/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/fr/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/de/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/zh/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ru/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ko/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agentiloop.ai/ja/blog/a-release-on-the-first-of-every-month/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://agentiloop.ai/blog/agent-now-runs-on-macos-14-6-and-intel/</loc>
     <lastmod>2026-09-27</lastmod>
     <priority>0.6</priority>
