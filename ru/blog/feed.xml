@@ -13,13 +13,6 @@
       <description>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</description>
     </item>
     <item>
-      <title>A Release on the First of Every Month, and Pre-Releases in Between</title>
-      <link>https://agentiloop.ai/ru/blog/a-release-on-the-first-of-every-month/</link>
-      <guid>https://agentiloop.ai/ru/blog/a-release-on-the-first-of-every-month/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.</description>
-    </item>
-    <item>
       <title>Agent! теперь работает на macOS 14.6 и Mac с Intel: как мы отвязались от macOS 26</title>
       <link>https://agentiloop.ai/ru/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/ru/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>

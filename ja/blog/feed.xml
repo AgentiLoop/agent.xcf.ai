@@ -13,13 +13,6 @@
       <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
     </item>
     <item>
-      <title>A Release on the First of Every Month, and Pre-Releases in Between</title>
-      <link>https://agentiloop.ai/ja/blog/a-release-on-the-first-of-every-month/</link>
-      <guid>https://agentiloop.ai/ja/blog/a-release-on-the-first-of-every-month/</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! now ships a stable release on the 1st of every month. Daily pre-releases (moving to weekly) are where new features and fixes get tried out, and release candidates lock things down before the big day.</description>
-    </item>
-    <item>
       <title>Agent! が macOS 14.6 と Intel Mac で動作するように：macOS 26 依存からの脱却</title>
       <link>https://agentiloop.ai/ja/blog/agent-now-runs-on-macos-14-6-and-intel/</link>
       <guid>https://agentiloop.ai/ja/blog/agent-now-runs-on-macos-14-6-and-intel/</guid>
