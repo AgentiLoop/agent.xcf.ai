@@ -34,11 +34,11 @@
       <description>Was AgentiLoop Agent! ist, wie es aufgebaut ist und worum es in diesem täglichen Blog gehen wird – direkt aus dem Quellcode.</description>
     </item>
     <item>
-      <title>The Terminal Strikes Back: Taking the Agent Loop Cross-Platform in Rust and Go</title>
+      <title>Das Terminal schlägt zurück: Der Agent-Loop wird plattformübergreifend in Rust und Go</title>
       <link>https://agentiloop.ai/de/blog/the-terminal-strikes-back/</link>
       <guid>https://agentiloop.ai/de/blog/the-terminal-strikes-back/</guid>
       <pubDate>Wed, 23 Sep 2026 12:00:00 +0000</pubDate>
-      <description>Agent! is a Mac app, but a coding agent belongs wherever developers work. Here&#x27;s how the agent loop became two CLIs, one in Rust and one in Go, with a full-screen TUI on macOS, Windows and Linux.</description>
+      <description>Agent! ist eine Mac-App, aber ein Coding-Agent gehört dorthin, wo Entwickler arbeiten. So wurden aus dem Agent-Loop zwei CLIs, eine in Rust und eine in Go, mit einer Vollbild-TUI unter macOS, Windows und Linux.</description>
     </item>
     <item>
       <title>Darf ich vorstellen: Jev – eine zweite Meinung, die in Typen antwortet, nicht in Prosa</title>
