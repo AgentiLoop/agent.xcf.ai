@@ -329,6 +329,7 @@ FOOT = '''
     </footer>
 
     <script src="/nav.js"></script>
+    <script src="/counter.js"></script>
     <script src="/promo.js"></script>
     <script>
     // Live read counts from Cloudflare Web Analytics (blog-cron-trigger Worker, cached 60s).

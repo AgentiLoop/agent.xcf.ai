@@ -41,3 +41,25 @@
 .footer .footer-tagline { margin: 0; font-size: 0.82rem; color: var(--footer-dim); font-weight: 300; }
 .footer .footer-tagline a { color: var(--footer-dim); text-decoration: none; border-bottom: 1px solid var(--footer-line); transition: color 0.15s ease; }
 .footer .footer-tagline a:hover { color: var(--footer-text); }
+
+/* Old-school hit counter (counter.js) */
+.footer .hit-counter { margin: 18px 0 0; font-size: 0.78rem; color: var(--footer-dim); }
+.footer .hit-counter-digits {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    vertical-align: middle;
+    background: #000;
+    border: 2px outset #6b7280;
+}
+.footer .hit-counter-digits span {
+    display: inline-block;
+    width: 1.1em;
+    padding: 1px 0;
+    font: bold 1rem/1.2 'Courier New', Courier, monospace;
+    text-align: center;
+    color: #39ff14;
+    text-shadow: 0 0 4px rgba(57, 255, 20, 0.7);
+    background: linear-gradient(#1a1a1a, #000 50%, #1a1a1a);
+    border: 1px solid #333;
+}
