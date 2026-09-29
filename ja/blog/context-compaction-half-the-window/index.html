@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">内部構造</span><span class="post-tag">リリースノート</span></div>
                     <h1>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</h1>
                     <p class="post-dek">Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</p>
-                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-30">2026年9月30日</time> · 約 5 分で読めます · <span class="post-reads">5 回閲覧</span></p>
+                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-30">2026年9月30日</time> · 約 5 分で読めます · <span class="post-reads">8 回閲覧</span></p>
                 </header>
                 <div class="post-body">
 <p>長時間にわたるエージェントのタスクには、物理的な問題がつきまといます。ツールを呼び出すたびに、その出力がトランスクリプトに追加されていきます。ファイルの読み込み、ビルドログ、diff。やがてトランスクリプトはモデルのコンテキストウィンドウに収まらなくなり、プロバイダーはリクエストを拒否します。夜通し動くエージェントは <strong>圧縮</strong> しなければなりません。大事な情報を残しつつ、会話を縮めるのです。</p>
