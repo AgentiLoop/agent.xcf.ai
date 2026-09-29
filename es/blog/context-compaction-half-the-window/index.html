@@ -122,7 +122,7 @@
                     <div class="post-tags"><span class="post-tag">Funcionamiento interno</span><span class="post-tag">Notas de versión</span></div>
                     <h1>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</h1>
                     <p class="post-dek">Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-30">30 de septiembre de 2026</time> · 5 min de lectura</p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-30">30 de septiembre de 2026</time> · 5 min de lectura · <span class="post-reads">5 lecturas</span></p>
                 </header>
                 <div class="post-body">
 <p>Las tareas largas de un agente tienen un problema de física. Cada llamada a una herramienta añade su salida a la transcripción: la lectura de un archivo, un log de compilación, un diff. Tarde o temprano, la transcripción ya no cabe en la ventana de contexto del modelo y el proveedor rechaza la petición. Un agente que trabaja toda la noche tiene que <strong>compactar</strong>: reducir la conversación sin perder lo importante.</p>

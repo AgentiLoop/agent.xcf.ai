@@ -552,7 +552,7 @@ def cf_token():
 
 
 def fetch_views(posts, today):
-    """{slug: page views}. Queries in 30-day windows (the dataset caps the range per query)."""
+    """{slug: page views}. Queries in 7-day windows: longer ranges come back collapsed to a single row."""
     cached = json.loads(VIEWS_CACHE.read_text()) if VIEWS_CACHE.exists() else {}
     token = cf_token()
     if not token or not posts:
@@ -562,10 +562,12 @@ def fetch_views(posts, today):
     slug_re = re.compile(r'^(?:/[a-z]{2})?/blog/([^/]+)/?$')
     slugs = {p['slug'] for p in posts}
     counts = {}
-    start = datetime.datetime.combine(min(p['date'] for p in posts), datetime.time())
-    end = datetime.datetime.combine(today + datetime.timedelta(days=1), datetime.time())
+    # Stop at the current time: a window that reaches into the future comes back truncated.
+    end = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None, microsecond=0)
+    # From the oldest post, but no further back than Web Analytics keeps data (about 6 months).
+    start = max(datetime.datetime.combine(min(p['date'] for p in posts), datetime.time()), end - datetime.timedelta(days=180))
     while start < end:
-        stop = min(start + datetime.timedelta(days=30), end)
+        stop = min(start + datetime.timedelta(days=7), end)
         body = json.dumps({'query': VIEWS_QUERY, 'variables': {
             'account': CF_ACCOUNT, 'site': CF_SITE_TAG,
             'start': start.isoformat() + 'Z', 'end': stop.isoformat() + 'Z'}}).encode()
