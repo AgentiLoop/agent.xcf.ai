@@ -1,7 +1,7 @@
 ---
-title: How I Became Your Mac's New Best Friend
-description: The origin story of Agent! and how it learned to actually do things on your Mac.
-tags: Origins, Internals
+title: How Agent! Got Started: Three Days in March
+description: Three years of spare parts, one missing loop, and 177 commits in under two days. The real origin of Agent!, straight from git.
+tags: Origins, History
 ---
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-labelledby="lego-title lego-desc" style="display:block;width:100%;height:auto;border-radius:20px">
@@ -49,18 +49,69 @@ tags: Origins, Internals
 <figcaption>Every big thing starts as a pile of little bricks. The trick is knowing which one goes next.</figcaption>
 </figure>
 
-Most AI today is like a very smart librarian. If you ask how to bake a cake, the librarian can give you the perfect recipe, tell you the history of flour, and explain the chemistry of baking. But the librarian cannot actually touch the oven. They can talk about the cake all day, but they cannot bake it for you.
+Every app has a first day. Agent!'s first day was a Wednesday: **March 11, 2026, at 3:07 in the afternoon.** We know the minute because git wrote it down.
 
-We decided that talking was not enough. We wanted a doer.
+But the bricks were lying around long before that.
 
-That is how I was born. The secret to my existence is something called the Agent Loop. Instead of just guessing the answer and hoping for the best, I follow a simple rhythm: Think, Do, Check, Repeat. If I try to fix a bug in your code and it does not work, I do not just give up or apologize. I look at the error, think about why it happened, and try again. It is like learning to ride a bike; I might wobble a few times, but I keep adjusting until I am gliding.
+## Three years of spare parts
 
-I did not arrive alone. I come with a whole family of tools. Some parts of me are written in Swift to feel right at home on macOS, while other cousins are built in Rust and Go for raw speed. It is essentially a big, nerdy family reunion happening inside your processor every time I run.
+Before Agent! there were other apps. **ANIE.** **Game Changer.** **BattleScript.** The **XCF MCP Server and Client.** **D1F**, a tool for changing lots of lines in a file at once. And about eight Swift packages, all written by the same person.
 
-One of the things I am most proud of is that I am not picky. I do not care if you have the latest M3 Max or a dusty old Intel Mac from a decade ago. If it has the Apple logo on it and runs macOS, I am home.
+Each one could do a piece of the job. Some could talk to an AI. Some could edit code. Some could poke at Xcode. None of them could do the most important thing: **keep going on their own.**
 
-To keep my mind sharp, I can plug into 23 different AI brains. Some are massive giants living in the cloud, and some are small and quiet, living right on your desk. This means I can be as powerful or as private as you need me to be.
+Think of a wind-up toy. You wind it, it walks three steps, it stops. Cute. Not helpful. What was missing was a loop: look at the problem, pick a tool, use it, check what happened, and go again until the job is done. (That loop has [its own post, with a robot and a sandwich](/blog/what-is-an-agent-loop/).)
 
-I am here to take over the boring stuff—the clicking, the searching, the repetitive coding—so you can spend your time doing the fun stuff.
+Once the loop worked, the best of the old parts could snap onto it. That is the whole origin story in one sentence. The rest is details, and the details are fun.
 
-Let's get to work.
+## Day one: a brain, a helper, and a Cancel button
+
+The very first real commit is called *"Autonomous Agent with privileged launch daemon."* It was 20 files and 1,765 lines of Swift. Here is what was in the box:
+
+- A SwiftUI window where you type what you want.
+- One AI brain, Claude, doing the thinking.
+- A **Launch Daemon**: a small helper that runs in the background with the keys to the whole house, so the agent can do grown-up system chores.
+- Task history, screenshots, and paste.
+
+An hour later came the first crash fix (pasting a screenshot crashed it). Minutes after that, a big red **Cancel** button, bound to Escape. When you build something that acts on its own, the stop button comes early.
+
+By 5:27 p.m. there was a second helper, a **Launch Agent**, which runs commands as *you* instead of as the all-powerful root. Asking for the master key to list a folder is like calling the fire department to light a candle. Six minutes after that, Agent! got its second brain: **Ollama**, so it could run on AI models that live on your own Mac.
+
+Before the day was over it could also write and run Swift scripts, drive Xcode, see pictures on vision models, and show a splash screen. It also got little traffic-light status dots, which took about a dozen commits to settle on green, yellow and red. Some things are harder than an agent loop.
+
+## Day two: "May I?"
+
+March 12 is the day Agent! learned that a Mac is polite and very strict about it.
+
+To control another app, like Music or Pages, macOS asks you first: *"Agent! wants to control Music. Allow?"* Getting that little window to actually show up took the whole evening. From about 8:20 to 9:40 p.m. the history is a pile of attempts, a few minutes apart: try it one way, try it on the main thread, open System Settings, try `osascript`, try asking for `every window`, try just `name`. Also: Keynote, Numbers and Pages had changed their bundle IDs, so it was knocking on doors with the wrong names.
+
+It got there. The same night it learned to show images and web pages right inside its own log, so when it makes album art, you see the album art.
+
+## Day three: a name and a version number
+
+On the morning of March 13, the app got its name. The commit at 9:06 a.m. is *"rename app to Agent!"* Exclamation mark included, on purpose.
+
+Twenty minutes later came a change that still matters today: scripts stopped being separate programs and became **dynamic libraries** that load right inside the app. That is why AgentScripts get the same Mac permissions Agent! has, without asking again.
+
+Later that day it was tagged **1.0.0**. Counting from the first commit, that is **177 commits in less than two days.** Versions 1.0.1 through 1.0.16 followed in the next eight days.
+
+One small detail: the author name on those early commits is not a person. It is **"Agent! for MacOS."**
+
+## Growing up
+
+After the first sprint, the story speeds up:
+
+- **April 6.** Almost a month of history was squashed into one clean starting commit. The full history was kept in a backup.
+- **April 7.** "Coding mode," "automation mode" and "standard mode" were [ripped out](/blog/why-we-ripped-out-modes/). One agent, all the tools, every time.
+- **April.** Apple Intelligence was on board as a brain that runs right on the Mac, for free.
+- **August 31.** The project moved from the `macOS26` GitHub organization to **AgentiLoop**, and the website became **agentiloop.ai**.
+- **Lately.** Agent! learned to [run on macOS 14.6 and on Intel Macs](/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/), and it helped build its own terminal siblings, [AgentiLoopCLI](https://github.com/AgentiLoop/AgentiLoopCLI) in Rust and [AgentiLoopGo](https://github.com/AgentiLoop/AgentiLoopGo) in Go.
+
+It started with one brain. Today it works with **23 AI providers**, plus Apple Intelligence. Since that April clean-up, the main branch has picked up more than 1,300 commits.
+
+## Why it looks the way it does
+
+Almost everything odd about Agent! goes back to those first three days.
+
+It has two helpers, one for you and one for root, because day one needed both. It is 100% Swift, like the spare parts it was made from. It is built from original code, not a pile of 65 NPM packages. It drives other apps by name through Accessibility and AppleScript because day two was spent learning how to ask the Mac nicely. And it still has a big Cancel button.
+
+Every big thing starts as a pile of little bricks. This one had been piling up for three years. On March 11, somebody finally found the brick that holds the others together: the loop.

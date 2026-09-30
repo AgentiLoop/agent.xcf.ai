@@ -84,14 +84,14 @@
       <description>AgentiLoop Agent! 是什么、我为什么这样打造它，以及你能在这里读到什么——一切都直接来自源代码。</description>
     </item>
     <item>
-      <title>How I Became Your Mac&#x27;s New Best Friend</title>
+      <title>How Agent! Got Started: Three Days in March</title>
       <link>https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</guid>
       <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
       <category>Origins</category>
-      <category>Internals</category>
-      <description>The origin story of Agent! and how it learned to actually do things on your Mac.</description>
+      <category>History</category>
+      <description>Three years of spare parts, one missing loop, and 177 commits in under two days. The real origin of Agent!, straight from git.</description>
     </item>
     <item>
       <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
