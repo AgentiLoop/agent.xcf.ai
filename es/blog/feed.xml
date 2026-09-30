@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Análisis a fondo de AgentiLoop Agent!, el agente de IA nativo para macOS.</description>
     <language>es</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Blog de AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/es/blog/</link>
     </image>
-    <item>
-      <title>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</title>
-      <link>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/es/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Funcionamiento interno</category>
-      <category>Notas de versión</category>
-      <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
-    </item>
     <item>
       <title>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</title>
       <link>https://agentiloop.ai/es/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>Anuncio</category>
       <category>Arquitectura</category>
       <description>Qué es AgentiLoop Agent!, cómo está construido y de qué hablará este blog diario, contado directamente desde el código fuente.</description>
+    </item>
+    <item>
+      <title>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</title>
+      <link>https://agentiloop.ai/es/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/es/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Funcionamiento interno</category>
+      <category>Notas de versión</category>
+      <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
     </item>
     <item>
       <title>Te presentamos a Jev: una segunda opinión que responde con tipos, no con prosa</title>

@@ -49,8 +49,8 @@
     <meta property="og:image:width" content="2400">
     <meta property="og:image:height" content="1260">
     <meta property="og:image:alt" content="AgentiLoop Agent! app icon next to the headline AgentiLoop Agent!, Agentic AI for your entire Mac and More!">
-    <meta property="article:published_time" content="2026-09-30">
-    <meta property="article:modified_time" content="2026-09-30">
+    <meta property="article:published_time" content="2026-09-19">
+    <meta property="article:modified_time" content="2026-09-19">
     <meta property="article:author" content="Todd Bruss">
     <meta property="article:section" content="内部机制">
     <meta property="article:tag" content="内部机制">
@@ -79,7 +79,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/#article", "headline": "为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug", "description": "Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。", "url": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/"}, "datePublished": "2026-09-30", "dateModified": "2026-09-30", "inLanguage": "zh-Hans", "author": {"@type": "Person", "name": "Todd Bruss"}, "publisher": {"@type": "Organization", "name": "AgentiLoop.ai", "url": "https://agentiloop.ai/", "logo": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent_icon.png", "width": 1024, "height": 1024}}, "image": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent-og.png", "width": 2400, "height": 1260}, "keywords": "内部机制, 发布说明", "articleSection": "内部机制", "wordCount": 1119, "isPartOf": {"@type": "Blog", "@id": "https://agentiloop.ai/zh/blog/#blog", "name": "AgentiLoop Agent! 博客", "url": "https://agentiloop.ai/zh/blog/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://agentiloop.ai/zh/"}, {"@type": "ListItem", "position": 2, "name": "博客", "item": "https://agentiloop.ai/zh/blog/"}, {"@type": "ListItem", "position": 3, "name": "为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug", "item": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/"}]}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/#article", "headline": "为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug", "description": "Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。", "url": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/"}, "datePublished": "2026-09-19", "dateModified": "2026-09-19", "inLanguage": "zh-Hans", "author": {"@type": "Person", "name": "Todd Bruss"}, "publisher": {"@type": "Organization", "name": "AgentiLoop.ai", "url": "https://agentiloop.ai/", "logo": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent_icon.png", "width": 1024, "height": 1024}}, "image": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent-og.png", "width": 2400, "height": 1260}, "keywords": "内部机制, 发布说明", "articleSection": "内部机制", "wordCount": 1119, "isPartOf": {"@type": "Blog", "@id": "https://agentiloop.ai/zh/blog/#blog", "name": "AgentiLoop Agent! 博客", "url": "https://agentiloop.ai/zh/blog/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://agentiloop.ai/zh/"}, {"@type": "ListItem", "position": 2, "name": "博客", "item": "https://agentiloop.ai/zh/blog/"}, {"@type": "ListItem", "position": 3, "name": "为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug", "item": "https://agentiloop.ai/zh/blog/context-compaction-half-the-window/"}]}]}</script>
 </head>
 <body>
 
@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">内部机制</span><span class="post-tag">发布说明</span></div>
                     <h1>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</h1>
                     <p class="post-dek">Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-30">2026年9月30日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">8 次阅读</span></span></p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-19">2026年9月19日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">8 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
 <p>长时间运行的智能体任务面临一个"物理问题"。每次工具调用都会把输出追加到对话记录中：一次文件读取、一份构建日志、一个 diff。迟早，对话记录会塞不进模型的上下文窗口，提供商就会拒绝请求。一个要通宵运行的智能体必须学会 <strong>压缩</strong> ：在保留关键信息的同时缩减对话。</p>
@@ -198,7 +198,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/zh/blog/what-is-an-agent-loop/"><span>← 上一篇</span>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</a><span></span></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/zh/blog/meet-jev/"><span>← 上一篇</span>认识 Jev：以类型而非文字作答的第二意见</a><a class="post-nav-newer" href="/zh/blog/welcome-to-the-agent-blog/"><span>下一篇 →</span>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</a></nav>
             <div class="center-cta blog-home">
                 <a href="/zh/" class="btn btn-ghost" data-back-home>← 返回首页</a>
             </div>

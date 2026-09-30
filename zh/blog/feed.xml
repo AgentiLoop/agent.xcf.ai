@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
-    <item>
-      <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
-      <link>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>内部机制</category>
-      <category>发布说明</category>
-      <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
-    </item>
     <item>
       <title>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</title>
       <link>https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>公告</category>
       <category>架构</category>
       <description>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</description>
+    </item>
+    <item>
+      <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>
+      <link>https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>内部机制</category>
+      <category>发布说明</category>
+      <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
     </item>
     <item>
       <title>认识 Jev：以类型而非文字作答的第二意见</title>

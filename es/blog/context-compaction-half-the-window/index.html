@@ -49,8 +49,8 @@
     <meta property="og:image:width" content="2400">
     <meta property="og:image:height" content="1260">
     <meta property="og:image:alt" content="AgentiLoop Agent! app icon next to the headline AgentiLoop Agent!, Agentic AI for your entire Mac and More!">
-    <meta property="article:published_time" content="2026-09-30">
-    <meta property="article:modified_time" content="2026-09-30">
+    <meta property="article:published_time" content="2026-09-19">
+    <meta property="article:modified_time" content="2026-09-19">
     <meta property="article:author" content="Todd Bruss">
     <meta property="article:section" content="Funcionamiento interno">
     <meta property="article:tag" content="Funcionamiento interno">
@@ -79,7 +79,7 @@
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="/blog/blog.css">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/#article", "headline": "Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K", "description": "Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.", "url": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/"}, "datePublished": "2026-09-30", "dateModified": "2026-09-30", "inLanguage": "es", "author": {"@type": "Person", "name": "Todd Bruss"}, "publisher": {"@type": "Organization", "name": "AgentiLoop.ai", "url": "https://agentiloop.ai/", "logo": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent_icon.png", "width": 1024, "height": 1024}}, "image": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent-og.png", "width": 2400, "height": 1260}, "keywords": "Funcionamiento interno, Notas de versión", "articleSection": "Funcionamiento interno", "wordCount": 1119, "isPartOf": {"@type": "Blog", "@id": "https://agentiloop.ai/es/blog/#blog", "name": "Blog de AgentiLoop Agent!", "url": "https://agentiloop.ai/es/blog/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://agentiloop.ai/es/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://agentiloop.ai/es/blog/"}, {"@type": "ListItem", "position": 3, "name": "Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K", "item": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/"}]}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/#article", "headline": "Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K", "description": "Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.", "url": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/"}, "datePublished": "2026-09-19", "dateModified": "2026-09-19", "inLanguage": "es", "author": {"@type": "Person", "name": "Todd Bruss"}, "publisher": {"@type": "Organization", "name": "AgentiLoop.ai", "url": "https://agentiloop.ai/", "logo": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent_icon.png", "width": 1024, "height": 1024}}, "image": {"@type": "ImageObject", "url": "https://agentiloop.ai/agent-og.png", "width": 2400, "height": 1260}, "keywords": "Funcionamiento interno, Notas de versión", "articleSection": "Funcionamiento interno", "wordCount": 1119, "isPartOf": {"@type": "Blog", "@id": "https://agentiloop.ai/es/blog/#blog", "name": "Blog de AgentiLoop Agent!", "url": "https://agentiloop.ai/es/blog/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://agentiloop.ai/es/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://agentiloop.ai/es/blog/"}, {"@type": "ListItem", "position": 3, "name": "Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K", "item": "https://agentiloop.ai/es/blog/context-compaction-half-the-window/"}]}]}</script>
 </head>
 <body>
 
@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Funcionamiento interno</span><span class="post-tag">Notas de versión</span></div>
                     <h1>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</h1>
                     <p class="post-dek">Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-30">30 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">8 lecturas</span></span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-19">19 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="context-compaction-half-the-window" data-n="8" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">8 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Las tareas largas de un agente tienen un problema de física. Cada llamada a una herramienta añade su salida a la transcripción: la lectura de un archivo, un log de compilación, un diff. Tarde o temprano, la transcripción ya no cabe en la ventana de contexto del modelo y el proveedor rechaza la petición. Un agente que trabaja toda la noche tiene que <strong>compactar</strong>: reducir la conversación sin perder lo importante.</p>
@@ -198,7 +198,7 @@
                 </div>
             </aside>
             </article>
-            <nav class="post-nav"><a class="post-nav-older" href="/es/blog/what-is-an-agent-loop/"><span>← Anterior</span>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</a><span></span></nav>
+            <nav class="post-nav"><a class="post-nav-older" href="/es/blog/meet-jev/"><span>← Anterior</span>Te presentamos a Jev: una segunda opinión que responde con tipos, no con prosa</a><a class="post-nav-newer" href="/es/blog/welcome-to-the-agent-blog/"><span>Siguiente →</span>Bienvenido al blog de Agent!: una app, cualquier IA, control total de tu Mac</a></nav>
             <div class="center-cta blog-home">
                 <a href="/es/" class="btn btn-ghost" data-back-home>← Volver al inicio</a>
             </div>

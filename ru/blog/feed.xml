@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Подробный разбор AgentiLoop Agent!, нативного ИИ-агента для macOS.</description>
     <language>ru</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Блог AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/ru/blog/</link>
     </image>
-    <item>
-      <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>
-      <link>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Внутреннее устройство</category>
-      <category>Заметки о выпуске</category>
-      <description>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</description>
-    </item>
     <item>
       <title>Что такое агентный цикл? Робот, бутерброд и искусство пробовать снова</title>
       <link>https://agentiloop.ai/ru/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>Анонс</category>
       <category>Архитектура</category>
       <description>Что такое AgentiLoop Agent!, как он устроен и о чём будет этот ежедневный блог — прямо из исходного кода.</description>
+    </item>
+    <item>
+      <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>
+      <link>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Внутреннее устройство</category>
+      <category>Заметки о выпуске</category>
+      <description>Как механизм сжатия контекста в Agent! решает, когда пора резюмировать длинную задачу, и какие исправления от 28 сентября вышли для резервных моделей, Ollama и окна Codex в 272K.</description>
     </item>
     <item>
       <title>Знакомьтесь, Jev: второе мнение, которое отвечает типами, а не прозой</title>

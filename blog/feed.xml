@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Deep dives into AgentiLoop Agent!, the native macOS AI agent.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! Blog</title>
       <link>https://agentiloop.ai/blog/</link>
     </image>
-    <item>
-      <title>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</title>
-      <link>https://agentiloop.ai/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Internals</category>
-      <category>Release Notes</category>
-      <description>How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.</description>
-    </item>
     <item>
       <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
       <link>https://agentiloop.ai/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>Announcement</category>
       <category>Architecture</category>
       <description>What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.</description>
+    </item>
+    <item>
+      <title>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</title>
+      <link>https://agentiloop.ai/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Internals</category>
+      <category>Release Notes</category>
+      <description>How Agent!&#x27;s context compaction decides when to summarize a long task, and the September 28 fixes for fallback models, Ollama and a 272K Codex window.</description>
     </item>
     <item>
       <title>Meet Jev: A Second Opinion That Answers in Types, Not Prose</title>

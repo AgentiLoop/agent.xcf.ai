@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
-    <item>
-      <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
-      <link>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>内部構造</category>
-      <category>リリースノート</category>
-      <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
-    </item>
     <item>
       <title>エージェントループとは？ロボットとサンドイッチと、もう一度やってみる技術</title>
       <link>https://agentiloop.ai/ja/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>お知らせ</category>
       <category>アーキテクチャ</category>
       <description>AgentiLoop Agent! とは何か、どのように作られているのか、そしてこの毎日更新のブログで何を取り上げていくのかを、ソースコードから直接お伝えします。</description>
+    </item>
+    <item>
+      <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
+      <link>https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>内部構造</category>
+      <category>リリースノート</category>
+      <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
     </item>
     <item>
       <title>Jev のご紹介：文章ではなく型で答えるセカンドオピニオン</title>

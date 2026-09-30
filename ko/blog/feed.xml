@@ -6,22 +6,12 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
-    <item>
-      <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
-      <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>
-      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>내부 구조</category>
-      <category>릴리스 노트</category>
-      <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
-    </item>
     <item>
       <title>에이전트 루프란 무엇일까? 로봇, 샌드위치, 그리고 다시 해 보는 기술</title>
       <link>https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</link>
@@ -92,6 +82,16 @@
       <category>공지</category>
       <category>아키텍처</category>
       <description>AgentiLoop Agent!가 무엇인지, 어떻게 만들어졌는지, 그리고 이 데일리 블로그에서 무엇을 다룰지 소스 코드를 바탕으로 직접 소개합니다.</description>
+    </item>
+    <item>
+      <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
+      <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>내부 구조</category>
+      <category>릴리스 노트</category>
+      <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
     </item>
     <item>
       <title>Jev를 소개합니다: 산문이 아닌 타입으로 답하는 두 번째 의견</title>
