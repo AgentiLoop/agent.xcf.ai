@@ -81,7 +81,7 @@
       <dc:creator>Todd Bruss</dc:creator>
       <category>お知らせ</category>
       <category>アーキテクチャ</category>
-      <description>AgentiLoop Agent! とは何か、どのように作られているのか、そしてこの毎日更新のブログで何を取り上げていくのかを、ソースコードから直接お伝えします。</description>
+      <description>AgentiLoop Agent! とは何か、なぜこういう作りにしたのか、そしてここで何を読めるのかを、ソースコードから直接お伝えします。</description>
     </item>
     <item>
       <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>

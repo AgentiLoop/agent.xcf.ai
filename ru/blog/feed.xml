@@ -81,7 +81,7 @@
       <dc:creator>Todd Bruss</dc:creator>
       <category>Анонс</category>
       <category>Архитектура</category>
-      <description>Что такое AgentiLoop Agent!, как он устроен и о чём будет этот ежедневный блог — прямо из исходного кода.</description>
+      <description>Что такое AgentiLoop Agent!, почему я сделал его именно так и что вы здесь найдёте — прямо из исходного кода.</description>
     </item>
     <item>
       <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>

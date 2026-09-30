@@ -81,7 +81,7 @@
       <dc:creator>Todd Bruss</dc:creator>
       <category>Ankündigung</category>
       <category>Architektur</category>
-      <description>Was AgentiLoop Agent! ist, wie es aufgebaut ist und worum es in diesem täglichen Blog gehen wird – direkt aus dem Quellcode.</description>
+      <description>Was AgentiLoop Agent! ist, warum ich es so gebaut habe, wie es ist, und was dich hier erwartet – direkt aus dem Quellcode.</description>
     </item>
     <item>
       <title>Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen</title>

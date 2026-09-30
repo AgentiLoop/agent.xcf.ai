@@ -81,7 +81,7 @@
       <dc:creator>Todd Bruss</dc:creator>
       <category>公告</category>
       <category>架构</category>
-      <description>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</description>
+      <description>AgentiLoop Agent! 是什么、我为什么这样打造它，以及你能在这里读到什么——一切都直接来自源代码。</description>
     </item>
     <item>
       <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>

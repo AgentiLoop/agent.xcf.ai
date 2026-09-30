@@ -81,7 +81,7 @@
       <dc:creator>Todd Bruss</dc:creator>
       <category>Announcement</category>
       <category>Architecture</category>
-      <description>What AgentiLoop Agent! is, how it&#x27;s built, and what this daily blog will cover, straight from the source code.</description>
+      <description>What AgentiLoop Agent! is, why I built it the way I did, and what you&#x27;ll find here, straight from the source code.</description>
     </item>
     <item>
       <title>Why Agent! Compacts at Half the Window, and the Three Bugs That Shrank It to 16K</title>

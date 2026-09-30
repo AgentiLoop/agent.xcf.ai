@@ -1,12 +1,12 @@
 {
- "a-release-on-the-first-of-every-month": 10,
+ "a-release-on-the-first-of-every-month": 12,
  "agent-now-runs-on-macos-14-6-and-intel": 3,
  "context-compaction-half-the-window": 9,
  "inside-agent-shell-guardrails": 3,
  "meet-jev": 4,
- "sonoma-intel-and-the-mac-that-was-not-dead-yet": 0,
+ "sonoma-intel-and-the-mac-that-was-not-dead-yet": 2,
  "the-terminal-strikes-back": 3,
  "welcome-to-the-agent-blog": 2,
  "what-is-an-agent-loop": 4,
- "why-we-ripped-out-modes": 7
+ "why-we-ripped-out-modes": 8
 }
