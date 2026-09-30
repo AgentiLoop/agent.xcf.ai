@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">해설</span><span class="post-tag">에이전트 루프</span></div>
                     <h1>에이전트 루프란 무엇일까? 로봇, 샌드위치, 그리고 다시 해 보는 기술</h1>
                     <p class="post-dek">보고, 고르고, 하고, 확인하기. 다섯 살 아이도 이해할 만큼 쉽고, 어른에게도 곱씹을 거리가 많은 에이전트 루프 그림 안내서입니다.</p>
-                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-29">2026년 9월 29일</time> · 6분 분량<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="조회 {n}회" data-sep="," hidden> · <span class="post-reads">조회 0회</span></span></p>
+                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-29">2026년 9월 29일</time> · 6분 분량<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="조회 {n}회" data-sep=","> · <span class="post-reads">조회 4회</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -383,14 +383,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
-        // Blog index: unread (new) posts first, newest first; then most reads, then newest.
+        // Blog index: zero-read posts first; then newest first; then most reads.
         var list = document.querySelector('.post-list');
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
         [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
             var ra = reads(a), rb = reads(b);
-            return (!rb - !ra) || rb - ra || date(b).localeCompare(date(a));
+            return (!rb - !ra) || date(b).localeCompare(date(a)) || rb - ra;
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>

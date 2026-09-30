@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Explications</span><span class="post-tag">Boucles d’agent</span></div>
                     <h1>Qu’est-ce qu’une boucle d’agent ? Un robot, un sandwich et l’art de réessayer</h1>
                     <p class="post-dek">Observer, choisir, agir, vérifier. Un guide illustré et ludique des boucles d’agent, assez simple pour un enfant de cinq ans, avec de quoi réfléchir pour les grands.</p>
-                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-29">29 septembre 2026</time> · 6 min de lecture<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="{n} lectures" data-sep=" " hidden> · <span class="post-reads">0 lectures</span></span></p>
+                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-29">29 septembre 2026</time> · 6 min de lecture<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="{n} lectures" data-sep=" "> · <span class="post-reads">4 lectures</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -383,14 +383,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
-        // Blog index: unread (new) posts first, newest first; then most reads, then newest.
+        // Blog index: zero-read posts first; then newest first; then most reads.
         var list = document.querySelector('.post-list');
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
         [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
             var ra = reads(a), rb = reads(b);
-            return (!rb - !ra) || rb - ra || date(b).localeCompare(date(a));
+            return (!rb - !ra) || date(b).localeCompare(date(a)) || rb - ra;
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>
