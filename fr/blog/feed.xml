@@ -84,14 +84,14 @@
       <description>Ce qu&#x27;est AgentiLoop Agent!, pourquoi je l&#x27;ai conçu ainsi et ce que vous trouverez ici, directement à partir du code source.</description>
     </item>
     <item>
-      <title>How Agent! Got Started: Three Days in March</title>
+      <title>Comment Agent! a commencé : trois jours en mars</title>
       <link>https://agentiloop.ai/fr/blog/how-i-became-your-macs-best-friend/</link>
       <guid isPermaLink="true">https://agentiloop.ai/fr/blog/how-i-became-your-macs-best-friend/</guid>
       <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Origins</category>
-      <category>History</category>
-      <description>Three years of spare parts, one missing loop, and 177 commits in under two days. The real origin of Agent!, straight from git.</description>
+      <category>Origines</category>
+      <category>Histoire</category>
+      <description>Trois ans de pièces détachées, une boucle manquante et 177 commits en moins de deux jours. La vraie origine d&#x27;Agent!, tirée directement de git.</description>
     </item>
     <item>
       <title>Pourquoi Agent! compacte à la moitié de la fenêtre, et les trois bugs qui l&#x27;ont réduite à 16K</title>

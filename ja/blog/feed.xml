@@ -84,14 +84,14 @@
       <description>AgentiLoop Agent! とは何か、なぜこういう作りにしたのか、そしてここで何を読めるのかを、ソースコードから直接お伝えします。</description>
     </item>
     <item>
-      <title>How Agent! Got Started: Three Days in March</title>
+      <title>Agent! はこうして始まった：3月の3日間</title>
       <link>https://agentiloop.ai/ja/blog/how-i-became-your-macs-best-friend/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ja/blog/how-i-became-your-macs-best-friend/</guid>
       <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Origins</category>
-      <category>History</category>
-      <description>Three years of spare parts, one missing loop, and 177 commits in under two days. The real origin of Agent!, straight from git.</description>
+      <category>起源</category>
+      <category>歴史</category>
+      <description>3年分の部品、足りなかったループがひとつ、そして2日足らずで177コミット。git から読み解いた Agent! 本当の誕生物語。</description>
     </item>
     <item>
       <title>Agent! がコンテキストウィンドウの半分で圧縮する理由と、それを 16K まで縮めてしまった 3 つのバグ</title>
