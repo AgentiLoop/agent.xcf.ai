@@ -28,7 +28,6 @@
 .post-card p { color: var(--text-dim); font-weight: 300; font-size: 0.95rem; }
 .post-card .post-meta { margin-top: 14px; font-size: 0.82rem; }
 .post-card-featured { padding: 34px 34px 26px; }
-.post-card-featured h2 { font-size: 1.7rem; }
 
 .post-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .post-tag {
@@ -164,7 +163,6 @@
 @media (max-width: 700px) {
     .post-list { grid-template-columns: 1fr; }
     .post-card-featured { padding: 26px 22px 20px; }
-    .post-card-featured h2 { font-size: 1.4rem; }
     .post-nav { grid-template-columns: 1fr; }
     .post-nav-newer { text-align: left; }
 }
