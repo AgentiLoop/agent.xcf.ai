@@ -3,16 +3,6 @@ title: Sonoma, Intel und der Mac, der noch nicht tot war
 description: Agent! für Mac läuft jetzt unter macOS Sonoma 14.6 und neuer, auf Apple Silicon und Intel. Viele von euch haben nach einer Version vor macOS 26 gefragt. Hier ist sie.
 tags: Versionshinweise, Hinter den Kulissen
 ---
-Mal ehrlich. Als bei Agent! noch „erfordert macOS 26“ stand, blieben eine Menge guter Macs außen vor.
-
-Du warst auf Sonoma? Pech gehabt. Auf Sequoia? Genauso. Und mit einem Intel-Mac warst du nicht mal Teil der Diskussion.
-
-Das hat mich immer gestört. Diese Macs funktionieren noch. Leute benutzen sie jeden Tag. Sie schreiben Code darauf, führen ihre Firma damit und haben viel zu viele Browser-Tabs darauf offen. Die Macs haben nichts falsch gemacht. Sie hatten nur nicht das neueste Betriebssystem.
-
-Damit ist Schluss. **Agent! für Mac läuft jetzt unter macOS Sonoma 14.6 und neuer, auf Apple Silicon und auf Intel.**
-
-Viele von euch haben auf eine Version vor macOS 26 gewartet. Die hier ist für euch.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">Zwei glückliche Macs und ein neues Schild</title>
@@ -45,6 +35,16 @@ Viele von euch haben auf eine Version vor macOS 26 gewartet. Die hier ist für e
 </svg>
 <figcaption>Gleicher Schreibtisch. Gleiche Macs. Neues Schild.</figcaption>
 </figure>
+
+Mal ehrlich. Als bei Agent! noch „erfordert macOS 26“ stand, blieben eine Menge guter Macs außen vor.
+
+Du warst auf Sonoma? Pech gehabt. Auf Sequoia? Genauso. Und mit einem Intel-Mac warst du nicht mal Teil der Diskussion.
+
+Das hat mich immer gestört. Diese Macs funktionieren noch. Leute benutzen sie jeden Tag. Sie schreiben Code darauf, führen ihre Firma damit und haben viel zu viele Browser-Tabs darauf offen. Die Macs haben nichts falsch gemacht. Sie hatten nur nicht das neueste Betriebssystem.
+
+Damit ist Schluss. **Agent! für Mac läuft jetzt unter macOS Sonoma 14.6 und neuer, auf Apple Silicon und auf Intel.**
+
+Viele von euch haben auf eine Version vor macOS 26 gewartet. Die hier ist für euch.
 
 ## Warum es überhaupt nur für 26 war
 

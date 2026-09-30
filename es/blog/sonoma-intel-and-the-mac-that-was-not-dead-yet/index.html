@@ -146,11 +146,6 @@
                     <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-29">29 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} lecturas" data-sep="." hidden> · <span class="post-reads">0 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
-<p>Seamos sinceros. Cuando Agent! decía «requiere macOS 26», un montón de Macs buenos se quedaban fuera.</p>
-<p>Si estabas en Sonoma, mala suerte. Si estabas en Sequoia, lo mismo. Y si tenías un Mac con Intel, ni siquiera entrabas en la conversación.</p>
-<p>Eso siempre me fastidió. Esos Macs siguen funcionando. La gente los usa todos los días. Programan en ellos, llevan sus negocios con ellos y tienen demasiadas pestañas del navegador abiertas en ellos. No hicieron nada malo. Simplemente no estaban en el sistema más nuevo.</p>
-<p>Se acabó. <strong>Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon y en Intel.</strong></p>
-<p>Muchos llevabais tiempo esperando una versión anterior a macOS 26. Esta va por vosotros.</p>
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">Dos Macs felices y un cartel nuevo</title>
@@ -183,6 +178,11 @@
 </svg>
 <figcaption>El mismo escritorio. Los mismos Macs. Cartel nuevo.</figcaption>
 </figure>
+<p>Seamos sinceros. Cuando Agent! decía «requiere macOS 26», un montón de Macs buenos se quedaban fuera.</p>
+<p>Si estabas en Sonoma, mala suerte. Si estabas en Sequoia, lo mismo. Y si tenías un Mac con Intel, ni siquiera entrabas en la conversación.</p>
+<p>Eso siempre me fastidió. Esos Macs siguen funcionando. La gente los usa todos los días. Programan en ellos, llevan sus negocios con ellos y tienen demasiadas pestañas del navegador abiertas en ellos. No hicieron nada malo. Simplemente no estaban en el sistema más nuevo.</p>
+<p>Se acabó. <strong>Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon y en Intel.</strong></p>
+<p>Muchos llevabais tiempo esperando una versión anterior a macOS 26. Esta va por vosotros.</p>
 <h2 id="por-qué-era-solo-para-26-en-primer-lugar">Por qué era solo para 26 en primer lugar</h2>
 <p>Agent! usa el modelo en el dispositivo de Apple a través de un framework llamado FoundationModels. No es el cerebro principal. El proveedor que elijas hace el trabajo pesado. Pero el modelo en el dispositivo ayuda con tareas más pequeñas, como resumir durante la compactación del contexto, contar tokens y precalentar una sesión al abrir la app.</p>
 <p>Aquí está la trampa. FoundationModels solo existe en macOS 26. Si tu código menciona siquiera uno de sus tipos, no compila para un Mac más antiguo. El compilador dice que no y punto.</p>

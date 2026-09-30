@@ -146,11 +146,6 @@
                     <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-29">2026년 9월 29일</time> · 5분 분량<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="조회 {n}회" data-sep="," hidden> · <span class="post-reads">조회 0회</span></span></p>
                 </header>
                 <div class="post-body">
-<p>솔직히 말해 봅시다. Agent!에 "macOS 26 필요"라고 적혀 있을 때, 좋은 Mac들이 꽤 많이 소외됐습니다.</p>
-<p>Sonoma를 쓰고 있다면 운이 없었죠. Sequoia도 마찬가지. Intel Mac이라면 아예 대화에 끼지도 못했고요.</p>
-<p>그게 늘 마음에 걸렸습니다. 그 Mac들은 아직 멀쩡히 돌아갑니다. 사람들이 매일 씁니다. 거기서 코드를 짜고, 사업을 굴리고, 브라우저 탭을 지나치게 많이 열어 둡니다. 잘못한 건 하나도 없어요. 그냥 최신 OS가 아니었을 뿐이죠.</p>
-<p>이제는 아닙니다. <strong>Mac용 Agent!가 이제 macOS Sonoma 14.6 이상, Apple Silicon과 Intel 모두에서 실행됩니다.</strong></p>
-<p>macOS 26 이전 버전을 기다려 온 분이 많았죠. 이번 버전은 여러분을 위한 겁니다.</p>
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">행복한 Mac 두 대와 새 표지판</title>
@@ -183,6 +178,11 @@
 </svg>
 <figcaption>같은 책상. 같은 Mac. 새 표지판.</figcaption>
 </figure>
+<p>솔직히 말해 봅시다. Agent!에 "macOS 26 필요"라고 적혀 있을 때, 좋은 Mac들이 꽤 많이 소외됐습니다.</p>
+<p>Sonoma를 쓰고 있다면 운이 없었죠. Sequoia도 마찬가지. Intel Mac이라면 아예 대화에 끼지도 못했고요.</p>
+<p>그게 늘 마음에 걸렸습니다. 그 Mac들은 아직 멀쩡히 돌아갑니다. 사람들이 매일 씁니다. 거기서 코드를 짜고, 사업을 굴리고, 브라우저 탭을 지나치게 많이 열어 둡니다. 잘못한 건 하나도 없어요. 그냥 최신 OS가 아니었을 뿐이죠.</p>
+<p>이제는 아닙니다. <strong>Mac용 Agent!가 이제 macOS Sonoma 14.6 이상, Apple Silicon과 Intel 모두에서 실행됩니다.</strong></p>
+<p>macOS 26 이전 버전을 기다려 온 분이 많았죠. 이번 버전은 여러분을 위한 겁니다.</p>
 <h2 id="애초에-왜-26-전용이었나">애초에 왜 26 전용이었나</h2>
 <p>Agent!는 FoundationModels라는 프레임워크를 통해 Apple의 온디바이스 모델을 씁니다. 메인 두뇌는 아닙니다. 힘든 일은 여러분이 고른 공급자가 다 합니다. 하지만 온디바이스 모델은 컨텍스트 압축 중 요약, 토큰 세기, 앱 실행 시 세션 예열 같은 작은 일들을 거들어 줍니다.</p>
 <p>문제는 여기 있습니다. FoundationModels는 macOS 26에만 있습니다. 코드에서 그 타입을 하나라도 언급하면 구형 Mac용으로는 빌드가 안 됩니다. 컴파일러가 그냥 안 된다고 해요.</p>

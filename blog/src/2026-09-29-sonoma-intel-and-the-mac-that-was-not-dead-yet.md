@@ -3,16 +3,6 @@ title: Sonoma, Intel, and the Mac That Was Not Dead Yet
 description: Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.
 tags: Release Notes, Behind the Scenes
 ---
-Let's be honest. When Agent! said "requires macOS 26," a lot of good Macs got left out.
-
-If you're on Sonoma, you were out of luck. If you're on Sequoia, same thing. And if you're on an Intel Mac, you weren't even in the conversation.
-
-That always bugged me. Those Macs still work. People use them every day. They write code on them, run their businesses on them, and keep way too many browser tabs open on them. They didn't do anything wrong. They just weren't on the newest OS.
-
-Not anymore. **Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and on Intel.**
-
-Many of you have been waiting for a pre-macOS 26 version. This one's for you.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">Two happy Macs and a new sign</title>
@@ -45,6 +35,16 @@ Many of you have been waiting for a pre-macOS 26 version. This one's for you.
 </svg>
 <figcaption>Same desk. Same Macs. New sign.</figcaption>
 </figure>
+
+Let's be honest. When Agent! said "requires macOS 26," a lot of good Macs got left out.
+
+If you're on Sonoma, you were out of luck. If you're on Sequoia, same thing. And if you're on an Intel Mac, you weren't even in the conversation.
+
+That always bugged me. Those Macs still work. People use them every day. They write code on them, run their businesses on them, and keep way too many browser tabs open on them. They didn't do anything wrong. They just weren't on the newest OS.
+
+Not anymore. **Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and on Intel.**
+
+Many of you have been waiting for a pre-macOS 26 version. This one's for you.
 
 ## Why it was 26-only in the first place
 

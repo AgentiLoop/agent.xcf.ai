@@ -146,11 +146,6 @@
                     <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-29">2026年9月29日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
-<p>说实话吧。当 Agent! 写着“需要 macOS 26”的时候，很多好好的 Mac 就被挡在了门外。</p>
-<p>如果你用的是 Sonoma，那就没戏。用的是 Sequoia，也一样。要是你用的是 Intel Mac，那你连被讨论的资格都没有。</p>
-<p>这件事一直让我耿耿于怀。那些 Mac 还能用。人们每天都在用。在上面写代码，靠它们做生意，还在上面开着多得离谱的浏览器标签页。它们没做错什么。只是没装最新的系统而已。</p>
-<p>现在不一样了。<strong>Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，Apple Silicon 和 Intel 都支持。</strong></p>
-<p>你们很多人一直在等一个 macOS 26 之前的版本。这次，是为你们准备的。</p>
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">两台开心的 Mac 和一块新招牌</title>
@@ -183,6 +178,11 @@
 </svg>
 <figcaption>同一张桌子。同样的 Mac。新的招牌。</figcaption>
 </figure>
+<p>说实话吧。当 Agent! 写着“需要 macOS 26”的时候，很多好好的 Mac 就被挡在了门外。</p>
+<p>如果你用的是 Sonoma，那就没戏。用的是 Sequoia，也一样。要是你用的是 Intel Mac，那你连被讨论的资格都没有。</p>
+<p>这件事一直让我耿耿于怀。那些 Mac 还能用。人们每天都在用。在上面写代码，靠它们做生意，还在上面开着多得离谱的浏览器标签页。它们没做错什么。只是没装最新的系统而已。</p>
+<p>现在不一样了。<strong>Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，Apple Silicon 和 Intel 都支持。</strong></p>
+<p>你们很多人一直在等一个 macOS 26 之前的版本。这次，是为你们准备的。</p>
 <h2 id="为什么一开始只支持-26">为什么一开始只支持 26</h2>
 <p>Agent! 通过一个叫 FoundationModels 的框架来使用 Apple 的设备端模型。它不是主脑。真正的重活由你选择的提供商来干。但设备端模型能帮忙处理一些小活儿，比如在上下文压缩时做摘要、统计 token，以及在应用启动时预热会话。</p>
 <p>问题就在这里。FoundationModels 只存在于 macOS 26。只要你的代码提到了它的任何一个类型，就没法为更老的 Mac 构建。编译器直接说不。</p>

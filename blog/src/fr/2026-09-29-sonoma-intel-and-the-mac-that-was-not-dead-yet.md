@@ -3,16 +3,6 @@ title: Sonoma, Intel et le Mac qui n’était pas encore mort
 description: Agent! pour Mac fonctionne désormais sous macOS Sonoma 14.6 et ultérieur, sur Apple Silicon et Intel. Vous étiez nombreux à réclamer une version antérieure à macOS 26. La voici.
 tags: Notes de version, Coulisses
 ---
-Soyons honnêtes. Quand Agent! affichait « nécessite macOS 26 », beaucoup de bons Mac restaient sur le carreau.
-
-Vous étiez sous Sonoma ? Pas de chance. Sous Sequoia ? Pareil. Et sur un Mac Intel, vous ne faisiez même pas partie de la discussion.
-
-Ça m’a toujours embêté. Ces Mac fonctionnent encore. Des gens s’en servent tous les jours. Ils codent dessus, font tourner leur entreprise dessus et y gardent bien trop d’onglets ouverts. Ils n’ont rien fait de mal. Ils n’étaient juste pas sur le dernier OS.
-
-C’est fini. **Agent! pour Mac fonctionne désormais sous macOS Sonoma 14.6 et ultérieur, sur Apple Silicon comme sur Intel.**
-
-Vous êtes nombreux à attendre une version antérieure à macOS 26. Celle-ci est pour vous.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">Deux Mac heureux et un nouveau panneau</title>
@@ -45,6 +35,16 @@ Vous êtes nombreux à attendre une version antérieure à macOS 26. Celle-ci es
 </svg>
 <figcaption>Même bureau. Mêmes Mac. Nouveau panneau.</figcaption>
 </figure>
+
+Soyons honnêtes. Quand Agent! affichait « nécessite macOS 26 », beaucoup de bons Mac restaient sur le carreau.
+
+Vous étiez sous Sonoma ? Pas de chance. Sous Sequoia ? Pareil. Et sur un Mac Intel, vous ne faisiez même pas partie de la discussion.
+
+Ça m’a toujours embêté. Ces Mac fonctionnent encore. Des gens s’en servent tous les jours. Ils codent dessus, font tourner leur entreprise dessus et y gardent bien trop d’onglets ouverts. Ils n’ont rien fait de mal. Ils n’étaient juste pas sur le dernier OS.
+
+C’est fini. **Agent! pour Mac fonctionne désormais sous macOS Sonoma 14.6 et ultérieur, sur Apple Silicon comme sur Intel.**
+
+Vous êtes nombreux à attendre une version antérieure à macOS 26. Celle-ci est pour vous.
 
 ## Pourquoi c’était réservé à macOS 26 au départ
 

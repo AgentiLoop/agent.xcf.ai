@@ -3,16 +3,6 @@ title: Sonoma、Intel，以及那台还没“死”的 Mac
 description: Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，同时支持 Apple Silicon 和 Intel。很多人都想要一个 macOS 26 之前的版本。它来了。
 tags: 发布说明, 幕后
 ---
-说实话吧。当 Agent! 写着“需要 macOS 26”的时候，很多好好的 Mac 就被挡在了门外。
-
-如果你用的是 Sonoma，那就没戏。用的是 Sequoia，也一样。要是你用的是 Intel Mac，那你连被讨论的资格都没有。
-
-这件事一直让我耿耿于怀。那些 Mac 还能用。人们每天都在用。在上面写代码，靠它们做生意，还在上面开着多得离谱的浏览器标签页。它们没做错什么。只是没装最新的系统而已。
-
-现在不一样了。**Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，Apple Silicon 和 Intel 都支持。**
-
-你们很多人一直在等一个 macOS 26 之前的版本。这次，是为你们准备的。
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">两台开心的 Mac 和一块新招牌</title>
@@ -45,6 +35,16 @@ tags: 发布说明, 幕后
 </svg>
 <figcaption>同一张桌子。同样的 Mac。新的招牌。</figcaption>
 </figure>
+
+说实话吧。当 Agent! 写着“需要 macOS 26”的时候，很多好好的 Mac 就被挡在了门外。
+
+如果你用的是 Sonoma，那就没戏。用的是 Sequoia，也一样。要是你用的是 Intel Mac，那你连被讨论的资格都没有。
+
+这件事一直让我耿耿于怀。那些 Mac 还能用。人们每天都在用。在上面写代码，靠它们做生意，还在上面开着多得离谱的浏览器标签页。它们没做错什么。只是没装最新的系统而已。
+
+现在不一样了。**Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，Apple Silicon 和 Intel 都支持。**
+
+你们很多人一直在等一个 macOS 26 之前的版本。这次，是为你们准备的。
 
 ## 为什么一开始只支持 26
 

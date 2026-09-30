@@ -3,16 +3,6 @@ title: Sonoma, Intel y el Mac que todavía no estaba muerto
 description: Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon e Intel. Muchos pedisteis una versión anterior a macOS 26. Aquí la tenéis.
 tags: Notas de versión, Entre bastidores
 ---
-Seamos sinceros. Cuando Agent! decía «requiere macOS 26», un montón de Macs buenos se quedaban fuera.
-
-Si estabas en Sonoma, mala suerte. Si estabas en Sequoia, lo mismo. Y si tenías un Mac con Intel, ni siquiera entrabas en la conversación.
-
-Eso siempre me fastidió. Esos Macs siguen funcionando. La gente los usa todos los días. Programan en ellos, llevan sus negocios con ellos y tienen demasiadas pestañas del navegador abiertas en ellos. No hicieron nada malo. Simplemente no estaban en el sistema más nuevo.
-
-Se acabó. **Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon y en Intel.**
-
-Muchos llevabais tiempo esperando una versión anterior a macOS 26. Esta va por vosotros.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">Dos Macs felices y un cartel nuevo</title>
@@ -45,6 +35,16 @@ Muchos llevabais tiempo esperando una versión anterior a macOS 26. Esta va por 
 </svg>
 <figcaption>El mismo escritorio. Los mismos Macs. Cartel nuevo.</figcaption>
 </figure>
+
+Seamos sinceros. Cuando Agent! decía «requiere macOS 26», un montón de Macs buenos se quedaban fuera.
+
+Si estabas en Sonoma, mala suerte. Si estabas en Sequoia, lo mismo. Y si tenías un Mac con Intel, ni siquiera entrabas en la conversación.
+
+Eso siempre me fastidió. Esos Macs siguen funcionando. La gente los usa todos los días. Programan en ellos, llevan sus negocios con ellos y tienen demasiadas pestañas del navegador abiertas en ellos. No hicieron nada malo. Simplemente no estaban en el sistema más nuevo.
+
+Se acabó. **Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon y en Intel.**
+
+Muchos llevabais tiempo esperando una versión anterior a macOS 26. Esta va por vosotros.
 
 ## Por qué era solo para 26 en primer lugar
 

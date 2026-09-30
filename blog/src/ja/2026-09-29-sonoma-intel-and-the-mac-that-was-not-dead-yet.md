@@ -3,16 +3,6 @@ title: Sonoma と Intel と、まだ死んでいなかった Mac
 description: Agent! for Mac が macOS Sonoma 14.6 以降の Apple Silicon と Intel で動くようになりました。macOS 26 より前の OS 向けのバージョンを求める声がたくさんありました。お待たせしました。
 tags: リリースノート, 舞台裏
 ---
-正直に言いましょう。Agent! が「macOS 26 が必要です」と言っていたころ、たくさんのいい Mac が置いてけぼりになっていました。
-
-Sonoma を使っていたら、残念でした。Sequoia でも同じ。Intel Mac なら、そもそも話にすら入れてもらえませんでした。
-
-それがずっと引っかかっていました。あの Mac たちはまだ動きます。みんな毎日使っています。コードを書いて、仕事を回して、ブラウザのタブを開きすぎています。何も悪いことはしていません。ただ最新の OS じゃなかっただけです。
-
-でも、もう違います。**Agent! for Mac は macOS Sonoma 14.6 以降で、Apple Silicon でも Intel でも動くようになりました。**
-
-macOS 26 より前の OS 向けのバージョンを待っていた人はたくさんいました。これは、そんなあなたのためのものです。
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">うれしそうな2台の Mac と新しい看板</title>
@@ -45,6 +35,16 @@ macOS 26 より前の OS 向けのバージョンを待っていた人はたく�
 </svg>
 <figcaption>同じ机。同じ Mac。新しい看板。</figcaption>
 </figure>
+
+正直に言いましょう。Agent! が「macOS 26 が必要です」と言っていたころ、たくさんのいい Mac が置いてけぼりになっていました。
+
+Sonoma を使っていたら、残念でした。Sequoia でも同じ。Intel Mac なら、そもそも話にすら入れてもらえませんでした。
+
+それがずっと引っかかっていました。あの Mac たちはまだ動きます。みんな毎日使っています。コードを書いて、仕事を回して、ブラウザのタブを開きすぎています。何も悪いことはしていません。ただ最新の OS じゃなかっただけです。
+
+でも、もう違います。**Agent! for Mac は macOS Sonoma 14.6 以降で、Apple Silicon でも Intel でも動くようになりました。**
+
+macOS 26 より前の OS 向けのバージョンを待っていた人はたくさんいました。これは、そんなあなたのためのものです。
 
 ## そもそも、なぜ 26 専用だったのか
 

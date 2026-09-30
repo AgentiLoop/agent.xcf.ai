@@ -3,16 +3,6 @@ title: Sonoma, Intel, 그리고 아직 끝나지 않은 Mac
 description: 이제 Mac용 Agent!가 Apple Silicon과 Intel의 macOS Sonoma 14.6 이상에서 실행됩니다. macOS 26 이전 버전을 원하신 분이 많았죠. 여기 있습니다.
 tags: 릴리스 노트, 비하인드
 ---
-솔직히 말해 봅시다. Agent!에 "macOS 26 필요"라고 적혀 있을 때, 좋은 Mac들이 꽤 많이 소외됐습니다.
-
-Sonoma를 쓰고 있다면 운이 없었죠. Sequoia도 마찬가지. Intel Mac이라면 아예 대화에 끼지도 못했고요.
-
-그게 늘 마음에 걸렸습니다. 그 Mac들은 아직 멀쩡히 돌아갑니다. 사람들이 매일 씁니다. 거기서 코드를 짜고, 사업을 굴리고, 브라우저 탭을 지나치게 많이 열어 둡니다. 잘못한 건 하나도 없어요. 그냥 최신 OS가 아니었을 뿐이죠.
-
-이제는 아닙니다. **Mac용 Agent!가 이제 macOS Sonoma 14.6 이상, Apple Silicon과 Intel 모두에서 실행됩니다.**
-
-macOS 26 이전 버전을 기다려 온 분이 많았죠. 이번 버전은 여러분을 위한 겁니다.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="macs-title macs-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="macs-title">행복한 Mac 두 대와 새 표지판</title>
@@ -45,6 +35,16 @@ macOS 26 이전 버전을 기다려 온 분이 많았죠. 이번 버전은 여�
 </svg>
 <figcaption>같은 책상. 같은 Mac. 새 표지판.</figcaption>
 </figure>
+
+솔직히 말해 봅시다. Agent!에 "macOS 26 필요"라고 적혀 있을 때, 좋은 Mac들이 꽤 많이 소외됐습니다.
+
+Sonoma를 쓰고 있다면 운이 없었죠. Sequoia도 마찬가지. Intel Mac이라면 아예 대화에 끼지도 못했고요.
+
+그게 늘 마음에 걸렸습니다. 그 Mac들은 아직 멀쩡히 돌아갑니다. 사람들이 매일 씁니다. 거기서 코드를 짜고, 사업을 굴리고, 브라우저 탭을 지나치게 많이 열어 둡니다. 잘못한 건 하나도 없어요. 그냥 최신 OS가 아니었을 뿐이죠.
+
+이제는 아닙니다. **Mac용 Agent!가 이제 macOS Sonoma 14.6 이상, Apple Silicon과 Intel 모두에서 실행됩니다.**
+
+macOS 26 이전 버전을 기다려 온 분이 많았죠. 이번 버전은 여러분을 위한 겁니다.
 
 ## 애초에 왜 26 전용이었나
 
