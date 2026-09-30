@@ -23,24 +23,24 @@
       <description>Cómo decide la compactación de contexto de Agent! cuándo resumir una tarea larga, y las correcciones del 28 de septiembre para modelos de respaldo, Ollama y una ventana de 272K en Codex.</description>
     </item>
     <item>
-      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <title>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</title>
       <link>https://agentiloop.ai/es/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/es/blog/what-is-an-agent-loop/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Explainers</category>
-      <category>Agent Loops</category>
-      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+      <category>Explicaciones</category>
+      <category>Bucles de agente</category>
+      <description>Mirar, elegir, actuar, comprobar. Una guía ilustrada y juguetona sobre los bucles de agente, tan sencilla que la entiende un niño de cinco años y con mucho para los mayores.</description>
     </item>
     <item>
-      <title>Sonoma, Intel, and the Mac That Was Not Dead Yet</title>
+      <title>Sonoma, Intel y el Mac que todavía no estaba muerto</title>
       <link>https://agentiloop.ai/es/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</link>
       <guid isPermaLink="true">https://agentiloop.ai/es/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Release Notes</category>
-      <category>Behind the Scenes</category>
-      <description>Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.</description>
+      <category>Notas de versión</category>
+      <category>Entre bastidores</category>
+      <description>Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon e Intel. Muchos pedisteis una versión anterior a macOS 26. Aquí la tenéis.</description>
     </item>
     <item>
       <title>Una versión el día 1 de cada mes, y versiones preliminares entre medias</title>

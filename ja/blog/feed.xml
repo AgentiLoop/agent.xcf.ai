@@ -23,24 +23,24 @@
       <description>Agent! のコンテキスト圧縮が長いタスクを要約するタイミングをどう決めているのか、そしてフォールバックモデル、Ollama、272K の Codex ウィンドウに対する 9 月 28 日の修正を解説します。</description>
     </item>
     <item>
-      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <title>エージェントループとは？ロボットとサンドイッチと、もう一度やってみる技術</title>
       <link>https://agentiloop.ai/ja/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ja/blog/what-is-an-agent-loop/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Explainers</category>
-      <category>Agent Loops</category>
-      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+      <category>解説</category>
+      <category>エージェントループ</category>
+      <description>見る、選ぶ、やる、確かめる。エージェントループを楽しく図解するガイドです。5歳の子にもわかるくらいシンプルに、でも大人向けの話もたっぷりと。</description>
     </item>
     <item>
-      <title>Sonoma, Intel, and the Mac That Was Not Dead Yet</title>
+      <title>Sonoma と Intel と、まだ死んでいなかった Mac</title>
       <link>https://agentiloop.ai/ja/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ja/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Release Notes</category>
-      <category>Behind the Scenes</category>
-      <description>Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.</description>
+      <category>リリースノート</category>
+      <category>舞台裏</category>
+      <description>Agent! for Mac が macOS Sonoma 14.6 以降の Apple Silicon と Intel で動くようになりました。macOS 26 より前の OS 向けのバージョンを求める声がたくさんありました。お待たせしました。</description>
     </item>
     <item>
       <title>毎月 1 日にリリース、その間はプレリリース</title>

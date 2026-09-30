@@ -23,24 +23,24 @@
       <description>Agent!의 컨텍스트 압축이 긴 작업을 요약할 시점을 어떻게 결정하는지, 그리고 폴백 모델, Ollama, 272K Codex 창에 대한 9월 28일 수정 사항을 소개합니다.</description>
     </item>
     <item>
-      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <title>에이전트 루프란 무엇일까? 로봇, 샌드위치, 그리고 다시 해 보는 기술</title>
       <link>https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Explainers</category>
-      <category>Agent Loops</category>
-      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+      <category>해설</category>
+      <category>에이전트 루프</category>
+      <description>보고, 고르고, 하고, 확인하기. 다섯 살 아이도 이해할 만큼 쉽고, 어른에게도 곱씹을 거리가 많은 에이전트 루프 그림 안내서입니다.</description>
     </item>
     <item>
-      <title>Sonoma, Intel, and the Mac That Was Not Dead Yet</title>
+      <title>Sonoma, Intel, 그리고 아직 끝나지 않은 Mac</title>
       <link>https://agentiloop.ai/ko/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Release Notes</category>
-      <category>Behind the Scenes</category>
-      <description>Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.</description>
+      <category>릴리스 노트</category>
+      <category>비하인드</category>
+      <description>이제 Mac용 Agent!가 Apple Silicon과 Intel의 macOS Sonoma 14.6 이상에서 실행됩니다. macOS 26 이전 버전을 원하신 분이 많았죠. 여기 있습니다.</description>
     </item>
     <item>
       <title>매달 1일에 릴리스, 그 사이에는 프리릴리스</title>

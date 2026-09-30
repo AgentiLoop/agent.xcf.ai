@@ -1,0 +1,197 @@
+---
+title: 에이전트 루프란 무엇일까? 로봇, 샌드위치, 그리고 다시 해 보는 기술
+description: 보고, 고르고, 하고, 확인하기. 다섯 살 아이도 이해할 만큼 쉽고, 어른에게도 곱씹을 거리가 많은 에이전트 루프 그림 안내서입니다.
+tags: 해설, 에이전트 루프
+---
+Pip이라는 작은 로봇을 떠올려 보세요.
+
+여러분이 말합니다. **"잼 샌드위치 좀 만들어 줄래?"**
+
+Pip은 식탁을 봅니다. 빵이 있습니다. 잼이 있습니다. 땅콩버터가 수상할 만큼 잔뜩 묻은 숟가락도 있습니다.
+
+Pip이 "샌드위치 완성!"이라고 외칠까요?
+
+아니요. 그건 연설이지, 샌드위치가 아니니까요.
+
+Pip은 **살펴보고, 작은 한 걸음을 고르고, 그걸 해 보고, 무슨 일이 일어났는지 확인해야** 합니다. 그래야 다음에 무엇을 할지 정할 수 있죠.
+
+이렇게 반복되는 패턴이 바로 **에이전트 루프**입니다.
+
+<figure style="margin:2rem 0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="pip-title pip-desc" style="display:block;width:100%;height:auto;border-radius:20px">
+<title id="pip-title">Pip에게는 목표가 있지만, 아직 샌드위치는 없어요</title>
+<desc id="pip-desc">친근한 파란 로봇이 빵 두 조각과 잼 한 병을 바라보고 있습니다. 말풍선에는 "계획은 샌드위치가 아니야."라고 적혀 있습니다.</desc>
+<rect width="760" height="360" rx="20" fill="#eef6ff"/>
+<path d="M300 104l-26 24 58-24" fill="#fff"/>
+<rect x="265" y="28" width="450" height="76" rx="24" fill="#fff" stroke="#b6c8e4" stroke-width="3"/>
+<text x="490" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="27" font-weight="700" fill="#173452">계획은 샌드위치가 아니야.</text>
+<path d="M44 282H716" stroke="#8b684c" stroke-width="13" stroke-linecap="round"/>
+<path d="M103 242V276M187 242V276M217 213L260 233" fill="none" stroke="#173452" stroke-width="6" stroke-linecap="round"/>
+<rect x="77" y="127" width="140" height="115" rx="27" fill="#559ef5" stroke="#173452" stroke-width="4"/>
+<path d="M147 127V100" stroke="#173452" stroke-width="5"/><circle cx="147" cy="91" r="10" fill="#efb943"/>
+<circle cx="117" cy="168" r="12" fill="#fff"/><circle cx="177" cy="168" r="12" fill="#fff"/>
+<circle cx="120" cy="169" r="5" fill="#173452"/><circle cx="180" cy="169" r="5" fill="#173452"/>
+<path d="M121 201Q147 222 173 201" fill="none" stroke="#173452" stroke-width="6" stroke-linecap="round"/>
+<g transform="translate(0 12.5)"><path d="M328 260V217Q309 186 349 178Q380 168 402 187Q422 175 445 190Q472 205 449 223V260Z" fill="#fbe3ad" stroke="#ae703f" stroke-width="6"/>
+<path d="M353 240V212Q389 190 428 212V240Z" fill="#d94877"/></g>
+<path transform="translate(0 9.5)" d="M465 263V225Q449 195 483 187Q517 172 547 191Q578 181 590 211L582 263Z" fill="#fbe3ad" stroke="#ae703f" stroke-width="6"/>
+<g transform="translate(0 1)"><rect x="622" y="191" width="60" height="82" rx="12" fill="#d94877" stroke="#173452" stroke-width="3"/>
+<rect x="617" y="181" width="70" height="15" rx="5" fill="#173452"/>
+<text x="652" y="239" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#fff">잼</text></g>
+<text x="147" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#173452">Pip을 소개합니다.</text>
+<text x="495" y="326" text-anchor="middle" font-family="system-ui,sans-serif" font-size="21" fill="#173452">목표: 잼 샌드위치 하나.</text>
+</svg>
+<figcaption>Pip은 상상 속 도우미입니다. 이 그림을 그리는 동안 끈적끈적해진 진짜 로봇은 없습니다.</figcaption>
+</figure>
+
+## 네 단어로 정리하는 핵심
+
+**보기. 고르기. 하기. 확인하기.**
+
+- **보기:** 지금 무슨 일이 일어나고 있지?
+- **고르기:** 다음에 할 만한 쓸모 있는 일 하나는 뭘까?
+- **하기:** 그 일을 한다.
+- **확인하기:** 실제로 무슨 일이 일어났지? 다 끝났나?
+
+일이 끝나지 않았다면 새로 알게 된 정보를 가지고 한 바퀴 더 돕니다.
+
+**루프**는 그저 무언가가 반복된다는 뜻입니다. **에이전트**는 주어진 도구와 권한을 사용해 목표를 향해 한 걸음씩 나아갈 수 있는 시스템이고요.
+
+둘을 합치면 이렇습니다. **에이전트 루프는 도우미가 행동하고, 결과를 보고, 다음에 할 일을 정하게 해 줍니다.**
+
+<figure style="margin:2rem 0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="loop-title loop-desc" style="display:block;width:100%;height:auto;border-radius:20px">
+<title id="loop-title">보고, 고르고, 하고, 확인하기—그리고 멈출 때를 알기</title>
+<desc id="loop-desc">흐름도가 시계 방향으로 보기, 고르기, 하기, 확인하기 순서로 이어집니다. 할 일이 남아 있으면 확인하기에서 보기로 돌아갑니다. 끝났거나, 막혔거나, 예산을 다 썼을 때는 확인하기에서 별도의 화살표가 "멈추거나 묻기"로 이어집니다.</desc>
+<defs><marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10Z" fill="#4b617e"/></marker></defs>
+<rect width="760" height="520" rx="20" fill="#f0f5fb"/>
+<g fill="none" stroke="#4b617e" stroke-width="4" marker-end="url(#loop-arrow)"><path d="M298 100H460"/><path d="M586 150V238"/><path d="M464 290H302"/><path d="M176 240V153"/><path d="M176 342V414"/></g>
+<g stroke-width="3"><rect x="54" y="48" width="244" height="100" rx="23" fill="#d7eaff" stroke="#3377b9"/><rect x="464" y="48" width="244" height="100" rx="23" fill="#fce9b6" stroke="#9a701b"/><rect x="464" y="242" width="244" height="100" rx="23" fill="#dfd9ff" stroke="#7760b5"/><rect x="54" y="242" width="244" height="100" rx="23" fill="#cff3e4" stroke="#29836a"/><rect x="54" y="419" width="652" height="68" rx="20" fill="#fff" stroke="#4b617e"/></g>
+<g font-family="system-ui,sans-serif" text-anchor="middle" fill="#173452"><g font-size="28" font-weight="700"><text x="176" y="90">1. 보기</text><text x="586" y="90">2. 고르기</text><text x="586" y="285">3. 하기</text><text x="176" y="285">4. 확인하기</text></g><g font-size="20"><text x="176" y="122">무엇이 보이지?</text><text x="586" y="122">다음엔 뭘 하지?</text><text x="586" y="317">도구를 써요.</text><text x="176" y="317">무엇이 바뀌었지?</text><text x="380" y="199">아직 남았나요? 한 바퀴 더.</text><text x="428" y="389">끝났나요, 막혔나요, 한도인가요?</text><text x="380" y="461" font-size="24" font-weight="700">멈추기—아니면 사람에게 묻기.</text></g></g>
+</svg>
+<figcaption>설명을 위한 그림일 뿐, 반드시 따라야 하는 소프트웨어 설계는 아닙니다. 실제 구현에서는 이 단계들이 합쳐지기도 합니다. 중요한 건 결과를 다음 결정에 다시 반영하는 것입니다.</figcaption>
+</figure>
+
+## 아주 진지한 샌드위치 임무로 돌아가서
+
+Pip의 첫 번째 작은 걸음은 잼 병을 여는 것입니다.
+
+**하기:** 뚜껑을 돌린다.
+
+**확인하기:** 뚜껑이 꿈쩍도 하지 않았다.
+
+여기서부터가 재미있습니다. 병을 여는 게 계획이었다고 해서, Pip이 병이 열린 척해서는 안 됩니다.
+
+그렇다고 해가 건포도가 될 때까지 뚜껑을 영원히 돌리고 있어서도 안 되죠.
+
+Pip은 허용된 다른 방법을 시도하거나, "이 뚜껑 좀 도와줄래요?"라고 말할 수 있습니다. 도움을 요청하는 것도 쓸모 있는 결과입니다. 로봇 크기만 한 실패가 아니에요.
+
+병이 열리면 Pip은 잼을 바르고, 빵을 덮고, 결과가 여러분의 요청과 맞는지 확인할 수 있습니다.
+
+빵 두 조각? 안에 잼? 접시 위? 좋아요.
+
+식빵 한 덩이 위에 균형을 잡고 선 잼 병? 창의적이네요. 하지만 샌드위치는 아닙니다.
+
+## AI는 어디에 들어갈까?
+
+우리의 부엌 이야기는 지어낸 것입니다. 소프트웨어 에이전트의 도구는 빵을 다루는 대신 파일을 읽고, 페이지를 검색하고, 문서를 편집하거나, 테스트를 실행할 수 있습니다.
+
+AI 에이전트에서는 언어 모델이 다음 걸음을 고르는 일을 돕습니다. 그 주변의 소프트웨어는 허용된 도구 호출을 실행하고 결과를 돌려줍니다. 그러면 모델은 그 정보를 가지고 다시 차례를 받습니다.
+
+세 가지 다른 역할을 생각해 보세요.
+
+| 구성 요소 | Pip의 상상 속 부엌 | 소프트웨어 버전 |
+| --- | --- | --- |
+| 목표 | 잼 샌드위치 만들기 | 깨진 링크 고치기 |
+| 결정하는 쪽 | 다음 작은 걸음 고르기 | 모델이 행동을 제안 |
+| 도구 | 손과 숟가락 | 파일 읽기, 편집기, 브라우저 |
+| 관찰 | 뚜껑이 아직 닫혀 있음 | 도구가 오류나 결과를 반환 |
+| 작업 메모 | 병 열림, 빵 준비됨 | 관련된 작업 기록과 결과 |
+| 완료 확인 | 요청한 샌드위치가 준비됨 | 의도한 링크가 작동하는지 검증 |
+
+**모델이 행동을 제안했다고 해서 그 행동이 일어난 것은 아닙니다.** 그리고 행동이 일어났다고 해서 목표가 자동으로 달성된 것도 아니고요.
+
+"파일을 저장했다"와 "올바른 내용으로 올바른 파일을 저장했다"는 서로 다른 주장입니다. 그 차이가 드러나는 곳이 바로 확인 단계입니다.
+
+## 작은 모험: 사라진 그림
+
+웹 페이지에서 사라진 그림을 고쳐 달라고 소프트웨어 도우미에게 부탁했다고 해 봅시다.
+
+쓸모 있는 루프는 이렇게 생겼을 수 있습니다.
+
+1. **보기:** 페이지를 읽고 이미지 경로를 찾는다.
+2. **고르기:** 참조된 이미지가 실제로 있는지 확인하기로 한다.
+3. **하기:** 관련 파일들을 살펴본다.
+4. **확인하기:** 페이지는 `cat.png`를 요청하는데, 파일 이름은 `cat.jpg`다.
+5. **한 바퀴 더:** 참조를 고친 다음, 페이지가 의도한 그림을 불러오는지 확인한다.
+6. **멈추기:** 바꾼 내용과 실제로 수행한 확인을 보고한다.
+
+그래도 그림이 나타나지 않는다면 "페이지를 수정했습니다"로는 부족합니다. 결과가 다음 걸음을 이끌어야 합니다.
+
+무엇이 이것을 루프로 만드는지 눈여겨보세요. **다음 행동은 이전 행동이 드러낸 것에 따라 달라집니다.** 같은 일을 그저 반복하는 게 아닙니다.
+
+## 한 바퀴 돌 때마다 나아질까?
+
+아니요. 활동이 많다고 해서 자동으로 진척이 많은 건 아닙니다.
+
+Pip의 샌드위치 임무를 위해 지어낸 그래프를 하나 보죠. 단계를 하나 완료할 때마다 Pip에게 1점을 줍니다. 병 열기, 잼 바르기, 샌드위치 조립, 그리고 최종 요청 확인입니다.
+
+<figure style="margin:2rem 0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 450" role="img" aria-labelledby="graph-title graph-desc" style="display:block;width:100%;height:auto;border-radius:20px">
+<title id="graph-title">상상 속 샌드위치 진척 그래프</title>
+<desc id="graph-desc">여섯 번의 시도 동안 완료한 단계는 0, 0, 1, 2, 3, 4입니다. 처음 두 번은 병이 열리지 않아 진척이 없습니다. 이 숫자들은 피드백을 설명하기 위해 지어낸 것이며, 측정된 에이전트 성능이 아닙니다.</desc>
+<rect width="760" height="450" rx="20" fill="#f0f5fb"/>
+<g font-family="system-ui,sans-serif" fill="#173452"><text x="48" y="42" font-size="23" font-weight="700">진척은 바쁜 것과 같지 않아요.</text><text x="48" y="73" font-size="18">완료한 단계 · 지어낸 예시이며 벤치마크가 아님</text></g>
+<g stroke="#c2cedd" stroke-width="1"><path d="M95 335H690M95 280H690M95 225H690M95 170H690M95 115H690"/></g>
+<path d="M95 105V345H700" fill="none" stroke="#4b617e" stroke-width="3"/>
+<polyline points="115,335 225,335 335,280 445,225 555,170 665,115" fill="none" stroke="#227657" stroke-width="5" stroke-linejoin="round"/>
+<g fill="#227657" stroke="#fff" stroke-width="3"><circle cx="115" cy="335" r="8"/><circle cx="225" cy="335" r="8"/><circle cx="335" cy="280" r="8"/><circle cx="445" cy="225" r="8"/><circle cx="555" cy="170" r="8"/><circle cx="665" cy="115" r="8"/></g>
+<g font-family="system-ui,sans-serif" font-size="20" fill="#173452" text-anchor="middle"><text x="68" y="341">0</text><text x="68" y="286">1</text><text x="68" y="231">2</text><text x="68" y="176">3</text><text x="68" y="121">4</text><text x="115" y="375">1</text><text x="225" y="375">2</text><text x="335" y="375">3</text><text x="445" y="375">4</text><text x="555" y="375">5</text><text x="665" y="375">6</text><text x="390" y="418">시도 횟수</text></g>
+<g font-family="system-ui,sans-serif" font-size="19" fill="#173452"><text x="116" y="292">뚜껑이 안 열려!</text><text x="326" y="317">도움 성공.</text><text x="586" y="99">확인 완료!</text></g>
+</svg>
+<figcaption>지어낸 데이터: 완료한 단계 0, 0, 1, 2, 3, 4. 실제 작업은 멈추거나, 뒤로 가거나, 주어진 도구로는 불가능한 것으로 드러날 수도 있습니다.</figcaption>
+</figure>
+
+평평한 구간이 중요합니다. 아무것도 바뀌지 않는다면 도우미는 그걸 알아차려야 합니다. 몇 번이나 시도했는지 자축할 게 아니라요.
+
+어른들에게는 이런 질문이 유용합니다. 뭔가 배운 게 있나? 상태가 바뀌었나? 실패한 행동을 똑같이 반복하고 있나? 한 번 더 시도할 만한 가치가 있나?
+
+나머지 분들께는: **문에 "당기시오"라고 쓰여 있다면, 더 세게 미는 건 전략이 아닙니다.**
+
+## 도우미에게는 지구 전체가 아니라 울타리를
+
+분별 있는 에이전트 설계에는 반복 버튼 이상의 것이 필요합니다.
+
+- **분명한 결승선.** "펭귄 사진 세 장 찾기"는 "모든 걸 멋지게 만들기"보다 확인하기 쉽습니다.
+- **적절한 권한.** 이메일 초안을 쓸 수 있다고 해서 자동으로 보낼 수 있어서는 안 됩니다.
+- **멈춤 예산.** 시도 횟수, 시간, 비용에 한도를 두세요. 막힌 작업이 끝없는 작업이 되어서는 안 됩니다.
+- **물어볼 방법.** 정보나 접근 권한이 부족하거나 중대한 선택이 필요할 때는 사람을 불러야 할 수 있습니다.
+- **정직한 확인.** 목표에 맞는 증거를 사용하세요. "도구가 응답했다"를 "모든 게 올바르다"로 바꾸지 마세요.
+
+이것들은 설계 원칙이지, 모든 제품이 이를 구현한다는 약속이 아닙니다. 루프가 있다고 시스템이 마법처럼 안전하거나 믿을 만해지지는 않습니다.
+
+Pip의 부엌에서라면: 샌드위치를 만들되, 잼을 트럭째 주문하지 말고, 어른용 가전제품을 쓰기 전에는 먼저 물어보기.
+
+## 에이전트 루프는 스크립트와 같은 걸까?
+
+꼭 그렇지는 않습니다. 하지만 그 경계가 "스크립트는 멍청하고 에이전트는 똑똑하다"는 아닙니다. 스크립트에도 루프와 조건, 훌륭한 확인이 있을 수 있으니까요.
+
+눈여겨볼 차이는 **다음 행동이 어떻게 선택되느냐**입니다. 고정된 워크플로에서는 개발자가 경로를 미리 깔아 둡니다. 모델이 이끄는 에이전트 루프에서는 모델이 작업과 최신 관찰을 바탕으로 사용할 수 있는 행동 중에서 고를 수 있습니다. 실제 시스템은 두 방식을 섞기도 합니다.
+
+예측 가능한 일에는 작은 스크립트가 딱 맞을 수 있습니다. 정오에 종을 울리는 데 철학하는 로봇까지는 필요 없죠.
+
+장애물을 알 수 없는 작업에서는 새로운 증거를 보고 다음 걸음을 고르는 게 유용할 수 있습니다. 바로 그 유연함 때문에 한도와 검증이 중요해집니다.
+
+## 냉장고 자석 버전
+
+에이전트 루프란:
+
+> 쓸모 있는 한 걸음을 시도한다. 무슨 일이 일어났는지 본다. 알게 된 것을 활용한다. 의미가 있는 동안만 반복한다.
+
+마법이 아닙니다. 보증도 아닙니다. "영원히 계속하기"도 아닙니다.
+
+**목표, 행동, 그리고 실제 결과**를 잇는 방법입니다. 도우미가 일을 끝내거나 멈춰야 할 때까지, 몇 번이고요.
+
+Pip이라면 더 간단하게 설명할 겁니다.
+
+**"보고. 해 보고. 확인해. 그리고 샌드위치가 생기기 전까지는 샌드위치라고 말하지 마."**

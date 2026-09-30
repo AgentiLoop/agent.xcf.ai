@@ -23,24 +23,24 @@
       <description>Agent! 的上下文压缩如何决定何时对长任务进行摘要，以及 9 月 28 日针对备用模型、Ollama 和 272K Codex 窗口的修复。</description>
     </item>
     <item>
-      <title>What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again</title>
+      <title>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</title>
       <link>https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Explainers</category>
-      <category>Agent Loops</category>
-      <description>Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.</description>
+      <category>科普</category>
+      <category>智能体循环</category>
+      <description>看一看，选一选，做一做，查一查。一份轻松有趣的图解智能体循环指南——简单到五岁小朋友都能懂，也有足够多的内容留给大人们。</description>
     </item>
     <item>
-      <title>Sonoma, Intel, and the Mac That Was Not Dead Yet</title>
+      <title>Sonoma、Intel，以及那台还没“死”的 Mac</title>
       <link>https://agentiloop.ai/zh/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Release Notes</category>
-      <category>Behind the Scenes</category>
-      <description>Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.</description>
+      <category>发布说明</category>
+      <category>幕后</category>
+      <description>Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，同时支持 Apple Silicon 和 Intel。很多人都想要一个 macOS 26 之前的版本。它来了。</description>
     </item>
     <item>
       <title>每月 1 日发布，中间穿插预发布</title>
