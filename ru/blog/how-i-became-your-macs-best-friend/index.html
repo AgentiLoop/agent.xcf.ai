@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Истоки</span><span class="post-tag">История</span></div>
                     <h1>Как начинался Agent!: три дня в марте</h1>
                     <p class="post-dek">Три года запчастей, один недостающий цикл и 177 коммитов меньше чем за два дня. Настоящее происхождение Agent!, прямо из git.</p>
-                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-30">30 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="how-i-became-your-macs-best-friend" data-n="0" data-fmt="{n} просмотров" data-sep=" " hidden> · <span class="post-reads">0 просмотров</span></span></p>
+                    <p class="post-meta">Автор: Todd Bruss · <time datetime="2026-09-30">30 сентября 2026 г.</time> · 5 мин чтения<span class="post-reads-live" data-slug="how-i-became-your-macs-best-friend" data-n="1" data-fmt="{n} просмотров" data-fmt-one="{n} просмотр" data-sep=" "> · <span class="post-reads">1 просмотр</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -343,7 +343,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

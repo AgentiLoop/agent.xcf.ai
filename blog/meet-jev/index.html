@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Security</span><span class="post-tag">Announcement</span></div>
                     <h1>Meet Jev: A Second Opinion That Answers in Types, Not Prose</h1>
                     <p class="post-dek">Agent! now asks Jev (TypeSafe System One) how destructive a shell command is before running it. Here&#x27;s why Jev is an advisor and not another LLM provider.</p>
-                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-17">September 17, 2026</time> · 3 min read<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} reads" data-sep=","> · <span class="post-reads">4 reads</span></span></p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-17">September 17, 2026</time> · 3 min read<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} reads" data-fmt-one="{n} read" data-sep=","> · <span class="post-reads">4 reads</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Today Agent! gets a new safety layer: <strong>Jev</strong>, short for TypeSafe System One. Before a shell command runs, Agent! can now ask Jev one question: <em>how likely is this command to irreversibly destroy data?</em> Above your threshold, the command is refused.</p>
@@ -290,7 +290,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

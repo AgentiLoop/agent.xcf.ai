@@ -33,6 +33,7 @@
    "December"
   ],
   "reads": "{n} reads",
+  "reads_one": "{n} read",
   "thousands": ","
  },
  "es": {
@@ -69,6 +70,7 @@
    "diciembre"
   ],
   "reads": "{n} lecturas",
+  "reads_one": "{n} lectura",
   "thousands": "."
  },
  "fr": {
@@ -105,6 +107,7 @@
    "décembre"
   ],
   "reads": "{n} lectures",
+  "reads_one": "{n} lecture",
   "thousands": " "
  },
  "de": {
@@ -141,6 +144,7 @@
    "Dezember"
   ],
   "reads": "{n} Aufrufe",
+  "reads_one": "{n} Aufruf",
   "thousands": "."
  },
  "zh": {
@@ -213,6 +217,7 @@
    "декабря"
   ],
   "reads": "{n} просмотров",
+  "reads_one": "{n} просмотр",
   "thousands": " "
  },
  "ko": {

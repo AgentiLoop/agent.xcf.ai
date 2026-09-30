@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Explicaciones</span><span class="post-tag">Bucles de agente</span></div>
                     <h1>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</h1>
                     <p class="post-dek">Mirar, elegir, actuar, comprobar. Una guía ilustrada y juguetona sobre los bucles de agente, tan sencilla que la entiende un niño de cinco años y con mucho para los mayores.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-29">29 de septiembre de 2026</time> · 6 min de lectura<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">4 lecturas</span></span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-29">29 de septiembre de 2026</time> · 6 min de lectura<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="{n} lecturas" data-fmt-one="{n} lectura" data-sep="."> · <span class="post-reads">4 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -380,7 +380,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

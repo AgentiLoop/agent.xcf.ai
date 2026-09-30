@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">기원</span><span class="post-tag">역사</span></div>
                     <h1>Agent!는 이렇게 시작됐습니다: 3월의 사흘</h1>
                     <p class="post-dek">3년 동안 모은 부품, 빠져 있던 루프 하나, 그리고 이틀도 안 되는 동안 177개의 커밋. git에서 바로 꺼낸 Agent!의 진짜 탄생 이야기.</p>
-                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-30">2026년 9월 30일</time> · 5분 분량<span class="post-reads-live" data-slug="how-i-became-your-macs-best-friend" data-n="0" data-fmt="조회 {n}회" data-sep="," hidden> · <span class="post-reads">조회 0회</span></span></p>
+                    <p class="post-meta">글쓴이: Todd Bruss · <time datetime="2026-09-30">2026년 9월 30일</time> · 5분 분량<span class="post-reads-live" data-slug="how-i-became-your-macs-best-friend" data-n="1" data-fmt="조회 {n}회" data-fmt-one="조회 {n}회" data-sep=","> · <span class="post-reads">조회 1회</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -343,7 +343,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

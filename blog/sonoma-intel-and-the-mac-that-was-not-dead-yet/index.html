@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Release Notes</span><span class="post-tag">Behind the Scenes</span></div>
                     <h1>Sonoma, Intel, and the Mac That Was Not Dead Yet</h1>
                     <p class="post-dek">Agent! for Mac now runs on macOS Sonoma 14.6 and later, on Apple Silicon and Intel. A lot of you asked for a pre-macOS 26 version. Here it is.</p>
-                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-29">September 29, 2026</time> · 5 min read<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="2" data-fmt="{n} reads" data-sep=","> · <span class="post-reads">2 reads</span></span></p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-09-29">September 29, 2026</time> · 5 min read<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="2" data-fmt="{n} reads" data-fmt-one="{n} read" data-sep=","> · <span class="post-reads">2 reads</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -375,7 +375,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">安全</span><span class="post-tag">内部机制</span></div>
                     <h1>在模型开口之前：深入解析 Agent! 的 Shell 安全护栏</h1>
                     <p class="post-dek">ShellSafetyService、守护进程侧的二次检查以及 Jev 第二意见如何阻止 AI 智能体清空你的 Mac——带你逐行走读真实的 Swift 代码。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-26">2026年9月26日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">3 次阅读</span></span></p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-26">2026年9月26日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} 次阅读" data-fmt-one="{n} 次阅读" data-sep=","> · <span class="post-reads">3 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
 <p>本周，TechRadar 报道称，一个编程智能体在短时间内删除了约 48,000 个文件，随后道了歉。道歉于事无补，文件已经没了。</p>
@@ -314,7 +314,7 @@ Narrow the target or run it yourself if this is intentional.</code></pre>
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Architecture</span><span class="post-tag">Design</span></div>
                     <h1>Why We Ripped Out Coding Mode: Let the Model Pick Its Own Tools</h1>
                     <p class="post-dek">Agent! used to guess whether you wanted coding or automation and hide tools to match. One broken Photo Booth task showed why the harness should stop second-guessing the model.</p>
-                    <p class="post-meta">By Todd Bruss · <time datetime="2026-04-07">April 7, 2026</time> · 3 min read<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="8" data-fmt="{n} reads" data-sep=","> · <span class="post-reads">8 reads</span></span></p>
+                    <p class="post-meta">By Todd Bruss · <time datetime="2026-04-07">April 7, 2026</time> · 3 min read<span class="post-reads-live" data-slug="why-we-ripped-out-modes" data-n="8" data-fmt="{n} reads" data-fmt-one="{n} read" data-sep=","> · <span class="post-reads">8 reads</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Early versions of Agent! had <strong>modes</strong>: coding, automation and standard. The idea sounded reasonable. A coding task doesn't need the Accessibility tool, and a "click this button" task doesn't need Xcode. Hide what isn't relevant and the model sees a shorter tool list, spends fewer tokens and makes fewer wrong picks.</p>
@@ -290,7 +290,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

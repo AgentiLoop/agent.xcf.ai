@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">安全</span><span class="post-tag">公告</span></div>
                     <h1>认识 Jev：以类型而非文字作答的第二意见</h1>
                     <p class="post-dek">Agent! 现在会在执行 shell 命令之前询问 Jev（TypeSafe System One）该命令的破坏性有多大。本文解释为什么 Jev 是一个顾问，而不是又一个 LLM 提供商。</p>
-                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-17">2026年9月17日</time> · 阅读约 3 分钟<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">4 次阅读</span></span></p>
+                    <p class="post-meta">作者：Todd Bruss · <time datetime="2026-09-17">2026年9月17日</time> · 阅读约 3 分钟<span class="post-reads-live" data-slug="meet-jev" data-n="4" data-fmt="{n} 次阅读" data-fmt-one="{n} 次阅读" data-sep=","> · <span class="post-reads">4 次阅读</span></span></p>
                 </header>
                 <div class="post-body">
 <p>今天，Agent! 新增了一层安全机制：<strong>Jev</strong>，即 TypeSafe System One 的简称。在 shell 命令运行之前，Agent! 现在可以向 Jev 提出一个问题：<em>这条命令不可逆地破坏数据的可能性有多大</em>？一旦超过你设定的阈值，该命令就会被拒绝。</p>
@@ -290,7 +290,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

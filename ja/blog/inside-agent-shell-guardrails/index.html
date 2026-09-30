@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">セキュリティ</span><span class="post-tag">内部構造</span></div>
                     <h1>モデルに判断を委ねる前に：Agent! のシェル・ガードレールの内側</h1>
                     <p class="post-dek">ShellSafetyService、デーモン側での再チェック、そして Jev のセカンドオピニオンが、AI エージェントによる Mac の全消去をどう防ぐのかを、実際の Swift コードとともに解説します。</p>
-                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-26">2026年9月26日</time> · 約 5 分で読めます<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} 回閲覧" data-sep=","> · <span class="post-reads">3 回閲覧</span></span></p>
+                    <p class="post-meta">著者：Todd Bruss · <time datetime="2026-09-26">2026年9月26日</time> · 約 5 分で読めます<span class="post-reads-live" data-slug="inside-agent-shell-guardrails" data-n="3" data-fmt="{n} 回閲覧" data-fmt-one="{n} 回閲覧" data-sep=","> · <span class="post-reads">3 回閲覧</span></span></p>
                 </header>
                 <div class="post-body">
 <p>今週、TechRadar は、あるコーディングエージェントが短時間のうちに約 48,000 個のファイルを削除し、その後で謝罪したと報じました。謝罪しても何も変わりません。ファイルは失われたままです。</p>
@@ -314,7 +314,7 @@ Narrow the target or run it yourself if this is intentional.</code></pre>
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

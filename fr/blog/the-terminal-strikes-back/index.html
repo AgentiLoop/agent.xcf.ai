@@ -144,7 +144,7 @@
                     <div class="post-tags"><span class="post-tag">Annonce</span><span class="post-tag">Multiplateforme</span><span class="post-tag">Ingénierie</span></div>
                     <h1>Le terminal contre-attaque : la boucle de l&#x27;agent devient multiplateforme en Rust et en Go</h1>
                     <p class="post-dek">Agent! est une app Mac, mais un agent de code a sa place partout où travaillent les développeurs. Voici comment la boucle de l&#x27;agent est devenue deux CLI, l&#x27;une en Rust et l&#x27;autre en Go, avec une TUI plein écran sur macOS, Windows et Linux.</p>
-                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-28">28 septembre 2026</time> · 5 min de lecture<span class="post-reads-live" data-slug="the-terminal-strikes-back" data-n="3" data-fmt="{n} lectures" data-sep=" "> · <span class="post-reads">3 lectures</span></span></p>
+                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-09-28">28 septembre 2026</time> · 5 min de lecture<span class="post-reads-live" data-slug="the-terminal-strikes-back" data-n="3" data-fmt="{n} lectures" data-fmt-one="{n} lecture" data-sep=" "> · <span class="post-reads">3 lectures</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Pendant la majeure partie de son existence, Agent! a été une app Mac assumée : Swift et SwiftUI natifs, intégration profonde avec AppleScript et l'Accessibilité, et un Launch Daemon pour root. C'est toujours le produit phare. Mais ces derniers jours, quelque chose a changé dans notre façon de concevoir les agents de code, et cela sort aujourd'hui.</p>
@@ -297,7 +297,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

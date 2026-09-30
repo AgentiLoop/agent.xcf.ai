@@ -337,7 +337,7 @@ FOOT = '''
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.
@@ -698,8 +698,10 @@ def reads_html(p, lang):
     n = p.get('views', 0)
     sep = UI[lang].get('thousands', ',')
     num = '{:,}'.format(n).replace(',', sep)
-    return '<span class="post-reads-live" data-slug="%s" data-n="%d" data-fmt="%s" data-sep="%s"%s> · <span class="post-reads">%s</span></span>' % (
-        p['slug'], n, html.escape(UI[lang]['reads']), sep, '' if n else ' hidden', UI[lang]['reads'].format(n=num))
+    one = UI[lang].get('reads_one', UI[lang]['reads'])
+    return '<span class="post-reads-live" data-slug="%s" data-n="%d" data-fmt="%s" data-fmt-one="%s" data-sep="%s"%s> · <span class="post-reads">%s</span></span>' % (
+        p['slug'], n, html.escape(UI[lang]['reads']), html.escape(one), sep, '' if n else ' hidden',
+        (one if n == 1 else UI[lang]['reads']).format(n=num))
 
 
 def main():

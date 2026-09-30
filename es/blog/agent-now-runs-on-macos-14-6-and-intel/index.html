@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Notas de la versión</span><span class="post-tag">Ingeniería</span></div>
                     <h1>Agent! ya funciona en macOS 14.6 y en Macs con Intel: cómo nos liberamos de macOS 26</h1>
                     <p class="post-dek">Agent! se creó en torno a Apple Intelligence en macOS 26. Así es como un día de controles #available y actualizaciones de paquetes lo llevó a macOS 14.6 en Apple Silicon e Intel.</p>
-                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-27">27 de septiembre de 2026</time> · 3 min de lectura<span class="post-reads-live" data-slug="agent-now-runs-on-macos-14-6-and-intel" data-n="3" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">3 lecturas</span></span></p>
+                    <p class="post-meta">Por Todd Bruss · <time datetime="2026-09-27">27 de septiembre de 2026</time> · 3 min de lectura<span class="post-reads-live" data-slug="agent-now-runs-on-macos-14-6-and-intel" data-n="3" data-fmt="{n} lecturas" data-fmt-one="{n} lectura" data-sep="."> · <span class="post-reads">3 lecturas</span></span></p>
                 </header>
                 <div class="post-body">
 <p>Hasta hoy, Agent! requería macOS 26. Desde la versión preliminar de hoy funciona en <strong>macOS 14.6 o posterior, en Apple Silicon e Intel</strong>. Eso incluye muchos Macs perfectamente válidos que se habían quedado fuera, muchos de los cuales no pueden ejecutar Apple Intelligence en absoluto.</p>
@@ -303,7 +303,7 @@ var transcript: Transcript? {
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.

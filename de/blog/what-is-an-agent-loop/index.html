@@ -143,7 +143,7 @@
                     <div class="post-tags"><span class="post-tag">Erklärt</span><span class="post-tag">Agent-Loops</span></div>
                     <h1>Was ist ein Agent-Loop? Ein Roboter, ein Sandwich und die Kunst, es noch einmal zu versuchen</h1>
                     <p class="post-dek">Schauen, wählen, handeln, prüfen. Ein verspielter, illustrierter Leitfaden zu Agent-Loops – einfach genug für Fünfjährige und mit reichlich Stoff für die Großen.</p>
-                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-29">29. September 2026</time> · 6 Min. Lesezeit<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="{n} Aufrufe" data-sep="."> · <span class="post-reads">4 Aufrufe</span></span></p>
+                    <p class="post-meta">Von Todd Bruss · <time datetime="2026-09-29">29. September 2026</time> · 6 Min. Lesezeit<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="4" data-fmt="{n} Aufrufe" data-fmt-one="{n} Aufruf" data-sep="."> · <span class="post-reads">4 Aufrufe</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -380,7 +380,7 @@
         document.querySelectorAll('.post-reads-live').forEach(function (el) {
             var n = Math.max(v[el.dataset.slug] || 0, +el.dataset.n || 0);
             if (!n) return;
-            el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
+            el.lastChild.textContent = (n === 1 ? el.dataset.fmtOne : el.dataset.fmt).replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
         // Blog index: zero-read posts first; then newest first; then most reads.
