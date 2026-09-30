@@ -3,20 +3,6 @@ title: Was ist ein Agent-Loop? Ein Roboter, ein Sandwich und die Kunst, es noch 
 description: Schauen, wählen, handeln, prüfen. Ein verspielter, illustrierter Leitfaden zu Agent-Loops – einfach genug für Fünfjährige und mit reichlich Stoff für die Großen.
 tags: Erklärt, Agent-Loops
 ---
-Stell dir einen kleinen Roboter namens Pip vor.
-
-Du sagst: **„Mach mir bitte ein Marmeladen-Sandwich.“**
-
-Pip schaut auf den Tisch. Da ist Brot. Da ist Marmelade. Da ist ein Löffel mit einer verdächtig großen Menge Erdnussbutter.
-
-Verkündet Pip jetzt: „Sandwich fertig!“?
-
-Nein. Das wäre eine Rede, kein Sandwich.
-
-Pip muss **schauen, einen kleinen Schritt wählen, ihn ausführen und prüfen, was passiert ist**. Dann kann Pip entscheiden, was als Nächstes kommt.
-
-Dieses sich wiederholende Muster ist ein **Agent-Loop**.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="pip-title pip-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="pip-title">Pip hat ein Ziel, aber noch kein Sandwich</title>
@@ -43,6 +29,20 @@ Dieses sich wiederholende Muster ist ein **Agent-Loop**.
 </svg>
 <figcaption>Pip ist unser erfundener Helfer. Beim Zeichnen dieser Illustration wurden keine echten Roboter klebrig gemacht.</figcaption>
 </figure>
+
+Stell dir einen kleinen Roboter namens Pip vor.
+
+Du sagst: **„Mach mir bitte ein Marmeladen-Sandwich.“**
+
+Pip schaut auf den Tisch. Da ist Brot. Da ist Marmelade. Da ist ein Löffel mit einer verdächtig großen Menge Erdnussbutter.
+
+Verkündet Pip jetzt: „Sandwich fertig!“?
+
+Nein. Das wäre eine Rede, kein Sandwich.
+
+Pip muss **schauen, einen kleinen Schritt wählen, ihn ausführen und prüfen, was passiert ist**. Dann kann Pip entscheiden, was als Nächstes kommt.
+
+Dieses sich wiederholende Muster ist ein **Agent-Loop**.
 
 ## Die ganze Idee in vier kleinen Wörtern
 

@@ -3,20 +3,6 @@ title: Qu’est-ce qu’une boucle d’agent ? Un robot, un sandwich et l’art
 description: Observer, choisir, agir, vérifier. Un guide illustré et ludique des boucles d’agent, assez simple pour un enfant de cinq ans, avec de quoi réfléchir pour les grands.
 tags: Explications, Boucles d’agent
 ---
-Imaginez un petit robot nommé Pip.
-
-Vous lui dites : **« S’il te plaît, fais-moi un sandwich à la confiture. »**
-
-Pip regarde la table. Il y a du pain. Il y a de la confiture. Il y a une cuillère couverte d’une quantité suspecte de beurre de cacahuète.
-
-Pip annonce-t-il : « Sandwich terminé ! » ?
-
-Non. Ce serait un discours, pas un sandwich.
-
-Pip doit **observer, choisir une petite étape, l’accomplir et vérifier ce qui s’est passé**. Ensuite seulement, Pip peut décider de la suite.
-
-Ce schéma qui se répète, c’est une **boucle d’agent**.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="pip-title pip-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="pip-title">Pip a un objectif, mais pas encore de sandwich</title>
@@ -43,6 +29,20 @@ Ce schéma qui se répète, c’est une **boucle d’agent**.
 </svg>
 <figcaption>Pip est notre assistant imaginaire. Aucun vrai robot n’a été rendu collant pendant la réalisation de cette illustration.</figcaption>
 </figure>
+
+Imaginez un petit robot nommé Pip.
+
+Vous lui dites : **« S’il te plaît, fais-moi un sandwich à la confiture. »**
+
+Pip regarde la table. Il y a du pain. Il y a de la confiture. Il y a une cuillère couverte d’une quantité suspecte de beurre de cacahuète.
+
+Pip annonce-t-il : « Sandwich terminé ! » ?
+
+Non. Ce serait un discours, pas un sandwich.
+
+Pip doit **observer, choisir une petite étape, l’accomplir et vérifier ce qui s’est passé**. Ensuite seulement, Pip peut décider de la suite.
+
+Ce schéma qui se répète, c’est une **boucle d’agent**.
 
 ## Toute l’idée, en quatre petits mots
 

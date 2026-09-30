@@ -3,20 +3,6 @@ title: ¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver 
 description: Mirar, elegir, actuar, comprobar. Una guía ilustrada y juguetona sobre los bucles de agente, tan sencilla que la entiende un niño de cinco años y con mucho para los mayores.
 tags: Explicaciones, Bucles de agente
 ---
-Imagina un robotito llamado Pip.
-
-Le dices: **«Por favor, hazme un sándwich de mermelada».**
-
-Pip mira la mesa. Hay pan. Hay mermelada. Hay una cuchara con una cantidad sospechosa de mantequilla de cacahuete.
-
-¿Anuncia Pip: «¡Sándwich terminado!»?
-
-No. Eso sería un discurso, no un sándwich.
-
-Pip necesita **mirar, elegir un pasito, darlo y comprobar qué ha pasado**. Entonces Pip puede decidir qué hacer a continuación.
-
-Ese patrón que se repite es un **bucle de agente**.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="pip-title pip-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="pip-title">Pip tiene un objetivo, pero todavía no un sándwich</title>
@@ -43,6 +29,20 @@ Ese patrón que se repite es un **bucle de agente**.
 </svg>
 <figcaption>Pip es nuestro ayudante imaginario. Ningún robot real acabó pegajoso durante la creación de esta ilustración.</figcaption>
 </figure>
+
+Imagina un robotito llamado Pip.
+
+Le dices: **«Por favor, hazme un sándwich de mermelada».**
+
+Pip mira la mesa. Hay pan. Hay mermelada. Hay una cuchara con una cantidad sospechosa de mantequilla de cacahuete.
+
+¿Anuncia Pip: «¡Sándwich terminado!»?
+
+No. Eso sería un discurso, no un sándwich.
+
+Pip necesita **mirar, elegir un pasito, darlo y comprobar qué ha pasado**. Entonces Pip puede decidir qué hacer a continuación.
+
+Ese patrón que se repite es un **bucle de agente**.
 
 ## Toda la idea, en cuatro palabritas
 

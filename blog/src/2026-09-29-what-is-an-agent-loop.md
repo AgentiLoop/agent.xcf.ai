@@ -3,20 +3,6 @@ title: What Is an Agent Loop? A Robot, a Sandwich, and the Art of Trying Again
 description: Look, choose, act, check. A playful, illustrated guide to agent loops—simple enough for a five-year-old, with plenty for the grown-ups.
 tags: Explainers, Agent Loops
 ---
-Imagine a little robot named Pip.
-
-You say, **“Please make me a jam sandwich.”**
-
-Pip looks at the table. There is bread. There is jam. There is a spoon wearing a suspicious amount of peanut butter.
-
-Does Pip announce, “Sandwich complete!”?
-
-No. That would be a speech, not a sandwich.
-
-Pip needs to **look, choose a small step, do it, and check what happened**. Then Pip can decide what to do next.
-
-That repeating pattern is an **agent loop**.
-
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="pip-title pip-desc" style="display:block;width:100%;height:auto;border-radius:20px">
 <title id="pip-title">Pip has a goal, but not yet a sandwich</title>
@@ -43,6 +29,20 @@ That repeating pattern is an **agent loop**.
 </svg>
 <figcaption>Pip is our imaginary helper. No actual robots were made sticky while drawing this illustration.</figcaption>
 </figure>
+
+Imagine a little robot named Pip.
+
+You say, **“Please make me a jam sandwich.”**
+
+Pip looks at the table. There is bread. There is jam. There is a spoon wearing a suspicious amount of peanut butter.
+
+Does Pip announce, “Sandwich complete!”?
+
+No. That would be a speech, not a sandwich.
+
+Pip needs to **look, choose a small step, do it, and check what happened**. Then Pip can decide what to do next.
+
+That repeating pattern is an **agent loop**.
 
 ## The whole idea, in four little words
 
