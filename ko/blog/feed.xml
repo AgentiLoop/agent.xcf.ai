@@ -13,6 +13,16 @@
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
     <item>
+      <title>Agent!는 이렇게 시작됐습니다: 3월의 사흘</title>
+      <link>https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>기원</category>
+      <category>역사</category>
+      <description>3년 동안 모은 부품, 빠져 있던 루프 하나, 그리고 이틀도 안 되는 동안 177개의 커밋. git에서 바로 꺼낸 Agent!의 진짜 탄생 이야기.</description>
+    </item>
+    <item>
       <title>에이전트 루프란 무엇일까? 로봇, 샌드위치, 그리고 다시 해 보는 기술</title>
       <link>https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-is-an-agent-loop/</guid>
@@ -82,16 +92,6 @@
       <category>공지</category>
       <category>아키텍처</category>
       <description>AgentiLoop Agent!가 무엇인지, 왜 이런 방식으로 만들었는지, 그리고 이곳에서 무엇을 만나게 될지, 소스 코드에서 바로 꺼내 이야기합니다.</description>
-    </item>
-    <item>
-      <title>Agent!는 이렇게 시작됐습니다: 3월의 사흘</title>
-      <link>https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>기원</category>
-      <category>역사</category>
-      <description>3년 동안 모은 부품, 빠져 있던 루프 하나, 그리고 이틀도 안 되는 동안 177개의 커밋. git에서 바로 꺼낸 Agent!의 진짜 탄생 이야기.</description>
     </item>
     <item>
       <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>

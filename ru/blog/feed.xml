@@ -13,6 +13,16 @@
       <link>https://agentiloop.ai/ru/blog/</link>
     </image>
     <item>
+      <title>Как начинался Agent!: три дня в марте</title>
+      <link>https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Истоки</category>
+      <category>История</category>
+      <description>Три года запчастей, один недостающий цикл и 177 коммитов меньше чем за два дня. Настоящее происхождение Agent!, прямо из git.</description>
+    </item>
+    <item>
       <title>Что такое агентный цикл? Робот, бутерброд и искусство пробовать снова</title>
       <link>https://agentiloop.ai/ru/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ru/blog/what-is-an-agent-loop/</guid>
@@ -82,16 +92,6 @@
       <category>Анонс</category>
       <category>Архитектура</category>
       <description>Что такое AgentiLoop Agent!, почему я сделал его именно так и что вы здесь найдёте — прямо из исходного кода.</description>
-    </item>
-    <item>
-      <title>Как начинался Agent!: три дня в марте</title>
-      <link>https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Истоки</category>
-      <category>История</category>
-      <description>Три года запчастей, один недостающий цикл и 177 коммитов меньше чем за два дня. Настоящее происхождение Agent!, прямо из git.</description>
     </item>
     <item>
       <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>

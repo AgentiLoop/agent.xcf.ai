@@ -13,6 +13,16 @@
       <link>https://agentiloop.ai/es/blog/</link>
     </image>
     <item>
+      <title>Cómo empezó Agent!: tres días de marzo</title>
+      <link>https://agentiloop.ai/es/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/es/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Orígenes</category>
+      <category>Historia</category>
+      <description>Tres años de piezas sueltas, un bucle que faltaba y 177 commits en menos de dos días. El origen real de Agent!, sacado directamente de git.</description>
+    </item>
+    <item>
       <title>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</title>
       <link>https://agentiloop.ai/es/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/es/blog/what-is-an-agent-loop/</guid>
@@ -82,16 +92,6 @@
       <category>Anuncio</category>
       <category>Arquitectura</category>
       <description>Qué es AgentiLoop Agent!, por qué lo construí como lo construí y qué vas a encontrar aquí, contado directamente desde el código fuente.</description>
-    </item>
-    <item>
-      <title>Cómo empezó Agent!: tres días de marzo</title>
-      <link>https://agentiloop.ai/es/blog/how-i-became-your-macs-best-friend/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/es/blog/how-i-became-your-macs-best-friend/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Orígenes</category>
-      <category>Historia</category>
-      <description>Tres años de piezas sueltas, un bucle que faltaba y 177 commits en menos de dos días. El origen real de Agent!, sacado directamente de git.</description>
     </item>
     <item>
       <title>Por qué Agent! compacta a la mitad de la ventana, y los tres bugs que la redujeron a 16K</title>

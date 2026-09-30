@@ -2,7 +2,6 @@
 title: How Agent! Got Started: Three Days in March
 description: Three years of spare parts, one missing loop, and 177 commits in under two days. The real origin of Agent!, straight from git.
 tags: Origins, History
-updated: 2026-09-30
 ---
 <figure style="margin:2rem 0">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-labelledby="lego-title lego-desc" style="display:block;width:100%;height:auto;border-radius:20px">

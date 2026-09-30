@@ -13,6 +13,16 @@
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
     <item>
+      <title>Agent! 是怎么开始的：三月里的三天</title>
+      <link>https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>起源</category>
+      <category>历史</category>
+      <description>三年攒下的零件，一个缺失的循环，不到两天 177 个提交。Agent! 真正的起源，直接来自 git。</description>
+    </item>
+    <item>
       <title>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</title>
       <link>https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/what-is-an-agent-loop/</guid>
@@ -82,16 +92,6 @@
       <category>公告</category>
       <category>架构</category>
       <description>AgentiLoop Agent! 是什么、我为什么这样打造它，以及你能在这里读到什么——一切都直接来自源代码。</description>
-    </item>
-    <item>
-      <title>Agent! 是怎么开始的：三月里的三天</title>
-      <link>https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/how-i-became-your-macs-best-friend/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>起源</category>
-      <category>历史</category>
-      <description>三年攒下的零件，一个缺失的循环，不到两天 177 个提交。Agent! 真正的起源，直接来自 git。</description>
     </item>
     <item>
       <title>为什么 Agent! 在上下文窗口用到一半时压缩，以及把阈值缩到 16K 的三个 bug</title>

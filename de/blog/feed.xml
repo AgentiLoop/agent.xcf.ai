@@ -13,6 +13,16 @@
       <link>https://agentiloop.ai/de/blog/</link>
     </image>
     <item>
+      <title>Wie Agent! anfing: drei Tage im März</title>
+      <link>https://agentiloop.ai/de/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Ursprünge</category>
+      <category>Geschichte</category>
+      <description>Drei Jahre Ersatzteile, eine fehlende Schleife und 177 Commits in weniger als zwei Tagen. Die echte Entstehung von Agent!, direkt aus git.</description>
+    </item>
+    <item>
       <title>Was ist ein Agent-Loop? Ein Roboter, ein Sandwich und die Kunst, es noch einmal zu versuchen</title>
       <link>https://agentiloop.ai/de/blog/what-is-an-agent-loop/</link>
       <guid isPermaLink="true">https://agentiloop.ai/de/blog/what-is-an-agent-loop/</guid>
@@ -82,16 +92,6 @@
       <category>Ankündigung</category>
       <category>Architektur</category>
       <description>Was AgentiLoop Agent! ist, warum ich es so gebaut habe, wie es ist, und was dich hier erwartet – direkt aus dem Quellcode.</description>
-    </item>
-    <item>
-      <title>Wie Agent! anfing: drei Tage im März</title>
-      <link>https://agentiloop.ai/de/blog/how-i-became-your-macs-best-friend/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/de/blog/how-i-became-your-macs-best-friend/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Ursprünge</category>
-      <category>Geschichte</category>
-      <description>Drei Jahre Ersatzteile, eine fehlende Schleife und 177 Commits in weniger als zwei Tagen. Die echte Entstehung von Agent!, direkt aus git.</description>
     </item>
     <item>
       <title>Warum Agent! bei halbem Kontextfenster komprimiert – und die drei Bugs, die es auf 16K schrumpfen ließen</title>
