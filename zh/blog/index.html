@@ -137,7 +137,19 @@
                 <p class="blog-rss"><a href="/zh/blog/feed.xml">RSS 订阅</a></p>
             </div>
             <div class="post-list">
-                <a class="post-card post-card-featured" href="/zh/blog/a-release-on-the-first-of-every-month/">
+                <a class="post-card post-card-featured" href="/zh/blog/what-is-an-agent-loop/">
+                    <div class="post-tags"><span class="post-tag">科普</span><span class="post-tag">智能体循环</span></div>
+                    <h2>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</h2>
+                    <p>看一看，选一选，做一做，查一查。一份轻松有趣的图解智能体循环指南——简单到五岁小朋友都能懂，也有足够多的内容留给大人们。</p>
+                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 阅读约 6 分钟<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
+                </a>
+                <a class="post-card" href="/zh/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/">
+                    <div class="post-tags"><span class="post-tag">发布说明</span><span class="post-tag">幕后</span></div>
+                    <h2>Sonoma、Intel，以及那台还没“死”的 Mac</h2>
+                    <p>Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，同时支持 Apple Silicon 和 Intel。很多人都想要一个 macOS 26 之前的版本。它来了。</p>
+                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
+                </a>
+                <a class="post-card" href="/zh/blog/a-release-on-the-first-of-every-month/">
                     <div class="post-tags"><span class="post-tag">发布说明</span><span class="post-tag">幕后</span></div>
                     <h2>每月 1 日发布，中间穿插预发布</h2>
                     <p>Agent! 现在于每月 1 日发布稳定版。每日预发布(之后改为每周)用来试验新功能和修复，候选版本则在发布日之前把一切定下来。</p>
@@ -184,18 +196,6 @@
                     <h2>欢迎来到 Agent! 博客：一个应用，任意 AI，全面掌控你的 Mac</h2>
                     <p>AgentiLoop Agent! 是什么、如何构建，以及这个每日更新的博客将涵盖哪些内容——一切都直接来自源代码。</p>
                     <p class="post-meta"><time datetime="2026-09-25">2026年9月25日</time> · 阅读约 4 分钟<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} 次阅读" data-sep=","> · <span class="post-reads">2 次阅读</span></span></p>
-                </a>
-                <a class="post-card" href="/zh/blog/what-is-an-agent-loop/">
-                    <div class="post-tags"><span class="post-tag">科普</span><span class="post-tag">智能体循环</span></div>
-                    <h2>什么是智能体循环？一个机器人、一份三明治，以及再试一次的艺术</h2>
-                    <p>看一看，选一选，做一做，查一查。一份轻松有趣的图解智能体循环指南——简单到五岁小朋友都能懂，也有足够多的内容留给大人们。</p>
-                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 阅读约 6 分钟<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
-                </a>
-                <a class="post-card" href="/zh/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/">
-                    <div class="post-tags"><span class="post-tag">发布说明</span><span class="post-tag">幕后</span></div>
-                    <h2>Sonoma、Intel，以及那台还没“死”的 Mac</h2>
-                    <p>Agent! for Mac 现在可以在 macOS Sonoma 14.6 及更高版本上运行，同时支持 Apple Silicon 和 Intel。很多人都想要一个 macOS 26 之前的版本。它来了。</p>
-                    <p class="post-meta"><time datetime="2026-09-29">2026年9月29日</time> · 阅读约 5 分钟<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
                 </a>
             </div>
             <div class="center-cta blog-home">
@@ -310,13 +310,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
-        // Blog index: most reads first, then newest.
+        // Blog index: unread (new) posts first, newest first; then most reads, then newest.
         var list = document.querySelector('.post-list');
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
         [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
-            return reads(b) - reads(a) || date(b).localeCompare(date(a));
+            var ra = reads(a), rb = reads(b);
+            return (!rb - !ra) || rb - ra || date(b).localeCompare(date(a));
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>

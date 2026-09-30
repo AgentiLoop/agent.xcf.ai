@@ -137,7 +137,19 @@
                 <p class="blog-rss"><a href="/es/blog/feed.xml">Feed RSS</a></p>
             </div>
             <div class="post-list">
-                <a class="post-card post-card-featured" href="/es/blog/a-release-on-the-first-of-every-month/">
+                <a class="post-card post-card-featured" href="/es/blog/what-is-an-agent-loop/">
+                    <div class="post-tags"><span class="post-tag">Explicaciones</span><span class="post-tag">Bucles de agente</span></div>
+                    <h2>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</h2>
+                    <p>Mirar, elegir, actuar, comprobar. Una guía ilustrada y juguetona sobre los bucles de agente, tan sencilla que la entiende un niño de cinco años y con mucho para los mayores.</p>
+                    <p class="post-meta"><time datetime="2026-09-29">29 de septiembre de 2026</time> · 6 min de lectura<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="{n} lecturas" data-sep="." hidden> · <span class="post-reads">0 lecturas</span></span></p>
+                </a>
+                <a class="post-card" href="/es/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/">
+                    <div class="post-tags"><span class="post-tag">Notas de versión</span><span class="post-tag">Entre bastidores</span></div>
+                    <h2>Sonoma, Intel y el Mac que todavía no estaba muerto</h2>
+                    <p>Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon e Intel. Muchos pedisteis una versión anterior a macOS 26. Aquí la tenéis.</p>
+                    <p class="post-meta"><time datetime="2026-09-29">29 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} lecturas" data-sep="." hidden> · <span class="post-reads">0 lecturas</span></span></p>
+                </a>
+                <a class="post-card" href="/es/blog/a-release-on-the-first-of-every-month/">
                     <div class="post-tags"><span class="post-tag">Notas de versión</span><span class="post-tag">Entre bastidores</span></div>
                     <h2>Una versión el día 1 de cada mes, y versiones preliminares entre medias</h2>
                     <p>Agent! publica ahora una versión estable el día 1 de cada mes. Las versiones preliminares diarias (pronto semanales) son donde se prueban las novedades y correcciones, y las release candidates lo dejan todo atado antes del gran día.</p>
@@ -184,18 +196,6 @@
                     <h2>Bienvenido al blog de Agent!: una app, cualquier IA, control total de tu Mac</h2>
                     <p>Qué es AgentiLoop Agent!, cómo está construido y de qué hablará este blog diario, contado directamente desde el código fuente.</p>
                     <p class="post-meta"><time datetime="2026-09-25">25 de septiembre de 2026</time> · 4 min de lectura<span class="post-reads-live" data-slug="welcome-to-the-agent-blog" data-n="2" data-fmt="{n} lecturas" data-sep="."> · <span class="post-reads">2 lecturas</span></span></p>
-                </a>
-                <a class="post-card" href="/es/blog/what-is-an-agent-loop/">
-                    <div class="post-tags"><span class="post-tag">Explicaciones</span><span class="post-tag">Bucles de agente</span></div>
-                    <h2>¿Qué es un bucle de agente? Un robot, un sándwich y el arte de volver a intentarlo</h2>
-                    <p>Mirar, elegir, actuar, comprobar. Una guía ilustrada y juguetona sobre los bucles de agente, tan sencilla que la entiende un niño de cinco años y con mucho para los mayores.</p>
-                    <p class="post-meta"><time datetime="2026-09-29">29 de septiembre de 2026</time> · 6 min de lectura<span class="post-reads-live" data-slug="what-is-an-agent-loop" data-n="0" data-fmt="{n} lecturas" data-sep="." hidden> · <span class="post-reads">0 lecturas</span></span></p>
-                </a>
-                <a class="post-card" href="/es/blog/sonoma-intel-and-the-mac-that-was-not-dead-yet/">
-                    <div class="post-tags"><span class="post-tag">Notas de versión</span><span class="post-tag">Entre bastidores</span></div>
-                    <h2>Sonoma, Intel y el Mac que todavía no estaba muerto</h2>
-                    <p>Agent! para Mac ya funciona en macOS Sonoma 14.6 y posteriores, en Apple Silicon e Intel. Muchos pedisteis una versión anterior a macOS 26. Aquí la tenéis.</p>
-                    <p class="post-meta"><time datetime="2026-09-29">29 de septiembre de 2026</time> · 5 min de lectura<span class="post-reads-live" data-slug="sonoma-intel-and-the-mac-that-was-not-dead-yet" data-n="0" data-fmt="{n} lecturas" data-sep="." hidden> · <span class="post-reads">0 lecturas</span></span></p>
                 </a>
             </div>
             <div class="center-cta blog-home">
@@ -310,13 +310,14 @@
             el.lastChild.textContent = el.dataset.fmt.replace('{n}', String(n).replace(/\B(?=(\d{3})+(?!\d))/g, el.dataset.sep));
             el.hidden = false;
         });
-        // Blog index: most reads first, then newest.
+        // Blog index: unread (new) posts first, newest first; then most reads, then newest.
         var list = document.querySelector('.post-list');
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
         [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
-            return reads(b) - reads(a) || date(b).localeCompare(date(a));
+            var ra = reads(a), rb = reads(b);
+            return (!rb - !ra) || rb - ra || date(b).localeCompare(date(a));
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
     }).catch(function () {});
     </script>
