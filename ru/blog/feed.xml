@@ -84,6 +84,16 @@
       <description>Что такое AgentiLoop Agent!, почему я сделал его именно так и что вы здесь найдёте — прямо из исходного кода.</description>
     </item>
     <item>
+      <title>How I Became Your Mac&#x27;s New Best Friend</title>
+      <link>https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Origins</category>
+      <category>Internals</category>
+      <description>The origin story of Agent! and how it learned to actually do things on your Mac.</description>
+    </item>
+    <item>
       <title>Почему Agent! сжимает контекст на половине окна и три бага, которые урезали порог до 16K</title>
       <link>https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ru/blog/context-compaction-half-the-window/</guid>

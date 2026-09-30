@@ -84,6 +84,16 @@
       <description>AgentiLoop Agent!가 무엇인지, 왜 이런 방식으로 만들었는지, 그리고 이곳에서 무엇을 만나게 될지, 소스 코드에서 바로 꺼내 이야기합니다.</description>
     </item>
     <item>
+      <title>How I Became Your Mac&#x27;s New Best Friend</title>
+      <link>https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Origins</category>
+      <category>Internals</category>
+      <description>The origin story of Agent! and how it learned to actually do things on your Mac.</description>
+    </item>
+    <item>
       <title>Agent!가 컨텍스트 창의 절반에서 압축하는 이유, 그리고 임계값을 16K로 줄여 버린 세 가지 버그</title>
       <link>https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/context-compaction-half-the-window/</guid>

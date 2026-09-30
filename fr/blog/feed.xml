@@ -84,6 +84,16 @@
       <description>Ce qu&#x27;est AgentiLoop Agent!, pourquoi je l&#x27;ai conçu ainsi et ce que vous trouverez ici, directement à partir du code source.</description>
     </item>
     <item>
+      <title>How I Became Your Mac&#x27;s New Best Friend</title>
+      <link>https://agentiloop.ai/fr/blog/how-i-became-your-macs-best-friend/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/fr/blog/how-i-became-your-macs-best-friend/</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Origins</category>
+      <category>Internals</category>
+      <description>The origin story of Agent! and how it learned to actually do things on your Mac.</description>
+    </item>
+    <item>
       <title>Pourquoi Agent! compacte à la moitié de la fenêtre, et les trois bugs qui l&#x27;ont réduite à 16K</title>
       <link>https://agentiloop.ai/fr/blog/context-compaction-half-the-window/</link>
       <guid isPermaLink="true">https://agentiloop.ai/fr/blog/context-compaction-half-the-window/</guid>
