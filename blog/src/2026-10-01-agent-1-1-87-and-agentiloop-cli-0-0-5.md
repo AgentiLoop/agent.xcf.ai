@@ -28,7 +28,6 @@ tags: Announcement, Release, Cross-Platform
 <text x="546" y="178" font-family="ui-monospace,monospace" font-size="15" fill="#4fd1e8">$ agentiloop</text>
 <g stroke="#0f1724" stroke-width="2"><ellipse cx="625" cy="236" rx="30" ry="36" fill="#4fd1e8"/><circle cx="600" cy="204" r="7" fill="#4fd1e8"/><circle cx="650" cy="204" r="7" fill="#4fd1e8"/></g>
 <circle cx="612" cy="222" r="9" fill="#fff"/><circle cx="638" cy="222" r="9" fill="#fff"/><circle cx="614" cy="223" r="4" fill="#0f1724"/><circle cx="640" cy="223" r="4" fill="#0f1724"/>
-<rect x="619" y="238" width="12" height="9" rx="2" fill="#fff" stroke="#0f1724" stroke-width="1.5"/>
 <text x="625" y="292" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#c8f4fb">Go 0.0.5</text>
 <text x="380" y="345" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#9fb6d4">One loop. Three ways to run it.</text>
 </svg>
