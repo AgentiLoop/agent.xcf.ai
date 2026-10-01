@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
+    <item>
+      <title>The Whole Family Ships: Agent! 1.1.87 and AgentiLoop CLI 0.0.5</title>
+      <link>https://agentiloop.ai/ja/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Announcement</category>
+      <category>Release</category>
+      <category>Cross-Platform</category>
+      <description>Agent! for Mac gets Auto-Pilot, six new providers, a stricter critic and macOS 14.6 support. The Rust and Go CLIs get a bigger toolbox: search, web fetch, todos, AGENTS.md, /undo, custom commands and --json.</description>
+    </item>
     <item>
       <title>Agent! はこうして始まった：3月の3日間</title>
       <link>https://agentiloop.ai/ja/blog/how-i-became-your-macs-best-friend/</link>
