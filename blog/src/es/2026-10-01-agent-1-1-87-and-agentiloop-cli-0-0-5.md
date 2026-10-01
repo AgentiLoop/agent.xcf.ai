@@ -150,7 +150,7 @@ git diff origin/main | agentiloop --deny-tool bash --json "review this diff" -
 
 Porque son la misma idea con tres formas. Agent! para Mac es el producto estrella: controla tus apps, tus compilaciones de Xcode y todo tu escritorio. Las CLI llevan el mismo bucle a cualquier terminal en macOS, Windows y Linux. El Esc para cancelar de la CLI y el Auto-Pilot de la app para Mac con su botón Stop All responden a la misma pregunta desde dos lados: *¿cómo sigue una persona al mando de un bucle que se ejecuta solo?*
 
-Esa es la parte que más nos importa. No un avatar simpático, ni una cifra más alta en un benchmark, sino la persona en el bucle: tú fijas el objetivo, ves cada paso, puedes detenerlo y puedes deshacerlo.
+Esa es la parte que más nos importa. No un avatar simpático, ni una cifra más alta en un benchmark, sino la persona en el bucle: tú fijas el objetivo, ves cada paso, puedes detenerlo. En la CLI, `/undo` además revierte las últimas ediciones de archivos del agente. Auto-Pilot no se puede deshacer, así que úsalo en un proyecto que esté en git.
 
 ## Consíguelos
 

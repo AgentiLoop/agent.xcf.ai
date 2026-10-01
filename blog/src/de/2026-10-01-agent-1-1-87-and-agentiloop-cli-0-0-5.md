@@ -150,7 +150,7 @@ git diff origin/main | agentiloop --deny-tool bash --json "review this diff" -
 
 Weil es dieselbe Idee in drei Formen ist. Agent! für Mac ist das Flaggschiff: Es steuert deine Apps, deine Xcode-Builds und deinen ganzen Desktop. Die CLIs tragen denselben Loop in jedes Terminal unter macOS, Windows und Linux. Esc-zum-Abbrechen in der CLI und der Auto-Pilot der Mac-App mit seinem Stop-All-Button beantworten dieselbe Frage von zwei Seiten: *Wie behält ein Mensch die Kontrolle über einen Loop, der von selbst läuft?*
 
-Das ist der Teil, der uns am wichtigsten ist. Kein niedlicher Avatar, keine größere Zahl in einem Benchmark, sondern der Mensch im Loop: Du legst das Ziel fest, du siehst jeden Schritt, du kannst ihn stoppen, und du kannst ihn rückgängig machen.
+Das ist der Teil, der uns am wichtigsten ist. Kein niedlicher Avatar, keine größere Zahl in einem Benchmark, sondern der Mensch im Loop: Du legst das Ziel fest, du siehst jeden Schritt, und du kannst ihn stoppen. In der CLI macht `/undo` außerdem die letzten Dateiänderungen des Agenten rückgängig. Auto-Pilot lässt sich nicht rückgängig machen, also nutze ihn in einem Projekt, das in git liegt.
 
 ## Hol sie dir
 

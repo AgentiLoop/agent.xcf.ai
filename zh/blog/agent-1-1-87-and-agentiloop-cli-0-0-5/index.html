@@ -236,7 +236,7 @@
 <pre><code>git diff origin/main | agentiloop --deny-tool bash --json &quot;review this diff&quot; -</code></pre>
 <h2 id="为什么一起发布">为什么一起发布？</h2>
 <p>因为它们是同一个理念的三种形态。Mac 版 Agent! 是旗舰：它操控你的应用、你的 Xcode 构建以及整个桌面。CLI 则把同样的循环带到 macOS、Windows 和 Linux 上的每一个终端。CLI 的按 Esc 取消，以及 Mac 应用带 Stop All 按钮的自动驾驶，从两个方向回答了同一个问题：<em>一个人如何掌控一个自行运转的循环？</em></p>
-<p>这是我们最在意的部分。不是可爱的头像，也不是基准测试上更高的分数，而是人在回路中：你设定目标，你看到每一步，你可以停止它，也可以撤销它。</p>
+<p>这是我们最在意的部分。不是可爱的头像，也不是基准测试上更高的分数，而是人在回路中：你设定目标，你看到每一步，你可以停止它。在 CLI 中，<code>/undo</code> 还能回滚智能体最近一次的文件编辑。Auto-Pilot 无法撤销，所以请在使用 git 管理的项目中运行它。</p>
 <h2 id="获取方式">获取方式</h2>
 <ul><li><strong>Mac 版 Agent! 1.1.87</strong>：<a href="https://github.com/AgentiLoop/Agent/releases/tag/v1.1.87.287" target="_blank" rel="noopener">从 GitHub 下载</a>或运行 <code>brew update &amp;&amp; brew install --cask agentiloop-agent</code>。需要 macOS 14.6 或更高版本，Apple Silicon 或 Intel。</li><li><strong>AgentiLoop CLI 0.0.5 (Rust)</strong>：<a href="https://github.com/AgentiLoop/AgentiLoopCLI/releases/tag/v0.0.5" target="_blank" rel="noopener">GitHub 上的发布页</a>。</li><li><strong>AgentiLoopGo 0.0.5 (Go)</strong>：<a href="https://github.com/AgentiLoop/AgentiLoopGo/releases/tag/v0.0.5" target="_blank" rel="noopener">GitHub 上的发布页</a>。</li></ul>
 <p>macOS 版 CLI 二进制文件已签名并经过公证。解压后，将 <code>agentiloop</code> 放入你的 PATH 并运行它，设置向导会引导你完成剩下的步骤。</p>
