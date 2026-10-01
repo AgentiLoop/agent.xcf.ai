@@ -13,15 +13,15 @@
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
     <item>
-      <title>The Whole Family Ships: Agent! 1.1.87 and AgentiLoop CLI 0.0.5</title>
+      <title>全家齐发：Agent! 1.1.87 与 AgentiLoop CLI 0.0.5</title>
       <link>https://agentiloop.ai/zh/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Announcement</category>
-      <category>Release</category>
-      <category>Cross-Platform</category>
-      <description>Agent! for Mac gets Auto-Pilot, six new providers, a stricter critic and macOS 14.6 support. The Rust and Go CLIs get a bigger toolbox: search, web fetch, todos, AGENTS.md, /undo, custom commands and --json.</description>
+      <category>公告</category>
+      <category>发布</category>
+      <category>跨平台</category>
+      <description>Mac 版 Agent! 迎来自动驾驶（Auto-Pilot）、六个新提供商、更严格的评审器以及对 macOS 14.6 的支持。Rust 和 Go 两个 CLI 获得了更大的工具箱：搜索、网页抓取、待办清单、AGENTS.md、/undo、自定义命令和 --json。</description>
     </item>
     <item>
       <title>Agent! 是怎么开始的：三月里的三天</title>

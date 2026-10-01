@@ -13,15 +13,15 @@
       <link>https://agentiloop.ai/fr/blog/</link>
     </image>
     <item>
-      <title>The Whole Family Ships: Agent! 1.1.87 and AgentiLoop CLI 0.0.5</title>
+      <title>Toute la famille sort : Agent! 1.1.87 et AgentiLoop CLI 0.0.5</title>
       <link>https://agentiloop.ai/fr/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</link>
       <guid isPermaLink="true">https://agentiloop.ai/fr/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</guid>
       <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Announcement</category>
-      <category>Release</category>
-      <category>Cross-Platform</category>
-      <description>Agent! for Mac gets Auto-Pilot, six new providers, a stricter critic and macOS 14.6 support. The Rust and Go CLIs get a bigger toolbox: search, web fetch, todos, AGENTS.md, /undo, custom commands and --json.</description>
+      <category>Annonce</category>
+      <category>Version</category>
+      <category>Multiplateforme</category>
+      <description>Agent! pour Mac accueille Auto-Pilot, six nouveaux fournisseurs, un critique plus strict et la prise en charge de macOS 14.6. Les CLI en Rust et en Go s&#x27;offrent une boîte à outils plus fournie : recherche, récupération web, tâches, AGENTS.md, /undo, commandes personnalisées et --json.</description>
     </item>
     <item>
       <title>Comment Agent! a commencé : trois jours en mars</title>
