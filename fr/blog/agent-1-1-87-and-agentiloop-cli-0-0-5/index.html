@@ -144,7 +144,7 @@
                     <div class="post-tags"><span class="post-tag">Annonce</span><span class="post-tag">Version</span><span class="post-tag">Multiplateforme</span></div>
                     <h1>Toute la famille sort : Agent! 1.1.87 et AgentiLoop CLI 0.0.5</h1>
                     <p class="post-dek">Agent! pour Mac accueille Auto-Pilot, six nouveaux fournisseurs, un critique plus strict et la prise en charge de macOS 14.6. Les CLI en Rust et en Go s&#x27;offrent une boîte à outils plus fournie : recherche, récupération web, tâches, AGENTS.md, /undo, commandes personnalisées et --json.</p>
-                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-10-01">1 octobre 2026</time> · 7 min de lecture<span class="post-reads-live" data-slug="agent-1-1-87-and-agentiloop-cli-0-0-5" data-n="0" data-fmt="{n} lectures" data-fmt-one="{n} lecture" data-sep=" " hidden> · <span class="post-reads">0 lectures</span></span></p>
+                    <p class="post-meta">Par Todd Bruss · <time datetime="2026-10-01">1 octobre 2026</time> · 7 min de lecture<span class="post-reads-live" data-slug="agent-1-1-87-and-agentiloop-cli-0-0-5" data-n="2" data-fmt="{n} lectures" data-fmt-one="{n} lecture" data-sep=" "> · <span class="post-reads">2 lectures</span></span></p>
                 </header>
                 <div class="post-body">
 <figure style="margin:2rem 0">
@@ -371,10 +371,23 @@
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
-        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+        var cards = [].slice.call(list.querySelectorAll('.post-card'));
+        var before = cards.map(function (c) { return c.getBoundingClientRect(); });
+        cards.slice().sort(function (a, b) {
             var ra = reads(a), rb = reads(b);
             return (!rb - !ra) || date(b).localeCompare(date(a)) || rb - ra;
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
+        // Animate the reorder (FLIP): start each card at its old spot, then glide to the new one.
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !cards[0].animate) return;
+        cards.forEach(function (c, i) {
+            var a = before[i], b = c.getBoundingClientRect();
+            var dx = a.left - b.left, dy = a.top - b.top;
+            if (!dx && !dy && a.width === b.width && a.height === b.height) return;
+            c.animate([
+                { transformOrigin: 'top left', transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + (a.width / b.width) + ',' + (a.height / b.height) + ')' },
+                { transformOrigin: 'top left', transform: 'none' }
+            ], { duration: 600, easing: 'cubic-bezier(.2,.8,.2,1)' });
+        });
     }).catch(function () {});
     </script>
 </body>

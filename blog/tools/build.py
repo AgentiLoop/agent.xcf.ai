@@ -345,10 +345,23 @@ FOOT = '''
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
-        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+        var cards = [].slice.call(list.querySelectorAll('.post-card'));
+        var before = cards.map(function (c) { return c.getBoundingClientRect(); });
+        cards.slice().sort(function (a, b) {
             var ra = reads(a), rb = reads(b);
             return (!rb - !ra) || date(b).localeCompare(date(a)) || rb - ra;
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
+        // Animate the reorder (FLIP): start each card at its old spot, then glide to the new one.
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !cards[0].animate) return;
+        cards.forEach(function (c, i) {
+            var a = before[i], b = c.getBoundingClientRect();
+            var dx = a.left - b.left, dy = a.top - b.top;
+            if (!dx && !dy && a.width === b.width && a.height === b.height) return;
+            c.animate([
+                { transformOrigin: 'top left', transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + (a.width / b.width) + ',' + (a.height / b.height) + ')' },
+                { transformOrigin: 'top left', transform: 'none' }
+            ], { duration: 600, easing: 'cubic-bezier(.2,.8,.2,1)' });
+        });
     }).catch(function () {});
     </script>
 </body>

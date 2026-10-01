@@ -141,7 +141,7 @@
                     <div class="post-tags"><span class="post-tag">公告</span><span class="post-tag">发布</span><span class="post-tag">跨平台</span></div>
                     <h2>全家齐发：Agent! 1.1.87 与 AgentiLoop CLI 0.0.5</h2>
                     <p>Mac 版 Agent! 迎来自动驾驶（Auto-Pilot）、六个新提供商、更严格的评审器以及对 macOS 14.6 的支持。Rust 和 Go 两个 CLI 获得了更大的工具箱：搜索、网页抓取、待办清单、AGENTS.md、/undo、自定义命令和 --json。</p>
-                    <p class="post-meta"><time datetime="2026-10-01">2026年10月1日</time> · 阅读约 7 分钟<span class="post-reads-live" data-slug="agent-1-1-87-and-agentiloop-cli-0-0-5" data-n="0" data-fmt="{n} 次阅读" data-fmt-one="{n} 次阅读" data-sep="," hidden> · <span class="post-reads">0 次阅读</span></span></p>
+                    <p class="post-meta"><time datetime="2026-10-01">2026年10月1日</time> · 阅读约 7 分钟<span class="post-reads-live" data-slug="agent-1-1-87-and-agentiloop-cli-0-0-5" data-n="2" data-fmt="{n} 次阅读" data-fmt-one="{n} 次阅读" data-sep=","> · <span class="post-reads">2 次阅读</span></span></p>
                 </a>
                 <a class="post-card" href="/zh/blog/how-i-became-your-macs-best-friend/">
                     <div class="post-tags"><span class="post-tag">起源</span><span class="post-tag">历史</span></div>
@@ -327,10 +327,23 @@
         if (!list) return;
         var reads = function (c) { var e = c.querySelector('.post-reads-live'); return Math.max(v[e.dataset.slug] || 0, +e.dataset.n || 0); };
         var date = function (c) { return c.querySelector('time').getAttribute('datetime'); };
-        [].slice.call(list.querySelectorAll('.post-card')).sort(function (a, b) {
+        var cards = [].slice.call(list.querySelectorAll('.post-card'));
+        var before = cards.map(function (c) { return c.getBoundingClientRect(); });
+        cards.slice().sort(function (a, b) {
             var ra = reads(a), rb = reads(b);
             return (!rb - !ra) || date(b).localeCompare(date(a)) || rb - ra;
         }).forEach(function (c, i) { c.classList.toggle('post-card-featured', i === 0); list.appendChild(c); });
+        // Animate the reorder (FLIP): start each card at its old spot, then glide to the new one.
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !cards[0].animate) return;
+        cards.forEach(function (c, i) {
+            var a = before[i], b = c.getBoundingClientRect();
+            var dx = a.left - b.left, dy = a.top - b.top;
+            if (!dx && !dy && a.width === b.width && a.height === b.height) return;
+            c.animate([
+                { transformOrigin: 'top left', transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + (a.width / b.width) + ',' + (a.height / b.height) + ')' },
+                { transformOrigin: 'top left', transform: 'none' }
+            ], { duration: 600, easing: 'cubic-bezier(.2,.8,.2,1)' });
+        });
     }).catch(function () {});
     </script>
 </body>
