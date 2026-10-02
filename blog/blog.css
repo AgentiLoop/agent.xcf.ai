@@ -29,6 +29,17 @@
 .post-card .post-meta { margin-top: 14px; font-size: 0.82rem; }
 .post-card-featured { padding: 34px 34px 26px; }
 
+/* Archive: compact list of low-read posts below the cards (build.py --archive) */
+.post-archive { max-width: 960px; margin: 48px auto 0; padding-top: 28px; border-top: 1px solid var(--card-border); }
+.post-archive h2 { font-size: 1.3rem; margin: 0 0 6px; }
+.post-archive > p { color: var(--text-dim); font-weight: 300; font-size: 0.95rem; margin: 0 0 16px; }
+.post-archive-list { list-style: none; margin: 0; padding: 0; }
+.post-archive-list li { padding: 8px 0; border-bottom: 1px solid var(--card-border); font-size: 0.95rem; }
+.post-archive-list li:last-child { border-bottom: 0; }
+.post-archive-list a { color: var(--text); text-decoration: none; }
+.post-archive-list a:hover { color: var(--accent-2); text-decoration: underline; }
+.post-archive-list .post-meta { font-size: 0.82rem; margin-left: 8px; white-space: nowrap; }
+
 .post-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .post-tag {
     font-size: 0.72rem;

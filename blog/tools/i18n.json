@@ -34,7 +34,9 @@
   ],
   "reads": "{n} reads",
   "reads_one": "{n} read",
-  "thousands": ","
+  "thousands": ",",
+  "archive_h": "Archive",
+  "archive_intro": "Older posts that found few readers. They stay online and come back to the list above if they pick up again."
  },
  "es": {
   "all_posts": "← Todas las entradas",
@@ -71,7 +73,9 @@
   ],
   "reads": "{n} lecturas",
   "reads_one": "{n} lectura",
-  "thousands": "."
+  "thousands": ".",
+  "archive_h": "Archivo",
+  "archive_intro": "Artículos antiguos con pocos lectores. Siguen en línea y vuelven a la lista de arriba si vuelven a leerse."
  },
  "fr": {
   "all_posts": "← Tous les articles",
@@ -108,7 +112,9 @@
   ],
   "reads": "{n} lectures",
   "reads_one": "{n} lecture",
-  "thousands": " "
+  "thousands": " ",
+  "archive_h": "Archives",
+  "archive_intro": "Des articles plus anciens qui ont trouvé peu de lecteurs. Ils restent en ligne et reviennent dans la liste ci-dessus s’ils retrouvent un public."
  },
  "de": {
   "all_posts": "← Alle Beiträge",
@@ -145,7 +151,9 @@
   ],
   "reads": "{n} Aufrufe",
   "reads_one": "{n} Aufruf",
-  "thousands": "."
+  "thousands": ".",
+  "archive_h": "Archiv",
+  "archive_intro": "Ältere Beiträge mit wenigen Lesern. Sie bleiben online und kehren in die Liste oben zurück, wenn sie wieder gelesen werden."
  },
  "zh": {
   "all_posts": "← 全部文章",
@@ -181,7 +189,9 @@
    "12月"
   ],
   "reads": "{n} 次阅读",
-  "thousands": ","
+  "thousands": ",",
+  "archive_h": "归档",
+  "archive_intro": "读者较少的旧文章。它们仍然在线，如果再次被阅读，会回到上面的列表。"
  },
  "ru": {
   "all_posts": "← Все статьи",
@@ -218,7 +228,9 @@
   ],
   "reads": "{n} просмотров",
   "reads_one": "{n} просмотр",
-  "thousands": " "
+  "thousands": " ",
+  "archive_h": "Архив",
+  "archive_intro": "Старые записи, которые нашли мало читателей. Они остаются онлайн и возвращаются в список выше, если их снова начинают читать."
  },
  "ko": {
   "all_posts": "← 전체 글",
@@ -254,7 +266,9 @@
    "12월"
   ],
   "reads": "조회 {n}회",
-  "thousands": ","
+  "thousands": ",",
+  "archive_h": "보관함",
+  "archive_intro": "독자가 적었던 이전 글입니다. 계속 온라인에 남아 있으며 다시 읽히면 위 목록으로 돌아옵니다."
  },
  "ja": {
   "all_posts": "← 記事一覧",
@@ -290,6 +304,8 @@
    "12月"
   ],
   "reads": "{n} 回閲覧",
-  "thousands": ","
+  "thousands": ",",
+  "archive_h": "アーカイブ",
+  "archive_intro": "読者の少なかった過去の記事です。公開は続き、再び読まれるようになれば上のリストに戻ります。"
  }
 }

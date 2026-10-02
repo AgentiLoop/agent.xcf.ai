@@ -21,7 +21,12 @@ by re-running this script (e.g. from a daily job) and committing the output.
 Writes:  blog/...  and  <lang>/blog/...   (<slug>/index.html, index.html, feed.xml)
 Updates: the <!-- blog:start --> ... <!-- blog:end --> block in sitemap.xml
 
-Usage:   python3 blog/tools/build.py [YYYY-MM-DD]   (optional date publishes as of that day)
+Archive: the index has an "Archive" section at the bottom for posts nobody reads. Which posts are
+archived is kept in blog/tools/archive.json and only changes when you run `build.py --archive`:
+posts with ARCHIVE_AT (3) reads or fewer are archived, archived posts that reach UNARCHIVE_AT (12)
+reads come back. Archived posts keep their URL, feed entry and sitemap entry.
+
+Usage:   python3 blog/tools/build.py [--archive] [YYYY-MM-DD]   (optional date publishes as of that day)
 """
 import datetime
 import html
@@ -540,8 +545,9 @@ def render_index(posts, lang):
     u = UI[lang]
     base = prefix(lang) + '/blog/'
     cards = []
+    live = [p for p in posts if not p.get('archived')]
     # Zero-read posts first; then newest first; then most reads (the footer script re-sorts with live counts).
-    ranked = sorted(posts, key=lambda p: (not p.get('views', 0), p['date'], p.get('views', 0), p['slug']), reverse=True)
+    ranked = sorted(live, key=lambda p: (not p.get('views', 0), p['date'], p.get('views', 0), p['slug']), reverse=True)
     for n, p in enumerate(ranked):
         t = p['lang'][lang]
         cards.append('''
@@ -554,6 +560,20 @@ def render_index(posts, lang):
                                tags=tags_html(t['tags']), title=html.escape(t['title']),
                                desc=html.escape(t['description']), iso=p['date'].isoformat(),
                                date=nice_date(p['date'], lang), mins=u['min_read'].format(n=p['minutes']) + reads_html(p, lang)))
+    archived = [p for p in posts if p.get('archived')]  # newest first (posts is date-sorted)
+    archive = ''
+    if archived:
+        rows = ''.join('''
+                <li><a href="{base}{slug}/">{title}</a> <span class="post-meta"><time datetime="{iso}">{date}</time>{reads}</span></li>'''.format(
+            base=base, slug=p['slug'], title=html.escape(p['lang'][lang]['title']), iso=p['date'].isoformat(),
+            date=nice_date(p['date'], lang), reads=reads_html(p, lang)) for p in archived)
+        archive = '''
+            <section class="post-archive" id="archive">
+                <h2>{h}</h2>
+                <p>{intro}</p>
+                <ul class="post-archive-list">{rows}
+                </ul>
+            </section>'''.format(h=html.escape(u['archive_h']), intro=html.escape(u['archive_intro']), rows=rows)
     body = '''
     <main class="section blog">
         <div class="container">
@@ -563,10 +583,10 @@ def render_index(posts, lang):
                 <p class="blog-rss"><a href="{base}feed.xml">{rss}</a></p>
             </div>
             <div class="post-list">{cards}
-            </div>{home}
+            </div>{archive}{home}
         </div>
     </main>
-'''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards), home=back_home(lang))
+'''.format(h=u['index_h'], intro=html.escape(u['index_intro']), base=base, rss=u['rss'], cards=''.join(cards), archive=archive, home=back_home(lang))
     blog_url = SITE + base
     ld = ld_script({'@context': 'https://schema.org', '@graph': [
         {'@type': 'Blog', '@id': blog_url + '#blog', 'name': u['post_suffix'], 'description': u['index_desc'],
@@ -717,13 +737,50 @@ def reads_html(p, lang):
         (one if n == 1 else UI[lang]['reads']).format(n=num))
 
 
+# ---------------------------------------------------------------- Archive ---
+# Posts nobody reads move to the "Archive" section at the bottom of the index. The list of archived
+# slugs lives in blog/tools/archive.json and only changes on a manual `build.py --archive` run.
+ARCHIVE_FILE = BLOG / 'tools' / 'archive.json'
+ARCHIVE_AT = 3      # archive a post with this many reads or fewer
+UNARCHIVE_AT = 12   # bring an archived post back once it has this many reads or more
+
+
+def load_archive():
+    return set(json.loads(ARCHIVE_FILE.read_text())) if ARCHIVE_FILE.exists() else set()
+
+
+def update_archive(posts, archived):
+    """Apply the thresholds to the current read counts and save the new list. Returns the new set."""
+    new = set(archived)
+    for p in posts:
+        if p['slug'] in archived and p['views'] >= UNARCHIVE_AT:
+            new.discard(p['slug'])
+            print('unarchived: %s (%d reads)' % (p['slug'], p['views']))
+        elif p['slug'] not in archived and p['views'] <= ARCHIVE_AT:
+            new.add(p['slug'])
+            print('archived:   %s (%d reads)' % (p['slug'], p['views']))
+    if new == archived:
+        print('archive: no changes')
+    ARCHIVE_FILE.write_text(json.dumps(sorted(new), indent=1) + '\n')
+    return new
+
+
 def main():
     # Optional: `build.py YYYY-MM-DD` publishes as of that date (e.g. to release tomorrow's post early).
-    today = datetime.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else datetime.date.today()
+    # Optional: `build.py --archive` moves posts in and out of the Archive section by read count (see above).
+    args = sys.argv[1:]
+    do_archive = '--archive' in args
+    args = [a for a in args if a != '--archive']
+    today = datetime.date.fromisoformat(args[0]) if args else datetime.date.today()
     posts = load_posts(today)
     views = fetch_views(posts, today)
     for p in posts:
         p['views'] = views.get(p['slug'], 0)
+    archived = load_archive()
+    if do_archive:
+        archived = update_archive(posts, archived)
+    for p in posts:
+        p['archived'] = p['slug'] in archived
     for lang in LANGS:
         out_dir = BLOG if lang == 'en' else ROOT / lang / 'blog'
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -735,7 +792,7 @@ def main():
             out.write_text(render_post(p, newer, older, lang), encoding='utf-8')
         (out_dir / 'index.html').write_text(render_index(posts, lang), encoding='utf-8')
         (out_dir / 'feed.xml').write_text(render_feed(posts, lang), encoding='utf-8')
-        print('built  %s/blog/ (%d posts + index + feed.xml)' % (prefix(lang), len(posts)))
+        print('built  %s/blog/ (%d posts, %d archived + index + feed.xml)' % (prefix(lang), len(posts), len(archived)))
     update_sitemap(posts)
     print('updated sitemap.xml')
 
