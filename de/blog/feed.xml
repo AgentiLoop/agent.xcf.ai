@@ -13,7 +13,7 @@
       <link>https://agentiloop.ai/de/blog/</link>
     </image>
     <item>
-      <title>GoKart: A Mario Kart-Style Racer That Auto-Pilot Built in an Afternoon</title>
+      <title>GoKart: Ein Rennspiel im Mario-Kart-Stil, das Auto-Pilot an einem Nachmittag gebaut hat</title>
       <link>https://agentiloop.ai/de/blog/gokart-built-on-auto-pilot/</link>
       <guid isPermaLink="true">https://agentiloop.ai/de/blog/gokart-built-on-auto-pilot/</guid>
       <pubDate>Fri, 02 Oct 2026 12:00:00 +0000</pubDate>
@@ -21,7 +21,7 @@
       <category>Auto-Pilot</category>
       <category>Showcase</category>
       <category>Godot</category>
-      <description>Give Agent!&#x27;s Auto-Pilot one goal - &quot;create a Mario Kart clone called GoKart&quot; - and come back to a Godot 4 racer with three tracks, eight items, AI rivals and 3,344 passing test checks. Here is what the log says actually happened, including the parts where it got stuck.</description>
+      <description>Gib dem Auto-Pilot von Agent! ein einziges Ziel - „erstelle einen Mario-Kart-Klon namens GoKart&quot; - und komm zurück zu einem Godot-4-Rennspiel mit drei Strecken, acht Items, KI-Gegnern und 3.344 bestandenen Test-Checks. Hier steht, was laut Protokoll wirklich passiert ist, einschließlich der Stellen, an denen es feststeckte.</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>

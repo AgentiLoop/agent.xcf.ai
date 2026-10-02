@@ -13,15 +13,15 @@
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
     <item>
-      <title>GoKart: A Mario Kart-Style Racer That Auto-Pilot Built in an Afternoon</title>
+      <title>GoKart：自动驾驶在一个下午做出的马里奥赛车风格竞速游戏</title>
       <link>https://agentiloop.ai/zh/blog/gokart-built-on-auto-pilot/</link>
       <guid isPermaLink="true">https://agentiloop.ai/zh/blog/gokart-built-on-auto-pilot/</guid>
       <pubDate>Fri, 02 Oct 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
       <category>Auto-Pilot</category>
-      <category>Showcase</category>
+      <category>案例展示</category>
       <category>Godot</category>
-      <description>Give Agent!&#x27;s Auto-Pilot one goal - &quot;create a Mario Kart clone called GoKart&quot; - and come back to a Godot 4 racer with three tracks, eight items, AI rivals and 3,344 passing test checks. Here is what the log says actually happened, including the parts where it got stuck.</description>
+      <description>给 Agent! 的自动驾驶（Auto-Pilot）一个目标——&quot;创建一个名为 GoKart 的马里奥赛车克隆&quot;——回来时就得到了一款 Godot 4 竞速游戏：三条赛道、八种道具、AI 对手，以及 3,344 项通过的测试检查。下面是日志记录的真实经过，包括它卡住的那些部分。</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>
