@@ -7,12 +7,6 @@
     if (!m || !footer) return;
     var key = m[1].split(/[/.]/)[0];
     if (key === '' || key === 'index') key = 'home';
-    var label = {
-        en: 'You are visitor #', es: 'Eres el visitante n.º', fr: 'Vous êtes le visiteur n°', de: 'Sie sind Besucher Nr.',
-        zh: '您是第', ru: 'Вы посетитель №', ko: '당신은 방문자 #', ja: 'あなたは'
-    };
-    var after = { zh: '位访客', ja: '人目の訪問者です' };
-    var lang = (document.documentElement.lang || 'en').slice(0, 2);
 
     var p = document.createElement('p');
     p.className = 'hit-counter';
@@ -25,9 +19,7 @@
         odo.appendChild(s);
         cells.push(s);
     }
-    p.appendChild(document.createTextNode((label[lang] || label.en) + ' '));
     p.appendChild(odo);
-    if (after[lang]) p.appendChild(document.createTextNode(' ' + after[lang]));
     footer.parentNode.insertBefore(p, footer);
 
     fetch('https://blog-cron-trigger.todd-de8.workers.dev/hits.json').then(function (r) { return r.json(); }).then(function (v) {
