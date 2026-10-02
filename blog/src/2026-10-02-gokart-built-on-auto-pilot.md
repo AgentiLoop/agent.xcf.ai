@@ -92,4 +92,14 @@ Agent! took them, not me, and not by hand. I asked for three screenshots of a ra
 - **Expect it to ask for eyes.** For anything visual or about feel, the loop will stall honestly rather than lie. Budget a playtest between sessions, and feed your notes back in as the next goal.
 - **Stop All is part of the workflow**, not a failure. The first three GoKart sessions all ended with it.
 
-Agent! 1.1.87 with Auto-Pilot is on the [releases page](https://github.com/AgentiLoop/Agent/releases/latest) and in Homebrew. GoKart needs Godot 4.4 or later: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+You don't need Godot to try it any more. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) is the first packaged release, exported from the same repo:
+
+- **macOS** universal (Apple silicon and Intel), signed with a Developer ID and notarized by Apple
+- **Windows** x86_64
+- **Linux** x86_64 and arm64
+
+Each download is a single self-contained binary with the game data embedded, and `SHA256SUMS.txt` is on the release page if you want to check what you got. The Windows build is unsigned, so expect the SmartScreen prompt.
+
+Agent! 1.1.87 with Auto-Pilot is on the [releases page](https://github.com/AgentiLoop/Agent/releases/latest) and in Homebrew. If you'd rather run GoKart from source, it needs Godot 4.4 or later: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
