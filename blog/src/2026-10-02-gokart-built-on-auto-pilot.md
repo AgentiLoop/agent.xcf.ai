@@ -63,6 +63,11 @@ A third session stalled the same way, this time behind a 240-second alarm that w
 
 One cycle later: canvas-items stretch so the UI scales with the window, the HUD moved to a canvas layer above the speed-effects overlay, arrow keys, Enter and Ctrl for items with an on-screen hint, eased-in steering, a z-fighting fix for the wall stripes (neighbouring red and white segments were fighting over the same pixels, so the white ones got very slightly larger), 4x MSAA, and Easy / Medium / Hard that scale AI top speed to 0.72, 0.85 and 1.0. Tests went from 2,156 to 3,344 checks, partly because it also found and fixed a pre-existing parse error in `tests/test_items.gd` that had stopped the suite from loading.
 
+<figure style="margin:2rem 0">
+<img src="/gokart-green-hills-chase.png" alt="GoKart on the Green Hills track: the player kart in 4th of 4, ten seconds into lap 1, right behind a green kart and a red kart on a grey road with red and white striped walls. The HUD shows lap, time and a minimap in the bottom-left corner and 21 km/h in the bottom-right." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Green Hills, lap 1, 4th of 4 and chasing the pack. The procedural karts have spinning wheels, steering front wheels and a driver whose head turns.</figcaption>
+</figure>
+
 ## The part where it stopped itself
 
 Cycles 2 through 8 of that last session made no code changes. Each one re-read the repo, re-ran the suite, and wrote a variant of the same paragraph:
