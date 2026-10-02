@@ -4,7 +4,7 @@ description: Give Agent!'s Auto-Pilot one goal - "create a Mario Kart clone call
 tags: Auto-Pilot, Showcase, Godot
 ---
 <figure style="margin:2rem 0">
-<img src="/gokart-green-hills-drift.png" alt="GoKart on the Green Hills track: a chase-camera view of the player kart mid-drift on a grey road with red and white striped walls, green ground and blue sky. The HUD shows 1st place, lap and time counters and a track minimap in the bottom-left corner." style="display:block;width:100%;height:auto;border-radius:20px">
+<img src="/gokart-green-hills-boost.png" alt="GoKart on the Green Hills track: a chase-camera view of the player kart hitting a yellow-and-blue chevron boost pad on a grey road with red and white striped walls, green ground and blue sky, with flame trails from the karts ahead. The HUD shows 4th of 4, lap 1, a track minimap in the bottom-left corner, BOOST! and 72 km/h." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Green Hills, lap 1, drifting in first. Every mesh, shader and sound in this frame was generated from code.</figcaption>
 </figure>
 
