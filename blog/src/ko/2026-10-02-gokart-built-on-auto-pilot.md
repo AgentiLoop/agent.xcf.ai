@@ -14,7 +14,7 @@ tags: Auto-Pilot, 쇼케이스, Godot
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-예산: 시간 제한 없음, 사이클 무제한. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
+예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
 
 ## 오토파일럿이 하는 일, 한 사이클씩
 

@@ -154,7 +154,7 @@
 <p>昨天的文章介绍了<a href="/zh/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/">自动驾驶（Auto-Pilot）</a>：在 Mac 版 Agent! 中输入 <code>/auto &lt;目标&gt;</code>，它就会朝着这个目标无人值守地一轮轮运行，直到你按下 Stop All。这篇文章讲的是，当我把它对准一款游戏时，另一头产出了什么。</p>
 <p>目标，基本按我当时输入的原样粘贴：</p>
 <blockquote><p>create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.</p></blockquote>
-<p>预算：不限时间，不限轮数。第一个提交落地于 12:39。同一天下午 16:32，仓库已有 33 个提交。如今它有 47 个 GDScript 文件，约 5,500 行 GDScript 和着色器代码，以及一套能通过 3,344 项检查的单元测试。整个项目在 GitHub 上：<a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a>。</p>
+<p>预算：不限时间，不限轮数。每一轮 Agent! 内部使用的模型都是 Claude Sonnet 5.5。第一个提交落地于 12:39。同一天下午 16:32，仓库已有 33 个提交。如今它有 47 个 GDScript 文件，约 5,500 行 GDScript 和着色器代码，以及一套能通过 3,344 项检查的单元测试。整个项目在 GitHub 上：<a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a>。</p>
 <h2 id="自动驾驶做了什么-一轮接一轮">自动驾驶做了什么，一轮接一轮</h2>
 <p>自动驾驶在项目内的 <code>.agent/autopilot/progress.md</code> 保存着一份持续的日志，每一轮都会追加它做了什么、假设了什么、还剩什么，以及有没有东西卡住它。下面的所有内容都来自这份日志。我引用日志而不是凭记忆，因为日志比我诚实。</p>
 <p><strong>第 1 轮</strong>时机器上没有 Godot。它运行了 <code>brew install --cask godot</code>，给可执行文件建了软链接，执行了 <code>git init</code>，并把 <code>kart_physics.gd</code> 写成一个不依赖场景的纯模型：加速、刹车、倒车、摩擦、转向、锁定在起始方向上的漂移，以及三级小型加速。它刻意选择了自定义街机物理而不是 <code>VehicleBody3D</code>，并说明了原因："这样马里奥赛车式的操控就容易做单元测试。"11 个测试，17 项检查，第一个提交。</p>

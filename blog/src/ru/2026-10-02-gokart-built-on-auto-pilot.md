@@ -14,7 +14,7 @@ tags: Auto-Pilot, Витрина, Godot
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-Бюджет: без ограничения по времени, циклы без лимита. Первый коммит появился в 12:39. К 16:32 того же дня в репозитории было 33 коммита. Сегодня в нём 47 файлов GDScript, около 5 500 строк GDScript и шейдерного кода и набор юнит-тестов, проходящий 3 344 проверки. Всё это лежит на GitHub: [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
+Бюджет: без ограничения по времени, циклы без лимита. Моделью внутри Agent! на каждом цикле была Claude Sonnet 5.5. Первый коммит появился в 12:39. К 16:32 того же дня в репозитории было 33 коммита. Сегодня в нём 47 файлов GDScript, около 5 500 строк GDScript и шейдерного кода и набор юнит-тестов, проходящий 3 344 проверки. Всё это лежит на GitHub: [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
 
 ## Что делает Auto-Pilot, цикл за циклом
 

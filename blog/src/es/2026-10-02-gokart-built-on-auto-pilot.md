@@ -14,7 +14,7 @@ El objetivo, pegado más o menos tal como lo escribí:
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-Presupuesto: sin límite de tiempo, ciclos ilimitados. El primer commit llegó a las 12:39. A las 16:32 de esa misma tarde el repositorio tenía 33 commits. Hoy tiene 47 archivos GDScript, unas 5.500 líneas de GDScript y código de shaders, y una suite unitaria que pasa 3.344 comprobaciones. Todo está en GitHub, en [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
+Presupuesto: sin límite de tiempo, ciclos ilimitados. El modelo dentro de Agent! en todos los ciclos fue Claude Sonnet 5.5. El primer commit llegó a las 12:39. A las 16:32 de esa misma tarde el repositorio tenía 33 commits. Hoy tiene 47 archivos GDScript, unas 5.500 líneas de GDScript y código de shaders, y una suite unitaria que pasa 3.344 comprobaciones. Todo está en GitHub, en [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
 
 ## Qué hace Auto-Pilot, ciclo a ciclo
 
