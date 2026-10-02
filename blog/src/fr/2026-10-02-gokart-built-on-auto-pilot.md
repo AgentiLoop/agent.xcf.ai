@@ -14,7 +14,7 @@ L'objectif, collé plus ou moins tel que je l'ai tapé :
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-Budget : pas de limite de temps, cycles illimités. Le modèle utilisé dans Agent! pour chaque cycle était Claude Sonnet 5.5. Le premier commit est arrivé à 12 h 39. À 16 h 32 le même après-midi, le dépôt comptait 33 commits. Aujourd'hui, il contient 47 fichiers GDScript, environ 5 500 lignes de GDScript et de code de shaders, et une suite unitaire qui passe 3 344 vérifications. Le tout est sur GitHub : [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
+Budget : pas de limite de temps, cycles illimités. Le modèle utilisé dans Agent! pour chaque cycle était Claude Sonnet 5.5. Le premier commit est arrivé à 12 h 39. À 16 h 32 le même après-midi, le dépôt comptait 33 commits. Aujourd'hui, il contient 47 fichiers GDScript, environ 5 500 lignes de GDScript et de code de shaders, et une suite unitaire qui passe 3 344 vérifications. Le tout est sur GitHub : [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
 
 ## Ce que fait Auto-Pilot, un cycle à la fois
 
@@ -87,4 +87,14 @@ C'est Agent! qui les a prises, pas moi, et pas à la main. J'ai demandé trois c
 - **Attendez-vous à ce qu'il demande des yeux.** Pour tout ce qui est visuel ou une question de ressenti, la boucle calera honnêtement plutôt que de mentir. Prévoyez une partie de test entre les sessions, et réinjectez vos notes comme objectif suivant.
 - **Stop All fait partie du flux de travail**, ce n'est pas un échec. Les trois premières sessions de GoKart se sont toutes terminées ainsi.
 
-Agent! 1.1.87 avec Auto-Pilot est sur la [page des versions](https://github.com/AgentiLoop/Agent/releases/latest) et dans Homebrew. GoKart nécessite Godot 4.4 ou plus récent : `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+Plus besoin de Godot pour l'essayer. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) est la première version empaquetée, exportée depuis le même dépôt :
+
+- **macOS** universel (Apple Silicon et Intel), signé avec un Developer ID et notarisé par Apple
+- **Windows** x86_64
+- **Linux** x86_64 et arm64
+
+Chaque téléchargement est un binaire unique et autonome avec les données du jeu intégrées, et `SHA256SUMS.txt` est sur la page de la version si vous voulez vérifier ce que vous avez reçu. La version Windows n'est pas signée, attendez-vous donc à l'avertissement SmartScreen.
+
+Agent! 1.1.87 avec Auto-Pilot est sur la [page des versions](https://github.com/AgentiLoop/Agent/releases/latest) et dans Homebrew. Si vous préférez lancer GoKart depuis les sources, il nécessite Godot 4.4 ou plus récent : `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

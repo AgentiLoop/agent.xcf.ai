@@ -87,4 +87,14 @@ Auto-Pilot ведёт в проекте непрерывный журнал в `
 - **Ожидайте, что он попросит глаза.** Для всего визуального и касающегося ощущений цикл честно остановится, а не соврёт. Закладывайте плейтест между сессиями и возвращайте свои заметки как следующую цель.
 - **Stop All - часть рабочего процесса**, а не провал. Все три первые сессии GoKart закончились именно им.
 
-Agent! 1.1.87 с Auto-Pilot доступен на [странице релизов](https://github.com/AgentiLoop/Agent/releases/latest) и в Homebrew. GoKart требует Godot 4.4 или новее: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+Godot больше не нужен, чтобы попробовать. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) — первый упакованный релиз, экспортированный из того же репозитория:
+
+- **macOS** universal (Apple Silicon и Intel), подписан Developer ID и нотаризован Apple
+- **Windows** x86_64
+- **Linux** x86_64 и arm64
+
+Каждая загрузка — один самодостаточный бинарник со встроенными данными игры, а `SHA256SUMS.txt` лежит на странице релиза, если хотите проверить, что скачали. Сборка для Windows не подписана, так что ждите предупреждение SmartScreen.
+
+Agent! 1.1.87 с Auto-Pilot доступен на [странице релизов](https://github.com/AgentiLoop/Agent/releases/latest) и в Homebrew. Если предпочитаете запускать GoKart из исходников, ему нужен Godot 4.4 или новее: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

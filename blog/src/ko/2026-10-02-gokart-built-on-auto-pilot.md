@@ -14,7 +14,7 @@ tags: Auto-Pilot, 쇼케이스, Godot
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
+예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
 
 ## 오토파일럿이 하는 일, 한 사이클씩
 
@@ -87,4 +87,14 @@ tags: Auto-Pilot, 쇼케이스, Godot
 - **눈을 요청할 것을 예상하세요.** 시각적이거나 느낌에 관한 것이라면, 루프는 거짓말하는 대신 정직하게 멈춥니다. 세션 사이에 플레이테스트 시간을 잡고, 메모를 다음 목표로 다시 넣어주세요.
 - **Stop All은 워크플로의 일부**이지 실패가 아닙니다. GoKart의 첫 세 세션은 모두 그렇게 끝났습니다.
 
-오토파일럿이 포함된 Agent! 1.1.87은 [릴리스 페이지](https://github.com/AgentiLoop/Agent/releases/latest)와 Homebrew에 있습니다. GoKart는 Godot 4.4 이상이 필요합니다: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+이제 Godot 없이도 바로 해볼 수 있습니다. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1)은 같은 저장소에서 내보낸 첫 번째 패키지 릴리스입니다:
+
+- **macOS** 유니버설 (Apple Silicon 및 Intel), Developer ID로 서명하고 Apple에서 공증
+- **Windows** x86_64
+- **Linux** x86_64 및 arm64
+
+각 다운로드는 게임 데이터가 내장된 단일 독립 실행 바이너리이며, 받은 파일을 확인하고 싶다면 릴리스 페이지에 `SHA256SUMS.txt`가 있습니다. Windows 빌드는 서명되지 않았으므로 SmartScreen 경고가 뜰 수 있습니다.
+
+오토파일럿이 포함된 Agent! 1.1.87은 [릴리스 페이지](https://github.com/AgentiLoop/Agent/releases/latest)와 Homebrew에 있습니다. 소스에서 GoKart를 실행하고 싶다면 Godot 4.4 이상이 필요합니다: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

@@ -154,7 +154,7 @@
 <p>昨日の記事では<a href="/ja/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/">オートパイロット（Auto-Pilot）</a>を紹介しました。Mac 版 Agent! に <code>/auto &lt;ゴール&gt;</code> と入力すると、Stop All を押すまでそのゴールに向かって無人でサイクルを回し続けます。この記事は、それをゲームに向けたときに反対側から何が出てきたかの話です。</p>
 <p>ゴールは、私が打ち込んだほぼそのままです：</p>
 <blockquote><p>create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.</p></blockquote>
-<p>予算：時間制限なし、サイクル数無制限。すべてのサイクルで Agent! 内のモデルは Claude Sonnet 5.5 でした。最初のコミットは 12:39。同じ日の 16:32 には、リポジトリのコミット数は 33 になっていました。現在は GDScript ファイルが 47 個、GDScript とシェーダーのコードが約 5,500 行、そして 3,344 件のチェックに合格するユニットテストスイートがあります。すべて GitHub の <a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a> にあります。</p>
+<p>予算：時間制限なし、サイクル数無制限。すべてのサイクルで Agent! 内のモデルは Claude Sonnet 5.5 でした。最初のコミットは 12:39。同じ日の 16:32 には、リポジトリのコミット数は 33 になっていました。現在は GDScript ファイルが 47 個、GDScript とシェーダーのコードが約 5,500 行、そして 3,344 件のチェックに合格するユニットテストスイートがあります。すべて GitHub の <a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a> にあります。</p>
 <h2 id="オートパイロットがやること-1-サイクルずつ">オートパイロットがやること、1 サイクルずつ</h2>
 <p>オートパイロットはプロジェクト内の <code>.agent/autopilot/progress.md</code> に継続的なログを残し、各サイクルが「何をしたか、何を前提にしたか、何が残っているか、何かに阻まれたか」を追記していきます。以下の内容はすべてそのログが出典です。自分の記憶ではなくログを引用するのは、ログのほうが私より正直だからです。</p>
 <p><strong>サイクル 1</strong> の時点でマシンに Godot はありませんでした。<code>brew install --cask godot</code> を実行し、バイナリにシンボリックリンクを張り、<code>git init</code> を行い、<code>kart_physics.gd</code> をシーン依存のない純粋なモデルとして書きました。加速、ブレーキ、後退、摩擦、ステアリング、開始した方向に固定されるドリフト、そして 3 段階のミニターボ。<code>VehicleBody3D</code> ではなく独自のアーケード物理をあえて選び、理由も述べています。「マリオカート風の挙動をユニットテストしやすくするため」。テスト 11 件、チェック 17 件、最初のコミット。</p>
@@ -192,7 +192,11 @@
 <p>撮ったのは Agent! で、私ではなく、手動でもありません。ランダム走行のスクリーンショットを 3 枚頼んだところ、70 行の <code>tools/random_drive.gd</code> を書きました。ふらつくレーンオフセットで路面をたどり、ランダムにドリフトを挟み、持っているアイテムをランダムなタイミングで撃ち、数百物理フレームごとに 1 フレームを保存します。コースごとに 1 回ずつ実行し、上の 3 枚はそれぞれから 1 フレームを選んだものです。<a href="https://github.com/AgentiLoop/GoKart#screenshots" target="_blank" rel="noopener">GoKart の README</a> にも掲載しています。</p>
 <h2 id="試す前に伝えておきたいこと">試す前に伝えておきたいこと</h2>
 <ul><li><strong>git の中で動かすこと。</strong> オートパイロットに取り消しはありません。GoKart のログが読めるのは、すべてのサイクルがコミットで終わっていたからで、サイクルが一度脱線したときも何も失われませんでした。</li><li><strong>運用ルールはゴールに書くこと。</strong> 「シェルに時間制限をかけろ」は、単発のメッセージよりもゴールの一部としてのほうが効きました。新しいサイクルは毎回ゴールを読み直すからです。</li><li><strong>目を求められることを想定すること。</strong> 見た目や手触りに関することなら、ループは嘘をつかずに正直に止まります。セッションの間にプレイテストの時間を確保し、メモを次のゴールとして戻してください。</li><li><strong>Stop All はワークフローの一部</strong>であって、失敗ではありません。GoKart の最初の 3 セッションはすべてそれで終わりました。</li></ul>
-<p>オートパイロットを搭載した Agent! 1.1.87 は<a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">リリースページ</a>と Homebrew で入手できます。GoKart には Godot 4.4 以降が必要です：<code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
+<h2 id="gokart-0-0-1">GoKart 0.0.1</h2>
+<p>試すのに Godot はもう必要ありません。<a href="https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1" target="_blank" rel="noopener">GoKart 0.0.1</a> は同じリポジトリから書き出した最初のパッケージ版リリースです：</p>
+<ul><li><strong>macOS</strong> ユニバーサル（Apple シリコンと Intel）、Developer ID で署名し Apple による公証済み</li><li><strong>Windows</strong> x86_64</li><li><strong>Linux</strong> x86_64 と arm64</li></ul>
+<p>各ダウンロードはゲームデータを埋め込んだ単一の自己完結型バイナリで、受け取ったものを確認したい場合はリリースページに <code>SHA256SUMS.txt</code> があります。Windows 版は未署名なので、SmartScreen の警告が出ます。</p>
+<p>オートパイロットを搭載した Agent! 1.1.87 は<a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">リリースページ</a>と Homebrew で入手できます。ソースから GoKart を実行したい場合は Godot 4.4 以降が必要です：<code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
                 </div>
 
             <aside class="post-cta">

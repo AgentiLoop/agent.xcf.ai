@@ -192,7 +192,11 @@
 <p>截图是 Agent! 拍的，不是我，也不是手动拍的。我要了三张随机驾驶的截图，它写了一个 70 行的 <code>tools/random_drive.gd</code>：带着游走的车道偏移沿路行驶，随机插入漂移冲刺，在随机时刻发射手里拿着的道具，然后每隔几百个物理帧保存一帧。每条赛道跑了一次，上面三张就是各取一帧。它们也在 <a href="https://github.com/AgentiLoop/GoKart#screenshots" target="_blank" rel="noopener">GoKart 的 README</a> 里。</p>
 <h2 id="在你试之前我想说的">在你试之前我想说的</h2>
 <ul><li><strong>在 git 里运行它。</strong> 自动驾驶没有撤销。GoKart 的日志之所以可读，是因为每一轮都以一次提交结束，而唯一一次某轮跑偏时，什么都没丢。</li><li><strong>把操作规则写进目标里。</strong> "给 shell 加时间限制"作为目标的一部分比作为一条临时消息更有效，因为每一个新的轮次都会重新读取目标。</li><li><strong>预期它会要求人眼。</strong> 凡是视觉或手感方面的事，这个循环会诚实地停下来而不是撒谎。在会话之间安排一次试玩，把你的笔记作为下一个目标喂回去。</li><li><strong>Stop All 是工作流的一部分</strong>，不是失败。GoKart 的前三次会话全都是这样结束的。</li></ul>
-<p>带自动驾驶的 Agent! 1.1.87 已在<a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">发布页面</a>和 Homebrew 上提供。GoKart 需要 Godot 4.4 或更高版本：<code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
+<h2 id="gokart-0-0-1">GoKart 0.0.1</h2>
+<p>现在不用装 Godot 也能试玩了。<a href="https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1" target="_blank" rel="noopener">GoKart 0.0.1</a> 是第一个打包发布版，从同一个仓库导出：</p>
+<ul><li><strong>macOS</strong> 通用版（Apple 芯片和 Intel），使用 Developer ID 签名并经 Apple 公证</li><li><strong>Windows</strong> x86_64</li><li><strong>Linux</strong> x86_64 和 arm64</li></ul>
+<p>每个下载都是一个内嵌游戏数据的独立二进制文件，发布页面上还有 <code>SHA256SUMS.txt</code>，方便你核对下载内容。Windows 版未签名，所以会看到 SmartScreen 提示。</p>
+<p>带自动驾驶的 Agent! 1.1.87 已在<a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">发布页面</a>和 Homebrew 上提供。如果你更想从源码运行 GoKart，需要 Godot 4.4 或更高版本：<code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
                 </div>
 
             <aside class="post-cta">

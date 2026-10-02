@@ -154,7 +154,7 @@
 <p>어제 글에서 <a href="/ko/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/">오토파일럿(Auto-Pilot)</a>을 소개했습니다. Mac용 Agent! 에 <code>/auto &lt;목표&gt;</code>를 입력하면 Stop All을 누를 때까지 그 목표를 향해 무인 사이클을 반복합니다. 이 글은 제가 그것을 게임에 겨눴을 때 반대편에서 무엇이 나왔는지에 관한 이야기입니다.</p>
 <p>목표는 제가 입력한 거의 그대로입니다:</p>
 <blockquote><p>create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.</p></blockquote>
-<p>예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 <a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a>에 있습니다.</p>
+<p>예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋이 33개 쌓여 있었습니다. 오늘 기준으로 GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있습니다. 전체는 GitHub의 <a href="https://github.com/AgentiLoop/GoKart" target="_blank" rel="noopener">AgentiLoop/GoKart</a>에 있습니다.</p>
 <h2 id="오토파일럿이-하는-일-한-사이클씩">오토파일럿이 하는 일, 한 사이클씩</h2>
 <p>오토파일럿은 프로젝트 안의 <code>.agent/autopilot/progress.md</code>에 진행 로그를 계속 기록하고, 매 사이클마다 무엇을 했는지, 무엇을 가정했는지, 무엇이 남았는지, 무언가에 막혔는지를 덧붙입니다. 아래 내용은 전부 그 로그가 출처입니다. 제 기억 대신 로그를 인용하는 이유는, 로그가 저보다 정직하기 때문입니다.</p>
 <p><strong>사이클 1</strong>에는 머신에 Godot이 없었습니다. <code>brew install --cask godot</code>을 실행하고, 바이너리에 심볼릭 링크를 걸고, <code>git init</code>을 한 뒤, <code>kart_physics.gd</code>를 씬 의존성이 없는 순수 모델로 작성했습니다. 가속, 제동, 후진, 마찰, 조향, 시작한 방향으로 고정되는 드리프트, 그리고 미니터보 3단계. <code>VehicleBody3D</code> 대신 커스텀 아케이드 물리를 의도적으로 선택했고, 이유도 밝혔습니다. "마리오 카트식 조작감을 유닛 테스트하기 쉽도록." 테스트 11개, 검사 17개, 첫 커밋.</p>
@@ -192,7 +192,11 @@
 <p>찍은 것은 Agent! 이고, 제가 아니며, 손으로 찍은 것도 아닙니다. 무작위 주행 스크린샷 세 장을 요청했더니, 70줄짜리 <code>tools/random_drive.gd</code>를 작성했습니다. 흔들리는 차선 오프셋으로 도로를 따라가고, 무작위로 드리프트를 터뜨리고, 들고 있는 아이템을 무작위 순간에 발사한 뒤, 물리 프레임 몇백 개마다 한 프레임을 저장합니다. 트랙마다 한 번씩 실행했고, 위의 세 장은 각각에서 한 프레임씩 고른 것입니다. <a href="https://github.com/AgentiLoop/GoKart#screenshots" target="_blank" rel="noopener">GoKart README</a>에도 있습니다.</p>
 <h2 id="직접-해보기-전에-드리고-싶은-말">직접 해보기 전에 드리고 싶은 말</h2>
 <ul><li><strong>git 안에서 실행하세요.</strong> 오토파일럿에는 되돌리기가 없습니다. GoKart의 로그를 읽을 수 있는 이유는 모든 사이클이 커밋으로 끝났기 때문이고, 사이클이 한 번 엇나갔을 때도 잃은 것은 없었습니다.</li><li><strong>운영 규칙을 목표에 넣으세요.</strong> "셸에 시간 제한을 걸어라"는 일회성 메시지보다 목표의 일부일 때 더 잘 작동했습니다. 새 사이클은 매번 목표를 다시 읽기 때문입니다.</li><li><strong>눈을 요청할 것을 예상하세요.</strong> 시각적이거나 느낌에 관한 것이라면, 루프는 거짓말하는 대신 정직하게 멈춥니다. 세션 사이에 플레이테스트 시간을 잡고, 메모를 다음 목표로 다시 넣어주세요.</li><li><strong>Stop All은 워크플로의 일부</strong>이지 실패가 아닙니다. GoKart의 첫 세 세션은 모두 그렇게 끝났습니다.</li></ul>
-<p>오토파일럿이 포함된 Agent! 1.1.87은 <a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">릴리스 페이지</a>와 Homebrew에 있습니다. GoKart는 Godot 4.4 이상이 필요합니다: <code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
+<h2 id="gokart-0-0-1">GoKart 0.0.1</h2>
+<p>이제 Godot 없이도 바로 해볼 수 있습니다. <a href="https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1" target="_blank" rel="noopener">GoKart 0.0.1</a>은 같은 저장소에서 내보낸 첫 번째 패키지 릴리스입니다:</p>
+<ul><li><strong>macOS</strong> 유니버설 (Apple Silicon 및 Intel), Developer ID로 서명하고 Apple에서 공증</li><li><strong>Windows</strong> x86_64</li><li><strong>Linux</strong> x86_64 및 arm64</li></ul>
+<p>각 다운로드는 게임 데이터가 내장된 단일 독립 실행 바이너리이며, 받은 파일을 확인하고 싶다면 릴리스 페이지에 <code>SHA256SUMS.txt</code>가 있습니다. Windows 빌드는 서명되지 않았으므로 SmartScreen 경고가 뜰 수 있습니다.</p>
+<p>오토파일럿이 포함된 Agent! 1.1.87은 <a href="https://github.com/AgentiLoop/Agent/releases/latest" target="_blank" rel="noopener">릴리스 페이지</a>와 Homebrew에 있습니다. 소스에서 GoKart를 실행하고 싶다면 Godot 4.4 이상이 필요합니다: <code>git clone https://github.com/AgentiLoop/GoKart.git &amp;&amp; cd GoKart &amp;&amp; godot --path .</code></p>
                 </div>
 
             <aside class="post-cta">

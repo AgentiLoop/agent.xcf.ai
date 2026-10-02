@@ -87,4 +87,14 @@ Agent! hat sie aufgenommen, nicht ich, und nicht von Hand. Ich bat um drei Scree
 - **Rechne damit, dass es nach Augen fragt.** Bei allem Visuellen oder Gefühlsmäßigen bleibt die Schleife ehrlich stehen, statt zu lügen. Plane zwischen den Sitzungen einen Playtest ein und gib deine Notizen als nächstes Ziel zurück.
 - **Stop All gehört zum Workflow**, es ist kein Fehlschlag. Die ersten drei GoKart-Sitzungen endeten alle damit.
 
-Agent! 1.1.87 mit Auto-Pilot gibt es auf der [Releases-Seite](https://github.com/AgentiLoop/Agent/releases/latest) und in Homebrew. GoKart braucht Godot 4.4 oder neuer: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+Du brauchst kein Godot mehr, um es auszuprobieren. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) ist das erste paketierte Release, exportiert aus demselben Repo:
+
+- **macOS** universal (Apple Silicon und Intel), mit Developer ID signiert und von Apple notarisiert
+- **Windows** x86_64
+- **Linux** x86_64 und arm64
+
+Jeder Download ist eine einzelne, eigenständige Binärdatei mit eingebetteten Spieldaten, und `SHA256SUMS.txt` liegt auf der Release-Seite, falls du prüfen willst, was du bekommen hast. Der Windows-Build ist nicht signiert, rechne also mit der SmartScreen-Abfrage.
+
+Agent! 1.1.87 mit Auto-Pilot gibt es auf der [Releases-Seite](https://github.com/AgentiLoop/Agent/releases/latest) und in Homebrew. Wenn du GoKart lieber aus dem Quellcode startest, braucht es Godot 4.4 oder neuer: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

@@ -87,4 +87,14 @@ tags: Auto-Pilot, 案例展示, Godot
 - **预期它会要求人眼。** 凡是视觉或手感方面的事，这个循环会诚实地停下来而不是撒谎。在会话之间安排一次试玩，把你的笔记作为下一个目标喂回去。
 - **Stop All 是工作流的一部分**，不是失败。GoKart 的前三次会话全都是这样结束的。
 
-带自动驾驶的 Agent! 1.1.87 已在[发布页面](https://github.com/AgentiLoop/Agent/releases/latest)和 Homebrew 上提供。GoKart 需要 Godot 4.4 或更高版本：`git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+## GoKart 0.0.1
+
+现在不用装 Godot 也能试玩了。[GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) 是第一个打包发布版，从同一个仓库导出：
+
+- **macOS** 通用版（Apple 芯片和 Intel），使用 Developer ID 签名并经 Apple 公证
+- **Windows** x86_64
+- **Linux** x86_64 和 arm64
+
+每个下载都是一个内嵌游戏数据的独立二进制文件，发布页面上还有 `SHA256SUMS.txt`，方便你核对下载内容。Windows 版未签名，所以会看到 SmartScreen 提示。
+
+带自动驾驶的 Agent! 1.1.87 已在[发布页面](https://github.com/AgentiLoop/Agent/releases/latest)和 Homebrew 上提供。如果你更想从源码运行 GoKart，需要 Godot 4.4 或更高版本：`git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
