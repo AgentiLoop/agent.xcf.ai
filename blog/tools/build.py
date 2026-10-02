@@ -23,7 +23,7 @@ Updates: the <!-- blog:start --> ... <!-- blog:end --> block in sitemap.xml
 
 Archive: the index has an "Archive" section at the bottom for posts nobody reads. Which posts are
 archived is kept in blog/tools/archive.json and only changes when you run `build.py --archive`:
-posts with ARCHIVE_AT (3) reads or fewer are archived, archived posts that reach UNARCHIVE_AT (12)
+posts with ARCHIVE_AT (4) reads or fewer are archived (never posts from the current month), archived posts that reach UNARCHIVE_AT (12)
 reads come back. Archived posts keep their URL, feed entry and sitemap entry.
 
 Usage:   python3 blog/tools/build.py [--archive] [YYYY-MM-DD]   (optional date publishes as of that day)
@@ -741,7 +741,7 @@ def reads_html(p, lang):
 # Posts nobody reads move to the "Archive" section at the bottom of the index. The list of archived
 # slugs lives in blog/tools/archive.json and only changes on a manual `build.py --archive` run.
 ARCHIVE_FILE = BLOG / 'tools' / 'archive.json'
-ARCHIVE_AT = 3      # archive a post with this many reads or fewer
+ARCHIVE_AT = 4      # archive a post with this many reads or fewer
 UNARCHIVE_AT = 12   # bring an archived post back once it has this many reads or more
 
 
@@ -749,14 +749,16 @@ def load_archive():
     return set(json.loads(ARCHIVE_FILE.read_text())) if ARCHIVE_FILE.exists() else set()
 
 
-def update_archive(posts, archived):
-    """Apply the thresholds to the current read counts and save the new list. Returns the new set."""
+def update_archive(posts, archived, today):
+    """Apply the thresholds to the current read counts and save the new list. Returns the new set.
+    Posts published in the current month are never archived (they haven't had time to be read)."""
     new = set(archived)
     for p in posts:
-        if p['slug'] in archived and p['views'] >= UNARCHIVE_AT:
+        this_month = (p['date'].year, p['date'].month) == (today.year, today.month)
+        if p['slug'] in archived and (p['views'] >= UNARCHIVE_AT or this_month):
             new.discard(p['slug'])
-            print('unarchived: %s (%d reads)' % (p['slug'], p['views']))
-        elif p['slug'] not in archived and p['views'] <= ARCHIVE_AT:
+            print('unarchived: %s (%d reads%s)' % (p['slug'], p['views'], ', this month' if this_month else ''))
+        elif p['slug'] not in archived and p['views'] <= ARCHIVE_AT and not this_month:
             new.add(p['slug'])
             print('archived:   %s (%d reads)' % (p['slug'], p['views']))
     if new == archived:
@@ -778,7 +780,7 @@ def main():
         p['views'] = views.get(p['slug'], 0)
     archived = load_archive()
     if do_archive:
-        archived = update_archive(posts, archived)
+        archived = update_archive(posts, archived, today)
     for p in posts:
         p['archived'] = p['slug'] in archived
     for lang in LANGS:
