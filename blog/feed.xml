@@ -13,6 +13,17 @@
       <link>https://agentiloop.ai/blog/</link>
     </image>
     <item>
+      <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>
+      <link>https://agentiloop.ai/blog/agent-gets-a-face/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/blog/agent-gets-a-face/</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Announcement</category>
+      <category>Preview</category>
+      <category>Features</category>
+      <description>Coming in the next Agent! pre-release, scheduled for Saturday, October 10 - an optional avatar that speaks and animates alongside the task log. Not cute, not cuddly, and not a mascot. Now in development.</description>
+    </item>
+    <item>
       <title>The Whole Family Ships: Agent! 1.1.87 and AgentiLoop CLI 0.0.5</title>
       <link>https://agentiloop.ai/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</link>
       <guid isPermaLink="true">https://agentiloop.ai/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/</guid>
