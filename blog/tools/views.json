@@ -5,12 +5,12 @@
  "agent-now-runs-on-macos-14-6-and-intel": 4,
  "context-compaction-half-the-window": 10,
  "gokart-built-on-auto-pilot": 21,
- "how-i-became-your-macs-best-friend": 1,
+ "how-i-became-your-macs-best-friend": 3,
  "inside-agent-shell-guardrails": 3,
  "meet-jev": 4,
  "sonoma-intel-and-the-mac-that-was-not-dead-yet": 2,
  "the-terminal-strikes-back": 3,
  "welcome-to-the-agent-blog": 2,
- "what-is-an-agent-loop": 4,
- "why-we-ripped-out-modes": 8
+ "what-is-an-agent-loop": 6,
+ "why-we-ripped-out-modes": 9
 }
