@@ -503,5 +503,6 @@
  "Beat API · Awesome JEV Projects · Safety &amp; Review · Snapshot September 22, 2026": "Beat API · Awesome JEV Projects · 安全性とレビュー · 2026年9月22日時点のスナップショット",
  "<a href=\"https://beatapi.io/awesome-jev\" target=\"_blank\" rel=\"noopener\">Agent — an optional Jev command-risk advisor inside a native macOS Agent, with a TypeSafeKit client</a>": "<a href=\"https://beatapi.io/awesome-jev\" target=\"_blank\" rel=\"noopener\">Agent — ネイティブ macOS Agent に組み込まれたオプションの Jev コマンドリスク・アドバイザー（TypeSafeKit クライアント付き）</a>",
  "\"What JEV decides: Adds a destructive-risk judgment after local shell checks and refuses commands above the configured threshold.\" … One of 171 source-reviewed open-source projects, listed under <em>Safety &amp; review</em>; 622 stars.": "「JEV が判断すること：ローカルのシェルチェックの後に破壊的リスクの判定を加え、設定したしきい値を超えるコマンドを拒否します。」… ソースレビュー済みの 171 件のオープンソースプロジェクトの一つとして<em>安全性とレビュー</em>に掲載、スター 622。",
- "Blog": "ブログ"
+ "Blog": "ブログ",
+ "Create an Issue": "Issue を作成"
 }
