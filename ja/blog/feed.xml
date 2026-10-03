@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
+    <item>
+      <title>半年ぶりに、Auto-Pilot とともに再び Hacker News へ</title>
+      <link>https://agentiloop.ai/ja/blog/back-on-hacker-news-with-auto-pilot/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/back-on-hacker-news-with-auto-pilot/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>コミュニティ</category>
+      <category>Hacker News</category>
+      <description>Agent! が Show HN として再び Hacker News に登場しました。4月のスレッドはネイティブ Mac コーディングハーネスについてでしたが、今回はゴールに到達するまでサイクルを回し続けるゴール駆動型ループ Auto-Pilot と、それが作り続けているマリオカート風ゲームについてです。投稿の内容、その中の各主張の裏付け、そして議論に参加できる場所を紹介します。</description>
+    </item>
     <item>
       <title>GoKart：オートパイロットが午後のうちに作り上げたマリオカート風レースゲーム</title>
       <link>https://agentiloop.ai/ja/blog/gokart-built-on-auto-pilot/</link>

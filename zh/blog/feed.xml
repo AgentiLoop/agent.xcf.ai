@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
+    <item>
+      <title>六个月后，带着 Auto-Pilot 重返 Hacker News</title>
+      <link>https://agentiloop.ai/zh/blog/back-on-hacker-news-with-auto-pilot/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/back-on-hacker-news-with-auto-pilot/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>社区</category>
+      <category>Hacker News</category>
+      <description>Agent! 再次以 Show HN 的形式登上 Hacker News。四月那条帖子讲的是一个原生 Mac 编码工具；这一条讲的是 Auto-Pilot——一个以目标驱动、在目标达成之前持续运行周期的循环，以及它一直在开发的马里奥赛车风格游戏。这里是帖子全文、其中每一项说法背后的依据，以及参与讨论的入口。</description>
+    </item>
     <item>
       <title>GoKart：自动驾驶在一个下午做出的马里奥赛车风格竞速游戏</title>
       <link>https://agentiloop.ai/zh/blog/gokart-built-on-auto-pilot/</link>

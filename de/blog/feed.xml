@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Deep Dives in AgentiLoop Agent!, den nativen KI-Agenten für macOS.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! Blog</title>
       <link>https://agentiloop.ai/de/blog/</link>
     </image>
+    <item>
+      <title>Zurück auf Hacker News, sechs Monate später, mit Auto-Pilot</title>
+      <link>https://agentiloop.ai/de/blog/back-on-hacker-news-with-auto-pilot/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/back-on-hacker-news-with-auto-pilot/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>Community</category>
+      <category>Hacker News</category>
+      <description>Agent! ist wieder auf Hacker News, als Show HN. Der Thread im April drehte sich um ein natives Coding-Harness für den Mac; dieser dreht sich um Auto-Pilot, die zielgesteuerte Schleife, die so lange Zyklen ausführt, bis das Ziel erreicht ist, und um das Spiel im Stil von Mario Kart, das sie seitdem baut. Hier ist der Beitrag, was hinter jeder Behauptung darin steckt und wo man in die Diskussion einsteigen kann.</description>
+    </item>
     <item>
       <title>GoKart: Ein Rennspiel im Mario-Kart-Stil, das Auto-Pilot an einem Nachmittag gebaut hat</title>
       <link>https://agentiloop.ai/de/blog/gokart-built-on-auto-pilot/</link>

@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
+    <item>
+      <title>6개월 만에 Auto-Pilot과 함께 다시 Hacker News에</title>
+      <link>https://agentiloop.ai/ko/blog/back-on-hacker-news-with-auto-pilot/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/back-on-hacker-news-with-auto-pilot/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>커뮤니티</category>
+      <category>Hacker News</category>
+      <description>Agent!가 Show HN으로 다시 Hacker News에 올라왔습니다. 4월 스레드는 네이티브 Mac 코딩 하네스에 관한 것이었고, 이번에는 목표에 도달할 때까지 사이클을 계속 실행하는 목표 주도 루프인 Auto-Pilot과, 그것이 만들어 온 마리오 카트 스타일 게임에 관한 것입니다. 게시물의 내용, 그 안의 각 주장 뒤에 있는 근거, 그리고 토론에 참여할 수 있는 곳을 소개합니다.</description>
+    </item>
     <item>
       <title>GoKart: 오토파일럿이 오후 한나절 만에 만든 마리오 카트 스타일 레이싱 게임</title>
       <link>https://agentiloop.ai/ko/blog/gokart-built-on-auto-pilot/</link>

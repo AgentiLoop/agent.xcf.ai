@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Подробный разбор AgentiLoop Agent!, нативного ИИ-агента для macOS.</description>
     <language>ru</language>
-    <lastBuildDate>Fri, 02 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Блог AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/ru/blog/</link>
     </image>
+    <item>
+      <title>Снова на Hacker News, полгода спустя, с Auto-Pilot</title>
+      <link>https://agentiloop.ai/ru/blog/back-on-hacker-news-with-auto-pilot/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/back-on-hacker-news-with-auto-pilot/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>Сообщество</category>
+      <category>Hacker News</category>
+      <description>Agent! снова на Hacker News в формате Show HN. Апрельская ветка была о нативной Mac-оболочке для кодинга; эта — об Auto-Pilot, цикле, управляемом целью, который продолжает запускать циклы, пока цель не достигнута, и об игре в стиле Mario Kart, которую он строит. Вот сам пост, что стоит за каждым его утверждением и где присоединиться к обсуждению.</description>
+    </item>
     <item>
       <title>GoKart: гонки в стиле Mario Kart, которые Auto-Pilot собрал за один день</title>
       <link>https://agentiloop.ai/ru/blog/gokart-built-on-auto-pilot/</link>
