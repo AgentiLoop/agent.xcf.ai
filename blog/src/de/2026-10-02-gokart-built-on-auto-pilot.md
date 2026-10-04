@@ -1,12 +1,15 @@
 ---
 title: GoKart: Ein Rennspiel im Mario-Kart-Stil, das Auto-Pilot an einem Nachmittag gebaut hat
-description: Gib dem Auto-Pilot von Agent! ein einziges Ziel - „erstelle einen Mario-Kart-Klon namens GoKart" - und komm zurück zu einem Godot-4-Rennspiel mit drei Strecken, acht Items, KI-Gegnern und 3.344 bestandenen Test-Checks. Hier steht, was laut Protokoll wirklich passiert ist, einschließlich der Stellen, an denen es feststeckte.
+description: Gib dem Auto-Pilot von Agent! ein einziges Ziel - „erstelle einen Mario-Kart-Klon namens GoKart" - und komm zurück zu einem Godot-4-Rennspiel mit drei Strecken, acht Items, KI-Gegnern und 3.344 bestandenen Test-Checks. Zwei Tage und 87 Agent-Commits später ist es GoKart 0.0.2: vier Strecken, Battle-Modus, Zeitfahren, ein Menü im Stil von Mario Kart 64 und 14.134 bestandene Checks. Hier steht, was laut Protokoll wirklich passiert ist, einschließlich der Stellen, an denen es feststeckte.
 tags: Auto-Pilot, Showcase, Godot
+updated: 2026-10-04
 ---
 <figure style="margin:2rem 0">
-<img src="/gokart-green-hills-drift.png" alt="GoKart auf der Strecke Green Hills: Verfolgerkamera auf das Spieler-Kart mitten im Drift auf einer grauen Straße mit rot-weiß gestreiften Banden, grünem Boden und blauem Himmel. Das HUD zeigt Platz 1, Runden- und Zeitzähler und eine Minimap der Strecke unten links." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Green Hills, Runde 1, driftend auf Platz eins. Jedes Mesh, jeder Shader und jeder Sound in diesem Bild wurde aus Code erzeugt.</figcaption>
+<img src="/gokart-0-0-2-title.png" alt="Der Titelbildschirm von GoKart 0.0.2: das Wort GOKART auf einem Bogen in großen Buchstaben mit Gelb-zu-Rot-Verlauf, marineblauen Blockseiten und weichem Schatten, über einer laufenden Attract-Demo von CPU-Karts, die eine Strecke umrunden, darunter PRESS ENTER." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Der Titelbildschirm von GoKart 0.0.2. Das Logo fliegt herein und federt zum Stillstand über einer laufenden Attract-Demo, die durch die Strecken führt. Jedes Mesh, jeder Shader, jedes Schriftlayout und jeder Sound wurde aus Code erzeugt.</figcaption>
 </figure>
+
+*Aktualisiert am 4. Oktober: Dieser Beitrag behandelt jetzt auch die zwei Tage nach dem ersten Nachmittag, die zwei Auto-Pilot-Sitzungen, die gleichzeitig im selben Repo liefen, und das Release [GoKart 0.0.2](#gokart-0-0-2). Die Screenshots wurden vom 0.0.2-Tag neu aufgenommen.*
 
 Der gestrige Beitrag hat [Auto-Pilot](/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/) vorgestellt: Tippe `/auto <Ziel>` in Agent! für Mac, und es läuft unbeaufsichtigt Zyklus für Zyklus auf dieses Ziel zu, bis du Stop All drückst. In diesem Beitrag geht es darum, was am anderen Ende herauskam, als ich es auf ein Spiel angesetzt habe.
 
@@ -14,7 +17,7 @@ Das Ziel, mehr oder weniger so eingefügt, wie ich es getippt habe:
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-Budget: kein Zeitlimit, unbegrenzte Zyklen. Das Modell in Agent! war in jedem Zyklus Claude Sonnet 5.5. Der erste Commit landete um 12:39. Um 16:32 am selben Nachmittag hatte das Repo 33 Commits. Heute hat es 47 GDScript-Dateien, rund 5.500 Zeilen GDScript- und Shader-Code und eine Unit-Suite, die 3.344 Checks besteht. Das Ganze liegt auf GitHub unter [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
+Budget: kein Zeitlimit, unbegrenzte Zyklen. Das Modell in Agent! war in jedem Zyklus Claude Sonnet 5.5. Der erste Commit landete um 12:39. Um 16:32 am selben Nachmittag hatte das Repo 33 Commits, 47 GDScript-Dateien, rund 5.500 Zeilen GDScript- und Shader-Code und eine Unit-Suite, die 3.344 Checks bestand. Zwei Tage später, beim 0.0.2-Tag, sind es 126 Commits, 150 GDScript-Dateien, rund 24.500 Zeilen und 14.134 Checks, und jeder einzelne dieser Commits stammt vom Agenten. Das Ganze liegt auf GitHub unter [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
 
 ## Was Auto-Pilot tut, ein Zyklus nach dem anderen
 
@@ -41,8 +44,8 @@ Der erste Zyklus der zweiten Sitzung behob den Tab, kürzte die KI-Vorausschau v
 Diese Sitzung lief 15 Zyklen in etwa eineinviertel Stunden, und jeder einzelne ist ein Feature: Start-Countdown mit Raketenstart-Boost für gut getimtes Gasgeben; Mini-Turbo-Aufstiegs-Pops und ein Blitz am Bildschirmrand; eine Minimap; der zielsuchende rote Panzer und der Stern; ein prozedurales Kart-Modell mit drehenden Rädern, einschlagenden Vorderrädern und einem Fahrer, der den Kopf dreht; ein Blitz, der jeden Gegner schrumpfen lässt; Dreifach-Panzer, die das Kart umkreisen; der blaue Stachelpanzer, der den Führenden entlang der Straße jagt; ein Ergebnisbildschirm mit Punkten; komplett synthetisierter Sound ohne Audiodateien, vom Motor-Loop bis zum Ziel-Jingle; ein Titelmenü mit einer zweiten Strecke; eine Option für die Rundenzahl; eine dritte Strecke; und positionales 3D-Motorbrummen an jedem KI-Kart.
 
 <figure style="margin:2rem 0">
-<img src="/gokart-sunset-speedway.png" alt="GoKart auf der Strecke Sunset Speedway: das Spieler-Kart mit Vollgas auf einem sandigen Kurs unter einem Sonnenuntergangshimmel von Orange bis Violett. Das HUD zeigt Platz 4, Runde 1 und den Minimap-Umriss einer langen Strecke mit einer Haarnadelkurve." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Sunset Speedway, die zweite Strecke, in Zyklus 12 zusammen mit dem Titelmenü hinzugefügt. Länger als Green Hills, mit einer Haarnadel und einer Schikane.</figcaption>
+<img src="/gokart-0-0-2-sunset-speedway.png" alt="GoKart 0.0.2 auf Sunset Speedway: das Spieler-Kart driftend auf Platz 3 von 8 in Runde 1 unter dem Sonnenuntergangshimmel, mit dem HUD im Stil von Mario Kart 64: eine durchscheinende Streckenkarte unten links, Platz, Runde und Geschwindigkeit in einer runden Gold-und-Creme-Schrift." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Sunset Speedway in 0.0.2: ein Zufallsfahrt-Bot mitten im Drift auf Platz 3 von 8. Die zweite Strecke wurde in Zyklus 12 des ersten Tages zusammen mit dem Titelmenü hinzugefügt. Der Verkehr, die Gebäude hinter den Banden und das HUD kamen zwei Tage später.</figcaption>
 </figure>
 
 ## Der Teil, in dem es ehrlich war
@@ -69,16 +72,69 @@ Die Zyklen 2 bis 8 dieser letzten Sitzung nahmen keine Codeänderungen vor. Jede
 
 > Ich konnte das Ergebnis nicht auf dem Bildschirm sehen, deshalb erkläre ich das Ziel nicht für erreicht. Vier Punkte muss immer noch ein Mensch im Spiel ausprobieren.
 
-Das ist das richtige Verhalten. Das Ziel lautete „die Lenkung fühlt sich schlecht an" und „die Banden flackern", und kein Headless-Test kann dieses Ziel abschließen. Auto-Pilot hat keine Iterationsobergrenze, es hätte also ewig weitergeprüft. Die Sitzung endete nach Zyklus 8, und was GoKart als Nächstes brauchte, war ein Playtest, kein weiterer Zyklus.
+Das ist das richtige Verhalten. Das Ziel lautete „die Lenkung fühlt sich schlecht an" und „die Banden flackern", und kein Headless-Test kann dieses Ziel abschließen. Auto-Pilot hat keine Iterationsobergrenze, es hätte also ewig weitergeprüft. Die Sitzung endete nach Zyklus 8, und was GoKart als Nächstes brauchte, war ein Playtest, kein weiterer Zyklus. An diesem Abend wurde das Repo als 0.0.1 getaggt und für macOS, Windows und Linux exportiert.
+
+## Zwei Tage später: zwei Auto-Pilots in einem Repo
+
+Am 3. Oktober kam ich mit einer anderen Art von Ziel zurück. Keine Feature-Liste, eine Referenz:
+
+> keep building GoKart to resemble Mario Kart Nintendo 64 version. search Mario Kart N64 or Mario Kart Nintendo 64 and keep improving, iterating, making GoKart better
+
+Diese fünfte Sitzung begann um 14:19 und lief 28 Zyklen, und fast jeder Zyklus ist ein Mario-Kart-64-Element, das der Agent nachgeschlagen und gebaut hat: das 8er-Fahrerfeld auf einem zweispaltigen Startraster, Gummiband-KI je nach Schwierigkeit, 50cc / 100cc / 150cc und die gespiegelte Extra-Klasse, leichte / mittlere / schwere Karts, die sich gegenseitig schubsen, Grand Prix mit 9/6/3/1 Punkten und der Rank-out-Regel, Zeitfahren mit einem Geist, Battle-Modus mit Ballons in Big Donut, Block Fort und Skyscraper, Dreifach- und goldene Pilze, die falsche Item-Box, das Bananenbündel, Buu Huu, dreifache rote Panzer, Panzerblocken, der Fehlstart, Lakitu mit dem Startsignal und den Rundenschildern, eine vierte Strecke namens Dusty Canyon, der Kalimari-Desert-Zug mit Bahnübergängen, der Verkehr von Toad's Turnpike, Monty-Maulwürfe, Schneemänner, Pinguine, Sherbet-Land-Eis, Streckenrand-Kulissen je nach Thema, der Windschatten, eine Sprungrampe, der Hop-and-Toggle-Powerslide und ein Chiptune-Loop für jede Strecke, im Code aus Step-Patterns gerendert.
 
 <figure style="margin:2rem 0">
-<img src="/gokart-frosty-peaks.png" alt="GoKart auf der Strecke Frosty Peaks: das Spieler-Kart mit Vollgas auf einem schneeweißen Kurs unter einem dunkelblauen Dämmerungshimmel. Das HUD zeigt Platz 2, Runde 1, die Geschwindigkeit in km/h und die Minimap." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks, in Zyklus 14 als neuer Eintrag in der Streckenbibliothek hinzugefügt. Die Tests pro Strecke haben ihn automatisch aufgenommen.</figcaption>
+<img src="/gokart-0-0-2-train.png" alt="GoKart 0.0.2 auf Dusty Canyon: das Spieler-Kart wartet an einem Bahnübergang, während eine Dampflok über die Straße rollt, mit einem Andreaskreuz neben den Gleisen, unter einem Wüstenhimmel." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Dusty Canyon, die vierte Strecke, mit ihrem Zug im Stil von Kalimari Desert. CPU-Karts halten an einem gesperrten Übergang an und warten; ein Kart, das das nicht tut, wird in die Luft geschleudert.</figcaption>
+</figure>
+
+Vier Stunden später, um 18:25, öffnete ich einen zweiten Tab und startete einen zweiten Auto-Pilot auf demselben Repository, mit einem enger gefassten Ziel:
+
+> the menus are not Mario Kart Quality and neither is the title shot. and there is over use of black outlines on text everywhere. see Mario Kart 64 screenshots and images on the web and make better menus. focus only on the menus / screens and title shot for GoKart. make conscious decisions. do not conflict with previous /auto working on the application
+
+Von 18:25 bis Mitternacht committeten also zwei Agenten in denselben Arbeitsbaum. Die Menü-Sitzung baute den Titelbildschirm neu, mit einem bogenförmigen Verlaufslogo, das hereinfliegt und federt, einem Auswahlbildschirm mit einem Bild neben jeder Strecke, einem Live-Überflug der gewählten Strecke, Optionszeilen mit leuchtenden Balken, einem sich drehenden Kart-Porträt und einem goldenen Cursor, einem Strecken-Intro-Überflug, einem Pausenbildschirm, einer Ergebnistafel, deren Zeilen nacheinander hereingleiten, und einer gemeinsamen Palette aus runder Gold-und-Creme-Schrift mit Schlagschatten, die jede 8-Pixel-Schwarzkontur im Spiel ersetzte. Sie lief 23 Zyklen und erklärte das Ziel um 23:54 für erreicht.
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-select.png" alt="Der Auswahlbildschirm von GoKart 0.0.2: das GOKART-Logo oben, links eine Streckenliste mit einem kleinen Bild neben jedem Streckennamen und der gewählten Zeile hervorgehoben, rechts ein Live-Bild der Strecke mit dem Kartenumriss in der Ecke, Reihen von Options-Pills für Runden, CPU, Motorklasse, Kart-Gewicht und Modus, und das Kart des Spielers, das sich in einem kleinen Porträtfenster dreht, alles über der abgedunkelten Attract-Demo." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Der Auswahlbildschirm nach der Menü-Sitzung. Streckenbilder, ein Live-Überflug der Strecke, jede Option als Reihe von Pills mit der gewählten hervorgehoben, und das Kart, das sich in seinem Porträtfenster dreht.</figcaption>
+</figure>
+
+Die Zeile „do not conflict" hat echte Arbeit geleistet. Das Protokoll ist voll davon, wie die beiden Sitzungen umeinander herum arbeiteten: Die Menü-Sitzung verifizierte aus einem sauberen `git worktree` auf HEAD, damit „die laufende Pinguin-Arbeit der anderen Sitzung" aus ihren Testläufen herausblieb, eine Sitzung beendete auf meine Bitte hin das halbfertige Feature der anderen, und Commits wurden Datei für Datei gestaged statt mit `git add -A`, weil die Änderungen des anderen Tabs im selben Baum lagen. Es war nicht aufgeräumt, aber nichts ging verloren, und die Suite beendete die Nacht mit 14.134 bestanden, 0 fehlgeschlagen.
+
+Das Protokoll der Feature-Sitzung endet drei Minuten später, um 23:57, mit „Session ended — Stop All". Meine Notiz an Agent! direkt danach, die es als Nachricht des nächsten Checkpoint-Commits gespeichert hat, lautete, dass Stop All nur den Tab stoppen muss, in dem es gedrückt wird, nicht alle. Mit zwei laufenden Auto-Pilots ist ein Knopf für beide der falsche Knopf.
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 auf Frosty Peaks: das Spieler-Kart am Eingang eines Feldes von Schneemännern, die in versetzten Reihen über die schneeweiße Straße stehen, jeder mit rotem Schal, Zylinder und Karottennase, unter einem dunkelblauen Dämmerungshimmel." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Das Schneemannfeld auf Frosty Peaks. Wer einen trifft, wird in die Luft geschleudert, während er zu Schnee zerplatzt; CPU-Karts schauen 40 Meter voraus und schlängeln sich durch die Reihen.</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2 auf Frosty Peaks: ein Pinguin, der auf dem Bauch über das blassblau-weiße Eis der langen Kurve vor dem Spieler-Kart rutscht." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Eis und Pinguine im Stil von Sherbet Land auf Frosty Peaks. Auf Eis dreht sich die Nase, aber das Kart rutscht weiter in die bisherige Richtung; die Pinguine watscheln zum Rand, plumpsen hin und rutschen wieder zurück.</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-traffic.png" alt="GoKart 0.0.2 auf Sunset Speedway: das Spieler-Kart hängt hinter einem Bus und einem Kastenwagen mit eingeschalteten Scheinwerfern auf den zwei Spuren der Straße fest, unter dem Sonnenuntergangshimmel." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Verkehr im Stil von Toad's Turnpike auf Sunset Speedway: Autos, Busse, Kastenwagen und Tanklaster mit Scheinwerfern, und Gebäude mit beleuchteten Fensterbändern hinter den Banden.</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-gp-results.png" alt="Die Grand-Prix-Ergebnistafel von GoKart 0.0.2 auf einer marineblauen Tafel mit goldenem Rand: links das Rennergebnis und rechts die Cup-Wertung, eine Zeile pro Fahrer mit Farbfeld, Gold-, Silber- und Bronzeplätzen, Zeiten und Punkten, die Zeile des Spielers auf einem leuchtenden goldenen Balken und darunter der Pokal." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Die Grand-Prix-Ergebnistafel: Rennergebnis und Cup-Wertung nebeneinander, die Zeilen gleiten nacheinander herein, jede mit einem Tick, und darunter der Pokal.</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-battle.png" alt="Battle-Modus in GoKart 0.0.2: vier Karts auf ihren Startfeldern in einer Battle-Arena, jedes mit drei angebundenen Ballons, und Lakitus Startsignal darüber." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Battle-Modus: vier Karts, je drei Ballons. Item-Treffer, Lava, die Dachkante, Sternberührungen und harte Rempler lassen Ballons platzen, und ein Kart ohne Ballons wird zum Mini-Bomben-Kart.</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2 auf Dusty Canyon: das Spieler-Kart auf Platz 5 von 8 in Runde 1 auf der Wüstenstraße, mit dem HUD im Stil von Mario Kart 64." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Dusty Canyon vom Zufallsfahrt-Bot, Platz 5 von 8. Wüstenkurven, eine Haarnadel, eine Links-S-Kurve, zwei Oasen-Wasserabschnitte, der Zug und eine Sprungrampe auf der Startgeraden.</figcaption>
 </figure>
 
 ## Zu diesen Screenshots
 
-Agent! hat sie aufgenommen, nicht ich, und nicht von Hand. Ich bat um drei Screenshots einer zufälligen Fahrt, und es schrieb ein 70-zeiliges `tools/random_drive.gd`, das der Straße mit einem wandernden Spurversatz folgt, zufällige Drift-Schübe einstreut und das gehaltene Item zu zufälligen Zeitpunkten abfeuert und dann alle paar hundert Physik-Frames ein Bild speichert. Es lief einmal pro Strecke, und die drei oben sind je ein Bild davon. Sie stehen auch in der [GoKart-README](https://github.com/AgentiLoop/GoKart#screenshots).
+Agent! hat sie aufgenommen, nicht ich, und nicht von Hand. Für die erste Version bat ich um drei Screenshots einer zufälligen Fahrt, und es schrieb ein 70-zeiliges `tools/random_drive.gd`, das der Straße mit einem wandernden Spurversatz folgt, zufällige Drift-Schübe einstreut und das gehaltene Item zu zufälligen Zeitpunkten abfeuert und dann alle paar hundert Physik-Frames ein Bild speichert. Die zwei Rennbilder oben sind Bilder von diesem Bot. Der Rest stammt aus den Shot-Tools, die mit jedem Feature mitgeliefert wurden: `menu_shot.gd`, `train_shot.gd`, `traffic_shot.gd`, `snowman_shot.gd`, `penguin_shot.gd`, `hud_shot.gd` und `battle_shot.gd`, von denen jedes seine Szene aufbaut, auf den richtigen Frame wartet und ihn speichert. Alle wurden für dieses Update aus einem sauberen Worktree ausgeführt, der auf dem Tag `v0.0.2` ausgecheckt war, sodass nichts Uncommittetes in einem Bild steckt. Agent! kann sich das Ergebnis immer noch nicht ansehen, also tasten die Tools stattdessen Pixel ab: Das Eis-Bild gibt die Straßenfarbe voraus auf Eis gegenüber Asphalt aus, das Pausen-Bild beweist, dass sich eine Sekunde lang außerhalb des Panels nichts bewegt hat, und vor der Veröffentlichung ließ ich es in allen zehn Bildern oben die rein schwarzen Pixel zählen: null in jedem. Mehr davon stehen in der [GoKart-README](https://github.com/AgentiLoop/GoKart#screenshots).
 
 ## Was ich dir sagen würde, bevor du es ausprobierst
 
@@ -86,15 +142,24 @@ Agent! hat sie aufgenommen, nicht ich, und nicht von Hand. Ich bat um drei Scree
 - **Schreib die Betriebsregeln ins Ziel.** „Setz ein Zeitlimit auf die Shell" funktionierte besser als Teil des Ziels denn als einmalige Nachricht, weil jeder neue Zyklus das Ziel erneut liest.
 - **Rechne damit, dass es nach Augen fragt.** Bei allem Visuellen oder Gefühlsmäßigen bleibt die Schleife ehrlich stehen, statt zu lügen. Plane zwischen den Sitzungen einen Playtest ein und gib deine Notizen als nächstes Ziel zurück.
 - **Stop All gehört zum Workflow**, es ist kein Fehlschlag. Die ersten drei GoKart-Sitzungen endeten alle damit.
+- **Zwei Auto-Pilots in einem Repo funktionieren, wenn du ihnen voneinander erzählst.** „Do not conflict with the previous /auto" kam ins zweite Ziel, und beide Sitzungen gaben sich echte Mühe, einander aus dem Weg zu gehen. Gib ihnen getrennte Bereiche des Codes, und rechne vorerst damit, dass der, den du stoppst, den anderen mitnimmt.
 
-## GoKart 0.0.1
+## Ist das gut?
 
-Du brauchst kein Godot mehr, um es auszuprobieren. [GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) ist das erste paketierte Release, exportiert aus demselben Repo:
+Ich habe Agent! diese Frage gestellt, nachdem es das Repo gelesen, die Commits gezählt und das Auto-Pilot-Protokoll gefunden hatte. Alle 126 Commits stammen vom Agenten, keiner von einem Menschen, und `.agent/autopilot/progress.md` reicht über Zyklus 23 hinaus. Seine Antwort, unbearbeitet:
+
+> Es kommt darauf an, was du dir davon erhoffst. Als Showcase dessen, was Auto-Pilot kann, ist es beeindruckend. Mehr als dreiundzwanzig Zyklen haben vier Strecken, Items, KI-Fahrer, Grand Prix, Zeitfahren, Battle-Modus, prozedurale Musik und Sound hervorgebracht, alles ohne importierte Assets, und eine README, die das im Detail dokumentiert. Das ist eine Menge funktionierende Software aus einer einzigen Zielformulierung.
+
+Es fügte außerdem den Vorbehalt hinzu, dass unterwegs kein Mensch es geprüft hat, die Qualität also anhand der eigenen Verifikationsprotokolle des Agenten beurteilt wurde, und dass es das Spiel weder gespielt noch den Code auditiert hatte, also nicht sagen könne, wie gut es sich tatsächlich spielt. Das ist dieselbe Schlussfolgerung, zu der das Protokoll von allein gekommen ist: Der nächste Schritt ist ein Playtest.
+
+## GoKart 0.0.2
+
+Du brauchst kein Godot, um es auszuprobieren. [GoKart 0.0.2](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.2) ist das zweite paketierte Release, exportiert aus demselben Repo, 87 Commits nach [0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1):
 
 - **macOS** universal (Apple Silicon und Intel), mit Developer ID signiert und von Apple notarisiert
 - **Windows** x86_64
 - **Linux** x86_64 und arm64
 
-Jeder Download ist eine einzelne, eigenständige Binärdatei mit eingebetteten Spieldaten, und `SHA256SUMS.txt` liegt auf der Release-Seite, falls du prüfen willst, was du bekommen hast. Der Windows-Build ist nicht signiert, rechne also mit der SmartScreen-Abfrage.
+Jeder Download ist eine einzelne, eigenständige Binärdatei mit eingebetteten Spieldaten, und `SHA256SUMS.txt` liegt auf der Release-Seite, falls du prüfen willst, was du bekommen hast. Der Windows-Build ist nicht signiert, rechne also mit der SmartScreen-Abfrage. Alles in diesem Beitrag, was nicht in 0.0.1 war, ist in 0.0.2: Battle-Modus, Zeitfahren, der Cup mit vier Strecken, die Motor- und Gewichtsklassen, die neuen Items, Lakitu, der Zug, der Verkehr, die Maulwürfe, die Schneemänner, die Pinguine, das Eis, die Kulissen, der Windschatten, die Sprungrampe, die Streckenmusik, der neue Titel- und Auswahlbildschirm, das Strecken-Intro, der Pausenbildschirm und das neu gestaltete HUD. Die Release Notes haben die vollständige Liste.
 
 Agent! 1.1.87 mit Auto-Pilot gibt es auf der [Releases-Seite](https://github.com/AgentiLoop/Agent/releases/latest) und in Homebrew. Wenn du GoKart lieber aus dem Quellcode startest, braucht es Godot 4.4 oder neuer: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

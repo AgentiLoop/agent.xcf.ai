@@ -6,7 +6,7 @@
     <atom:link href="https://agentiloop.ai/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Análisis a fondo de AgentiLoop Agent!, el agente de IA nativo para macOS.</description>
     <language>es</language>
-    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Blog de AgentiLoop Agent!</title>
@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>Vitrina</category>
       <category>Godot</category>
-      <description>Dale a Auto-Pilot de Agent! un único objetivo - &quot;crea un clon de Mario Kart llamado GoKart&quot; - y vuelve para encontrarte un juego de carreras en Godot 4 con tres circuitos, ocho objetos, rivales controlados por IA y 3.344 comprobaciones de test en verde. Esto es lo que dice el registro que ocurrió de verdad, incluidas las partes en las que se quedó atascado.</description>
+      <description>Dale a Auto-Pilot de Agent! un único objetivo - &quot;crea un clon de Mario Kart llamado GoKart&quot; - y vuelve para encontrarte un juego de carreras en Godot 4 con tres circuitos, ocho objetos, rivales controlados por IA y 3.344 comprobaciones de test en verde. Dos días y 87 commits del agente después es GoKart 0.0.2: cuatro circuitos, modo Batalla, Contrarreloj, un menú al estilo Mario Kart 64 y 14.134 comprobaciones en verde. Esto es lo que dice el registro que ocurrió de verdad, incluidas las partes en las que se quedó atascado.</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>

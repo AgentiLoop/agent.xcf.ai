@@ -1,12 +1,15 @@
 ---
 title: GoKart：オートパイロットが午後のうちに作り上げたマリオカート風レースゲーム
-description: Agent! のオートパイロット（Auto-Pilot）に「GoKart という名前のマリオカートクローンを作れ」というゴールをひとつ渡して戻ってくると、3 つのコース、8 種類のアイテム、AI ライバル、そして 3,344 件のテストチェックに合格する Godot 4 のレースゲームができていました。行き詰まった場面も含めて、ログが語る実際の経緯をまとめます。
+description: Agent! のオートパイロット（Auto-Pilot）に「GoKart という名前のマリオカートクローンを作れ」というゴールをひとつ渡して戻ってくると、3 つのコース、8 種類のアイテム、AI ライバル、そして 3,344 件のテストチェックに合格する Godot 4 のレースゲームができていました。2 日後、エージェントによる 87 コミットを経て、それは GoKart 0.0.2 になりました。4 つのコース、バトルモード、タイムトライアル、マリオカート 64 風のメニュー、そして 14,134 件のチェック合格。行き詰まった場面も含めて、ログが語る実際の経緯をまとめます。
 tags: Auto-Pilot, ショーケース, Godot
+updated: 2026-10-04
 ---
 <figure style="margin:2rem 0">
-<img src="/gokart-green-hills-drift.png" alt="GoKart の Green Hills コース：追従カメラの視点で、赤白ストライプの壁、緑の地面、青空の中、灰色の路面でプレイヤーのカートがドリフトしている。HUD には 1 位、ラップとタイムのカウンター、左下隅にコースのミニマップが表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Green Hills、1 周目、首位でドリフト中。このフレームのメッシュ、シェーダー、サウンドはすべてコードから生成されたものです。</figcaption>
+<img src="/gokart-0-0-2-title.png" alt="GoKart 0.0.2 のタイトル画面：黄色から赤へのグラデーションの大きな文字に紺色のブロック状の側面と柔らかい影を付けた GOKART の文字がアーチ状に並び、その背後では CPU カートがコースを周回するライブのアトラクトデモが流れ、下に PRESS ENTER と表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>GoKart 0.0.2 のタイトル画面。ロゴが飛び込んできて跳ねながら止まり、その背後ではコースを巡るライブのアトラクトデモが流れます。メッシュ、シェーダー、フォントレイアウト、サウンドはすべてコードから生成されたものです。</figcaption>
 </figure>
+
+*10 月 4 日更新：この記事は、最初の午後に続く 2 日間、同じリポジトリで同時に動いた 2 つのオートパイロットセッション、そして [GoKart 0.0.2](#gokart-0-0-2) リリースまでをカバーするようになりました。スクリーンショットは 0.0.2 タグから撮り直しています。*
 
 昨日の記事では[オートパイロット（Auto-Pilot）](/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/)を紹介しました。Mac 版 Agent! に `/auto <ゴール>` と入力すると、Stop All を押すまでそのゴールに向かって無人でサイクルを回し続けます。この記事は、それをゲームに向けたときに反対側から何が出てきたかの話です。
 
@@ -14,7 +17,7 @@ tags: Auto-Pilot, ショーケース, Godot
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-予算：時間制限なし、サイクル数無制限。すべてのサイクルで Agent! 内のモデルは Claude Sonnet 5.5 でした。最初のコミットは 12:39。同じ日の 16:32 には、リポジトリのコミット数は 33 になっていました。現在は GDScript ファイルが 47 個、GDScript とシェーダーのコードが約 5,500 行、そして 3,344 件のチェックに合格するユニットテストスイートがあります。すべて GitHub の [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart) にあります。
+予算：時間制限なし、サイクル数無制限。すべてのサイクルで Agent! 内のモデルは Claude Sonnet 5.5 でした。最初のコミットは 12:39。同じ日の 16:32 には、リポジトリはコミット 33 件、GDScript ファイル 47 個、GDScript とシェーダーのコードが約 5,500 行、そして 3,344 件のチェックに合格するユニットテストスイートを持っていました。2 日後の 0.0.2 タグの時点では、コミット 126 件、GDScript ファイル 150 個、約 24,500 行、14,134 件のチェックとなり、そのコミットはすべてエージェントが作成したものです。すべて GitHub の [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart) にあります。
 
 ## オートパイロットがやること、1 サイクルずつ
 
@@ -41,8 +44,8 @@ tags: Auto-Pilot, ショーケース, Godot
 そのセッションは約 1 時間 15 分で 15 サイクルを回し、どのサイクルも 1 つの機能です。タイミングよくアクセルを踏むとロケットスタートのブーストがつくスタートカウントダウン、ミニターボ段階アップのポップと画面端のフラッシュ、ミニマップ、追尾するアカこうらとスター、回転するホイール・ステアリングする前輪・頭を向けるドライバーを備えた手続き的なカートモデル、ライバル全員を縮めるサンダー、カートの周りを回るトリプルこうら、路面に沿って先頭を追い詰めるトゲゾーこうら、ポイント付きのリザルト画面、エンジンのループからゴールのジングルまで音声ファイルを一切使わない完全合成オーディオ、2 つ目のコースを備えたタイトルメニュー、周回数オプション、3 つ目のコース、そして各 AI カートの位置付き 3D エンジン音。
 
 <figure style="margin:2rem 0">
-<img src="/gokart-sunset-speedway.png" alt="GoKart の Sunset Speedway コース：オレンジから紫へ変わる夕焼け空の下、砂のサーキットを全速力で走るプレイヤーのカート。HUD には 4 位、1 周目、そしてヘアピンのある長いコースのミニマップの輪郭が表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Sunset Speedway、2 つ目のコース。サイクル 12 でタイトルメニューと一緒に追加されました。Green Hills より長く、ヘアピンとシケインがあります。</figcaption>
+<img src="/gokart-0-0-2-sunset-speedway.png" alt="GoKart 0.0.2 の Sunset Speedway：夕焼け空の下、1 周目に 8 台中 3 位でドリフトするプレイヤーのカート。マリオカート 64 風の HUD には、左下隅の透けたコースマップ、順位、ラップ、速度が丸みのあるゴールドとクリーム色のフォントで表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>0.0.2 の Sunset Speedway：ランダム走行ボットが 8 台中 3 位でドリフト中。2 つ目のコースは初日のサイクル 12 でタイトルメニューと一緒に追加されました。交通、壁の向こうの建物、HUD は 2 日後に加わったものです。</figcaption>
 </figure>
 
 ## 正直だった場面
@@ -69,16 +72,69 @@ tags: Auto-Pilot, ショーケース, Godot
 
 > 画面上で結果を確認できなかったので、ゴール達成とは宣言しません。4 つの項目は、まだ人がゲーム内で試す必要があります。
 
-これが正しい振る舞いです。ゴールは「ステアリングの感触が悪い」「壁がちらつく」であり、どんなヘッドレステストもそのゴールを閉じることはできません。オートパイロットには反復回数の上限がないので、永遠に確認を続けたでしょう。セッションはサイクル 8 の後に終了し、GoKart に次に必要だったのはもう 1 サイクルではなく、プレイテストでした。
+これが正しい振る舞いです。ゴールは「ステアリングの感触が悪い」「壁がちらつく」であり、どんなヘッドレステストもそのゴールを閉じることはできません。オートパイロットには反復回数の上限がないので、永遠に確認を続けたでしょう。セッションはサイクル 8 の後に終了し、GoKart に次に必要だったのはもう 1 サイクルではなく、プレイテストでした。その晩、リポジトリは 0.0.1 のタグを付けられ、macOS、Windows、Linux 向けに書き出されました。
+
+## 2 日後：1 つのリポジトリに 2 つのオートパイロット
+
+10 月 3 日、私は違う種類のゴールを持って戻ってきました。機能リストではなく、参照先です：
+
+> keep building GoKart to resemble Mario Kart Nintendo 64 version. search Mario Kart N64 or Mario Kart Nintendo 64 and keep improving, iterating, making GoKart better
+
+この 5 回目のセッションは 14:19 に始まり 28 サイクルを回し、ほぼすべてのサイクルがエージェントが調べて作ったマリオカート 64 の要素ひとつです。2 列グリッドに並ぶ 8 台のレーサー、難易度ごとのラバーバンディング、50cc / 100cc / 150cc と鏡像の Extra クラス、互いに押し合う軽量 / 中量 / 重量のカート、9/6/3/1 ポイントとランクアウトルールを備えたグランプリ、ゴースト付きのタイムトライアル、Big Donut、Block Fort、Skyscraper での風船を使ったバトルモード、トリプルキノコとゴールデンキノコ、ニセアイテムボックス、バナナの束、テレサ、トリプルアカこうら、こうらによる防御、フライング、スタート合図とラップ表示を出すジュゲム、Dusty Canyon という 4 つ目のコース、踏切付きのカラカラさばく風の列車、キノピオハイウェイ風の交通、チョロプー、雪だるま、ペンギン、シャーベットランド風の氷、テーマごとの沿道の景色、スリップストリーム、ジャンプ台、ホップして切り替えるパワースライド、そしてコードのステップパターンからレンダリングされる各コースのチップチューンループ。
 
 <figure style="margin:2rem 0">
-<img src="/gokart-frosty-peaks.png" alt="GoKart の Frosty Peaks コース：濃紺の夕暮れ空の下、雪のように白いサーキットを全速力で走るプレイヤーのカート。HUD には 2 位、1 周目、km/h 単位の速度、ミニマップが表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks、サイクル 14 でコースライブラリの新しいエントリとして追加されました。コースごとのテストが自動的に拾い上げました。</figcaption>
+<img src="/gokart-0-0-2-train.png" alt="GoKart 0.0.2 の Dusty Canyon：砂漠の空の下、線路脇の踏切標識の横で、蒸気機関車が道路を横切るのを踏切で待つプレイヤーのカート。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>4 つ目のコース Dusty Canyon と、そのカラカラさばく風の列車。CPU カートは遮断された踏切で止まって待ちます。止まらなかったカートは空中に放り出されます。</figcaption>
+</figure>
+
+4 時間後の 18:25、私は 2 つ目のタブを開き、同じリポジトリでより狭いゴールを持つ 2 つ目のオートパイロットを開始しました：
+
+> the menus are not Mario Kart Quality and neither is the title shot. and there is over use of black outlines on text everywhere. see Mario Kart 64 screenshots and images on the web and make better menus. focus only on the menus / screens and title shot for GoKart. make conscious decisions. do not conflict with previous /auto working on the application
+
+こうして 18:25 から深夜 0 時まで、2 つのエージェントが同じ作業ツリーにコミットしていました。メニューセッションは、飛び込んで跳ねるアーチ状のグラデーションロゴを持つタイトル画面、各コースの横に画像を添えたセレクト画面、選んだコースのライブフライオーバー、点灯するバー付きのオプション行、回転するカートのポートレートとゴールドのカーソル、コースイントロのフライオーバー、ポーズ画面、行が次々にスライドインするリザルトボード、そしてゲーム内のすべての 8 ピクセルの黒い縁取りを置き換えた、ドロップシャドウ付きの丸みのあるゴールドとクリーム色の文字という共通パレットを作り直しました。23 サイクルを回し、23:54 にゴール達成を宣言しました。
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-select.png" alt="GoKart 0.0.2 のセレクト画面：上部に GOKART のロゴ、左に各コース名の横に小さな画像が付き選択中の行が点灯したコースリスト、右に隅にマップの輪郭を添えたコースのライブ画像、ラップ数、CPU、エンジンクラス、カートの重量、モードのオプションピルの行、そして小さなポートレート窓で回転するプレイヤーのカート。すべて暗くしたアトラクトデモの上に表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>メニューセッション後のセレクト画面。コースの画像、コースのライブフライオーバー、選んだものが点灯するピルの行として並ぶすべてのオプション、そしてポートレート窓で回転するカート。</figcaption>
+</figure>
+
+「衝突しないこと」の一文は実際に効きました。ログは 2 つのセッションが互いを避けながら作業する様子でいっぱいです。メニューセッションは HEAD のクリーンな `git worktree` から検証して「もう一方のセッションが進行中のペンギン作業」をテスト実行から外し、私が頼むと一方のセッションがもう一方のやりかけの機能を仕上げ、もう一方のタブの編集が同じツリーにあるため `git add -A` ではなくファイル単位でステージしてコミットしました。きれいとは言えませんでしたが、何も失われず、スイートはその夜、14,134 件合格、0 件失敗で終わりました。
+
+機能セッションのログはその 3 分後の 23:57 に「Session ended — Stop All」で終わっています。その直後に私が Agent! に伝え、次のチェックポイントコミットのメッセージとして保存されたメモは、Stop All は押されたタブだけを止めるべきで、すべてのタブを止めるべきではない、というものでした。2 つのオートパイロットが動いているとき、両方に効く 1 つのボタンは間違ったボタンです。
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 の Frosty Peaks：濃紺の夕暮れ空の下、雪のように白い路面に千鳥状の列で立つ雪だるまの群れの入口にいるプレイヤーのカート。雪だるまはそれぞれ赤いマフラー、シルクハット、ニンジンの鼻を付けている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Frosty Peaks の雪だるまの群れ。ぶつかると雪になって弾け、カートは空中に放り出されます。CPU カートは 40 メートル先を見て列の間を縫って走ります。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2 の Frosty Peaks：プレイヤーのカートの前方、長い高速コーナーの淡い青白の氷の上を腹ばいで滑るペンギン。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Frosty Peaks のシャーベットランド風の氷とペンギン。氷の上ではノーズは曲がりますが、カートは進んでいた方向へ滑り続けます。ペンギンは端までよちよち歩き、腹ばいになって滑って戻ってきます。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-traffic.png" alt="GoKart 0.0.2 の Sunset Speedway：夕焼け空の下、道路の 2 車線でヘッドライトを点けたバスとボックストラックの後ろで動けないプレイヤーのカート。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Sunset Speedway のキノピオハイウェイ風の交通：ヘッドライトを点けた乗用車、バス、ボックストラック、タンクローリー、そして壁の向こうに窓の明かりの帯が灯る建物。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-gp-results.png" alt="GoKart 0.0.2 のグランプリリザルトボード。ゴールドの縁取りの紺色パネルに、左にレース結果、右にカップ順位。レーサーごとに 1 行で、色見本、金・銀・銅の順位、タイム、ポイントが並び、プレイヤーの行は点灯したゴールドのバーの上にあり、下にトロフィーがある。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>グランプリのリザルトボード：レース結果とカップ順位を並べて表示し、行が 1 つずつチック音とともにスライドインし、下にトロフィーが置かれます。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-battle.png" alt="GoKart 0.0.2 のバトルモード：バトルアリーナのスタートパッドに並ぶ 4 台のカート。それぞれに風船が 3 つ結び付けられ、頭上にはジュゲムのスタート合図がある。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>バトルモード：カート 4 台、それぞれ風船 3 つ。アイテムの命中、溶岩、屋上の縁、スターへの接触、重量カートの押し出しで風船が割れ、風船がなくなったカートはミニボムカートになります。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2 の Dusty Canyon：砂漠の道路で 1 周目に 8 台中 5 位を走るプレイヤーのカート。マリオカート 64 風の HUD が表示されている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>ランダム走行ボットから見た Dusty Canyon、8 台中 5 位。砂漠の高速コーナー、ヘアピン、左の S 字、2 つのオアシスの水域、列車、そしてオープニングストレートのジャンプ台。</figcaption>
 </figure>
 
 ## これらのスクリーンショットについて
 
-撮ったのは Agent! で、私ではなく、手動でもありません。ランダム走行のスクリーンショットを 3 枚頼んだところ、70 行の `tools/random_drive.gd` を書きました。ふらつくレーンオフセットで路面をたどり、ランダムにドリフトを挟み、持っているアイテムをランダムなタイミングで撃ち、数百物理フレームごとに 1 フレームを保存します。コースごとに 1 回ずつ実行し、上の 3 枚はそれぞれから 1 フレームを選んだものです。[GoKart の README](https://github.com/AgentiLoop/GoKart#screenshots) にも掲載しています。
+撮ったのは Agent! で、私ではなく、手動でもありません。最初のバージョンではランダム走行のスクリーンショットを 3 枚頼んだところ、70 行の `tools/random_drive.gd` を書きました。ふらつくレーンオフセットで路面をたどり、ランダムにドリフトを挟み、持っているアイテムをランダムなタイミングで撃ち、数百物理フレームごとに 1 フレームを保存します。上のレース中の 2 枚はそのボットのフレームです。残りは、各機能に同梱されたショットツールによるものです。`menu_shot.gd`、`train_shot.gd`、`traffic_shot.gd`、`snowman_shot.gd`、`penguin_shot.gd`、`hud_shot.gd`、`battle_shot.gd` で、それぞれがシーンをセットアップし、適切なフレームを待って保存します。今回の更新のため、すべて `v0.0.2` タグをチェックアウトしたクリーンな worktree から実行したので、未コミットのものは写真に写っていません。Agent! は依然として結果を見ることができないので、ツールは代わりにピクセルをサンプリングします。氷のショットは前方の氷上の路面色をアスファルトと比較して出力し、ポーズのショットはパネルの外で 1 秒間何も動かなかったことを証明し、公開前には上の 10 枚すべての純黒ピクセルを数えさせました。どれもゼロでした。[GoKart の README](https://github.com/AgentiLoop/GoKart#screenshots) にはさらに掲載しています。
 
 ## 試す前に伝えておきたいこと
 
@@ -86,15 +142,24 @@ tags: Auto-Pilot, ショーケース, Godot
 - **運用ルールはゴールに書くこと。** 「シェルに時間制限をかけろ」は、単発のメッセージよりもゴールの一部としてのほうが効きました。新しいサイクルは毎回ゴールを読み直すからです。
 - **目を求められることを想定すること。** 見た目や手触りに関することなら、ループは嘘をつかずに正直に止まります。セッションの間にプレイテストの時間を確保し、メモを次のゴールとして戻してください。
 - **Stop All はワークフローの一部**であって、失敗ではありません。GoKart の最初の 3 セッションはすべてそれで終わりました。
+- **1 つのリポジトリで 2 つのオートパイロットは動きます。互いの存在を伝えておけば。** 「前の /auto と衝突しないこと」を 2 つ目のゴールに入れたところ、両セッションとも互いの邪魔をしないよう本気で努力しました。コードの領域を分けて与え、今のところは一方を止めるともう一方も道連れになることを想定してください。
 
-## GoKart 0.0.1
+## これは良いのか？
 
-試すのに Godot はもう必要ありません。[GoKart 0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) は同じリポジトリから書き出した最初のパッケージ版リリースです：
+Agent! がリポジトリを読み、コミットを数え、オートパイロットのログを見つけた後に、私はその質問をしました。126 件のコミットはすべてエージェントが作成したもので、人によるものはなく、`.agent/autopilot/progress.md` はサイクル 23 を超えて続いています。その答えを、編集なしで：
+
+> それは何を求めるかによります。オートパイロットにできることのショーケースとしては、見事です。23 回以上のサイクルで、4 つのコース、アイテム、AI レーサー、グランプリ、タイムトライアル、バトルモード、手続き的な音楽とサウンドが、インポートしたアセットを一切使わずに生まれ、それを詳しく記録した README もあります。1 つのゴール文からできた動くソフトウェアとしては、かなりの量です。
+
+さらに、途中で人間が誰もレビューしていないので品質はエージェント自身の検証ログで判断されたものであること、そして自分はプレイもコードの監査もしていないので実際にどれだけ遊べるかは言えないこと、という但し書きも付けました。これはログが自力で到達したのと同じ結論です。次のステップはプレイテストです。
+
+## GoKart 0.0.2
+
+試すのに Godot は必要ありません。[GoKart 0.0.2](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.2) は同じリポジトリから書き出した 2 つ目のパッケージ版リリースで、[0.0.1](https://github.com/AgentiLoop/GoKart/releases/tag/v0.0.1) から 87 コミット後のものです：
 
 - **macOS** ユニバーサル（Apple シリコンと Intel）、Developer ID で署名し Apple による公証済み
 - **Windows** x86_64
 - **Linux** x86_64 と arm64
 
-各ダウンロードはゲームデータを埋め込んだ単一の自己完結型バイナリで、受け取ったものを確認したい場合はリリースページに `SHA256SUMS.txt` があります。Windows 版は未署名なので、SmartScreen の警告が出ます。
+各ダウンロードはゲームデータを埋め込んだ単一の自己完結型バイナリで、受け取ったものを確認したい場合はリリースページに `SHA256SUMS.txt` があります。Windows 版は未署名なので、SmartScreen の警告が出ます。この記事にあって 0.0.1 になかったものはすべて 0.0.2 に入っています。バトルモード、タイムトライアル、4 コースのカップ、エンジンクラスと重量クラス、新しいアイテム、ジュゲム、列車、交通、チョロプー、雪だるま、ペンギン、氷、景色、スリップストリーム、ジャンプ台、コース音楽、新しいタイトル画面とセレクト画面、コースイントロ、ポーズ画面、そして新しいスタイルの HUD。完全なリストはリリースノートにあります。
 
 オートパイロットを搭載した Agent! 1.1.87 は[リリースページ](https://github.com/AgentiLoop/Agent/releases/latest)と Homebrew で入手できます。ソースから GoKart を実行したい場合は Godot 4.4 以降が必要です：`git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

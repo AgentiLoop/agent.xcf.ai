@@ -6,7 +6,7 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>쇼케이스</category>
       <category>Godot</category>
-      <description>Agent! 의 오토파일럿(Auto-Pilot)에 목표 하나 - &quot;GoKart라는 이름의 마리오 카트 클론을 만들어라&quot; - 를 주고 돌아오면, 트랙 세 개, 아이템 여덟 개, AI 라이벌, 그리고 3,344개의 테스트 검사를 통과하는 Godot 4 레이싱 게임이 기다리고 있습니다. 막혔던 부분까지 포함해, 로그가 말하는 실제로 일어난 일을 정리했습니다.</description>
+      <description>Agent! 의 오토파일럿(Auto-Pilot)에 목표 하나 - &quot;GoKart라는 이름의 마리오 카트 클론을 만들어라&quot; - 를 주고 돌아오면, 트랙 세 개, 아이템 여덟 개, AI 라이벌, 그리고 3,344개의 테스트 검사를 통과하는 Godot 4 레이싱 게임이 기다리고 있습니다. 이틀 뒤, 에이전트 커밋 87개가 더 쌓인 지금은 GoKart 0.0.2입니다. 코스 네 개, 배틀 모드, 타임 트라이얼, Mario Kart 64 스타일 메뉴, 그리고 14,134개의 검사 통과. 막혔던 부분까지 포함해, 로그가 말하는 실제로 일어난 일을 정리했습니다.</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>
