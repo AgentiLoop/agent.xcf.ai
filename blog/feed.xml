@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>Showcase</category>
       <category>Godot</category>
-      <description>Give Agent!&#x27;s Auto-Pilot one goal - &quot;create a Mario Kart clone called GoKart&quot; - and come back to a Godot 4 racer with three tracks, eight items, AI rivals and 3,344 passing test checks. Two days and 87 agent commits later it is GoKart 0.0.2: four courses, Battle mode, Time Trials, a Mario Kart 64 style menu and 14,134 passing checks. Here is what the log says actually happened, including the parts where it got stuck.</description>
+      <description>Give Agent!&#x27;s Auto-Pilot one goal - &quot;create a Mario Kart clone called GoKart&quot; - and come back to a Godot 4 racer with three tracks, eight items, AI rivals and 3,344 passing test checks. Two days and 87 agent commits later it is GoKart 0.0.2, with four courses, Battle mode, Time Trials and a Mario Kart 64 style menu. Here is what the log says actually happened, including the parts where it got stuck.</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>
