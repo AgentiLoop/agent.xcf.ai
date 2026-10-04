@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>案例展示</category>
       <category>Godot</category>
-      <description>给 Agent! 的自动驾驶（Auto-Pilot）一个目标——&quot;创建一个名为 GoKart 的马里奥赛车克隆&quot;——回来时就得到了一款 Godot 4 竞速游戏：三条赛道、八种道具、AI 对手，以及 3,344 项通过的测试检查。两天和 87 个代理提交之后，它成了 GoKart 0.0.2：四条赛道、对战模式、计时赛、Mario Kart 64 风格的菜单，以及 14,134 项通过的检查。下面是日志记录的真实经过，包括它卡住的那些部分。</description>
+      <description>给 Agent! 的自动驾驶（Auto-Pilot）一个目标——&quot;创建一个名为 GoKart 的马里奥赛车克隆&quot;——回来时就得到了一款 Godot 4 竞速游戏：三条赛道、八种道具、AI 对手，以及 3,344 项通过的测试检查。两天和 87 个代理提交之后，它成了 GoKart 0.0.2，有四条赛道、对战模式、计时赛和 Mario Kart 64 风格的菜单。下面是日志记录的真实经过，包括它卡住的那些部分。</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>

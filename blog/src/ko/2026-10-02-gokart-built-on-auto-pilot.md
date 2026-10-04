@@ -1,6 +1,6 @@
 ---
 title: GoKart: 오토파일럿이 오후 한나절 만에 만든 마리오 카트 스타일 레이싱 게임
-description: Agent! 의 오토파일럿(Auto-Pilot)에 목표 하나 - "GoKart라는 이름의 마리오 카트 클론을 만들어라" - 를 주고 돌아오면, 트랙 세 개, 아이템 여덟 개, AI 라이벌, 그리고 3,344개의 테스트 검사를 통과하는 Godot 4 레이싱 게임이 기다리고 있습니다. 이틀 뒤, 에이전트 커밋 87개가 더 쌓인 지금은 GoKart 0.0.2입니다. 코스 네 개, 배틀 모드, 타임 트라이얼, Mario Kart 64 스타일 메뉴, 그리고 14,134개의 검사 통과. 막혔던 부분까지 포함해, 로그가 말하는 실제로 일어난 일을 정리했습니다.
+description: Agent! 의 오토파일럿(Auto-Pilot)에 목표 하나 - "GoKart라는 이름의 마리오 카트 클론을 만들어라" - 를 주고 돌아오면, 트랙 세 개, 아이템 여덟 개, AI 라이벌, 그리고 3,344개의 테스트 검사를 통과하는 Godot 4 레이싱 게임이 기다리고 있습니다. 이틀 뒤, 에이전트 커밋 87개가 더 쌓인 지금은 코스 네 개, 배틀 모드, 타임 트라이얼, Mario Kart 64 스타일 메뉴를 갖춘 GoKart 0.0.2입니다. 막혔던 부분까지 포함해, 로그가 말하는 실제로 일어난 일을 정리했습니다.
 tags: Auto-Pilot, 쇼케이스, Godot
 updated: 2026-10-04
 ---
@@ -9,7 +9,7 @@ updated: 2026-10-04
 <figcaption>GoKart 0.0.2 타이틀 화면. 로고가 날아 들어와 튕기며 멈추고, 그 뒤로 코스들을 둘러보는 라이브 어트랙트 데모가 돌아갑니다. 모든 메시, 셰이더, 폰트 레이아웃, 사운드는 코드에서 생성되었습니다.</figcaption>
 </figure>
 
-*10월 4일 업데이트: 이 글은 이제 첫 오후 이후의 이틀, 같은 저장소에서 동시에 돌아간 두 개의 오토파일럿 세션, 그리고 [GoKart 0.0.2](#gokart-0-0-2) 릴리스까지 다룹니다. 스크린샷은 0.0.2 태그에서 다시 찍었습니다.*
+*10월 4일 업데이트: 이 글은 이제 첫 오후 이후의 이틀을 따라가며, 그날 저녁 같은 저장소를 공유한 두 개의 오토파일럿 세션까지 다루고, [GoKart 0.0.2](#gokart-0-0-2) 릴리스로 끝납니다. 스크린샷은 0.0.2 태그에서 다시 찍었습니다.*
 
 어제 글에서 [오토파일럿(Auto-Pilot)](/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/)을 소개했습니다. Mac용 Agent! 에 `/auto <목표>`를 입력하면 Stop All을 누를 때까지 그 목표를 향해 무인 사이클을 반복합니다. 이 글은 제가 그것을 게임에 겨눴을 때 반대편에서 무엇이 나왔는지에 관한 이야기입니다.
 
@@ -17,7 +17,7 @@ updated: 2026-10-04
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋 33개, GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있었습니다. 이틀 뒤 0.0.2 태그 시점에는 커밋 126개, GDScript 파일 150개, 약 24,500줄, 검사 14,134개이고, 그 커밋 하나하나가 모두 에이전트가 작성한 것입니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
+예산: 시간 제한 없음, 사이클 무제한. 모든 사이클에서 Agent! 안의 모델은 Claude Sonnet 5.5였습니다. 첫 커밋은 12:39에 들어왔습니다. 같은 날 오후 16:32에는 저장소에 커밋 33개, GDScript 파일 47개, GDScript와 셰이더 코드 약 5,500줄, 그리고 3,344개의 검사를 통과하는 유닛 테스트 스위트가 있었습니다. 이틀 뒤 0.0.2 태그 시점에는 그 숫자가 커밋 126개, 파일 150개, 약 24,500줄, 검사 14,134개로 늘었습니다. 그 커밋 하나하나가 모두 에이전트가 작성한 것입니다. 전체는 GitHub의 [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)에 있습니다.
 
 ## 오토파일럿이 하는 일, 한 사이클씩
 
@@ -80,46 +80,48 @@ updated: 2026-10-04
 
 > keep building GoKart to resemble Mario Kart Nintendo 64 version. search Mario Kart N64 or Mario Kart Nintendo 64 and keep improving, iterating, making GoKart better
 
-그 다섯 번째 세션은 14:19에 시작해 28사이클을 돌았고, 거의 모든 사이클이 에이전트가 찾아보고 만든 Mario Kart 64의 요소 하나입니다. 2열 그리드의 8대 레이서, 난이도별 러버밴딩, 50cc / 100cc / 150cc와 미러 Extra 클래스, 서로 밀쳐내는 경량 / 중량 / 중량급 카트, 9/6/3/1 점수와 탈락 규칙이 있는 그랑프리, 고스트가 있는 타임 트라이얼, Big Donut, Block Fort, Skyscraper에서 풍선으로 겨루는 배틀 모드, 트리플 버섯과 골든 버섯, 가짜 아이템 박스, 바나나 묶음, 부끄부끄, 트리플 빨간 등껍질, 등껍질 방어, 부정 출발, 출발 신호와 랩 표지판을 든 쥬게무, Dusty Canyon이라는 네 번째 코스, 건널목이 있는 칼리마리 사막 기차, 키노피오 하이웨이 교통 차량, 몬티 두더지, 눈사람, 펭귄, 셔벗 랜드 얼음, 테마별 길가 풍경, 슬립스트림, 점프 램프, 홉-앤-토글 파워슬라이드, 그리고 코드의 스텝 패턴에서 렌더링한 코스별 칩튠 루프.
+그 다섯 번째 세션은 14:19에 시작해 28사이클을 돌았고, 거의 모든 사이클이 에이전트가 찾아보고 만든 Mario Kart 64의 요소 하나입니다. 게임의 뼈대가 먼저 왔습니다. 2열 그리드의 8대 레이서, 난이도별 러버밴딩, 50cc / 100cc / 150cc와 미러 Extra 클래스, 서로 밀쳐내는 경량 / 중간 / 중량급 카트, 그리고 9/6/3/1 점수와 탈락 규칙이 있는 그랑프리. 다음은 다른 모드들입니다. 고스트가 있는 타임 트라이얼, 그리고 Big Donut, Block Fort, Skyscraper에서 풍선으로 겨루는 배틀 모드. 그다음 아이템 세트가 채워졌습니다. 트리플 버섯과 골든 버섯, 가짜 아이템 박스, 바나나 묶음, 부끄부끄, 트리플 빨간 등껍질과 등껍질 방어, 그리고 부정 출발을 선언하고 출발 신호를 흔들며 랩 표지판을 들어 올리러 등장한 쥬게무.
+
+오후의 나머지는 코스 자체에 들어갔습니다. 네 번째 코스 Dusty Canyon은 칼리마리 사막 스타일 기차와 건널목을 달고 왔습니다. Sunset Speedway에는 키노피오 하이웨이 교통 차량이 생겼습니다. Frosty Peaks는 셔벗 랜드 얼음, 눈사람, 펭귄을, Green Hills는 몬티 두더지를 얻었고, 모든 코스에 테마에 맞는 길가 풍경이 붙었습니다. 여기에 슬립스트림, 점프 램프, 홉-앤-토글 파워슬라이드, 그리고 코드의 스텝 패턴에서 렌더링한 칩튠 루프까지.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-train.png" alt="GoKart 0.0.2의 Dusty Canyon: 사막 하늘 아래, 증기 기관차가 도로를 가로질러 지나가는 동안 건널목에서 기다리는 플레이어 카트와 선로 옆의 X자 건널목 표지판." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>네 번째 코스 Dusty Canyon과 칼리마리 사막 스타일 기차. CPU 카트는 차단된 건널목에서 멈춰 기다리고, 그러지 않은 카트는 공중으로 튕겨 나갑니다.</figcaption>
 </figure>
 
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2의 Frosty Peaks: 짙은 남색 황혼 하늘 아래, 눈처럼 하얀 도로를 가로질러 엇갈린 줄로 서 있는 눈사람 밭 입구의 플레이어 카트. 눈사람마다 빨간 목도리, 실크해트, 당근 코가 있습니다." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Frosty Peaks의 눈사람 밭. 하나를 들이받으면 눈사람은 눈으로 흩어지고 카트는 공중으로 튕겨 나갑니다. CPU 카트는 40미터 앞을 내다보며 줄 사이를 빠져나갑니다.</figcaption>
+</figure>
+
 네 시간 뒤인 18:25, 저는 두 번째 탭을 열고 같은 저장소에서 더 좁은 목표로 두 번째 오토파일럿을 시작했습니다:
 
 > the menus are not Mario Kart Quality and neither is the title shot. and there is over use of black outlines on text everywhere. see Mario Kart 64 screenshots and images on the web and make better menus. focus only on the menus / screens and title shot for GoKart. make conscious decisions. do not conflict with previous /auto working on the application
 
-그래서 18:25부터 자정까지 에이전트 두 개가 같은 작업 트리에 커밋하고 있었습니다. 메뉴 세션은 타이틀 화면을 다시 만들었습니다. 날아 들어와 튕기는 아치형 그라데이션 로고, 코스마다 그림이 옆에 붙은 선택 화면, 고른 코스의 라이브 플라이오버, 불 켜진 바가 있는 옵션 줄, 회전하는 카트 초상과 금색 커서, 코스 인트로 플라이오버, 일시정지 화면, 줄이 하나씩 차례로 미끄러져 들어오는 결과 보드, 그리고 게임의 모든 8픽셀 검은 외곽선을 대체한 그림자 있는 둥근 금색-크림색 텍스트의 공통 팔레트. 23사이클을 돌고 23:54에 목표 달성을 선언했습니다.
+그래서 18:25부터 자정까지 에이전트 두 개가 같은 작업 트리에 커밋하고 있었습니다. 메뉴 세션은 날아 들어와 튕기는 아치형 그라데이션 로고를 중심으로 타이틀 화면을 다시 만든 뒤, 그 뒤에 있는 모든 화면을 차례로 손봤습니다. 코스마다 그림이 옆에 붙고 고른 코스의 라이브 플라이오버가 보이는 선택 화면, 불 켜진 바가 있는 옵션 줄, 회전하는 카트 초상과 금색 커서, 매 레이스 전의 코스 인트로 플라이오버, 일시정지 화면, 그리고 줄이 하나씩 차례로 미끄러져 들어오는 결과 보드. 그 모든 것 아래에는 그림자 있는 둥근 금색-크림색 텍스트의 공통 팔레트가 깔렸고, 이것이 게임의 모든 8픽셀 검은 외곽선을 대체했습니다. 23사이클을 돌고 23:54에 목표 달성을 선언했습니다.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-select.png" alt="GoKart 0.0.2 선택 화면: 위에 GOKART 로고, 왼쪽에는 코스 이름마다 작은 그림이 붙고 고른 줄에 불이 켜진 코스 목록, 오른쪽에는 구석에 맵 윤곽이 있는 코스의 라이브 화면, 랩 수, CPU, 엔진 클래스, 카트 무게, 모드를 위한 옵션 알약 줄들, 그리고 작은 초상 창에서 회전하는 플레이어의 카트가, 어둡게 처리된 어트랙트 데모 위에 모두 표시됩니다." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>메뉴 세션 이후의 선택 화면. 코스 그림, 코스의 라이브 플라이오버, 고른 것에 불이 켜지는 알약 줄로 나열된 모든 옵션, 그리고 초상 창에서 회전하는 카트.</figcaption>
 </figure>
 
-"충돌하지 말 것"이라는 한 줄이 실제로 일을 했습니다. 로그는 두 세션이 서로를 피해 일하는 기록으로 가득합니다. 메뉴 세션은 "다른 세션이 진행 중인 펭귄 작업"이 자기 테스트 실행에 섞이지 않도록 HEAD에서 깨끗한 `git worktree`를 만들어 검증했고, 제가 요청하자 한 세션이 다른 세션의 반쯤 끝난 기능을 마무리했으며, 다른 탭의 편집이 같은 트리에 놓여 있었기 때문에 `git add -A` 대신 파일 하나씩 스테이징해서 커밋했습니다. 깔끔하지는 않았지만 잃은 것은 없었고, 스위트는 그날 밤 통과 14,134개, 실패 0개로 끝났습니다.
-
-기능 세션의 로그는 3분 뒤인 23:57에 "Session ended — Stop All"로 끝납니다. 바로 뒤에 Agent! 에 남긴 제 메모(에이전트가 다음 체크포인트 커밋 메시지로 저장했습니다)는, Stop All이 모든 탭이 아니라 눌린 탭만 멈춰야 한다는 것이었습니다. 오토파일럿 두 개가 돌아가고 있을 때, 둘 다 멈추는 버튼 하나는 잘못된 버튼입니다.
-
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2의 Frosty Peaks: 짙은 남색 황혼 하늘 아래, 눈처럼 하얀 도로를 가로질러 엇갈린 줄로 서 있는 눈사람 밭 입구의 플레이어 카트. 눈사람마다 빨간 목도리, 실크해트, 당근 코가 있습니다." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks의 눈사람 밭. 하나를 들이받으면 눈사람은 눈으로 흩어지고 카트는 공중으로 튕겨 나갑니다. CPU 카트는 40미터 앞을 내다보며 줄 사이를 빠져나갑니다.</figcaption>
+<img src="/gokart-0-0-2-gp-results.png" alt="GoKart 0.0.2 그랑프리 결과 보드: 금색 테두리의 남색 패널에, 왼쪽에는 레이스 결과, 오른쪽에는 컵 순위가 레이서마다 한 줄씩 색상 견본, 금·은·동 순위, 시간, 점수와 함께 표시되고, 플레이어의 줄은 불 켜진 금색 바 위에 있으며, 아래에 트로피가 있습니다." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>그랑프리 결과 보드: 레이스 결과와 컵 순위가 나란히 놓이고, 줄이 하나씩 차례로 틱 소리와 함께 미끄러져 들어오며, 아래에 트로피가 있습니다.</figcaption>
 </figure>
+
+"충돌하지 말 것"이라는 한 줄이 실제로 일을 했습니다. 로그는 두 세션이 서로를 피해 일하는 기록으로 가득합니다. 메뉴 세션은 "다른 세션이 진행 중인 펭귄 작업"이 자기 테스트 실행에 섞이지 않도록 HEAD에서 깨끗한 `git worktree`를 만들어 검증했습니다. 제가 요청하자 한 세션이 다른 세션의 반쯤 끝난 기능을 마무리했습니다. 다른 탭의 편집이 같은 트리에 놓여 있었기 때문에, 커밋은 `git add -A` 대신 파일 하나씩 스테이징해서 만들었습니다. 깔끔하지는 않았지만 잃은 것은 없었고, 스위트는 그날 밤 통과 14,134개, 실패 0개로 끝났습니다.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2의 Frosty Peaks: 플레이어 카트 앞의 긴 스위퍼 구간, 연한 청백색 얼음 위를 배로 미끄러지는 펭귄." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks의 셔벗 랜드 스타일 얼음과 펭귄. 얼음 위에서는 앞머리는 돌아가지만 카트는 가던 방향으로 계속 미끄러집니다. 펭귄은 가장자리까지 뒤뚱거리다가 엎어져 다시 미끄러져 돌아옵니다.</figcaption>
+<figcaption>메뉴 세션의 테스트 실행에서 비켜나 있던 그 펭귄들, Frosty Peaks의 셔벗 랜드 스타일 얼음 위에서. 얼음 위에서는 앞머리는 돌아가지만 카트는 가던 방향으로 계속 미끄러집니다. 펭귄은 가장자리까지 뒤뚱거리다가 엎어져 다시 미끄러져 돌아옵니다.</figcaption>
 </figure>
+
+기능 세션의 로그는 메뉴 세션보다 3분 뒤인 23:57에 "Session ended — Stop All"로 끝납니다. 바로 뒤에 Agent! 에 남긴 제 메모(에이전트가 다음 체크포인트 커밋 메시지로 저장했습니다)는, Stop All이 모든 탭이 아니라 눌린 탭만 멈춰야 한다는 것이었습니다. 오토파일럿 두 개가 돌아가고 있을 때, 둘 다 멈추는 버튼 하나는 잘못된 버튼입니다.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-traffic.png" alt="GoKart 0.0.2의 Sunset Speedway: 노을 하늘 아래, 도로의 두 차선에서 헤드라이트를 켠 버스와 박스 트럭 뒤에 갇힌 플레이어 카트." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Sunset Speedway의 키노피오 하이웨이 교통 차량: 헤드라이트를 켠 승용차, 버스, 박스 트럭, 탱크로리, 그리고 벽 너머에 불 켜진 창문 띠가 있는 건물들.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-gp-results.png" alt="GoKart 0.0.2 그랑프리 결과 보드: 금색 테두리의 남색 패널에, 왼쪽에는 레이스 결과, 오른쪽에는 컵 순위가 레이서마다 한 줄씩 색상 견본, 금·은·동 순위, 시간, 점수와 함께 표시되고, 플레이어의 줄은 불 켜진 금색 바 위에 있으며, 아래에 트로피가 있습니다." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>그랑프리 결과 보드: 레이스 결과와 컵 순위가 나란히 놓이고, 줄이 하나씩 차례로 틱 소리와 함께 미끄러져 들어오며, 아래에 트로피가 있습니다.</figcaption>
 </figure>
 
 <figure style="margin:2rem 0">
@@ -128,13 +130,17 @@ updated: 2026-10-04
 </figure>
 
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2의 Dusty Canyon: 사막 도로에서 8대 중 5위로 1랩을 달리는 플레이어 카트와 Mario Kart 64 스타일 HUD." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>무작위 주행 봇이 찍은 Dusty Canyon, 8대 중 5위. 사막 스위퍼, 헤어핀, 왼쪽 S자, 오아시스 물 구간 두 곳, 기차, 그리고 첫 직선 구간의 점프 램프.</figcaption>
+<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2의 Dusty Canyon 코스 인트로: 사막 도로 위를 날아가는 플라이오버와, 화면 아래쪽 카드에 적힌 코스 이름 DUSTY CANYON과 한 줄 설명." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Dusty Canyon의 코스 인트로. 매 레이스 전에 재생되는 Mario Kart 64 스타일 플라이오버로, 화면 아래쪽에 코스 이름 카드가 있습니다.</figcaption>
 </figure>
 
 ## 이 스크린샷에 대하여
 
-찍은 것은 Agent! 이고, 제가 아니며, 손으로 찍은 것도 아닙니다. 첫 버전 때 무작위 주행 스크린샷 세 장을 요청했더니, 70줄짜리 `tools/random_drive.gd`를 작성했습니다. 흔들리는 차선 오프셋으로 도로를 따라가고, 무작위로 드리프트를 터뜨리고, 들고 있는 아이템을 무작위 순간에 발사한 뒤, 물리 프레임 몇백 개마다 한 프레임을 저장합니다. 위의 레이스 장면 두 장은 그 봇의 프레임입니다. 나머지는 각 기능과 함께 들어온 샷 도구에서 나왔습니다. `menu_shot.gd`, `train_shot.gd`, `traffic_shot.gd`, `snowman_shot.gd`, `penguin_shot.gd`, `hud_shot.gd`, `battle_shot.gd`는 각각 씬을 연출하고, 알맞은 프레임을 기다렸다가 저장합니다. 이번 업데이트를 위해 모두 `v0.0.2` 태그를 체크아웃한 깨끗한 워크트리에서 실행했으므로, 커밋되지 않은 것은 어떤 사진에도 없습니다. Agent! 는 여전히 결과를 볼 수 없으므로, 도구들이 대신 픽셀을 샘플링합니다. 얼음 샷은 전방 얼음 위 도로 색을 아스팔트와 대비해 출력하고, 일시정지 샷은 1초 동안 패널 밖에서 아무것도 움직이지 않았음을 증명하며, 게시 전에 위의 열 장 사진 모두에서 순수 검은색 픽셀을 세게 했습니다. 각각 0개였습니다. [GoKart README](https://github.com/AgentiLoop/GoKart#screenshots)에 더 있습니다.
+찍은 것은 Agent! 이고, 제가 아니며, 손으로 찍은 것도 아닙니다. 이 글의 첫 버전 때 무작위 주행 스크린샷 세 장을 요청했더니, 70줄짜리 `tools/random_drive.gd`를 작성했습니다. 흔들리는 차선 오프셋으로 도로를 따라가고, 무작위로 드리프트를 터뜨리고, 들고 있는 아이템을 무작위 순간에 발사한 뒤, 물리 프레임 몇백 개마다 한 프레임을 저장합니다. 위의 Sunset Speedway 장면은 그 봇의 프레임입니다.
+
+나머지는 각 기능과 함께 들어온 샷 도구에서 나왔습니다. 메뉴용 하나, 코스 인트로용 하나, 기차용 하나, 교통 차량·눈사람·펭귄용 각각 하나, HUD용 하나, 배틀 모드용 하나가 있고, 각각 씬을 연출하고 알맞은 프레임을 기다렸다가 저장합니다. 이번 업데이트를 위해 모두 `v0.0.2` 태그를 체크아웃한 깨끗한 워크트리에서 실행했으므로, 커밋되지 않은 것은 어떤 사진에도 없습니다.
+
+Agent! 는 여전히 결과를 볼 수 없으므로, 도구들이 대신 픽셀을 샘플링합니다. 얼음 샷은 전방 얼음 위 도로 색을 아스팔트와 대비해 출력하고, 일시정지 샷은 1초 동안 패널 밖에서 아무것도 움직이지 않았음을 증명하며, 게시 전에 위의 열 장 사진 모두에서 순수 검은색 픽셀을 세게 했습니다. 각각 0개였습니다. [GoKart README](https://github.com/AgentiLoop/GoKart#screenshots)에 더 있습니다.
 
 ## 직접 해보기 전에 드리고 싶은 말
 
@@ -146,7 +152,7 @@ updated: 2026-10-04
 
 ## 그래서 좋은 건가요?
 
-저장소를 읽고, 커밋을 세고, 오토파일럿 로그를 찾은 뒤의 Agent! 에게 그 질문을 던졌습니다. 126개 커밋 전부가 에이전트가 작성한 것이고 사람이 쓴 것은 하나도 없으며, `.agent/autopilot/progress.md`는 사이클 23을 넘어갑니다. 편집하지 않은 답변:
+저장소를 읽고, 커밋을 세고, 오토파일럿 로그를 찾은 뒤의 Agent! 에게 그 질문을 던졌습니다. 편집하지 않은 답변:
 
 > 무엇을 원하느냐에 따라 다릅니다. 오토파일럿이 할 수 있는 일의 쇼케이스로서는 인상적입니다. 스물세 번이 넘는 사이클이 코스 네 개, 아이템, AI 레이서, 그랑프리, 타임 트라이얼, 배틀 모드, 절차적 음악과 사운드를 가져온 에셋 하나 없이 만들어 냈고, 그것을 상세히 문서화한 README까지 있습니다. 목표 문장 하나에서 나온 것치고는 작동하는 소프트웨어가 상당히 많습니다.
 
@@ -160,6 +166,6 @@ Godot 없이도 해볼 수 있습니다. [GoKart 0.0.2](https://github.com/Agent
 - **Windows** x86_64
 - **Linux** x86_64 및 arm64
 
-각 다운로드는 게임 데이터가 내장된 단일 독립 실행 바이너리이며, 받은 파일을 확인하고 싶다면 릴리스 페이지에 `SHA256SUMS.txt`가 있습니다. Windows 빌드는 서명되지 않았으므로 SmartScreen 경고가 뜰 수 있습니다. 이 글에서 0.0.1에 없던 모든 것이 0.0.2에 있습니다. 배틀 모드, 타임 트라이얼, 4코스 컵, 엔진 및 중량 클래스, 새 아이템, 쥬게무, 기차, 교통 차량, 두더지, 눈사람, 펭귄, 얼음, 풍경, 슬립스트림, 점프 램프, 코스 음악, 새 타이틀 및 선택 화면, 코스 인트로, 일시정지 화면, 그리고 새로 스타일링한 HUD. 전체 목록은 릴리스 노트에 있습니다.
+각 다운로드는 게임 데이터가 내장된 단일 독립 실행 바이너리이며, 받은 파일을 확인하고 싶다면 릴리스 페이지에 `SHA256SUMS.txt`가 있습니다. Windows 빌드는 서명되지 않았으므로 SmartScreen 경고가 뜰 수 있습니다. 위에서 설명한 것 중 0.0.1에 없던 모든 것이 0.0.2에 있습니다. 배틀 모드와 타임 트라이얼부터 기차, 교통 차량, 새 메뉴, 새로 스타일링한 HUD까지. 전체 목록은 릴리스 노트에 있습니다.
 
 오토파일럿이 포함된 Agent! 1.1.87은 [릴리스 페이지](https://github.com/AgentiLoop/Agent/releases/latest)와 Homebrew에 있습니다. 소스에서 GoKart를 실행하고 싶다면 Godot 4.4 이상이 필요합니다: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`

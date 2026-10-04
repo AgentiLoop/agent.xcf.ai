@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>Витрина</category>
       <category>Godot</category>
-      <description>Дайте Auto-Pilot в Agent! одну цель - «создай клон Mario Kart под названием GoKart» - и вернитесь к готовой гонке на Godot 4 с тремя трассами, восемью предметами, ИИ-соперниками и 3 344 пройденными проверками в тестах. Два дня и 87 коммитов агента спустя это GoKart 0.0.2: четыре трассы, режим Battle, Time Trials, меню в стиле Mario Kart 64 и 14 134 пройденные проверки. Вот что, судя по журналу, произошло на самом деле, включая места, где он застрял.</description>
+      <description>Дайте Auto-Pilot в Agent! одну цель - «создай клон Mario Kart под названием GoKart» - и вернитесь к готовой гонке на Godot 4 с тремя трассами, восемью предметами, ИИ-соперниками и 3 344 пройденными проверками в тестах. Два дня и 87 коммитов агента спустя это GoKart 0.0.2 с четырьмя трассами, режимом Battle, Time Trials и меню в стиле Mario Kart 64. Вот что, судя по журналу, произошло на самом деле, включая места, где он застрял.</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>

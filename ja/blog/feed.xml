@@ -32,7 +32,7 @@
       <category>Auto-Pilot</category>
       <category>ショーケース</category>
       <category>Godot</category>
-      <description>Agent! のオートパイロット（Auto-Pilot）に「GoKart という名前のマリオカートクローンを作れ」というゴールをひとつ渡して戻ってくると、3 つのコース、8 種類のアイテム、AI ライバル、そして 3,344 件のテストチェックに合格する Godot 4 のレースゲームができていました。2 日後、エージェントによる 87 コミットを経て、それは GoKart 0.0.2 になりました。4 つのコース、バトルモード、タイムトライアル、マリオカート 64 風のメニュー、そして 14,134 件のチェック合格。行き詰まった場面も含めて、ログが語る実際の経緯をまとめます。</description>
+      <description>Agent! のオートパイロット（Auto-Pilot）に「GoKart という名前のマリオカートクローンを作れ」というゴールをひとつ渡して戻ってくると、3 つのコース、8 種類のアイテム、AI ライバル、そして 3,344 件のテストチェックに合格する Godot 4 のレースゲームができていました。2 日後、エージェントによる 87 コミットを経て、それは 4 つのコース、バトルモード、タイムトライアル、マリオカート 64 風のメニューを備えた GoKart 0.0.2 になりました。行き詰まった場面も含めて、ログが語る実際の経緯をまとめます。</description>
     </item>
     <item>
       <title>Agent! Gets a Face: An Optional Speaking, Animated Avatar on New Tabs</title>

@@ -1,6 +1,6 @@
 ---
 title: GoKart：自动驾驶在一个下午做出的马里奥赛车风格竞速游戏
-description: 给 Agent! 的自动驾驶（Auto-Pilot）一个目标——"创建一个名为 GoKart 的马里奥赛车克隆"——回来时就得到了一款 Godot 4 竞速游戏：三条赛道、八种道具、AI 对手，以及 3,344 项通过的测试检查。两天和 87 个代理提交之后，它成了 GoKart 0.0.2：四条赛道、对战模式、计时赛、Mario Kart 64 风格的菜单，以及 14,134 项通过的检查。下面是日志记录的真实经过，包括它卡住的那些部分。
+description: 给 Agent! 的自动驾驶（Auto-Pilot）一个目标——"创建一个名为 GoKart 的马里奥赛车克隆"——回来时就得到了一款 Godot 4 竞速游戏：三条赛道、八种道具、AI 对手，以及 3,344 项通过的测试检查。两天和 87 个代理提交之后，它成了 GoKart 0.0.2，有四条赛道、对战模式、计时赛和 Mario Kart 64 风格的菜单。下面是日志记录的真实经过，包括它卡住的那些部分。
 tags: Auto-Pilot, 案例展示, Godot
 updated: 2026-10-04
 ---
@@ -9,7 +9,7 @@ updated: 2026-10-04
 <figcaption>GoKart 0.0.2 的标题画面。Logo 飞入并弹跳停下，背后是巡游各条赛道的实时演示。每个网格、着色器、字体排版和声音都是由代码生成的。</figcaption>
 </figure>
 
-*10 月 4 日更新：这篇文章现在涵盖了第一个下午之后的两天、在同一个仓库里同时运行的两个自动驾驶会话，以及 [GoKart 0.0.2](#gokart-0-0-2) 版本的发布。截图已从 0.0.2 标签重新拍摄。*
+*10 月 4 日更新：这篇文章现在沿着故事讲到了第一个下午之后的两天，包括两个自动驾驶会话共用一个仓库的那个晚上，并以 [GoKart 0.0.2](#gokart-0-0-2) 版本的发布收尾。截图已从 0.0.2 标签重新拍摄。*
 
 昨天的文章介绍了[自动驾驶（Auto-Pilot）](/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/)：在 Mac 版 Agent! 中输入 `/auto <目标>`，它就会朝着这个目标无人值守地一轮轮运行，直到你按下 Stop All。这篇文章讲的是，当我把它对准一款游戏时，另一头产出了什么。
 
@@ -17,7 +17,7 @@ updated: 2026-10-04
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-预算：不限时间，不限轮数。每一轮 Agent! 内部使用的模型都是 Claude Sonnet 5.5。第一个提交落地于 12:39。同一天下午 16:32，仓库已有 33 个提交、47 个 GDScript 文件、约 5,500 行 GDScript 和着色器代码，以及一套能通过 3,344 项检查的单元测试。两天后，在 0.0.2 标签处，它是 126 个提交、150 个 GDScript 文件、约 24,500 行代码和 14,134 项检查，而且每一个提交的作者都是代理。整个项目在 GitHub 上：[AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)。
+预算：不限时间，不限轮数。每一轮 Agent! 内部使用的模型都是 Claude Sonnet 5.5。第一个提交落地于 12:39。同一天下午 16:32，仓库已有 33 个提交、47 个 GDScript 文件、约 5,500 行 GDScript 和着色器代码，以及一套能通过 3,344 项检查的单元测试。两天后，在 0.0.2 标签处，这些数字增长到了 126 个提交、150 个文件、约 24,500 行代码和 14,134 项检查。每一个提交的作者都是代理。整个项目在 GitHub 上：[AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart)。
 
 ## 自动驾驶做了什么，一轮接一轮
 
@@ -80,46 +80,48 @@ updated: 2026-10-04
 
 > keep building GoKart to resemble Mario Kart Nintendo 64 version. search Mario Kart N64 or Mario Kart Nintendo 64 and keep improving, iterating, making GoKart better
 
-第五次会话从 14:19 开始，跑了 28 轮，几乎每一轮都是代理查到并做出来的一样 Mario Kart 64 的东西：两列起跑格上的 8 车阵容、按难度区分的橡皮筋机制、50cc / 100cc / 150cc 以及镜像的 Extra 级别、会互相推挤的轻型 / 中型 / 重型卡丁车、采用 9/6/3/1 积分制和淘汰规则的大奖赛、带幽灵车的计时赛、在 Big Donut、Block Fort 和 Skyscraper 中进行的气球对战模式、三连蘑菇和金蘑菇、假道具箱、香蕉串、Boo、三连红龟壳、龟壳格挡、抢跑、举着起跑信号和圈数牌的 Lakitu、名为 Dusty Canyon 的第四条赛道、带平交道口的 Kalimari Desert 火车、Toad's Turnpike 车流、Monty Mole 鼹鼠、雪人、企鹅、Sherbet Land 冰面、每种主题各自的路边景物、尾流、跳台、起跳切换式的动力滑行，以及用代码中的音序模式渲染出来的每条赛道的芯片音乐循环。
+第五次会话从 14:19 开始，跑了 28 轮，几乎每一轮都是代理先查到、再做出来的一样 Mario Kart 64 的东西。游戏的骨架最先到位：两列起跑格上的 8 车阵容、按难度区分的橡皮筋机制、50cc、100cc 和 150cc 外加镜像的 Extra 级别、会互相推挤的轻型、中型和重型卡丁车，以及采用 9/6/3/1 积分制和淘汰规则的大奖赛。然后是其他模式：带幽灵车的计时赛，以及在 Big Donut、Block Fort 和 Skyscraper 中进行的气球对战模式。接着道具库被填满了：三连蘑菇和金蘑菇、假道具箱、香蕉串、Boo、三连红龟壳和龟壳格挡，Lakitu 也登场了，负责判抢跑、挥起跑信号和举圈数牌。
+
+下午剩下的时间都花在了赛道本身上。第四条赛道 Dusty Canyon 带着 Kalimari Desert 风格的火车和平交道口一起到来。Sunset Speedway 加上了 Toad's Turnpike 的车流。Frosty Peaks 得到了 Sherbet Land 冰面、雪人和企鹅，Green Hills 得到了 Monty Mole 鼹鼠，每条赛道都有了契合各自主题的路边景物，同时加入的还有尾流、跳台、起跳切换式的动力滑行，以及用代码中的音序模式渲染出来的芯片音乐循环。
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-train.png" alt="GoKart 0.0.2 的 Dusty Canyon 赛道：玩家卡丁车在平交道口等候，一列蒸汽火车正驶过道路，铁轨旁有交叉警示牌，天空是沙漠的天色。" style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>第四条赛道 Dusty Canyon，以及它的 Kalimari Desert 风格火车。CPU 卡丁车会在被挡住的道口停车等候；不停的卡丁车会被抛上天。</figcaption>
 </figure>
 
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 的 Frosty Peaks 赛道：玩家卡丁车位于一片雪人阵的入口，雪人交错成排地站在雪白的路面上，每个都戴着红围巾、高顶礼帽和胡萝卜鼻子，天空是深蓝色的暮色。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Frosty Peaks 上的雪人阵。撞上一个，你会被抛上天，而它会炸成一团雪；CPU 卡丁车会向前看 40 米，在雪人行列间穿行。</figcaption>
+</figure>
+
 四小时后，18:25，我打开第二个标签页，在同一个仓库上启动了第二个自动驾驶，目标更窄：
 
 > the menus are not Mario Kart Quality and neither is the title shot. and there is over use of black outlines on text everywhere. see Mario Kart 64 screenshots and images on the web and make better menus. focus only on the menus / screens and title shot for GoKart. make conscious decisions. do not conflict with previous /auto working on the application
 
-于是从 18:25 到午夜，两个代理同时往同一个工作树里提交。菜单会话重做了标题画面，用上了会飞入并弹跳的拱形渐变 Logo；一个每条赛道旁都配图的选择画面；所选赛道的实时飞越镜头；带点亮横条的选项行；会旋转的卡丁车肖像和金色光标；赛道开场飞越；暂停画面；一块行与行依次滑入的结算板；以及一套圆润的金色与奶油色带投影文字的共享配色，取代了游戏里所有 8 像素的黑色描边。它跑了 23 轮，于 23:54 宣布目标达成。
+于是从 18:25 到午夜，两个代理同时往同一个工作树里提交。菜单会话围绕一个会飞入并弹跳的拱形渐变 Logo 重做了标题画面，然后把它后面的每一个画面都过了一遍：每条赛道旁都配图、并实时飞越你所选赛道的选择画面，带点亮横条的选项行，会旋转的卡丁车肖像和金色光标，每场比赛前的赛道开场飞越，暂停画面，以及一块行与行依次滑入的结算板。这一切之下是一套圆润的金色与奶油色带投影文字的共享配色，取代了游戏里所有 8 像素的黑色描边。它跑了 23 轮，于 23:54 宣布目标达成。
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-select.png" alt="GoKart 0.0.2 的选择画面：顶部是 GOKART Logo，左侧是赛道列表，每个赛道名旁有一张小图，选中的一行被点亮；右侧是赛道的实时画面，角落里有地图轮廓；下面是圈数、CPU、引擎级别、卡丁车重量和模式的一排排选项胶囊，还有玩家的卡丁车在小肖像窗口里旋转，整体叠在变暗的演示画面之上。" style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>菜单会话之后的选择画面。赛道图片、赛道的实时飞越、每个选项都列为一排胶囊并点亮选中项，以及在肖像窗口里旋转的卡丁车。</figcaption>
 </figure>
 
-"do not conflict"这一句真的起了作用。日志里满是两个会话互相绕开对方的记录：菜单会话从 HEAD 处的干净 `git worktree` 进行验证，好让"另一个会话正在进行的企鹅工作"不进入它的测试运行；在我要求时，一个会话完成了另一个会话做了一半的功能；提交时逐个文件暂存而不是 `git add -A`，因为另一个标签页的改动就放在同一棵树里。过程并不整洁，但什么都没丢，测试套件在当晚结束时是 14,134 通过、0 失败。
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-gp-results.png" alt="GoKart 0.0.2 的大奖赛结算板，海军蓝面板配金色边框：左侧是本场比赛结果，右侧是杯赛积分榜，每位车手一行，带颜色色块、金银铜名次、用时和积分，玩家那一行在点亮的金色横条上，下方是奖杯。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>大奖赛结算板：比赛结果和杯赛积分榜并排显示，各行依次滑入，每行伴随一声滴答，下方是奖杯。</figcaption>
+</figure>
+
+"do not conflict"这一句真的起了作用。日志里满是两个会话互相绕开对方的记录。菜单会话从 HEAD 处的干净 `git worktree` 进行验证，好让"另一个会话正在进行的企鹅工作"不进入它的测试运行。在我要求时，一个会话完成了另一个会话做了一半的功能。提交时逐个文件暂存而不是 `git add -A`，因为另一个标签页的改动就放在同一棵树里。过程并不整洁，但什么都没丢，测试套件在当晚结束时是 14,134 通过、0 失败。
+
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2 的 Frosty Peaks 赛道：一只企鹅在玩家卡丁车前方的长弯道上，用肚皮在淡蓝白色的冰面上滑行。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>那些被挡在菜单会话测试运行之外的企鹅，就在 Frosty Peaks 上 Sherbet Land 风格的冰面上。在冰上车头会转，但卡丁车仍沿原方向滑行；企鹅摇摇摆摆走到边缘，扑倒，再滑回来穿过赛道。</figcaption>
+</figure>
 
 功能会话的日志在三分钟后的 23:57 结束，写着"Session ended — Stop All"。我紧接着给 Agent! 的备注——它把这条备注保存为下一个检查点提交的提交信息——是：Stop All 应该只停止按下它的那个标签页，而不是全部。当两个自动驾驶同时运行时，一个按钮管两个，是按错了按钮。
 
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 的 Frosty Peaks 赛道：玩家卡丁车位于一片雪人阵的入口，雪人交错成排地站在雪白的路面上，每个都戴着红围巾、高顶礼帽和胡萝卜鼻子，天空是深蓝色的暮色。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks 上的雪人阵。撞上一个，你会被抛上天，而它会炸成一团雪；CPU 卡丁车会向前看 40 米，在雪人行列间穿行。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2 的 Frosty Peaks 赛道：一只企鹅在玩家卡丁车前方的长弯道上，用肚皮在淡蓝白色的冰面上滑行。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Frosty Peaks 上 Sherbet Land 风格的冰面和企鹅。在冰上车头会转，但卡丁车仍沿原方向滑行；企鹅摇摇摆摆走到边缘，扑倒，再滑回来穿过赛道。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-traffic.png" alt="GoKart 0.0.2 的 Sunset Speedway 赛道：玩家卡丁车被堵在一辆公交车和一辆厢式货车后面，它们开着车头灯占据道路的两条车道，天空是日落的天色。" style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Sunset Speedway 上 Toad's Turnpike 风格的车流：开着车头灯的轿车、公交车、厢式货车和油罐车，以及护墙外带亮灯窗带的建筑。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-gp-results.png" alt="GoKart 0.0.2 的大奖赛结算板，海军蓝面板配金色边框：左侧是本场比赛结果，右侧是杯赛积分榜，每位车手一行，带颜色色块、金银铜名次、用时和积分，玩家那一行在点亮的金色横条上，下方是奖杯。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>大奖赛结算板：比赛结果和杯赛积分榜并排显示，各行依次滑入，每行伴随一声滴答，下方是奖杯。</figcaption>
 </figure>
 
 <figure style="margin:2rem 0">
@@ -128,13 +130,17 @@ updated: 2026-10-04
 </figure>
 
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2 的 Dusty Canyon 赛道：玩家卡丁车在沙漠道路上，第 1 圈、8 辆中第 5 名，配有 Mario Kart 64 风格的 HUD。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>随机驾驶机器人视角下的 Dusty Canyon，8 辆中第 5 名。沙漠大弯、一个发夹弯、一个左向 S 弯、两段绿洲水域、火车，以及起步直道上的跳台。</figcaption>
+<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2 的 Dusty Canyon 赛道开场：沙漠道路的飞越镜头，屏幕底部的卡片上写着赛道名 DUSTY CANYON 和一行简介。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Dusty Canyon 的赛道开场，这段 Mario Kart 64 风格的飞越镜头会在每场比赛前播放，底部是赛道的名牌卡片。</figcaption>
 </figure>
 
 ## 关于这些截图
 
-截图是 Agent! 拍的，不是我，也不是手动拍的。第一个版本时我要了三张随机驾驶的截图，它写了一个 70 行的 `tools/random_drive.gd`：带着游走的车道偏移沿路行驶，随机插入漂移冲刺，在随机时刻发射手里拿着的道具，然后每隔几百个物理帧保存一帧。上面两张比赛截图就是那个机器人拍下的帧。其余的来自各个功能随附的截图工具：`menu_shot.gd`、`train_shot.gd`、`traffic_shot.gd`、`snowman_shot.gd`、`penguin_shot.gd`、`hud_shot.gd` 和 `battle_shot.gd`，每一个都会布置好自己的场景、等到合适的那一帧再保存。为了这次更新，它们全部在一个检出到 `v0.0.2` 标签的干净工作树里运行，所以图片里没有任何未提交的内容。Agent! 仍然看不了结果，所以这些工具改为采样像素：冰面截图会打印前方冰面相对于柏油路的路面颜色，暂停截图会证明面板之外有一秒钟没有任何东西在动，而在发布之前，我让它数了上面全部十张图片里的纯黑像素：每一张都是零。[GoKart 的 README](https://github.com/AgentiLoop/GoKart#screenshots) 里还有更多。
+截图是 Agent! 拍的，不是我，也不是手动拍的。这篇文章的第一个版本时，我要了三张随机驾驶的截图，它写了一个 70 行的 `tools/random_drive.gd`：带着游走的车道偏移沿路行驶，随机插入漂移冲刺，在随机时刻发射手里拿着的道具，然后每隔几百个物理帧保存一帧。上面那张 Sunset Speedway 截图就是那个机器人拍下的帧。
+
+其余的来自各个功能随附的截图工具。菜单有一个，赛道开场有一个，火车有一个，车流、雪人和企鹅各有一个，HUD 有一个，对战模式也有一个，每一个都会布置好自己的场景、等到合适的那一帧再保存。为了这次更新，它们全部在一个检出到 `v0.0.2` 标签的干净工作树里运行，所以图片里没有任何未提交的内容。
+
+Agent! 仍然看不了结果，所以这些工具改为采样像素。冰面截图会打印前方冰面相对于柏油路的路面颜色，暂停截图会证明面板之外有一秒钟没有任何东西在动，而在发布之前，我让它数了上面全部十张图片里的纯黑像素：每一张都是零。[GoKart 的 README](https://github.com/AgentiLoop/GoKart#screenshots) 里还有更多。
 
 ## 在你试之前我想说的
 
@@ -146,7 +152,7 @@ updated: 2026-10-04
 
 ## 这算好吗？
 
-在 Agent! 读完仓库、数过提交并找到自动驾驶日志之后，我问了它这个问题。全部 126 个提交的作者都是代理，没有一个出自人手，`.agent/autopilot/progress.md` 已经记到第 23 轮之后。它的回答，未经编辑：
+在 Agent! 读完仓库、数过提交并找到自动驾驶日志之后，我问了它这个问题。它的回答，未经编辑：
 
 > 这取决于你想从中得到什么。作为自动驾驶能力的展示，它令人印象深刻。二十三轮以上产出了四条赛道、道具、AI 车手、大奖赛、计时赛、对战模式、程序化音乐和音效，全都没有导入任何素材，还有一份详细记录这一切的 README。从一句目标陈述出发，这是相当多的可运行软件。
 
@@ -160,6 +166,7 @@ updated: 2026-10-04
 - **Windows** x86_64
 - **Linux** x86_64 和 arm64
 
-每个下载都是一个内嵌游戏数据的独立二进制文件，发布页面上还有 `SHA256SUMS.txt`，方便你核对下载内容。Windows 版未签名，所以会看到 SmartScreen 提示。这篇文章里所有 0.0.1 没有的东西都在 0.0.2 里：对战模式、计时赛、四赛道杯赛、引擎级别和重量级别、新道具、Lakitu、火车、车流、鼹鼠、雪人、企鹅、冰面、路边景物、尾流、跳台、赛道音乐、新的标题和选择画面、赛道开场、暂停画面以及重新设计的 HUD。完整清单见发布说明。
+每个下载都是一个内嵌游戏数据的独立二进制文件，发布页面上还有 `SHA256SUMS.txt`，方便你核对下载内容。Windows 版未签名，所以会看到 SmartScreen 提示。上面描述的所有 0.0.1 没有的东西都在 0.0.2 里，从对战模式和计时赛，到火车、车流、新菜单和重新设计的 HUD；完整清单见发布说明。
 
 带自动驾驶的 Agent! 1.1.87 已在[发布页面](https://github.com/AgentiLoop/Agent/releases/latest)和 Homebrew 上提供。如果你更想从源码运行 GoKart，需要 Godot 4.4 或更高版本：`git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
+

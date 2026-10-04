@@ -1,6 +1,6 @@
 ---
 title: GoKart: un juego de carreras al estilo Mario Kart que Auto-Pilot construyó en una tarde
-description: Dale a Auto-Pilot de Agent! un único objetivo - "crea un clon de Mario Kart llamado GoKart" - y vuelve para encontrarte un juego de carreras en Godot 4 con tres circuitos, ocho objetos, rivales controlados por IA y 3.344 comprobaciones de test en verde. Dos días y 87 commits del agente después es GoKart 0.0.2: cuatro circuitos, modo Batalla, Contrarreloj, un menú al estilo Mario Kart 64 y 14.134 comprobaciones en verde. Esto es lo que dice el registro que ocurrió de verdad, incluidas las partes en las que se quedó atascado.
+description: Dale a Auto-Pilot de Agent! un único objetivo - "crea un clon de Mario Kart llamado GoKart" - y vuelve para encontrarte un juego de carreras en Godot 4 con tres circuitos, ocho objetos, rivales controlados por IA y 3.344 comprobaciones de test en verde. Dos días y 87 commits del agente después es GoKart 0.0.2, con cuatro circuitos, modo Batalla, Contrarreloj y un menú al estilo Mario Kart 64. Esto es lo que dice el registro que ocurrió de verdad, incluidas las partes en las que se quedó atascado.
 tags: Auto-Pilot, Vitrina, Godot
 updated: 2026-10-04
 ---
@@ -9,7 +9,7 @@ updated: 2026-10-04
 <figcaption>La pantalla de título de GoKart 0.0.2. El logo entra volando y rebota hasta detenerse sobre una demo de atracción en vivo que recorre los circuitos. Cada malla, shader, disposición de fuente y sonido se generó desde código.</figcaption>
 </figure>
 
-*Actualizado el 4 de octubre: esta entrada ahora cubre los dos días posteriores a la primera tarde, las dos sesiones de Auto-Pilot que se ejecutaron al mismo tiempo en el mismo repositorio y la versión [GoKart 0.0.2](#gokart-0-0-2). Las capturas se volvieron a tomar desde la etiqueta 0.0.2.*
+*Actualizado el 4 de octubre: la entrada ahora sigue la historia durante los dos días posteriores a aquella primera tarde, incluida la noche en que dos sesiones de Auto-Pilot compartieron un mismo repositorio, y termina con la versión [GoKart 0.0.2](#gokart-0-0-2). Las capturas se volvieron a tomar desde la etiqueta 0.0.2.*
 
 La entrada de ayer presentó [Auto-Pilot](/blog/agent-1-1-87-and-agentiloop-cli-0-0-5/): escribe `/auto <objetivo>` en Agent! para Mac y ejecuta ciclos sin supervisión hacia ese objetivo hasta que pulsas Stop All. Esta entrada va de lo que salió por el otro lado cuando lo apunté a un juego.
 
@@ -17,7 +17,7 @@ El objetivo, pegado más o menos tal como lo escribí:
 
 > create a Mario Kart clone called GoKart with all Mario Kart effects. I believe Godot 4 can do the Mario Kart effects, but I haven't built any of them yet: drift sparks and boost flames (GPUParticles3D), speed lines and boost blur (screen-space shaders, glow and tonemapping), item effects and tire trails (shaders plus ribbon meshes), kart movement (VehicleBody3D or custom arcade physics). Write unit tests and test the game frequently.
 
-Presupuesto: sin límite de tiempo, ciclos ilimitados. El modelo dentro de Agent! en todos los ciclos fue Claude Sonnet 5.5. El primer commit llegó a las 12:39. A las 16:32 de esa misma tarde el repositorio tenía 33 commits, 47 archivos GDScript, unas 5.500 líneas de GDScript y código de shaders, y una suite unitaria que pasaba 3.344 comprobaciones. Dos días después, en la etiqueta 0.0.2, son 126 commits, 150 archivos GDScript, unas 24.500 líneas y 14.134 comprobaciones, y cada uno de esos commits tiene al agente como autor. Todo está en GitHub, en [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
+Presupuesto: sin límite de tiempo, ciclos ilimitados. El modelo dentro de Agent! en todos los ciclos fue Claude Sonnet 5.5. El primer commit llegó a las 12:39. A las 16:32 de esa misma tarde el repositorio tenía 33 commits, 47 archivos GDScript, unas 5.500 líneas de GDScript y código de shaders, y una suite unitaria que pasaba 3.344 comprobaciones. Dos días después, en la etiqueta 0.0.2, esas cifras habían crecido hasta 126 commits, 150 archivos, unas 24.500 líneas y 14.134 comprobaciones. Cada uno de esos commits tiene al agente como autor. Todo está en GitHub, en [AgentiLoop/GoKart](https://github.com/AgentiLoop/GoKart).
 
 ## Qué hace Auto-Pilot, ciclo a ciclo
 
@@ -76,50 +76,52 @@ Ese es el comportamiento correcto. El objetivo era "la dirección se siente mal"
 
 ## Dos días después: dos Auto-Pilots en un mismo repositorio
 
-El 3 de octubre volví con un tipo de objetivo distinto. No una lista de funcionalidades, sino una referencia:
+El 3 de octubre volví con un tipo de objetivo distinto. Esta vez no una lista de funcionalidades, sino una referencia:
 
 > keep building GoKart to resemble Mario Kart Nintendo 64 version. search Mario Kart N64 or Mario Kart Nintendo 64 and keep improving, iterating, making GoKart better
 
-Esa quinta sesión empezó a las 14:19 y ejecutó 28 ciclos, y casi cada ciclo es una cosa de Mario Kart 64 que el agente buscó y construyó: la parrilla de 8 corredores en dos columnas, el rubber-banding según la dificultad, 50cc / 100cc / 150cc y la clase Extra en espejo, karts Ligero / Medio / Pesado que se empujan entre sí, Grand Prix con 9/6/3/1 puntos y la regla de eliminación por puesto, Contrarreloj con un fantasma, modo Batalla con globos en Big Donut, Block Fort y Skyscraper, champiñones triples y dorados, la caja de objetos falsa, el racimo de plátanos, Boo, caparazones rojos triples, el bloqueo con caparazón, la salida en falso, Lakitu con la señal de salida y los carteles de vuelta, un cuarto circuito llamado Dusty Canyon, el tren de Kalimari Desert con pasos a nivel, el tráfico de Toad's Turnpike, Monty Moles, muñecos de nieve, pingüinos, el hielo de Sherbet Land, decorado al borde de la pista según el tema, el rebufo, una rampa de salto, el derrape con saltito y alternancia, y un bucle chiptune para cada circuito renderizado desde patrones de pasos en código.
+Esa quinta sesión empezó a las 14:19 y ejecutó 28 ciclos, y casi cada ciclo es una cosa de Mario Kart 64 que el agente buscó y después construyó. Primero llegó la estructura del juego: una parrilla de 8 corredores en dos columnas, rubber-banding según la dificultad, 50cc, 100cc y 150cc más la clase Extra en espejo, karts Ligero, Medio y Pesado que se empujan entre sí, y un Grand Prix con 9/6/3/1 puntos y la regla de eliminación por puesto. Luego los otros modos: Contrarreloj con un fantasma, y modo Batalla con globos en Big Donut, Block Fort y Skyscraper. Luego se completó el conjunto de objetos con champiñones triples y dorados, la caja de objetos falsa, el racimo de plátanos, Boo, caparazones rojos triples y el bloqueo con caparazón, y llegó Lakitu para señalar la salida en falso, dar la señal de salida y levantar los carteles de vuelta.
+
+El resto de la tarde se fue en los propios circuitos. Un cuarto, Dusty Canyon, llegó con un tren al estilo Kalimari Desert y pasos a nivel. Sunset Speedway recibió el tráfico de Toad's Turnpike. Frosty Peaks recibió el hielo de Sherbet Land, muñecos de nieve y pingüinos, Green Hills recibió Monty Moles, y cada circuito recibió decorado al borde de la pista acorde a su tema, junto con el rebufo, una rampa de salto, el derrape con saltito y alternancia, y un bucle chiptune renderizado desde patrones de pasos en código.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-train.png" alt="GoKart 0.0.2 en Dusty Canyon: el kart del jugador esperando en un paso a nivel mientras un tren de vapor cruza la carretera, con una señal de cruz de San Andrés junto a la vía, bajo un cielo desértico." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Dusty Canyon, el cuarto circuito, con su tren al estilo Kalimari Desert. Los karts de la CPU se detienen y esperan en un paso bloqueado; un kart que no lo hace sale lanzado por los aires.</figcaption>
 </figure>
 
+<figure style="margin:2rem 0">
+<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 en Frosty Peaks: el kart del jugador a la entrada de un campo de muñecos de nieve dispuestos en filas escalonadas sobre la carretera blanca como la nieve, cada uno con bufanda roja, sombrero de copa y nariz de zanahoria, bajo un cielo crepuscular azul oscuro." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>El campo de muñecos de nieve en Frosty Peaks. Si chocas con uno sales lanzado por los aires mientras él estalla en nieve; los karts de la CPU miran 40 metros por delante y zigzaguean entre las filas.</figcaption>
+</figure>
+
 Cuatro horas después, a las 18:25, abrí una segunda pestaña e inicié un segundo Auto-Pilot sobre el mismo repositorio, con un objetivo más acotado:
 
 > the menus are not Mario Kart Quality and neither is the title shot. and there is over use of black outlines on text everywhere. see Mario Kart 64 screenshots and images on the web and make better menus. focus only on the menus / screens and title shot for GoKart. make conscious decisions. do not conflict with previous /auto working on the application
 
-Así que desde las 18:25 hasta la medianoche dos agentes estuvieron haciendo commits en el mismo árbol de trabajo. La sesión de menús reconstruyó la pantalla de título con un logo en arco con degradado que entra volando y rebota, una pantalla de selección con una imagen junto a cada circuito, un sobrevuelo en vivo del circuito elegido, filas de opciones con barras iluminadas, un retrato del kart girando y un cursor dorado, un sobrevuelo de presentación del circuito, una pantalla de pausa, un tablero de resultados cuyas filas entran deslizándose una tras otra, y una paleta compartida de texto redondeado dorado y crema con sombras que sustituyó cada contorno negro de 8 píxeles del juego. Ejecutó 23 ciclos y declaró el objetivo alcanzado a las 23:54.
+Así que desde las 18:25 hasta la medianoche dos agentes estuvieron haciendo commits en el mismo árbol de trabajo. La sesión de menús reconstruyó la pantalla de título en torno a un logo en arco con degradado que entra volando y rebota, y luego fue recorriendo cada pantalla que hay detrás: una pantalla de selección con una imagen junto a cada circuito y un sobrevuelo en vivo del que has elegido, filas de opciones con barras iluminadas, un retrato del kart girando y un cursor dorado, un sobrevuelo de presentación del circuito antes de cada carrera, una pantalla de pausa y un tablero de resultados cuyas filas entran deslizándose una tras otra. Debajo de todo ello puso una paleta compartida de texto redondeado dorado y crema con sombras, que sustituyó cada contorno negro de 8 píxeles del juego. Ejecutó 23 ciclos y declaró el objetivo alcanzado a las 23:54.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-select.png" alt="La pantalla de selección de GoKart 0.0.2: el logo GOKART arriba, una lista de circuitos a la izquierda con una pequeña imagen junto al nombre de cada circuito y la fila elegida iluminada, una imagen en vivo del circuito con el contorno del mapa en su esquina a la derecha, filas de píldoras de opciones para vueltas, CPU, clase de motor, peso del kart y modo, y el kart del jugador girando en una pequeña ventana de retrato, todo sobre la demo de atracción atenuada." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>La pantalla de selección tras la sesión de menús. Imágenes de los circuitos, un sobrevuelo en vivo del circuito, cada opción listada como una fila de píldoras con la elegida iluminada, y el kart girando en su ventana de retrato.</figcaption>
 </figure>
 
-La línea de "do not conflict" hizo un trabajo real. El registro está lleno de las dos sesiones esquivándose mutuamente: la sesión de menús verificando desde un `git worktree` limpio en HEAD para que "el trabajo en curso de los pingüinos de la otra sesión" quedara fuera de sus ejecuciones de tests, una sesión terminando la funcionalidad a medias de la otra cuando se lo pedí, y commits preparados archivo por archivo en lugar de `git add -A` porque las ediciones de la otra pestaña estaban en el mismo árbol. No fue ordenado, pero no se perdió nada y la suite terminó la noche con 14.134 en verde, 0 fallos.
-
-El registro de la sesión de funcionalidades termina tres minutos después, a las 23:57, con "Session ended — Stop All". Mi nota a Agent! justo después, que guardó como mensaje del siguiente commit de checkpoint, fue que Stop All debe detener solo la pestaña en la que se pulsa, no todas. Con dos Auto-Pilots en marcha, un botón para ambos es el botón equivocado.
-
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-snowmen.png" alt="GoKart 0.0.2 en Frosty Peaks: el kart del jugador a la entrada de un campo de muñecos de nieve dispuestos en filas escalonadas sobre la carretera blanca como la nieve, cada uno con bufanda roja, sombrero de copa y nariz de zanahoria, bajo un cielo crepuscular azul oscuro." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>El campo de muñecos de nieve en Frosty Peaks. Si chocas con uno sales lanzado por los aires mientras él estalla en nieve; los karts de la CPU miran 40 metros por delante y zigzaguean entre las filas.</figcaption>
+<img src="/gokart-0-0-2-gp-results.png" alt="El tablero de resultados del Grand Prix de GoKart 0.0.2 sobre un panel azul marino con borde dorado: el resultado de la carrera a la izquierda y la clasificación de la copa a la derecha, una fila por corredor con una muestra de color, puestos oro, plata y bronce, tiempos y puntos, la fila del jugador sobre una barra dorada iluminada, y el trofeo debajo." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>El tablero de resultados del Grand Prix: resultado de la carrera y clasificación de la copa lado a lado, las filas entrando deslizándose una tras otra con un tic cada una, y el trofeo debajo.</figcaption>
 </figure>
+
+La línea de "do not conflict" hizo un trabajo real. El registro está lleno de las dos sesiones esquivándose mutuamente. La sesión de menús verificaba desde un `git worktree` limpio en HEAD para que "el trabajo en curso de los pingüinos de la otra sesión" quedara fuera de sus ejecuciones de tests. Cuando se lo pedí, una sesión terminó la funcionalidad a medias de la otra. Los commits se prepararon archivo por archivo en lugar de con `git add -A`, porque las ediciones de la otra pestaña estaban en el mismo árbol. No fue ordenado, pero no se perdió nada y la suite terminó la noche con 14.134 en verde, 0 fallos.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-penguins.png" alt="GoKart 0.0.2 en Frosty Peaks: un pingüino deslizándose sobre su barriga por el hielo azul blanquecino pálido de la larga curva abierta por delante del kart del jugador." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Hielo y pingüinos al estilo Sherbet Land en Frosty Peaks. Sobre el hielo el morro gira pero el kart sigue deslizándose en la dirección que llevaba; los pingüinos se contonean hasta el borde, se dejan caer y vuelven deslizándose.</figcaption>
+<figcaption>Los pingüinos que quedaron fuera de las ejecuciones de tests de la sesión de menús, sobre hielo al estilo Sherbet Land en Frosty Peaks. Sobre el hielo el morro gira pero el kart sigue deslizándose en la dirección que llevaba; los pingüinos se contonean hasta el borde, se dejan caer y vuelven deslizándose.</figcaption>
 </figure>
+
+El registro de la sesión de funcionalidades termina tres minutos después que el de la sesión de menús, a las 23:57, con "Session ended — Stop All". Mi nota a Agent! justo después, que guardó como mensaje del siguiente commit de checkpoint, fue que Stop All debe detener solo la pestaña en la que se pulsa, no todas. Con dos Auto-Pilots en marcha, un botón para ambos es el botón equivocado.
 
 <figure style="margin:2rem 0">
 <img src="/gokart-0-0-2-traffic.png" alt="GoKart 0.0.2 en Sunset Speedway: el kart del jugador atrapado detrás de un autobús y un camión de caja con los faros encendidos en los dos carriles de la carretera, bajo el cielo de atardecer." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Tráfico al estilo Toad's Turnpike en Sunset Speedway: coches, autobuses, camiones de caja y cisternas con faros, y edificios con franjas de ventanas iluminadas más allá de los muros.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-gp-results.png" alt="El tablero de resultados del Grand Prix de GoKart 0.0.2 sobre un panel azul marino con borde dorado: el resultado de la carrera a la izquierda y la clasificación de la copa a la derecha, una fila por corredor con una muestra de color, puestos oro, plata y bronce, tiempos y puntos, la fila del jugador sobre una barra dorada iluminada, y el trofeo debajo." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>El tablero de resultados del Grand Prix: resultado de la carrera y clasificación de la copa lado a lado, las filas entrando deslizándose una tras otra con un tic cada una, y el trofeo debajo.</figcaption>
 </figure>
 
 <figure style="margin:2rem 0">
@@ -128,13 +130,17 @@ El registro de la sesión de funcionalidades termina tres minutos después, a la
 </figure>
 
 <figure style="margin:2rem 0">
-<img src="/gokart-0-0-2-dusty-canyon.png" alt="GoKart 0.0.2 en Dusty Canyon: el kart del jugador en 5.ª posición de 8 en la vuelta 1 sobre la carretera del desierto, con el HUD al estilo Mario Kart 64." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Dusty Canyon desde el bot de conducción aleatoria, 5.º de 8. Curvas abiertas del desierto, una horquilla, una S a la izquierda, dos tramos de agua de oasis, el tren y una rampa de salto en la recta inicial.</figcaption>
+<img src="/gokart-0-0-2-dusty-canyon.png" alt="La presentación del circuito de GoKart 0.0.2 para Dusty Canyon: un sobrevuelo de la carretera del desierto con el nombre del circuito DUSTY CANYON y una descripción de una línea en una tarjeta a lo largo de la parte inferior de la pantalla." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>La presentación del circuito de Dusty Canyon, el sobrevuelo al estilo Mario Kart 64 que se reproduce antes de cada carrera, con la tarjeta del nombre del circuito a lo largo de la parte inferior.</figcaption>
 </figure>
 
 ## Sobre estas capturas
 
-Las tomó Agent!, no yo, y no a mano. Para la primera versión pedí tres capturas de una conducción aleatoria, y escribió un `tools/random_drive.gd` de 70 líneas que sigue la carretera con un desplazamiento de carril errante, mete ráfagas de derrape aleatorias y dispara el objeto que lleve en momentos aleatorios, y luego guarda un fotograma cada varios cientos de fotogramas de física. Las dos capturas de carrera de arriba son fotogramas de ese bot. El resto proviene de las herramientas de captura con las que se entregó cada funcionalidad: `menu_shot.gd`, `train_shot.gd`, `traffic_shot.gd`, `snowman_shot.gd`, `penguin_shot.gd`, `hud_shot.gd` y `battle_shot.gd`, cada una de las cuales prepara su escena, espera al fotograma correcto y lo guarda. Todas se ejecutaron para esta actualización desde un worktree limpio con la etiqueta `v0.0.2` desplegada, así que no hay nada sin commit en ninguna imagen. Agent! sigue sin poder mirar el resultado, así que las herramientas muestrean píxeles en su lugar: la captura del hielo imprime el color de la carretera por delante sobre hielo frente al asfalto, la captura de pausa demuestra que nada se movió fuera del panel durante un segundo, y antes de publicar le hice contar los píxeles negros puros en las diez imágenes de arriba: cero en cada una. Hay más en el [README de GoKart](https://github.com/AgentiLoop/GoKart#screenshots).
+Las tomó Agent!, no yo, y no a mano. Para la primera versión de esta entrada pedí tres capturas de una conducción aleatoria, y escribió un `tools/random_drive.gd` de 70 líneas que sigue la carretera con un desplazamiento de carril errante, mete ráfagas de derrape aleatorias, dispara el objeto que lleve en momentos aleatorios y guarda un fotograma cada varios cientos de fotogramas de física. La captura de Sunset Speedway de arriba es un fotograma de ese bot.
+
+El resto proviene de las herramientas de captura con las que se entregó cada funcionalidad. Hay una para los menús, una para la presentación del circuito, una para el tren, una para el tráfico, otra para los muñecos de nieve y otra para los pingüinos, una para el HUD y una para el modo Batalla, y cada una prepara su escena, espera al fotograma correcto y lo guarda. Todas se ejecutaron para esta actualización desde un worktree limpio con la etiqueta `v0.0.2` desplegada, así que no hay nada sin commit en ninguna imagen.
+
+Agent! sigue sin poder mirar el resultado, así que las herramientas muestrean píxeles en su lugar. La captura del hielo imprime el color de la carretera por delante sobre hielo frente al asfalto, la captura de pausa demuestra que nada se movió fuera del panel durante un segundo, y antes de publicar le hice contar los píxeles negros puros en las diez imágenes de arriba: cero en cada una. Hay más en el [README de GoKart](https://github.com/AgentiLoop/GoKart#screenshots).
 
 ## Lo que te diría antes de que lo pruebes
 
@@ -146,7 +152,7 @@ Las tomó Agent!, no yo, y no a mano. Para la primera versión pedí tres captur
 
 ## ¿Eso es bueno?
 
-Le hice esa pregunta a Agent! después de que hubiera leído el repositorio, contado los commits y encontrado el registro de Auto-Pilot. Los 126 commits tienen al agente como autor, ninguno a una persona, y `.agent/autopilot/progress.md` pasa del ciclo 23. Su respuesta, sin editar:
+Le hice esa pregunta a Agent! después de que hubiera leído el repositorio, contado los commits y encontrado el registro de Auto-Pilot. Su respuesta, sin editar:
 
 > Depende de lo que quieras sacar de ello. Como vitrina de lo que Auto-Pilot puede hacer, es impresionante. Más de veintitrés ciclos produjeron cuatro circuitos, objetos, corredores de IA, Grand Prix, Contrarreloj, modo Batalla, música y sonido procedurales, todo sin recursos importados, y un README que lo documenta en detalle. Es mucho software funcional a partir de una única declaración de objetivo.
 
@@ -160,6 +166,6 @@ No necesitas Godot para probarlo. [GoKart 0.0.2](https://github.com/AgentiLoop/G
 - **Windows** x86_64
 - **Linux** x86_64 y arm64
 
-Cada descarga es un único binario autocontenido con los datos del juego incrustados, y `SHA256SUMS.txt` está en la página de la versión por si quieres comprobar lo que has recibido. La compilación de Windows no está firmada, así que espera el aviso de SmartScreen. Todo lo de esta entrada que no estaba en 0.0.1 está en 0.0.2: el modo Batalla, Contrarreloj, la copa de cuatro circuitos, las clases de motor y de peso, los objetos nuevos, Lakitu, el tren, el tráfico, los topos, los muñecos de nieve, los pingüinos, el hielo, el decorado, el rebufo, la rampa de salto, la música de los circuitos, las nuevas pantallas de título y selección, la presentación del circuito, la pantalla de pausa y el HUD rediseñado. Las notas de la versión tienen la lista completa.
+Cada descarga es un único binario autocontenido con los datos del juego incrustados, y `SHA256SUMS.txt` está en la página de la versión por si quieres comprobar lo que has recibido. La compilación de Windows no está firmada, así que espera el aviso de SmartScreen. Todo lo descrito arriba que no estaba en 0.0.1 está en 0.0.2, desde el modo Batalla y la Contrarreloj hasta el tren, el tráfico, los nuevos menús y el HUD rediseñado; las notas de la versión tienen la lista completa.
 
 Agent! 1.1.87 con Auto-Pilot está en la [página de versiones](https://github.com/AgentiLoop/Agent/releases/latest) y en Homebrew. Si prefieres ejecutar GoKart desde el código fuente, necesita Godot 4.4 o posterior: `git clone https://github.com/AgentiLoop/GoKart.git && cd GoKart && godot --path .`
