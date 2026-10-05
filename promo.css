@@ -26,7 +26,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px 16px;
-    padding: 12px 72px 12px 24px;
+    padding: 12px 104px 12px 24px;
     text-align: center;
     font-size: 0.98rem;
     line-height: 1.45;
@@ -174,18 +174,18 @@
 .promo-kart .promo-cta { background: linear-gradient(135deg, #ef4444, #f59e0b); }
 
 /* Segmented progress bar (one segment per slide, scales to any count), right side under the "n / N" counter */
-.promo-dots { position: absolute; z-index: 3; right: 14px; top: 50%; width: 46px; margin-top: 1px; display: flex; gap: 3px; }
-.promo-dot { position: relative; flex: 1 1 0; min-width: 0; height: 10px; padding: 0; border: 0; background: none; cursor: pointer; }
-.promo-dot::before, .promo-dot span { content: ""; position: absolute; left: 0; top: 3px; height: 3px; border-radius: 2px; }
-.promo-dot::before { right: 0; background: rgba(255, 255, 255, .18); transition: background .2s ease, height .2s ease; }
-.promo-dot:hover::before, .promo-dot:focus-visible::before { background: rgba(255, 255, 255, .4); height: 5px; }
+.promo-dots { position: absolute; z-index: 3; right: 14px; top: 50%; width: 76px; margin-top: 2px; display: flex; gap: 4px; }
+.promo-dot { position: relative; flex: 1 1 0; min-width: 0; height: 14px; padding: 0; border: 0; background: none; cursor: pointer; }
+.promo-dot::before, .promo-dot span { content: ""; position: absolute; left: 0; top: 4px; height: 6px; border-radius: 3px; }
+.promo-dot::before { right: 0; background: #4b5563; transition: background .2s ease; }
+.promo-dot:hover::before, .promo-dot:focus-visible::before { background: #6b7280; }
 .promo-dot:focus-visible { outline: none; }
-.promo-dot span { width: 0; background: linear-gradient(90deg, #60a5fa, #22d3ee, #fff); box-shadow: 0 0 8px rgba(34, 211, 238, .6); }
-.promo-dot.is-done span { width: 100%; background: rgba(255, 255, 255, .55); box-shadow: none; }
+.promo-dot span { width: 0; background: #fff; }
+.promo-dot.is-done span { width: 100%; background: #d1d5db; }
 .promo-dot.is-active span { animation: promo-progress var(--promo-ms) linear forwards; }
 .promo.is-paused .promo-dot.is-active span { animation-play-state: paused; }
 @keyframes promo-progress { to { width: 100%; } }
-.promo-count { position: absolute; z-index: 3; right: 14px; top: 50%; width: 46px; text-align: center; transform: translateY(calc(-100% - 2px)); font: 700 0.72rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; color: rgba(255, 255, 255, .55); pointer-events: none; }
+.promo-count { position: absolute; z-index: 3; right: 14px; top: 50%; width: 76px; text-align: center; transform: translateY(calc(-100% - 2px)); font: 700 0.9rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; color: rgba(255, 255, 255, .6); pointer-events: none; }
 .promo-count b { color: #fff; font-weight: 800; }
 
 @media (max-width: 640px) {
