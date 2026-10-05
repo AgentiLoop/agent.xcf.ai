@@ -174,7 +174,7 @@
 .promo-kart .promo-cta { background: linear-gradient(135deg, #ef4444, #f59e0b); }
 
 /* Segmented progress bar (one segment per slide, scales to any count), vertically centered on the right side */
-.promo-dots { position: absolute; z-index: 3; right: 14px; top: 50%; width: 76px; transform: translateY(-50%); display: flex; gap: 4px; }
+.promo-dots { position: absolute; z-index: 3; right: 14px; top: 0; bottom: 0; width: 76px; display: flex; align-items: center; gap: 4px; }
 .promo-dot { position: relative; flex: 1 1 0; min-width: 0; height: 14px; padding: 0; border: 0; background: none; cursor: pointer; }
 .promo-dot::before, .promo-dot span { content: ""; position: absolute; left: 0; top: 4px; height: 6px; border-radius: 3px; }
 .promo-dot::before { right: 0; background: #4b5563; transition: background .2s ease; }
