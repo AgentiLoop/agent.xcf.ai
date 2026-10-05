@@ -14,7 +14,7 @@
         .catch(function () {});
 })();
 
-// Promo banner under the nav: rotate the 3 slides, pause on hover/focus, dots jump to a slide.
+// Promo banner under the nav: rotate the slides, pause on hover/focus, dots jump to a slide.
 (function () {
     var promo = document.getElementById('promo');
     if (!promo) return;

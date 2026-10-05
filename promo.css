@@ -1,4 +1,4 @@
-/* ---------- Promo banner (under the nav; 3 rotating slides, rotation in promo.js) ---------- */
+/* ---------- Promo banner (under the nav; 4 rotating slides, rotation in promo.js) ---------- */
 .promo {
     --promo-ms: 7000ms;
     position: relative;
@@ -144,6 +144,35 @@
 .promo-fx code { color: #fde68a; }
 .promo-fx .promo-cta { color: #1c1407; background: linear-gradient(135deg, #fde68a, #f59e0b); }
 
+/* Slide 4: GoKart.games (Godot 4 kart racer) */
+.promo-kart::before { background-image: linear-gradient(120deg, #2a0a0a, #0b2a14, #2a1a05, #0a1f3a, #2a0a0a); }
+.promo-kart { --promo-glow: rgba(239, 68, 68, .55); }
+.promo-kart::after { /* checkered finish-line strip along the bottom edge */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    z-index: -1;
+    opacity: .5;
+    background: repeating-conic-gradient(#fff 0 25%, #111 0 50%) 0 0 / 8px 8px;
+    animation: promo-race 1.2s linear infinite;
+}
+@keyframes promo-race { to { background-position: -16px 0; } }
+.promo-kart .promo-grad { background-image: linear-gradient(90deg, #f87171, #facc15, #4ade80, #60a5fa, #f87171); }
+.promo-flag { color: #e5e7eb; background: #0b0f0c; border: 1px solid rgba(255, 255, 255, .35); box-shadow: 0 0 16px rgba(250, 204, 21, .4); animation: promo-wave 1.4s ease-in-out infinite; }
+@keyframes promo-wave { 0%, 100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+.promo-lights { display: inline-flex; gap: 3px; margin-right: 8px; padding: 3px 5px; vertical-align: -1px; border-radius: 6px; background: #0b0f0c; border: 1px solid rgba(255, 255, 255, .2); }
+.promo-lights i { width: 8px; height: 8px; border-radius: 50%; background: #333; animation: promo-light 2.4s steps(1) infinite; }
+.promo-lights i:nth-child(1) { --on: #ef4444; animation-delay: 0s; }
+.promo-lights i:nth-child(2) { --on: #facc15; animation-delay: .4s; }
+.promo-lights i:nth-child(3) { --on: #4ade80; animation-delay: .8s; }
+@keyframes promo-light { 0%, 66% { background: var(--on); box-shadow: 0 0 8px var(--on); } 67%, 100% { background: #333; box-shadow: none; } }
+.lang-godot { color: #93c5fd; background: rgba(71, 140, 191, .18); border: 1px solid rgba(71, 140, 191, .6); }
+.lang-godot:hover { background: rgba(71, 140, 191, .34); }
+.promo-kart .promo-cta { background: linear-gradient(135deg, #ef4444, #f59e0b); }
+
 /* Dots with a progress fill that tracks the rotation timer */
 .promo-dots { position: absolute; z-index: 3; right: 14px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; }
 .promo-dot { position: relative; width: 6px; height: 18px; padding: 0; border: 0; border-radius: 3px; background: rgba(255, 255, 255, .2); cursor: pointer; overflow: hidden; }
@@ -159,6 +188,6 @@
     .promo-dots { right: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .promo::after, .promo-slide::before, .promo-grad, .promo-cta, .promo-new, .promo-caret { animation: none; }
+    .promo::after, .promo-slide::before, .promo-grad, .promo-cta, .promo-new, .promo-caret, .promo-kart::after, .promo-flag, .promo-lights i { animation: none; }
     .promo-slide { transition: opacity .3s ease, visibility 0s linear .3s; transform: none; filter: none; }
 }

@@ -504,5 +504,8 @@
  "<a href=\"https://beatapi.io/awesome-jev\" target=\"_blank\" rel=\"noopener\">Agent — an optional Jev command-risk advisor inside a native macOS Agent, with a TypeSafeKit client</a>": "<a href=\"https://beatapi.io/awesome-jev\" target=\"_blank\" rel=\"noopener\">Agent：原生 macOS Agent 中可选的 Jev 命令风险顾问，附带 TypeSafeKit 客户端</a>",
  "\"What JEV decides: Adds a destructive-risk judgment after local shell checks and refuses commands above the configured threshold.\" … One of 171 source-reviewed open-source projects, listed under <em>Safety &amp; review</em>; 622 stars.": "“JEV 的决策：在本地 shell 检查之后加入破坏性风险判断，并拒绝超过所设阈值的命令。”… 171 个经源码审查的开源项目之一，列于<em>安全与审查</em>类别；622 颗星。",
  "Blog": "博客",
- "Create an Issue": "创建 Issue"
+ "Create an Issue": "创建 Issue",
+ "<span class=\"promo-lights\" aria-hidden=\"true\"><i></i><i></i><i></i></span><span class=\"promo-new\">New</span> <strong class=\"promo-grad\">GoKart.games</strong>: a free arcade kart racer built with <a class=\"promo-lang lang-godot\" href=\"https://github.com/AgentiLoop/GoKart\" target=\"_blank\" rel=\"noopener\" tabindex=\"-1\">Godot 4</a> for macOS, Windows &amp; Linux": "<span class=\"promo-lights\" aria-hidden=\"true\"><i></i><i></i><i></i></span><span class=\"promo-new\">新</span> <strong class=\"promo-grad\">GoKart.games</strong>：使用 <a class=\"promo-lang lang-godot\" href=\"https://github.com/AgentiLoop/GoKart\" target=\"_blank\" rel=\"noopener\" tabindex=\"-1\">Godot 4</a> 打造的免费街机卡丁车竞速游戏，支持 macOS、Windows 和 Linux",
+ "Race now <span aria-hidden=\"true\">&rarr;</span>": "立即开赛 <span aria-hidden=\"true\">&rarr;</span>",
+ "GoKart.games": "GoKart.games"
 }
