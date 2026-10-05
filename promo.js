@@ -21,10 +21,6 @@
     var slides = promo.querySelectorAll('.promo-slide');
     var dots = promo.querySelectorAll('.promo-dot');
     var ms = 7000, cur = 0, timer = null, left = ms, started = 0;
-    var count = document.createElement('div'); // "n / N" counter next to the segmented progress bar
-    count.className = 'promo-count';
-    count.setAttribute('aria-hidden', 'true');
-    promo.appendChild(count);
     function syncHeight() { document.documentElement.style.setProperty('--promo-h', promo.offsetHeight + 'px'); }
     syncHeight();
     if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(promo); else window.addEventListener('resize', syncHeight);
@@ -44,7 +40,6 @@
             d.setAttribute('aria-selected', n === cur ? 'true' : 'false');
             d.title = d.getAttribute('aria-label') || '';
         });
-        count.innerHTML = '<b>' + (cur + 1) + '</b> / ' + slides.length;
         left = ms;
         schedule();
     }
