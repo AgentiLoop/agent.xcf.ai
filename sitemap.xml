@@ -2257,4 +2257,9 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://agentiloop.ai/blog/why-we-ripped-out-modes/"/>
   </url>
   <!-- blog:end -->
+  <url>
+    <loc>https://agentiloop.ai/song.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>
