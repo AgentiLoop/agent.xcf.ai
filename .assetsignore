@@ -32,3 +32,7 @@ blog/tools/
 
 # GitHub Actions workflows (blog read-count refresh)
 .github/
+
+# Worker entry point (redirects clone domains to agentiloop.ai)
+worker.js
+wrangler.jsonc
