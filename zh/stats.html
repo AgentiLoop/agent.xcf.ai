@@ -205,6 +205,7 @@
                 if (!latestRelease) latestRelease = release;
 
                 release.assets.forEach(asset => {
+                    if (!asset.name.endsWith('.dmg') && !asset.name.endsWith('.zip')) return;
                     totalDownloads += asset.download_count;
                     const version = extractVersion(asset.name);
                     const date = new Date(release.created_at || asset.updated_at);
