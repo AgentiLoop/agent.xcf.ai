@@ -93,7 +93,6 @@
     <path d="M292 152 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z"/>
   </g>
   <path d="M212 206 q28 34 56 0 z" fill="#0b1120" stroke="#e8ecf4" stroke-width="6" stroke-linejoin="round"/>
-  <path d="M228 222 q12 8 24 0" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round"/>
   <!-- blush -->
   <ellipse cx="168" cy="210" rx="14" ry="7" fill="#f472b6" opacity="0.6"/>
   <ellipse cx="312" cy="210" rx="14" ry="7" fill="#f472b6" opacity="0.6"/>
