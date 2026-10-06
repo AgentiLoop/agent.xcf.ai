@@ -51,7 +51,24 @@
   <g fill="none" stroke="url(#loop)" stroke-width="7" stroke-linecap="round">
     <path d="M96 150 A150 118 0 0 1 330 52"/>
   </g>
-  <path d="M322 40 l22 10 -18 16z" fill="#a78bfa"/>
+  <!-- sparkler burst at the tip of the loop -->
+  <g transform="translate(332 52)">
+    <circle r="12" fill="#fde68a" opacity="0.35"/>
+    <g stroke="#fde68a" stroke-width="2" stroke-linecap="round">
+      <path d="M0 -8 v-12 M0 8 v12 M-8 0 h-12 M8 0 h12 M6 -6 l9 -9 M-6 -6 l-9 -9 M6 6 l9 9 M-6 6 l-9 9"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round">
+      <path d="M3 -12 l3 -8 M12 -3 l8 -3 M-12 3 l-8 3 M-3 12 l-3 8 M10 8 l6 5 M-10 -8 l-6 -5"/>
+    </g>
+    <circle r="5" fill="#ffffff"/>
+    <g fill="#fbbf24">
+      <circle cx="24" cy="-14" r="1.6"/>
+      <circle cx="-16" cy="-22" r="1.4"/>
+      <circle cx="22" cy="18" r="1.4"/>
+      <circle cx="-22" cy="14" r="1.6"/>
+      <circle cx="4" cy="-26" r="1.2"/>
+    </g>
+  </g>
 
   <!-- /auto prompt chip -->
   <g>
