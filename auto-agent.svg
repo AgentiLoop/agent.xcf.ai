@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 400" width="480" height="400" role="img" aria-labelledby="t d">
+  <title id="t">An excited little Mac agent on Auto-Pilot</title>
+  <desc id="d">A cheerful Mac with sparkling star eyes and a big smile sits inside a glowing loop of cycle arrows at sunrise, with a /auto prompt, a checklist of green checkmarks, a little go-kart and a checkered flag.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101830"/>
+      <stop offset="0.6" stop-color="#1e2a5a"/>
+      <stop offset="1" stop-color="#3b2a5a"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ecf4"/>
+      <stop offset="1" stop-color="#c3cad8"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fde68a" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#fbbf24" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="loop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="checker" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#e8ecf4"/>
+      <rect width="4" height="4" fill="#0b1120"/>
+      <rect x="4" y="4" width="4" height="4" fill="#0b1120"/>
+    </pattern>
+  </defs>
+
+  <!-- background: sunrise, the night is over -->
+  <rect width="480" height="400" rx="24" fill="url(#sky)"/>
+  <circle cx="240" cy="318" r="230" fill="url(#sun)"/>
+
+  <!-- sparkles -->
+  <g fill="#fde68a">
+    <path d="M60 60 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+    <path d="M420 70 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+  </g>
+  <g fill="#22d3ee" opacity="0.9">
+    <path d="M110 130 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
+    <path d="M380 150 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
+    <circle cx="150" cy="40" r="2"/>
+    <circle cx="330" cy="34" r="2"/>
+  </g>
+
+  <!-- the Auto-Pilot loop: cycle arrows around the Mac -->
+  <g fill="none" stroke="url(#loop)" stroke-width="7" stroke-linecap="round">
+    <path d="M96 150 A150 118 0 0 1 330 52"/>
+  </g>
+  <path d="M322 40 l22 10 -18 16z" fill="#a78bfa"/>
+
+  <!-- /auto prompt chip -->
+  <g>
+    <rect x="22" y="160" width="96" height="34" rx="10" fill="#0b1120" stroke="#22d3ee" stroke-width="2"/>
+    <text x="34" y="183" font-family="SF Mono, Menlo, monospace" font-size="17" font-weight="700" fill="#22d3ee">/auto</text>
+    <rect x="98" y="168" width="4" height="18" fill="#22d3ee"/>
+  </g>
+
+  <!-- checklist of finished cycles -->
+  <g>
+    <rect x="370" y="150" width="92" height="112" rx="12" fill="#0b1120" stroke="#1b2540" stroke-width="2"/>
+    <g fill="none" stroke="#4ade80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M382 172 l6 6 10 -12"/>
+      <path d="M382 202 l6 6 10 -12"/>
+      <path d="M382 232 l6 6 10 -12"/>
+    </g>
+    <g fill="#9aa5bd">
+      <rect x="406" y="168" width="44" height="6" rx="3"/>
+      <rect x="406" y="198" width="36" height="6" rx="3"/>
+      <rect x="406" y="228" width="40" height="6" rx="3"/>
+    </g>
+  </g>
+
+  <!-- desk -->
+  <rect x="0" y="318" width="480" height="82" fill="#0e1528"/>
+  <rect x="0" y="318" width="480" height="4" fill="#1b2540"/>
+
+  <!-- mac stand -->
+  <rect x="200" y="290" width="80" height="14" rx="4" fill="#c3cad8"/>
+  <rect x="160" y="302" width="160" height="16" rx="8" fill="#e8ecf4"/>
+
+  <!-- mac body -->
+  <rect x="120" y="96" width="240" height="194" rx="22" fill="url(#body)"/>
+  <rect x="134" y="110" width="212" height="146" rx="12" fill="url(#screen)"/>
+
+  <!-- face: star eyes and a big open smile -->
+  <g fill="#fde68a">
+    <path d="M188 152 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z"/>
+    <path d="M292 152 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z"/>
+  </g>
+  <path d="M212 206 q28 34 56 0 z" fill="#0b1120" stroke="#e8ecf4" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M228 222 q12 8 24 0" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round"/>
+  <!-- blush -->
+  <ellipse cx="168" cy="210" rx="14" ry="7" fill="#f472b6" opacity="0.6"/>
+  <ellipse cx="312" cy="210" rx="14" ry="7" fill="#f472b6" opacity="0.6"/>
+
+  <!-- chin logo dot -->
+  <circle cx="240" cy="273" r="5" fill="#9aa5bd"/>
+
+  <!-- little go-kart zooming on the desk -->
+  <g>
+    <path d="M24 344 h-14 M30 354 h-20 M24 364 h-12" stroke="#22d3ee" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <path d="M40 360 q4 -20 30 -20 h22 l14 -12 h12 l-6 14 q14 2 16 18 z" fill="#ef4444"/>
+    <rect x="76" y="326" width="8" height="16" rx="3" fill="#e8ecf4"/>
+    <circle cx="80" cy="322" r="8" fill="#22d3ee"/>
+    <circle cx="56" cy="364" r="10" fill="#0b1120" stroke="#9aa5bd" stroke-width="3"/>
+    <circle cx="116" cy="364" r="10" fill="#0b1120" stroke="#9aa5bd" stroke-width="3"/>
+  </g>
+
+  <!-- checkered flag: goal reached -->
+  <g>
+    <rect x="402" y="288" width="4" height="70" rx="2" fill="#c3cad8"/>
+    <path d="M406 290 q20 -8 40 0 t40 0 v34 q-20 -8 -40 0 t-40 0 z" fill="url(#checker)" stroke="#e8ecf4" stroke-width="1.5" transform="scale(0.9) translate(45 32)"/>
+  </g>
+</svg>
