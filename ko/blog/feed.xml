@@ -6,12 +6,34 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
+    <item>
+      <title>What the Issue Tracker Taught Agent!</title>
+      <link>https://agentiloop.ai/ko/blog/what-the-issue-tracker-taught-agent/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-the-issue-tracker-taught-agent/</guid>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Community</category>
+      <category>GitHub</category>
+      <category>Releases</category>
+      <description>Sixty-seven issues, a dozen outside pull requests and three releases in a week. Here is what people have said about Agent! where it counts most, in GitHub issues, and what each report changed in the app, from an LLM-written security review in March to a Claude OAuth break this week.</description>
+    </item>
+    <item>
+      <title>What People Are Saying About Agent!, Six Months In</title>
+      <link>https://agentiloop.ai/ko/blog/what-people-are-saying-about-agent/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-people-are-saying-about-agent/</guid>
+      <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Community</category>
+      <category>Reviews</category>
+      <category>Hacker News</category>
+      <description>We read every review, thread and directory listing we could find about AgentiLoop Agent!, from the April Hacker News front page to French, Japanese, Korean, Russian and Chinese write-ups. Here is what they agree on, where they push back, and which of their facts have gone stale.</description>
+    </item>
     <item>
       <title>MarioKart64JS: Mario Kart 64를 JavaScript로 처음부터 다시 만들기</title>
       <link>https://agentiloop.ai/ko/blog/mariokart64js-from-scratch-in-javascript/</link>
