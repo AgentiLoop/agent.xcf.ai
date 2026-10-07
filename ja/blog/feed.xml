@@ -6,12 +6,23 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
+    <item>
+      <title>MarioKart64JS：Mario Kart 64 を JavaScript でゼロから作り直す</title>
+      <link>https://agentiloop.ai/ja/blog/mariokart64js-from-scratch-in-javascript/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/mariokart64js-from-scratch-in-javascript/</guid>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Auto-Pilot</category>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>GoKart はマリオカート風のレースゲームでした。今回の目標は Mario Kart 64 そのものを、エミュレーターを使わずに Three.js でブラウザ上に作り直すことです。1 日、エージェントによる 70 コミットで、Agent! は ROM エクストラクター、TKMK00 デコーダー、全 16 コース、タイトル画面とメニュー画面、そしてゲームの音楽シーケンサーの JavaScript 移植を書き上げました。あるセッションが拒否した場面も含めて、そのために何が必要だったかをまとめます。</description>
+    </item>
     <item>
       <title>半年ぶりに、Auto-Pilot とともに再び Hacker News へ</title>
       <link>https://agentiloop.ai/ja/blog/back-on-hacker-news-with-auto-pilot/</link>

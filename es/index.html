@@ -260,7 +260,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3>Apple Intelligence</h3>
-                    <p>El modelo en el dispositivo es un agente real con llamadas a herramientas, no un cuadro de chat. Interpreta la intención, compacta el contexto, clasifica las peticiones y redacta resúmenes de tareas, todo en tu Mac. Privado, gratis y sin gastar tokens de API.</p>
+                    <p>Your helper on the Mac, not the brain. The on-device model suggests next steps, triages simple requests, compresses context, and writes task summaries entirely on your Mac. Private, free, and no API tokens spent.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔌</div>
@@ -631,29 +631,37 @@
         </div>
     </section>
 
-    <!-- APPLE INTELLIGENCE -->
-    <section class="section section-alt" id="apple-intelligence">
+    <!-- REAL AGENT -->
+    <section class="section section-alt" id="real-agent">
         <div class="container">
             <div class="section-head">
-                <h2>Apple Intelligence — como un agente de verdad</h2>
-                <p>Agent! es el único agente de IA para Mac que usa Apple Intelligence en el dispositivo como un agente con llamadas a herramientas y no solo como generador de texto. Todo lo que ves abajo se ejecuta en tu Mac, nunca sale del dispositivo y consume cero tokens de API.</p>
+                <h2>A real agent — it plans, acts, checks, and keeps going</h2>
+                <p>Agent! doesn't just answer — it runs your Mac. Tool calls, edits, builds, and shell commands, with guardrails and a second opinion before anything risky ships. Any of 23 providers can drive it; on-device Apple Intelligence helps behind the scenes.</p>
             </div>
             <div class="ai-grid">
                 <div class="ai-card">
-                    <h3><span>1</span>Sugerencias del siguiente paso</h3>
-                    <p>Cuando termina una tarea, Apple Intelligence lee el resultado en el dispositivo y sugiere el siguiente paso lógico en una sola frase — <em>«haz commit y push»</em>, <em>«ejecuta las pruebas»</em>, o nada en absoluto si no hay un seguimiento evidente. Sin viajes a la nube, sin gastar tokens.</p>
+                    <h3><span>1</span>Auto-Pilot</h3>
+                    <p>Give it a goal with <em>/auto</em> and it works in unattended cycles with a time budget — no iteration cap, sessions survive app restarts, and Stop All ends it when you say so. Every tab can run its own Auto-Pilot session on the same project.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>2</span>Compresión de tokens</h3>
-                    <p>En las tareas largas que superan unos 30.000 tokens, los turnos más antiguos se resumen en el dispositivo — conservando rutas de archivos, nombres de funciones, errores y resultados clave — lo que reduce drásticamente los tokens de entrada y el coste durante el resto de la tarea.</p>
+                    <h3><span>2</span>Parallel tabs, isolated worktrees</h3>
+                    <p>Run several tabs on one project at once. Each keeps its own goal, plan, and progress, and Agent! can isolate them in separate git worktrees so parallel work never collides.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>3</span>Triaje local</h3>
-                    <p>La charla informal y los comandos directos como <em>«list agents»</em> o <em>«run agent FooBar»</em> se gestionan en local sin pasar por el LLM en la nube — los resultados aparecen en tu registro de actividad en menos de un segundo, marcados con 🍎.</p>
+                    <h3><span>3</span>Critic review gate</h3>
+                    <p>Before a task is marked complete, a one-shot LLM review reads your diff. An unchanged diff is refused, a changed one is re-reviewed, and "out of scope" is not an accepted excuse. Every issue found is logged.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>4</span>Resúmenes &amp; errores en lenguaje claro</h3>
-                    <p>Tras cada tarea completada, Apple Intelligence escribe un resumen de una frase. Cuando una herramienta falla, traduce el error a un lenguaje claro para que nunca tengas que leer un stack trace en bruto.</p>
+                    <h3><span>4</span>Jev: a second opinion on shell commands</h3>
+                    <p>Commands that pass the hard-coded safety rules are rated by Jev for how likely they are to destroy data. Above your threshold, the command is refused. Add a hard per-command timeout, and a hung job can't stall the agent.</p>
+                </div>
+                <div class="ai-card">
+                    <h3><span>5</span>Context that stays sharp</h3>
+                    <p>Compaction is sized to the model actually in use, keeps recent tool results by token budget, and protects file paths, errors, and key results — so long tasks keep running without losing the thread.</p>
+                </div>
+                <div class="ai-card">
+                    <h3><span>6</span>Apple Intelligence: the on-device helper</h3>
+                    <p>Apple's on-device model isn't big enough to be the agent, so it doesn't try. It handles the small jobs for free and private on your Mac: next-step suggestions, one-line summaries, plain-English errors, local triage, and early context compression.</p>
                 </div>
             </div>
         </div>

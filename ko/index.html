@@ -260,7 +260,7 @@
                 <div class="feature-card">
                     <div class="feature-icon">🧠</div>
                     <h3>Apple Intelligence</h3>
-                    <p>온디바이스 모델은 채팅창이 아니라 도구를 호출하는 진짜 에이전트입니다. 의도를 파악하고, 컨텍스트를 압축하고, 요청을 분류하고, 작업 요약을 작성하는 모든 과정이 Mac 안에서 이루어집니다. 비공개, 무료, API 토큰 소모 없음.</p>
+                    <p>Your helper on the Mac, not the brain. The on-device model suggests next steps, triages simple requests, compresses context, and writes task summaries entirely on your Mac. Private, free, and no API tokens spent.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔌</div>
@@ -631,29 +631,37 @@
         </div>
     </section>
 
-    <!-- APPLE INTELLIGENCE -->
-    <section class="section section-alt" id="apple-intelligence">
+    <!-- REAL AGENT -->
+    <section class="section section-alt" id="real-agent">
         <div class="container">
             <div class="section-head">
-                <h2>Apple Intelligence — 진짜 에이전트로</h2>
-                <p>Agent!는 온디바이스 Apple Intelligence를 단순한 텍스트 생성기가 아닌 도구 호출 에이전트로 사용하는 유일한 Mac AI 에이전트입니다. 아래의 모든 기능은 Mac에서 실행되며, 기기 밖으로 나가지 않고, API 토큰을 전혀 소비하지 않습니다.</p>
+                <h2>A real agent — it plans, acts, checks, and keeps going</h2>
+                <p>Agent! doesn't just answer — it runs your Mac. Tool calls, edits, builds, and shell commands, with guardrails and a second opinion before anything risky ships. Any of 23 providers can drive it; on-device Apple Intelligence helps behind the scenes.</p>
             </div>
             <div class="ai-grid">
                 <div class="ai-card">
-                    <h3><span>1</span>다음 단계 제안</h3>
-                    <p>작업이 끝나면 Apple Intelligence가 온디바이스에서 결과를 읽고 논리적인 다음 행동을 한 문장으로 제안합니다 — <em>"커밋하고 푸시하기"</em>, <em>"테스트 실행하기"</em>, 또는 뚜렷한 후속 작업이 없다면 아무것도 제안하지 않습니다. 클라우드 왕복도, 토큰 소비도 없습니다.</p>
+                    <h3><span>1</span>Auto-Pilot</h3>
+                    <p>Give it a goal with <em>/auto</em> and it works in unattended cycles with a time budget — no iteration cap, sessions survive app restarts, and Stop All ends it when you say so. Every tab can run its own Auto-Pilot session on the same project.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>2</span>토큰 압축</h3>
-                    <p>약 30,000 토큰을 넘는 긴 작업은 이전 턴을 온디바이스에서 요약합니다 — 파일 경로, 함수 이름, 오류, 핵심 결과는 유지하면서 — 남은 작업의 입력 토큰과 비용을 크게 줄입니다.</p>
+                    <h3><span>2</span>Parallel tabs, isolated worktrees</h3>
+                    <p>Run several tabs on one project at once. Each keeps its own goal, plan, and progress, and Agent! can isolate them in separate git worktrees so parallel work never collides.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>3</span>로컬 분류</h3>
-                    <p>잡담이나 <em>"list agents"</em>, <em>"run agent FooBar"</em> 같은 직접 명령은 클라우드 LLM 왕복 없이 로컬에서 처리됩니다 — 결과는 1초 안에 활동 로그에 🍎 표시와 함께 나타납니다.</p>
+                    <h3><span>3</span>Critic review gate</h3>
+                    <p>Before a task is marked complete, a one-shot LLM review reads your diff. An unchanged diff is refused, a changed one is re-reviewed, and "out of scope" is not an accepted excuse. Every issue found is logged.</p>
                 </div>
                 <div class="ai-card">
-                    <h3><span>4</span>요약 &amp; 알기 쉬운 오류</h3>
-                    <p>작업이 완료될 때마다 Apple Intelligence가 한 문장 요약을 작성합니다. 도구가 실패하면 오류를 알기 쉬운 말로 풀어 주어, 날것의 스택 트레이스를 읽을 일이 없습니다.</p>
+                    <h3><span>4</span>Jev: a second opinion on shell commands</h3>
+                    <p>Commands that pass the hard-coded safety rules are rated by Jev for how likely they are to destroy data. Above your threshold, the command is refused. Add a hard per-command timeout, and a hung job can't stall the agent.</p>
+                </div>
+                <div class="ai-card">
+                    <h3><span>5</span>Context that stays sharp</h3>
+                    <p>Compaction is sized to the model actually in use, keeps recent tool results by token budget, and protects file paths, errors, and key results — so long tasks keep running without losing the thread.</p>
+                </div>
+                <div class="ai-card">
+                    <h3><span>6</span>Apple Intelligence: the on-device helper</h3>
+                    <p>Apple's on-device model isn't big enough to be the agent, so it doesn't try. It handles the small jobs for free and private on your Mac: next-step suggestions, one-line summaries, plain-English errors, local triage, and early context compression.</p>
                 </div>
             </div>
         </div>
