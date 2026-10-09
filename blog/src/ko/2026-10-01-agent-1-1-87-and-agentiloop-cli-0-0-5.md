@@ -54,7 +54,7 @@ Mac 앱의 마지막 정식 릴리스는 9월 12일의 1.1.33이었습니다. �
 
 ### 🔌 여섯 개의 새 프로바이더, 그리고 만질 설정은 더 적게
 
-1.1.87의 새 프로바이더: **Fluxion AI**(OpenAI 및 Anthropic 프로토콜 옵션 포함), **Muse Code**(`muse login` 구독을 재사용), **Requesty**, **A2Agent**, **OrcaRouter**, 그리고 Coding Plan의 **Qwen Code**. 로컬 Chat Completions API를 통해 Apple Foundation Models를 제공하는 실험적인 **fm serve** 프로바이더도 있습니다.
+1.1.87의 새 프로바이더: **Sidrune AI**(OpenAI 및 Anthropic 프로토콜 옵션 포함), **Muse Code**(`muse login` 구독을 재사용), **Requesty**, **A2Agent**, **OrcaRouter**, 그리고 Coding Plan의 **Qwen Code**. 로컬 Chat Completions API를 통해 Apple Foundation Models를 제공하는 실험적인 **fm serve** 프로바이더도 있습니다.
 
 이제 비전 지원은 각 프로바이더의 카탈로그 메타데이터로 감지되므로, Force Vision 토글이 더 이상 필요 없습니다. 내부적으로는 모든 프로바이더가 십여 개의 개별 코드 경로 대신 하나의 레지스트리 `APIProvider` 에 모여 있습니다.
 

@@ -124,10 +124,10 @@
 @keyframes promo-caret { 50% { opacity: 0; } }
 .promo-cli .promo-cta { background: linear-gradient(135deg, #f97316, #00add8); }
 
-/* Slide 3: Sponsor (Fluxion AI) */
-.promo-fx::before { background-image: linear-gradient(120deg, #05070d, #0b1630, #000000, #0f1f3d, #05070d); }
-.promo-fx { --promo-glow: rgba(96, 165, 250, .55); }
-.promo-fx .promo-grad { background-image: linear-gradient(90deg, #93c5fd, #3b82f6, #e5e7eb, #93c5fd); }
+/* Slide 3: Sponsor (Sidrune AI) */
+.promo-fx::before { background-image: linear-gradient(120deg, #07080b, #1b1f27, #000000, #2a2f39, #07080b); }
+.promo-fx { --promo-glow: rgba(209, 213, 219, .45); }
+.promo-fx .promo-grad { background-image: linear-gradient(90deg, #9ca3af, #f3f4f6, #d1d5db, #6b7280, #9ca3af); }
 .promo-sponsored {
     padding: 3px 10px;
     border-radius: 999px;
@@ -140,9 +140,9 @@
     background: rgba(148, 163, 184, .1);
 }
 .promo-save { display: inline-block; font-weight: 700; color: #e2e8f0; }
-.promo-save b { font-size: 1.25em; color: #60a5fa; text-shadow: 0 0 12px rgba(59, 130, 246, .7); }
-.promo-fx code { color: #bfdbfe; }
-.promo-fx .promo-cta { color: #0b1220; background: linear-gradient(135deg, #e5e7eb, #94a3b8 45%, #3b82f6); }
+.promo-save b { font-size: 1.25em; color: #f3f4f6; text-shadow: 0 0 12px rgba(209, 213, 219, .55); }
+.promo-fx code { color: #e5e7eb; }
+.promo-fx .promo-cta { color: #0b1220; background: linear-gradient(135deg, #f3f4f6, #c4c8cf 45%, #8b919c); }
 
 /* Slide 4: GoKart.games (Godot 4 kart racer) */
 .promo-kart::before { background-image: linear-gradient(120deg, #2a0a0a, #0b2a14, #2a1a05, #0a1f3a, #2a0a0a); }

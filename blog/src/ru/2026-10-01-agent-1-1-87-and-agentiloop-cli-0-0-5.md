@@ -54,7 +54,7 @@ tags: Анонс, Релиз, Кроссплатформенность
 
 ### 🔌 Шесть новых провайдеров и меньше настроек, с которыми надо возиться
 
-Новое в 1.1.87: **Fluxion AI** (с вариантами протокола OpenAI и Anthropic), **Muse Code** (использует вашу подписку `muse login`), **Requesty**, **A2Agent**, **OrcaRouter** и **Qwen Code** в рамках Coding Plan. Есть также экспериментальный провайдер **fm serve**, который открывает доступ к Apple Foundation Models через локальный API Chat Completions.
+Новое в 1.1.87: **Sidrune AI** (с вариантами протокола OpenAI и Anthropic), **Muse Code** (использует вашу подписку `muse login`), **Requesty**, **A2Agent**, **OrcaRouter** и **Qwen Code** в рамках Coding Plan. Есть также экспериментальный провайдер **fm serve**, который открывает доступ к Apple Foundation Models через локальный API Chat Completions.
 
 Поддержка зрения теперь определяется по метаданным каталога каждого провайдера, поэтому переключатель Force Vision больше не нужен. Под капотом все провайдеры теперь живут в одном реестре, `APIProvider`, вместо дюжины отдельных путей в коде.
 

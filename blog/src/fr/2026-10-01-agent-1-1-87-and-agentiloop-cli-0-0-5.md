@@ -54,7 +54,7 @@ C'est la boucle de l'agent avec l'humain qui prend volontairement du recul : vou
 
 ### 🔌 Six nouveaux fournisseurs, et moins de réglages à bricoler
 
-Nouveau dans la 1.1.87 : **Fluxion AI** (avec des options de protocole OpenAI et Anthropic), **Muse Code** (réutilise votre abonnement `muse login`), **Requesty**, **A2Agent**, **OrcaRouter** et **Qwen Code** avec le Coding Plan. Il y a aussi un fournisseur expérimental, **fm serve**, qui expose Apple Foundation Models via une API Chat Completions locale.
+Nouveau dans la 1.1.87 : **Sidrune AI** (avec des options de protocole OpenAI et Anthropic), **Muse Code** (réutilise votre abonnement `muse login`), **Requesty**, **A2Agent**, **OrcaRouter** et **Qwen Code** avec le Coding Plan. Il y a aussi un fournisseur expérimental, **fm serve**, qui expose Apple Foundation Models via une API Chat Completions locale.
 
 La prise en charge de la vision est désormais détectée à partir des métadonnées du catalogue de chaque fournisseur, si bien que l'option Force Vision n'est plus nécessaire. Sous le capot, tous les fournisseurs vivent maintenant dans un seul registre, `APIProvider`, au lieu d'une douzaine de chemins de code distincts.
 

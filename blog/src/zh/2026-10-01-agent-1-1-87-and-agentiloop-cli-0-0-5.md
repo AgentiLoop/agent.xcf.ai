@@ -54,7 +54,7 @@ Mac 应用的上一个正式版是 9 月 12 日发布的 1.1.33。此后发生�
 
 ### 🔌 六个新提供商，需要折腾的设置更少了
 
-1.1.87 新增：**Fluxion AI**（提供 OpenAI 和 Anthropic 协议选项）、**Muse Code**（复用你的 `muse login` 订阅）、**Requesty**、**A2Agent**、**OrcaRouter**，以及 Coding Plan 上的 **Qwen Code**。此外还有一个实验性的 **fm serve** 提供商，通过本地 Chat Completions API 提供 Apple Foundation Models。
+1.1.87 新增：**Sidrune AI**（提供 OpenAI 和 Anthropic 协议选项）、**Muse Code**（复用你的 `muse login` 订阅）、**Requesty**、**A2Agent**、**OrcaRouter**，以及 Coding Plan 上的 **Qwen Code**。此外还有一个实验性的 **fm serve** 提供商，通过本地 Chat Completions API 提供 Apple Foundation Models。
 
 视觉支持现在根据每个提供商的目录元数据自动检测，因此不再需要 Force Vision 开关。在底层，所有提供商现在都位于同一个注册表 `APIProvider` 中，而不是分散在十几条独立的代码路径里。
 

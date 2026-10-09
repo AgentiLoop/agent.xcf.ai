@@ -54,7 +54,7 @@ Das ist der Agent-Loop, bei dem der Mensch bewusst einen Schritt zurücktritt: D
 
 ### 🔌 Sechs neue Provider und weniger Einstellungen zum Herumfummeln
 
-Neu in 1.1.87: **Fluxion AI** (mit Protokolloptionen für OpenAI und Anthropic), **Muse Code** (nutzt dein `muse login`-Abo), **Requesty**, **A2Agent**, **OrcaRouter** und **Qwen Code** im Coding Plan. Dazu kommt ein experimenteller **fm serve**-Provider, der Apple Foundation Models über eine lokale Chat-Completions-API bereitstellt.
+Neu in 1.1.87: **Sidrune AI** (mit Protokolloptionen für OpenAI und Anthropic), **Muse Code** (nutzt dein `muse login`-Abo), **Requesty**, **A2Agent**, **OrcaRouter** und **Qwen Code** im Coding Plan. Dazu kommt ein experimenteller **fm serve**-Provider, der Apple Foundation Models über eine lokale Chat-Completions-API bereitstellt.
 
 Vision-Unterstützung wird jetzt aus den Katalog-Metadaten jedes Providers erkannt, daher wird der Schalter „Force Vision“ nicht mehr gebraucht. Unter der Haube lebt jetzt jeder Provider in einer einzigen Registry, `APIProvider`, statt in einem Dutzend getrennter Codepfade.
 

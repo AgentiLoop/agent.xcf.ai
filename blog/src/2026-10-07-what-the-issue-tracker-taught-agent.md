@@ -69,7 +69,7 @@ The issues that are open today are mostly the project talking to itself in publi
 
 | Release | Date | What changed | DMG downloads |
 |---|---|---|---|
-| [1.1.87](https://github.com/AgentiLoop/Agent/releases/tag/v1.1.87.287) | Oct 1 | `/auto` Auto-Pilot, six new providers including Fluxion AI, an enforced critic gate, Jev, compaction sized to the model | 293 |
+| [1.1.87](https://github.com/AgentiLoop/Agent/releases/tag/v1.1.87.287) | Oct 1 | `/auto` Auto-Pilot, six new providers including Sidrune AI, an enforced critic gate, Jev, compaction sized to the model | 293 |
 | [1.1.88](https://github.com/AgentiLoop/Agent/releases/tag/v1.1.88.288) (pre) | Oct 4 | Avatar tabs with a talking face, several Auto-Pilot tabs per project with git worktree isolation, a hard timeout on every shell command | 3 |
 | [1.1.89](https://github.com/AgentiLoop/Agent/releases/tag/v1.1.89.289) (pre) | Oct 5 | Claude OAuth fix (#67), an in-process shell hang fixed when an orphaned background job held the pipe open | 5 |
 

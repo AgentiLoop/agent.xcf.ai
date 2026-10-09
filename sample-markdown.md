@@ -5,7 +5,7 @@ A quick sample file created by Agent!.
 ## Basics
 
 - **Bold**, *italic*, `inline code`
-- [Link to Agent](https://agent.xcf.ai)
+- [Link to Agent](https://agentiloop.ai)
 - List item one
 - List item two
 

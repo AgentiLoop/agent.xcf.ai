@@ -54,7 +54,7 @@ Mac アプリの前回の正式リリースは、9 月 12 日の 1.1.33 でし�
 
 ### 🔌 6 つの新プロバイダと、いじる設定の削減
 
-1.1.87 の新顔：**Fluxion AI**（OpenAI と Anthropic のプロトコルオプション付き）、**Muse Code**（`muse login` のサブスクリプションを再利用）、**Requesty**、**A2Agent**、**OrcaRouter**、そして Coding Plan 上の **Qwen Code**。さらに、ローカルの Chat Completions API 経由で Apple Foundation Models を公開する実験的な **fm serve** プロバイダもあります。
+1.1.87 の新顔：**Sidrune AI**（OpenAI と Anthropic のプロトコルオプション付き）、**Muse Code**（`muse login` のサブスクリプションを再利用）、**Requesty**、**A2Agent**、**OrcaRouter**、そして Coding Plan 上の **Qwen Code**。さらに、ローカルの Chat Completions API 経由で Apple Foundation Models を公開する実験的な **fm serve** プロバイダもあります。
 
 ビジョン対応は各プロバイダのカタログのメタデータから検出されるようになったため、Force Vision のトグルはもう不要です。内部的には、すべてのプロバイダが十数本の別々のコードパスではなく、1 つのレジストリ `APIProvider` に集約されました。
 

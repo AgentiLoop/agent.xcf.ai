@@ -230,8 +230,6 @@ def relink(tag, lang, base):
         elif url.startswith('/'):
             pass
         else:
-            if url == 'sponsors/fluxion-ai-silver-ad.svg':
-                url = 'sponsors/fluxion-ai-silver-ad_%s.svg' % lang
             if url == 'index.html' and base == '/':
                 url = '/%s/' % lang
             else:
