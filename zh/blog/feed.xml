@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
+    <item>
+      <title>MarioKart64JS 进入 3D：Wii 卡丁车、3D 标题画面和冲线后的环绕飞行镜头</title>
+      <link>https://agentiloop.ai/zh/blog/mariokart64js-goes-3d/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/mariokart64js-goes-3d/</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>Mario Kart 64 用平面精灵绘制赛车手。在 MarioKart64JS 中按下 3，每辆卡丁车都会变成 3D 模型，Lakitu 也不例外，还带有真实阴影、重建的 3D 标题画面，以及冲线后绕着你的卡丁车飞行的镜头。下面通过截图讲讲 3D 模式是如何搭建起来的。</description>
+    </item>
     <item>
       <title>What the Issue Tracker Taught Agent!</title>
       <link>https://agentiloop.ai/zh/blog/what-the-issue-tracker-taught-agent/</link>

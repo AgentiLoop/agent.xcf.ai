@@ -1,0 +1,109 @@
+---
+title: MarioKart64JS が 3D に：Wii のカート、3D タイトル画面、ゴール後のフライオーバー
+description: Mario Kart 64 はレーサーを平面のスプライトで描いています。MarioKart64JS で 3 を押すと、Lakitu も含めてすべてのカートが 3D モデルになり、本物の影、作り直した 3D タイトル画面、そしてゴール後にカートの周りを飛び回るカメラが加わります。3D モードがどのように組み立てられたのかを、スクリーンショットで紹介します。
+tags: Showcase, JavaScript
+---
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-title.jpg" alt="MarioKart64JS の 3D タイトル画面：Mario Kart 64 のロゴの下で、Wario、Bowser、Mario、Peach、Toad が 3D カートに乗ってカメラに向かって走ってくる。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>3D タイトル画面。オリジナルは 1 枚の平面の絵です。ここでは空、丘、道路を Three.js で組み立て、5 人のドライバーはカメラに向かって走ってくる 3D カートになっています。</figcaption>
+</figure>
+
+[前回の MarioKart64JS の記事](/blog/mariokart64js-from-scratch-in-javascript/)は、Mario Kart 64 にできる限り忠実に合わせる話でした。コースのジオメトリ、スプライト、音楽はカートリッジから取り出し、オリジナルの C コードがやっていることを新しい JavaScript で実現する、というものです。今回はその逆方向の話です。キーひとつ、**3** を押すと、N64 にはなかった 3D モードがオンになります。
+
+## スプライトがモデルになる
+
+Mario Kart 64 のレーサーはモデルではありません。各ドライバーはあらかじめレンダリングされた 64×64 のフレーム 321 枚でできていて、ゲームはカメラの角度に合ったフレームを選びます。MarioKart64JS が描いているのもそのフレームで、今でもデフォルトはそうです。
+
+3D モードでは、それらのスプライトを Mario Kart Wii のスタンダードカート（Standard Kart）のモデルに置き換えます。モデルは Collada のエクスポートから取ったもので、`tools/build-wii-karts.py` がプロジェクトに配置します。始まりは 10 月 9 日の夜の、ひとつのテストでした。21:22 に、3 キーでプレイヤーの下に Mario が乗った赤いスタンダードカートが置かれました。22:02 には 8 人のドライバー全員がカートを持ち、Wii の重量クラスで分けられていました。Toad は小型カート、Mario、Luigi、Peach、Yoshi は中型、D.K.、Wario、Bowser は大型で、それぞれ専用のカラーリングです。
+
+その間の作業の大半は、モデルローダーが間違えがちな細かい点でした。
+
+- **目。** 目のテクスチャには目がひとつしかありません。Wii ではテクスチャ行列がそれを 2 回繰り返し、サンプラーがミラーして左右一対にします。Three.js の ColladaLoader はその両方を落としてしまうため、ひとつの目が顔全体に引き伸ばされていました。`kart3d.js` がキャラクターごとに繰り返しとミラーを元に戻します。
+- **タイヤ。** 後輪は前輪のメッシュを拡大したものです。そのサイズと車軸の位置は各カートの組み立て済みメニューモデルから測定しており、これで後輪が 1.29 倍大きくなり、Wii と同じ位置に収まりました。
+- **シート。** 各ドライバーにシート位置を設定し、シートの上に浮かぶのではなく、リクライニングしたシートに座るようにしました。
+
+Agent! は画像を見ることができないので、代わりに数値でモデルを確認しました。各カートの ASCII による側面図・背面図・上面図、12 方向のターンテーブルシート、そして各ドライバーの手とハンドルとの間の測定した隙間です。
+
+## 3D でレース
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-race-mario.jpg" alt="3D モードの MarioKart64JS で、3D カートが Mario Raceway を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>3D モードの Mario Raceway。レースのすべてのカートが 3D モデルで、それぞれ自分のキャラクターのスタンダードカートに乗っています。</figcaption>
+</figure>
+
+レース中に 3 を押すと、自分のカートだけでなくコース上のすべてのカートが置き換わり、もう一度押すとスプライトに戻ります。それに合わせて、ほかにも 2 つのことが変わります。
+
+**影。** スプライトの下には平たい丸影があります。3D カートはコースにシャドウマップによる本物の影を落とします。これには工夫が必要でした。コースは影を受け取れないアンリットのマテリアルで描かれているため、コースの表面を複製した透明なシャドウキャッチャーを用意し、影が落ちる場所だけが見えるようにしています。
+
+**Lakitu。** 審判は Mario Kart Wii の Lakitu（`src/lakitu3d.js`）になります。腕はモデル自身のボーンでポーズを付けています。片方の手は釣り竿を持ち、もう片方は旗を振ります。スタートシグナル、ラップボード、逆走サインは釣り竿の針からぶら下がり、オリジナルのスプライトのアニメーションフレームが今もタイミングを制御しているので、赤、赤、青のカウントダウンはいつもどおりのタイミングで点灯します。
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-race-koopa.jpg" alt="3D モードの MarioKart64JS で、Koopa Troopa Beach を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>10 月 10 日のほとんどを費やした Koopa Troopa Beach。3D カートの車体が駆け上がれるようにならなければならなかったのが、ここのジャンプ台です。</figcaption>
+</figure>
+
+3D カートには、スプライトにはなかった車体もあります。壁に対してはカプセルで、各車軸の上に円がひとつずつあり、剛体として移動・回転します。これには副作用がありました。Koopa Troopa Beach では、前側の円がカートの中心より先にジャンプ台の縁に届き、縁の裏面がカートをジャンプから弾き飛ばしていました。修正では、各車軸をその下の地面に対して個別に判定しています。後のコミットでは、正面衝突の際に壁がプレイヤーのカートの向きを変えないようにしました。Mario Kart 64 では、壁はカートの動きを反射するだけで、向きを変えることはないからです。
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-race-royal.jpg" alt="3D モードの MarioKart64JS で、Royal Raceway を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>3D モードの Royal Raceway。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-race-bowser.jpg" alt="3D モードの MarioKart64JS で、Bowser's Castle を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Bowser's Castle。幅 5 の通路で、カプセルが廊下を横切るように挟まらないようにする必要がありました。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-race-rainbow.jpg" alt="3D モードの MarioKart64JS で、Rainbow Road を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>3D カートで走る Rainbow Road。</figcaption>
+</figure>
+
+## 3D タイトル画面
+
+Mario Kart 64 のタイトル背景は、320×240 の平面の絵 1 枚です。空、丘、道路、5 人のドライバーはすべて描き込まれています。タイトルで 3 を押すと、それを作り直します（`src/title3d.js`）。空、丘、道路は Three.js で作り、ドライバーはレースと同じ 3D カートです。
+
+配置は元の絵に従っています。Wario が左手前でその後ろに Bowser、Mario が右手前でその後ろに Peach、Toad は右側のカーブから出てくるところです。各カートは、画面上の範囲が元のイラストの対応するドライバーの範囲から約 10 ピクセル以内に収まるように置かれています。カメラは彼らの前方の路面に低く構え、64° の広角レンズを使い、道路が下でスクロールするので、カートがまっすぐこちらに向かって走ってくるように見えます。チェッカーフラッグ、ロゴ、PUSH START、著作権表示は、今もオリジナルのタイトルの 2D オーバーレイです。
+
+その後ろのメニューにも、合わせた背景が付きました。タイトルで 3D をオンにすると 4× のテクスチャ段階にも切り替わり、もう一度 3 を押すまでレースは 3D で始まります。
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-game-select.jpg" alt="3D モードの背景が付いた MarioKart64JS のゲーム選択画面。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>3D モードの背景が付いたゲーム選択画面。</figcaption>
+</figure>
+
+## ゴール後のフライオーバー
+
+ゴールラインを越えると、Mario Kart 64 はカメラを短いシネマティックに引き渡します。MarioKart64JS はここでゲームのカメラコード（逆コンパイルされたコードの `PLAYER_CINEMATIC_MODE` とシネマティックショットの関数群）に従っています。カメラはカートの前方へ回り込んでゴールラインを越える様子を見届け、その後 CPU ドライバーがカートを引き継ぐ間、ショットを切り替えていきます。シーケンスは、ノーズオービット、沿道、ハイクレーン、沿道、ローテールショット、沿道の順に繰り返されます。ソースのコメントにはひとつ但し書きがあります。ショットの長さと距離は ROM のテーブルから取ったものではなく、目で見て調整したものです。
+
+追跡ショットは、カートの向きを強く平滑化したコピーを追っています。これがないと、AI の小さなステアリング修正でカメラがカートの周りで揺れ、カートがガクガクと曲がっているように見えていました。3D カートでは、これらのショットがいちばんモデルを見せてくれます。カメラがようやくカートを正面や側面から見られるからです。
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-flyover-front.jpg" alt="Mario Raceway でのゴール後のフライオーバー：Mario の 3D カートの前にいるカメラが、カートを振り返っている。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Mario Raceway でのノーズショット。カメラはカートの後ろから前へと回り込み、カートの前を並走します。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-flyover-crane.jpg" alt="Mario Raceway でのゴール後のフライオーバー：カートの後方の高い位置から道路を見下ろすハイクレーンショット。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>カートの後方上空から道路を見下ろすハイクレーンショット。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-flyover-roadside.jpg" alt="Royal Raceway でのゴール後のフライオーバー：カートが通り過ぎる間、道路脇に置かれたカメラ。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Royal Raceway での沿道ショット。カメラは前方の道路脇に立ち、カートが通り過ぎるまでその場にとどまります。</figcaption>
+</figure>
+
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-flyover-low.jpg" alt="Koopa Troopa Beach でのゴール後のフライオーバー：カートの肩越しの低いカメラ。" style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>Koopa Troopa Beach でのローテールショット。カートの片方の肩越しから撮っています。</figcaption>
+</figure>
+
+## スクリーンショットの撮り方
+
+この記事の画像はすべて、ヘッドレス Chrome で 1280×960 で撮影しました。タイトルとゲーム選択画面のショットは、プレイヤーと同じようにタイトルで 3 を押して撮っています。レースは 3D モードをオンにして保存した状態でオートパイロットで走らせ、フライオーバーはプレイヤーを最終ラップの最後の区間に置き、ゴール後 0.7 秒ごとにフレームを撮影して取得しました。Agent! は測定によってフレームを選びました。カートに対するカメラの位置から各フレームがどのショットかを判断し、ピクセルの統計で暗いフレームやディテールの少ないフレームを除外しました。前回の記事と同じく、Agent! 自身は画像を見ていません。
+
+## 試してみる
+
+[AgentiLoop/MarioKart64JS](https://github.com/AgentiLoop/MarioKart64JS) をクローンし、`npm install && npm run dev` を実行して `http://localhost:5173` を開き、タイトル画面かレース中に **3** を押してください。Web ビルドにも 3D カート、Lakitu、3D タイトルが含まれています。配置されたモデルは `public/wii/` にあり、`tools/build-wii-karts.py` と `tools/build-wii-lakitu.py` が Collada ファイルからモデルを配置したスクリプトです。
+
+*MarioKart64JS は、AI がゲームの複製をどこまでできるかを試すためのファン研究プロジェクトです。Mario Kart 64 と Mario Kart Wii は © Nintendo であり、そのアセットは Nintendo に帰属します。このプロジェクトは Nintendo と提携しておらず、Nintendo の承認も受けていません。*

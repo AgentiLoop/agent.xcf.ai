@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Deep dives into AgentiLoop Agent!, the native macOS AI agent.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! Blog</title>
       <link>https://agentiloop.ai/blog/</link>
     </image>
+    <item>
+      <title>MarioKart64JS Goes 3D: Wii Karts, a 3D Title Screen and Finish Fly-Overs</title>
+      <link>https://agentiloop.ai/blog/mariokart64js-goes-3d/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/blog/mariokart64js-goes-3d/</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>Mario Kart 64 draws its racers as flat sprites. Press 3 in MarioKart64JS and every kart becomes a 3D model, Lakitu included, with real shadows, a rebuilt 3D title screen and a camera that flies around your kart after the finish. Here&#x27;s how the 3D mode was put together, in screenshots.</description>
+    </item>
     <item>
       <title>What the Issue Tracker Taught Agent!</title>
       <link>https://agentiloop.ai/blog/what-the-issue-tracker-taught-agent/</link>

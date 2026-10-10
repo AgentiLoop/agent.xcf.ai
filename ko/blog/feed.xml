@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 07 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
+    <item>
+      <title>MarioKart64JS, 3D가 되다: Wii 카트, 3D 타이틀 화면, 그리고 결승 후 플라이오버</title>
+      <link>https://agentiloop.ai/ko/blog/mariokart64js-goes-3d/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/mariokart64js-goes-3d/</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>Mario Kart 64는 레이서를 평면 스프라이트로 그립니다. MarioKart64JS에서 3을 누르면 Lakitu까지 포함해 모든 카트가 3D 모델로 바뀌고, 실제 그림자, 새로 만든 3D 타이틀 화면, 그리고 결승 후 카트 주위를 날아다니는 카메라가 더해집니다. 3D 모드가 어떻게 만들어졌는지 스크린샷과 함께 소개합니다.</description>
+    </item>
     <item>
       <title>What the Issue Tracker Taught Agent!</title>
       <link>https://agentiloop.ai/ko/blog/what-the-issue-tracker-taught-agent/</link>
