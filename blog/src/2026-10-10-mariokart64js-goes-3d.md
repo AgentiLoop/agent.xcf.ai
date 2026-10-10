@@ -37,27 +37,7 @@ In a race, 3 swaps every kart on the track, not only yours, and the next press b
 
 **Lakitu.** The referee becomes the Mario Kart Wii Lakitu (`src/lakitu3d.js`). His arms are posed through the model's own bones: one holds the fishing rod, the other waves the flag. The start lights, lap boards and wrong-way sign hang from the rod's hook, and the original sprite's animation frame still drives the timing, so the red, red, blue countdown comes on when it always did.
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="MarioKart64JS in 3D mode racing on Koopa Troopa Beach." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach, where most of October 10 went: the jumps here are what the 3D kart's body had to learn to drive up.</figcaption>
-</figure>
-
 A 3D kart also has a body the sprite didn't. Against walls it is a capsule, a circle over each axle, and it moves and turns as a rigid body. That had side effects. On Koopa Troopa Beach the nose circle reached a ramp's lip before the kart's centre did, and the lip's back face threw the kart off the jump. The fix tests each axle against the ground under it. A later commit stopped walls from turning the player's kart on a head-on hit, because in Mario Kart 64 a wall reflects the kart's motion and never turns its facing.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="MarioKart64JS in 3D mode racing on Royal Raceway." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Royal Raceway in 3D mode.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="MarioKart64JS in 3D mode racing in Bowser's Castle." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle, whose 5-wide passage is where the capsule had to be kept from wedging itself across the corridor.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="MarioKart64JS in 3D mode racing on Rainbow Road." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Rainbow Road with 3D karts.</figcaption>
-</figure>
 
 ## A 3D title screen
 
@@ -91,11 +71,6 @@ The tracking shots follow a heavily smoothed copy of the kart's heading. Without
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Finish fly-over on Royal Raceway: a camera placed beside the road as the kart drives past." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>A roadside shot on Royal Raceway. The camera stands beside the road ahead and holds until the kart has gone past.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Finish fly-over on Koopa Troopa Beach: a low camera off the kart's shoulder." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>The low tail shot on Koopa Troopa Beach, off one shoulder of the kart.</figcaption>
 </figure>
 
 ## How the screenshots were taken

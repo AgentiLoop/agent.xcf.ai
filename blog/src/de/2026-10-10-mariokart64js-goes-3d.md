@@ -37,27 +37,7 @@ Im Rennen tauscht die 3 jedes Kart auf der Strecke aus, nicht nur das eigene, un
 
 **Lakitu.** Der Schiedsrichter wird zum Lakitu aus Mario Kart Wii (`src/lakitu3d.js`). Seine Arme werden über die eigenen Knochen des Modells positioniert: Einer hält die Angel, der andere schwenkt die Flagge. Startampel, Rundentafeln und Falsche-Richtung-Schild hängen am Haken der Angel, und der Animationsframe des ursprünglichen Sprites bestimmt weiterhin das Timing, sodass der Countdown Rot, Rot, Blau genau dann kommt, wann er immer kam.
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="MarioKart64JS im 3D-Modus beim Rennen auf Koopa Troopa Beach." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach, wo der Großteil des 10. Oktober hinging: Die Sprünge hier sind das, was der Körper des 3D-Karts hinauffahren lernen musste.</figcaption>
-</figure>
-
 Ein 3D-Kart hat außerdem einen Körper, den das Sprite nicht hatte. An Wänden ist es eine Kapsel, ein Kreis über jeder Achse, und es bewegt und dreht sich als starrer Körper. Das hatte Nebenwirkungen. Auf Koopa Troopa Beach erreichte der vordere Kreis die Kante einer Rampe vor dem Mittelpunkt des Karts, und die Rückseite der Kante warf das Kart vom Sprung. Die Lösung prüft jede Achse gegen den Boden darunter. Ein späterer Commit verhinderte, dass Wände das Kart des Spielers bei einem Frontalaufprall drehen, denn in Mario Kart 64 reflektiert eine Wand die Bewegung des Karts und ändert nie seine Blickrichtung.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="MarioKart64JS im 3D-Modus beim Rennen auf Royal Raceway." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Royal Raceway im 3D-Modus.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="MarioKart64JS im 3D-Modus beim Rennen in Bowser's Castle." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle, in dessen 5 Einheiten breitem Durchgang verhindert werden musste, dass sich die Kapsel quer im Korridor verkeilt.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="MarioKart64JS im 3D-Modus beim Rennen auf Rainbow Road." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Rainbow Road mit 3D-Karts.</figcaption>
-</figure>
 
 ## Ein 3D-Titelbildschirm
 
@@ -91,11 +71,6 @@ Die Verfolgungseinstellungen folgen einer stark geglätteten Kopie der Fahrtrich
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Kameraflug nach dem Ziel auf Royal Raceway: eine Kamera am Straßenrand, während das Kart vorbeifährt." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Eine Straßenrand-Einstellung auf Royal Raceway. Die Kamera steht vorne neben der Straße und hält, bis das Kart vorbeigefahren ist.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Kameraflug nach dem Ziel auf Koopa Troopa Beach: eine tiefe Kamera seitlich hinter der Schulter des Karts." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Die tiefe Heckeinstellung auf Koopa Troopa Beach, seitlich hinter einer Schulter des Karts.</figcaption>
 </figure>
 
 ## Wie die Screenshots entstanden sind

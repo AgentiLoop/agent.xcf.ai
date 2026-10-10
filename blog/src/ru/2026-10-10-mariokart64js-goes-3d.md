@@ -37,27 +37,7 @@ Agent! не может смотреть на картинки, поэтому п
 
 **Lakitu.** Судья становится Lakitu из Mario Kart Wii (`src/lakitu3d.js`). Его руки позируются через собственные кости модели: одна держит удочку, другая машет флагом. Стартовые огни, таблички кругов и знак неправильного направления висят на крючке удочки, а кадр анимации исходного спрайта по-прежнему задаёт тайминг, так что отсчёт «красный, красный, синий» загорается тогда же, когда и всегда.
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="Гонка в MarioKart64JS в 3D-режиме на Koopa Troopa Beach." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach, на которую ушла большая часть 10 октября: именно на здешние трамплины корпусу 3D-карта пришлось учиться заезжать.</figcaption>
-</figure>
-
 У 3D-карта есть ещё и корпус, которого не было у спрайта. При столкновении со стенами это капсула — по кругу над каждой осью, — и он движется и поворачивается как твёрдое тело. У этого были побочные эффекты. На Koopa Troopa Beach передний круг доставал до кромки трамплина раньше центра карта, и тыльная грань кромки сбрасывала карт с прыжка. Исправление проверяет каждую ось относительно земли под ней. Более поздний коммит запретил стенам поворачивать карт игрока при лобовом ударе, потому что в Mario Kart 64 стена отражает движение карта и никогда не меняет направление, куда он смотрит.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="Гонка в MarioKart64JS в 3D-режиме на Royal Raceway." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Royal Raceway в 3D-режиме.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="Гонка в MarioKart64JS в 3D-режиме в Bowser's Castle." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle, где в проходе шириной 5 единиц пришлось не давать капсуле заклиниваться поперёк коридора.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="Гонка в MarioKart64JS в 3D-режиме на Rainbow Road." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Rainbow Road с 3D-картами.</figcaption>
-</figure>
 
 ## 3D-титульный экран
 
@@ -91,11 +71,6 @@ Agent! не может смотреть на картинки, поэтому п
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Облёт после финиша на Royal Raceway: камера у обочины, мимо которой проезжает карт." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>План с обочины на Royal Raceway. Камера стоит у дороги впереди и держит кадр, пока карт не проедет мимо.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Облёт после финиша на Koopa Troopa Beach: низкая камера сбоку из-за плеча карта." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Низкий план сзади на Koopa Troopa Beach, из-за одного плеча карта.</figcaption>
 </figure>
 
 ## Как делались скриншоты

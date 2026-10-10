@@ -37,27 +37,7 @@ Agent! 看不了图片，所以它改用数字来检查模型：每辆卡丁车�
 
 **Lakitu。** 裁判变成了 Mario Kart Wii 中的 Lakitu（`src/lakitu3d.js`）。他的手臂通过模型自身的骨骼摆出姿势：一只手握着钓竿，另一只手挥舞旗子。起跑灯、圈数牌和逆行标志都挂在钓竿的钩子上，而原版精灵的动画帧依旧控制着时机，所以红、红、蓝的倒计时仍会在一贯的时刻亮起。
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="MarioKart64JS 的 3D 模式，在 Koopa Troopa Beach 上比赛。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach，10 月 10 日的大部分时间都花在了这里：3D 卡丁车的车身必须学会冲上的，正是这里的跳台。</figcaption>
-</figure>
-
 3D 卡丁车还拥有一个精灵所没有的车身。碰到墙壁时，它是一个胶囊体，每根车轴上方各一个圆，并作为刚体移动和转向。这带来了副作用。在 Koopa Troopa Beach，车头的圆会比卡丁车中心更早碰到坡道的边缘，而边缘的背面会把卡丁车从跳台上弹开。修复方法是让每根车轴分别与其下方的地面进行检测。后来的一个提交让墙壁在正面碰撞时不再改变玩家卡丁车的朝向，因为在 Mario Kart 64 中，墙壁会反弹卡丁车的运动，但从不改变它的朝向。
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="MarioKart64JS 的 3D 模式，在 Royal Raceway 上比赛。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 模式下的 Royal Raceway。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="MarioKart64JS 的 3D 模式，在 Bowser's Castle 中比赛。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle，这里宽度为 5 的通道，正是必须防止胶囊体横卡在走廊里的地方。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="MarioKart64JS 的 3D 模式，在 Rainbow Road 上比赛。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>使用 3D 卡丁车的 Rainbow Road。</figcaption>
-</figure>
 
 ## 3D 标题画面
 
@@ -91,11 +71,6 @@ Mario Kart 64 的标题背景是一张 320×240 的平面图片。天空、山�
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Royal Raceway 上的冲线环绕飞行镜头：卡丁车驶过时，镜头架在路边。" style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Royal Raceway 上的路边镜头。镜头立在前方的路边，一直停留到卡丁车驶过为止。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Koopa Troopa Beach 上的冲线环绕飞行镜头：位于卡丁车肩侧的低位镜头。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach 上的低位车尾镜头，位于卡丁车的一侧肩后。</figcaption>
 </figure>
 
 ## 截图是如何拍摄的

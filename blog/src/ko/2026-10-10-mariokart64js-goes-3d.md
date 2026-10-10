@@ -37,27 +37,7 @@ Agent!는 그림을 볼 수 없기 때문에 대신 숫자로 모델을 확인�
 
 **Lakitu.** 심판은 Mario Kart Wii의 Lakitu(`src/lakitu3d.js`)가 됩니다. 팔은 모델 자체의 본을 통해 포즈를 잡습니다. 한 손은 낚싯대를 들고, 다른 손은 깃발을 흔듭니다. 출발 신호등, 랩 보드, 역주행 표지판은 낚싯대 바늘에 매달려 있고, 원작 스프라이트의 애니메이션 프레임이 여전히 타이밍을 제어하기 때문에 빨강, 빨강, 파랑 카운트다운이 늘 그랬던 때에 켜집니다.
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="3D 모드의 MarioKart64JS, Koopa Troopa Beach를 달리는 모습." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>10월 10일 대부분을 보낸 Koopa Troopa Beach. 3D 카트의 차체가 올라타는 법을 배워야 했던 것이 바로 이곳의 점프대입니다.</figcaption>
-</figure>
-
 3D 카트에는 스프라이트에 없던 차체도 있습니다. 벽에 대해서는 각 차축 위에 원이 하나씩 있는 캡슐이며, 강체로서 움직이고 회전합니다. 여기에는 부작용이 있었습니다. Koopa Troopa Beach에서는 앞쪽 원이 카트 중심보다 먼저 경사로의 턱에 닿았고, 턱의 뒷면이 카트를 점프대에서 튕겨냈습니다. 수정 방법은 각 차축을 그 아래 지면과 따로 검사하는 것이었습니다. 이후의 커밋에서는 정면 충돌 시 벽이 플레이어 카트의 방향을 돌리지 않도록 했습니다. Mario Kart 64에서 벽은 카트의 움직임을 반사할 뿐, 향하는 방향을 바꾸지는 않기 때문입니다.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="3D 모드의 MarioKart64JS, Royal Raceway를 달리는 모습." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 모드의 Royal Raceway.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="3D 모드의 MarioKart64JS, Bowser's Castle을 달리는 모습." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle. 폭이 5인 통로에서 캡슐이 복도를 가로질러 끼지 않도록 막아야 했습니다.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="3D 모드의 MarioKart64JS, Rainbow Road를 달리는 모습." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 카트로 달리는 Rainbow Road.</figcaption>
-</figure>
 
 ## 3D 타이틀 화면
 
@@ -91,11 +71,6 @@ Mario Kart 64의 타이틀 배경은 320×240 크기의 평면 그림 한 장입
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Royal Raceway의 결승 플라이오버: 카트가 지나가는 동안 길가에 놓인 카메라." style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Royal Raceway의 길가 샷. 카메라가 앞쪽 길가에 서서 카트가 지나갈 때까지 머무릅니다.</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Koopa Troopa Beach의 결승 플라이오버: 카트 어깨 옆의 낮은 카메라." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach의 로우 테일 샷. 카트의 한쪽 어깨 옆에서 찍었습니다.</figcaption>
 </figure>
 
 ## 스크린샷은 어떻게 찍었나

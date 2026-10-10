@@ -37,27 +37,7 @@ Agent! は画像を見ることができないので、代わりに数値でモ�
 
 **Lakitu。** 審判は Mario Kart Wii の Lakitu（`src/lakitu3d.js`）になります。腕はモデル自身のボーンでポーズを付けています。片方の手は釣り竿を持ち、もう片方は旗を振ります。スタートシグナル、ラップボード、逆走サインは釣り竿の針からぶら下がり、オリジナルのスプライトのアニメーションフレームが今もタイミングを制御しているので、赤、赤、青のカウントダウンはいつもどおりのタイミングで点灯します。
 
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-koopa.jpg" alt="3D モードの MarioKart64JS で、Koopa Troopa Beach を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>10 月 10 日のほとんどを費やした Koopa Troopa Beach。3D カートの車体が駆け上がれるようにならなければならなかったのが、ここのジャンプ台です。</figcaption>
-</figure>
-
 3D カートには、スプライトにはなかった車体もあります。壁に対してはカプセルで、各車軸の上に円がひとつずつあり、剛体として移動・回転します。これには副作用がありました。Koopa Troopa Beach では、前側の円がカートの中心より先にジャンプ台の縁に届き、縁の裏面がカートをジャンプから弾き飛ばしていました。修正では、各車軸をその下の地面に対して個別に判定しています。後のコミットでは、正面衝突の際に壁がプレイヤーのカートの向きを変えないようにしました。Mario Kart 64 では、壁はカートの動きを反射するだけで、向きを変えることはないからです。
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-royal.jpg" alt="3D モードの MarioKart64JS で、Royal Raceway を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D モードの Royal Raceway。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-bowser.jpg" alt="3D モードの MarioKart64JS で、Bowser's Castle を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Bowser's Castle。幅 5 の通路で、カプセルが廊下を横切るように挟まらないようにする必要がありました。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-race-rainbow.jpg" alt="3D モードの MarioKart64JS で、Rainbow Road を走っている。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D カートで走る Rainbow Road。</figcaption>
-</figure>
 
 ## 3D タイトル画面
 
@@ -91,11 +71,6 @@ Mario Kart 64 のタイトル背景は、320×240 の平面の絵 1 枚です。
 <figure style="margin:2rem 0">
 <img src="/mk64js-3d-flyover-roadside.jpg" alt="Royal Raceway でのゴール後のフライオーバー：カートが通り過ぎる間、道路脇に置かれたカメラ。" style="display:block;width:100%;height:auto;border-radius:20px">
 <figcaption>Royal Raceway での沿道ショット。カメラは前方の道路脇に立ち、カートが通り過ぎるまでその場にとどまります。</figcaption>
-</figure>
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-flyover-low.jpg" alt="Koopa Troopa Beach でのゴール後のフライオーバー：カートの肩越しの低いカメラ。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Koopa Troopa Beach でのローテールショット。カートの片方の肩越しから撮っています。</figcaption>
 </figure>
 
 ## スクリーンショットの撮り方
