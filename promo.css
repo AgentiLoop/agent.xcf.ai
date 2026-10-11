@@ -1,7 +1,9 @@
 /* ---------- Promo banner (under the nav; 4 rotating slides, rotation in promo.js) ---------- */
 .promo {
     --promo-ms: 7000ms;
-    position: relative;
+    position: sticky;
+    top: var(--nav-h, 0px);
+    z-index: 999;
     overflow: hidden;
     isolation: isolate;
     background: #060913;

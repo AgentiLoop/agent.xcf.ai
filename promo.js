@@ -21,9 +21,13 @@
     var slides = promo.querySelectorAll('.promo-slide');
     var dots = promo.querySelectorAll('.promo-dot');
     var ms = 7000, cur = 0, timer = null, left = ms, started = 0;
-    function syncHeight() { document.documentElement.style.setProperty('--promo-h', promo.offsetHeight + 'px'); }
+    var nav = document.querySelector('.nav');
+    function syncHeight() {
+        document.documentElement.style.setProperty('--promo-h', promo.offsetHeight + 'px');
+        if (nav) document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+    }
     syncHeight();
-    if (window.ResizeObserver) new ResizeObserver(syncHeight).observe(promo); else window.addEventListener('resize', syncHeight);
+    if (window.ResizeObserver) { var ro = new ResizeObserver(syncHeight); ro.observe(promo); if (nav) ro.observe(nav); } else window.addEventListener('resize', syncHeight);
     function show(i) {
         cur = (i + slides.length) % slides.length;
         slides.forEach(function (s, n) {
