@@ -979,10 +979,11 @@ a.stat:hover .stat-label { color: var(--text); }
         linear-gradient(160deg, #1a0b2e, #0b1026 60%, #071a2b);
     box-shadow: 0 30px 80px -20px rgba(236, 72, 153, .45), 0 0 0 1px rgba(255, 255, 255, .06) inset;
 }
-/* Spinning rainbow border */
+/* Spinning rainbow border — rotate the gradient angle (not the element) so every edge stays covered */
+@property --mk-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
 .mk-card::before {
-    content: ""; position: absolute; inset: -50%; z-index: -2;
-    background: conic-gradient(from 0deg, #ef4444, #f59e0b, #facc15, #22c55e, #22d3ee, #3b82f6, #8b5cf6, #ec4899, #ef4444);
+    content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit;
+    background: conic-gradient(from var(--mk-angle), #ef4444, #f59e0b, #facc15, #22c55e, #22d3ee, #3b82f6, #8b5cf6, #ec4899, #ef4444);
     animation: mkSpin 6s linear infinite;
 }
 .mk-card::after {
@@ -993,7 +994,7 @@ a.stat:hover .stat-label { color: var(--text); }
         repeating-linear-gradient(45deg, rgba(255, 255, 255, .025) 0 14px, transparent 14px 28px),
         linear-gradient(160deg, #1a0b2e, #0b1026 60%, #071a2b);
 }
-@keyframes mkSpin { to { transform: rotate(360deg); } }
+@keyframes mkSpin { to { --mk-angle: 360deg; } }
 .mk-tag {
     display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: .1em;
     text-transform: uppercase; color: #fde68a; background: rgba(250, 204, 21, .1); border: 1px solid rgba(250, 204, 21, .35);
