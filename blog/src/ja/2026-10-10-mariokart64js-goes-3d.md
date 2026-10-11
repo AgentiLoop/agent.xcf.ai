@@ -3,11 +3,6 @@ title: MarioKart64JS が 3D に：Wii のカート、3D タイトル画面、ゴ
 description: Mario Kart 64 はレーサーを平面のスプライトで描いています。MarioKart64JS で 3 を押すと、Lakitu も含めてすべてのカートが 3D モデルになり、本物の影、作り直した 3D タイトル画面、そしてゴール後にカートの周りを飛び回るカメラが加わります。3D モードがどのように組み立てられたのかを、スクリーンショットで紹介します。
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="MarioKart64JS の 3D タイトル画面：Mario Kart 64 のロゴの下で、Wario、Bowser、Mario、Peach、Toad が 3D カートに乗ってカメラに向かって走ってくる。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D タイトル画面。オリジナルは 1 枚の平面の絵です。ここでは空、丘、道路を Three.js で組み立て、5 人のドライバーはカメラに向かって走ってくる 3D カートになっています。</figcaption>
-</figure>
-
 [前回の MarioKart64JS の記事](/blog/mariokart64js-from-scratch-in-javascript/)は、Mario Kart 64 にできる限り忠実に合わせる話でした。コースのジオメトリ、スプライト、音楽はカートリッジから取り出し、オリジナルの C コードがやっていることを新しい JavaScript で実現する、というものです。今回はその逆方向の話です。キーひとつ、**3** を押すと、N64 にはなかった 3D モードがオンになります。
 
 ## スプライトがモデルになる
@@ -46,11 +41,6 @@ Mario Kart 64 のタイトル背景は、320×240 の平面の絵 1 枚です。
 配置は元の絵に従っています。Wario が左手前でその後ろに Bowser、Mario が右手前でその後ろに Peach、Toad は右側のカーブから出てくるところです。各カートは、画面上の範囲が元のイラストの対応するドライバーの範囲から約 10 ピクセル以内に収まるように置かれています。カメラは彼らの前方の路面に低く構え、64° の広角レンズを使い、道路が下でスクロールするので、カートがまっすぐこちらに向かって走ってくるように見えます。チェッカーフラッグ、ロゴ、PUSH START、著作権表示は、今もオリジナルのタイトルの 2D オーバーレイです。
 
 その後ろのメニューにも、合わせた背景が付きました。タイトルで 3D をオンにすると 4× のテクスチャ段階にも切り替わり、もう一度 3 を押すまでレースは 3D で始まります。
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="3D モードの背景が付いた MarioKart64JS のゲーム選択画面。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D モードの背景が付いたゲーム選択画面。</figcaption>
-</figure>
 
 ## ゴール後のフライオーバー
 

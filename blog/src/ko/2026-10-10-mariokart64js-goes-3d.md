@@ -3,11 +3,6 @@ title: MarioKart64JS, 3D가 되다: Wii 카트, 3D 타이틀 화면, 그리고 �
 description: Mario Kart 64는 레이서를 평면 스프라이트로 그립니다. MarioKart64JS에서 3을 누르면 Lakitu까지 포함해 모든 카트가 3D 모델로 바뀌고, 실제 그림자, 새로 만든 3D 타이틀 화면, 그리고 결승 후 카트 주위를 날아다니는 카메라가 더해집니다. 3D 모드가 어떻게 만들어졌는지 스크린샷과 함께 소개합니다.
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="MarioKart64JS의 3D 타이틀 화면: Mario Kart 64 로고 아래에서 Wario, Bowser, Mario, Peach, Toad가 3D 카트를 타고 카메라를 향해 달려온다." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 타이틀 화면. 원작은 평면 그림 한 장입니다. 여기서는 하늘, 언덕, 도로를 Three.js로 만들었고, 다섯 명의 드라이버는 카메라를 향해 달려오는 3D 카트입니다.</figcaption>
-</figure>
-
 [지난 MarioKart64JS 글](/blog/mariokart64js-from-scratch-in-javascript/)은 Mario Kart 64를 최대한 똑같이 재현하는 이야기였습니다. 코스 지오메트리, 스프라이트, 음악은 카트리지에서 가져오고, 원작의 C 코드가 하던 일을 새로운 JavaScript가 하는 것이었죠. 이번 글은 그 반대 방향에 관한 것입니다. 키 하나, **3**을 누르면 N64에는 없었던 3D 모드가 켜집니다.
 
 ## 스프라이트가 모델이 되다
@@ -46,11 +41,6 @@ Mario Kart 64의 타이틀 배경은 320×240 크기의 평면 그림 한 장입
 배치는 원래 그림을 따릅니다. Wario는 왼쪽 앞, 그 뒤에 Bowser, Mario는 오른쪽 앞, 그 뒤에 Peach가 있고, Toad는 오른쪽 커브를 빠져나오고 있습니다. 각 카트는 화면상의 영역이 원화 속 해당 드라이버의 영역과 약 10픽셀 이내로 맞도록 배치되었습니다. 카메라는 그들 앞의 도로 위에 낮게 자리 잡고 64°의 광각 렌즈를 쓰며, 도로가 아래로 스크롤되기 때문에 카트들이 곧장 나를 향해 달려오는 것처럼 보입니다. 체크무늬 깃발, 로고, PUSH START, 저작권 표기는 여전히 원작 타이틀의 2D 오버레이입니다.
 
 그 뒤의 메뉴에도 어울리는 배경이 생겼습니다. 타이틀에서 3D를 켜면 4× 텍스처 단계로도 전환되고, 다시 3을 누를 때까지 레이스는 3D로 시작합니다.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="3D 모드 배경이 적용된 MarioKart64JS 게임 선택 화면." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 모드 배경이 적용된 게임 선택 화면.</figcaption>
-</figure>
 
 ## 결승 후 플라이오버
 

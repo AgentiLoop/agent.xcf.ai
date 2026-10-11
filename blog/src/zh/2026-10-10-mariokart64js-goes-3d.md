@@ -3,11 +3,6 @@ title: MarioKart64JS 进入 3D：Wii 卡丁车、3D 标题画面和冲线后的�
 description: Mario Kart 64 用平面精灵绘制赛车手。在 MarioKart64JS 中按下 3，每辆卡丁车都会变成 3D 模型，Lakitu 也不例外，还带有真实阴影、重建的 3D 标题画面，以及冲线后绕着你的卡丁车飞行的镜头。下面通过截图讲讲 3D 模式是如何搭建起来的。
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="MarioKart64JS 的 3D 标题画面：Wario、Bowser、Mario、Peach 和 Toad 驾驶 3D 卡丁车，在 Mario Kart 64 标志下朝镜头驶来。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>3D 标题画面。原版是一张平面画作。这里的天空、山丘和道路都用 Three.js 构建，五位车手是朝镜头驶来的 3D 卡丁车。</figcaption>
-</figure>
-
 [上一篇 MarioKart64JS 文章](/blog/mariokart64js-from-scratch-in-javascript/)讲的是尽可能贴近 Mario Kart 64：赛道几何、精灵和音乐取自卡带，再由全新的 JavaScript 完成原版 C 代码所做的事。这一篇讲的是相反的方向。只需一个按键 **3**，就能开启 N64 从未有过的 3D 模式。
 
 ## 精灵变成模型
@@ -46,11 +41,6 @@ Mario Kart 64 的标题背景是一张 320×240 的平面图片。天空、山�
 布局沿用了原画。Wario 在左前方，Bowser 在他身后；Mario 在右前方，Peach 在他身后；Toad 正从右侧弯道驶出。每辆卡丁车的摆放位置都让它在屏幕上的边框与原画中对应车手的边框相差约 10 像素以内。镜头低低地架在它们前方的路面上，使用 64° 的广角镜头，道路在下方滚动，所以卡丁车看起来就像是径直朝你驶来。方格旗、标志、PUSH START 和版权信息仍然是原版标题中的 2D 叠加层。
 
 它后面的菜单也换上了相配的背景。在标题画面开启 3D 还会切换到 4× 纹理档位，之后的比赛都会以 3D 开始，直到你再次按下 3。
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="MarioKart64JS 的游戏选择画面，带有 3D 模式背景。" style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>带有 3D 模式背景的游戏选择画面。</figcaption>
-</figure>
 
 ## 冲线后的环绕飞行镜头
 

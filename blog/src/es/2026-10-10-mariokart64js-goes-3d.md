@@ -3,11 +3,6 @@ title: MarioKart64JS se pasa al 3D: karts de Wii, una pantalla de título en 3D 
 description: Mario Kart 64 dibuja a sus pilotos como sprites planos. Pulsa 3 en MarioKart64JS y cada kart se convierte en un modelo 3D, Lakitu incluido, con sombras reales, una pantalla de título reconstruida en 3D y una cámara que vuela alrededor de tu kart después de la meta. Así se montó el modo 3D, en capturas de pantalla.
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="La pantalla de título en 3D de MarioKart64JS: Wario, Bowser, Mario, Peach y Toad en karts 3D conduciendo hacia la cámara bajo el logotipo de Mario Kart 64." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>La pantalla de título en 3D. La original es una única ilustración plana. Aquí el cielo, las colinas y la carretera están construidos en Three.js, y los cinco pilotos son karts 3D que conducen hacia la cámara.</figcaption>
-</figure>
-
 La [última entrada sobre MarioKart64JS](/blog/mariokart64js-from-scratch-in-javascript/) trataba de igualar Mario Kart 64 lo más fielmente posible: geometría de circuitos, sprites y música sacados del cartucho, y JavaScript nuevo haciendo lo que hace el C del original. Esta va en la dirección contraria. Una tecla, el **3**, activa un modo 3D que la N64 nunca tuvo.
 
 ## Los sprites se convierten en modelos
@@ -46,11 +41,6 @@ El fondo del título de Mario Kart 64 es una única imagen plana de 320×240. El
 La composición sigue la ilustración. Wario va delante a la izquierda con Bowser detrás, Mario va delante a la derecha con Peach detrás, y Toad sale de la curva de la derecha. Cada kart está colocado de modo que su recuadro en pantalla cae a unos 10 píxeles del recuadro de su piloto en el arte original. La cámara está baja sobre la carretera, por delante de ellos, con un objetivo gran angular de 64°, y la carretera se desplaza por debajo, así que los karts parecen conducir directamente hacia ti. La bandera a cuadros, el logotipo, PUSH START y el copyright siguen siendo las capas 2D del título original.
 
 Los menús que hay detrás también recibieron fondos a juego. Activar el 3D en el título también cambia al nivel de texturas 4×, y las carreras empiezan en 3D hasta que vuelvas a pulsar 3.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="La pantalla de selección de juego de MarioKart64JS con su fondo del modo 3D." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>La pantalla de selección de juego con su fondo del modo 3D.</figcaption>
-</figure>
 
 ## Vuelos de cámara tras la meta
 

@@ -3,11 +3,6 @@ title: MarioKart64JS Goes 3D: Wii Karts, a 3D Title Screen and Finish Fly-Overs
 description: Mario Kart 64 draws its racers as flat sprites. Press 3 in MarioKart64JS and every kart becomes a 3D model, Lakitu included, with real shadows, a rebuilt 3D title screen and a camera that flies around your kart after the finish. Here's how the 3D mode was put together, in screenshots.
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="The MarioKart64JS 3D title screen: Wario, Bowser, Mario, Peach and Toad in 3D karts driving at the camera under the Mario Kart 64 logo." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>The 3D title screen. The original is one flat painting. Here the sky, hills and road are built in Three.js and the five drivers are 3D karts driving at the camera.</figcaption>
-</figure>
-
 The [last MarioKart64JS post](/blog/mariokart64js-from-scratch-in-javascript/) was about matching Mario Kart 64 as closely as possible: course geometry, sprites and music taken from the cartridge, and new JavaScript doing what the original's C does. This one is about the opposite direction. One key, **3**, turns on a 3D mode that the N64 never had.
 
 ## Sprites become models
@@ -46,11 +41,6 @@ Mario Kart 64's title background is one flat 320×240 picture. The sky, hills, r
 The layout follows the painting. Wario is front left with Bowser behind him, Mario is front right with Peach behind, and Toad is coming out of the right-hand bend. Each kart is placed so its box on screen lands within about 10 pixels of its driver's box in the original art. The camera sits low on the road ahead of them with a wide 64° lens, and the road scrolls underneath, so the karts look like they're driving straight at you. The checkered flag, the logo, PUSH START and the copyright are still the 2D overlays from the original title.
 
 The menus behind it got matching backgrounds too. Turning 3D on at the title also switches to the 4× texture tier, and races start in 3D until you press 3 again.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="The MarioKart64JS game select screen with its 3D-mode background." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>The game select screen with its 3D-mode background.</figcaption>
-</figure>
 
 ## Fly-overs after the finish
 

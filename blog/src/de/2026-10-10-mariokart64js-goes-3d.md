@@ -3,11 +3,6 @@ title: MarioKart64JS wird 3D: Wii-Karts, ein 3D-Titelbildschirm und Kameraflüge
 description: Mario Kart 64 zeichnet seine Fahrer als flache Sprites. Drückt man in MarioKart64JS die 3, wird jedes Kart zu einem 3D-Modell, Lakitu eingeschlossen, mit echten Schatten, einem neu gebauten 3D-Titelbildschirm und einer Kamera, die nach dem Ziel um das eigene Kart fliegt. Hier steht in Screenshots, wie der 3D-Modus entstanden ist.
 tags: Showcase, JavaScript
 ---
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-title.jpg" alt="Der 3D-Titelbildschirm von MarioKart64JS: Wario, Bowser, Mario, Peach und Toad fahren in 3D-Karts unter dem Mario-Kart-64-Logo auf die Kamera zu." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Der 3D-Titelbildschirm. Das Original ist ein einziges flaches Gemälde. Hier sind Himmel, Hügel und Straße in Three.js gebaut, und die fünf Fahrer sind 3D-Karts, die auf die Kamera zufahren.</figcaption>
-</figure>
-
 Im [letzten MarioKart64JS-Beitrag](/blog/mariokart64js-from-scratch-in-javascript/) ging es darum, Mario Kart 64 so genau wie möglich zu treffen: Streckengeometrie, Sprites und Musik aus dem Modul, und neues JavaScript, das tut, was der C-Code des Originals tut. In diesem geht es um die entgegengesetzte Richtung. Eine Taste, **3**, schaltet einen 3D-Modus ein, den das N64 nie hatte.
 
 ## Aus Sprites werden Modelle
@@ -46,11 +41,6 @@ Der Titelhintergrund von Mario Kart 64 ist ein einziges flaches Bild mit 320×24
 Die Anordnung folgt dem Gemälde. Wario ist vorne links mit Bowser hinter ihm, Mario vorne rechts mit Peach dahinter, und Toad kommt aus der Rechtskurve. Jedes Kart ist so platziert, dass sein Rahmen auf dem Bildschirm bis auf etwa 10 Pixel genau auf dem Rahmen seines Fahrers in der Originalgrafik liegt. Die Kamera sitzt tief auf der Straße vor ihnen, mit einem weiten 64°-Objektiv, und die Straße scrollt darunter durch, sodass es aussieht, als würden die Karts direkt auf einen zufahren. Die Zielflagge, das Logo, PUSH START und der Copyright-Hinweis sind weiterhin die 2D-Overlays aus dem Originaltitel.
 
 Auch die Menüs dahinter haben passende Hintergründe bekommen. Wer 3D im Titel einschaltet, wechselt außerdem auf die 4×-Texturstufe, und Rennen starten in 3D, bis man erneut die 3 drückt.
-
-<figure style="margin:2rem 0">
-<img src="/mk64js-3d-game-select.jpg" alt="Der Spielauswahl-Bildschirm von MarioKart64JS mit seinem Hintergrund im 3D-Modus." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Der Spielauswahl-Bildschirm mit seinem Hintergrund im 3D-Modus.</figcaption>
-</figure>
 
 ## Kameraflüge nach dem Ziel
 
