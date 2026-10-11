@@ -3,6 +3,11 @@ title: MarioKart64JS se pasa al 3D: karts de Wii, una pantalla de título en 3D 
 description: Mario Kart 64 dibuja a sus pilotos como sprites planos. Pulsa 3 en MarioKart64JS y cada kart se convierte en un modelo 3D, Lakitu incluido, con sombras reales, una pantalla de título reconstruida en 3D y una cámara que vuela alrededor de tu kart después de la meta. Así se montó el modo 3D, en capturas de pantalla.
 tags: Showcase, JavaScript
 ---
+<figure style="margin:2rem 0">
+<img src="/mk64js-3d-title.gif" alt="La pantalla de título en 3D de MarioKart64JS: Wario, Bowser, Mario, Peach y Toad en karts 3D conduciendo hacia la cámara bajo el logotipo de Mario Kart 64." style="display:block;width:100%;height:auto;border-radius:20px">
+<figcaption>La pantalla de título en 3D. La original es una única ilustración plana. Aquí el cielo, las colinas y la carretera están construidos en Three.js, y los cinco pilotos son karts 3D que conducen hacia la cámara.</figcaption>
+</figure>
+
 La [última entrada sobre MarioKart64JS](/blog/mariokart64js-from-scratch-in-javascript/) trataba de igualar Mario Kart 64 lo más fielmente posible: geometría de circuitos, sprites y música sacados del cartucho, y JavaScript nuevo haciendo lo que hace el C del original. Esta va en la dirección contraria. Una tecla, el **3**, activa un modo 3D que la N64 nunca tuvo.
 
 ## Los sprites se convierten en modelos
