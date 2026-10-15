@@ -9,6 +9,11 @@ Some of that is because I built my own harness for it. Agent! for Mac is the thi
 
 That second exit matters more than it sounds, and I'll come back to it.
 
+<figure style="margin:2rem 0;text-align:center">
+<img src="/auto-agent.svg" alt="An excited Mac agent with star eyes and a big smile inside a glowing Auto-Pilot loop, with a /auto prompt, green checkmarks, a go-kart and a checkered flag" width="480" height="400" loading="lazy" style="max-width:100%;height:auto;border-radius:20px">
+<figcaption>Auto-Pilot, as I picture it: one goal in, a loop of cycles running, and a checkered flag at the end.</figcaption>
+</figure>
+
 ## What it feels like to watch it work
 
 Earlier this month I pointed Auto-Pilot at one sentence, "create a Mario Kart clone," and went off to do other things. When I came back there was a game. Not a perfect game, but a real one, with tracks and items and AI rivals and thousands of passing test checks. I wrote about that in [GoKart: Built on Auto-Pilot](/blog/gokart-built-on-auto-pilot/), including the part where it got stuck for a while on a single stray tab character in one file, and I had to press Stop All.

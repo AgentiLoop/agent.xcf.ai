@@ -13,14 +13,14 @@
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
     <item>
-      <title>I Built an AI That Works Until It&#x27;s Done. Now Picture That Running the Whole World.</title>
+      <title>끝날 때까지 일하는 AI를 만들었습니다. 이제 그 AI가 세상 전체를 돌린다고 상상해 보세요.</title>
       <link>https://agentiloop.ai/ko/blog/what-happens-when-the-ai-takes-all-the-jobs/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-happens-when-the-ai-takes-all-the-jobs/</guid>
       <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
       <dc:creator>Todd Bruss</dc:creator>
-      <category>Opinion</category>
+      <category>의견</category>
       <category>Auto-Pilot</category>
-      <description>I love what AI does for productivity. I even built an Auto-Pilot that runs on its own until the goal is reached or it admits it needs a human. Scale that up until one central AI runs everything and every job is gone, and the thing that breaks first might not be the economy. It might be us.</description>
+      <description>저는 AI가 생산성에 가져다주는 것들이 정말 좋습니다. 목표를 달성하거나 사람이 필요하다고 인정할 때까지 스스로 돌아가는 Auto-Pilot도 직접 만들었습니다. 이걸 키워서 중앙 AI 하나가 모든 걸 운영하고 모든 일자리가 사라진다면, 가장 먼저 무너지는 건 경제가 아닐지도 모릅니다. 우리 자신일지도 모릅니다.</description>
     </item>
     <item>
       <title>MarioKart64JS, 3D가 되다: Wii 카트, 3D 타이틀 화면, 그리고 결승 후 플라이오버</title>
