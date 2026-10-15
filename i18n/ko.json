@@ -504,5 +504,10 @@
  "Refresh Stats": "통계 새로고침",
  "Last updated: {d}": "마지막 업데이트: {d}",
  "Error:": "오류:",
- "Try Again": "다시 시도"
+ "Try Again": "다시 시도",
+ "See the scorecard": "스코어카드 보기",
+ "See the listing": "목록 보기",
+ "Join the discussion on Hacker News": "Hacker News 토론 참여하기",
+ "Read the post on X": "X 게시물 읽기",
+ "Read the full guide": "전체 가이드 읽기"
 }

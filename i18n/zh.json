@@ -504,5 +504,10 @@
  "Refresh Stats": "刷新统计",
  "Last updated: {d}": "最后更新：{d}",
  "Error:": "错误：",
- "Try Again": "重试"
+ "Try Again": "重试",
+ "See the scorecard": "查看评分卡",
+ "See the listing": "查看收录页面",
+ "Join the discussion on Hacker News": "参与 Hacker News 讨论",
+ "Read the post on X": "阅读 X 上的帖子",
+ "Read the full guide": "阅读完整指南"
 }

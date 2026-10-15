@@ -504,5 +504,10 @@
  "Refresh Stats": "統計を更新",
  "Last updated: {d}": "最終更新: {d}",
  "Error:": "エラー:",
- "Try Again": "再試行"
+ "Try Again": "再試行",
+ "See the scorecard": "スコアカードを見る",
+ "See the listing": "掲載ページを見る",
+ "Join the discussion on Hacker News": "Hacker Newsの議論に参加する",
+ "Read the post on X": "Xの投稿を読む",
+ "Read the full guide": "ガイド全文を読む"
 }

@@ -504,5 +504,10 @@
  "Refresh Stats": "Обновить статистику",
  "Last updated: {d}": "Последнее обновление: {d}",
  "Error:": "Ошибка:",
- "Try Again": "Повторить"
+ "Try Again": "Повторить",
+ "See the scorecard": "Открыть карточку оценки",
+ "See the listing": "Открыть страницу проекта",
+ "Join the discussion on Hacker News": "Присоединиться к обсуждению на Hacker News",
+ "Read the post on X": "Читать пост в X",
+ "Read the full guide": "Читать полное руководство"
 }

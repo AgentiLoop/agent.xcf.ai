@@ -504,5 +504,10 @@
  "Refresh Stats": "Statistiken aktualisieren",
  "Last updated: {d}": "Zuletzt aktualisiert: {d}",
  "Error:": "Fehler:",
- "Try Again": "Erneut versuchen"
+ "Try Again": "Erneut versuchen",
+ "See the scorecard": "Scorecard ansehen",
+ "See the listing": "Eintrag ansehen",
+ "Join the discussion on Hacker News": "An der Diskussion auf Hacker News teilnehmen",
+ "Read the post on X": "Beitrag auf X lesen",
+ "Read the full guide": "Vollständigen Leitfaden lesen"
 }
