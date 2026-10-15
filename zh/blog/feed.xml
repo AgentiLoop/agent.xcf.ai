@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 10 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
+    <item>
+      <title>I Built an AI That Works Until It&#x27;s Done. Now Picture That Running the Whole World.</title>
+      <link>https://agentiloop.ai/zh/blog/what-happens-when-the-ai-takes-all-the-jobs/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/what-happens-when-the-ai-takes-all-the-jobs/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Opinion</category>
+      <category>Auto-Pilot</category>
+      <description>I love what AI does for productivity. I even built an Auto-Pilot that runs on its own until the goal is reached or it admits it needs a human. Scale that up until one central AI runs everything and every job is gone, and the thing that breaks first might not be the economy. It might be us.</description>
+    </item>
     <item>
       <title>MarioKart64JS 进入 3D：Wii 卡丁车、3D 标题画面和冲线后的环绕飞行镜头</title>
       <link>https://agentiloop.ai/zh/blog/mariokart64js-goes-3d/</link>

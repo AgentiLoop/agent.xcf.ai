@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 10 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
+    <item>
+      <title>I Built an AI That Works Until It&#x27;s Done. Now Picture That Running the Whole World.</title>
+      <link>https://agentiloop.ai/ko/blog/what-happens-when-the-ai-takes-all-the-jobs/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/what-happens-when-the-ai-takes-all-the-jobs/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Opinion</category>
+      <category>Auto-Pilot</category>
+      <description>I love what AI does for productivity. I even built an Auto-Pilot that runs on its own until the goal is reached or it admits it needs a human. Scale that up until one central AI runs everything and every job is gone, and the thing that breaks first might not be the economy. It might be us.</description>
+    </item>
     <item>
       <title>MarioKart64JS, 3D가 되다: Wii 카트, 3D 타이틀 화면, 그리고 결승 후 플라이오버</title>
       <link>https://agentiloop.ai/ko/blog/mariokart64js-goes-3d/</link>
