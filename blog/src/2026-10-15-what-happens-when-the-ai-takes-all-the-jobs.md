@@ -1,5 +1,5 @@
 ---
-title: I Built an AI That Works Until It's Done. Now Picture That Running the Whole World.
+title: What Happens When the AI Takes All the Jobs
 description: I love what AI does for productivity. I even built an Auto-Pilot that runs on its own until the goal is reached or it admits it needs a human. Scale that up until one central AI runs everything and every job is gone, and the thing that breaks first might not be the economy. It might be us.
 tags: Opinion, Auto-Pilot
 ---

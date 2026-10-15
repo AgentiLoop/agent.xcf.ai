@@ -1,5 +1,5 @@
 ---
-title: Ich habe eine KI gebaut, die arbeitet, bis sie fertig ist. Stell dir jetzt vor, sie führt die ganze Welt.
+title: Was passiert, wenn die KI alle Jobs übernimmt
 description: Ich liebe, was KI für die Produktivität tut. Ich habe sogar einen Auto-Pilot gebaut, der von allein läuft, bis das Ziel erreicht ist oder er zugibt, dass er einen Menschen braucht. Skaliere das, bis eine zentrale KI alles steuert und jeder Job verschwunden ist, und das Erste, was zerbricht, ist vielleicht nicht die Wirtschaft. Vielleicht sind wir es.
 tags: Meinung, Auto-Pilot
 ---

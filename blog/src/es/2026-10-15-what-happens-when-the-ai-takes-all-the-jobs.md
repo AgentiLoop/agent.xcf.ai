@@ -1,5 +1,5 @@
 ---
-title: Construí una IA que trabaja hasta terminar. Ahora imagínala dirigiendo el mundo entero.
+title: Qué pasa cuando la IA se lleva todos los empleos
 description: Me encanta lo que la IA hace por la productividad. Incluso construí un Auto-Pilot que funciona solo hasta alcanzar el objetivo o admitir que necesita a una persona. Escala eso hasta que una IA central lo dirija todo y desaparezcan todos los empleos, y lo primero que se rompa quizá no sea la economía. Quizá seamos nosotros.
 tags: Opinión, Auto-Pilot
 ---
