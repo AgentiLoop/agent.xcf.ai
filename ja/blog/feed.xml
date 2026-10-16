@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
+    <item>
+      <title>Apple は NeXT を立ち上げた Steve Jobs を訴えた。その11年後、Mac を救うために NeXT を買収した。</title>
+      <link>https://agentiloop.ai/ja/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/apple-sued-steve-jobs-and-got-nextstep-back/</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>歴史</category>
+      <category>Apple</category>
+      <description>1985年、Steve Jobs が5人の社員を連れて Apple を去り NeXT を立ち上げると、Apple は彼を提訴しました。和解の結果、NeXT はハイエンドのワークステーションへと向かい、そこで生まれたOSが Mac OS X の土台になりました。記録に実際に何が書かれているのかを紹介します。</description>
+    </item>
     <item>
       <title>AIが次に住みつく場所は、あなたのスマート冷蔵庫かもしれない</title>
       <link>https://agentiloop.ai/ja/blog/your-smart-fridge-might-be-the-next-place-ai-lives/</link>

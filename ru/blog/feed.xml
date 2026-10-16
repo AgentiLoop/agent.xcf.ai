@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ru/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Подробный разбор AgentiLoop Agent!, нативного ИИ-агента для macOS.</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Блог AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/ru/blog/</link>
     </image>
+    <item>
+      <title>Apple подала в суд на Стива Джобса за создание NeXT. Через одиннадцать лет она купила NeXT, чтобы спасти Mac.</title>
+      <link>https://agentiloop.ai/ru/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/apple-sued-steve-jobs-and-got-nextstep-back/</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>История</category>
+      <category>Apple</category>
+      <description>В 1985 году Apple подала в суд на Стива Джобса за то, что он ушёл с пятью сотрудниками и основал NeXT. Мировое соглашение подтолкнуло NeXT к дорогим рабочим станциям, а созданная компанией операционная система стала основой Mac OS X. Вот что на самом деле говорят источники.</description>
+    </item>
     <item>
       <title>Ваш умный холодильник может стать следующим домом для ИИ</title>
       <link>https://agentiloop.ai/ru/blog/your-smart-fridge-might-be-the-next-place-ai-lives/</link>

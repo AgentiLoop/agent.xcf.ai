@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/de/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Deep Dives in AgentiLoop Agent!, den nativen KI-Agenten für macOS.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! Blog</title>
       <link>https://agentiloop.ai/de/blog/</link>
     </image>
+    <item>
+      <title>Apple verklagte Steve Jobs, weil er NeXT gründete. Elf Jahre später kaufte Apple NeXT, um den Mac zu retten.</title>
+      <link>https://agentiloop.ai/de/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/de/blog/apple-sued-steve-jobs-and-got-nextstep-back/</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Geschichte</category>
+      <category>Apple</category>
+      <description>1985 zog Apple vor Gericht, weil Steve Jobs mit fünf Mitarbeitern gegangen war, um NeXT zu gründen. Der Vergleich drängte NeXT in Richtung High-End-Workstations, und das Betriebssystem, das NeXT entwickelte, wurde zur Grundlage von Mac OS X. Das sagen die Quellen tatsächlich.</description>
+    </item>
     <item>
       <title>Dein smarter Kühlschrank könnte das nächste Zuhause der KI sein</title>
       <link>https://agentiloop.ai/de/blog/your-smart-fridge-might-be-the-next-place-ai-lives/</link>

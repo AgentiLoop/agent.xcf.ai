@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/fr/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Plongées dans AgentiLoop Agent!, l&#x27;agent IA natif pour macOS.</description>
     <language>fr</language>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Blog AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/fr/blog/</link>
     </image>
+    <item>
+      <title>Apple a poursuivi Steve Jobs pour avoir fondé NeXT. Onze ans plus tard, elle a racheté NeXT pour sauver le Mac.</title>
+      <link>https://agentiloop.ai/fr/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/fr/blog/apple-sued-steve-jobs-and-got-nextstep-back/</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Histoire</category>
+      <category>Apple</category>
+      <description>En 1985, Apple a traîné Steve Jobs en justice parce qu&#x27;il était parti avec cinq employés pour fonder NeXT. L&#x27;accord a poussé NeXT vers les stations de travail haut de gamme, et le système d&#x27;exploitation qu&#x27;elle a conçu est devenu la base de Mac OS X. Voici ce que disent réellement les archives.</description>
+    </item>
     <item>
       <title>Votre frigo connecté pourrait bien être le prochain refuge de l&#x27;IA</title>
       <link>https://agentiloop.ai/fr/blog/your-smart-fridge-might-be-the-next-place-ai-lives/</link>

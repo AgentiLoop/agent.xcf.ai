@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 15 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
+    <item>
+      <title>Apple 曾因 Steve Jobs 创办 NeXT 而起诉他。十一年后，它买下 NeXT 来拯救 Mac。</title>
+      <link>https://agentiloop.ai/zh/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/apple-sued-steve-jobs-and-got-nextstep-back/</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>历史</category>
+      <category>Apple</category>
+      <description>1985 年，Steve Jobs 带着五名员工离开 Apple 创办 NeXT，Apple 随即把他告上法庭。和解协议把 NeXT 推向了高端工作站，而 NeXT 打造的操作系统后来成了 Mac OS X 的基础。下面是史料中真正记载的内容。</description>
+    </item>
     <item>
       <title>你的智能冰箱，可能是 AI 的下一个栖身之所</title>
       <link>https://agentiloop.ai/zh/blog/your-smart-fridge-might-be-the-next-place-ai-lives/</link>
