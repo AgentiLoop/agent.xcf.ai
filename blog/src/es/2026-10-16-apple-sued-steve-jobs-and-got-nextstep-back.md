@@ -3,6 +3,10 @@ title: Apple demandó a Steve Jobs por fundar NeXT. Once años después compró 
 description: En 1985 Apple llevó a Steve Jobs a los tribunales por marcharse con cinco empleados para fundar NeXT. El acuerdo empujó a NeXT hacia las estaciones de trabajo de gama alta, y el sistema operativo que construyó se convirtió en la base de Mac OS X. Esto es lo que dicen realmente los registros.
 tags: Historia, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="Una estación de trabajo sobre un escritorio, con una silla de oficina delante." style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 Hay una versión de esta historia que circula por ahí: Steve Jobs se va de Apple, se lleva a un puñado de empleados, y Apple le prohíbe construir un ordenador compatible con el Mac, lo que le obliga a inventar algo completamente nuevo. Es una buena historia. Partes de ella son ciertas, y algunas partes son mejores que la leyenda. Volví a las fuentes para aclarar qué es qué.
 
 ## Septiembre de 1985: Jobs se marcha

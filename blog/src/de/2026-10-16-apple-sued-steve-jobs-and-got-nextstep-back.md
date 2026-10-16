@@ -3,6 +3,10 @@ title: Apple verklagte Steve Jobs, weil er NeXT gründete. Elf Jahre später kau
 description: 1985 zog Apple vor Gericht, weil Steve Jobs mit fünf Mitarbeitern gegangen war, um NeXT zu gründen. Der Vergleich drängte NeXT in Richtung High-End-Workstations, und das Betriebssystem, das NeXT entwickelte, wurde zur Grundlage von Mac OS X. Das sagen die Quellen tatsächlich.
 tags: Geschichte, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="Ein Computer-Arbeitsplatz auf einem Schreibtisch, davor ein Bürostuhl." style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 Es gibt eine Version dieser Geschichte, die gern weitererzählt wird: Steve Jobs verlässt Apple, nimmt eine Handvoll Mitarbeiter mit, und Apple verbietet ihm, einen Mac-kompatiblen Computer zu bauen, was ihn zwingt, etwas völlig Neues zu erfinden. Eine gute Geschichte. Teile davon stimmen, und manche Teile sind sogar besser als die Legende. Ich bin zu den Quellen zurückgegangen, um zu sortieren, was was ist.
 
 ## September 1985: Jobs geht

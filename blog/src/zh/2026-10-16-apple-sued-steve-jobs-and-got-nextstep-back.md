@@ -3,6 +3,10 @@ title: Apple 曾因 Steve Jobs 创办 NeXT 而起诉他。十一年后，它买�
 description: 1985 年，Steve Jobs 带着五名员工离开 Apple 创办 NeXT，Apple 随即把他告上法庭。和解协议把 NeXT 推向了高端工作站，而 NeXT 打造的操作系统后来成了 Mac OS X 的基础。下面是史料中真正记载的内容。
 tags: 历史, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="桌上的一台计算机工作站，前面放着一把办公椅。" style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 这个故事有一个流传很广的版本：Steve Jobs 离开 Apple，带走了几名员工，Apple 禁止他制造与 Mac 兼容的电脑，于是他被迫发明了全新的东西。这是个好故事。其中有些部分是真的，还有些部分比传说更精彩。我回头翻阅了原始资料，想弄清楚哪些是真、哪些是传说。
 
 ## 1985 年 9 月：Jobs 出走

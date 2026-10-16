@@ -3,6 +3,10 @@ title: Apple은 NeXT를 세운 Steve Jobs를 고소했습니다. 11년 뒤 Apple
 description: 1985년 Apple은 직원 다섯 명을 데리고 나가 NeXT를 세운 Steve Jobs를 법정에 세웠습니다. 합의 결과 NeXT는 고급 워크스테이션 쪽으로 방향을 틀었고, NeXT가 만든 운영체제는 Mac OS X의 기반이 되었습니다. 기록이 실제로 말하는 내용을 정리했습니다.
 tags: 역사, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="책상 위의 컴퓨터 워크스테이션과 그 앞에 놓인 사무용 의자." style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 널리 퍼진 이야기가 하나 있습니다. Steve Jobs가 Apple을 떠나며 직원 몇 명을 데려가자, Apple이 Mac 호환 컴퓨터를 만들지 못하게 막았고, 그 때문에 그는 완전히 새로운 것을 발명할 수밖에 없었다는 이야기입니다. 좋은 이야기입니다. 일부는 사실이고, 어떤 부분은 전설보다 실제가 더 흥미롭습니다. 무엇이 사실이고 무엇이 아닌지 가려내기 위해 원래 자료들을 다시 찾아봤습니다.
 
 ## 1985년 9월: Jobs가 떠나다

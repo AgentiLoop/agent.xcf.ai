@@ -3,6 +3,10 @@ title: Apple Sued Steve Jobs for Starting NeXT. Eleven Years Later It Bought NeX
 description: In 1985 Apple took Steve Jobs to court for leaving with five employees to start NeXT. The settlement pushed NeXT toward high-end workstations, and the operating system it built became the foundation of Mac OS X. Here is what the record actually says.
 tags: History, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="A computer workstation on a desk, with an office chair in front of it." style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 There's a version of this story that gets passed around: Steve Jobs leaves Apple, takes a handful of employees, and Apple bans him from building a Mac-compatible computer, which forces him to invent something completely new. It's a good story. Parts of it are true, and some parts are better than the legend. I went back to the sources to sort out which is which.
 
 ## September 1985: Jobs walks out

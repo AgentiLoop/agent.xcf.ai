@@ -3,6 +3,10 @@ title: Apple は NeXT を立ち上げた Steve Jobs を訴えた。その11年�
 description: 1985年、Steve Jobs が5人の社員を連れて Apple を去り NeXT を立ち上げると、Apple は彼を提訴しました。和解の結果、NeXT はハイエンドのワークステーションへと向かい、そこで生まれたOSが Mac OS X の土台になりました。記録に実際に何が書かれているのかを紹介します。
 tags: 歴史, Apple
 ---
+<figure style="margin:2rem 0">
+<img src="/next-workstation.webp" alt="机の上のコンピュータワークステーションと、その前に置かれたオフィスチェア。" style="display:block;width:100%;height:auto;border-radius:20px">
+</figure>
+
 この話には、よく語られるバージョンがあります。Steve Jobs が Apple を去り、数人の社員を連れていった。Apple は彼に Mac 互換のコンピュータを作ることを禁じ、そのせいで彼はまったく新しいものを発明せざるをえなかった、というものです。よくできた話です。一部は本当で、伝説よりも面白い部分もあります。どこが事実でどこが伝説なのかを整理するため、資料にあたり直してみました。
 
 ## 1985年9月：Jobs が去る
