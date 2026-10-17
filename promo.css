@@ -28,7 +28,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px 16px;
-    padding: 12px 104px 12px 24px;
+    padding: 12px 104px;
     text-align: center;
     font-size: 0.98rem;
     line-height: 1.45;
@@ -190,7 +190,7 @@
 
 @media (max-width: 640px) {
     .promo { display: none; }
-    .promo-slide { padding: 12px 36px 12px 16px; font-size: 0.9rem; gap: 8px 10px; }
+    .promo-slide { padding: 12px 36px; font-size: 0.9rem; gap: 8px 10px; }
     .promo-icon, .promo-sponsored { display: none; }
     .promo-dots { right: 10px; }
 }
