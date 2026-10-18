@@ -1064,8 +1064,8 @@ a.stat:hover .stat-label { color: var(--text); }
 /* ===== AgentiLoop Racing ===== */
 .race-wrap { padding: 8px 0 56px; }
 .race-screen {
-    position: relative; width: 100%; max-width: 960px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden;
+    position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden;
     padding: 3px; background: linear-gradient(135deg, #ff1e00, #ff7a00 45%, #22d3ee);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 30px 70px -24px rgba(225, 6, 0, .75), 0 0 60px -20px rgba(34, 211, 238, .5);
 }
-.race-screen iframe { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); border: 0; border-radius: 15px; background: #000; }
+.race-screen iframe { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); border: 0; border-radius: 21px; background: #000; }
