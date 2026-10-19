@@ -1,11 +1,8 @@
 [
- "a-release-on-the-first-of-every-month",
  "context-compaction-half-the-window",
  "how-i-became-your-macs-best-friend",
  "inside-agent-shell-guardrails",
  "meet-jev",
  "sonoma-intel-and-the-mac-that-was-not-dead-yet",
- "the-terminal-strikes-back",
- "what-is-an-agent-loop",
- "why-we-ripped-out-modes"
+ "what-is-an-agent-loop"
 ]
