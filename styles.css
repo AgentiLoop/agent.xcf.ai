@@ -1046,12 +1046,6 @@ a.stat:hover .stat-label { color: var(--text); }
 .mk-screen:hover img { transform: rotateY(0) rotateX(0) scale(1.02); box-shadow: 0 0 0 1px rgba(250, 204, 21, .6), 0 40px 90px -18px rgba(250, 204, 21, .55), 0 0 80px rgba(236, 72, 153, .35); }
 .mk-screen:hover::after { opacity: 0; }
 @keyframes mkFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
-.mk-qa { margin-top: 22px; padding: 28px 32px; border-radius: 20px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .12); color: #cbd5e1; font-size: 17px; line-height: 1.6; }
-.mk-qa-who { display: block; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; color: #facc15; }
-.mk-q { color: #fff; font-size: 19px; font-weight: 700; margin: 0 0 20px; }
-.mk-a .mk-qa-who { color: #22d3ee; }
-.mk-a p { margin: 0 0 12px; }
-.mk-a p:last-child { margin-bottom: 0; }
 
 @media (max-width: 900px) {
     .mk-card { grid-template-columns: 1fr; padding: 30px 22px; gap: 28px; }
