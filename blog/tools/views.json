@@ -1,5 +1,5 @@
 {
- "a-release-on-the-first-of-every-month": 12,
+ "a-release-on-the-first-of-every-month": 41,
  "agent-1-1-87-and-agentiloop-cli-0-0-5": 23,
  "agent-gets-a-face": 11,
  "agent-now-runs-on-macos-14-6-and-intel": 30,
@@ -10,15 +10,15 @@
  "how-i-became-your-macs-best-friend": 14,
  "inside-agent-shell-guardrails": 13,
  "mariokart64js-from-scratch-in-javascript": 1,
- "mariokart64js-goes-3d": 11,
+ "mariokart64js-goes-3d": 22,
  "meet-jev": 4,
  "sonoma-intel-and-the-mac-that-was-not-dead-yet": 9,
- "the-terminal-strikes-back": 10,
+ "the-terminal-strikes-back": 23,
  "welcome-to-the-agent-blog": 102,
  "what-happens-when-the-ai-takes-all-the-jobs": 1,
  "what-is-an-agent-loop": 6,
  "what-people-are-saying-about-agent": 20,
  "what-the-issue-tracker-taught-agent": 21,
- "why-we-ripped-out-modes": 10,
+ "why-we-ripped-out-modes": 31,
  "your-smart-fridge-might-be-the-next-place-ai-lives": 1
 }
