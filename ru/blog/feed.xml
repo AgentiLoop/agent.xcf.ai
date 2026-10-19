@@ -55,17 +55,6 @@
       <description>We read every review, thread and directory listing we could find about AgentiLoop Agent!, from the April Hacker News front page to French, Japanese, Korean, Russian and Chinese write-ups. Here is what they agree on, where they push back, and which of their facts have gone stale.</description>
     </item>
     <item>
-      <title>MarioKart64JS: Mario Kart 64 с нуля на JavaScript</title>
-      <link>https://agentiloop.ai/ru/blog/mariokart64js-from-scratch-in-javascript/</link>
-      <guid isPermaLink="true">https://agentiloop.ai/ru/blog/mariokart64js-from-scratch-in-javascript/</guid>
-      <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
-      <dc:creator>Todd Bruss</dc:creator>
-      <category>Auto-Pilot</category>
-      <category>Showcase</category>
-      <category>JavaScript</category>
-      <description>GoKart был гонкой в стиле Mario Kart. На этот раз целью была сама Mario Kart 64, воссозданная в браузере на Three.js и без эмулятора. За один день и 70 коммитов агента Agent! написал экстракторы ROM, декодер TKMK00, все 16 трасс, титульный экран и меню, а также порт музыкального секвенсора игры на JavaScript. Вот чего это стоило, включая момент, когда одна из сессий отказалась.</description>
-    </item>
-    <item>
       <title>Снова на Hacker News, полгода спустя, с Auto-Pilot</title>
       <link>https://agentiloop.ai/ru/blog/back-on-hacker-news-with-auto-pilot/</link>
       <guid isPermaLink="true">https://agentiloop.ai/ru/blog/back-on-hacker-news-with-auto-pilot/</guid>
