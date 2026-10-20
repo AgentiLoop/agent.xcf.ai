@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/zh/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>深入解析原生 macOS AI 智能体 AgentiLoop Agent!。</description>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 博客</title>
       <link>https://agentiloop.ai/zh/blog/</link>
     </image>
+    <item>
+      <title>AgentiLoop Racing, Prototype III：在浏览器中运行的 F1 模拟器</title>
+      <link>https://agentiloop.ai/zh/blog/agentiloop-racing-f1-simulator-prototype-iii/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/zh/blog/agentiloop-racing-f1-simulator-prototype-iii/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>AgentiLoop Racing 是一款在浏览器中运行的开轮赛车模拟器，由 Agent! 使用 Three.js 打造。它拥有 240 Hz 物理引擎、18 条真实赛道、AI 车手、进站、轮胎配方、燃油、ERS 和 DRS。可在 f1.gokart.games 上游玩。</description>
+    </item>
     <item>
       <title>Apple 曾因 Steve Jobs 创办 NeXT 而起诉他。十一年后，它买下 NeXT 来拯救 Mac。</title>
       <link>https://agentiloop.ai/zh/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>

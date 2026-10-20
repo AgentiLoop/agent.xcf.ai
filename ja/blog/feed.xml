@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ja/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>ネイティブ macOS AI エージェント AgentiLoop Agent! を深掘りします。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! ブログ</title>
       <link>https://agentiloop.ai/ja/blog/</link>
     </image>
+    <item>
+      <title>AgentiLoop Racing, Prototype III：ブラウザで動く F1 シミュレーター</title>
+      <link>https://agentiloop.ai/ja/blog/agentiloop-racing-f1-simulator-prototype-iii/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ja/blog/agentiloop-racing-f1-simulator-prototype-iii/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>AgentiLoop Racing は、Agent! が Three.js で作った、ブラウザで動くオープンホイールのレーシングシミュレーターです。240 Hz の物理演算、18 の実在サーキット、AI ドライバー、ピットストップ、タイヤコンパウンド、燃料、ERS、DRS を備えています。f1.gokart.games でプレイできます。</description>
+    </item>
     <item>
       <title>Apple は NeXT を立ち上げた Steve Jobs を訴えた。その11年後、Mac を救うために NeXT を買収した。</title>
       <link>https://agentiloop.ai/ja/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>

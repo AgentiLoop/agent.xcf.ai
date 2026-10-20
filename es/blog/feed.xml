@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/es/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Análisis a fondo de AgentiLoop Agent!, el agente de IA nativo para macOS.</description>
     <language>es</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>Blog de AgentiLoop Agent!</title>
       <link>https://agentiloop.ai/es/blog/</link>
     </image>
+    <item>
+      <title>AgentiLoop Racing, Prototype III: un simulador de F1 en tu navegador</title>
+      <link>https://agentiloop.ai/es/blog/agentiloop-racing-f1-simulator-prototype-iii/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/es/blog/agentiloop-racing-f1-simulator-prototype-iii/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>AgentiLoop Racing es un simulador de carreras de monoplazas que funciona en el navegador, creado con Agent! en Three.js. Tiene física a 240 Hz, 18 circuitos reales, una parrilla de rivales con IA, paradas en boxes, compuestos de neumáticos, combustible, ERS y DRS. Juega en f1.gokart.games.</description>
+    </item>
     <item>
       <title>Apple demandó a Steve Jobs por fundar NeXT. Once años después compró NeXT para salvar el Mac.</title>
       <link>https://agentiloop.ai/es/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>

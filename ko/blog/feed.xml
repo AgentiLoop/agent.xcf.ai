@@ -6,12 +6,22 @@
     <atom:link href="https://agentiloop.ai/ko/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>네이티브 macOS AI 에이전트 AgentiLoop Agent!를 깊이 있게 다룹니다.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 16 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://agentiloop.ai/agent_icon.png</url>
       <title>AgentiLoop Agent! 블로그</title>
       <link>https://agentiloop.ai/ko/blog/</link>
     </image>
+    <item>
+      <title>AgentiLoop Racing, Prototype III: 브라우저에서 즐기는 F1 시뮬레이터</title>
+      <link>https://agentiloop.ai/ko/blog/agentiloop-racing-f1-simulator-prototype-iii/</link>
+      <guid isPermaLink="true">https://agentiloop.ai/ko/blog/agentiloop-racing-f1-simulator-prototype-iii/</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Todd Bruss</dc:creator>
+      <category>Showcase</category>
+      <category>JavaScript</category>
+      <description>AgentiLoop Racing은 Agent!가 Three.js로 만든, 브라우저에서 실행되는 오픈휠 레이싱 시뮬레이터입니다. 240 Hz 물리 엔진, 18개의 실제 서킷, AI 드라이버, 피트 스톱, 타이어 컴파운드, 연료, ERS, DRS를 갖추고 있습니다. f1.gokart.games에서 플레이할 수 있습니다.</description>
+    </item>
     <item>
       <title>Apple은 NeXT를 세운 Steve Jobs를 고소했습니다. 11년 뒤 Apple은 Mac을 살리기 위해 NeXT를 사들였습니다.</title>
       <link>https://agentiloop.ai/ko/blog/apple-sued-steve-jobs-and-got-nextstep-back/</link>
