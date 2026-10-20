@@ -509,5 +509,8 @@
  "See the listing": "목록 보기",
  "Join the discussion on Hacker News": "Hacker News 토론 참여하기",
  "Read the post on X": "X 게시물 읽기",
- "Read the full guide": "전체 가이드 읽기"
+ "Read the full guide": "전체 가이드 읽기",
+ "AgentiLoop Racing": "AgentiLoop Racing",
+ "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: F1 in your browser. 18 real circuits, pit stops, <span class=\"promo-chip chip-drs\">DRS</span> &amp; ERS at 240 Hz": "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: 브라우저 속 F1. 실제 서킷 18개, 피트 스톱, <span class=\"promo-chip chip-drs\">DRS</span>·ERS, 240 Hz",
+ "Lights out, go! <span aria-hidden=\"true\">&rarr;</span>": "라이트 아웃, 출발! <span aria-hidden=\"true\">&rarr;</span>"
 }

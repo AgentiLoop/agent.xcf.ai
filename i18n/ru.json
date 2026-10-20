@@ -509,5 +509,8 @@
  "See the listing": "Открыть страницу проекта",
  "Join the discussion on Hacker News": "Присоединиться к обсуждению на Hacker News",
  "Read the post on X": "Читать пост в X",
- "Read the full guide": "Читать полное руководство"
+ "Read the full guide": "Читать полное руководство",
+ "AgentiLoop Racing": "AgentiLoop Racing",
+ "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: F1 in your browser. 18 real circuits, pit stops, <span class=\"promo-chip chip-drs\">DRS</span> &amp; ERS at 240 Hz": "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: Ф1 в браузере. 18 реальных трасс, пит-стопы, <span class=\"promo-chip chip-drs\">DRS</span> и ERS, 240 Гц",
+ "Lights out, go! <span aria-hidden=\"true\">&rarr;</span>": "Огни погасли, вперёд! <span aria-hidden=\"true\">&rarr;</span>"
 }

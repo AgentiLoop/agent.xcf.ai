@@ -509,5 +509,8 @@
  "See the listing": "Voir la fiche",
  "Join the discussion on Hacker News": "Rejoindre la discussion sur Hacker News",
  "Read the post on X": "Lire le post sur X",
- "Read the full guide": "Lire le guide complet"
+ "Read the full guide": "Lire le guide complet",
+ "AgentiLoop Racing": "AgentiLoop Racing",
+ "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: F1 in your browser. 18 real circuits, pit stops, <span class=\"promo-chip chip-drs\">DRS</span> &amp; ERS at 240 Hz": "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span> : la F1 dans votre navigateur. 18 vrais circuits, arrêts aux stands, <span class=\"promo-chip chip-drs\">DRS</span> et ERS à 240 Hz",
+ "Lights out, go! <span aria-hidden=\"true\">&rarr;</span>": "Feux éteints, go ! <span aria-hidden=\"true\">&rarr;</span>"
 }

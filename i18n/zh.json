@@ -509,5 +509,8 @@
  "See the listing": "查看收录页面",
  "Join the discussion on Hacker News": "参与 Hacker News 讨论",
  "Read the post on X": "阅读 X 上的帖子",
- "Read the full guide": "阅读完整指南"
+ "Read the full guide": "阅读完整指南",
+ "AgentiLoop Racing": "AgentiLoop Racing",
+ "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: F1 in your browser. 18 real circuits, pit stops, <span class=\"promo-chip chip-drs\">DRS</span> &amp; ERS at 240 Hz": "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>：浏览器里的 F1。18 条真实赛道、进站、<span class=\"promo-chip chip-drs\">DRS</span> 与 ERS，240 Hz 物理",
+ "Lights out, go! <span aria-hidden=\"true\">&rarr;</span>": "灯灭，出发！ <span aria-hidden=\"true\">&rarr;</span>"
 }

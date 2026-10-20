@@ -1,4 +1,4 @@
-/* ---------- Promo banner (under the nav; 4 rotating slides, rotation in promo.js) ---------- */
+/* ---------- Promo banner (under the nav; 5 rotating slides, rotation in promo.js) ---------- */
 .promo {
     --promo-ms: 7000ms;
     position: sticky;
@@ -175,6 +175,48 @@
 .lang-godot:hover { background: rgba(71, 140, 191, .34); }
 .promo-kart .promo-cta { background: linear-gradient(135deg, #ef4444, #f59e0b); }
 
+/* Slide 5: AgentiLoop Racing (F1 simulator, Prototype III) */
+.promo-f1::before { background-image: linear-gradient(120deg, #14030a, #3b0710, #0a0a0f, #5a0a12, #14030a); animation-duration: 4s; }
+.promo-f1 { --promo-glow: rgba(255, 24, 32, .65); }
+.promo-f1::after { /* speed streaks blasting past + red/white kerb along the bottom edge */
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, .55) 45%, rgba(255, 90, 90, .9) 55%, transparent),
+        linear-gradient(90deg, transparent, rgba(255, 180, 120, .45) 50%, transparent),
+        linear-gradient(90deg, transparent, rgba(255, 255, 255, .4) 45%, rgba(255, 60, 60, .8) 55%, transparent),
+        linear-gradient(90deg, transparent, rgba(255, 220, 220, .35) 50%, transparent),
+        repeating-linear-gradient(90deg, #e10600 0 12px, #fff 12px 24px);
+    background-size: 220px 2px, 160px 1px, 300px 2px, 120px 1px, 24px 4px;
+    background-repeat: repeat-x;
+    background-position: 0 18%, 60px 36%, 120px 64%, 30px 82%, 0 100%;
+    animation: promo-f1-streaks .55s linear infinite;
+}
+@keyframes promo-f1-streaks { to { background-position: 440px 18%, 380px 36%, 720px 64%, 270px 82%, -24px 100%; } }
+.promo-f1 .promo-grad { background-image: linear-gradient(90deg, #ff3b3b, #ffb347, #ffffff, #ff3b3b); animation-duration: 2s; }
+.promo-f1 .promo-icon { color: #fff; background: linear-gradient(135deg, #e10600, #ff6a00); box-shadow: 0 0 20px rgba(255, 60, 0, .6); animation: promo-f1-vibe .12s linear infinite; }
+@keyframes promo-f1-vibe { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(.6px, -.4px); } 50% { transform: translate(-.5px, .5px); } 75% { transform: translate(.4px, .6px); } }
+.promo-f1 .promo-text { font-weight: 600; font-style: italic; letter-spacing: .01em; }
+.promo-grid { display: inline-flex; gap: 3px; margin-right: 8px; padding: 3px 5px; vertical-align: -1px; border-radius: 6px; background: #0b0f0c; border: 1px solid rgba(255, 255, 255, .2); }
+.promo-grid i { width: 8px; height: 8px; border-radius: 50%; background: #2a2a2a; animation: 3.2s steps(1) infinite; }
+.promo-grid i:nth-child(1) { animation-name: promo-f1-l1; }
+.promo-grid i:nth-child(2) { animation-name: promo-f1-l2; }
+.promo-grid i:nth-child(3) { animation-name: promo-f1-l3; }
+.promo-grid i:nth-child(4) { animation-name: promo-f1-l4; }
+.promo-grid i:nth-child(5) { animation-name: promo-f1-l5; }
+@keyframes promo-f1-l1 { 12%, 74% { background: #ff1e1e; box-shadow: 0 0 8px #ff1e1e; } 75%, 100% { background: #2a2a2a; box-shadow: none; } }
+@keyframes promo-f1-l2 { 24%, 74% { background: #ff1e1e; box-shadow: 0 0 8px #ff1e1e; } 75%, 100% { background: #2a2a2a; box-shadow: none; } }
+@keyframes promo-f1-l3 { 36%, 74% { background: #ff1e1e; box-shadow: 0 0 8px #ff1e1e; } 75%, 100% { background: #2a2a2a; box-shadow: none; } }
+@keyframes promo-f1-l4 { 48%, 74% { background: #ff1e1e; box-shadow: 0 0 8px #ff1e1e; } 75%, 100% { background: #2a2a2a; box-shadow: none; } }
+@keyframes promo-f1-l5 { 60%, 74% { background: #ff1e1e; box-shadow: 0 0 8px #ff1e1e; } 75%, 100% { background: #2a2a2a; box-shadow: none; } }
+.chip-proto { color: #fecaca; background: rgba(225, 6, 0, .22); border: 1px solid rgba(255, 90, 90, .6); font-style: normal; letter-spacing: .06em; text-transform: uppercase; font-size: 0.78em; }
+.chip-drs { color: #0b0f0c; background: #4ade80; border: 1px solid #4ade80; font-style: normal; letter-spacing: .08em; animation: promo-blink-bg 1.2s ease-in-out infinite; }
+.promo-f1 .promo-cta { background: linear-gradient(135deg, #e10600, #ff6a00); font-style: italic; letter-spacing: .02em; text-transform: uppercase; animation-duration: 1.2s; }
+.promo-f1 .promo-cta:hover { transform: translateY(-2px) skewX(-8deg) scale(1.06); }
+
 /* Segmented progress bar (one segment per slide, scales to any count), vertically centered on the right side */
 .promo-dots { position: absolute; z-index: 3; right: 14px; top: 0; bottom: 0; width: 76px; display: flex; align-items: center; gap: 4px; }
 .promo-dot { position: relative; flex: 1 1 0; min-width: 0; height: 14px; padding: 0; border: 0; background: none; cursor: pointer; }
@@ -195,6 +237,6 @@
     .promo-dots { right: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .promo::after, .promo-slide::before, .promo-grad, .promo-cta, .promo-new, .promo-caret, .promo-kart::after, .promo-flag, .promo-lights i { animation: none; }
+    .promo::after, .promo-slide::before, .promo-grad, .promo-cta, .promo-new, .promo-caret, .promo-kart::after, .promo-flag, .promo-lights i, .promo-f1::after, .promo-f1 .promo-icon, .promo-grid i, .chip-drs { animation: none; }
     .promo-slide { transition: opacity .3s ease, visibility 0s linear .3s; transform: none; filter: none; }
 }

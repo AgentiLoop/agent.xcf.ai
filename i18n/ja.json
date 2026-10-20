@@ -509,5 +509,8 @@
  "See the listing": "掲載ページを見る",
  "Join the discussion on Hacker News": "Hacker Newsの議論に参加する",
  "Read the post on X": "Xの投稿を読む",
- "Read the full guide": "ガイド全文を読む"
+ "Read the full guide": "ガイド全文を読む",
+ "AgentiLoop Racing": "AgentiLoop Racing",
+ "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>: F1 in your browser. 18 real circuits, pit stops, <span class=\"promo-chip chip-drs\">DRS</span> &amp; ERS at 240 Hz": "<span class=\"promo-grid\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i></span><strong class=\"promo-grad\">AgentiLoop Racing</strong> <span class=\"promo-chip chip-proto\">Prototype III</span>：ブラウザで F1。実在の 18 サーキット、ピット、<span class=\"promo-chip chip-drs\">DRS</span> と ERS、240 Hz",
+ "Lights out, go! <span aria-hidden=\"true\">&rarr;</span>": "ライトアウト、GO！ <span aria-hidden=\"true\">&rarr;</span>"
 }
