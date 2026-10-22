@@ -1057,7 +1057,7 @@ a.stat:hover .stat-label { color: var(--text); }
 
 /* ===== AgentiLoop Racing ===== */
 .race-wrap { padding: 8px 0 56px; }
-.f1ad{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:40px 36px 52px;border-radius:24px;overflow:hidden;isolation:isolate;color:#fff;text-decoration:none;background:#0a0a0f;box-shadow:0 0 0 2px #e10600,0 20px 60px rgba(225,6,0,.35)}
+.f1ad{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:38px 34px 50px;border:2px solid #e10600;border-radius:24px;overflow:hidden;isolation:isolate;color:#fff;text-decoration:none;background:#0a0a0f;box-shadow:0 20px 60px rgba(225,6,0,.35)}
 .f1ad-bg{position:absolute;inset:0;z-index:-2;background:url(agentiloop-racing-f1ad.jpg) center/cover no-repeat;transition:transform .6s}
 .f1ad::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,6,10,.95) 0%,rgba(8,6,10,.8) 45%,rgba(8,6,10,.25) 100%)}
 .f1ad::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(90deg,#e10600 0 28px,#fff 28px 56px);animation:f1adKerb .5s linear infinite}
@@ -1074,5 +1074,5 @@ a.stat:hover .stat-label { color: var(--text); }
 .f1ad-cta{white-space:nowrap;font-weight:900;font-size:18px;padding:16px 26px;border-radius:999px;color:#fff;background:#e10600;box-shadow:0 6px 0 #7a0300,0 0 30px rgba(225,6,0,.6);transition:transform .15s}
 .f1ad:hover .f1ad-cta{transform:translateX(4px)}
 @keyframes f1adKerb{to{background-position:56px 0}}
-@media (max-width:760px){.f1ad{grid-template-columns:1fr;padding:28px 22px 44px}.f1ad-cta{justify-self:start}}
+@media (max-width:760px){.f1ad{grid-template-columns:1fr;padding:26px 20px 42px}.f1ad-cta{justify-self:start}}
 @media (prefers-reduced-motion:reduce){.f1ad::after{animation:none}}
