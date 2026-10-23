@@ -185,6 +185,44 @@ async function autoDiscoverReleases() {
 autoDiscoverReleases();
 setInterval(autoDiscoverReleases, 20 * 60 * 1000);
 
+// CLI card: point the Rust and Go buttons and the version badge at the latest
+// published AgentiLoopCLI / AgentiLoopGo releases. The button text is translated,
+// so only the version number inside it is swapped.
+async function updateCliReleases() {
+    const repos = [
+        { repo: 'AgentiLoopCLI', sel: '.cli-ad-cta:not(.cli-ad-cta-go)' },
+        { repo: 'AgentiLoopGo', sel: '.cli-ad-cta-go' }
+    ];
+    const card = document.getElementById('cli');
+    if (!card) return;
+    const versions = [];
+    await Promise.all(repos.map(async function (r) {
+        try {
+            const response = await fetch('https://api.github.com/repos/AgentiLoop/' + r.repo + '/releases/latest');
+            if (!response.ok) return;
+            const tag = (await response.json()).tag_name;
+            const v = extractVersion(tag);
+            const btn = card.querySelector(r.sel);
+            if (!v || !btn) return;
+            versions.push(v);
+            btn.href = 'https://github.com/AgentiLoop/' + r.repo + '/releases/tag/' + tag;
+            btn.innerHTML = btn.innerHTML.replace(/\d+\.\d+\.\d+/, v);
+        } catch (e) {
+            // Silently fail — the static links remain
+        }
+    }));
+    const badge = card.querySelector('.cli-ad-ver');
+    if (badge && versions.length) {
+        const newest = versions.sort(function (a, b) {
+            return b.localeCompare(a, undefined, { numeric: true });
+        })[0];
+        badge.textContent = 'v' + newest;
+    }
+}
+
+updateCliReleases();
+setInterval(updateCliReleases, 20 * 60 * 1000);
+
 // Live GitHub stars / forks (refreshes every 60s, stays under the 60 req/hr unauthenticated limit)
 async function updateRepoStats() {
     try {
