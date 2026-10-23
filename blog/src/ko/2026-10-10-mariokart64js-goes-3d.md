@@ -8,7 +8,7 @@ tags: Showcase, JavaScript
 <figcaption>3D 타이틀 화면. 원작은 평면 그림 한 장입니다. 여기서는 하늘, 언덕, 도로를 Three.js로 만들었고, 다섯 명의 드라이버는 카메라를 향해 달려오는 3D 카트입니다.</figcaption>
 </figure>
 
-[지난 MarioKart64JS 글](/blog/mariokart64js-from-scratch-in-javascript/)은 Mario Kart 64를 최대한 똑같이 재현하는 이야기였습니다. 코스 지오메트리, 스프라이트, 음악은 카트리지에서 가져오고, 원작의 C 코드가 하던 일을 새로운 JavaScript가 하는 것이었죠. 이번 글은 그 반대 방향에 관한 것입니다. 키 하나, **3**을 누르면 N64에는 없었던 3D 모드가 켜집니다.
+지난 MarioKart64JS 글은 Mario Kart 64를 최대한 똑같이 재현하는 이야기였습니다. 코스 지오메트리, 스프라이트, 음악은 카트리지에서 가져오고, 원작의 C 코드가 하던 일을 새로운 JavaScript가 하는 것이었죠. 이번 글은 그 반대 방향에 관한 것입니다. 키 하나, **3**을 누르면 N64에는 없었던 3D 모드가 켜집니다.
 
 ## 스프라이트가 모델이 되다
 

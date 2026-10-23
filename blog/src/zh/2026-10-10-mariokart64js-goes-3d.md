@@ -8,7 +8,7 @@ tags: Showcase, JavaScript
 <figcaption>3D 标题画面。原版是一张平面画作。这里的天空、山丘和道路都用 Three.js 构建，五位车手是朝镜头驶来的 3D 卡丁车。</figcaption>
 </figure>
 
-[上一篇 MarioKart64JS 文章](/blog/mariokart64js-from-scratch-in-javascript/)讲的是尽可能贴近 Mario Kart 64：赛道几何、精灵和音乐取自卡带，再由全新的 JavaScript 完成原版 C 代码所做的事。这一篇讲的是相反的方向。只需一个按键 **3**，就能开启 N64 从未有过的 3D 模式。
+上一篇 MarioKart64JS 文章讲的是尽可能贴近 Mario Kart 64：赛道几何、精灵和音乐取自卡带，再由全新的 JavaScript 完成原版 C 代码所做的事。这一篇讲的是相反的方向。只需一个按键 **3**，就能开启 N64 从未有过的 3D 模式。
 
 ## 精灵变成模型
 

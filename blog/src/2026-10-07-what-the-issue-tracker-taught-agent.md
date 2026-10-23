@@ -61,7 +61,7 @@ In late August a set of "good first issue" tickets went up: unit tests for an un
 
 Even the pull requests that weren't merged pointed at something real: [#63](https://github.com/AgentiLoop/Agent/pull/63) caught a wrong Homebrew install command in the translated READMEs, tracked and closed as [#62](https://github.com/AgentiLoop/Agent/issues/62).
 
-Provider teams started showing up too. OrcaRouter ([#48](https://github.com/AgentiLoop/Agent/issues/48)) and A2Agent ([#47](https://github.com/AgentiLoop/Agent/issues/47)) asked for integrations, and both shipped in 1.1.87. The A2Agent team later wrote one of the reviews in the previous post. A MemCode proposal to back Agent!'s memory with their service ([#65](https://github.com/AgentiLoop/Agent/issues/65)) is open now, and would most naturally start through the existing MCP client.
+Provider teams started showing up too. OrcaRouter ([#48](https://github.com/AgentiLoop/Agent/issues/48)) and A2Agent (#47) asked for integrations, and both shipped in 1.1.87. The A2Agent team later wrote one of the reviews in the previous post. A MemCode proposal to back Agent!'s memory with their service ([#65](https://github.com/AgentiLoop/Agent/issues/65)) is open now, and would most naturally start through the existing MCP client.
 
 ## October: three releases in a week
 

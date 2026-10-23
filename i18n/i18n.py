@@ -219,7 +219,7 @@ def relink(tag, lang, base):
 
     def fix(m):
         attr, q, url = m.group(1), m.group(2), m.group(3)
-        if re.match(r'^(https?:|//|mailto:|data:|javascript:|#)', url):
+        if re.match(r'^(https?:|//|mailto:|data:|javascript:|#|\$\{)', url):
             return m.group(0)
         if url == '/':
             url = '/%s/' % lang

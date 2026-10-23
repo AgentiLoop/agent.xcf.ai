@@ -52,7 +52,7 @@ The idea was tested early by a GitHub issue. In April, a "mini audit" ([#2](http
 
 The French guide on [ForoKD](https://fr.forokd.com/Ma%C3%AEtriser-les-agents-d'IA-pour-macOS-Control-:-le-guide-ultime-de-l'automatisation-de-bureau/) put the main strength in one line: it uses the macOS Accessibility API, so it doesn't have to keep taking screenshots to find buttons. It also picked out AgentScript, Swift dylibs compiled on the fly for system actions. The Chinese profile on [diedong.com](https://www.diedong.com/macos26-agent.html) called it a "digital employee" that operates the Mac with real clicks and typing. The [A2Agent team](https://a2agent.me/blog/mac-agent-harness-agentiloop-en), comparing it with Codex and OpenClaw, said its positioning is "an agent that can drive your entire Mac, and happens to be very good at code", not the other way round.
 
-That framing matters to us because it's the honest one. Agent! is a coding agent, and it builds its own website, a [Mario Kart-style game](/blog/gokart-built-on-auto-pilot/) and [a JavaScript port of another](/blog/mariokart64js-from-scratch-in-javascript/). But the reason to install a native Mac app rather than run a terminal tool is everything outside the editor.
+That framing matters to us because it's the honest one. Agent! is a coding agent, and it builds its own website, a [Mario Kart-style game](/blog/gokart-built-on-auto-pilot/) and a JavaScript port of another. But the reason to install a native Mac app rather than run a terminal tool is everything outside the editor.
 
 ### 3. Context compaction that leaves a way back
 

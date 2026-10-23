@@ -8,7 +8,7 @@ tags: Showcase, JavaScript
 <figcaption>L'écran titre en 3D. L'original est une seule illustration plate. Ici, le ciel, les collines et la route sont construits avec Three.js, et les cinq pilotes sont des karts 3D qui roulent vers la caméra.</figcaption>
 </figure>
 
-Le [dernier article sur MarioKart64JS](/blog/mariokart64js-from-scratch-in-javascript/) portait sur la reproduction la plus fidèle possible de Mario Kart 64 : géométrie des circuits, sprites et musique tirés de la cartouche, et du JavaScript neuf qui fait ce que fait le C de l'original. Celui-ci va dans la direction opposée. Une touche, **3**, active un mode 3D que la N64 n'a jamais eu.
+Le dernier article sur MarioKart64JS portait sur la reproduction la plus fidèle possible de Mario Kart 64 : géométrie des circuits, sprites et musique tirés de la cartouche, et du JavaScript neuf qui fait ce que fait le C de l'original. Celui-ci va dans la direction opposée. Une touche, **3**, active un mode 3D que la N64 n'a jamais eu.
 
 ## Les sprites deviennent des modèles
 
